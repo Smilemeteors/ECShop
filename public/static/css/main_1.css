@@ -165,7 +165,7 @@ textarea {
   height: 32px;
   /*border: none;*/
   /*display: block;*/
-  /*background: url(../images/btn-bind.png) no-repeat 0 6px;*/
+  /*background: url(../images/btn-bind_1.png) no-repeat 0 6px;*/
   /*background: #fc521e;*/
   cursor: pointer;
   color: #fc521e;
@@ -243,7 +243,7 @@ h1 .action-span5 {
 
 h1 .action-span5:before {
   content: "";
-  background: url(../images/113.png) center no-repeat;
+  background: url(../images/113_1.png) center no-repeat;
   display: inline-block;
   width: 15px;
   height: 15px;
@@ -265,7 +265,7 @@ h1 .action-span6 {
 
 h1 .action-span6:before {
   content: "";
-  background: url(../images/112.png) center no-repeat;
+  background: url(../images/112_1.png) center no-repeat;
   display: inline-block;
   width: 15px;
   height: 15px;
@@ -529,11 +529,11 @@ input.btn-download {
   line-height: 41px;
   font-size: 16px;
   vertical-align: top;
-  background: url(../images/sprit.png) -70px -154px;
+  background: url(../images/sprit_1.png) -70px -154px;
 }
 
 input.btn-download:hover {
-  background: url(../images/sprit.png) -70px -90px;
+  background: url(../images/sprit_1.png) -70px -90px;
 }
 
 input.capital {
@@ -564,7 +564,7 @@ ul.msg-link {
 }
 
 ul.msg-link li {
-  background: url(../images/arrow.gif) no-repeat 0px 6px;
+  background: url(../images/arrow_1.gif) no-repeat 0px 6px;
   padding-left: 18px;
   margin-left: 0;
 }
@@ -684,7 +684,7 @@ div#popMsg {
   line-height: 23px;
   color: #fff;
   font-size: 12px;
-  background: #D8D9DF url(../images/icon_title.svg) no-repeat 10px center;
+  background: #D8D9DF url(../images/icon_title_1.svg) no-repeat 10px center;
   background-size: contain;
   height: 23px;
   padding-left: 28px;
@@ -733,35 +733,35 @@ div#popMsg {
   bottom: 3px;
   width: 14px;
   height: 14px;
-  background: url(../fonts/9a649d886400480eb589db33adbb0946.svg) no-repeat;
+  background: url(../fonts/574ebc83827144cba61748a04f9c5e8c.svg) no-repeat;
   background-size: contain;
   color: #E8594D;
 }
 
 .edited {
   padding-left: 18px;
-  background: url(../fonts/icon_edited.svg) no-repeat;
+  background: url(../fonts/icon_edited_1.svg) no-repeat;
   background-size: contain;
   color: #E8594D;
 }
 
 .unknown {
   padding-left: 18px;
-  background: url(../fonts/icon_unknown.svg) no-repeat;
+  background: url(../fonts/icon_unknown_1.svg) no-repeat;
   background-size: contain;
   color: #6189B8;
 }
 
 .correct {
   padding-left: 18px;
-  background: url(../fonts/icon_correct.svg) no-repeat;
+  background: url(../fonts/icon_correct_1.svg) no-repeat;
   background-size: contain;
   color: #70B759;
 }
 
 .tb2 th,
 .tb2 td {
-  background: transparent url(../images/bg_repx.gif) repeat-x scroll 0 bottom;
+  background: transparent url(../images/bg_repx_1.gif) repeat-x scroll 0 bottom;
   padding: 5px 5px 5px 0;
   text-align: left;
 }
@@ -1001,20 +1001,20 @@ div#popMsg {
 
 .temp-list .btn-use {
   margin-right: 5px;
-  background: url(../images/sprit.png) -1px -234px;
+  background: url(../images/sprit_1.png) -1px -234px;
 }
 
 .temp-list .btn-use:hover {
-  background: url(../images/sprit.png) -1px -262px;
+  background: url(../images/sprit_1.png) -1px -262px;
 }
 
 .temp-list .btn-delete {
   margin-left: 5px;
-  background: url(../images/sprit.png) 0 -295px;
+  background: url(../images/sprit_1.png) 0 -295px;
 }
 
 .temp-list .btn-delete:hover {
-  background: url(../images/sprit.png) 0 -323px;
+  background: url(../images/sprit_1.png) 0 -323px;
 }
 
 .btn-upload {
@@ -1040,11 +1040,11 @@ div#popMsg {
   line-height: 45px;
   text-align: center;
   font-size: 18px;
-  background: url(../images/sprit.png) -71px -538px;
+  background: url(../images/sprit_1.png) -71px -538px;
 }
 
 .btn-upload:hover span {
-  background: url(../images/sprit.png) -70px -477px;
+  background: url(../images/sprit_1.png) -70px -477px;
 }
 
 .btn-temp-online {
@@ -1052,11 +1052,11 @@ div#popMsg {
   top: -17px;
   width: 163px;
   height: 60px;
-  background: url(../images/sprit.png) -37px -699px;
+  background: url(../images/sprit_1.png) -37px -699px;
 }
 
 .btn-temp-online:hover {
-  background: url(../images/sprit.png) -36px -618px;
+  background: url(../images/sprit_1.png) -36px -618px;
 }
 
 .btn-search {
@@ -1109,7 +1109,7 @@ div#popMsg {
   top: 10px;
   width: 20px;
   height: 20px;
-  background: url(../images/close.png) no-repeat center;
+  background: url(../images/close_1.png) no-repeat center;
 }
 
 .panel-hint .panel-bd {
@@ -1135,7 +1135,7 @@ div#popMsg {
   height: 58px;
   padding-left: 45px;
   margin-right: 10px;
-  background: url(../images/sprit.png) -1px -777px;
+  background: url(../images/sprit_1.png) -1px -777px;
 }
 
 .panel-upload-temp .bd-up span {
@@ -1159,7 +1159,7 @@ div#popMsg {
   left: -50px;
   width: 45px;
   height: 45px;
-  background: url(../images/sprit.png) 0 -500px;
+  background: url(../images/sprit_1.png) 0 -500px;
 }
 
 .panel-process {
@@ -1176,7 +1176,7 @@ div#popMsg {
   margin-left: 20px;
   width: 15px;
   height: 15px;
-  background: url(../images/sprit.png) no-repeat 0 -438px;
+  background: url(../images/sprit_1.png) no-repeat 0 -438px;
 }
 
 .panel-word {
@@ -1347,7 +1347,7 @@ div#popMsg {
 .form-header .logo {
   width: 160px;
   height: 46px;
-  background: url(../images/ecshop_logo_01.png) no-repeat center;
+  background: url(../images/ecshop_logo_01_1.png) no-repeat center;
 }
 
 /*login page --by evelyn*/
@@ -1383,7 +1383,7 @@ div#popMsg {
   padding-bottom: 42px;
   padding-top: 80px;
   height: 400px;
-  background: url(../images/yunqi_bg_02.png) no-repeat bottom center;
+  background: url(../images/yunqi_bg_02_1.png) no-repeat bottom center;
 }
 
 .z-bd .login-panel {
@@ -1419,7 +1419,7 @@ div#popMsg {
   width: 162px;
   height: 42px;
   margin: 0 auto;
-  background: url(../images/ecshop_logo_03.png) no-repeat center;
+  background: url(../images/ecshop_logo_03_1.png) no-repeat center;
 }
 
 .z-bd .login-panel .ecshop-logo {
@@ -1452,11 +1452,11 @@ div#popMsg {
 }
 
 .z-bd .login-cloud.ecshop .btn-tab {
-  background: url(../images/ecshop-n.png) no-repeat center center;
+  background: url(../images/ecshop-n_1.png) no-repeat center center;
 }
 
 .z-bd .login-cloud.ecshop .btn-tab:hover {
-  background: url(../images/ecshop-h.png) no-repeat center center;
+  background: url(../images/ecshop-h_1.png) no-repeat center center;
 }
 
 .login-panel .panel-hd {
@@ -1624,12 +1624,12 @@ div#popMsg {
   display: block;
   width: 110px;
   height: 110px;
-  background: url(../images/cloud-n.png) no-repeat center center;
+  background: url(../images/cloud-n_1.png) no-repeat center center;
   margin: 50px auto 20px;
 }
 
 .login-cloud .btn-tab:hover {
-  background: url(../images/cloud-h.png) no-repeat center center;
+  background: url(../images/cloud-h_1.png) no-repeat center center;
 }
 
 .login-cloud img {
@@ -1729,7 +1729,7 @@ div#popMsg {
   color: #333;
   line-height: 34px;
   text-align: center;
-  background: url(../images/sprit.png) -59px -1004px;
+  background: url(../images/sprit_1.png) -59px -1004px;
 }
 
 .btn-ERP i {
@@ -1738,7 +1738,7 @@ div#popMsg {
 
 .btn-ERP:hover {
   color: #333;
-  background: url(../images/sprit.png) -59px -1055px;
+  background: url(../images/sprit_1.png) -59px -1055px;
 }
 
 .panel-order-query {
@@ -1841,7 +1841,7 @@ div#popMsg {
   width: 70px;
   height: 24px;
   margin: 0 auto;
-  background: url(../images/icloud-sm.png) no-repeat;
+  background: url(../images/icloud-sm_1.png) no-repeat;
   text-indent: -9999px;
 }
 
