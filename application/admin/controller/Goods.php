@@ -1,12 +1,21 @@
 <?php
 namespace app\admin\controller;
-
-class Goods
+use think\Controller;
+use think\Model;
+class Goods extends Controller
 {
+    public $goods;
+    public function _initialize(){
+        $this->goods = model('Goods');
+    }
+    //商品列表
     public function goods_list()
     {
+        // $res = $this->goods->getShow()
+        // return view('goods_list',['res'=>$res]);
         return view('goods_list');
     }
+
     public function goods_add()
     {
         return view('goods_add');

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"E:\phpStudy\WWW\ECShop Tp5\public/../application/admin\view\goods\goods_list.html";i:1536116820;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"E:\phpStudy\WWW\ECShop Tp5\public/../application/admin\view\goods\goods_list.html";i:1536137583;}*/ ?>
 <!-- $Id: goods_list.htm 17126 2010-04-23 10:30:26Z liuhui $ -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

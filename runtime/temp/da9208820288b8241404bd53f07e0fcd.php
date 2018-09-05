@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"E:\phpStudy\WWW\ECShop Tp5\public/../application/admin\view\index\index_main.html";i:1536128778;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"E:\phpStudy\WWW\ECShop Tp5\public/../application/admin\view\index\index_main.html";i:1536138126;}*/ ?>
 <!-- $Id: start.htm 17216 2011-01-19 06:03:12Z liubo $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -58,7 +58,7 @@
 </ul>
 <script type="Text/Javascript" language="JavaScript">
 <!--
-  Ajax.call('cloud.php?is_ajax=1&act=cloud_remind','', cloud_api, 'GET', 'JSON');
+  // Ajax.call('cloud.php?is_ajax=1&act=cloud_remind','', cloud_api, 'GET', 'JSON');
     function cloud_api(result)
     {
       //alert(result.content);
