@@ -100,133 +100,133 @@ var Transport =
     asyn = asyn === false ? false : true;
 
     /* 处理HTTP请求和响应 */
-    var xhr = this.createXMLHttpRequest();
+    // var xhr = this.createXMLHttpRequest();
 
-    try
-    {
-      var self = this;
+    // try
+    // {
+    //   var self = this;
 
-      if (typeof(self.onRunning) === "function" && !quiet)
-      {
-        self.onRunning();
-      }
+    //   if (typeof(self.onRunning) === "function" && !quiet)
+    //   {
+    //     self.onRunning();
+    //   }
 
-      xhr.open(transferMode, url, asyn);
+    //   xhr.open(transferMode, url, asyn);
 
-      if (transferMode === "POST")
-      {
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-      }
+    //   if (transferMode === "POST")
+    //   {
+    //     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    //   }
 
-      if (asyn)
-      {
-        xhr.onreadystatechange = function ()
-        {
-          if (xhr.readyState == 4)
-          {
-            switch ( xhr.status )
-            {
-              case 0:
-              case 200: // OK!
-                /*
-                 * If the request was to create a new resource
-                 * (such as post an item to the database)
-                 * You could instead return a status code of '201 Created'
-                 */
+    //   if (asyn)
+    //   {
+    //     xhr.onreadystatechange = function ()
+    //     {
+    //       if (xhr.readyState == 4)
+    //       {
+    //         switch ( xhr.status )
+    //         {
+    //           case 0:
+    //           case 200: // OK!
+    //             /*
+    //              * If the request was to create a new resource
+    //              * (such as post an item to the database)
+    //              * You could instead return a status code of '201 Created'
+    //              */
 
-                if (typeof(self.onComplete) === "function")
-                {
-                  self.onComplete();
-                }
+    //             if (typeof(self.onComplete) === "function")
+    //             {
+    //               self.onComplete();
+    //             }
 
-                if (typeof(callback) === "function")
-                {
-                  //这里会报错呢。。真是666  原因是xhr.responseText不是对象格式的字符串,担心有其他功能,这里先搁置
-                  callback.call(self, self.parseResult(responseType, xhr), xhr.responseText);
-                }
-              break;
+    //             if (typeof(callback) === "function")
+    //             {
+    //               //这里会报错呢。。真是666  原因是xhr.responseText不是对象格式的字符串,担心有其他功能,这里先搁置
+    //               callback.call(self, self.parseResult(responseType, xhr), xhr.responseText);
+    //             }
+    //           break;
 
-              case 304: // Not Modified
-                /*
-                 * This would be used when your Ajax widget is
-                 * checking for updated content,
-                 * such as the Twitter interface.
-                 */
-              break;
+    //           case 304: // Not Modified
+    //             /*
+    //              * This would be used when your Ajax widget is
+    //              * checking for updated content,
+    //              * such as the Twitter interface.
+    //              */
+    //           break;
 
-              case 400: // Bad Request
-                /*
-                 * A bit like a safety net for requests by your JS interface
-                 * that aren't supported on the server.
-                 * "Your browser made a request that the server cannot understand"
-                 */
-                 alert("XmlHttpRequest status: [400] Bad Request");
-              break;
+    //           case 400: // Bad Request
+                
+    //              * A bit like a safety net for requests by your JS interface
+    //              * that aren't supported on the server.
+    //              * "Your browser made a request that the server cannot understand"
+                 
+    //              alert("XmlHttpRequest status: [400] Bad Request");
+    //           break;
 
-              case 404: // Not Found
-                alert("XmlHttpRequest status: [404] \nThe requested URL "+url+" was not found on this server.");
-              break;
+    //           case 404: // Not Found
+    //             alert("XmlHttpRequest status: [404] \nThe requested URL "+url+" was not found on this server.");
+    //           break;
 
-              case 409: // Conflict
-                /*
-                 * Perhaps your JavaScript request attempted to
-                 * update a Database record
-                 * but failed due to a conflict
-                 * (eg: a field that must be unique)
-                 */
-              break;
+    //           case 409: // Conflict
+    //             /*
+    //              * Perhaps your JavaScript request attempted to
+    //              * update a Database record
+    //              * but failed due to a conflict
+    //              * (eg: a field that must be unique)
+    //              */
+    //           break;
 
-              case 503: // Service Unavailable
-                /*
-                 * A resource that this request relies upon
-                 * is currently unavailable
-                 * (eg: a file is locked by another process)
-                 */
-                 alert("XmlHttpRequest status: [503] Service Unavailable");
-              break;
+    //           case 503: // Service Unavailable
+    //             /*
+    //              * A resource that this request relies upon
+    //              * is currently unavailable
+    //              * (eg: a file is locked by another process)
+    //              */
+    //              alert("XmlHttpRequest status: [503] Service Unavailable");
+    //           break;
 
-              default:
-                alert("XmlHttpRequest status: [" + xhr.status + "] Unknow status.");
-            }
+    //           default:
+    //             alert("XmlHttpRequest status: [" + xhr.status + "] Unknow status.");
+    //         }
 
-            xhr = null;
-          }
-        }
-        if (xhr != null) xhr.send(params);
-      }
-      else
-      {
-        if (typeof(self.onRunning) === "function")
-        {
-          self.onRunning();
-        }
+    //         xhr = null;
+    //       }
+    //     }
+    //     if (xhr != null) xhr.send(params);
+    //   }
+    //   else
+    //   {
+    //     if (typeof(self.onRunning) === "function")
+    //     {
+    //       self.onRunning();
+    //     }
 
-        xhr.send(params);
+    //     xhr.send(params);
 
-        var result = self.parseResult(responseType, xhr);
-        //xhr = null;
+    //     var result = self.parseResult(responseType, xhr);
+    //     //xhr = null;
 
-        if (typeof(self.onComplete) === "function")
-        {
-          self.onComplete();
-        }
-        if (typeof(callback) === "function")
-        {
-          callback.call(self, result, xhr.responseText);
-        }
+    //     if (typeof(self.onComplete) === "function")
+    //     {
+    //       self.onComplete();
+    //     }
+    //     if (typeof(callback) === "function")
+    //     {
+    //       callback.call(self, result, xhr.responseText);
+    //     }
 
-        return result;
-      }
-    }
-    catch (ex)
-    {
-      if (typeof(self.onComplete) === "function")
-      {
-        self.onComplete();
-      }
+    //     return result;
+    //   }
+    // }
+    // catch (ex)
+    // {
+    //   if (typeof(self.onComplete) === "function")
+    //   {
+    //     self.onComplete();
+    //   }
 
-      alert(this.filename + "/run() error:" + ex.description);
-    }
+    //   alert(this.filename + "/run() error:" + ex.description);
+    // }
   },
 
   /* *
@@ -445,7 +445,7 @@ var Transport =
 
 /* 定义两个别名 */
 var Ajax = Transport;
-Ajax.call = Transport.run;
+// Ajax.call = Transport.run;
 
 /*
     json.js
