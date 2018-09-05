@@ -170,9 +170,9 @@ var helpLang = "zh_cn";
 </div>
 <script type="text/javascript" src="/static/js/global.js"></script><script type="text/javascript" src="/static/js/utils.js"></script><script type="text/javascript" src="static/js/transport.js"></script><script type="text/javascript" src="/static/js/menu.js"></script><script language="JavaScript">
 window.setInterval(crontab,30000);
-function crontab(){
-  Ajax.call('cloud.php?is_ajax=1&act=load_crontab','','', 'GET', 'JSON');
-}
+// function crontab(){
+//   Ajax.call('cloud.php?is_ajax=1&act=load_crontab','','', 'GET', 'JSON');
+// }
 function showBar(item){
   var silb = item.lastElementChild;
   silb.style.display = "block";
