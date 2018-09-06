@@ -35544,3 +35544,1936 @@
 [ info ] [ VIEW ] E:\phpStudy\WWW\ECShop\public/../application/admin\view\index\index_main.html [ array (
 ) ]
 [ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:04:19+08:00 ] 127.0.0.1 GET /
+[ info ] www.ecshop4.0.com/ [运行时间：0.088507s][吞吐率：11.30req/s] [内存消耗：1,109.15kb] [文件加载：37]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ E:\ECShop\application\index\controller\Index.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:04:37+08:00 ] 127.0.0.1 GET /admin
+[ info ] www.ecshop4.0.com/admin [运行时间：0.060795s][吞吐率：16.45req/s] [内存消耗：1,114.81kb] [文件加载：37]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\ECShop\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:04:37+08:00 ] 127.0.0.1 GET /admin/Index/index_menu
+[ info ] www.ecshop4.0.com/admin/Index/index_menu [运行时间：0.062381s][吞吐率：16.03req/s] [内存消耗：1,164.93kb] [文件加载：37]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Index',
+    2 => 'index_menu',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index_menu[ E:\ECShop\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\index\index_menu.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:04:38+08:00 ] 127.0.0.1 GET /admin/Index/index_top
+[ info ] www.ecshop4.0.com/admin/Index/index_top [运行时间：0.061827s][吞吐率：16.17req/s] [内存消耗：1,124.46kb] [文件加载：37]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Index',
+    2 => 'index_top',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index_top[ E:\ECShop\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\index\index_top.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:04:40+08:00 ] 127.0.0.1 GET /admin/goods/goods_list
+[ info ] www.ecshop4.0.com/admin/goods/goods_list [运行时间：0.112217s][吞吐率：8.91req/s] [内存消耗：2,021.68kb] [文件加载：52]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'goods_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->goods_list[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004879s ] mysql:host=127.0.0.1;dbname=ecshop;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ecshop.goods' doesn't exist[E:\ECShop\thinkphp\library\think\db\Connection.php:390]
+---------------------------------------------------------------
+[ 2018-09-06T17:04:40+08:00 ] 127.0.0.1 GET /admin/Index/index_main
+[ info ] www.ecshop4.0.com/admin/Index/index_main [运行时间：0.087217s][吞吐率：11.47req/s] [内存消耗：1,163.20kb] [文件加载：37]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Index',
+    2 => 'index_main',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index_main[ E:\ECShop\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\index\index_main.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:04:41+08:00 ] 127.0.0.1 GET /admin/goods/goods_list
+[ info ] www.ecshop4.0.com/admin/goods/goods_list [运行时间：0.178986s][吞吐率：5.59req/s] [内存消耗：2,021.65kb] [文件加载：52]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'goods_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/Index/index_menu',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->goods_list[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003936s ] mysql:host=127.0.0.1;dbname=ecshop;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ecshop.goods' doesn't exist[E:\ECShop\thinkphp\library\think\db\Connection.php:390]
+---------------------------------------------------------------
+[ 2018-09-06T17:04:42+08:00 ] 127.0.0.1 GET /admin/goods/goods_list
+[ info ] www.ecshop4.0.com/admin/goods/goods_list [运行时间：0.089388s][吞吐率：11.19req/s] [内存消耗：2,021.68kb] [文件加载：52]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'goods_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->goods_list[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001134s ] mysql:host=127.0.0.1;dbname=ecshop;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ecshop.goods' doesn't exist[E:\ECShop\thinkphp\library\think\db\Connection.php:390]
+---------------------------------------------------------------
+[ 2018-09-06T17:04:43+08:00 ] 127.0.0.1 GET /admin/goods/goods_list
+[ info ] www.ecshop4.0.com/admin/goods/goods_list [运行时间：0.096137s][吞吐率：10.40req/s] [内存消耗：2,021.68kb] [文件加载：52]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'goods_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->goods_list[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001137s ] mysql:host=127.0.0.1;dbname=ecshop;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ecshop.goods' doesn't exist[E:\ECShop\thinkphp\library\think\db\Connection.php:390]
+---------------------------------------------------------------
+[ 2018-09-06T17:04:43+08:00 ] 127.0.0.1 GET /admin/goods/goods_list
+[ info ] www.ecshop4.0.com/admin/goods/goods_list [运行时间：0.094815s][吞吐率：10.55req/s] [内存消耗：2,021.68kb] [文件加载：52]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'goods_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->goods_list[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001188s ] mysql:host=127.0.0.1;dbname=ecshop;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ecshop.goods' doesn't exist[E:\ECShop\thinkphp\library\think\db\Connection.php:390]
+---------------------------------------------------------------
+[ 2018-09-06T17:04:43+08:00 ] 127.0.0.1 GET /admin/goods/goods_list
+[ info ] www.ecshop4.0.com/admin/goods/goods_list [运行时间：0.091308s][吞吐率：10.95req/s] [内存消耗：2,021.68kb] [文件加载：52]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'goods_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->goods_list[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001057s ] mysql:host=127.0.0.1;dbname=ecshop;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ecshop.goods' doesn't exist[E:\ECShop\thinkphp\library\think\db\Connection.php:390]
+---------------------------------------------------------------
+[ 2018-09-06T17:04:43+08:00 ] 127.0.0.1 GET /admin/goods/goods_list
+[ info ] www.ecshop4.0.com/admin/goods/goods_list [运行时间：0.095803s][吞吐率：10.44req/s] [内存消耗：2,021.68kb] [文件加载：52]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'goods_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->goods_list[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001302s ] mysql:host=127.0.0.1;dbname=ecshop;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ecshop.goods' doesn't exist[E:\ECShop\thinkphp\library\think\db\Connection.php:390]
+---------------------------------------------------------------
+[ 2018-09-06T17:04:44+08:00 ] 127.0.0.1 GET /admin/goods/goods_list
+[ info ] www.ecshop4.0.com/admin/goods/goods_list [运行时间：0.099073s][吞吐率：10.09req/s] [内存消耗：2,021.68kb] [文件加载：52]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'goods_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->goods_list[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001083s ] mysql:host=127.0.0.1;dbname=ecshop;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ecshop.goods' doesn't exist[E:\ECShop\thinkphp\library\think\db\Connection.php:390]
+---------------------------------------------------------------
+[ 2018-09-06T17:06:55+08:00 ] 127.0.0.1 GET /admin/Login/login.html
+[ info ] www.ecshop4.0.com/admin/Login/login.html [运行时间：0.087939s][吞吐率：11.37req/s] [内存消耗：1,212.06kb] [文件加载：40]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ E:\ECShop\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\login\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:06:57+08:00 ] 127.0.0.1 GET /admin/Login/login.html
+[ info ] www.ecshop4.0.com/admin/Login/login.html [运行时间：0.046996s][吞吐率：21.28req/s] [内存消耗：1,091.41kb] [文件加载：38]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ E:\ECShop\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\login\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:07:10+08:00 ] 127.0.0.1 POST /admin/login/login_do.html
+[ info ] www.ecshop4.0.com/admin/login/login_do.html [运行时间：0.134240s][吞吐率：7.45req/s] [内存消耗：1,832.27kb] [文件加载：48]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login_do',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/Login/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'upgrade-insecure-requests' => '1',
+  'origin' => 'http://www.ecshop4.0.com',
+  'cache-control' => 'max-age=0',
+  'content-length' => '34',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'User_name' => 'zhangxin',
+  'User_pwd' => '123456',
+)
+[ info ] [ RUN ] app\admin\controller\Login->login_do[ E:\ECShop\application\admin\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\ECShop\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001208s ] mysql:host=127.0.0.1;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.054890s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  (  User_name='zhangxin' and User_pwd='123456' ) LIMIT 1 [ RunTime:0.000605s ]
+---------------------------------------------------------------
+[ 2018-09-06T17:07:13+08:00 ] 127.0.0.1 GET /admin/admin/goods.html
+[ info ] www.ecshop4.0.com/admin/admin/goods.html [运行时间：0.042144s][吞吐率：23.73req/s] [内存消耗：837.33kb] [文件加载：32]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin',
+    2 => 'goods',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/login/login_do.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:07:52+08:00 ] 127.0.0.1 GET /admin/admin/goods.html
+[ info ] www.ecshop4.0.com/admin/admin/goods.html [运行时间：0.040362s][吞吐率：24.78req/s] [内存消耗：837.33kb] [文件加载：32]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin',
+    2 => 'goods',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/login/login_do.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:07:55+08:00 ] 127.0.0.1 GET /admin/Login/login.html
+[ info ] www.ecshop4.0.com/admin/Login/login.html [运行时间：0.059558s][吞吐率：16.79req/s] [内存消耗：1,091.41kb] [文件加载：38]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ E:\ECShop\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\login\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:08:02+08:00 ] 127.0.0.1 POST /admin/login/login_do.html
+[ info ] www.ecshop4.0.com/admin/login/login_do.html [运行时间：0.100669s][吞吐率：9.93req/s] [内存消耗：1,716.59kb] [文件加载：46]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login_do',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/Login/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'upgrade-insecure-requests' => '1',
+  'origin' => 'http://www.ecshop4.0.com',
+  'cache-control' => 'max-age=0',
+  'content-length' => '34',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'User_name' => 'zhangxin',
+  'User_pwd' => '123456',
+)
+[ info ] [ RUN ] app\admin\controller\Login->login_do[ E:\ECShop\application\admin\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\ECShop\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001185s ] mysql:host=127.0.0.1;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.036166s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  (  User_name='zhangxin' and User_pwd='123456' ) LIMIT 1 [ RunTime:0.000483s ]
+---------------------------------------------------------------
+[ 2018-09-06T17:08:05+08:00 ] 127.0.0.1 GET /admin/admin/goods.html
+[ info ] www.ecshop4.0.com/admin/admin/goods.html [运行时间：0.045287s][吞吐率：22.08req/s] [内存消耗：837.33kb] [文件加载：32]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin',
+    2 => 'goods',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/login/login_do.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:08:27+08:00 ] 127.0.0.1 GET /admin
+[ info ] www.ecshop4.0.com/admin [运行时间：0.068648s][吞吐率：14.57req/s] [内存消耗：1,001.27kb] [文件加载：35]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\ECShop\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:08:27+08:00 ] 127.0.0.1 GET /admin/Index/index_top
+[ info ] www.ecshop4.0.com/admin/Index/index_top [运行时间：0.048532s][吞吐率：20.60req/s] [内存消耗：1,001.84kb] [文件加载：35]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Index',
+    2 => 'index_top',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index_top[ E:\ECShop\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\index\index_top.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:08:27+08:00 ] 127.0.0.1 GET /admin/Index/index_menu
+[ info ] www.ecshop4.0.com/admin/Index/index_menu [运行时间：0.057845s][吞吐率：17.29req/s] [内存消耗：1,017.90kb] [文件加载：35]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Index',
+    2 => 'index_menu',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index_menu[ E:\ECShop\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\index\index_menu.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:08:28+08:00 ] 127.0.0.1 GET /admin/Index/index_main
+[ info ] www.ecshop4.0.com/admin/Index/index_main [运行时间：0.035063s][吞吐率：28.52req/s] [内存消耗：1,017.89kb] [文件加载：35]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Index',
+    2 => 'index_main',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index_main[ E:\ECShop\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\index\index_main.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:08:52+08:00 ] 127.0.0.1 GET /admin
+[ info ] www.ecshop4.0.com/admin [运行时间：0.049648s][吞吐率：20.14req/s] [内存消耗：1,001.62kb] [文件加载：35]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\ECShop\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:08:52+08:00 ] 127.0.0.1 GET /admin/Index/index_menu
+[ info ] www.ecshop4.0.com/admin/Index/index_menu [运行时间：0.052656s][吞吐率：18.99req/s] [内存消耗：1,018.48kb] [文件加载：35]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Index',
+    2 => 'index_menu',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'ECS_LastCheckOrder=Thu%2C%2006%20Sep%202018%2009%3A08%3A29%20GMT',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index_menu[ E:\ECShop\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\index\index_menu.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:08:52+08:00 ] 127.0.0.1 GET /admin/Index/index_top
+[ info ] www.ecshop4.0.com/admin/Index/index_top [运行时间：0.060865s][吞吐率：16.43req/s] [内存消耗：1,002.40kb] [文件加载：35]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Index',
+    2 => 'index_top',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'ECS_LastCheckOrder=Thu%2C%2006%20Sep%202018%2009%3A08%3A29%20GMT',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index_top[ E:\ECShop\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\index\index_top.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:08:53+08:00 ] 127.0.0.1 GET /admin/Index/index_main
+[ info ] www.ecshop4.0.com/admin/Index/index_main [运行时间：0.043952s][吞吐率：22.75req/s] [内存消耗：1,018.47kb] [文件加载：35]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Index',
+    2 => 'index_main',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'ECS_LastCheckOrder=Thu%2C%2006%20Sep%202018%2009%3A08%3A29%20GMT',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index_main[ E:\ECShop\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\index\index_main.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:08:54+08:00 ] 127.0.0.1 GET /admin/admin/goods.html
+[ info ] www.ecshop4.0.com/admin/admin/goods.html [运行时间：0.034013s][吞吐率：29.40req/s] [内存消耗：837.60kb] [文件加载：32]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin',
+    2 => 'goods',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:08:57+08:00 ] 127.0.0.1 GET /admin/Login/login.html
+[ info ] www.ecshop4.0.com/admin/Login/login.html [运行时间：0.072482s][吞吐率：13.80req/s] [内存消耗：1,091.41kb] [文件加载：38]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ E:\ECShop\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\login\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:09:01+08:00 ] 127.0.0.1 POST /admin/login/login_do.html
+[ info ] www.ecshop4.0.com/admin/login/login_do.html [运行时间：0.127315s][吞吐率：7.85req/s] [内存消耗：1,716.59kb] [文件加载：46]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login_do',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/Login/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'upgrade-insecure-requests' => '1',
+  'origin' => 'http://www.ecshop4.0.com',
+  'cache-control' => 'max-age=0',
+  'content-length' => '34',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'User_name' => 'zhangxin',
+  'User_pwd' => '123456',
+)
+[ info ] [ RUN ] app\admin\controller\Login->login_do[ E:\ECShop\application\admin\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\ECShop\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001442s ] mysql:host=127.0.0.1;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.060466s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  (  User_name='zhangxin' and User_pwd='123456' ) LIMIT 1 [ RunTime:0.000689s ]
+---------------------------------------------------------------
+[ 2018-09-06T17:09:04+08:00 ] 127.0.0.1 GET /admin/admin/goods.html
+[ info ] www.ecshop4.0.com/admin/admin/goods.html [运行时间：0.057245s][吞吐率：17.47req/s] [内存消耗：837.33kb] [文件加载：32]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin',
+    2 => 'goods',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/login/login_do.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:09:29+08:00 ] 127.0.0.1 GET /admin/Login/login.html
+[ info ] www.ecshop4.0.com/admin/Login/login.html [运行时间：0.065414s][吞吐率：15.29req/s] [内存消耗：1,091.41kb] [文件加载：38]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ E:\ECShop\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\login\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:09:37+08:00 ] 127.0.0.1 POST /admin/login/login_do.html
+[ info ] www.ecshop4.0.com/admin/login/login_do.html [运行时间：0.142013s][吞吐率：7.04req/s] [内存消耗：1,716.59kb] [文件加载：46]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login_do',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/Login/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'upgrade-insecure-requests' => '1',
+  'origin' => 'http://www.ecshop4.0.com',
+  'cache-control' => 'max-age=0',
+  'content-length' => '34',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'User_name' => 'zhangxin',
+  'User_pwd' => '123456',
+)
+[ info ] [ RUN ] app\admin\controller\Login->login_do[ E:\ECShop\application\admin\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\ECShop\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001474s ] mysql:host=127.0.0.1;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.048459s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  (  User_name='zhangxin' and User_pwd='123456' ) LIMIT 1 [ RunTime:0.000816s ]
+---------------------------------------------------------------
+[ 2018-09-06T17:09:40+08:00 ] 127.0.0.1 GET /admin/admin/goods.html
+[ info ] www.ecshop4.0.com/admin/admin/goods.html [运行时间：0.054548s][吞吐率：18.33req/s] [内存消耗：837.33kb] [文件加载：32]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin',
+    2 => 'goods',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/login/login_do.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:10:25+08:00 ] 127.0.0.1 GET /admin/Login/login.html
+[ info ] www.ecshop4.0.com/admin/Login/login.html [运行时间：0.058134s][吞吐率：17.20req/s] [内存消耗：1,091.41kb] [文件加载：38]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ E:\ECShop\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\login\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:10:35+08:00 ] 127.0.0.1 POST /admin/login/login_do.html
+[ info ] www.ecshop4.0.com/admin/login/login_do.html [运行时间：0.104865s][吞吐率：9.54req/s] [内存消耗：1,668.59kb] [文件加载：45]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login_do',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/Login/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'upgrade-insecure-requests' => '1',
+  'origin' => 'http://www.ecshop4.0.com',
+  'cache-control' => 'max-age=0',
+  'content-length' => '26',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'User_name' => '111',
+  'User_pwd' => '111',
+)
+[ info ] [ RUN ] app\admin\controller\Login->login_do[ E:\ECShop\application\admin\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\ECShop\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001257s ] mysql:host=127.0.0.1;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.035175s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  (  User_name='111' and User_pwd='111' ) LIMIT 1 [ RunTime:0.000653s ]
+---------------------------------------------------------------
+[ 2018-09-06T17:10:45+08:00 ] 127.0.0.1 POST /admin/login/login_do.html
+[ info ] www.ecshop4.0.com/admin/login/login_do.html [运行时间：0.123595s][吞吐率：8.09req/s] [内存消耗：1,716.59kb] [文件加载：46]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login_do',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/Login/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'upgrade-insecure-requests' => '1',
+  'origin' => 'http://www.ecshop4.0.com',
+  'cache-control' => 'max-age=0',
+  'content-length' => '34',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'User_name' => 'zhangxin',
+  'User_pwd' => '123456',
+)
+[ info ] [ RUN ] app\admin\controller\Login->login_do[ E:\ECShop\application\admin\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\ECShop\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001473s ] mysql:host=127.0.0.1;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.039202s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  (  User_name='zhangxin' and User_pwd='123456' ) LIMIT 1 [ RunTime:0.000730s ]
+---------------------------------------------------------------
+[ 2018-09-06T17:10:48+08:00 ] 127.0.0.1 GET /admin/admin/goods.html
+[ info ] www.ecshop4.0.com/admin/admin/goods.html [运行时间：0.052826s][吞吐率：18.93req/s] [内存消耗：837.33kb] [文件加载：32]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin',
+    2 => 'goods',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/login/login_do.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:12:28+08:00 ] 127.0.0.1 GET /admin/Login/login.html
+[ info ] www.ecshop4.0.com/admin/Login/login.html [运行时间：0.052668s][吞吐率：18.99req/s] [内存消耗：1,091.39kb] [文件加载：38]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ E:\ECShop\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\login\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:12:41+08:00 ] 127.0.0.1 POST /admin/login/login_do.html
+[ info ] www.ecshop4.0.com/admin/login/login_do.html [运行时间：0.120934s][吞吐率：8.27req/s] [内存消耗：1,716.59kb] [文件加载：46]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login_do',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/Login/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'upgrade-insecure-requests' => '1',
+  'origin' => 'http://www.ecshop4.0.com',
+  'cache-control' => 'max-age=0',
+  'content-length' => '34',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'User_name' => 'zhangxin',
+  'User_pwd' => '123456',
+)
+[ info ] [ RUN ] app\admin\controller\Login->login_do[ E:\ECShop\application\admin\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\ECShop\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004018s ] mysql:host=127.0.0.1;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.042260s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  (  User_name='zhangxin' and User_pwd='123456' ) LIMIT 1 [ RunTime:0.000656s ]
+---------------------------------------------------------------
+[ 2018-09-06T17:12:44+08:00 ] 127.0.0.1 GET /admin/index/index.html
+[ info ] www.ecshop4.0.com/admin/index/index.html [运行时间：0.053931s][吞吐率：18.54req/s] [内存消耗：1,001.82kb] [文件加载：35]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/login/login_do.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\ECShop\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:12:44+08:00 ] 127.0.0.1 GET /admin/Index/index_menu
+[ info ] www.ecshop4.0.com/admin/Index/index_menu [运行时间：0.043855s][吞吐率：22.80req/s] [内存消耗：1,018.52kb] [文件加载：35]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Index',
+    2 => 'index_menu',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'ECS_LastCheckOrder=Thu%2C%2006%20Sep%202018%2009%3A08%3A29%20GMT',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index_menu[ E:\ECShop\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\index\index_menu.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:12:45+08:00 ] 127.0.0.1 GET /admin/Index/index_top
+[ info ] www.ecshop4.0.com/admin/Index/index_top [运行时间：0.063487s][吞吐率：15.75req/s] [内存消耗：1,002.52kb] [文件加载：35]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Index',
+    2 => 'index_top',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'ECS_LastCheckOrder=Thu%2C%2006%20Sep%202018%2009%3A08%3A29%20GMT',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index_top[ E:\ECShop\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\index\index_top.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:12:48+08:00 ] 127.0.0.1 GET /admin/Index/index_main
+[ info ] www.ecshop4.0.com/admin/Index/index_main [运行时间：0.046300s][吞吐率：21.60req/s] [内存消耗：1,018.59kb] [文件加载：35]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Index',
+    2 => 'index_main',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'ECS_LastCheckOrder=Thu%2C%2006%20Sep%202018%2009%3A08%3A29%20GMT',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index_main[ E:\ECShop\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\index\index_main.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:13:11+08:00 ] 127.0.0.1 GET /admin/goods/goods_list
+[ info ] www.ecshop4.0.com/admin/goods/goods_list [运行时间：0.169484s][吞吐率：5.90req/s] [内存消耗：2,021.65kb] [文件加载：52]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'goods_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->goods_list[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007592s ] mysql:host=127.0.0.1;dbname=ecshop;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ecshop.goods' doesn't exist[E:\ECShop\thinkphp\library\think\db\Connection.php:390]
+---------------------------------------------------------------
+[ 2018-09-06T17:13:12+08:00 ] 127.0.0.1 GET /admin/goods/goods_add
+[ info ] www.ecshop4.0.com/admin/goods/goods_add [运行时间：0.069526s][吞吐率：14.38req/s] [内存消耗：2,158.89kb] [文件加载：47]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'goods_add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/Index/index_menu',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->goods_add[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\goods\goods_add.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:13:13+08:00 ] 127.0.0.1 GET /includes/fckeditor/editor/fckeditor.html?InstanceName=goods_desc&Toolbar=Normal
+[ info ] www.ecshop4.0.com/includes/fckeditor/editor/fckeditor.html?InstanceName=goods_desc&Toolbar=Normal [运行时间：0.047068s][吞吐率：21.25req/s] [内存消耗：836.26kb] [文件加载：31]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'includes',
+    1 => 'fckeditor',
+    2 => 'editor',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/goods/goods_add',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'InstanceName' => 'goods_desc',
+  'Toolbar' => 'Normal',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:13:13+08:00 ] 127.0.0.1 GET /admin/goods/goods_list
+[ info ] www.ecshop4.0.com/admin/goods/goods_list [运行时间：0.078966s][吞吐率：12.66req/s] [内存消耗：2,022.09kb] [文件加载：52]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'goods_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'ECS_LastCheckOrder=Thu%2C%2006%20Sep%202018%2009%3A13%3A13%20GMT',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/Index/index_menu',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->goods_list[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001283s ] mysql:host=127.0.0.1;dbname=ecshop;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ecshop.goods' doesn't exist[E:\ECShop\thinkphp\library\think\db\Connection.php:390]
+---------------------------------------------------------------
+[ 2018-09-06T17:13:14+08:00 ] 127.0.0.1 GET /admin/goods/goods_add
+[ info ] www.ecshop4.0.com/admin/goods/goods_add [运行时间：0.082391s][吞吐率：12.14req/s] [内存消耗：1,930.84kb] [文件加载：45]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'goods_add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'ECS_LastCheckOrder=Thu%2C%2006%20Sep%202018%2009%3A13%3A13%20GMT',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/Index/index_menu',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->goods_add[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\goods\goods_add.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:13:14+08:00 ] 127.0.0.1 GET /includes/fckeditor/editor/fckeditor.html?InstanceName=goods_desc&Toolbar=Normal
+[ info ] www.ecshop4.0.com/includes/fckeditor/editor/fckeditor.html?InstanceName=goods_desc&Toolbar=Normal [运行时间：0.048427s][吞吐率：20.65req/s] [内存消耗：836.27kb] [文件加载：31]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'includes',
+    1 => 'fckeditor',
+    2 => 'editor',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/goods/goods_add',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'InstanceName' => 'goods_desc',
+  'Toolbar' => 'Normal',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:13:15+08:00 ] 127.0.0.1 GET /admin/goods/category_list
+[ info ] www.ecshop4.0.com/admin/goods/category_list [运行时间：0.060131s][吞吐率：16.63req/s] [内存消耗：2,071.54kb] [文件加载：47]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'category_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'ECS_LastCheckOrder=Thu%2C%2006%20Sep%202018%2009%3A13%3A13%20GMT',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/Index/index_menu',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->category_list[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\goods\category_list.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:13:16+08:00 ] 127.0.0.1 GET /admin/goods/goods_list
+[ info ] www.ecshop4.0.com/admin/goods/goods_list [运行时间：0.132499s][吞吐率：7.55req/s] [内存消耗：2,022.09kb] [文件加载：52]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'goods_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'ECS_LastCheckOrder=Thu%2C%2006%20Sep%202018%2009%3A13%3A13%20GMT',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/Index/index_menu',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->goods_list[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001125s ] mysql:host=127.0.0.1;dbname=ecshop;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ecshop.goods' doesn't exist[E:\ECShop\thinkphp\library\think\db\Connection.php:390]
+---------------------------------------------------------------
+[ 2018-09-06T17:13:28+08:00 ] 127.0.0.1 GET /admin/goods/goods_add
+[ info ] www.ecshop4.0.com/admin/goods/goods_add [运行时间：0.082316s][吞吐率：12.15req/s] [内存消耗：1,930.84kb] [文件加载：45]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'goods_add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'ECS_LastCheckOrder=Thu%2C%2006%20Sep%202018%2009%3A13%3A13%20GMT',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/Index/index_menu',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->goods_add[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\goods\goods_add.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:13:28+08:00 ] 127.0.0.1 GET /includes/fckeditor/editor/fckeditor.html?InstanceName=goods_desc&Toolbar=Normal
+[ info ] www.ecshop4.0.com/includes/fckeditor/editor/fckeditor.html?InstanceName=goods_desc&Toolbar=Normal [运行时间：0.045648s][吞吐率：21.91req/s] [内存消耗：836.27kb] [文件加载：31]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'includes',
+    1 => 'fckeditor',
+    2 => 'editor',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/goods/goods_add',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'InstanceName' => 'goods_desc',
+  'Toolbar' => 'Normal',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:13:29+08:00 ] 127.0.0.1 GET /admin/goods/category_list
+[ info ] www.ecshop4.0.com/admin/goods/category_list [运行时间：0.053274s][吞吐率：18.77req/s] [内存消耗：1,902.87kb] [文件加载：45]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'category_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'ECS_LastCheckOrder=Thu%2C%2006%20Sep%202018%2009%3A13%3A13%20GMT',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/Index/index_menu',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->category_list[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\goods\category_list.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:13:29+08:00 ] 127.0.0.1 GET /admin/goods/comment_manage_list
+[ info ] www.ecshop4.0.com/admin/goods/comment_manage_list [运行时间：0.061841s][吞吐率：16.17req/s] [内存消耗：2,027.78kb] [文件加载：47]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'comment_manage_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'ECS_LastCheckOrder=Thu%2C%2006%20Sep%202018%2009%3A13%3A13%20GMT',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/Index/index_menu',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->comment_manage_list[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\goods\comment_manage_list.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:13:30+08:00 ] 127.0.0.1 GET /admin/Promotion/type
+[ info ] www.ecshop4.0.com/admin/Promotion/type [运行时间：0.041623s][吞吐率：24.03req/s] [内存消耗：1,136.35kb] [文件加载：37]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Promotion',
+    2 => 'type',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Promotion->type[ E:\ECShop\application\admin\controller\Promotion.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\promotion\type.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:13:30+08:00 ] 127.0.0.1 GET /static/js/listtable_2.js
+[ info ] www.ecshop4.0.com/static/js/listtable_2.js [运行时间：0.030879s][吞吐率：32.38req/s] [内存消耗：834.95kb] [文件加载：31]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'listtable_2.js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/Promotion/type',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:13:31+08:00 ] 127.0.0.1 GET /admin/goods/goods_list
+[ info ] www.ecshop4.0.com/admin/goods/goods_list [运行时间：0.076874s][吞吐率：13.01req/s] [内存消耗：2,022.09kb] [文件加载：52]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'goods_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'ECS_LastCheckOrder=Thu%2C%2006%20Sep%202018%2009%3A13%3A13%20GMT',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->goods_list[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001188s ] mysql:host=127.0.0.1;dbname=ecshop;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ecshop.goods' doesn't exist[E:\ECShop\thinkphp\library\think\db\Connection.php:390]
+---------------------------------------------------------------
+[ 2018-09-06T17:13:52+08:00 ] 127.0.0.1 GET /admin/goods/goods_type_manage
+[ info ] www.ecshop4.0.com/admin/goods/goods_type_manage [运行时间：0.056459s][吞吐率：17.71req/s] [内存消耗：2,048.16kb] [文件加载：47]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'goods_type_manage',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'ECS_LastCheckOrder=Thu%2C%2006%20Sep%202018%2009%3A13%3A13%20GMT',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/Index/index_menu',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->goods_type_manage[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\goods\goods_type_manage.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-06T17:14:56+08:00 ] 127.0.0.1 GET /goods_type.php?act=add
+[ info ] www.ecshop4.0.com/goods_type.php?act=add [运行时间：0.059315s][吞吐率：16.86req/s] [内存消耗：835.40kb] [文件加载：31]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'goods_type.php',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'act' => 'add',
+)
+[ info ] [ LOG ] INIT File
