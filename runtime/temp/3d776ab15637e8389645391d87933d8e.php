@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:86:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\comment_manage_list.html";i:1536192909;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:86:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\comment_manage_list.html";i:1536226505;}*/ ?>
 <!-- $Id: comment_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
