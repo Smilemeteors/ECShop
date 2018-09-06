@@ -1,16 +1,14 @@
-﻿privi<!-- $Id: privilege_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"D:\phpstudy\WWW\shixun\ECShop\public/../application/admin\view\quanxi\agency.html";i:1536221427;}*/ ?>
+﻿<!-- $Id: agency_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ECSHOP 管理中心 - 管理员列表 </title>
+<title>ECSHOP 管理中心 - 办事处列表 </title>
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="/static/css/general_2.css" rel="stylesheet" type="text/css" />
 <link href="/static/css/main_2.css" rel="stylesheet" type="text/css" />
-
-
-
 
 </head>
 <body>
@@ -40,53 +38,55 @@
 <div class="mask-black" id="CMask"></div>
 <!--遮罩-->
 <h1>
-      <a class="btn btn-right" href="privilege_add.html">添加管理员</a>
+      <a class="btn btn-right" href="agency_add.html">添加办事处</a>
   
-    <span class="action-span1"><a href="../Index/index_main.html">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;管理员列表 </span>
+    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;办事处列表 </span>
   <div style="clear:both"></div>
 </h1>
+<form method="post" action="" name="listForm" onsubmit="return confirm(batch_drop_confirm);">
 <div class="list-div" id="listDiv">
 
-<table cellspacing='1' cellpadding='3' id='list-table'>
-  <tr>
-    <th>用户名</th>
-    <th>Email地址</th>
-    <th>加入时间</th>
-    <!-- <th>最后登录时间</th> -->
-    <th>操作</th>
-  </tr>
-  <?php foreach ($list as $key => $v) { ?>
+  <table cellpadding="3" cellspacing="1">
     <tr>
-      <td class="first-cell" ><?=$v['admin_name'];?></td>
-      <td align="left"><?=$v['admin_email'];?></td>
-      <td align="center"><?=$v['date_time'];?></td>
-      <!-- <td align="center">2018-08-31 14:29:20</td> -->
-      <td align="center">
-        <a href="privilege.php?act=allot&id=2&user=<?=$v['admin_email'];?>" title="分派权限">分派权限</a>&nbsp;
-        <a href="admin_logs.php?act=list&id=2" title="查看日志">查看日志</a>&nbsp;
-        <a href="privilege.php?act=edit&id=2" title="编辑">编辑</a>&nbsp;
-        <a href="javascript:;" onclick="listTable.remove(2, '您确认要删除这条记录吗?')" title="移除">移除</a></td>
+      <th> <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox" />
+          <a href="javascript:listTable.sort('agency_id'); ">编号</a><img src="/static/picture/sort_desc_1.png"/> </th>
+      <th><a href="javascript:listTable.sort('agency_name'); ">办事处名称</a></th>
+      <th>办事处描述</th>
+      <th>操作</th>
     </tr>
-  <?php } ?>
-    
-    
-    <!-- <tr>
-    <td class="first-cell" >admin</td>
-    <td align="left"></td>
-    <td align="center">2018-08-30 19:05:43</td>
-    <td align="center">2018-09-05 10:02:50</td>
-    <td align="center">
-      <a href="privilege.php?act=allot&id=1&user=admin" title="分派权限">分派权限</a>&nbsp;
-      <a href="admin_logs.php?act=list&id=1" title="查看日志">查看日志</a>&nbsp;
-      <a href="privilege.php?act=edit&id=1" title="编辑">编辑</a>&nbsp;
-      <a href="javascript:;" onclick="listTable.remove(1, '您确认要删除这条记录吗?')" title="移除">移除</a></td>
-  </tr> -->
-  </table>
+        <tr><td class="no-records" colspan="4">没有找到任何记录</td></tr>
+      </table>
+<table id="page-table" cellspacing="0">
+  <tr>
+    <td>
+      <input name="remove" type="submit" id="btnSubmit" value="删除" class="button" disabled="true" />
+      <input name="act" type="hidden" value="batch" />
+    </td>
+    <td align="right" nowrap="true">
+    <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<div id="turn-page">
+  <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
+  页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
+  条记录，总共 <span id="totalRecords">0</span>
+  条记录
+  <span id="page-link">
+    <a href="javascript:listTable.gotoPageFirst()">第一页</a>
+    <a href="javascript:listTable.gotoPagePrev()">上一页</a>
+    <a href="javascript:listTable.gotoPageNext()">下一页</a>
+    <a href="javascript:listTable.gotoPageLast()">最末页</a>
+    <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
+      <option value='1'>1</option>    </select>
+  </span>
+</div>
+    </td>
+  </tr>
+</table>
 
 </div>
+</form>
 
 <div id="footer">
-共执行 3 个查询，用时 0.012679 秒，Gzip 已禁用，内存占用 1.157 MB<br />
+共执行 4 个查询，用时 0.012935 秒，Gzip 已禁用，内存占用 1.081 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
 <!-- 新订单提示信息 -->
 <div id="popMsg">
