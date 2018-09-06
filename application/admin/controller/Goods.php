@@ -2,6 +2,7 @@
 namespace app\admin\controller;
 use think\Controller;
 use think\Model;
+use think\Paginator;
 class Goods extends Controller
 {
     public $goods;
@@ -11,9 +12,8 @@ class Goods extends Controller
     //商品列表
     public function goods_list()
     {
-        // $res = $this->goods->getShow()
-        // return view('goods_list',['res'=>$res]);
-        return view('goods_list');
+        $res = $this->goods->goods_Show();
+        return view('goods_list',['res'=>$res]);
     }
 
     public function goods_add()
@@ -40,8 +40,17 @@ class Goods extends Controller
     {
         return view('category_list');
     }
-    public function brand_list()
-    {
-        return view('brand_list');
+
+
+
+    public function brand_list(){
+        $res = $this->goods->brand_show();
+        return view('brand_list',['res'=>$res]);
+    }
+    public function brand_add(){
+        return view('brand_add');
+    }
+    public function brand_add_do(){
+        echo "brand_add_do";
     }
 }

@@ -7,14 +7,14 @@ use think\Paginator;
 
 class Goods extends Model
 {
-    public function getShow()
+    public function goods_Show()
 	{
-		return $res = Db::name('goods')->paginate(4);
+		return $res = Db::name('goods')->paginate(5);
 	}
 
-
-
-
+	public function brand_show(){
+        return Db::table('brand')->select();
+    }
 
 	// public function login(){
 	// 	return $res = Db::table('user')->where('username',input('post.username'))->where('password',input('post.password'))->find();
