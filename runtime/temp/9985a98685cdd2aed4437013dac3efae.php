@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\brand_list.html";i:1536218512;}*/ ?>
 <!-- $Id: brand_list.htm 15898 2009-05-04 07:25:41Z liuhui $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -41,23 +42,23 @@
       <th>是否显示</th>
       <th>操作</th>
     </tr>
-    {volist name='res' id='v'}
+    <?php if(is_array($res) || $res instanceof \think\Collection || $res instanceof \think\Paginator): $i = 0; $__LIST__ = $res;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
     <tr>
       <td class="first-cell">
         <span style="float:right"></span>
-        <span>{$v.brand_name}</span>
+        <span><?php echo $v['brand_name']; ?></span>
       </td>
-      <td><img src="{$v.brand_logo}" width="100" alt=""></td>
-      <td>{$v.site_url}</td>
-      <td align="left">{$v.brand_desc}</td>
-      <td align="right"><span>{$v.sort_order}</span></td>
+      <td><img src="<?php echo $v['brand_logo']; ?>" width="100" alt=""></td>
+      <td><?php echo $v['site_url']; ?></td>
+      <td align="left"><?php echo $v['brand_desc']; ?></td>
+      <td align="right"><span><?php echo $v['sort_order']; ?></span></td>
       <td align="center"><img src="../../../static/picture/yes.svg" width="20"/></td>
       <td align="center">
         <a href="brand.php?act=edit&id=1" title="编辑">编辑</a> |
         <a href="javascript:;" title="编辑">移除</a> 
       </td>
     </tr>
-  {/volist}
+  <?php endforeach; endif; else: echo "" ;endif; ?>
       <td align="right" nowrap="true" colspan="6">
       <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <div id="turn-page">

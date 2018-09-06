@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_list.html";i:1536223151;}*/ ?>
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <!-- $Id: goods_list.htm 17126 2010-04-23 10:30:26Z liuhui $ -->
@@ -63,40 +64,40 @@
     <th>操作</th>
   </tr>
 
-  {volist name='res' id='v'}
+  <?php if(is_array($res) || $res instanceof \think\Collection || $res instanceof \think\Paginator): $i = 0; $__LIST__ = $res;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
     <tr>
-    <td><input type="checkbox" name="checkboxes[]" value="{$v.goods_id}"></td>
-    <td>{$v.goods_id}</td>
-    <td class="first-cell"><span>{$v.goods_name}</span></td>
-    <td><span>{$v.goods_sn}</span></td>
-    <td align="right"><span>{$v.goods_price}</span></td>
+    <td><input type="checkbox" name="checkboxes[]" value="<?php echo $v['goods_id']; ?>"></td>
+    <td><?php echo $v['goods_id']; ?></td>
+    <td class="first-cell"><span><?php echo $v['goods_name']; ?></span></td>
+    <td><span><?php echo $v['goods_sn']; ?></span></td>
+    <td align="right"><span><?php echo $v['goods_price']; ?></span></td>
      <td>
-      {in name="$v.is_put" value="1"}
+      <?php if(in_array(($v['is_put']), explode(',',"1"))): ?>
       <img src="static/picture/yes.svg" width="20"/>
-      {else/}
+      <?php else: ?>
       <img src="static/picture/no.svg" width="20"/>
-      {/in}
+      <?php endif; ?>
     </td>
     <td>
-      {in name="$v.is_best" value="1"}
+      <?php if(in_array(($v['is_best']), explode(',',"1"))): ?>
       <img src="static/picture/yes.svg" width="20"/>
-      {else/}
+      <?php else: ?>
       <img src="static/picture/no.svg" width="20"/>
-      {/in}
+      <?php endif; ?>
     </td>
     <td>
-      {in name="$v.is_new" value="1"}
+      <?php if(in_array(($v['is_new']), explode(',',"1"))): ?>
       <img src="static/picture/yes.svg" width="20" />
-      {else/}
+      <?php else: ?>
       <img src="static/picture/no.svg" width="20" />
-      {/in}
+      <?php endif; ?>
     </td>
     <td>
-      {in name="$v.is_hot" value="1"}
+      <?php if(in_array(($v['is_hot']), explode(',',"1"))): ?>
       <img src="static/picture/yes.svg" width="20"/>
-      {else/}
+      <?php else: ?>
       <img src="static/picture/no.svg" width="20"/>
-      {/in}
+      <?php endif; ?>
     </td>
     <td align="center"><span>100</span></td>
         <td align="right"><span>1</span></td>
@@ -108,10 +109,10 @@
       <a href="javascript:;" class="hs" title="回收站">回收站</a>
       <img src="static/picture/empty.gif" width="16" height="16" border="0">        </td>
   </tr>
-  {/volist}
+  <?php endforeach; endif; else: echo "" ;endif; ?>
   </table>
 <!-- end goods list -->
-  {$res->render()}
+  <?php echo $res->render(); ?>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
