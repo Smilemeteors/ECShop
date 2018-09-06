@@ -1,6 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_list.html";i:1536223151;}*/ ?>
-<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_list.html";i:1536239547;}*/ ?>
 <!-- $Id: goods_list.htm 17126 2010-04-23 10:30:26Z liuhui $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -73,30 +71,30 @@
     <td align="right"><span><?php echo $v['goods_price']; ?></span></td>
      <td>
       <?php if(in_array(($v['is_put']), explode(',',"1"))): ?>
-      <img src="static/picture/yes.svg" width="20"/>
+      <img src="static/picture/yes.svg" class="is_put" id="<?php echo $v['goods_id']; ?>" value='<?php echo $v['is_put']; ?>' width="20"/>
       <?php else: ?>
-      <img src="static/picture/no.svg" width="20"/>
+      <img src="static/picture/no.svg" class="is_put" id="<?php echo $v['goods_id']; ?>" value='<?php echo $v['is_put']; ?>' width="20"/>
       <?php endif; ?>
     </td>
     <td>
       <?php if(in_array(($v['is_best']), explode(',',"1"))): ?>
-      <img src="static/picture/yes.svg" width="20"/>
+      <img src="static/picture/yes.svg" class="is_best" id="<?php echo $v['goods_id']; ?>"  value='<?php echo $v['is_best']; ?>' width="20"/>
       <?php else: ?>
-      <img src="static/picture/no.svg" width="20"/>
+      <img src="static/picture/no.svg" class="is_best" id="<?php echo $v['goods_id']; ?>"  value='<?php echo $v['is_best']; ?>' width="20"/>
       <?php endif; ?>
     </td>
     <td>
       <?php if(in_array(($v['is_new']), explode(',',"1"))): ?>
-      <img src="static/picture/yes.svg" width="20" />
+      <img src="static/picture/yes.svg" class="is_new" id="<?php echo $v['goods_id']; ?>"  value='<?php echo $v['is_new']; ?>' width="20" />
       <?php else: ?>
-      <img src="static/picture/no.svg" width="20" />
+      <img src="static/picture/no.svg" class="is_new" id="<?php echo $v['goods_id']; ?>"  value='<?php echo $v['is_new']; ?>' width="20" />
       <?php endif; ?>
     </td>
     <td>
       <?php if(in_array(($v['is_hot']), explode(',',"1"))): ?>
-      <img src="static/picture/yes.svg" width="20"/>
+      <img src="static/picture/yes.svg" class="is_hot" id="<?php echo $v['goods_id']; ?>"  value='<?php echo $v['is_hot']; ?>' width="20"/>
       <?php else: ?>
-      <img src="static/picture/no.svg" width="20"/>
+      <img src="static/picture/no.svg" class="is_hot" id="<?php echo $v['goods_id']; ?>"  value='<?php echo $v['is_hot']; ?>' width="20"/>
       <?php endif; ?>
     </td>
     <td align="center"><span>100</span></td>
@@ -112,17 +110,60 @@
   <?php endforeach; endif; else: echo "" ;endif; ?>
   </table>
 <!-- end goods list -->
-  <?php echo $res->render(); ?>
-
+<!--   <?php echo $res->render(); ?>
+ -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
   $(document).on('click','.hs',function()
   {
-    alert(1);
+    alert('回收站没做呢！');
+  })
+  //上架
+  $(document).on('click','.is_put',function(){
+    var status = $(this).attr('value');
+    var goods_id = $(this).attr('id');
+    $.ajax({
+      url:"<?php echo url('goods/goods_change_put'); ?>",
+      data:{status:status,goods_id:goods_id},
+      dataType:"json",
+      success:function(res){
+
+        if(res.status==1){
+
+          alert(res.msg);
+          return false;
+        }else{
+
+          if(status==1){
+
+            obj.prop("src","images/no.gif");
+            obj.attr("status",0)
+          }else{
+
+            obj.prop("src","images/yes.gif");
+            obj.attr("status",1)
+          }
+        }
+      }
+    })
+  })
+
+  //精品
+  $(document).on('click','.is_best',function(){
+    var status = $(this).attr('value');
+    alert(status);
+  })
+  //新品
+  $(document).on('click','.is_new',function(){
+    var status = $(this).attr('value');
+    alert(status);
+  })
+   //热销
+  $(document).on('click','.is_hot',function(){
+    var status = $(this).attr('value');
+    alert(status);
   })
 </script>
-
-
 
 
 <!-- 分页 -->

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:72:"E:\phpStudy\WWW\ECShop\public/../application/index\view\index\index.html";i:1536192909;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:72:"E:\phpStudy\WWW\ECShop\public/../application/index\view\index\index.html";i:1536226505;}*/ ?>
 <style>
 *{margin:0;padding:0;}
 </style>
