@@ -1,5 +1,3 @@
-<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <!-- $Id: goods_list.htm 17126 2010-04-23 10:30:26Z liuhui $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -72,30 +70,30 @@
     <td align="right"><span>{$v.goods_price}</span></td>
      <td>
       {in name="$v.is_put" value="1"}
-      <img src="static/picture/yes.svg" width="20"/>
+      <img src="static/picture/yes.svg" class="is_put" id="{$v.goods_id}" value='{$v.is_put}' width="20"/>
       {else/}
-      <img src="static/picture/no.svg" width="20"/>
+      <img src="static/picture/no.svg" class="is_put" id="{$v.goods_id}" value='{$v.is_put}' width="20"/>
       {/in}
     </td>
     <td>
       {in name="$v.is_best" value="1"}
-      <img src="static/picture/yes.svg" width="20"/>
+      <img src="static/picture/yes.svg" class="is_best" id="{$v.goods_id}"  value='{$v.is_best}' width="20"/>
       {else/}
-      <img src="static/picture/no.svg" width="20"/>
+      <img src="static/picture/no.svg" class="is_best" id="{$v.goods_id}"  value='{$v.is_best}' width="20"/>
       {/in}
     </td>
     <td>
       {in name="$v.is_new" value="1"}
-      <img src="static/picture/yes.svg" width="20" />
+      <img src="static/picture/yes.svg" class="is_new" id="{$v.goods_id}"  value='{$v.is_new}' width="20" />
       {else/}
-      <img src="static/picture/no.svg" width="20" />
+      <img src="static/picture/no.svg" class="is_new" id="{$v.goods_id}"  value='{$v.is_new}' width="20" />
       {/in}
     </td>
     <td>
       {in name="$v.is_hot" value="1"}
-      <img src="static/picture/yes.svg" width="20"/>
+      <img src="static/picture/yes.svg" class="is_hot" id="{$v.goods_id}"  value='{$v.is_hot}' width="20"/>
       {else/}
-      <img src="static/picture/no.svg" width="20"/>
+      <img src="static/picture/no.svg" class="is_hot" id="{$v.goods_id}"  value='{$v.is_hot}' width="20"/>
       {/in}
     </td>
     <td align="center"><span>100</span></td>
@@ -111,17 +109,60 @@
   {/volist}
   </table>
 <!-- end goods list -->
-  {$res->render()}
-
+<!--   {$res->render()}
+ -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
   $(document).on('click','.hs',function()
   {
-    alert(1);
+    alert('回收站没做呢！');
+  })
+  //上架
+  $(document).on('click','.is_put',function(){
+    var status = $(this).attr('value');
+    var goods_id = $(this).attr('id');
+    $.ajax({
+      url:"{:url('goods/goods_change_put')}",
+      data:{status:status,goods_id:goods_id},
+      dataType:"json",
+      success:function(res){
+
+        if(res.status==1){
+
+          alert(res.msg);
+          return false;
+        }else{
+
+          if(status==1){
+
+            obj.prop("src","images/no.gif");
+            obj.attr("status",0)
+          }else{
+
+            obj.prop("src","images/yes.gif");
+            obj.attr("status",1)
+          }
+        }
+      }
+    })
+  })
+
+  //精品
+  $(document).on('click','.is_best',function(){
+    var status = $(this).attr('value');
+    alert(status);
+  })
+  //新品
+  $(document).on('click','.is_new',function(){
+    var status = $(this).attr('value');
+    alert(status);
+  })
+   //热销
+  $(document).on('click','.is_hot',function(){
+    var status = $(this).attr('value');
+    alert(status);
   })
 </script>
-
-
 
 
 <!-- 分页 -->
