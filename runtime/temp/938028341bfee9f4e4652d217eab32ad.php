@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\index\index_menu.html";i:1536341647;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\index\index_menu.html";i:1536364029;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -8,9 +8,9 @@
 <link href="static/css/general.css" rel="stylesheet" type="text/css" />
 <link href="static/css/nav.css" rel="stylesheet" type="text/css" />
 </head>
-<body class="nav" style="background:#eee;"><div class="menu">
-  <div id="logo-div" style="margin-top:-5px;"><br />
-    <b><span style="font-size:22px; padding:; color:#fff;">微笑の流星<span/></b></a>
+<body class="nav"><div class="menu">
+  <div id="logo-div" style="margin-top:-5px; padding-top:10px;"><br />
+    <b><span style="font-size:18px; padding:; color:#fff;">Smilemeteor<span/></b></a>
         <a href="javascript:;" class="noauthorize"><img src="/static/picture/noauthorize.png" class="icon" width="12"> 未授权用户</a>
       </div>
   <div id="license-div"></div>
