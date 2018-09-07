@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="static/css/general_1.css" rel="stylesheet" type="text/css" />
 <link href="static/css/main_1.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="static/js/transport_1.js"></script><script type="text/javascript" src="static/js/common_1.js"></script>
+<!-- <script type="text/javascript" src="static/js/transport_1.js"></script><script type="text/javascript" src="static/js/common_1.js"></script> -->
 <style>
   .panel-icloud .panel-right iframe {
     height: 300px;
@@ -100,7 +100,7 @@ var empty_position_style = "广告位的模版不能为空!";
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;广告位置 </span>
   <div style="clear:both"></div>
 </h1><script type="text/javascript" src="static/js/utils_1.js"></script><script type="text/javascript" src="static/js/listtable_1.js"></script>
-<form method="post" action="" name="listForm">
+<form method="post" action="admin/Logo/addPosition" name="listForm">
 <!-- start ad position list -->
 <div class="list-div" id="listDiv">
 
@@ -112,8 +112,23 @@ var empty_position_style = "广告位的模版不能为空!";
     <th>广告位描述</th>
     <th>操作</th>
   </tr>
-    <tr><td class="no-records" colspan="5">您还没有设置广告位置</td></tr>
-    <tr><td align="right" nowrap="true" colspan="5"><!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+  <?php foreach ($arr as $key => $val) { ?>
+  <tr>
+    <td class="first-cell">
+    <span onclick="javascript:listTable.edit(this, 'edit_ad_name', 7)"><?php echo $val['position_name'] ?></span>
+    </td>
+    <td align="left"><span><?php echo $val['position_width'] ?></span>
+    </td>
+    <td align="left"><span><?php echo $val['position_height'] ?></span></td>
+    <td align="center"><span><?php echo $val['position_desc'] ?></span></td>
+    <td align="right"><span>
+      <a href="admin/Logo/detail?id=<?php echo $val['position_id'] ?>" title="查看">查看</a>
+      <a href="admin/Logo/upPosition?id=<?php echo $val['position_id'] ?>" title="编辑">编辑</a>
+      <a href="admin/Logo/delPosition?id=<?php echo $val['position_id'] ?>" title="移除">移除</a></span>
+    </td>
+  </tr>
+  <?php } ?> 
+  <tr><td align="right" nowrap="true" colspan="5"><!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <div id="turn-page">
   <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
   页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
@@ -125,7 +140,8 @@ var empty_position_style = "广告位的模版不能为空!";
     <a href="javascript:listTable.gotoPageNext()">下一页</a>
     <a href="javascript:listTable.gotoPageLast()">最末页</a>
     <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
-      <option value='1'>1</option>    </select>
+      <option value='1'>1</option>    
+    </select>
   </span>
 </div>
 </td></tr>

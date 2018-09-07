@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="static/css/general.css" rel="stylesheet" type="text/css" />
 <link href="static/css/main.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="static/js/transport.js"></script><script type="text/javascript" src="static/js/common.js"></script>
+<!-- <script type="text/javascript" src="static/js/transport.js"></script><script type="text/javascript" src="static/js/common.js"></script> -->
 <style>
   .panel-icloud .panel-right iframe {
     height: 300px;
@@ -95,8 +95,7 @@ var empty_position_style = "广告位的模版不能为空!";
 <div class="mask-black" id="CMask"></div>
 <!--遮罩-->
 <h1>
-      <a class="btn btn-right" href="admin/logo/logo">广告列表</a>
-  
+    <a class="btn btn-right" href="admin/logo/logo">广告列表</a>
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;添加广告 </span>
   <div style="clear:both"></div>
 </h1><script type="text/javascript" src="static/js/calendar.js"></script>
@@ -113,19 +112,18 @@ var empty_position_style = "广告位的模版不能为空!";
         <br /><span class="notice-span" style="display:block"  id="NameNotic">广告名称只是作为辨别多个广告条目之用，并不显示在广告中</span>
       </td>
     </tr>
-
-          <tr>
-        <td class="label">媒介类型</td>
-        <td>
-         <select name="media_type" onchange="showMedia(this.value)">
-         <option value='0'>图片</option>
-         <option value='1'>Flash</option>
-         <option value='2'>代码</option>
-         <option value='3'>文字</option>
-         </select>
-        </td>
-      </tr>
-	    <tr>
+    <tr>
+      <td class="label">媒介类型</td>
+      <td>
+       <select name="media_type" onchange="showMedia(this.value)">
+          <option value='图片'>图片</option>
+          <option value='Flash'>Flash</option>
+          <option value='代码'>代码</option>
+          <option value='文字'>文字</option>
+       </select>
+      </td>
+    </tr>
+	  <tr>
       <td  class="label">广告位置</td>
       <td>
         <select name="position_id">

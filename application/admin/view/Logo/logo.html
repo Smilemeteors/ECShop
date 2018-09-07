@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="static/css/general.css" rel="stylesheet" type="text/css" />
 <link href="static/css/main.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="static/js/transport.js"></script><script type="text/javascript" src="static/js/common.js"></script>
+<!-- <script type="text/javascript" src="static/js/transport.js"></script><script type="text/javascript" src="static/js/common.js"></script> -->
 <style>
   .panel-icloud .panel-right iframe {
     height: 300px;
@@ -111,26 +111,48 @@ var empty_position_style = "广告位的模版不能为空!";
     <th><a href="javascript:listTable.sort('media_type'); ">媒介类型</a></th>
     <th><a href="javascript:listTable.sort('start_date'); ">开始日期</a></th>
     <th><a href="javascript:listTable.sort('end_date'); ">结束日期</a></th>
+    <th><a href="javascript:listTable.sort('link_man'); ">广告联系人</a></th>
+    <th><a href="javascript:listTable.sort('link_man'); ">联系人Email</a></th>
+    <th><a href="javascript:listTable.sort('link_man'); ">联系电话</a></th>
     <th>操作</th>
+  <?php foreach ($arr as $key => $val) { ?>
+  <tr>
+    <td class="first-cell">
+    <span onclick="javascript:listTable.edit(this, 'edit_ad_name', 7)"><?php echo $val['ad_name'] ?></span>
+    </td>
+    <td align="left"><span><?php echo $val['position_id'] ?></span>
+    </td>
+    <td align="left"><span><?php echo $val['media_type'] ?></span></td>
+    <td align="center"><span><?php echo $val['start_time'] ?></span></td>
+    <td align="center"><span><?php echo $val['end_time'] ?></span></td>
+    <td align="center"><span><?php echo $val['link_man'] ?></span></td>
+    <td align="center"><span><?php echo $val['link_phone'] ?></span></td>
+    <td align="center"><span><?php echo $val['link_email'] ?></span></td>
+    <td align="right"><span>
+      <a href="admin/Logo/upLogo?id=<?php echo $val['ad_id'] ?>" title="编辑">编辑</a>
+      <a href="admin/Logo/delLogo?id=<?php echo $val['ad_id'] ?>" title="移除">移除</a></span>
+    </td>
   </tr>
-      <tr><td class="no-records" colspan="10">您还没有添加广告</td></tr>
-    <tr>
+  <?php } ?>
+  <!-- <tr><td class="no-records" colspan="10">您还没有添加广告</td></tr> -->
+  <tr>
     <td align="right" nowrap="true" colspan="10"><!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-<div id="turn-page">
-  <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
-  页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
-  条记录，总共 <span id="totalRecords">0</span>
-  条记录
-  <span id="page-link">
-    <a href="javascript:listTable.gotoPageFirst()">第一页</a>
-    <a href="javascript:listTable.gotoPagePrev()">上一页</a>
-    <a href="javascript:listTable.gotoPageNext()">下一页</a>
-    <a href="javascript:listTable.gotoPageLast()">最末页</a>
-    <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
-      <option value='1'>1</option>    </select>
-  </span>
-</div>
-</td>
+      <div id="turn-page">
+      <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
+      页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
+      条记录，总共 <span id="totalRecords">0</span>
+      条记录
+      <span id="page-link">
+        <a href="javascript:listTable.gotoPageFirst()">第一页</a>
+        <a href="javascript:listTable.gotoPagePrev()">上一页</a>
+        <a href="javascript:listTable.gotoPageNext()">下一页</a>
+        <a href="javascript:listTable.gotoPageLast()">最末页</a>
+        <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
+          <option value='1'>1</option>    
+        </select>
+      </span>
+      </div>
+    </td>
   </tr>
 </table>
 
