@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\index\index_menu.html";i:1536226505;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\index\index_menu.html";i:1536278716;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -6,15 +6,7 @@
 <title>ECSHOP Menu</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="static/css/general.css" rel="stylesheet" type="text/css" />
-
 <link href="static/css/nav.css" rel="stylesheet" type="text/css" />
-
-<script>
-<!--
-var noHelp   = "<p align='center' style='color: #666'>暂时还没有该部分内容</p>";
-var helpLang = "zh_cn";
-//-->
-</script>
 </head>
 <body class="nav">
 <div class="menu">
@@ -23,11 +15,6 @@ var helpLang = "zh_cn";
         <a href="javascript:;" class="noauthorize"><img src="/static/picture/noauthorize.png" class="icon" width="12"> 未授权用户</a>
       </div>
   <div id="license-div"></div>
-  <!-- <div id="tabbar-div">
-    <p>
-      <span class="tab-front" id="menu-tab">菜单</span>
-    </p>
-  </div> -->
   <div id="main-div">
     <div id="menu-list">
       <ul class="menu" id="menu-ul">
@@ -150,7 +137,6 @@ var helpLang = "zh_cn";
           </div>
                   </li>
                   </ul>
-      <script language="JavaScript" src="static/js/menu_ext.js"></script>
     </div>
     <div id="help-div" style="display:none">
       <h1 id="help-title"></h1>
@@ -171,7 +157,7 @@ var helpLang = "zh_cn";
     </div>
   </div>
 </div>
-<script type="text/javascript" src="/static/js/global.js"></script><script type="text/javascript" src="/static/js/utils.js"></script><script type="text/javascript" src="static/js/transport.js"></script><script type="text/javascript" src="/static/js/menu.js"></script><script language="JavaScript">
+<script language="JavaScript">
 window.setInterval(crontab,30000);
 function crontab(){
   Ajax.call('cloud.php?is_ajax=1&act=load_crontab','','', 'GET', 'JSON');
