@@ -1,12 +1,23 @@
 <?php
 namespace app\admin\controller;
-
-class Order
+use think\Model;
+use think\Db;
+class Order extends \think\Controller
 {
 	// 订单列表
 	public function orders_list()
 	{
+		$data = Db('order')->select();
+		$this->assign('data',$data);
 		return view('orders_list');
+	}
+	public function details()
+	{
+		$id = isset($_GET['id'])?$_GET['id']:'';
+		$data = Db('order')->where('order_id',"$id")->find();
+		// print_r($data);
+		$this->assign('data',$data);
+		 return view('details');	
 	}
 	// 订单查询   
 	public function orders_query()

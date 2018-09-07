@@ -8,56 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="/static/css/general_2.css" rel="stylesheet" type="text/css" />
 <link href="/static/css/main_2.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="/static/js/transport_2.js"></script><script type="text/javascript" src="/static/js/common_2.js"></script>
-<style>
-  .panel-icloud .panel-right iframe {
-    height: 300px;
-    margin-top: 15px;
-  }
-  .panel-hint{
-    top: 0%;
-  }
-</style>
 
-<script>
-<!--
-// 这里把JS用到的所有语言都赋值到这里
-var process_request = "正在处理您的请求...";
-var todolist_caption = "记事本";
-var todolist_autosave = "自动保存";
-var todolist_save = "保存";
-var todolist_clear = "清除";
-var todolist_confirm_save = "是否将更改保存到记事本？";
-var todolist_confirm_clear = "是否清空内容？";
-var user_name_empty = "管理员用户名不能为空!";
-var password_invaild = "密码必须同时包含字母及数字且长度不能小于6!";
-var email_empty = "Email地址不能为空!";
-var email_error = "Email地址格式不正确!";
-var password_error = "两次输入的密码不一致!";
-var captcha_empty = "您没有输入验证码!";
-//-->
-/*关闭按钮*/
-  function get_certificate(){
-	  var panel = document.getElementById('panelCloud');
-	  var mask  = document.getElementById('CMask')||null;
-	  var frame = document.getElementById('CFrame');
-	  if(panel&&CMask&&frame){
-	      panel.style.display = 'block';
-	      mask.style.display = 'block';
-	      frame.src = 'https://openapi.shopex.cn/oauth/authorize?response_type=code&client_id=yogfss4l&redirect_uri=http%3A%2F%2F127.0.0.1%2Fshixun%2FEC4%2Fsource%2Fecshop%2Fadmin%2Fcertificate.php%3Fact%3Dget_certificate%26type%3Dindex&view=auth_ecshop';
-	    }
-	}
-
-	/*关闭按钮*/
-	function btnCancel(item){
-	  var par  = item.offsetParent;
-	  var mask  = document.getElementById('CMask')||null;
-	  var frame = document.getElementById('CFrame');
-	  par.style.display = 'none';
-	  if(mask){mask.style.display = 'none';}
-	  frame.src = '';
-	}
-</script>
 </head>
 <body>
 <!--云起激活系统面板-->
@@ -90,7 +41,7 @@ var captcha_empty = "您没有输入验证码!";
   
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;角色管理 </span>
   <div style="clear:both"></div>
-</h1><script type="text/javascript" src="static/js/utils_2.js"></script><script type="text/javascript" src="static/js/listtable_2.js"></script>
+</h1>
 <div class="list-div" id="listDiv">
 
 <table cellspacing='1' cellpadding='3' id='list-table'>
@@ -99,18 +50,19 @@ var captcha_empty = "您没有输入验证码!";
     <th>角色描述</th>
     <th>操作</th>
   </tr>
+  <?php foreach ($list as $v) { ?>
+    <tr>
+    <td class="first-cell" ><?=$v['role_name'];?></td>
+    <td class="first-cell" ><?=$v['role_desc'];?></td>
+    <td align="center">
+      <a href="role_edit.html?id=<?=$v['role_id'];?>" title="编辑">编辑</a>&nbsp;&nbsp;
+      <a href="javascript:;" onclick="listTable.remove(<?=$v['role_id'];?>, '您确认要删除这条记录吗?')" title="移除">移除</a></td>
+  </tr>
+  <?php } ?>
   </table>
 
 </div>
-<script type="text/javascript" language="JavaScript">
-  
-  onload = function()
-  {
-    // 开始检查订单
-    startCheckOrder();
-  }
-  
-</script>
+
 <div id="footer">
 共执行 3 个查询，用时 0.013600 秒，Gzip 已禁用，内存占用 1.078 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
