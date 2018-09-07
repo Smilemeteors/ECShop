@@ -8,91 +8,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="static/css/general.css" rel="stylesheet" type="text/css" />
 <link href="static/css/main.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="static/js/transport.js"></script><script type="text/javascript" src="static/js/common.js"></script>
-<style>
-  .panel-icloud .panel-right iframe {
-    height: 300px;
-    margin-top: 15px;
-  }
-  .panel-hint{
-    top: 0%;
-  }
-</style>
-
-<script>
-<!--
-// 这里把JS用到的所有语言都赋值到这里
-var process_request = "正在处理您的请求...";
-var todolist_caption = "记事本";
-var todolist_autosave = "自动保存";
-var todolist_save = "保存";
-var todolist_clear = "清除";
-var todolist_confirm_save = "是否将更改保存到记事本？";
-var todolist_confirm_clear = "是否清空内容？";
-var lang_enabled = "启用";
-var lang_remove = "移除";
-var attribute = "属性";
-var remove_confirm = "删除商品类型将会清除该类型下的所有属性。\
-您确定要删除选定的商品类型吗？";
-var type_name_empty = "商品类型名称不能为空！";
-//-->
-/*关闭按钮*/
-  function get_certificate(){
-	  var panel = document.getElementById('panelCloud');
-	  var mask  = document.getElementById('CMask')||null;
-	  var frame = document.getElementById('CFrame');
-	  if(panel&&CMask&&frame){
-	      panel.style.display = 'block';
-	      mask.style.display = 'block';
-	      frame.src = 'https://openapi.shopex.cn/oauth/authorize?response_type=code&client_id=yogfss4l&redirect_uri=http%3A%2F%2F127.0.0.1%2FECShop%2Fsource%2Fecshop%2Fadmin%2Fcertificate.php%3Fact%3Dget_certificate%26type%3Dindex&view=auth_ecshop';
-	    }
-	}
-
-	/*关闭按钮*/
-	function btnCancel(item){
-	  var par  = item.offsetParent;
-	  var mask  = document.getElementById('CMask')||null;
-	  var frame = document.getElementById('CFrame');
-	  par.style.display = 'none';
-	  if(mask){mask.style.display = 'none';}
-	  frame.src = '';
-	}
-</script>
 </head>
 <body>
-<!--云起激活系统面板-->
-<div class="panel-hint panel-icloud" id="panelCloud">
-  <div class="panel-cross"><span onclick="btnCancel(this)">Ｘ</span></div>
-  <div class="panel-title">
-    <span class="tit">您需要激活系统</span>
-    <p>用云起账号激活您的系统，享受物流查询，天工收银，手机短信等更多应用和服务</p>
-  </div>
-  <div class="panel-left">
-    <span>没有云起账号吗？</span>
-    <p>点击下列按钮一步完成注册激活！</p>
-    <a href="https://account.shopex.cn/reg?refer=yunqi_ecshop" target="_blank" class="btn btn-yellow">免费注册云起账号</a>
-  </div>
-  <div class="panel-right">
-    <h5 class="logo">云起</h5>
-    <p>正在激活中</p>
-    <iframe src="" frameborder="0" id="CFrame"></iframe>
-    <div class="cloud-passw">
-      <a target="_blank" href="https://account.shopex.cn/forget?">忘记密码？</a>
-    </div>
-  </div>
-</div>
-<!--云起激活系统面板-->
-<!--遮罩-->
-<div class="mask-black" id="CMask"></div>
-<!--遮罩-->
 <h1>
       <a class="btn btn-right" href="goods_type.php?act=add">新建商品类型</a>
   
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;商品类型 </span>
   <div style="clear:both"></div>
-</h1><script type="text/javascript" src="static/js/utils.js"></script><script type="text/javascript" src="static/js/listtable.js"></script>
+</h1>
 <form method="post" action="" name="listForm">
-<!-- start goods type list -->
 <div class="list-div" id="listDiv">
 
 <table width="100%" cellpadding="3" cellspacing="1" id="listTable">
