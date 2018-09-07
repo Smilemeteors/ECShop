@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\order\orders_list.html";i:1536304677;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\order\orders_list.html";i:1536312260;}*/ ?>
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -12,7 +12,7 @@
     
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1"></span>
   <div style="clear:both"></div>
-</h1><script type="text/javascript" src="static/js/utils.js"></script><script type="text/javascript" src="static/js/listtable.js"></script><!--<script type="text/javascript" src="static/js/dialog.js"></script>-->
+</h1><!--<script type="text/javascript" src="static/js/dialog.js"></script>-->
 <!-- 订单搜索 -->
 <link href="static/css/calendar.css" rel="stylesheet" type="text/css" />
 <div class="form-div">

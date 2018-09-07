@@ -25,11 +25,11 @@ class Goods extends Controller
         $goods_id = input('get.goods_id');
         $status = input('get.status');
         if($status==1){
-            $res = Db("goods")->where("goods_id",$goods_id)->update(["status"=>'0']);
+            $res = Db("goods")->where("goods_id",$goods_id)->update(["is_put"=>'0']);
         }else{
-            $res = Db("goods")->where("goods_id",$goods_id)->update(["status"=>'1']);
+            $res = Db("goods")->where("goods_id",$goods_id)->update(["is_put"=>'1']);
         }
-        echo $res;die;
+        
         if($res){
             $arr['status'] = 0;
             $arr['data'] = '';
@@ -42,6 +42,77 @@ class Goods extends Controller
         echo json_encode($arr);
     }
 
+    public function goods_change_new()
+    {
+        $goods_id = input('get.goods_id');
+        $status = input('get.status');
+        if($status==1){
+            $res = Db("goods")->where("goods_id",$goods_id)->update(["is_new"=>'0']);
+        }else{
+            $res = Db("goods")->where("goods_id",$goods_id)->update(["is_new"=>'1']);
+        }
+        
+        if($res){
+            $arr['status'] = 0;
+            $arr['data'] = '';
+            $arr['msg'] = '成功';
+        }else{
+            $arr['status'] = 1;
+            $arr['data'] = '';
+            $arr['msg'] = '失败';
+        }
+        echo json_encode($arr);
+    }
+
+    public function goods_change_best()
+    {
+        $goods_id = input('get.goods_id');
+        $status = input('get.status');
+        if($status==1){
+            $res = Db("goods")->where("goods_id",$goods_id)->update(["is_best"=>'0']);
+        }else{
+            $res = Db("goods")->where("goods_id",$goods_id)->update(["is_best"=>'1']);
+        }
+        
+        if($res){
+            $arr['status'] = 0;
+            $arr['data'] = '';
+            $arr['msg'] = '成功';
+        }else{
+            $arr['status'] = 1;
+            $arr['data'] = '';
+            $arr['msg'] = '失败';
+        }
+        echo json_encode($arr);
+    }
+
+    public function goods_change_hot()
+    {
+        $goods_id = input('get.goods_id');
+        $status = input('get.status');
+        if($status==1){
+            $res = Db("goods")->where("goods_id",$goods_id)->update(["is_hot"=>'0']);
+        }else{
+            $res = Db("goods")->where("goods_id",$goods_id)->update(["is_hot"=>'1']);
+        }
+        
+        if($res){
+            $arr['status'] = 0;
+            $arr['data'] = '';
+            $arr['msg'] = '成功';
+        }else{
+            $arr['status'] = 1;
+            $arr['data'] = '';
+            $arr['msg'] = '失败';
+        }
+        echo json_encode($arr);
+    }
+    //
+    // 以上 及点击该
+    // 
+    // 
+    // 
+    // 
     public function goods_add()
     {
         return view('goods_add');
@@ -97,6 +168,7 @@ class Goods extends Controller
     {
         return view('goods_type_add');
     }
+    //类型表的添加
     public function goods_type_add_do(){
         $data = Request::instance()->post();
         $arr = Db::name('goods_type')->insert($data);
@@ -106,11 +178,22 @@ class Goods extends Controller
             $this->error('添加失败','goods/goods_type_add');
         }
     }
+    //类型表的修改
     public function goods_type_upd()
     {
         $id = Request::instance()->get('id');
         $arr = Db::table('goods_type')->where('cat_id',$id)->select();
         return view('goods_type_upd',['arr'=>$arr]);
+    }
+    //类型表的修改
+    public function goods_type_upd_do(){
+        $data = Request::instance()->post();
+        $arr = Db::table('goods_type')->where('cat_id', $data['cat_id'])->update($data);
+        if($arr){
+            $this->success('修改成功','goods/goods_type_manage');
+        }else{
+            $this->error('修改失败','goods/goods_type_upd');
+        }
     }
     public function goods_type_del()
     {
@@ -123,6 +206,13 @@ class Goods extends Controller
             $this->error('删除失败','goods/goods_type_manage');
         }
     }
+    //商品的回收站
+    public function goods_trash()
+    {
+        $arr = Db::table('goods_trash')->select();
+        return view('goods_trash',['arr'=>$arr]);
+    }
+
     public function comment_manage_add()
     {
         return view('comment_manage_add');
@@ -131,10 +221,10 @@ class Goods extends Controller
     {
         return view('comment_manage_list');
     }
-    public function goods_trash()
-    {
-        return view('goods_trash');
-    }
+    
+
+
+
     public function category_list()
     {
         return view('category_list');

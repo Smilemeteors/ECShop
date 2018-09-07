@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:70:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\logo\logo.html";i:1536282142;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:70:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\logo\logo.html";i:1536312213;}*/ ?>
 ﻿<!-- $Id: ads_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -12,7 +12,7 @@
 </head>
 <body>
 <h1>
-      <a class="btn btn-right" href="ads.php?act=add">添加广告</a>
+      <a class="btn btn-right" href="admin/logo/addLogo">添加广告</a>
   
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;广告列表 </span>
   <div style="clear:both"></div>
@@ -28,8 +28,6 @@
     <th><a href="javascript:listTable.sort('media_type'); ">媒介类型</a></th>
     <th><a href="javascript:listTable.sort('start_date'); ">开始日期</a></th>
     <th><a href="javascript:listTable.sort('end_date'); ">结束日期</a></th>
-    <th><a href="javascript:listTable.sort('click_count'); ">点击次数</a></th>
-    <th>生成订单</th>
     <th>操作</th>
   </tr>
       <tr><td class="no-records" colspan="10">您还没有添加广告</td></tr>
@@ -54,7 +52,6 @@
 </table>
 
 </div>
-<!-- end ad_position list -->
 </form>
 <div id="footer">
 共执行 4 个查询，用时 0.011053 秒，Gzip 已禁用，内存占用 1.192 MB<br />

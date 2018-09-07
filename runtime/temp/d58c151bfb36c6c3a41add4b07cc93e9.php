@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_trash.html";i:1536305638;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_trash.html";i:1536311503;}*/ ?>
 <!-- $Id: goods_trash.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -32,25 +32,26 @@
   <div class="list-div" id="listDiv">
 <table cellpadding="3" cellspacing="1">
   <tr>
-    <th>
-      <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox" />
-      <a href="javascript:listTable.sort('goods_id'); ">编号</a><img src="static/picture/sort_desc.png"/>    </th>
-    <th><a href="javascript:listTable.sort('goods_name'); ">商品名称</a></th>
-    <th><a href="javascript:listTable.sort('goods_sn'); ">货号</a></th>
-    <th><a href="javascript:listTable.sort('shop_price'); ">价格</a></th>
-    <th>操作</th>
+    <td>编号</td>
+    <td>商品名称</td>
+    <td>货号</td>
+    <td>价格</td>
+    <td>操作</td>
+  </tr>
+  <?php foreach ($arr as $key => $v): ?>
   <tr>
-    <tr>
-    <td><input type="checkbox" name="checkboxes[]" value="46" />46</td>
-    <td>V领短袖T恤 女款</td>
-    <td>ECS000046</td>
-    <td align="right">39.00</td>
-    <td align="center">
-      <a href="javascript:;" onclick="listTable.remove(46, '您确实要把该商品还原吗？', 'restore_goods')">还原</a> |
-      <a href="javascript:;" onclick="listTable.remove(46, '您确实要删除该商品吗？', 'drop_goods')">删除</a>
+    <td><?php echo $v['goods_id']; ?></td>
+    <td><?php echo $v['goods_name']; ?></td>
+    <td><?php echo $v['goods_sn']; ?></td>
+    <td><?php echo $v['shop_price']; ?></td>
+    <td>
+      <a href="<?php echo url('goods_trash_del'); ?>?id=<?php echo $v['goods_id']; ?>" class="btn btn-danger btn-sm shiny">
+        <i class="fa fa-trash-o"></i> 删除</a>
     </td>
   </tr>
+  <?php endforeach ?>
   </table>
+
 <!-- end goods list -->
 
 <!-- 分页 -->

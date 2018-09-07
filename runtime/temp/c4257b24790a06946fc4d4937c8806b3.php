@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_list.html";i:1536304011;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_list.html";i:1536310537;}*/ ?>
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -32,7 +32,11 @@ th{text-align:center;}
     <select name="cat_id"><option value="0">所有分类</option><option value="26" >家用电器</option><option value="27" >&nbsp;&nbsp;&nbsp;&nbsp;大家电</option><option value="29" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;家用空调</option><option value="30" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;家电配件</option><option value="31" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;洗衣机</option><option value="28" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;平板电脑</option><option value="32" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;冰箱</option><option value="25" >数码时尚</option><option value="18" >智能硬件</option><option value="22" >移动电源</option><option value="16" >服装</option><option value="12" >充值卡</option><option value="1" >手机类型</option><option value="3" >&nbsp;&nbsp;&nbsp;&nbsp;小型手机</option><option value="4" >&nbsp;&nbsp;&nbsp;&nbsp;3G手机</option><option value="6" >手机</option><option value="8" >&nbsp;&nbsp;&nbsp;&nbsp;耳机</option><option value="9" >&nbsp;&nbsp;&nbsp;&nbsp;电池</option><option value="19" >配件</option><option value="24" >&nbsp;&nbsp;&nbsp;&nbsp;数码时尚</option><option value="20" >&nbsp;&nbsp;&nbsp;&nbsp;保护壳</option></select>
     <!-- 品牌 -->
     品牌
-    <select name="brand_id"><option value="0">所有品牌</option><option value="4">飞利浦</option><option value="5">夏新</option><option value="15">仓品</option></select>
+    <select name="brand_id">
+    {volist name='res' id='v'}
+    <option value="0">所有品牌</option>
+    <option value="0">所有品牌</option>
+    </select>
     <!-- 推荐 -->
     推荐类别
     <select name="intro_type"><option value="0">全部</option><option value="is_best">精品</option><option value="is_new">新品</option><option value="is_hot">热销</option><option value="is_promote">特价</option><option value="all_type">全部推荐</option></select>
@@ -125,6 +129,7 @@ th{text-align:center;}
   $(document).on('click','.is_put',function(){
     var status = $(this).attr('value');
     var goods_id = $(this).attr('id');
+    var obj = $(this);
     $.ajax({
       url:"<?php echo url('goods/goods_change_put'); ?>",
       data:{status:status,goods_id:goods_id},
@@ -138,12 +143,12 @@ th{text-align:center;}
 
           if(status==1){
 
-            obj.prop("src","images/no.gif");
-            obj.attr("status",0)
+            obj.prop("src","static/picture/no.svg");
+            obj.attr("value",0)
           }else{
 
-            obj.prop("src","images/yes.gif");
-            obj.attr("status",1)
+            obj.prop("src","static/picture/yes.svg");
+            obj.attr("value",1)
           }
         }
       }
@@ -153,17 +158,89 @@ th{text-align:center;}
   //精品
   $(document).on('click','.is_best',function(){
     var status = $(this).attr('value');
-    alert(status);
+    var goods_id = $(this).attr('id');
+    var obj = $(this);
+    $.ajax({
+      url:"<?php echo url('goods/goods_change_best'); ?>",
+      data:{status:status,goods_id:goods_id},
+      dataType:"json",
+      success:function(res){
+        if(res.status==1){
+
+          alert(res.msg);
+          return false;
+        }else{
+
+          if(status==1){
+
+            obj.prop("src","static/picture/no.svg");
+            obj.attr("value",0)
+          }else{
+
+            obj.prop("src","static/picture/yes.svg");
+            obj.attr("value",1)
+          }
+        }
+      }
+    })
   })
   //新品
   $(document).on('click','.is_new',function(){
     var status = $(this).attr('value');
-    alert(status);
+    var goods_id = $(this).attr('id');
+    var obj = $(this);
+    $.ajax({
+      url:"<?php echo url('goods/goods_change_new'); ?>",
+      data:{status:status,goods_id:goods_id},
+      dataType:"json",
+      success:function(res){
+        if(res.status==1){
+
+          alert(res.msg);
+          return false;
+        }else{
+
+          if(status==1){
+
+            obj.prop("src","static/picture/no.svg");
+            obj.attr("value",0)
+          }else{
+
+            obj.prop("src","static/picture/yes.svg");
+            obj.attr("value",1)
+          }
+        }
+      }
+    })
   })
    //热销
   $(document).on('click','.is_hot',function(){
     var status = $(this).attr('value');
-    alert(status);
+    var goods_id = $(this).attr('id');
+    var obj = $(this);
+    $.ajax({
+      url:"<?php echo url('goods/goods_change_hot'); ?>",
+      data:{status:status,goods_id:goods_id},
+      dataType:"json",
+      success:function(res){
+        if(res.status==1){
+
+          alert(res.msg);
+          return false;
+        }else{
+
+          if(status==1){
+
+            obj.prop("src","static/picture/no.svg");
+            obj.attr("value",0)
+          }else{
+
+            obj.prop("src","static/picture/yes.svg");
+            obj.attr("value",1)
+          }
+        }
+      }
+    })
   })
 </script>
 
