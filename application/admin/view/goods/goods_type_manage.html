@@ -97,114 +97,29 @@ var type_name_empty = "商品类型名称不能为空！";
 
 <table width="100%" cellpadding="3" cellspacing="1" id="listTable">
   <tr>
-    <th>商品类型名称</th>
-    <th>属性分组</th>
-    <th>属性数</th>
-    <th>状态</th>
-    <th>操作</th>
+    <td>类型ID</td>
+    <td>商品类型名称</td>
+    <td>属性分组</td>
+    <td>属性数</td>
+    <td>操作</td>
   </tr>
-    <tr>
-    <td class="first-cell"><span onclick="javascript:listTable.edit(this, 'edit_type_name', 1)">书</span></td>
-    <td></td>
-    <td align="right">12</td>
-    <td align="center"><img src="static/picture/yes.gif" ></td>
-    <td align="center">
+     <?php foreach ($arr as $key => $v): ?>
+  <tr>
+    <td><?php echo $v['cat_id']; ?></td>
+    <td><?php echo $v['type_name']; ?></td>
+    <td><?php echo $v['attr_group']; ?></td>
+    <td><?php echo $v['enabled']; ?></td>
+    <td>
       <a href="attribute.php?act=list&goods_type=1" title="属性列表">属性列表</a> |
-      <a href="goods_type.php?act=edit&cat_id=1" title="编辑">编辑</a> |
-      <a href="javascript:;" onclick="listTable.remove(1, '删除商品类型将会清除该类型下的所有属性。\n您确定要删除选定的商品类型吗？')" title="移除">移除</a>
+      <a href="{:url('del')}?id=<?php echo $v['cat_id']; ?>" class="btn btn-danger btn-sm shiny">
+        <i class="fa fa-trash-o"></i> 删除</a>
+      <a href="{:url('upd')}?id=<?php echo $v['cat_id']; ?>" class="btn btn-danger btn-sm shiny">
+        <i class="fa fa-trash-o"></i> 修改</a>
     </td>
   </tr>
-    <tr>
-    <td class="first-cell"><span onclick="javascript:listTable.edit(this, 'edit_type_name', 2)">音乐</span></td>
-    <td></td>
-    <td align="right">19</td>
-    <td align="center"><img src="static/picture/yes.gif" ></td>
-    <td align="center">
-      <a href="attribute.php?act=list&goods_type=2" title="属性列表">属性列表</a> |
-      <a href="goods_type.php?act=edit&cat_id=2" title="编辑">编辑</a> |
-      <a href="javascript:;" onclick="listTable.remove(2, '删除商品类型将会清除该类型下的所有属性。\n您确定要删除选定的商品类型吗？')" title="移除">移除</a>
-    </td>
-  </tr>
-    <tr>
-    <td class="first-cell"><span onclick="javascript:listTable.edit(this, 'edit_type_name', 3)">电影</span></td>
-    <td></td>
-    <td align="right">24</td>
-    <td align="center"><img src="static/picture/yes.gif" ></td>
-    <td align="center">
-      <a href="attribute.php?act=list&goods_type=3" title="属性列表">属性列表</a> |
-      <a href="goods_type.php?act=edit&cat_id=3" title="编辑">编辑</a> |
-      <a href="javascript:;" onclick="listTable.remove(3, '删除商品类型将会清除该类型下的所有属性。\n您确定要删除选定的商品类型吗？')" title="移除">移除</a>
-    </td>
-  </tr>
-    <tr>
-    <td class="first-cell"><span onclick="javascript:listTable.edit(this, 'edit_type_name', 4)">手机</span></td>
-    <td></td>
-    <td align="right">26</td>
-    <td align="center"><img src="static/picture/yes.gif" ></td>
-    <td align="center">
-      <a href="attribute.php?act=list&goods_type=4" title="属性列表">属性列表</a> |
-      <a href="goods_type.php?act=edit&cat_id=4" title="编辑">编辑</a> |
-      <a href="javascript:;" onclick="listTable.remove(4, '删除商品类型将会清除该类型下的所有属性。\n您确定要删除选定的商品类型吗？')" title="移除">移除</a>
-    </td>
-  </tr>
-    <tr>
-    <td class="first-cell"><span onclick="javascript:listTable.edit(this, 'edit_type_name', 5)">笔记本电脑</span></td>
-    <td></td>
-    <td align="right">19</td>
-    <td align="center"><img src="static/picture/yes.gif" ></td>
-    <td align="center">
-      <a href="attribute.php?act=list&goods_type=5" title="属性列表">属性列表</a> |
-      <a href="goods_type.php?act=edit&cat_id=5" title="编辑">编辑</a> |
-      <a href="javascript:;" onclick="listTable.remove(5, '删除商品类型将会清除该类型下的所有属性。\n您确定要删除选定的商品类型吗？')" title="移除">移除</a>
-    </td>
-  </tr>
-    <tr>
-    <td class="first-cell"><span onclick="javascript:listTable.edit(this, 'edit_type_name', 6)">数码相机</span></td>
-    <td></td>
-    <td align="right">41</td>
-    <td align="center"><img src="static/picture/yes.gif" ></td>
-    <td align="center">
-      <a href="attribute.php?act=list&goods_type=6" title="属性列表">属性列表</a> |
-      <a href="goods_type.php?act=edit&cat_id=6" title="编辑">编辑</a> |
-      <a href="javascript:;" onclick="listTable.remove(6, '删除商品类型将会清除该类型下的所有属性。\n您确定要删除选定的商品类型吗？')" title="移除">移除</a>
-    </td>
-  </tr>
-    <tr>
-    <td class="first-cell"><span onclick="javascript:listTable.edit(this, 'edit_type_name', 7)">数码摄像机</span></td>
-    <td></td>
-    <td align="right">23</td>
-    <td align="center"><img src="static/picture/yes.gif" ></td>
-    <td align="center">
-      <a href="attribute.php?act=list&goods_type=7" title="属性列表">属性列表</a> |
-      <a href="goods_type.php?act=edit&cat_id=7" title="编辑">编辑</a> |
-      <a href="javascript:;" onclick="listTable.remove(7, '删除商品类型将会清除该类型下的所有属性。\n您确定要删除选定的商品类型吗？')" title="移除">移除</a>
-    </td>
-  </tr>
-    <tr>
-    <td class="first-cell"><span onclick="javascript:listTable.edit(this, 'edit_type_name', 8)">化妆品</span></td>
-    <td></td>
-    <td align="right">7</td>
-    <td align="center"><img src="static/picture/yes.gif" ></td>
-    <td align="center">
-      <a href="attribute.php?act=list&goods_type=8" title="属性列表">属性列表</a> |
-      <a href="goods_type.php?act=edit&cat_id=8" title="编辑">编辑</a> |
-      <a href="javascript:;" onclick="listTable.remove(8, '删除商品类型将会清除该类型下的所有属性。\n您确定要删除选定的商品类型吗？')" title="移除">移除</a>
-    </td>
-  </tr>
-    <tr>
-    <td class="first-cell"><span onclick="javascript:listTable.edit(this, 'edit_type_name', 9)">精品手机</span></td>
-    <td></td>
-    <td align="right">39</td>
-    <td align="center"><img src="static/picture/yes.gif" ></td>
-    <td align="center">
-      <a href="attribute.php?act=list&goods_type=9" title="属性列表">属性列表</a> |
-      <a href="goods_type.php?act=edit&cat_id=9" title="编辑">编辑</a> |
-      <a href="javascript:;" onclick="listTable.remove(9, '删除商品类型将会清除该类型下的所有属性。\n您确定要删除选定的商品类型吗？')" title="移除">移除</a>
-    </td>
-  </tr>
+  <?php endforeach ?>
       <tr>
       <td align="right" nowrap="true" colspan="6">
-      <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <div id="turn-page">
   <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
   页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
@@ -222,207 +137,10 @@ var type_name_empty = "商品类型名称不能为空！";
       </td>
     </tr>
   </table>
-
 </div>
-<!-- end goods type list -->
 </form>
-
-<script type="text/javascript" language="JavaScript">
-<!--
-  listTable.recordCount = 9;
-  listTable.pageCount = 1;
-
-    listTable.filter.record_count = '9';
-    listTable.filter.page_size = '15';
-    listTable.filter.page = '1';
-    listTable.filter.page_count = '1';
-    listTable.filter.start = '0';
-   
-  
-  onload = function()
-  {
-    // 开始检查订单
-    startCheckOrder();
-  }
-
-//-->
-</script>
-
-
 <div id="footer">
 共执行 2 个查询，用时 0.005534 秒，Gzip 已禁用，内存占用 1.453 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
-<!-- 新订单提示信息 -->
-<div id="popMsg">
-  <table cellspacing="0" cellpadding="0" width="100%" bgcolor="#cfdef4" border="0">
-  <tr>
-    <td style="color: #0f2c8c" width="30" height="24"></td>
-    <td style="font-weight: normal; color: #1f336b; padding-top: 4px;padding-left: 4px" valign="center" width="100%"> 新订单通知</td>
-    <td style="padding-top: 2px;padding-right:2px" valign="center" align="right" width="19"><span title="关闭" style="cursor: hand;cursor:pointer;color:red;font-size:12px;font-weight:bold;margin-right:4px;" onclick="Message.close()" >×</span><!-- <img title=关闭 style="cursor: hand" onclick=closediv() hspace=3 src="static/picture/msgclose.jpg"> --></td>
-  </tr>
-  <tr>
-    <td style="padding-right: 1px; padding-bottom: 1px" colspan="3" height="70">
-    <div id="popMsgContent">
-      <p>您有 <strong style="color:#ff0000" id="spanNewOrder">1</strong> 个新订单以及       <strong style="color:#ff0000" id="spanNewPaid">0</strong> 个新付款的订单</p>
-      <p align="center" style="word-break:break-all"><a href="order.php?act=list"><span style="color:#ff0000">点击查看新订单</span></a></p>
-    </div>
-    </td>
-  </tr>
-  </table>
-</div>
-
-<!--
-<embed src="static/flash/online.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
--->
-<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0" id="msgBeep" width="1" height="1">
-  <param name="movie" value="images/online.swf">
-  <param name="quality" value="high">
-  <embed src="images/online.swf" name="msgBeep" id="msgBeep" quality="high" width="0" height="0" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?p1_prod_version=shockwaveflash">
-  </embed>
-</object>
-
-<script language="JavaScript">
-document.onmousemove=function(e)
-{
-  var obj = Utils.srcElement(e);
-  if (typeof(obj.onclick) == 'function' && obj.onclick.toString().indexOf('listTable.edit') != -1)
-  {
-    obj.title = '点击修改内容';
-    obj.style.cssText = 'background-color: #eee;';
-    obj.onmouseout = function(e)
-    {
-      this.style.cssText = '';
-    }
-  }
-  else if (typeof(obj.href) != 'undefined' && obj.href.indexOf('listTable.sort') != -1)
-  {
-    obj.title = '点击对列表排序';
-  }
-}
-<!--
-
-
-var MyTodolist;
-function showTodoList(adminid)
-{
-  if(!MyTodolist)
-  {
-    var global = $import("../js/global.js","js");
-    global.onload = global.onreadystatechange= function()
-    {
-      if(this.readyState && this.readyState=="loading")return;
-      var md5 = $import("js/md5.js","js");
-      md5.onload = md5.onreadystatechange= function()
-      {
-        if(this.readyState && this.readyState=="loading")return;
-        var todolist = $import("js/todolist.js","js");
-        todolist.onload = todolist.onreadystatechange = function()
-        {
-          if(this.readyState && this.readyState=="loading")return;
-          MyTodolist = new Todolist();
-          MyTodolist.show();
-        }
-      }
-    }
-  }
-  else
-  {
-    if(MyTodolist.visibility)
-    {
-      MyTodolist.hide();
-    }
-    else
-    {
-      MyTodolist.show();
-    }
-  }
-}
-
-if (Browser.isIE)
-{
-  onscroll = function()
-  {
-    //document.getElementById('calculator').style.top = document.body.scrollTop;
-    document.getElementById('popMsg').style.top = (document.body.scrollTop + document.body.clientHeight - document.getElementById('popMsg').offsetHeight) + "px";
-  }
-}
-
-if (document.getElementById("listDiv"))
-{
-  document.getElementById("listDiv").onmouseover = function(e)
-  {
-    obj = Utils.srcElement(e);
-
-    if (obj)
-    {
-      if (obj.parentNode.tagName.toLowerCase() == "tr") row = obj.parentNode;
-      else if (obj.parentNode.parentNode.tagName.toLowerCase() == "tr") row = obj.parentNode.parentNode;
-      else return;
-
-      for (i = 0; i < row.cells.length; i++)
-      {
-        if (row.cells[i].tagName != "TH") row.cells[i].style.backgroundColor = '#F4FAFB';
-      }
-    }
-
-  }
-
-  document.getElementById("listDiv").onmouseout = function(e)
-  {
-    obj = Utils.srcElement(e);
-
-    if (obj)
-    {
-      if (obj.parentNode.tagName.toLowerCase() == "tr") row = obj.parentNode;
-      else if (obj.parentNode.parentNode.tagName.toLowerCase() == "tr") row = obj.parentNode.parentNode;
-      else return;
-
-      for (i = 0; i < row.cells.length; i++)
-      {
-          if (row.cells[i].tagName != "TH") row.cells[i].style.backgroundColor = '#FFF';
-      }
-    }
-  }
-
-  document.getElementById("listDiv").onclick = function(e)
-  {
-    var obj = Utils.srcElement(e);
-
-    if (obj.tagName == "INPUT" && obj.type == "checkbox")
-    {
-      if (!document.forms['listForm'])
-      {
-        return;
-      }
-      var nodes = document.forms['listForm'].elements;
-      var checked = false;
-
-      for (i = 0; i < nodes.length; i++)
-      {
-        if (nodes[i].checked)
-        {
-           checked = true;
-           break;
-         }
-      }
-
-      if(document.getElementById("btnSubmit"))
-      {
-        document.getElementById("btnSubmit").disabled = !checked;
-      }
-      for (i = 1; i <= 10; i++)
-      {
-        if (document.getElementById("btnSubmit" + i))
-        {
-          document.getElementById("btnSubmit" + i).disabled = !checked;
-        }
-      }
-    }
-  }
-
-}
-
-//-->
-</script>
 </body>
 </html>
