@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\ECShop\public/../application/admin\view\goods\goods_type_manage.html";i:1536319633;}*/ ?>
 <!-- $Id: goods_type.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -11,7 +12,7 @@
 </head>
 <body>
 <h1>
-      <a class="btn btn-right" href="{:url('goods/goods_type_add')}">新建商品类型</a>
+      <a class="btn btn-right" href="<?php echo url('goods/goods_type_add'); ?>">新建商品类型</a>
   
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;商品类型 </span>
   <div style="clear:both"></div>
@@ -33,15 +34,15 @@
     <td><?php echo $v['attr_group']; ?></td>
     <td align="right"><?php echo $v['enabled']; ?></td>
     <td align="center">
-      {in name="$v.status" value="1"}
-      <img src="static/picture/yes.svg" class="status" id="{$v.cat_id}" value='{$v.status}' width="20"/>
-      {else/}
-      <img src="static/picture/no.svg" class="status" id="{$v.cat_id}" value='{$v.status}' width="20"/>
-      {/in}
+      <?php if(in_array(($v['status']), explode(',',"1"))): ?>
+      <img src="static/picture/yes.svg" class="status" id="<?php echo $v['cat_id']; ?>" value='<?php echo $v['status']; ?>' width="20"/>
+      <?php else: ?>
+      <img src="static/picture/no.svg" class="status" id="<?php echo $v['cat_id']; ?>" value='<?php echo $v['status']; ?>' width="20"/>
+      <?php endif; ?>
     <td align="center">
-      <a href="{:url('attribute_list')}?id=<?php echo $v['cat_id']; ?>" title="属性列表">属性列表</a> |
-      <a href="{:url('goods_type_upd')}?id=<?php echo $v['cat_id']; ?>" title="编辑">编辑</a> |
-      <a href="{:url('goods_type_del')}?id=<?php echo $v['cat_id']; ?>" onclick="listTable.remove(1, '删除商品类型将会清除该类型下的所有属性。\n您确定要删除选定的商品类型吗？')" title="移除">移除</a>
+      <a href="<?php echo url('attribute_list'); ?>?id=<?php echo $v['cat_id']; ?>" title="属性列表">属性列表</a> |
+      <a href="<?php echo url('goods_type_upd'); ?>?id=<?php echo $v['cat_id']; ?>" title="编辑">编辑</a> |
+      <a href="<?php echo url('goods_type_del'); ?>?id=<?php echo $v['cat_id']; ?>" onclick="listTable.remove(1, '删除商品类型将会清除该类型下的所有属性。\n您确定要删除选定的商品类型吗？')" title="移除">移除</a>
     </td>
   </tr>
   <?php endforeach ?>

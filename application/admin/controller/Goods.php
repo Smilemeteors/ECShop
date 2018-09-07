@@ -229,4 +229,8 @@ class Goods extends Controller
     {
         return view('category_list');
     }
+    public function attribute_list(){
+    $arr = Db::table('attribute')->select();
+    return view('attribute_list',['arr'=>$arr]);
+    }
 }
