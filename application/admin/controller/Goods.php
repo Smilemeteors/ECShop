@@ -62,31 +62,7 @@ class Goods extends Controller
     {
         return view('goods_trash');
     }
-<<<<<<< HEAD
-=======
-    //类型
-    public function goods_type_manage()
-    {
-        $arr = Db::table('goods_type')->select();
-        return view('goods_type_manage',['arr'=>$arr]);
-    }
-
-//    public function good_type_add()
-//    {
-//        $data = [
-//            ['foo' => 'bar', 'bar' => 'foo'],
-//            ['foo' => 'bar1', 'bar' => 'foo1'],
-//            ['foo' => 'bar2', 'bar' => 'foo2']
-//        ];
-//        $about = Db::name('goods_type')->insertAll($data);
-//    }
-//    public function good_type_upd()
-//    {
-//        $about = Db::table('goods_type')->where('id', 1)->update(['name' => 'thinkphp']);
-//    }
-//    public function good_type_del(){}
-
->>>>>>> 21b699e10ccecb402fad59d43cb3a93ea2fbfbef
+    
     public function category_list()
     {
         return view('category_list');
@@ -101,10 +77,6 @@ class Goods extends Controller
     public function brand_add_do(){
         echo "brand_add_do";
     }
-
-
-
-
      //类型
     public function goods_type_manage()
     {
