@@ -108,6 +108,8 @@ class Goods extends Controller
         echo json_encode($arr);
     }
     //
+    //
+    //
     // 以上 及点击该
     // 
     // 
@@ -129,7 +131,6 @@ class Goods extends Controller
     }
 
     public function brand_add_do(){
-        echo'1';die;
         $request = Request::instance()->post();
         $request['brand_logo']=$this->brand_upload();
         $res=$this->goods->inserts($request);

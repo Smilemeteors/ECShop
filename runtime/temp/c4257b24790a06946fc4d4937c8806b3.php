@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_list.html";i:1536338494;}*/ ?>
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -71,40 +72,40 @@ th{text-align:center;}
     <th>操作</th>
   </tr>
 
-  {volist name='res' id='v'}
+  <?php if(is_array($res) || $res instanceof \think\Collection || $res instanceof \think\Paginator): $i = 0; $__LIST__ = $res;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
     <tr>
-    <td><input type="checkbox" name="checkboxes[]" value="{$v.goods_id}"></td>
-    <td>{$v.goods_id}</td>
-    <td class="first-cell"><span>{$v.goods_name}</span></td>
-    <td><span>{$v.goods_sn}</span></td>
-    <td align="right"><span>{$v.goods_price}</span></td>
+    <td><input type="checkbox" name="checkboxes[]" value="<?php echo $v['goods_id']; ?>"></td>
+    <td><?php echo $v['goods_id']; ?></td>
+    <td class="first-cell"><span><?php echo $v['goods_name']; ?></span></td>
+    <td><span><?php echo $v['goods_sn']; ?></span></td>
+    <td align="right"><span><?php echo $v['goods_price']; ?></span></td>
      <td>
-      {in name="$v.is_put" value="1"}
-      <img src="static/picture/yes.svg" class="is_put" id="{$v.goods_id}" value='{$v.is_put}' width="20"/>
-      {else/}
-      <img src="static/picture/no.svg" class="is_put" id="{$v.goods_id}" value='{$v.is_put}' width="20"/>
-      {/in}
+      <?php if(in_array(($v['is_put']), explode(',',"1"))): ?>
+      <img src="static/picture/yes.svg" class="is_put" id="<?php echo $v['goods_id']; ?>" value='<?php echo $v['is_put']; ?>' width="20"/>
+      <?php else: ?>
+      <img src="static/picture/no.svg" class="is_put" id="<?php echo $v['goods_id']; ?>" value='<?php echo $v['is_put']; ?>' width="20"/>
+      <?php endif; ?>
     </td>
     <td>
-      {in name="$v.is_best" value="1"}
-      <img src="static/picture/yes.svg" class="is_best" id="{$v.goods_id}"  value='{$v.is_best}' width="20"/>
-      {else/}
-      <img src="static/picture/no.svg" class="is_best" id="{$v.goods_id}"  value='{$v.is_best}' width="20"/>
-      {/in}
+      <?php if(in_array(($v['is_best']), explode(',',"1"))): ?>
+      <img src="static/picture/yes.svg" class="is_best" id="<?php echo $v['goods_id']; ?>"  value='<?php echo $v['is_best']; ?>' width="20"/>
+      <?php else: ?>
+      <img src="static/picture/no.svg" class="is_best" id="<?php echo $v['goods_id']; ?>"  value='<?php echo $v['is_best']; ?>' width="20"/>
+      <?php endif; ?>
     </td>
     <td>
-      {in name="$v.is_new" value="1"}
-      <img src="static/picture/yes.svg" class="is_new" id="{$v.goods_id}"  value='{$v.is_new}' width="20" />
-      {else/}
-      <img src="static/picture/no.svg" class="is_new" id="{$v.goods_id}"  value='{$v.is_new}' width="20" />
-      {/in}
+      <?php if(in_array(($v['is_new']), explode(',',"1"))): ?>
+      <img src="static/picture/yes.svg" class="is_new" id="<?php echo $v['goods_id']; ?>"  value='<?php echo $v['is_new']; ?>' width="20" />
+      <?php else: ?>
+      <img src="static/picture/no.svg" class="is_new" id="<?php echo $v['goods_id']; ?>"  value='<?php echo $v['is_new']; ?>' width="20" />
+      <?php endif; ?>
     </td>
     <td>
-      {in name="$v.is_hot" value="1"}
-      <img src="static/picture/yes.svg" class="is_hot" id="{$v.goods_id}"  value='{$v.is_hot}' width="20"/>
-      {else/}
-      <img src="static/picture/no.svg" class="is_hot" id="{$v.goods_id}"  value='{$v.is_hot}' width="20"/>
-      {/in}
+      <?php if(in_array(($v['is_hot']), explode(',',"1"))): ?>
+      <img src="static/picture/yes.svg" class="is_hot" id="<?php echo $v['goods_id']; ?>"  value='<?php echo $v['is_hot']; ?>' width="20"/>
+      <?php else: ?>
+      <img src="static/picture/no.svg" class="is_hot" id="<?php echo $v['goods_id']; ?>"  value='<?php echo $v['is_hot']; ?>' width="20"/>
+      <?php endif; ?>
     </td>
     <td align="center"><span>100</span></td>
         <td align="right"><span>1</span></td>
@@ -116,7 +117,7 @@ th{text-align:center;}
       <a href="javascript:;" class="hs" title="回收站">回收站</a>
       <img src="static/picture/empty.gif" width="16" height="16" border="0">        </td>
   </tr>
-  {/volist}
+  <?php endforeach; endif; else: echo "" ;endif; ?>
   </table>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
@@ -131,7 +132,7 @@ th{text-align:center;}
     var goods_id = $(this).attr('id');
     var obj = $(this);
     $.ajax({
-      url:"{:url('goods/goods_change_put')}",
+      url:"<?php echo url('goods/goods_change_put'); ?>",
       data:{status:status,goods_id:goods_id},
       dataType:"json",
       success:function(res){
@@ -161,7 +162,7 @@ th{text-align:center;}
     var goods_id = $(this).attr('id');
     var obj = $(this);
     $.ajax({
-      url:"{:url('goods/goods_change_best')}",
+      url:"<?php echo url('goods/goods_change_best'); ?>",
       data:{status:status,goods_id:goods_id},
       dataType:"json",
       success:function(res){
@@ -190,7 +191,7 @@ th{text-align:center;}
     var goods_id = $(this).attr('id');
     var obj = $(this);
     $.ajax({
-      url:"{:url('goods/goods_change_new')}",
+      url:"<?php echo url('goods/goods_change_new'); ?>",
       data:{status:status,goods_id:goods_id},
       dataType:"json",
       success:function(res){
@@ -219,7 +220,7 @@ th{text-align:center;}
     var goods_id = $(this).attr('id');
     var obj = $(this);
     $.ajax({
-      url:"{:url('goods/goods_change_hot')}",
+      url:"<?php echo url('goods/goods_change_hot'); ?>",
       data:{status:status,goods_id:goods_id},
       dataType:"json",
       success:function(res){
@@ -281,7 +282,7 @@ th{text-align:center;}
     <td align="right" nowrap="true">
     <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <div class="page" style="float:right;" >
-  {$res->render()}
+  <?php echo $res->render(); ?>
 </div>
     </td>
   </tr>
