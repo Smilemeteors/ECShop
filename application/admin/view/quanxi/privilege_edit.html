@@ -7,56 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="/static/css/general.css" rel="stylesheet" type="text/css" />
 <link href="/static/css/main.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="/static/js/transport.js"></script><script type="text/javascript" src="/static/js/common.js"></script>
-<style>
-  .panel-icloud .panel-right iframe {
-    height: 300px;
-    margin-top: 15px;
-  }
-  .panel-hint{
-    top: 0%;
-  }
-</style>
 
-<script>
-<!--
-// 这里把JS用到的所有语言都赋值到这里
-var process_request = "正在处理您的请求...";
-var todolist_caption = "记事本";
-var todolist_autosave = "自动保存";
-var todolist_save = "保存";
-var todolist_clear = "清除";
-var todolist_confirm_save = "是否将更改保存到记事本？";
-var todolist_confirm_clear = "是否清空内容？";
-var user_name_empty = "管理员用户名不能为空!";
-var password_invaild = "密码必须同时包含字母及数字且长度不能小于6!";
-var email_empty = "Email地址不能为空!";
-var email_error = "Email地址格式不正确!";
-var password_error = "两次输入的密码不一致!";
-var captcha_empty = "您没有输入验证码!";
-//-->
-/*关闭按钮*/
-  function get_certificate(){
-	  var panel = document.getElementById('panelCloud');
-	  var mask  = document.getElementById('CMask')||null;
-	  var frame = document.getElementById('CFrame');
-	  if(panel&&CMask&&frame){
-	      panel.style.display = 'block';
-	      mask.style.display = 'block';
-	      frame.src = 'https://openapi.shopex.cn/oauth/authorize?response_type=code&client_id=yogfss4l&redirect_uri=http%3A%2F%2F127.0.0.1%2Fshixun%2FEC4%2Fsource%2Fecshop%2Fadmin%2Fcertificate.php%3Fact%3Dget_certificate%26type%3Dindex&view=auth_ecshop';
-	    }
-	}
-
-	/*关闭按钮*/
-	function btnCancel(item){
-	  var par  = item.offsetParent;
-	  var mask  = document.getElementById('CMask')||null;
-	  var frame = document.getElementById('CFrame');
-	  par.style.display = 'none';
-	  if(mask){mask.style.display = 'none';}
-	  frame.src = '';
-	}
-</script>
 </head>
 <body>
 <!--云起激活系统面板-->

@@ -1,9 +1,8 @@
-﻿<!-- $Id: agency_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-
+﻿<!-- $Id: agency_info.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ECSHOP 管理中心 - 供货商列表 </title>
+<title>ECSHOP 管理中心 - 添加供货商 </title>
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="/static/css/general_2.css" rel="stylesheet" type="text/css" />
@@ -37,100 +36,65 @@
 <div class="mask-black" id="CMask"></div>
 <!--遮罩-->
 <h1>
-      <a class="btn btn-right" href="./suppliers_add.html">添加供货商</a>
+      <a class="btn btn-right" href="suppliers.php?act=list">供货商列表</a>
   
-    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;供货商列表 </span>
+    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;添加供货商 </span>
   <div style="clear:both"></div>
-</h1><script type="text/javascript" src="static/js/utils_2.js"></script><script type="text/javascript" src="static/js/listtable_2.js"></script>
-<form method="post" action="" name="listForm" onsubmit="return confirm(batch_drop_confirm);">
-<div class="list-div" id="listDiv">
-
-  <table cellpadding="3" cellspacing="1">
-    <tr>
-      <th> <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox" />
-          <a href="javascript:listTable.sort('suppliers_id'); ">编号</a><img src="static/picture/sort_desc_1.png"> </th>
-      <th><a href="javascript:listTable.sort('suppliers_name'); ">供货商名称</a></th>
-      <th>供货商描述</th>
-      <th>状态</th>
-      <th>操作</th>
-    </tr>
-        <?php foreach ($list as $key => $v) { ?>
-          <tr>
-      <td><input type="checkbox" name="checkboxes[]" value="<?=$v['suppliers_id'];?>" />
-        <?=$v['suppliers_id'];?></td>
-      <td class="first-cell">
-        <span onclick="javascript:listTable.edit(this, 'edit_suppliers_name', <?=$v['suppliers_id'];?>)"><?=$v['suppliers_name']?>      </span></td>
-      <td><?=$v['suppliers_desc']?></td>
-      <td align="center"><img src="static/picture/yes_1.svg" width="20" onclick="listTable.toggle(this, 'is_check', <?=$v['suppliers_id'];?>)" style="cursor:pointer;"/></td>
-      <td align="center">
-        <a href="suppliers_edit.html?id=<?=$v['suppliers_id'];?>" title="编辑">编辑</a> |
-        <a href="javascript:void(0);" onclick="listTable.remove(<?=$v['suppliers_id'];?>, '您确认要删除这条记录吗?')" title="移除">移除</a>      </td>
-    </tr>
-        <?php } ?>
-        <!-- <tr>
-      <td><input type="checkbox" name="checkboxes[]" value="2" />
-        2</td>
-      <td class="first-cell">
-        <span onclick="javascript:listTable.edit(this, 'edit_suppliers_name', 2)">上海供货商      </span></td>
-      <td>上海供货商</td>
-			<td align="center"><img src="static/picture/yes_1.svg" width="20" onclick="listTable.toggle(this, 'is_check', 2)" style="cursor:pointer;"/></td>
-      <td align="center">
-        <a href="suppliers.php?act=edit&id=2" title="编辑">编辑</a> |
-        <a href="javascript:void(0);" onclick="listTable.remove(2, '您确认要删除这条记录吗?')" title="移除">移除</a>      </td>
-    </tr> -->
-      </table>
-<table id="page-table" cellspacing="0">
+</h1><script type="text/javascript" src="/static/js/validator_1.js"></script><script type="text/javascript" src="/static/js/region_1.js"></script><div class="main-div">
+<form method="post" action="" name="theForm" enctype="multipart/form-data" onsubmit="return validate()">
+<table cellspacing="1" cellpadding="3" width="100%">
   <tr>
-    <td>
-      <input name="remove" type="submit" id="btnSubmit" value="删除" class="button" disabled="true" />
-      <input name="act" type="hidden" value="batch" />
-    </td>
-    <td align="right" nowrap="true">
-    <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-<div id="turn-page">
-  <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
-  页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
-  条记录，总共 <span id="totalRecords">2</span>
-  条记录
-  <span id="page-link">
-    <a href="javascript:listTable.gotoPageFirst()">第一页</a>
-    <a href="javascript:listTable.gotoPagePrev()">上一页</a>
-    <a href="javascript:listTable.gotoPageNext()">下一页</a>
-    <a href="javascript:listTable.gotoPageLast()">最末页</a>
-    <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
-      <option value='1'>1</option>    </select>
-  </span>
-</div>
-    </td>
+    <td class="label">供货商名称：</td>
+    <td><input type="text" name="suppliers_name" maxlength="60" value="" /><span class="require-field">*</span></td>
+  </tr>
+  <tr>
+    <td class="label">供货商描述：</td>
+    <td><textarea  name="suppliers_desc" cols="60" rows="4"  ></textarea></td>
+  </tr>
+  <tr>
+    <td class="label">
+    <a href="javascript:showNotice('noticeAdmins');" title="点击此处查看提示信息"><img src="/static/picture/notice_1.svg" width="16" height="16" border="0" alt="点击此处查看提示信息"></a>负责该供货商的管理员：</td>
+    <td><br />
+    <span class="notice-span" style="display:block"  id="noticeAdmins">用星号(*)标注的管理员表示已经负责其他的供货商了</span></td>
   </tr>
 </table>
 
-</div>
+<table align="center">
+  <tr>
+    <td colspan="2" align="center">
+      <input type="submit" class="button" value=" 确定 " />
+      <input type="reset" class="button" value=" 重置 " />
+      <input type="hidden" name="act" value="insert" />
+      <input type="hidden" name="id" value="" />
+    </td>
+  </tr>
+</table>
 </form>
+</div>
+<script type="text/javascript" src="/static/js/utils_1.js"></script>
+<script language="JavaScript">
+<!--
+document.forms['theForm'].elements['suppliers_name'].focus();
 
-<script type="text/javascript" language="javascript">
-  <!--
-  listTable.recordCount = 2;
-  listTable.pageCount = 1;
-
-    listTable.filter.sort_by = 'suppliers_id';
-    listTable.filter.sort_order = 'ASC';
-    listTable.filter.page = '1';
-    listTable.filter.page_size = '15';
-    listTable.filter.record_count = '2';
-    listTable.filter.page_count = '1';
-  
-  
-  onload = function()
-  {
-      // 开始检查订单
-      startCheckOrder();
-  }
-  
-  //-->
+onload = function()
+{
+    // 开始检查订单
+    startCheckOrder();
+}
+/**
+ * 检查表单输入的数据
+ */
+function validate()
+{
+    validator = new Validator("theForm");
+    validator.required("suppliers_name",  no_suppliers_name);
+    return validator.passed();
+}
+//-->
 </script>
+
 <div id="footer">
-共执行 4 个查询，用时 0.013437 秒，Gzip 已禁用，内存占用 1.113 MB<br />
+共执行 3 个查询，用时 0.015163 秒，Gzip 已禁用，内存占用 1.102 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
 <!-- 新订单提示信息 -->
 <div id="popMsg">
@@ -138,7 +102,7 @@
   <tr>
     <td style="color: #0f2c8c" width="30" height="24"></td>
     <td style="font-weight: normal; color: #1f336b; padding-top: 4px;padding-left: 4px" valign="center" width="100%"> 新订单通知</td>
-    <td style="padding-top: 2px;padding-right:2px" valign="center" align="right" width="19"><span title="关闭" style="cursor: hand;cursor:pointer;color:red;font-size:12px;font-weight:bold;margin-right:4px;" onclick="Message.close()" >×</span><!-- <img title=关闭 style="cursor: hand" onclick=closediv() hspace=3 src="static/picture/msgclose.jpg"> --></td>
+    <td style="padding-top: 2px;padding-right:2px" valign="center" align="right" width="19"><span title="关闭" style="cursor: hand;cursor:pointer;color:red;font-size:12px;font-weight:bold;margin-right:4px;" onclick="Message.close()" >×</span><!-- <img title=关闭 style="cursor: hand" onclick=closediv() hspace=3 src="/static/picture/msgclose.jpg"> --></td>
   </tr>
   <tr>
     <td style="padding-right: 1px; padding-bottom: 1px" colspan="3" height="70">
@@ -152,7 +116,7 @@
 </div>
 
 <!--
-<embed src="static/flash/online_2.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
+<embed src="/static/flash/online_2.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
 -->
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0" id="msgBeep" width="1" height="1">
   <param name="movie" value="images/online.swf">

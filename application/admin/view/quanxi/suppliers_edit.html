@@ -7,51 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="/static/css/general.css" rel="stylesheet" type="text/css" />
 <link href="/static/css/main.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="/static/js/transport.js"></script><script type="text/javascript" src="/static/js/common.js"></script>
-<style>
-  .panel-icloud .panel-right iframe {
-    height: 300px;
-    margin-top: 15px;
-  }
-  .panel-hint{
-    top: 0%;
-  }
-</style>
 
-<script>
-<!--
-// 这里把JS用到的所有语言都赋值到这里
-var process_request = "正在处理您的请求...";
-var todolist_caption = "记事本";
-var todolist_autosave = "自动保存";
-var todolist_save = "保存";
-var todolist_clear = "清除";
-var todolist_confirm_save = "是否将更改保存到记事本？";
-var todolist_confirm_clear = "是否清空内容？";
-var no_suppliers_name = "没有填供货商名称";
-//-->
-/*关闭按钮*/
-  function get_certificate(){
-	  var panel = document.getElementById('panelCloud');
-	  var mask  = document.getElementById('CMask')||null;
-	  var frame = document.getElementById('CFrame');
-	  if(panel&&CMask&&frame){
-	      panel.style.display = 'block';
-	      mask.style.display = 'block';
-	      frame.src = 'https://openapi.shopex.cn/oauth/authorize?response_type=code&client_id=yogfss4l&redirect_uri=http%3A%2F%2F127.0.0.1%2Fshixun%2FEC4%2Fsource%2Fecshop%2Fadmin%2Fcertificate.php%3Fact%3Dget_certificate%26type%3Dindex&view=auth_ecshop';
-	    }
-	}
-
-	/*关闭按钮*/
-	function btnCancel(item){
-	  var par  = item.offsetParent;
-	  var mask  = document.getElementById('CMask')||null;
-	  var frame = document.getElementById('CFrame');
-	  par.style.display = 'none';
-	  if(mask){mask.style.display = 'none';}
-	  frame.src = '';
-	}
-</script>
 </head>
 <body>
 <!--云起激活系统面板-->
@@ -85,15 +41,16 @@ var no_suppliers_name = "没有填供货商名称";
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;编辑供货商 </span>
   <div style="clear:both"></div>
 </h1><script type="text/javascript" src="static/js/validator.js"></script><script type="text/javascript" src="static/js/region.js"></script><div class="main-div">
-<form method="post" action="suppliers.php" name="theForm" enctype="multipart/form-data" onsubmit="return validate()">
-<table cellspacing="1" cellpadding="3" width="100%">
+<form method="post" action="" name="theForm" enctype="multipart/form-data" onsubmit="return validate()">
+<?php foreach ($list as $key => $v) { ?>
+  <table cellspacing="1" cellpadding="3" width="100%">
   <tr>
     <td class="label">供货商名称：</td>
-    <td><input type="text" name="suppliers_name" maxlength="60" value="北京供货商" /><span class="require-field">*</span></td>
+    <td><input type="text" name="suppliers_name" maxlength="60" value="<?=$v['suppliers_name']?>" /><span class="require-field">*</span></td>
   </tr>
   <tr>
     <td class="label">供货商描述：</td>
-    <td><textarea  name="suppliers_desc" cols="60" rows="4"  >北京供货商</textarea></td>
+    <td><textarea  name="suppliers_desc" cols="60" rows="4"  ><?=$v['suppliers_desc']?></textarea></td>
   </tr>
   <tr>
     <td class="label">
@@ -103,16 +60,19 @@ var no_suppliers_name = "没有填供货商名称";
   </tr>
 </table>
 
+
+
 <table align="center">
   <tr>
     <td colspan="2" align="center">
       <input type="submit" class="button" value=" 确定 " />
       <input type="reset" class="button" value=" 重置 " />
       <input type="hidden" name="act" value="update" />
-      <input type="hidden" name="id" value="1" />
+      <input type="hidden" name="id" value="<?=$v['suppliers_id'];?>" />
     </td>
   </tr>
 </table>
+<?php } ?>
 </form>
 </div>
 <script type="text/javascript" src="static/js/utils.js"></script>
