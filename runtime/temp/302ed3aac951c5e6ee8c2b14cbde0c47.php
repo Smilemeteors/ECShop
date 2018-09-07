@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_add.html";i:1536305306;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_add.html";i:1536313190;}*/ ?>
 <!-- $Id: goods_info.htm 17126 2010-04-23 10:30:26Z liuhui $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -8,13 +8,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="static/css/general.css" rel="stylesheet" type="text/css" />
 <link href="static/css/main.css" rel="stylesheet" type="text/css" />
-
 </head>
 <body>
 
 <h1>
       <a class="btn btn-right" href="goods.php?act=list">商品列表</a>
-  
+  <script type="text/javascript" src="static/js/utils.js"></script>
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;添加新商品 </span>
   <div style="clear:both"></div>
 </h1><script type="text/javascript" src="static/js/utils.js"></script>
