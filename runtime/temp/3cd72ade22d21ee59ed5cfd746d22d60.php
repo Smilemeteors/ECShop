@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\order\orders_list.html";i:1536312260;}*/ ?>
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -48,28 +49,14 @@
   <tr>
     <th>
       <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox" />
-      <a href="javascript:; ">订单号</a>    </th>
-    <th><a href="javascript:; ">下单时间</a><img src="static/picture/sort_desc.png"></th>
-    <th><a href="javascript:; ">收货人</a></th>
-    <th><a href="javascript:; ">总金额</a></th>
-    <th><a href="javascript:; ">应付金额</a></th>
-    <th><a href="javascript:; ">订单状态</a></th>
-    <th><a href="javascript:; ">操作</a></th>
+      <a href="javascript:listTable.sort('order_sn', 'DESC'); ">订单号</a>    </th>
+    <th><a href="javascript:listTable.sort('add_time', 'DESC'); ">下单时间</a><img src="static/picture/sort_desc.png"></th>
+    <th><a href="javascript:listTable.sort('consignee', 'DESC'); ">收货人</a></th>
+    <th><a href="javascript:listTable.sort('total_fee', 'DESC'); ">总金额</a></th>
+    <th><a href="javascript:listTable.sort('order_amount', 'DESC'); ">应付金额</a></th>
+    <th>订单状态</th>
+    <th>操作</th>
   <tr>
-  <?php foreach($data as $k => $v){?>
-    <tr>
-    <td><input type="checkbox" name="test" value="{$v.order_id}">
-    {$v.order_number}</td>
-    <td class="first-cell"><span>{$v.order_data}</span></td>
-    <td><span>{$v.consignee}</span></td>
-    <td align="right"><span>¥{$v.total_money}元</span></td>
-    <td align="right"><span>¥{$v.order_amount}元</span></td>
-    <td>{$v.order_stats}</td>
-    <td><a href="admin/Order/details?id={$v.order_id}">查看</a><br />
-        <a href="javascript:; ">移除</a>
-    </td>
-    </tr>
-  <?php }?>
   </table>
 
 
@@ -78,7 +65,11 @@
   <tr>
     <td style="text-align: left;">
       <div>
-        
+        <button class="btn" type="submit" name="confirm" id="btnSubmit" disabled="true" onclick="this.form.target = '_self'">确认</button>
+        <button name="invalid" type="submit" id="btnSubmit1" class="btn" disabled="true" onclick="this.form.target = '_self'">无效</button>
+        <button name="cancel" type="submit" id="btnSubmit2" class="btn" disabled="true" onclick="this.form.target = '_self'">取消</button>
+        <button name="remove" type="submit" id="btnSubmit3" class="btn" disabled="true" onclick="this.form.target = '_self'">移除</button>
+        <button name="print" type="submit" id="btnSubmit4" class="btn" disabled="true" onclick="this.form.target = '_blank'">打印订单</button>
         <input name="batch" type="hidden" value="1" />
         <input name="order_id" type="hidden" value="" />
       </div>

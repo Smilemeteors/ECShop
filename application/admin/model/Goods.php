@@ -13,8 +13,13 @@ class Goods extends Model
 	}
 
 	public function brand_show(){
-        return Db::table('brand')->select();
+        return $res= Db::name('brand')->paginate(5);
     }
+
+    public function inserts($request){
+        return Db::table('brand')->insert($request);
+    }
+
 
 	// public function login(){
 	// 	return $res = Db::table('user')->where('username',input('post.username'))->where('password',input('post.password'))->find();

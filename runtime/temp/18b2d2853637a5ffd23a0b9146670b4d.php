@@ -1,78 +1,133 @@
-﻿<!-- $Id: ad_position_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:82:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\order\orders_printing.html";i:1536226505;}*/ ?>
+﻿<!-- $Id: order_templates.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ECSHOP 管理中心 - 广告位置 </title>
-<base href="/" />
+<title>ECSHOP 管理中心 - 编辑订单打印模板 </title><base href="/" />
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="static/css/general_1.css" rel="stylesheet" type="text/css" />
 <link href="static/css/main_1.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="static/js/transport_1.js"></script><script type="text/javascript" src="static/js/common_1.js"></script>
+<style>
+  .panel-icloud .panel-right iframe {
+    height: 300px;
+    margin-top: 15px;
+  }
+  .panel-hint{
+    top: 0%;
+  }
+</style>
+
+<script>
+<!--
+// 这里把JS用到的所有语言都赋值到这里
+var process_request = "正在处理您的请求...";
+var todolist_caption = "记事本";
+var todolist_autosave = "自动保存";
+var todolist_save = "保存";
+var todolist_clear = "清除";
+var todolist_confirm_save = "是否将更改保存到记事本？";
+var todolist_confirm_clear = "是否清空内容？";
+var remove_confirm = "删除订单将清除该订单的所有信息。您确定要这么做吗？";
+var confirm_merge = "您确实要合并这两个订单吗？";
+var input_price = "自定义价格";
+var pls_search_user = "请搜索并选择会员";
+var confirm_drop = "确认要删除该商品吗？";
+var invalid_goods_number = "商品数量不正确";
+var pls_search_goods = "请搜索并选择商品";
+var pls_select_area = "请完整选择所在地区";
+var pls_select_shipping = "请选择配送方式";
+var pls_select_payment = "请选择支付方式";
+var pls_select_pack = "请选择包装";
+var pls_select_card = "请选择贺卡";
+var pls_input_note = "请您填写备注！";
+var pls_input_cancel = "请您填写取消原因！";
+var pls_select_refund = "请选择退款方式！";
+var pls_select_agency = "请选择办事处！";
+var pls_select_other_agency = "该订单现在就属于这个办事处，请选择其他办事处！";
+var loading = "加载中...";
+//-->
+/*关闭按钮*/
+  function get_certificate(){
+	  var panel = document.getElementById('panelCloud');
+	  var mask  = document.getElementById('CMask')||null;
+	  var frame = document.getElementById('CFrame');
+	  if(panel&&CMask&&frame){
+	      panel.style.display = 'block';
+	      mask.style.display = 'block';
+	      frame.src = 'https://openapi.shopex.cn/oauth/authorize?response_type=code&client_id=yogfss4l&redirect_uri=http%3A%2F%2F127.0.0.1%2FECShop1%2Fsource%2Fecshop%2Fadmin%2Fcertificate.php%3Fact%3Dget_certificate%26type%3Dindex&view=auth_ecshop';
+	    }
+	}
+
+	/*关闭按钮*/
+	function btnCancel(item){
+	  var par  = item.offsetParent;
+	  var mask  = document.getElementById('CMask')||null;
+	  var frame = document.getElementById('CFrame');
+	  par.style.display = 'none';
+	  if(mask){mask.style.display = 'none';}
+	  frame.src = '';
+	}
+</script>
 </head>
 <body>
-
+<!--云起激活系统面板-->
+<div class="panel-hint panel-icloud" id="panelCloud">
+  <div class="panel-cross"><span onclick="btnCancel(this)">Ｘ</span></div>
+  <div class="panel-title">
+    <span class="tit">您需要激活系统</span>
+    <p>用云起账号激活您的系统，享受物流查询，天工收银，手机短信等更多应用和服务</p>
+  </div>
+  <div class="panel-left">
+    <span>没有云起账号吗？</span>
+    <p>点击下列按钮一步完成注册激活！</p>
+    <a href="https://account.shopex.cn/reg?refer=yunqi_ecshop" target="_blank" class="btn btn-yellow">免费注册云起账号</a>
+  </div>
+  <div class="panel-right">
+    <h5 class="logo">云起</h5>
+    <p>正在激活中</p>
+    <iframe src="" frameborder="0" id="CFrame"></iframe>
+    <div class="cloud-passw">
+      <a target="_blank" href="https://account.shopex.cn/forget?">忘记密码？</a>
+    </div>
+  </div>
+</div>
+<!--云起激活系统面板-->
+<!--遮罩-->
+<div class="mask-black" id="CMask"></div>
+<!--遮罩-->
 <h1>
-      <a class="btn btn-right" href="admin/logo/addPosition">添加广告位</a>
+      <a class="btn btn-right" href="order.php?act=list">订单列表</a>
   
-    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;广告位置 </span>
+    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;编辑订单打印模板 </span>
   <div style="clear:both"></div>
-</h1><script type="text/javascript" src="static/js/utils_1.js"></script><script type="text/javascript" src="static/js/listtable_1.js"></script>
-<form method="post" action="" name="listForm">
-<!-- start ad position list -->
-<div class="list-div" id="listDiv">
-
-<table cellpadding="3" cellspacing="1">
-  <tr>
-    <th>广告位名称</th>
-    <th>位置宽度</th>
-    <th>位置高度</th>
-    <th>广告位描述</th>
-    <th>操作</th>
-  </tr>
-    <tr><td class="no-records" colspan="5">您还没有设置广告位置</td></tr>
-    <tr><td align="right" nowrap="true" colspan="5"><!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-<div id="turn-page">
-  <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
-  页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
-  条记录，总共 <span id="totalRecords">0</span>
-  条记录
-  <span id="page-link">
-    <a href="javascript:listTable.gotoPageFirst()">第一页</a>
-    <a href="javascript:listTable.gotoPagePrev()">上一页</a>
-    <a href="javascript:listTable.gotoPageNext()">下一页</a>
-    <a href="javascript:listTable.gotoPageLast()">最末页</a>
-    <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
-      <option value='1'>1</option>    </select>
-  </span>
+</h1><form action="order.php" method="post">
+<div class="main-div">
+    <table width="100%">
+     <tr><td><input type="hidden" id="FCKeditor1" name="FCKeditor1"  style="display:none" /><input type="hidden" id="FCKeditor1___Config" value="" style="display:none" /><iframe id="FCKeditor1___Frame" width="95%" height="500" frameborder="0" scrolling="no"></iframe></td></tr>
+    </table>
+    <div class="button-div ">
+    <input type="hidden" name="act" value="edit_templates" />
+    <input type="submit" value=" 确定 " class="button" />
+  </div>
 </div>
-</td></tr>
-</table>
-
-</div>
-<!-- end ad_position list -->
 </form>
+<script type="Text/Javascript" language="JavaScript">
+<!--
 
-<script type="text/javascript">
-  listTable.recordCount = 0;
-  listTable.pageCount = 1;
+onload = function()
+{
+  // 开始检查订单
+  startCheckOrder();
+}
 
-    listTable.filter.record_count = '0';
-    listTable.filter.page_size = '15';
-    listTable.filter.page = '1';
-    listTable.filter.page_count = '1';
-    listTable.filter.start = '0';
-    
-  onload = function()
-  {
-    // &#64138;&#53036;&#10870;鵥
-    startCheckOrder();
-  }
-  
+//-->
 </script>
 <div id="footer">
-共执行 4 个查询，用时 0.008329 秒，Gzip 已禁用，内存占用 1.080 MB<br />
+共执行 2 个查询，用时 0.012807 秒，Gzip 已禁用，内存占用 2.630 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
-<!-- 新订单提示信息 -->
+<script type="text/javascript" src="static/js/utils_1.js"></script><!-- 新订单提示信息 -->
 <div id="popMsg">
   <table cellspacing="0" cellpadding="0" width="100%" bgcolor="#cfdef4" border="0">
   <tr>
