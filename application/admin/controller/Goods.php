@@ -6,7 +6,7 @@ use think\Model;
 use think\Paginator;
 use think\Request;
 class Goods extends Controller
-{   
+{
 
     //model调用
     public $goods;
@@ -18,6 +18,28 @@ class Goods extends Controller
     {
         $res = $this->goods->goods_Show();
         return view('goods_list',['res'=>$res]);
+    }
+    //商品列表的回收站
+    public function trash_do()
+    {
+        $goods_id = input('get.goods_id');
+        $status = input('get.status');
+        //放入回收站后变为0
+        if($status==1){
+            $res = Db("goods")->where("goods_id",$goods_id)->update(["is_delete"=>'0']);
+        }else{
+            $res = 0;
+        }
+        if($res){
+            $arr['status'] = 0;
+            $arr['data'] = '';
+            $arr['msg'] = '成功';
+        }else{
+            $arr['status'] = 1;
+            $arr['data'] = '';
+            $arr['msg'] = '失败';
+        }
+        echo json_encode($arr);
     }
     //商品列表及点击该
     public function goods_change_put()
@@ -108,6 +130,8 @@ class Goods extends Controller
         echo json_encode($arr);
     }
     //
+    //
+    //
     // 以上 及点击该
     // 
     // 
@@ -155,7 +179,6 @@ class Goods extends Controller
     }
 
     public function brand_add_do(){
-        echo'1';die;
         $request = Request::instance()->post();
         $request['brand_logo']=$this->brand_upload();
         $res=$this->goods->inserts($request);
@@ -247,17 +270,15 @@ class Goods extends Controller
     {
         return view('comment_manage_list');
     }
-    
-
-
-
     public function category_list()
     {
-        return view('category_list');
+         return view('category_list');
     }
-    public function attribute_list(){
-    $arr = Db::table('attribute')->select();
-    return view('attribute_list',['arr'=>$arr]);
+    //属性展示
+    public function attribute_list()
+    {
+        $arr = Db::table('attribute')->select();
+        return view('attribute_list',['arr'=>$arr]);
     }
     public function attribute_add(){
         return view('attribute_add');
