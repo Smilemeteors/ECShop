@@ -1,6 +1,11 @@
+<<<<<<< HEAD:runtime/temp/722da0528886fa093141cea33a4ba05f.php
 <?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:91:"D:\PHPTutorial\WWW\ECShop\public/../application/admin\view\order\shortage_registration.html";i:1536285027;}*/ ?>
 ﻿<!-- $Id: booking_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 
+=======
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\member\users.html";i:1536379306;}*/ ?>
+﻿<!-- $Id: users_list.htm 17053 2010-03-15 06:50:26Z sxc_shop $ -->
+>>>>>>> bf7b50e7c004410b6e2960cf3808a3393a152e70:runtime/temp/dd6072da0c45fbf8556417aa192435c7.php
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -94,6 +99,7 @@ var no_note = "请输入备注信息";
 
 <form method="POST" action="" name="listForm">
 <div class="list-div" id="listDiv">
+<<<<<<< HEAD:runtime/temp/722da0528886fa093141cea33a4ba05f.php
 
   <table cellpadding="3" cellspacing="1">
     <tr>
@@ -109,6 +115,62 @@ var no_note = "请输入备注信息";
       </table>
 
   <table cellpadding="4" cellspacing="0">
+=======
+<!--用户列表部分-->
+<table cellpadding="3" cellspacing="1">
+  <tr>
+    <th>
+      <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox">
+      <a href="javascript:listTable.sort('user_id'); ">编号</a><img src="static/picture/sort_desc.png">    </th>
+    <th><a href="javascript:listTable.sort('user_name'); ">会员名称</a></th>
+    <th><a href="javascript:listTable.sort('email'); ">邮件地址</a></th>
+    <th><a href="javascript:listTable.sort('is_validated'); ">是否已验证</a></th>
+    <th>可用资金</th>
+    <th>冻结资金</th>
+    <th>等级积分</th>
+    <th>消费积分</th>
+    <th><a href="javascript:listTable.sort('reg_time'); ">注册日期</a></th>
+    <th>操作</th>
+  <tr>
+    <?php foreach ($list as $key => $v) { ?>
+      <tr>
+        <td><input type="checkbox" name="checkboxes[]" value="<?=$v['user_id']?>" notice="0"/><?=$v['user_id']?></td>
+        <td class="first-cell"><?=$v['user_name']?></td>
+        <td><span onclick="listTable.edit(this, 'edit_email', <?=$v['user_id']?>)"><?=$v['email']?></span></td>
+        <td align="center"> <img src="/static/picture/no.svg" width="20"> </td>
+        <td><?=$v['user_money'];?></td>
+        <td><?=$v['frozen_money'];?></td>
+        <td><?=$v['rank_points'];?></td>
+        <td><?=$v['pay_points'];?></td>
+        <td align="center"><?=$v['user_id'];?><?=$v['reg_time'];?></td>
+        <td align="center">
+          <a href="users_edit.html?id=<?=$v['user_id']?>" title="编辑">编辑</a>
+          <a href="users_address_list.html?id=<?=$v['user_id']?>" title="收货地址">收货地址</a>
+          <a href="order.php?act=list&user_id=<?=$v['user_id']?>" title="查看订单">查看订单</a>
+          <a href="account_log_list.html?id=<?=$v['user_id']?>" title="查看账目明细">查看账目明细</a>
+          <a href="javascript:confirm_redirect('您确定要删除该会员账号吗？', 'users.html?act=remove&id=<?=$v['user_id']?>')" title="移除">移除</a>
+        </td>
+      </tr>
+    <?php } ?>
+  <!--   <tr>
+    <td><input type="checkbox" name="checkboxes[]" value="1" notice="0"/>1</td>
+    <td class="first-cell">ecshop</td>
+    <td><span onclick="listTable.edit(this, 'edit_email', 1)">ecshop@ecshop.com</span></td>
+    <td align="center"> <img src="static/picture/no.svg" width="20"> </td>
+    <td>0.00</td>
+    <td>0.00</td>
+    <td>0</td>
+    <td>0</td>
+    <td align="center">2017-09-13</td>
+    <td align="center">
+      <a href="users.php?act=edit&id=1" title="编辑">编辑</a>
+      <a href="users.php?act=address_list&id=1" title="收货地址">收货地址</a>
+      <a href="order.php?act=list&user_id=1" title="查看订单">查看订单</a>
+      <a href="account_log.php?act=list&user_id=1" title="查看账目明细">查看账目明细</a>
+      <a href="javascript:confirm_redirect('您确定要删除该会员账号吗？', 'users.php?act=remove&id=1')" title="移除">移除</a>
+    </td>
+  </tr> -->
+>>>>>>> bf7b50e7c004410b6e2960cf3808a3393a152e70:runtime/temp/dd6072da0c45fbf8556417aa192435c7.php
     <tr>
       <td align="right"><!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <div id="turn-page">

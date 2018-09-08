@@ -113,7 +113,7 @@ th{text-align:center;}
       <a href="admin/error/error_1" target="_blank" title="查看">查看</a>
       <a href="admin/goods/goods_add" title="编辑">编辑</a>
       <a href="admin/goods/goods_add" title="复制">复制</a>
-      <a href="javascript:;" class="hs" title="回收站">回收站</a>
+      <a href="javascript:;" id='{$v.goods_id}' class="hsz" value="{$v.is_delete}" title="回收站">回收站</a>
       <img src="static/picture/empty.gif" width="16" height="16" border="0">        </td>
   </tr>
   {/volist}
@@ -121,9 +121,31 @@ th{text-align:center;}
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
-  $(document).on('click','.hs',function()
+  $(document).on('click','.hsz',function()
   {
-    alert('回收站没做呢！');
+    var r=confirm("你确定要放入回收站吗？");
+    if(!r){return};
+    var status = $(this).attr('value');
+    var goods_id = $(this).attr('id');
+    var obj = $(this);
+    $.ajax({
+      url:"{:url('goods/trash_do')}",
+      data:{status:status,goods_id:goods_id},
+      dataType:"json",
+      success:function(res){
+        if(res.status==1){
+          alert(res.msg);
+          return false;
+        }else{
+          if(status==1){
+            alert('放入回收站成功')
+            obj.parent().parent().remove();
+          }else{
+            alert('放入回收站失败')
+          }
+        }
+      }
+    })
   })
   //上架
   $(document).on('click','.is_put',function(){

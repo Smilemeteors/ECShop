@@ -6,7 +6,7 @@ use think\Model;
 use think\Paginator;
 use think\Request;
 class Goods extends Controller
-{   
+{
 
     //model调用
     public $goods;
@@ -18,6 +18,28 @@ class Goods extends Controller
     {
         $res = $this->goods->goods_Show();
         return view('goods_list',['res'=>$res]);
+    }
+    //商品列表的回收站
+    public function trash_do()
+    {
+        $goods_id = input('get.goods_id');
+        $status = input('get.status');
+        //放入回收站后变为0
+        if($status==1){
+            $res = Db("goods")->where("goods_id",$goods_id)->update(["is_delete"=>'0']);
+        }else{
+            $res = 0;
+        }
+        if($res){
+            $arr['status'] = 0;
+            $arr['data'] = '';
+            $arr['msg'] = '成功';
+        }else{
+            $arr['status'] = 1;
+            $arr['data'] = '';
+            $arr['msg'] = '失败';
+        }
+        echo json_encode($arr);
     }
     //商品列表及点击该
     public function goods_change_put()
@@ -125,6 +147,32 @@ class Goods extends Controller
         $res = $this->goods->brand_show();
         return view('brand_list',['res'=>$res]);
     }
+    //品牌修改
+    public function brand_upd(){
+        $id = Request::instance()->get('id');
+        $arr = Db::table('brand')->where('brand_id',$id)->select();
+        return view('brand_upd',['arr'=>$arr]);
+    }
+    public function brand_upd_do(){
+        $data = Request::instance()->post();
+        $arr = Db::table('brand')->where('brand_id', $data['brand_id'])->update($data);
+        if($arr){
+            $this->success('修改成功','goods/brand_list');
+        }else{
+            $this->error('修改失败','goods/brand_upd');
+        }
+    }
+    //品牌删除
+    public function brand_del(){
+        $id = Request::instance()->get('id');
+        $arr = Db::table('brand')->where('brand_id',$id)->delete();
+        if($arr){
+            $this->success('删除成功','goods/brand_list');
+        }else{
+            $this->error('删除失败','goods/brand_list');
+        }
+    }
+
     //品牌添加
     public function brand_add(){
         return view('brand_add');
@@ -210,36 +258,42 @@ class Goods extends Controller
     //商品的回收站
     public function goods_trash()
     {
-        $arr = Db::table('goods_trash')->select();
+        $arr = Db::table('goods')->where('is_delete',0)->select();
         return view('goods_trash',['arr'=>$arr]);
     }
 
+
+
+    //评论部分
+    //评论添加
     public function comment_manage_add()
     {
+        
         return view('comment_manage_add');
     }
+    //评论展示
     public function comment_manage_list()
     {
-        return view('comment_manage_list');
+        $res = $this->goods->comment_show();
+        return view('comment_manage_list',['res'=>$res]);
     }
-    
-
-
 
     public function category_list()
     {
-        return view('category_list');
+         return view('category_list');
     }
-    public function attribute_list(){
-    $arr = Db::table('attribute')->select();
-    return view('attribute_list',['arr'=>$arr]);
+    //属性展示
+    public function attribute_list()
+    {
+        $arr = Db::table('attribute')->select();
+        return view('attribute_list',['arr'=>$arr]);
     }
     public function attribute_add(){
         return view('attribute_add');
     }
     public function attribute_add_do(){
         $data = Request::instance()->post();
-        $arr = Db::name('attribute')->insert($data);
+        $arr = Db::table('attribute')->insert($data);
         if($arr){
             $this->success('添加成功','goods/attribute_list');
         }else{
@@ -252,7 +306,7 @@ class Goods extends Controller
         $arr = Db::table('attribute')->where('attr_id',$id)->select();
         return view('attribute_upd',['arr'=>$arr]);
     }
-    //类型表的修改
+    //属性的修改
     public function attribute_upd_do(){
         $data = Request::instance()->post();
         $arr = Db::table('attribute')->where('attr_id', $data['attr_id'])->update($data);
