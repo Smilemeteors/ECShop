@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:64:"E:\ECShop\public/../application/admin\view\goods\brand_list.html";i:1536371236;}*/ ?>
 <!-- $Id: brand_list.htm 15898 2009-05-04 07:25:41Z liuhui $ -->
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -46,29 +47,29 @@ th{text-align:center;}
       <th>是否显示</th>
       <th>操作</th>
     </tr>
-    {volist name='res' id='v'}
+    <?php if(is_array($res) || $res instanceof \think\Collection || $res instanceof \think\Paginator): $i = 0; $__LIST__ = $res;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
     <tr>
-        <td>{$v.brand_id}</td>
+        <td><?php echo $v['brand_id']; ?></td>
       <td class="first-cell">
         <span style="float:right"></span>
-        <span>{$v.brand_name}</span>
+        <span><?php echo $v['brand_name']; ?></span>
       </td>
-      <td><img src="uploads/{$v.brand_logo}" width="100" alt=""></td>
-      <td>{$v.site_url}</td>
-      <td align="left">{$v.brand_desc}</td>
-      <td align="right"><span>{$v.sort_order}</span></td>
-      <td align="center"><img src="static/picture/no.svg" width="20"/></td>
+      <td><img src="<?php echo $v['brand_logo']; ?>" width="100" alt=""></td>
+      <td><?php echo $v['site_url']; ?></td>
+      <td align="left"><?php echo $v['brand_desc']; ?></td>
+      <td align="right"><span><?php echo $v['sort_order']; ?></span></td>
+      <td align="center"><img src="../../../static/picture/yes.svg" width="20"/></td>
       <td align="center">
-        <a href="{:url('brand_upd')}?id=<?php echo $v['brand_id']; ?>" title="编辑">编辑</a> |
-        <a href="{:url('brand_del')}?id=<?php echo $v['brand_id']; ?>" title="移除">移除</a>
+        <a href="<?php echo url('brand_upd'); ?>?id=<?php echo $v['brand_id']; ?>" title="编辑">编辑</a> |
+        <a href="<?php echo url('brand_del'); ?>?id=<?php echo $v['brand_id']; ?>" title="移除">移除</a>
       </td>
     </tr>
-  {/volist}
+  <?php endforeach; endif; else: echo "" ;endif; ?>
   <td></td>
       <td align="right" nowrap="true" colspan="6">
       <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <div class="page" style="float:right;" >
-  {$res->render()}
+  <?php echo $res->render(); ?>
 </div>
       </td>
     </tr>

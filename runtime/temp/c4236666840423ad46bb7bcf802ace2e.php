@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:68:"E:\ECShop\public/../application/admin\view\goods\attribute_list.html";i:1536323204;}*/ ?>
 ﻿<!-- $Id: attribute_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -13,7 +14,7 @@
 </head>
 <body>
 <h1>
-      <a class="btn btn-right" href="{:url('attribute_add')}">添加属性</a>
+      <a class="btn btn-right" href="<?php echo url('attribute_add'); ?>">添加属性</a>
   
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;商品属性 </span>
   <div style="clear:both"></div>
@@ -47,8 +48,8 @@
       <td nowrap="true" valign="top"><?php echo $v['attr_input_type']; ?></td>
       <td align="right" nowrap="true" valign="top"><?php echo $v['sort_order']; ?></td>
       <td align="center" nowrap="true" valign="top">
-        <a href="//" title="编辑">编辑</a>
-        <a href="{:url('attribute_del')}?id=<?php echo $v['attr_id']; ?>" onclick="removeRow(1)" title="移除">移除</a>
+        <a href="<?php echo url('attribute_upd'); ?>?id=<?php echo $v['attr_id']; ?>" title="编辑">编辑</a>
+        <a href="<?php echo url('attribute_del'); ?>?id=<?php echo $v['attr_id']; ?>" onclick="removeRow(1)" title="移除">移除</a>
       </td>
     </tr>
     <?php endforeach ?>
