@@ -124,25 +124,27 @@ var password_len_err = "新密码和确认密码的长度不能小于6";
     <th><a href="javascript:listTable.sort('reg_time'); ">注册日期</a></th>
     <th>操作</th>
   <tr>
-    <tr>
-    <td><input type="checkbox" name="checkboxes[]" value="2" notice="0"/>2</td>
-    <td class="first-cell">vip</td>
-    <td><span onclick="listTable.edit(this, 'edit_email', 2)">vip@ecshop.com</span></td>
-    <td align="center"> <img src="static/picture/no.svg" width="20"> </td>
-    <td>0.00</td>
-    <td>0.00</td>
-    <td>0</td>
-    <td>0</td>
-    <td align="center">2017-09-13</td>
-    <td align="center">
-      <a href="users.php?act=edit&id=2" title="编辑">编辑</a>
-      <a href="users.php?act=address_list&id=2" title="收货地址">收货地址</a>
-      <a href="order.php?act=list&user_id=2" title="查看订单">查看订单</a>
-      <a href="account_log.php?act=list&user_id=2" title="查看账目明细">查看账目明细</a>
-      <a href="javascript:confirm_redirect('您确定要删除该会员账号吗？', 'users.php?act=remove&id=2')" title="移除">移除</a>
-    </td>
-  </tr>
-    <tr>
+    <?php foreach ($list as $key => $v) { ?>
+      <tr>
+        <td><input type="checkbox" name="checkboxes[]" value="<?=$v['user_id']?>" notice="0"/><?=$v['user_id']?></td>
+        <td class="first-cell"><?=$v['user_name']?></td>
+        <td><span onclick="listTable.edit(this, 'edit_email', <?=$v['user_id']?>)"><?=$v['email']?></span></td>
+        <td align="center"> <img src="/static/picture/no.svg" width="20"> </td>
+        <td><?=$v['user_money'];?></td>
+        <td><?=$v['frozen_money'];?></td>
+        <td><?=$v['rank_points'];?></td>
+        <td><?=$v['pay_points'];?></td>
+        <td align="center"><?=$v['user_id'];?><?=$v['reg_time'];?></td>
+        <td align="center">
+          <a href="users_edit.html?id=<?=$v['user_id']?>" title="编辑">编辑</a>
+          <a href="users_address_list.html?id=<?=$v['user_id']?>" title="收货地址">收货地址</a>
+          <a href="order.php?act=list&user_id=<?=$v['user_id']?>" title="查看订单">查看订单</a>
+          <a href="account_log_list.html?id=<?=$v['user_id']?>" title="查看账目明细">查看账目明细</a>
+          <a href="javascript:confirm_redirect('您确定要删除该会员账号吗？', 'users.html?act=remove&id=<?=$v['user_id']?>')" title="移除">移除</a>
+        </td>
+      </tr>
+    <?php } ?>
+  <!--   <tr>
     <td><input type="checkbox" name="checkboxes[]" value="1" notice="0"/>1</td>
     <td class="first-cell">ecshop</td>
     <td><span onclick="listTable.edit(this, 'edit_email', 1)">ecshop@ecshop.com</span></td>
@@ -159,7 +161,7 @@ var password_len_err = "新密码和确认密码的长度不能小于6";
       <a href="account_log.php?act=list&user_id=1" title="查看账目明细">查看账目明细</a>
       <a href="javascript:confirm_redirect('您确定要删除该会员账号吗？', 'users.php?act=remove&id=1')" title="移除">移除</a>
     </td>
-  </tr>
+  </tr> -->
     <tr>
       <td colspan="2">
       <input type="hidden" name="act" value="batch_remove" />

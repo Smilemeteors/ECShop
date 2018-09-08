@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\brand_list.html";i:1536304184;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\brand_list.html";i:1536378418;}*/ ?>
 <!-- $Id: brand_list.htm 15898 2009-05-04 07:25:41Z liuhui $ -->
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -52,11 +52,11 @@ th{text-align:center;}
         <span style="float:right"></span>
         <span><?php echo $v['brand_name']; ?></span>
       </td>
-      <td><img src="<?php echo $v['brand_logo']; ?>" width="100" alt=""></td>
+      <td><img src="uploads/<?php echo $v['brand_logo']; ?>" width="100" alt=""></td>
       <td><?php echo $v['site_url']; ?></td>
       <td align="left"><?php echo $v['brand_desc']; ?></td>
       <td align="right"><span><?php echo $v['sort_order']; ?></span></td>
-      <td align="center"><img src="../../../static/picture/yes.svg" width="20"/></td>
+      <td align="center"><img src="static/picture/no.svg" width="20"/></td>
       <td align="center">
         <a href="brand.php?act=edit&id=1" title="编辑">编辑</a> |
         <a href="javascript:;" title="编辑">移除</a> 

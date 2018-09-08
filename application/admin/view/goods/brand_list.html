@@ -53,11 +53,11 @@ th{text-align:center;}
         <span style="float:right"></span>
         <span>{$v.brand_name}</span>
       </td>
-      <td><img src="{$v.brand_logo}" width="100" alt=""></td>
+      <td><img src="uploads/{$v.brand_logo}" width="100" alt=""></td>
       <td>{$v.site_url}</td>
       <td align="left">{$v.brand_desc}</td>
       <td align="right"><span>{$v.sort_order}</span></td>
-      <td align="center"><img src="../../../static/picture/yes.svg" width="20"/></td>
+      <td align="center"><img src="static/picture/no.svg" width="20"/></td>
       <td align="center">
         <a href="{:url('brand_upd')}?id=<?php echo $v['brand_id']; ?>" title="编辑">编辑</a> |
         <a href="{:url('brand_del')}?id=<?php echo $v['brand_id']; ?>" title="移除">移除</a>

@@ -258,18 +258,26 @@ class Goods extends Controller
     //商品的回收站
     public function goods_trash()
     {
-        $arr = Db::table('goods_trash')->select();
+        $arr = Db::table('goods')->where('is_delete',0)->select();
         return view('goods_trash',['arr'=>$arr]);
     }
 
+
+
+    //评论部分
+    //评论添加
     public function comment_manage_add()
     {
+        
         return view('comment_manage_add');
     }
+    //评论展示
     public function comment_manage_list()
     {
-        return view('comment_manage_list');
+        $res = $this->goods->comment_show();
+        return view('comment_manage_list',['res'=>$res]);
     }
+
     public function category_list()
     {
          return view('category_list');
