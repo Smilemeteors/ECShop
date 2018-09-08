@@ -7,29 +7,36 @@ use think\Request;
 
 class Logo extends Controller
 {
+    //广告展示
     public function logo()
     {
+        //查询所有信息
     	$place = Db('place');
     	$data = $place->select(); 
         // print_r($data);die; 
+        // 赋值
         $this->assign('arr',$data);
+        //渲染模板
         return view('logo');
     }
-
+    //广告添加
     public function addLogo()
     {
+        // 如果post接收数据添加，如果get返回添加页面
     	if ($_POST) {
     		//获取需要入库的数据
     		$data = Request::instance()->post();
     		$data['ad_img'] = $this->upload();
     		// print_r($data['ad_img']);die;
-    		$res = Db('place')->insert($data);  
+            // 添加信息
+    		$res = Db('place')->insert($data); 
+            // 渲染模板 
     		return view('logo');	
     	} else {
     		return view('addLogo');
     	}   	
     }
-
+    //广告上传
 	public function upload(){
 	    // 获取表单上传文件 例如上传了001.jpg
 	    $file = request()->file('ad_img');	    
@@ -46,31 +53,57 @@ class Logo extends Controller
 	        }
     	}
 	}
-
+    //广告修改
     public function upLogo()
     {
         
     }
-
+    //广告删除
     public function delLogo()
     {
+        //接id
         $id = $_GET['id'];
+        // 删除信息
         $place = Db('place');
         $res = $place->where('ad_id',$id)->delete();
         // print_r($res);
-        return view('logo');
+        // 判断
+        if ($res) {
+            //查询 
+            $place = Db('place');
+            $data = $place->select(); 
+            // print_r($data);die; 
+            // 赋值
+            $this->assign('arr',$data);
+            // 渲染模板
+            return view('logo');
+        } else {
+            //查询 
+            $place = Db('place');
+            $data = $place->select(); 
+            // print_r($data);die; 
+            // 赋值
+            $this->assign('arr',$data);
+            // 渲染模板
+            return view('logo');
+        }
+        
     }
-
+    //广告位展示
     public function position()
     {
+        // 查询所有信息
         $position = Db('position');
         $res = $position->select();
+        // 赋值
         $this->assign('re',$res);
+        // 渲染模板
     	return view('position');
     }
-
+    //广告位添加
     public function addPosition()
     {
+        // 如果post接收数据添加，如果get返回添加页面
         if ($_POST) {
             $arr = Request::instance()->post();
             // print_r($arr);die;
@@ -83,7 +116,7 @@ class Logo extends Controller
             return view('addPosition');
         }	
     }
-
+    //广告位上传
     public function load(){
         // 获取表单上传文件 例如上传了001.jpg
         $file = request()->file('position_style');      
@@ -100,23 +133,47 @@ class Logo extends Controller
             }
         }
     }
-
+    //广告位修改
     public function upPosition()
     {
 
     }
-
+    //广告位删除
     public function delPosition()
     {
+        // 接收id
         $id = $_GET['id'];
+        // 删除信息
         $position = Db('position');
         $res = $position->where('position_id',$id)->delete();
         // print_r($res);
-        return view('addPosition');
+        // 判断
+        if ($res) {
+            // 查询
+            $position = Db('position');
+            $res = $position->select();
+            // 赋值
+            $this->assign('re',$res);
+            // 渲染模板
+            return view('position');        
+        } else {
+            $position = Db('position');
+            $res = $position->select();
+            $this->assign('re',$res);
+            return view('position'); 
+        }
     }
-    
+    //广告位详情
     public function detail()
     {
-
+        // 接收id
+        $id = $_GET['id'];
+        // 查询
+        $position = Db('position');
+        $data = $position->where('position_id',$id)->find();
+        // 赋值
+        $this->assign('arr',$data);
+        // 渲染模板
+        return view('detail');   
     }
 }
