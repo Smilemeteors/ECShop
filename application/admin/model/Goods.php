@@ -9,11 +9,15 @@ class Goods extends Model
 {
     public function goods_Show()
 	{
-		return $res = Db::name('goods')->paginate(5);
+		return $res = Db::name('goods')->where('is_delete',1)->paginate(5);
 	}
 
 	public function brand_show(){
         return $res= Db::name('brand')->paginate(5);
+    }
+
+    public function comment_show(){
+        return $res= Db::name('comment')->paginate(5);
     }
 
     public function inserts($request){
