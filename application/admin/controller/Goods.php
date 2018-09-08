@@ -293,7 +293,7 @@ class Goods extends Controller
     }
     public function attribute_add_do(){
         $data = Request::instance()->post();
-        $arr = Db::name('attribute')->insert($data);
+        $arr = Db::table('attribute')->insert($data);
         if($arr){
             $this->success('添加成功','goods/attribute_list');
         }else{
