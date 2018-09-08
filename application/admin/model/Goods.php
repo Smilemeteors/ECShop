@@ -16,6 +16,10 @@ class Goods extends Model
         return $res= Db::name('brand')->paginate(5);
     }
 
+    public function comment_show(){
+        return $res= Db::name('comment')->paginate(5);
+    }
+
     public function inserts($request){
         return Db::table('brand')->insert($request);
     }
