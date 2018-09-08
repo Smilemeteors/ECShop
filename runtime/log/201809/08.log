@@ -1,0 +1,746 @@
+---------------------------------------------------------------
+[ 2018-09-08T09:12:17+08:00 ] 127.0.0.1 GET /admin
+[ info ] www.ecshop4.0.com/admin [运行时间：0.103760s][吞吐率：9.64req/s] [内存消耗：1,115.06kb] [文件加载：37]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\ECShop\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-08T09:12:17+08:00 ] 127.0.0.1 GET /admin/Index/index_menu
+[ info ] www.ecshop4.0.com/admin/Index/index_menu [运行时间：0.132831s][吞吐率：7.53req/s] [内存消耗：1,163.83kb] [文件加载：37]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Index',
+    2 => 'index_menu',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index_menu[ E:\ECShop\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\index\index_menu.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-08T09:12:18+08:00 ] 127.0.0.1 GET /admin/Index/index_top
+[ info ] www.ecshop4.0.com/admin/Index/index_top [运行时间：0.089932s][吞吐率：11.12req/s] [内存消耗：1,117.89kb] [文件加载：37]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Index',
+    2 => 'index_top',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index_top[ E:\ECShop\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\index\index_top.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-08T09:12:19+08:00 ] 127.0.0.1 GET /admin/goods/goods_list
+[ info ] www.ecshop4.0.com/admin/goods/goods_list [运行时间：0.200741s][吞吐率：4.98req/s] [内存消耗：2,325.37kb] [文件加载：53]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'goods_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->goods_list[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\goods\goods_list.html [ array (
+  0 => 'res',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.016681s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.075715s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `goods` LIMIT 1 [ RunTime:0.000559s ]
+[ sql ] [ SQL ] SELECT * FROM `goods` LIMIT 0,5 [ RunTime:0.000964s ]
+---------------------------------------------------------------
+[ 2018-09-08T09:12:20+08:00 ] 127.0.0.1 GET /admin/Index/index_main
+[ info ] www.ecshop4.0.com/admin/Index/index_main [运行时间：0.119607s][吞吐率：8.36req/s] [内存消耗：1,130.58kb] [文件加载：37]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Index',
+    2 => 'index_main',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index_main[ E:\ECShop\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\index\index_main.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-08T09:12:21+08:00 ] 127.0.0.1 GET /admin/goods/brand_list
+[ info ] www.ecshop4.0.com/admin/goods/brand_list [运行时间：0.165337s][吞吐率：6.05req/s] [内存消耗：2,198.80kb] [文件加载：52]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'brand_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/Index/index_menu',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->brand_list[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\goods\brand_list.html [ array (
+  0 => 'res',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012250s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `brand` [ RunTime:0.043111s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `brand` LIMIT 1 [ RunTime:0.000392s ]
+[ sql ] [ SQL ] SELECT * FROM `brand` LIMIT 0,5 [ RunTime:0.000492s ]
+---------------------------------------------------------------
+[ 2018-09-08T09:39:18+08:00 ] 127.0.0.1 GET /admin/goods/brand_list
+[ info ] www.ecshop4.0.com/admin/goods/brand_list [运行时间：0.166928s][吞吐率：5.99req/s] [内存消耗：2,252.01kb] [文件加载：53]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'brand_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/Index/index_menu',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->brand_list[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\goods\brand_list.html [ array (
+  0 => 'res',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.020561s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `brand` [ RunTime:0.055456s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `brand` LIMIT 1 [ RunTime:0.000544s ]
+[ sql ] [ SQL ] SELECT * FROM `brand` LIMIT 0,5 [ RunTime:0.000451s ]
+---------------------------------------------------------------
+[ 2018-09-08T09:39:21+08:00 ] 127.0.0.1 GET /admin/goods/brand_upd_do.html?id=1
+[ info ] www.ecshop4.0.com/admin/goods/brand_upd_do.html?id=1 [运行时间：0.080530s][吞吐率：12.42req/s] [内存消耗：1,947.45kb] [文件加载：47]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'brand_upd_do',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/goods/brand_list',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->brand_upd_do[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: brand_id[E:\ECShop\application\admin\controller\Goods.php:134]
+---------------------------------------------------------------
+[ 2018-09-08T09:39:53+08:00 ] 127.0.0.1 GET /admin/goods/brand_list
+[ info ] www.ecshop4.0.com/admin/goods/brand_list [运行时间：0.134364s][吞吐率：7.44req/s] [内存消耗：2,252.27kb] [文件加载：53]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'brand_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/Index/index_menu',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->brand_list[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\goods\brand_list.html [ array (
+  0 => 'res',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007389s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `brand` [ RunTime:0.036882s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `brand` LIMIT 1 [ RunTime:0.000475s ]
+[ sql ] [ SQL ] SELECT * FROM `brand` LIMIT 0,5 [ RunTime:0.000440s ]
+---------------------------------------------------------------
+[ 2018-09-08T09:39:54+08:00 ] 127.0.0.1 GET /admin/goods/brand_upd_do.html?id=1
+[ info ] www.ecshop4.0.com/admin/goods/brand_upd_do.html?id=1 [运行时间：0.051231s][吞吐率：19.52req/s] [内存消耗：1,947.46kb] [文件加载：47]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'brand_upd_do',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/goods/brand_list',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->brand_upd_do[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: brand_id[E:\ECShop\application\admin\controller\Goods.php:134]
+---------------------------------------------------------------
+[ 2018-09-08T09:40:29+08:00 ] 127.0.0.1 GET /admin/goods/brand_upd_do.html?id=1
+[ info ] www.ecshop4.0.com/admin/goods/brand_upd_do.html?id=1 [运行时间：0.059780s][吞吐率：16.73req/s] [内存消耗：1,947.71kb] [文件加载：47]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'brand_upd_do',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/goods/brand_list',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->brand_upd_do[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: brand_id[E:\ECShop\application\admin\controller\Goods.php:134]
+---------------------------------------------------------------
+[ 2018-09-08T09:40:31+08:00 ] 127.0.0.1 GET /admin/goods/brand_list
+[ info ] www.ecshop4.0.com/admin/goods/brand_list [运行时间：0.125539s][吞吐率：7.97req/s] [内存消耗：2,127.23kb] [文件加载：51]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'brand_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/Index/index_menu',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->brand_list[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\goods\brand_list.html [ array (
+  0 => 'res',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012514s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `brand` [ RunTime:0.039232s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `brand` LIMIT 1 [ RunTime:0.000456s ]
+[ sql ] [ SQL ] SELECT * FROM `brand` LIMIT 0,5 [ RunTime:0.000457s ]
+---------------------------------------------------------------
+[ 2018-09-08T09:40:32+08:00 ] 127.0.0.1 GET /admin/goods/brand_upd_do.html?id=1
+[ info ] www.ecshop4.0.com/admin/goods/brand_upd_do.html?id=1 [运行时间：0.065016s][吞吐率：15.38req/s] [内存消耗：1,947.45kb] [文件加载：47]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'brand_upd_do',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/goods/brand_list',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->brand_upd_do[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: brand_id[E:\ECShop\application\admin\controller\Goods.php:134]
+---------------------------------------------------------------
+[ 2018-09-08T09:42:33+08:00 ] 127.0.0.1 GET /admin/goods/brand_list
+[ info ] www.ecshop4.0.com/admin/goods/brand_list [运行时间：0.135582s][吞吐率：7.38req/s] [内存消耗：2,127.23kb] [文件加载：51]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'brand_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/Index/index_menu',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->brand_list[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\goods\brand_list.html [ array (
+  0 => 'res',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006941s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `brand` [ RunTime:0.036173s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `brand` LIMIT 1 [ RunTime:0.000707s ]
+[ sql ] [ SQL ] SELECT * FROM `brand` LIMIT 0,5 [ RunTime:0.001527s ]
+---------------------------------------------------------------
+[ 2018-09-08T09:42:34+08:00 ] 127.0.0.1 GET /admin/goods/brand_upd_do.html?id=1
+[ info ] www.ecshop4.0.com/admin/goods/brand_upd_do.html?id=1 [运行时间：0.069040s][吞吐率：14.48req/s] [内存消耗：1,947.46kb] [文件加载：47]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'brand_upd_do',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/goods/brand_list',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->brand_upd_do[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: brand_id[E:\ECShop\application\admin\controller\Goods.php:134]
+---------------------------------------------------------------
+[ 2018-09-08T09:45:34+08:00 ] 127.0.0.1 GET /admin/goods/brand_list
+[ info ] www.ecshop4.0.com/admin/goods/brand_list [运行时间：0.135075s][吞吐率：7.40req/s] [内存消耗：2,252.26kb] [文件加载：53]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'brand_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/Index/index_menu',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->brand_list[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\goods\brand_list.html [ array (
+  0 => 'res',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008034s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `brand` [ RunTime:0.044918s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `brand` LIMIT 1 [ RunTime:0.000556s ]
+[ sql ] [ SQL ] SELECT * FROM `brand` LIMIT 0,5 [ RunTime:0.000455s ]
+---------------------------------------------------------------
+[ 2018-09-08T09:45:36+08:00 ] 127.0.0.1 GET /admin/goods/brand_upd.html?id=1
+[ info ] www.ecshop4.0.com/admin/goods/brand_upd.html?id=1 [运行时间：0.154282s][吞吐率：6.48req/s] [内存消耗：2,095.52kb] [文件加载：48]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'brand_upd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/goods/brand_list',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->brand_upd[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\goods\brand_upd.html [ array (
+  0 => 'arr',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007363s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `brand` [ RunTime:0.061270s ]
+[ sql ] [ SQL ] SELECT * FROM `brand` WHERE  `brand_id` = 1 [ RunTime:0.023552s ]
+---------------------------------------------------------------
+[ 2018-09-08T09:45:58+08:00 ] 127.0.0.1 POST /admin/goods/brand_upd_do
+[ info ] www.ecshop4.0.com/admin/goods/brand_upd_do [运行时间：0.249210s][吞吐率：4.01req/s] [内存消耗：2,088.73kb] [文件加载：50]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'brand_upd_do',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/goods/brand_upd.html?id=1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryCtW9IYTnZ1THnKP4',
+  'upgrade-insecure-requests' => '1',
+  'origin' => 'http://www.ecshop4.0.com',
+  'cache-control' => 'max-age=0',
+  'content-length' => '797',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'brand_id' => '1',
+  'brand_name' => '74512',
+  'site_url' => 'http://www.123.com',
+  'brand_desc' => 'w',
+  'sort_order' => '50',
+  'is_show' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->brand_upd_do[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] E:\ECShop\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.026693s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `brand` [ RunTime:0.036094s ]
+[ sql ] [ SQL ] UPDATE `brand`  SET `brand_id`=1,`brand_name`='74512',`site_url`='http://www.123.com',`brand_desc`='w',`sort_order`=50,`is_show`='1'  WHERE  `brand_id` = 1 [ RunTime:0.035424s ]
+---------------------------------------------------------------
+[ 2018-09-08T09:46:01+08:00 ] 127.0.0.1 GET /admin/goods/brand_list.html
+[ info ] www.ecshop4.0.com/admin/goods/brand_list.html [运行时间：0.134127s][吞吐率：7.46req/s] [内存消耗：2,126.75kb] [文件加载：51]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'brand_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/goods/brand_upd_do',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->brand_list[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\goods\brand_list.html [ array (
+  0 => 'res',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008835s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `brand` [ RunTime:0.055410s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `brand` LIMIT 1 [ RunTime:0.000445s ]
+[ sql ] [ SQL ] SELECT * FROM `brand` LIMIT 0,5 [ RunTime:0.000348s ]
+---------------------------------------------------------------
+[ 2018-09-08T09:46:05+08:00 ] 127.0.0.1 GET /admin/goods/brand_del.html?id=1
+[ info ] www.ecshop4.0.com/admin/goods/brand_del.html?id=1 [运行时间：0.235635s][吞吐率：4.24req/s] [内存消耗：2,081.70kb] [文件加载：50]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'brand_del',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/goods/brand_list.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->brand_del[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] E:\ECShop\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008435s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `brand` [ RunTime:0.099134s ]
+[ sql ] [ SQL ] DELETE FROM `brand`    WHERE  `brand_id` = 1 [ RunTime:0.053845s ]
+---------------------------------------------------------------
+[ 2018-09-08T09:46:08+08:00 ] 127.0.0.1 GET /admin/goods/brand_list.html
+[ info ] www.ecshop4.0.com/admin/goods/brand_list.html [运行时间：0.126921s][吞吐率：7.88req/s] [内存消耗：2,127.06kb] [文件加载：51]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'brand_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/goods/brand_del.html?id=1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->brand_list[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\goods\brand_list.html [ array (
+  0 => 'res',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008836s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `brand` [ RunTime:0.045872s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `brand` LIMIT 1 [ RunTime:0.000347s ]
+[ sql ] [ SQL ] SELECT * FROM `brand` LIMIT 0,5 [ RunTime:0.000407s ]
+---------------------------------------------------------------
+[ 2018-09-08T09:47:18+08:00 ] 127.0.0.1 GET /admin/goods/brand_list.html
+[ info ] www.ecshop4.0.com/admin/goods/brand_list.html [运行时间：0.128882s][吞吐率：7.76req/s] [内存消耗：2,252.45kb] [文件加载：53]
+[ info ] [ LANG ] E:\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'brand_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/goods/brand_del.html?id=1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->brand_list[ E:\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] E:\ECShop\public/../application/admin\view\goods\brand_list.html [ array (
+  0 => 'res',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011159s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `brand` [ RunTime:0.035681s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `brand` LIMIT 1 [ RunTime:0.000537s ]
+[ sql ] [ SQL ] SELECT * FROM `brand` LIMIT 0,5 [ RunTime:0.000408s ]

@@ -123,6 +123,32 @@ class Goods extends Controller
         $res = $this->goods->brand_show();
         return view('brand_list',['res'=>$res]);
     }
+    //品牌修改
+    public function brand_upd(){
+        $id = Request::instance()->get('id');
+        $arr = Db::table('brand')->where('brand_id',$id)->select();
+        return view('brand_upd',['arr'=>$arr]);
+    }
+    public function brand_upd_do(){
+        $data = Request::instance()->post();
+        $arr = Db::table('brand')->where('brand_id', $data['brand_id'])->update($data);
+        if($arr){
+            $this->success('修改成功','goods/brand_list');
+        }else{
+            $this->error('修改失败','goods/brand_upd');
+        }
+    }
+    //品牌删除
+    public function brand_del(){
+        $id = Request::instance()->get('id');
+        $arr = Db::table('brand')->where('brand_id',$id)->delete();
+        if($arr){
+            $this->success('删除成功','goods/brand_list');
+        }else{
+            $this->error('删除失败','goods/brand_list');
+        }
+    }
+
     //品牌添加
     public function brand_add(){
         return view('brand_add');
@@ -251,7 +277,7 @@ class Goods extends Controller
         $arr = Db::table('attribute')->where('attr_id',$id)->select();
         return view('attribute_upd',['arr'=>$arr]);
     }
-    //类型表的修改
+    //属性的修改
     public function attribute_upd_do(){
         $data = Request::instance()->post();
         $arr = Db::table('attribute')->where('attr_id', $data['attr_id'])->update($data);
