@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\brand_list.html";i:1536378418;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\brand_list.html";i:1536379306;}*/ ?>
 <!-- $Id: brand_list.htm 15898 2009-05-04 07:25:41Z liuhui $ -->
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -38,6 +38,7 @@ th{text-align:center;}
 
 <table width="100%" cellpadding="3" cellspacing="1" id="listTable">
     <tr>
+        <th>品牌ID</th>
       <th>品牌名称</th>
       <th>品牌LOGO</th>
       <th>品牌网址</th>
@@ -48,6 +49,7 @@ th{text-align:center;}
     </tr>
     <?php if(is_array($res) || $res instanceof \think\Collection || $res instanceof \think\Paginator): $i = 0; $__LIST__ = $res;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
     <tr>
+        <td><?php echo $v['brand_id']; ?></td>
       <td class="first-cell">
         <span style="float:right"></span>
         <span><?php echo $v['brand_name']; ?></span>
@@ -58,8 +60,8 @@ th{text-align:center;}
       <td align="right"><span><?php echo $v['sort_order']; ?></span></td>
       <td align="center"><img src="static/picture/no.svg" width="20"/></td>
       <td align="center">
-        <a href="brand.php?act=edit&id=1" title="编辑">编辑</a> |
-        <a href="javascript:;" title="编辑">移除</a> 
+        <a href="<?php echo url('brand_upd'); ?>?id=<?php echo $v['brand_id']; ?>" title="编辑">编辑</a> |
+        <a href="<?php echo url('brand_del'); ?>?id=<?php echo $v['brand_id']; ?>" title="移除">移除</a>
       </td>
     </tr>
   <?php endforeach; endif; else: echo "" ;endif; ?>
