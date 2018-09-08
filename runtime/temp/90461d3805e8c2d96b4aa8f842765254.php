@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\index\index_main.html";i:1536278585;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\index\index_main.html";i:1536339796;}*/ ?>
 <!-- $Id: start.htm 17216 2011-01-19 06:03:12Z liubo $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -10,10 +10,11 @@
 <link href="static/css/general.css" rel="stylesheet" type="text/css" />
 <link href="static/css/main.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
+  <script src="static/color.js"></script>
+<body id="div_c" onload="changeColor()">
 <h1>
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1"></span>
-  <div style="clear:both"></div>
+  <div style="clear:both;"></div>
 </h1><!-- directory install start -->
 <ul id="cloud_list" style="padding:0; margin: 0; list-style-type:none; color: #CC0000;">
  
@@ -23,11 +24,17 @@
     </ul>
 <ul style="padding:0; margin: 0; list-style-type:none; color: #CC0000;">
 </ul>
-<div class="ban-area" style="margin-bottom: 10px">
-  <div class="inn">
-    <iframe class="first" width="450" height="300" src="http://pmp.shopex.cn/index.php?app=ad&ctl=display&act=index&nobar=1&nobtn=1&code=babda8d9d1c2863bd2b6091fce411881&entid=131110483129&username=&r=1461304885" frameborder="0" scrolling="no"></iframe>
-    <iframe width="450" height="300" src="http://pmp.shopex.cn/index.php?app=ad&ctl=display&act=index&nobar=1&nobtn=1&code=01564ca0eb12162bcb6801ac67c97f07&entid=131110483129&username=&r=1461304885" frameborder="0" scrolling="no"></iframe>
+<div class="ban-area" style="margin-bottom: 10px; background:#fff;">
+<center>
+  <div style="padding:10px;">
+    <h1>Smile Meteor</h1>
+    <h1>微笑の流星</h1>
+    <h1>Rg-1603a-4team</h1>
+    <h1>Git_hub:https://github.com/Smilemeteors/ECShop</h1>
+    <!-- <iframe class="first" width="450" height="300" src="http://pmp.shopex.cn/index.php?app=ad&ctl=display&act=index&nobar=1&nobtn=1&code=babda8d9d1c2863bd2b6091fce411881&entid=131110483129&username=&r=1461304885" frameborder="0" scrolling="no"></iframe>
+    <iframe width="450" height="300" src="http://pmp.shopex.cn/index.php?app=ad&ctl=display&act=index&nobar=1&nobtn=1&code=01564ca0eb12162bcb6801ac67c97f07&entid=131110483129&username=&r=1461304885" frameborder="0" scrolling="no"></iframe> -->
   </div>
+</center>
 </div>
 <div class="panel">
   <h2 class="group-title">订单统计信息</h2>

@@ -108,6 +108,8 @@ class Goods extends Controller
         echo json_encode($arr);
     }
     //
+    //
+    //
     // 以上 及点击该
     // 
     // 
@@ -129,7 +131,6 @@ class Goods extends Controller
     }
 
     public function brand_add_do(){
-        echo'1';die;
         $request = Request::instance()->post();
         $request['brand_logo']=$this->brand_upload();
         $res=$this->goods->inserts($request);
@@ -228,5 +229,48 @@ class Goods extends Controller
     public function category_list()
     {
         return view('category_list');
+    }
+    public function attribute_list(){
+    $arr = Db::table('attribute')->select();
+    return view('attribute_list',['arr'=>$arr]);
+    }
+    public function attribute_add(){
+        return view('attribute_add');
+    }
+    public function attribute_add_do(){
+        $data = Request::instance()->post();
+        $arr = Db::name('attribute')->insert($data);
+        if($arr){
+            $this->success('添加成功','goods/attribute_list');
+        }else{
+            $this->error('添加失败','goods/attribute_add');
+        }
+    }
+    public function attribute_upd()
+    {
+        $id = Request::instance()->get('id');
+        $arr = Db::table('attribute')->where('attr_id',$id)->select();
+        return view('attribute_upd',['arr'=>$arr]);
+    }
+    //类型表的修改
+    public function attribute_upd_do(){
+        $data = Request::instance()->post();
+        $arr = Db::table('attribute')->where('attr_id', $data['attr_id'])->update($data);
+        if($arr){
+            $this->success('修改成功','goods/attribute_list');
+        }else{
+            $this->error('修改失败','goods/attribute_upd');
+        }
+    }
+    public function attribute_del()
+    {
+        $id = Request::instance()->get('id');
+//        print_r($id);die;
+        $arr = Db::table('attribute')->where('attr_id',$id)->delete();
+        if($arr){
+            $this->success('删除成功','goods/attribute_list');
+        }else{
+            $this->error('删除失败','goods/attribute_list');
+        }
     }
 }

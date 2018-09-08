@@ -11,7 +11,7 @@
 </head>
 <body>
 <h1>
-      <a class="btn btn-right" href="{:url('goods_type_add')}">新建商品类型</a>
+      <a class="btn btn-right" href="{:url('goods/goods_type_add')}">新建商品类型</a>
   
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;商品类型 </span>
   <div style="clear:both"></div>
@@ -39,9 +39,15 @@
       <img src="static/picture/no.svg" class="status" id="{$v.cat_id}" value='{$v.status}' width="20"/>
       {/in}
     <td align="center">
-      <a href="attribute.php?act=list&goods_type=1" title="属性列表">属性列表</a> |
+<<<<<<< HEAD
+      <a href="{:url('eid')}" title="属性列表">属性列表</a> |
       <a href="goods_type.php?act=edit&cat_id=1" title="编辑">编辑</a> |
       <a href="javascript:;" onclick="listTable.remove(1, '删除商品类型将会清除该类型下的所有属性。\n您确定要删除选定的商品类型吗？')" title="移除">移除</a>
+=======
+      <a href="{:url('attribute_list')}?id=<?php echo $v['cat_id']; ?>" title="属性列表">属性列表</a> |
+      <a href="{:url('goods_type_upd')}?id=<?php echo $v['cat_id']; ?>" title="编辑">编辑</a> |
+      <a href="{:url('goods_type_del')}?id=<?php echo $v['cat_id']; ?>" onclick="listTable.remove(1, '删除商品类型将会清除该类型下的所有属性。\n您确定要删除选定的商品类型吗？')" title="移除">移除</a>
+>>>>>>> df16a1dd0a5493d0a765759984e83f9a9fd7d9be
     </td>
   </tr>
   <?php endforeach ?>

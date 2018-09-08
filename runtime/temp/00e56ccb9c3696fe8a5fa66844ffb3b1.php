@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_type_manage.html";i:1536303004;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_type_manage.html";i:1536332701;}*/ ?>
 <!-- $Id: goods_type.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -40,7 +40,7 @@
       <img src="static/picture/no.svg" class="status" id="<?php echo $v['cat_id']; ?>" value='<?php echo $v['status']; ?>' width="20"/>
       <?php endif; ?>
     <td align="center">
-      <a href="attribute.php?act=list&goods_type=1" title="属性列表">属性列表</a> |
+      <a href="<?php echo url('eid'); ?>" title="属性列表">属性列表</a> |
       <a href="goods_type.php?act=edit&cat_id=1" title="编辑">编辑</a> |
       <a href="javascript:;" onclick="listTable.remove(1, '删除商品类型将会清除该类型下的所有属性。\n您确定要删除选定的商品类型吗？')" title="移除">移除</a>
     </td>
