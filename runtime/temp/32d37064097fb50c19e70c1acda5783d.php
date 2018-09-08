@@ -1,8 +1,9 @@
-﻿<!-- $Id: ad_position_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:72:"D:\phpstudy\WWW\ECShop\public/../application/admin\view\logo\detail.html";i:1536379620;}*/ ?>
+<!-- $Id: ad_position_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ECSHOP 管理中心 - 广告位置 </title>
+<title>ECSHOP 管理中心 - 广告位置详情 </title>
 <base href="/" />
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -12,7 +13,8 @@
 <body>
 
 <h1>
-      <a class="btn btn-right" href="admin/logo/addPosition">添加广告位</a>
+      <a class="btn btn-right" href="admin/logo/position">广告位置详情</a>
+  
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;广告位置 </span>
   <div style="clear:both"></div>
 </h1>
@@ -28,39 +30,15 @@
     <th>广告位描述</th>
     <th>操作</th>
   </tr>
-  <?php foreach ($re as $key => $val) { ?>
   <tr>
     <td class="first-cell">
-    <span onclick="javascript:listTable.edit(this, 'edit_ad_name', 7)"><?php echo $val['position_name'] ?></span>
+    <span onclick="javascript:listTable.edit(this, 'edit_ad_name', 7)"><?php echo $arr['position_name'] ?></span>
     </td>
-    <td align="left"><span><?php echo $val['position_width'] ?></span>
-    </td>
-    <td align="left"><span><?php echo $val['position_height'] ?></span></td>
-    <td align="center"><span><?php echo $val['position_desc'] ?></span></td>
-    <td align="right"><span>
-      <a href="admin/Logo/detail?id=<?php echo $val['position_id'] ?>" title="查看">查看</a>
-      <a href="admin/Logo/upPosition?id=<?php echo $val['position_id'] ?>" title="编辑">编辑</a>
-      <a href="admin/Logo/delPosition?id=<?php echo $val['position_id'] ?>" title="移除">移除</a></span>
-    </td>
-  </tr>
-  <?php } ?> 
-  <tr><td align="right" nowrap="true" colspan="5"><!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-<div id="turn-page">
-  <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
-  页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
-  条记录，总共 <span id="totalRecords">0</span>
-  条记录
-  <span id="page-link">
-    <a href="javascript:listTable.gotoPageFirst()">第一页</a>
-    <a href="javascript:listTable.gotoPagePrev()">上一页</a>
-    <a href="javascript:listTable.gotoPageNext()">下一页</a>
-    <a href="javascript:listTable.gotoPageLast()">最末页</a>
-    <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
-      <option value='1'>1</option>    
-    </select>
-  </span>
-</div>
-</td></tr>
+    <td align="left"><span><?php echo $arr['position_width'] ?></span></td>
+    <td align="left"><span><?php echo $arr['position_height'] ?></span></td>
+    <td align="center"><span><?php echo $arr['position_desc'] ?></span></td>
+    <td><a href="admin/logo/position">返回</a></td>
+  </tr> 
 </table>
 
 </div>

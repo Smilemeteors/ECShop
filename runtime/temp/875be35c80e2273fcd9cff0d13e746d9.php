@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"D:\PHPTutorial\WWW\ECShop\public/../application/admin\view\order\orders_list.html";i:1536377664;}*/ ?>
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -58,15 +59,15 @@
   <tr>
   <?php foreach($data as $k => $v){?>
     <tr>
-    <td><input type="checkbox" name="test" value="{$v.order_id}">
-    {$v.order_number}</td>
-    <td class="first-cell"><span>{$v.order_data}</span></td>
-    <td><span>{$v.consignee}</span></td>
-    <td align="right"><span>¥{$v.total_money}元</span></td>
-    <td align="right"><span>¥{$v.order_amount}元</span></td>
-    <td>{$v.order_stats}</td>
-    <td><a href="admin/Order/details?id={$v.order_id}">查看</a><br />
-        <a href="admin/Order/delorder?id={$v.order_id}">移除</a>
+    <td><input type="checkbox" name="test" value="<?php echo $v['order_id']; ?>">
+    <?php echo $v['order_number']; ?></td>
+    <td class="first-cell"><span><?php echo $v['order_data']; ?></span></td>
+    <td><span><?php echo $v['consignee']; ?></span></td>
+    <td align="right"><span>¥<?php echo $v['total_money']; ?>元</span></td>
+    <td align="right"><span>¥<?php echo $v['order_amount']; ?>元</span></td>
+    <td><?php echo $v['order_stats']; ?></td>
+    <td><a href="admin/Order/details?id=<?php echo $v['order_id']; ?>">查看</a><br />
+        <a href="admin/Order/delorder?id=<?php echo $v['order_id']; ?>">移除</a>
     </td>
     </tr>
   <?php }?>
