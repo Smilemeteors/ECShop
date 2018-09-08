@@ -19,6 +19,20 @@ class Order extends \think\Controller
 		$this->assign('data',$data);
 		 return view('details');	
 	}
+	public function delorder()
+	{
+		$id = isset($_GET['id'])?$_GET['id']:'';
+		$res = Db('order')->where('order_id',"$id")->delete();
+		if($res){
+			$data = Db('order')->select();
+			$this->assign('data',$data);
+			return view('orders_list');	
+		}else{
+			$data = Db('order')->select();
+			$this->assign('data',$data);
+			return view('orders_list');
+		}
+	}
 	// 订单查询   
 	public function orders_query()
 	{
