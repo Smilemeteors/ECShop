@@ -8,51 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="/static/css/general_2.css" rel="stylesheet" type="text/css" />
 <link href="/static/css/main_2.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="/static/js/transport_2.js"></script><script type="text/javascript" src="/static/js/common_2.js"></script>
-<style>
-  .panel-icloud .panel-right iframe {
-    height: 300px;
-    margin-top: 15px;
-  }
-  .panel-hint{
-    top: 0%;
-  }
-</style>
 
-<script>
-<!--
-// 这里把JS用到的所有语言都赋值到这里
-var process_request = "正在处理您的请求...";
-var todolist_caption = "记事本";
-var todolist_autosave = "自动保存";
-var todolist_save = "保存";
-var todolist_clear = "清除";
-var todolist_confirm_save = "是否将更改保存到记事本？";
-var todolist_confirm_clear = "是否清空内容？";
-var no_suppliers_name = "没有填供货商名称";
-//-->
-/*关闭按钮*/
-  function get_certificate(){
-	  var panel = document.getElementById('panelCloud');
-	  var mask  = document.getElementById('CMask')||null;
-	  var frame = document.getElementById('CFrame');
-	  if(panel&&CMask&&frame){
-	      panel.style.display = 'block';
-	      mask.style.display = 'block';
-	      frame.src = 'https://openapi.shopex.cn/oauth/authorize?response_type=code&client_id=yogfss4l&redirect_uri=http%3A%2F%2F127.0.0.1%2Fshixun%2FEC4%2Fsource%2Fecshop%2Fadmin%2Fcertificate.php%3Fact%3Dget_certificate%26type%3Dindex&view=auth_ecshop';
-	    }
-	}
-
-	/*关闭按钮*/
-	function btnCancel(item){
-	  var par  = item.offsetParent;
-	  var mask  = document.getElementById('CMask')||null;
-	  var frame = document.getElementById('CFrame');
-	  par.style.display = 'none';
-	  if(mask){mask.style.display = 'none';}
-	  frame.src = '';
-	}
-</script>
 </head>
 <body>
 <!--云起激活系统面板-->
@@ -98,18 +54,20 @@ var no_suppliers_name = "没有填供货商名称";
       <th>状态</th>
       <th>操作</th>
     </tr>
-        <tr>
-      <td><input type="checkbox" name="checkboxes[]" value="1" />
-        1</td>
+        <?php foreach ($list as $key => $v) { ?>
+          <tr>
+      <td><input type="checkbox" name="checkboxes[]" value="<?=$v['suppliers_id'];?>" />
+        <?=$v['suppliers_id'];?></td>
       <td class="first-cell">
-        <span onclick="javascript:listTable.edit(this, 'edit_suppliers_name', 1)">北京供货商      </span></td>
-      <td>北京供货商</td>
-			<td align="center"><img src="static/picture/yes_1.svg" width="20" onclick="listTable.toggle(this, 'is_check', 1)" style="cursor:pointer;"/></td>
+        <span onclick="javascript:listTable.edit(this, 'edit_suppliers_name', <?=$v['suppliers_id'];?>)"><?=$v['suppliers_name']?>      </span></td>
+      <td><?=$v['suppliers_desc']?></td>
+      <td align="center"><img src="static/picture/yes_1.svg" width="20" onclick="listTable.toggle(this, 'is_check', <?=$v['suppliers_id'];?>)" style="cursor:pointer;"/></td>
       <td align="center">
-        <a href="suppliers_edit.html?id=1" title="编辑">编辑</a> |
-        <a href="javascript:void(0);" onclick="listTable.remove(1, '您确认要删除这条记录吗?')" title="移除">移除</a>      </td>
+        <a href="suppliers_edit.html?id=<?=$v['suppliers_id'];?>" title="编辑">编辑</a> |
+        <a href="javascript:void(0);" onclick="listTable.remove(<?=$v['suppliers_id'];?>, '您确认要删除这条记录吗?')" title="移除">移除</a>      </td>
     </tr>
-        <tr>
+        <?php } ?>
+        <!-- <tr>
       <td><input type="checkbox" name="checkboxes[]" value="2" />
         2</td>
       <td class="first-cell">
@@ -119,7 +77,7 @@ var no_suppliers_name = "没有填供货商名称";
       <td align="center">
         <a href="suppliers.php?act=edit&id=2" title="编辑">编辑</a> |
         <a href="javascript:void(0);" onclick="listTable.remove(2, '您确认要删除这条记录吗?')" title="移除">移除</a>      </td>
-    </tr>
+    </tr> -->
       </table>
 <table id="page-table" cellspacing="0">
   <tr>

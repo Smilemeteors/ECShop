@@ -1,4 +1,5 @@
 <!-- $Id: brand_list.htm 15898 2009-05-04 07:25:41Z liuhui $ -->
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -8,13 +9,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="static/css/general.css" rel="stylesheet" type="text/css" />
 <link href="static/css/main.css" rel="stylesheet" type="text/css" />
-</script>
+<style>
+*{margin:0;padding:0;}
+th{text-align:center;}
+</style>
 </head>
 <body>
 <h1>
     <a class="btn btn-right" href="admin/goods/brand_add">添加品牌</a>
   
-    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;商品品牌 </span>
+    <span class="action-span1"><a href="index.php?act=main"><b>ECSHOP 管理中心</b></a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;商品品牌 </span>
   <div style="clear:both"></div>
 </h1>
 <!-- 品牌搜索 -->
@@ -31,7 +35,7 @@
 <!-- start brand list -->
 <div class="list-div" id="listDiv">
 
-  <table cellpadding="3" cellspacing="1">
+<table width="100%" cellpadding="3" cellspacing="1" id="listTable">
     <tr>
       <th>品牌名称</th>
       <th>品牌LOGO</th>
@@ -58,21 +62,11 @@
       </td>
     </tr>
   {/volist}
+  <td></td>
       <td align="right" nowrap="true" colspan="6">
       <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-<div id="turn-page">
-  <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
-  页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
-  条记录，总共 <span id="totalRecords">2</span>
-  条记录
-  <span id="page-link">
-    <a href="javascript:;">第一页</a>
-    <a href="javascript:;">上一页</a>
-    <a href="javascript:;">下一页</a>
-    <a href="javascript:;">最末页</a>
-    <select id="gotoPage">
-      <option value='1'>1</option>    </select>
-  </span>
+<div class="page" style="float:right;" >
+  {$res->render()}
 </div>
       </td>
     </tr>
