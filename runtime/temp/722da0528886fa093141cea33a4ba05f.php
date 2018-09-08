@@ -1,9 +1,10 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:79:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\order\merge_orders.html";i:1536226505;}*/ ?>
-﻿<!-- $Id: merge_order.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:91:"D:\PHPTutorial\WWW\ECShop\public/../application/admin\view\order\shortage_registration.html";i:1536285027;}*/ ?>
+﻿<!-- $Id: booking_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ECSHOP 管理中心 - 合并订单 </title><base href="/" />
+<title>ECSHOP 管理中心 - 全部缺货登记信息 </title><base href="/" />
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="static/css/general_1.css" rel="stylesheet" type="text/css" />
@@ -29,24 +30,7 @@ var todolist_save = "保存";
 var todolist_clear = "清除";
 var todolist_confirm_save = "是否将更改保存到记事本？";
 var todolist_confirm_clear = "是否清空内容？";
-var remove_confirm = "删除订单将清除该订单的所有信息。您确定要这么做吗？";
-var confirm_merge = "您确实要合并这两个订单吗？";
-var input_price = "自定义价格";
-var pls_search_user = "请搜索并选择会员";
-var confirm_drop = "确认要删除该商品吗？";
-var invalid_goods_number = "商品数量不正确";
-var pls_search_goods = "请搜索并选择商品";
-var pls_select_area = "请完整选择所在地区";
-var pls_select_shipping = "请选择配送方式";
-var pls_select_payment = "请选择支付方式";
-var pls_select_pack = "请选择包装";
-var pls_select_card = "请选择贺卡";
-var pls_input_note = "请您填写备注！";
-var pls_input_cancel = "请您填写取消原因！";
-var pls_select_refund = "请选择退款方式！";
-var pls_select_agency = "请选择办事处！";
-var pls_select_other_agency = "该订单现在就属于这个办事处，请选择其他办事处！";
-var loading = "加载中...";
+var no_note = "请输入备注信息";
 //-->
 /*关闭按钮*/
   function get_certificate(){
@@ -98,73 +82,95 @@ var loading = "加载中...";
 <div class="mask-black" id="CMask"></div>
 <!--遮罩-->
 <h1>
-      <a class="btn btn-right" href="order.php?act=list">订单列表</a>
-  
-    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;合并订单 </span>
+    
+    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;全部缺货登记信息 </span>
   <div style="clear:both"></div>
-</h1><script type="text/javascript" src="static/js/validator.js"></script><div class="main-div">
-<table cellspacing="1" cellpadding="3" width="100%">
-    <tr>
-    <td class="label"><a href="javascript:showNotice('noticeOrderSn');" title="点击此处查看提示信息"><img src="static/picture/notice.svg" width="16" height="16" border="0" alt="点击此处查看提示信息"></a>主订单：</td>
-
-    <td><input name="to_order_sn" type="text" id="to_order_sn" >
-      <select name="to_list" id="to_list" onchange="if (this.value != '') document.getElementById('to_order_sn').value = this.value;" >
-      <option value="">请选择...</option>
-                        </select>
-      <span class="notice-span" style="display:block"  id="noticeOrderSn">当两个订单不一致时，合并后的订单信息（如：支付方式、配送方式、包装、贺卡、红包等）以主订单为准。</span></td>
-  </tr>
-  <tr>
-    <td class="label">从订单：</td>
-    <td><input name="from_order_sn" type="text" id="from_order_sn" >
-      <select name="from_list" onchange="if (this.value != '') document.getElementById('from_order_sn').value = this.value;">
-      <option value="">请选择...</option>
-                        </select></td>
-  </tr>
-  <tr>
-    <td colspan="2"><div align="center">
-      <input name="merge" type="button" id="merge" value="合并" class="button" onclick="if (confirm(confirm_merge)) merge()"  />
-    </div></td>
-    </tr>
-    </table>
+</h1><script type="text/javascript" src="static/js/utils_1.js"></script><script type="text/javascript" src="static/js/listtable_1.js"></script><div class="form-div">
+  <form action="javascript:searchGoodsname()" name="searchForm">
+    <img src="static/picture/icon_search.svg" width="26" height="22" border="0" alt="SEARCH" />
+    缺货商品名 <input type="text" name="keyword" /> <input type="submit" value=" 搜索 " class="button" />
+  </form>
 </div>
 
-<script language="JavaScript">
-    /**
-     * 合并
-     */
-    function merge()
-    {
-        var fromOrderSn = document.getElementById('from_order_sn').value;
-        var toOrderSn = document.getElementById('to_order_sn').value;
-        Ajax.call('order.php?is_ajax=1&act=ajax_merge_order','from_order_sn=o' + fromOrderSn + '&to_order_sn=o' + toOrderSn, mergeResponse, 'POST', 'JSON');
-    }
+<form method="POST" action="" name="listForm">
+<div class="list-div" id="listDiv">
 
-    function mergeResponse(result)
-    {
-      if (result.message.length > 0)
-      {
-        alert(result.message);
-      }
-      if (result.error == 0)
-      {
-        //成功则清除用户填写信息
-        document.getElementById('from_order_sn').value = '';
-        document.getElementById('to_order_sn').value = '';
-        location.reload();
-      }
-    }
+  <table cellpadding="3" cellspacing="1">
+    <tr>
+      <th><a href="javascript:listTable.sort('rec_id'); ">编号</a></th>
+      <th><a href="javascript:listTable.sort('link_man'); ">联系人</a></th>
+      <th><a href="javascript:listTable.sort('goods_name'); ">缺货商品名</a></th>
+      <th><a href="javascript:listTable.sort('goods_number'); ">数量</a></th>
+      <th><a href="javascript:listTable.sort('booking_time'); ">登记时间</a></th>
+      <th><a href="javascript:listTable.sort('is_dispose'); ">是否已处理</a></th>
+      <th>操作</th>
+    </tr>
+        <tr><td class="no-records" colspan="10">没有找到任何记录</td></tr>
+      </table>
 
-    onload = function()
-    {
-        // 开始检查订单
-        startCheckOrder();
-    }
+  <table cellpadding="4" cellspacing="0">
+    <tr>
+      <td align="right"><!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<div id="turn-page">
+  <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
+  页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
+  条记录，总共 <span id="totalRecords">0</span>
+  条记录
+  <span id="page-link">
+    <a href="javascript:listTable.gotoPageFirst()">第一页</a>
+    <a href="javascript:listTable.gotoPagePrev()">上一页</a>
+    <a href="javascript:listTable.gotoPageNext()">下一页</a>
+    <a href="javascript:listTable.gotoPageLast()">最末页</a>
+    <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
+      <option value='1'>1</option>    </select>
+  </span>
+</div>
+</td>
+    </tr>
+  </table>
+
+</div>
+</form>
+
+<script type="text/javascript" language="JavaScript">
+<!--
+  listTable.recordCount = 0;
+  listTable.pageCount = 1;
+
+    listTable.filter.keywords = '';
+    listTable.filter.dispose = '0';
+    listTable.filter.sort_by = 'sort_order';
+    listTable.filter.sort_order = 'DESC';
+    listTable.filter.record_count = '0';
+    listTable.filter.page_size = '15';
+    listTable.filter.page = '1';
+    listTable.filter.page_count = '1';
+    listTable.filter.start = '0';
+  
+  
+  onload = function()
+  {
+    // 开始检查订单
+    startCheckOrder();
+  }
+
+  /**
+   * 搜索标题
+   */
+  function searchGoodsname()
+  {
+      var keyword = Utils.trim(document.forms['searchForm'].elements['keyword'].value);
+      listTable.filter['keywords'] = keyword;
+      listTable.filter['page'] = 1;
+      listTable.loadList("get_bookinglist");
+  }
+  
+//-->
 </script>
-
 <div id="footer">
-共执行 4 个查询，用时 0.014921 秒，Gzip 已禁用，内存占用 2.601 MB<br />
+共执行 4 个查询，用时 0.014465 秒，Gzip 已禁用，内存占用 1.086 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
-<script type="text/javascript" src="static/js/utils_1.js"></script><!-- 新订单提示信息 -->
+<!-- 新订单提示信息 -->
 <div id="popMsg">
   <table cellspacing="0" cellpadding="0" width="100%" bgcolor="#cfdef4" border="0">
   <tr>
