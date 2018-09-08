@@ -55,14 +55,17 @@ class Logo extends Controller
     public function delLogo()
     {
         $id = $_GET['id'];
-        
+        $place = Db('place');
+        $res = $place->where('ad_id',$id)->delete();
+        // print_r($res);
+        return view('logo');
     }
 
     public function position()
     {
         $position = Db('position');
-        $data = $position->select();
-        $this->assign('arr',$data);
+        $res = $position->select();
+        $this->assign('re',$res);
     	return view('position');
     }
 
@@ -106,6 +109,10 @@ class Logo extends Controller
     public function delPosition()
     {
         $id = $_GET['id'];
+        $position = Db('position');
+        $res = $position->where('position_id',$id)->delete();
+        // print_r($res);
+        return view('addPosition');
     }
     
     public function detail()
