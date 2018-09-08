@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:67:"E:\ECShop\public/../application/admin\view\goods\attribute_add.html";i:1536324086;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:67:"E:\ECShop\public/../application/admin\view\goods\attribute_add.html";i:1536379108;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -82,7 +82,6 @@
             </tr>
         </table>
         <input type="hidden" name="" value="update" />
-        <input type="hidden" name="attr_id" value="1" />
     </form>
 </div>
 </body>

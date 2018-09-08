@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:64:"E:\ECShop\public/../application/admin\view\goods\goods_list.html";i:1536318410;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:64:"E:\ECShop\public/../application/admin\view\goods\goods_list.html";i:1536371816;}*/ ?>
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -14,7 +14,8 @@
 th{text-align:center;}
 </style>
 </head>
-<body>
+<script src="static/color.js"></script>
+<body id="div_c" onload="changeColor()">
 <div>
 <h1>
       <a href="admin/goods/goods_add" class="btn btn-right btn-add-goods">添加新商品</a>
@@ -53,7 +54,7 @@ th{text-align:center;}
 <!-- 商品列表 -->
 <form method="post" action="" name="listForm" onsubmit="return confirmSubmit(this)">
   <!-- start goods list -->
-  <div class="list-div" id="listDiv">
+<div class="list-div">
 <table cellpadding="3" cellspacing="1">
   <tr>
     <th class="checks"><input type="checkbox"></th>
@@ -113,7 +114,7 @@ th{text-align:center;}
       <a href="admin/error/error_1" target="_blank" title="查看">查看</a>
       <a href="admin/goods/goods_add" title="编辑">编辑</a>
       <a href="admin/goods/goods_add" title="复制">复制</a>
-      <a href="javascript:;" class="hs" title="回收站">回收站</a>
+      <a href="javascript:;" id='<?php echo $v['goods_id']; ?>' class="hsz" value="<?php echo $v['is_delete']; ?>" title="回收站">回收站</a>
       <img src="static/picture/empty.gif" width="16" height="16" border="0">        </td>
   </tr>
   <?php endforeach; endif; else: echo "" ;endif; ?>
@@ -121,9 +122,31 @@ th{text-align:center;}
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
-  $(document).on('click','.hs',function()
+  $(document).on('click','.hsz',function()
   {
-    alert('回收站没做呢！');
+    var r=confirm("你确定要放入回收站吗？");
+    if(!r){return};
+    var status = $(this).attr('value');
+    var goods_id = $(this).attr('id');
+    var obj = $(this);
+    $.ajax({
+      url:"<?php echo url('goods/trash_do'); ?>",
+      data:{status:status,goods_id:goods_id},
+      dataType:"json",
+      success:function(res){
+        if(res.status==1){
+          alert(res.msg);
+          return false;
+        }else{
+          if(status==1){
+            alert('放入回收站成功')
+            obj.parent().parent().remove();
+          }else{
+            alert('放入回收站失败')
+          }
+        }
+      }
+    })
   })
   //上架
   $(document).on('click','.is_put',function(){
@@ -244,7 +267,7 @@ th{text-align:center;}
   })
 </script>
 
-
+</table>
 <!-- 分页 -->
 <table id="page-table" cellspacing="0">
   <tr>
@@ -290,11 +313,11 @@ th{text-align:center;}
 </div>
 
 </form>
-<div id="footer">
+<div id="footer" style="margin:0px 0px;">
 共执行 8 个查询，用时 0.014465 秒，Gzip 已禁用，内存占用 2.002 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
 <!-- 新订单提示信息 -->
-<div id="popMsg">
+<div id="popMsg" >
   <table cellspacing="0" cellpadding="0" width="100%" bgcolor="#cfdef4" border="0">
   <tr>
     <td style="color: #0f2c8c" width="30" height="24"></td>
@@ -311,7 +334,6 @@ th{text-align:center;}
   </tr>
   </table>
 </div>
-</object>
 </body>
 </div>
 </html>
