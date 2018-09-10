@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:70:"D:\phpstudy\WWW\ECShop\public/../application/admin\view\logo\logo.html";i:1536369664;}*/ ?>
 ﻿<!-- $Id: ads_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -8,7 +9,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="static/css/general.css" rel="stylesheet" type="text/css" />
 <link href="static/css/main.css" rel="stylesheet" type="text/css" />
-<<<<<<< HEAD
 
 <style>
   .panel-icloud .panel-right iframe {
@@ -68,8 +68,6 @@ var empty_position_style = "广告位的模版不能为空!";
 	  frame.src = '';
 	}
 </script>
-=======
->>>>>>> e00bf53bb3abee5ca4038071cbab77d2e8f15261
 </head>
 <body>
 <h1>

@@ -33,6 +33,10 @@ class Order extends \think\Controller
 			return view('orders_list');
 		}
 	}
+	public function paytype()
+	{
+		return view('paytype');
+	}
 	// 订单查询   
 	public function orders_query()
 	{

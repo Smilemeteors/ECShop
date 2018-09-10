@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"D:\PHPTutorial\WWW\ECShop\public/../application/admin\view\order\details.html";i:1536376874;}*/ ?>
 ﻿<!-- $Id: order_info.htm 17060 2010-03-25 03:44:42Z liuhui $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -118,15 +119,15 @@ var loading = "加载中...";
   </tr>
   <tr>
     <td width="18%"><div align="right"><strong>订单号：</strong></div></td>
-    <td width="34%">{$data.order_number}</td>
+    <td width="34%"><?php echo $data['order_number']; ?></td>
     <td width="15%"><div align="right"><strong>订单状态：</strong></div></td>
-    <td>{$data.order_stats}</td>
+    <td><?php echo $data['order_stats']; ?></td>
   </tr>
   <tr>
     <td><div align="right"><strong>购货人：</strong></div></td>
     <td>匿名用户 </td>
     <td><div align="right"><strong>下单时间：</strong></div></td>
-    <td>{$data.order_data}</td>
+    <td><?php echo $data['order_data']; ?></td>
   </tr>
   <tr>
     <td><div align="right"><strong>支付方式：</strong></div></td>
@@ -285,7 +286,7 @@ var loading = "加载中...";
     <td><div align="right"></div>
       <div align="right"><strong>当前可执行操作：</strong> </div></td>
     <td colspan="5">         <input name="pay" type="submit" value="付款" class="button"  />
-                      <button><a href="admin/order/delorder?id={$data.order_id}">移除</a></button>
+                      <button><a href="admin/order/delorder?id=<?php echo $data['order_id']; ?>">移除</a></button>
                  <button><a href="javascript: ;">无效</a></button>
           <button><a href="javascript: ;">售后</a></button>                        
             <button><a href="admin/order/orders_list">返回</a></button>

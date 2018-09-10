@@ -1,13 +1,15 @@
-﻿<!-- $Id: ads_info.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:88:"D:\phpstudy\WWW\ECShop\public/../application/admin\view\order\shortage_registration.html";i:1536282931;}*/ ?>
+﻿<!-- $Id: booking_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ECSHOP 管理中心 - 添加广告 </title>
-<base href="/" />
+<title>ECSHOP 管理中心 - 全部缺货登记信息 </title><base href="/" />
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="static/css/general.css" rel="stylesheet" type="text/css" />
-<link href="static/css/main.css" rel="stylesheet" type="text/css" /><script type="text/javascript" src="static/js/transport_2.js"></script><script type="text/javascript" src="static/js/common_2.js"></script>
+<link href="static/css/general_1.css" rel="stylesheet" type="text/css" />
+<link href="static/css/main_1.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="static/js/transport_1.js"></script><script type="text/javascript" src="static/js/common_1.js"></script>
 <style>
   .panel-icloud .panel-right iframe {
     height: 300px;
@@ -28,21 +30,7 @@ var todolist_save = "保存";
 var todolist_clear = "清除";
 var todolist_confirm_save = "是否将更改保存到记事本？";
 var todolist_confirm_clear = "是否清空内容？";
-var posit_name_empty = "广告位名称不能为空!";
-var ad_width_empty = "请输入广告位的宽度!";
-var ad_height_empty = "请输入广告位的高度!";
-var ad_width_number = "广告位的宽度必须是一个数字!";
-var ad_height_number = "广告位的高度必须是一个数字!";
-var no_outside_address = "建议您指定该广告所要投放的站点的名称，方便于该广告的来源统计!";
-var width_value = "广告位的宽度值必须在1到1024之间!";
-var height_value = "广告位的高度值必须在1到1024之间!";
-var ad_name_empty = "请输入广告名称!";
-var ad_link_empty = "请输入广告的链接URL!";
-var ad_text_empty = "广告的内容不能为空!";
-var ad_photo_empty = "广告的图片不能为空!";
-var ad_flash_empty = "广告的flash不能为空!";
-var ad_code_empty = "广告的代码不能为空!";
-var empty_position_style = "广告位的模版不能为空!";
+var no_note = "请输入备注信息";
 //-->
 /*关闭按钮*/
   function get_certificate(){
@@ -52,7 +40,7 @@ var empty_position_style = "广告位的模版不能为空!";
 	  if(panel&&CMask&&frame){
 	      panel.style.display = 'block';
 	      mask.style.display = 'block';
-	      frame.src = 'https://openapi.shopex.cn/oauth/authorize?response_type=code&client_id=yogfss4l&redirect_uri=http%3A%2F%2Fwww.localhost.com%2F12%2FECShop%2Fsource%2Fecshop%2Fadmin%2Fcertificate.php%3Fact%3Dget_certificate%26type%3Dindex&view=auth_ecshop';
+	      frame.src = 'https://openapi.shopex.cn/oauth/authorize?response_type=code&client_id=yogfss4l&redirect_uri=http%3A%2F%2F127.0.0.1%2FECShop1%2Fsource%2Fecshop%2Fadmin%2Fcertificate.php%3Fact%3Dget_certificate%26type%3Dindex&view=auth_ecshop';
 	    }
 	}
 
@@ -68,136 +56,119 @@ var empty_position_style = "广告位的模版不能为空!";
 </script>
 </head>
 <body>
-<h1>
-    <a class="btn btn-right" href="admin/logo/logo">广告列表</a>
-    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;添加广告 </span>
-  <div style="clear:both"></div>
-</h1><script type="text/javascript" src="static/js/calendar.js"></script>
-<link href="static/css/calendar.css" rel="stylesheet" type="text/css" />
-<div class="main-div">
-<form action="admin/logo/addLogo" method="post" name="theForm" enctype="multipart/form-data" onsubmit="return validate()">
-  <table width="100%" id="general-table">
-    <tr>
-      <td  class="label">
-        <a href="javascript:showNotice('NameNotic');" title="点击此处查看提示信息">
-        <img src="static/picture/notice.svg" width="16" height="16" border="0" alt="点击此处查看提示信息"></a>广告名称</td>
-      <td>
-        <input type="text" name="ad_name" value="" size="35" />
-        <br /><span class="notice-span" style="display:block"  id="NameNotic">广告名称只是作为辨别多个广告条目之用，并不显示在广告中</span>
-      </td>
-    </tr>
-    <tr>
-      <td class="label">媒介类型</td>
-      <td>
-       <select name="media_type" onchange="showMedia(this.value)">
-          <option value='图片'>图片</option>
-          <option value='Flash'>Flash</option>
-          <option value='代码'>代码</option>
-          <option value='文字'>文字</option>
-       </select>
-      </td>
-    </tr>
-	  <tr>
-      <td  class="label">广告位置</td>
-      <td>
-        <select name="position_id">
-          <option value='0'>站外广告</option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td  class="label">开始日期</td>
-      <td>
-        <input name="start_time" type="text" id="start_time" size="22" value='2018-09-06' readonly="readonly" /><button name="selbtn1" type="button" id="selbtn1" onclick="return showCalendar('start_time', '%Y-%m-%d', false, false, 'selbtn1');" class="cal"><img src="static/picture/cal.png" alt=""></button>
-      </td>
-    </tr>
-    <tr>
-      <td class="label">结束日期</td>
-      <td>
-        <input name="end_time" type="text" id="end_time" size="22" value='2018-10-06' readonly="readonly"><button name="selbtn2" type="button" id="selbtn2" onclick="return showCalendar('end_time', '%Y-%m-%d', false, false, 'selbtn2');" class="cal"><img src="static/picture/cal.png" alt=""></button>
-      </td>
-    </tr>
-      <tbody id="0">
-    <tr>
-      <td  class="label">
-        <a href="javascript:showNotice('AdCodeImg');" title="点击此处查看提示信息">
-        <img src="static/picture/notice.svg" width="16" height="16" border="0" alt="点击此处查看提示信息"></a>上传广告图片</td>
-      <td>
-        <input type='file' name='ad_img' size='35' />
-        <br /><span class="notice-span" style="display:block"  id="AdCodeImg">上传该广告的图片文件,或者你也可以指定一个远程URL地址为广告的图片</span>
-      </td>
-    </tr>
-    <tr>
-      <td  class="label">是否开启</td>
-      <td>
-        <input type="radio" name="enabled" value="1"  checked="true"  />开启        <input type="radio" name="enabled" value="0"  />关闭      </td>
-    </tr>
-    <tr>
-      <td  class="label">广告联系人</td>
-      <td>
-        <input type="text" name="link_man" value="" size="35" />
-      </td>
-    </tr>
-    <tr>
-      <td  class="label">联系人Email</td>
-      <td>
-        <input type="text" name="link_email" value="" size="35" />
-      </td>
-    </tr>
-    <tr>
-      <td  class="label">联系电话</td>
-      <td>
-        <input type="text" name="link_phone" value="" size="35" />
-      </td>
-    </tr>
-    <tr>
-       <td class="label">&nbsp;</td>
-       <td>
-        <input type="submit" value=" 确定 " class="button" />
-        <input type="reset" value=" 重置 " class="button" />
-        <!-- <input type="hidden" name="act" value="insert" /> -->
-        <input type="hidden" name="ad_id" value="" />
-      </td>
-    </tr>
- </table>
-
-</form>
+<!--云起激活系统面板-->
+<div class="panel-hint panel-icloud" id="panelCloud">
+  <div class="panel-cross"><span onclick="btnCancel(this)">Ｘ</span></div>
+  <div class="panel-title">
+    <span class="tit">您需要激活系统</span>
+    <p>用云起账号激活您的系统，享受物流查询，天工收银，手机短信等更多应用和服务</p>
+  </div>
+  <div class="panel-left">
+    <span>没有云起账号吗？</span>
+    <p>点击下列按钮一步完成注册激活！</p>
+    <a href="https://account.shopex.cn/reg?refer=yunqi_ecshop" target="_blank" class="btn btn-yellow">免费注册云起账号</a>
+  </div>
+  <div class="panel-right">
+    <h5 class="logo">云起</h5>
+    <p>正在激活中</p>
+    <iframe src="" frameborder="0" id="CFrame"></iframe>
+    <div class="cloud-passw">
+      <a target="_blank" href="https://account.shopex.cn/forget?">忘记密码？</a>
+    </div>
+  </div>
 </div>
-<script type="text/javascript" src="static/js/utils_2.js"></script><script type="text/javascript" src="static/js/validator_2.js"></script><script language="JavaScript">
-  document.forms['theForm'].elements['ad_name'].focus();
-  <!--
-  var MediaList = new Array('0', '1', '2', '3');
+<!--云起激活系统面板-->
+<!--遮罩-->
+<div class="mask-black" id="CMask"></div>
+<!--遮罩-->
+<h1>
+    
+    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;全部缺货登记信息 </span>
+  <div style="clear:both"></div>
+</h1><script type="text/javascript" src="static/js/utils_1.js"></script><script type="text/javascript" src="static/js/listtable_1.js"></script><div class="form-div">
+  <form action="javascript:searchGoodsname()" name="searchForm">
+    <img src="static/picture/icon_search.svg" width="26" height="22" border="0" alt="SEARCH" />
+    缺货商品名 <input type="text" name="keyword" /> <input type="submit" value=" 搜索 " class="button" />
+  </form>
+</div>
+
+<form method="POST" action="" name="listForm">
+<div class="list-div" id="listDiv">
+
+  <table cellpadding="3" cellspacing="1">
+    <tr>
+      <th><a href="javascript:listTable.sort('rec_id'); ">编号</a></th>
+      <th><a href="javascript:listTable.sort('link_man'); ">联系人</a></th>
+      <th><a href="javascript:listTable.sort('goods_name'); ">缺货商品名</a></th>
+      <th><a href="javascript:listTable.sort('goods_number'); ">数量</a></th>
+      <th><a href="javascript:listTable.sort('booking_time'); ">登记时间</a></th>
+      <th><a href="javascript:listTable.sort('is_dispose'); ">是否已处理</a></th>
+      <th>操作</th>
+    </tr>
+        <tr><td class="no-records" colspan="10">没有找到任何记录</td></tr>
+      </table>
+
+  <table cellpadding="4" cellspacing="0">
+    <tr>
+      <td align="right"><!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<div id="turn-page">
+  <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
+  页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
+  条记录，总共 <span id="totalRecords">0</span>
+  条记录
+  <span id="page-link">
+    <a href="javascript:listTable.gotoPageFirst()">第一页</a>
+    <a href="javascript:listTable.gotoPagePrev()">上一页</a>
+    <a href="javascript:listTable.gotoPageNext()">下一页</a>
+    <a href="javascript:listTable.gotoPageLast()">最末页</a>
+    <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
+      <option value='1'>1</option>    </select>
+  </span>
+</div>
+</td>
+    </tr>
+  </table>
+
+</div>
+</form>
+
+<script type="text/javascript" language="JavaScript">
+<!--
+  listTable.recordCount = 0;
+  listTable.pageCount = 1;
+
+    listTable.filter.keywords = '';
+    listTable.filter.dispose = '0';
+    listTable.filter.sort_by = 'sort_order';
+    listTable.filter.sort_order = 'DESC';
+    listTable.filter.record_count = '0';
+    listTable.filter.page_size = '15';
+    listTable.filter.page = '1';
+    listTable.filter.page_count = '1';
+    listTable.filter.start = '0';
   
-  function showMedia(AdMediaType)
-  {
-    for (I = 0; I < MediaList.length; I ++)
-    {
-      if (MediaList[I] == AdMediaType)
-        document.getElementById(AdMediaType).style.display = "";
-      else
-        document.getElementById(MediaList[I]).style.display = "none";
-    }
-  }
-
-  /**
-   * 检查表单输入的数据
-   */
-  function validate()
-  {
-    validator = new Validator("theForm");
-    validator.required("ad_name",     ad_name_empty);
-    return validator.passed();
-  }
-
+  
   onload = function()
   {
     // 开始检查订单
     startCheckOrder();
-    document.forms['theForm'].reset();
   }
+
+  /**
+   * 搜索标题
+   */
+  function searchGoodsname()
+  {
+      var keyword = Utils.trim(document.forms['searchForm'].elements['keyword'].value);
+      listTable.filter['keywords'] = keyword;
+      listTable.filter['page'] = 1;
+      listTable.loadList("get_bookinglist");
+  }
+  
+//-->
 </script>
 <div id="footer">
-共执行 3 个查询，用时 0.009382 秒，Gzip 已禁用，内存占用 1.189 MB<br />
+共执行 4 个查询，用时 0.014465 秒，Gzip 已禁用，内存占用 1.086 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
 <!-- 新订单提示信息 -->
 <div id="popMsg">
@@ -217,6 +188,10 @@ var empty_position_style = "广告位的模版不能为空!";
   </tr>
   </table>
 </div>
+
+<!--
+<embed src="static/flash/online_1.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
+-->
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0" id="msgBeep" width="1" height="1">
   <param name="movie" value="images/online.swf">
   <param name="quality" value="high">

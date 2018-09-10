@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"D:\phpstudy\WWW\ECShop\public/../application/admin\view\quanxi\privilege.html";i:1536366716;}*/ ?>
 ﻿privi<!-- $Id: privilege_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -59,7 +60,7 @@
       <td align="center"><?=$v['date_time'];?></td>
       <!-- <td align="center">2018-08-31 14:29:20</td> -->
       <td align="center">
-        <a href="role_edit.html?id=<?=$v['admin_id'];?>" title="分派权限">分派权限</a>&nbsp;
+        <a href="privilege.html?id<?=$v['admin_name'];?>" title="分派权限">分派权限</a>&nbsp;
         <a href="admin_logs.html?id=<?=$v['admin_id'];?>" title="查看日志">查看日志</a>&nbsp;
         <a href="privilege_edit.html?id=<?=$v['admin_id'];?>" title="编辑">编辑</a>&nbsp;
         <a href="javascript:;" onclick="listTable.remove(2, '您确认要删除这条记录吗?')" title="移除">移除</a></td>
