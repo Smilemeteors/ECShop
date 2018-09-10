@@ -7,7 +7,6 @@ use think\Paginator;
 use think\Request;
 class Goods extends Controller
 {
-
     //model调用
     public $goods;
     public function _initialize(){
@@ -268,7 +267,6 @@ class Goods extends Controller
     //评论添加
     public function comment_manage_add()
     {
-        
         return view('comment_manage_add');
     }
     //评论展示
@@ -285,8 +283,9 @@ class Goods extends Controller
     //属性展示
     public function attribute_list()
     {
+        $res = Db::table('goods_type')->select();
         $arr = Db::table('attribute')->select();
-        return view('attribute_list',['arr'=>$arr]);
+        return view('attribute_list',['arr'=>$arr,'res'=>$res]);
     }
     public function attribute_add(){
         return view('attribute_add');

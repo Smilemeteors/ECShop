@@ -1,6 +1,6 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\attribute_list.html";i:1536363559;}*/ ?>
-﻿<!-- $Id: attribute_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\attribute_list.html";i:1536500153;}*/ ?>
+﻿
+<!-- $Id: attribute_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -10,7 +10,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="static/css/general.css" rel="stylesheet" type="text/css" />
 <link href="static/css/main.css" rel="stylesheet" type="text/css" />
-
 </head>
 <body>
 <h1>
@@ -22,7 +21,13 @@
 <div class="form-div">
   <form action="" name="searchForm">
     <img src="static/picture/icon_search.svg" width="26" height="22" border="0" alt="SEARCH" />
-    按商品类型显示：<select name="goods_type" onchange="searchAttr(this.value)"><option value="0">所有商品类型</caption><option value='1' selected="true">书</option><option value='2'>音乐</option><option value='3'>电影</option><option value='4'>手机</option><option value='5'>笔记本电脑</option><option value='6'>数码相机</option><option value='7'>数码摄像机</option><option value='8'>化妆品</option><option value='9'>精品手机</option></select>
+    按商品类型显示：
+    <select name="goods_type" onChange="changelocation()">
+      <option value="0">所有商品类型</option>
+      <?php if(is_array($res) || $res instanceof \think\Collection || $res instanceof \think\Paginator): $i = 0; $__LIST__ = $res;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+      <option id='type' value="<?php echo $v['type_id']; ?>" onChange="changelocation()" ><?php echo $v['type_name']; ?></option>
+      <?php endforeach; endif; else: echo "" ;endif; ?>
+    </select>
   </form>
 </div>
 
@@ -44,11 +49,11 @@
         <tr>
       <td nowrap="true" valign="top"><?php echo $v['attr_id']; ?></td>
       <td class="first-cell" nowrap="true" valign="top"><?php echo $v['attr_name']; ?></td>
-      <td nowrap="true" valign="top"><?php echo $v['cat_id']; ?></td>
+      <td nowrap="true" valign="top"><?php echo $v['type_id']; ?></td>
       <td nowrap="true" valign="top"><?php echo $v['attr_input_type']; ?></td>
       <td align="right" nowrap="true" valign="top"><?php echo $v['sort_order']; ?></td>
       <td align="center" nowrap="true" valign="top">
-        <a href="<?php echo url('attribute_upd'); ?>?id=<?php echo $v['attr_id']; ?>" title="编辑">编辑</a>
+        <a href="//" title="编辑">编辑</a>
         <a href="<?php echo url('attribute_del'); ?>?id=<?php echo $v['attr_id']; ?>" onclick="removeRow(1)" title="移除">移除</a>
       </td>
     </tr>
@@ -100,4 +105,7 @@
   </table>
 </div>
 </body>
+<script type="text/javascript">
+
+</script>
 </html>
