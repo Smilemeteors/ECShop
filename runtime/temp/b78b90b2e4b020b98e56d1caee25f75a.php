@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\category_list.html";i:1536579516;}*/ ?>
 <!-- $Id: category_list.htm 17019 2010-01-29 10:10:34Z liuhui $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -30,34 +31,34 @@
     <th>排序</th>
     <th>操作</th>
   </tr>
-  {foreach($arr as $k=>$v)}
+  <?php foreach($arr as $k=>$v): ?>
     <tr align="center" class="0" id="0_1">
     <td align="left" class="first-cell" >
-            <span><b href="goods.html?act=list&cat_id=1">{$v.cat_name}</b></span>
+            <span><b href="goods.html?act=list&cat_id=1"><?php echo $v['cat_name']; ?></b></span>
         </td>
-    <td width="10%">{$v.cat_desc}</td>
-    <td width="10%"><span onclick="listTable.edit(this, 'edit_measure_unit', 1)"><!--  -->{$v.measure_unit}<!--  --></span></td>
+    <td width="10%"><?php echo $v['cat_desc']; ?></td>
+    <td width="10%"><span onclick="listTable.edit(this, 'edit_measure_unit', 1)"><!--  --><?php echo $v['measure_unit']; ?><!--  --></span></td>
     <td width="10%">
-      {in name="$v.parent_id" value="1"}
-      <img src="static/picture/yes.svg" class="parent_id" id="{$v.cat_id}" value='{$v.parent_id}' width="20"/>
-      {else/}
-      <img src="static/picture/no.svg" class="parent_id" id="{$v.cat_id}" value='{$v.parent_id}' width="20"/>
-      {/in}</td>
+      <?php if(in_array(($v['parent_id']), explode(',',"1"))): ?>
+      <img src="static/picture/yes.svg" class="parent_id" id="<?php echo $v['cat_id']; ?>" value='<?php echo $v['parent_id']; ?>' width="20"/>
+      <?php else: ?>
+      <img src="static/picture/no.svg" class="parent_id" id="<?php echo $v['cat_id']; ?>" value='<?php echo $v['parent_id']; ?>' width="20"/>
+      <?php endif; ?></td>
     <td width="10%">
-      {in name="$v.is_show" value="1"}
-      <img src="static/picture/yes.svg" class="is_show" id="{$v.cat_id}" value='{$v.is_show}' width="20"/>
-      {else/}
-      <img src="static/picture/no.svg" class="is_show" id="{$v.cat_id}" value='{$v.is_show}' width="20"/>
-      {/in}</td>
-    <td><span>{$v.show_in_nav}</span></td>
-    <td width="10%" align="right"><span onclick="listTable.edit(this, 'edit_sort_order', 1)">{$v.sort_order}</span></td>
+      <?php if(in_array(($v['is_show']), explode(',',"1"))): ?>
+      <img src="static/picture/yes.svg" class="is_show" id="<?php echo $v['cat_id']; ?>" value='<?php echo $v['is_show']; ?>' width="20"/>
+      <?php else: ?>
+      <img src="static/picture/no.svg" class="is_show" id="<?php echo $v['cat_id']; ?>" value='<?php echo $v['is_show']; ?>' width="20"/>
+      <?php endif; ?></td>
+    <td><span><?php echo $v['show_in_nav']; ?></span></td>
+    <td width="10%" align="right"><span onclick="listTable.edit(this, 'edit_sort_order', 1)"><?php echo $v['sort_order']; ?></span></td>
     <td width="24%" align="center">
-      <a href="">转移商品</a> |
-      <a href="{:url('goods/category_edit')}?id={$v.cat_id}">编辑</a> |
-      <a href="{:url('goods/category_del')}?id={$v.cat_id}" title="移除">移除</a>
+      <a href="<?php echo url('goods/category_move'); ?>?id=<?php echo $v['cat_id']; ?>">转移商品</a> |
+      <a href="<?php echo url('goods/category_edit'); ?>?id=<?php echo $v['cat_id']; ?>">编辑</a> |
+      <a href="<?php echo url('goods/category_del'); ?>?id=<?php echo $v['cat_id']; ?>" title="移除">移除</a>
     </td>
   </tr>
-  {/foreach}
+  <?php endforeach; ?>
   </table>
 </div>
 </form>
@@ -90,7 +91,7 @@
     var cat_id = $(this).attr('id');
     var obj = $(this);
     $.ajax({
-      url:"{:url('goods/cat_change_parent')}",
+      url:"<?php echo url('goods/cat_change_parent'); ?>",
       data:{status:status,cat_id:cat_id},
       dataType:"json",
       success:function(res){
@@ -118,7 +119,7 @@
     var cat_id = $(this).attr('id');
     var obj = $(this);
     $.ajax({
-      url:"{:url('goods/cat_change_show')}",
+      url:"<?php echo url('goods/cat_change_show'); ?>",
       data:{status:status,cat_id:cat_id},
       dataType:"json",
       success:function(res){
