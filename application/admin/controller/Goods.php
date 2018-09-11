@@ -86,12 +86,12 @@ class Goods extends Controller
     //品牌状态修改
     public function brand_change_status()
     {
-        $goods_id = input('get.goods_id');
+        $brand_id = input('get.brand_id');
         $status = input('get.status');
         if($status==1){
-            $res = Db("goods")->where("goods_id",$goods_id)->update(["is_put"=>'0']);
+            $res = Db("brand")->where("brand_id",$brand_id)->update(["is_show"=>'0']);
         }else{
-            $res = Db("goods")->where("goods_id",$goods_id)->update(["is_put"=>'1']);
+            $res = Db("brand")->where("brand_id",$brand_id)->update(["is_show"=>'1']);
         }
         
         if($res){
@@ -272,6 +272,23 @@ class Goods extends Controller
     }
 
          //类型
+         //类型名称的及点击该
+    public function brand_change_name()
+    {
+        $id = input('get.id');
+        $brand_name = input('get.brand_name');
+        $res = Db("brand")->where("brand_id",$id)->update(["brand_name"=>$brand_name]);
+        if(empty($res)){
+            $arr['status'] = 0;
+            $arr['data'] = '';
+            $arr['msg'] = '成功';
+        }else{
+            $arr['status'] = 1;
+            $arr['data'] = '';
+            $arr['msg'] = '失败';
+        }
+        echo json_encode($arr);
+    }
     public function goods_type_manage()
     {
         $arr = Db::table('goods_type')->select();

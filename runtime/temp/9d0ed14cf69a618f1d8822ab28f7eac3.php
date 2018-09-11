@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_type_upd.html";i:1536635300;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -14,13 +15,13 @@
 </h1><script type="text/javascript" src="static/js/utils.js"></script><script type="text/javascript" src="static/js/validator.js"></script>
 <div class="main-div">
 </div>
-<form action="{:url('goods/goods_type_upd_do')}" method="post" name="theForm" onsubmit="return validate();">
-    {volist name='arr' id='v'}
-    <input type="hidden" name="type_id" value="{$v.type_id}">
+<form action="<?php echo url('goods/goods_type_upd_do'); ?>" method="post" name="theForm" onsubmit="return validate();">
+    <?php if(is_array($arr) || $arr instanceof \think\Collection || $arr instanceof \think\Paginator): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+    <input type="hidden" name="type_id" value="<?php echo $v['type_id']; ?>">
     <table cellspacing="1" cellpadding="3" width="100%">
         <tr>
             <td class="label">商品类型名称:</td>
-            <td><input type="text" name="type_name" value="{$v.type_name}" size="40" />
+            <td><input type="text" name="type_name" value="<?php echo $v['type_name']; ?>" size="40" />
                 <span class="require-field">*</span></td>
         </tr>
         <tr>
@@ -30,7 +31,7 @@
                 </a> 属性分组:
             </td>
             <td>
-                <textarea name="attr_group" rows="5" cols="40">{$v.attr_group}</textarea><br />
+                <textarea name="attr_group" rows="5" cols="40"><?php echo $v['attr_group']; ?></textarea><br />
                 <span class="notice-span" style="display:block"  id="noticeAttrGroups">每行一个商品属性组。排序也将按照自然顺序排序。</span>
             </td>
         </tr>
@@ -41,7 +42,7 @@
             </td>
         </tr>
     </table>
-    {/volist}
+    <?php endforeach; endif; else: echo "" ;endif; ?>
 
 </form>
 <div id="footer">
