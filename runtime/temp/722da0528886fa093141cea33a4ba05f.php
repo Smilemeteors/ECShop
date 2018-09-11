@@ -1,13 +1,15 @@
-﻿<!-- $Id: order_query.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:91:"D:\PHPTutorial\WWW\ECShop\public/../application/admin\view\order\shortage_registration.html";i:1536285027;}*/ ?>
+﻿<!-- $Id: booking_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ECSHOP 管理中心 - 订单查询 </title><base href="/" />
+<title>ECSHOP 管理中心 - 全部缺货登记信息 </title><base href="/" />
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="static/css/general.css" rel="stylesheet" type="text/css" />
-<link href="static/css/main.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="static/js/transport.js"></script><script type="text/javascript" src="static/js/common.js"></script>
+<link href="static/css/general_1.css" rel="stylesheet" type="text/css" />
+<link href="static/css/main_1.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="static/js/transport_1.js"></script><script type="text/javascript" src="static/js/common_1.js"></script>
 <style>
   .panel-icloud .panel-right iframe {
     height: 300px;
@@ -28,24 +30,7 @@ var todolist_save = "保存";
 var todolist_clear = "清除";
 var todolist_confirm_save = "是否将更改保存到记事本？";
 var todolist_confirm_clear = "是否清空内容？";
-var remove_confirm = "删除订单将清除该订单的所有信息。您确定要这么做吗？";
-var confirm_merge = "您确实要合并这两个订单吗？";
-var input_price = "自定义价格";
-var pls_search_user = "请搜索并选择会员";
-var confirm_drop = "确认要删除该商品吗？";
-var invalid_goods_number = "商品数量不正确";
-var pls_search_goods = "请搜索并选择商品";
-var pls_select_area = "请完整选择所在地区";
-var pls_select_shipping = "请选择配送方式";
-var pls_select_payment = "请选择支付方式";
-var pls_select_pack = "请选择包装";
-var pls_select_card = "请选择贺卡";
-var pls_input_note = "请您填写备注！";
-var pls_input_cancel = "请您填写取消原因！";
-var pls_select_refund = "请选择退款方式！";
-var pls_select_agency = "请选择办事处！";
-var pls_select_other_agency = "该订单现在就属于这个办事处，请选择其他办事处！";
-var loading = "加载中...";
+var no_note = "请输入备注信息";
 //-->
 /*关闭按钮*/
   function get_certificate(){
@@ -97,64 +82,95 @@ var loading = "加载中...";
 <div class="mask-black" id="CMask"></div>
 <!--遮罩-->
 <h1>
-      <a class="btn btn-right" href="order.php?act=list">订单列表</a>
-  
-    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;订单查询 </span>
+    
+    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;全部缺货登记信息 </span>
   <div style="clear:both"></div>
-</h1><script type="text/javascript" src="static/js/calendar.js"></script>
-<link href="static/css/calendar.css" rel="stylesheet" type="text/css" />
-<div class="main-div">
-<form action="admin/order/search" method="post" enctype="multipart/form-data" name="searchForm">
-  <div class="panel-hint panel-order-query">
-    <div class="panel-hd">
-      <span class="hd-title">ECshop管理中心 - 订单查询</span>
-      <span class="hd-cross" onclick="btnClose(this);"></span>
-    </div>
-    <div class="panel-bd">
-      <table cellspacing="1" cellpadding="3" width="100%">
-        <tr>
-          <td><div align="right"><strong>订单号：</strong></div></td>
-          <td colspan="3"><input name="order_number" type="text" id="order_sn" size="30"></td>
-        </tr>
-        <tr>
-           <td><div align="right"><strong>收货人：</strong></div></td>
-          <td><input name="consignee" type="text" id="consignee" size="20"></td>
-        </tr>
-      </table>
-    </div>
-    <div class="panel-ft">
-      <tr>
-        <td colspan="4"><div align="center">
-        </div></td>
-      </tr>
-      <!--<button class="btn-act btn-confirm" data-role="true" onclick="goBind(this)">去绑定</button>-->
-      <input class="btn" type="submit" class="button" id="query" value=" 搜索 " />
-      <input class="btn btn-def" name="reset" type="reset" class='button' value=' 重置 ' />
-      <!--<button class="btn-act btn-cancel" onclick="btnCancel(this);">知道了，不再提示</button>-->
-    </div>
-  </div>
-</form>
+</h1><script type="text/javascript" src="static/js/utils_1.js"></script><script type="text/javascript" src="static/js/listtable_1.js"></script><div class="form-div">
+  <form action="javascript:searchGoodsname()" name="searchForm">
+    <img src="static/picture/icon_search.svg" width="26" height="22" border="0" alt="SEARCH" />
+    缺货商品名 <input type="text" name="keyword" /> <input type="submit" value=" 搜索 " class="button" />
+  </form>
 </div>
-<script type="text/javascript" src="static/js/region.js"></script>
-<script language="JavaScript">
-region.isAdmin = true;
-onload = function() {
-  // 开始检查订单
-  startCheckOrder();
 
-}
-/*关闭按钮*/
-function btnClose(item){
-  var par  = item.parentElement.parentElement;
-  console.dir(par);
-  par.style.display = 'none';
-}
+<form method="POST" action="" name="listForm">
+<div class="list-div" id="listDiv">
+
+  <table cellpadding="3" cellspacing="1">
+    <tr>
+      <th><a href="javascript:listTable.sort('rec_id'); ">编号</a></th>
+      <th><a href="javascript:listTable.sort('link_man'); ">联系人</a></th>
+      <th><a href="javascript:listTable.sort('goods_name'); ">缺货商品名</a></th>
+      <th><a href="javascript:listTable.sort('goods_number'); ">数量</a></th>
+      <th><a href="javascript:listTable.sort('booking_time'); ">登记时间</a></th>
+      <th><a href="javascript:listTable.sort('is_dispose'); ">是否已处理</a></th>
+      <th>操作</th>
+    </tr>
+        <tr><td class="no-records" colspan="10">没有找到任何记录</td></tr>
+      </table>
+
+  <table cellpadding="4" cellspacing="0">
+    <tr>
+      <td align="right"><!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<div id="turn-page">
+  <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
+  页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
+  条记录，总共 <span id="totalRecords">0</span>
+  条记录
+  <span id="page-link">
+    <a href="javascript:listTable.gotoPageFirst()">第一页</a>
+    <a href="javascript:listTable.gotoPagePrev()">上一页</a>
+    <a href="javascript:listTable.gotoPageNext()">下一页</a>
+    <a href="javascript:listTable.gotoPageLast()">最末页</a>
+    <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
+      <option value='1'>1</option>    </select>
+  </span>
+</div>
+</td>
+    </tr>
+  </table>
+
+</div>
+</form>
+
+<script type="text/javascript" language="JavaScript">
+<!--
+  listTable.recordCount = 0;
+  listTable.pageCount = 1;
+
+    listTable.filter.keywords = '';
+    listTable.filter.dispose = '0';
+    listTable.filter.sort_by = 'sort_order';
+    listTable.filter.sort_order = 'DESC';
+    listTable.filter.record_count = '0';
+    listTable.filter.page_size = '15';
+    listTable.filter.page = '1';
+    listTable.filter.page_count = '1';
+    listTable.filter.start = '0';
+  
+  
+  onload = function()
+  {
+    // 开始检查订单
+    startCheckOrder();
+  }
+
+  /**
+   * 搜索标题
+   */
+  function searchGoodsname()
+  {
+      var keyword = Utils.trim(document.forms['searchForm'].elements['keyword'].value);
+      listTable.filter['keywords'] = keyword;
+      listTable.filter['page'] = 1;
+      listTable.loadList("get_bookinglist");
+  }
+  
+//-->
 </script>
-
 <div id="footer">
-共执行 5 个查询，用时 0.053493 秒，Gzip 已禁用，内存占用 2.607 MB<br />
+共执行 4 个查询，用时 0.014465 秒，Gzip 已禁用，内存占用 1.086 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
-<script type="text/javascript" src="static/js/utils.js"></script><!-- 新订单提示信息 -->
+<!-- 新订单提示信息 -->
 <div id="popMsg">
   <table cellspacing="0" cellpadding="0" width="100%" bgcolor="#cfdef4" border="0">
   <tr>
@@ -174,7 +190,7 @@ function btnClose(item){
 </div>
 
 <!--
-<embed src="static/flash/online.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
+<embed src="static/flash/online_1.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
 -->
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0" id="msgBeep" width="1" height="1">
   <param name="movie" value="images/online.swf">

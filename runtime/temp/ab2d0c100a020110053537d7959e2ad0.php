@@ -1,14 +1,13 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:60:"E:\ECShop\public/../application/admin\view\member\users.html";i:1536379459;}*/ ?>
-﻿<!-- $Id: users_list.htm 17053 2010-03-15 06:50:26Z sxc_shop $ -->
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"D:\PHPTutorial\WWW\ECShop\public/../application/admin\view\order\list_return.html";i:1536285027;}*/ ?>
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ECSHOP 管理中心 - 会员列表 </title>
+<title>ECSHOP 管理中心 - 退货单列表 </title><base href="/" />
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="/static/css/general.css" rel="stylesheet" type="text/css" />
-<link href="/static/css/main.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="/static/js/transport.js"></script><script type="text/javascript" src="/static/js/common.js"></script>
+<link href="static/css/general_1.css" rel="stylesheet" type="text/css" />
+<link href="static/css/main_1.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="static/js/transport_1.js"></script><script type="text/javascript" src="static/js/common_1.js"></script>
 <style>
   .panel-icloud .panel-right iframe {
     height: 300px;
@@ -29,16 +28,24 @@ var todolist_save = "保存";
 var todolist_clear = "清除";
 var todolist_confirm_save = "是否将更改保存到记事本？";
 var todolist_confirm_clear = "是否清空内容？";
-var no_username = "没有输入用户名。";
-var invalid_email = "没有输入邮件地址或者输入了一个无效的邮件地址。";
-var no_password = "没有输入密码。";
-var less_password = "输入的密码不能少于六位。";
-var passwd_balnk = "密码中不能包含空格";
-var no_confirm_password = "没有输入确认密码。";
-var password_not_same = "输入的密码和确认密码不一致。";
-var invalid_pay_points = "消费积分数不是一个整数。";
-var invalid_rank_points = "等级积分数不是一个整数。";
-var password_len_err = "新密码和确认密码的长度不能小于6";
+var remove_confirm = "删除订单将清除该订单的所有信息。您确定要这么做吗？";
+var confirm_merge = "您确实要合并这两个订单吗？";
+var input_price = "自定义价格";
+var pls_search_user = "请搜索并选择会员";
+var confirm_drop = "确认要删除该商品吗？";
+var invalid_goods_number = "商品数量不正确";
+var pls_search_goods = "请搜索并选择商品";
+var pls_select_area = "请完整选择所在地区";
+var pls_select_shipping = "请选择配送方式";
+var pls_select_payment = "请选择支付方式";
+var pls_select_pack = "请选择包装";
+var pls_select_card = "请选择贺卡";
+var pls_input_note = "请您填写备注！";
+var pls_input_cancel = "请您填写取消原因！";
+var pls_select_refund = "请选择退款方式！";
+var pls_select_agency = "请选择办事处！";
+var pls_select_other_agency = "该订单现在就属于这个办事处，请选择其他办事处！";
+var loading = "加载中...";
 //-->
 /*关闭按钮*/
   function get_certificate(){
@@ -48,7 +55,7 @@ var password_len_err = "新密码和确认密码的长度不能小于6";
 	  if(panel&&CMask&&frame){
 	      panel.style.display = 'block';
 	      mask.style.display = 'block';
-	      frame.src = 'https://openapi.shopex.cn/oauth/authorize?response_type=code&client_id=yogfss4l&redirect_uri=http%3A%2F%2F127.0.0.1%2Fshixun%2FEC4%2Fsource%2Fecshop%2Fadmin%2Fcertificate.php%3Fact%3Dget_certificate%26type%3Dindex&view=auth_ecshop';
+	      frame.src = 'https://openapi.shopex.cn/oauth/authorize?response_type=code&client_id=yogfss4l&redirect_uri=http%3A%2F%2F127.0.0.1%2FECShop1%2Fsource%2Fecshop%2Fadmin%2Fcertificate.php%3Fact%3Dget_certificate%26type%3Dindex&view=auth_ecshop';
 	    }
 	}
 
@@ -90,89 +97,47 @@ var password_len_err = "新密码和确认密码的长度不能小于6";
 <div class="mask-black" id="CMask"></div>
 <!--遮罩-->
 <h1>
-    <a class="btn btn-right action-span6" href="http://yunqi.shopex.cn/products/crm" target="_blank">开通会员高级管理</a>
-      <a class="btn btn-right" href="user_add.html">添加会员</a>
-  
-    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;会员列表 </span>
+    
+    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;退货单列表 </span>
   <div style="clear:both"></div>
-</h1><script type="text/javascript" src="static/js/utils.js"></script><script type="text/javascript" src="static/js/listtable.js"></script>
+</h1><script type="text/javascript" src="static/js/utils_1.js"></script><script type="text/javascript" src="static/js/listtable_1.js"></script><!-- 订单搜索 -->
 <div class="form-div">
-  <form action="javascript:searchUser()" name="searchForm">
-    <!-- <img src="static/picture/icon_search.gif" width="26" height="22" border="0" alt="SEARCH" /> -->
-    &nbsp;会员等级 <select name="user_rank"><option value="0">所有等级</option><option value="1">注册用户</option><option value="3">代销用户</option><option value="2">vip</option></select>
-    &nbsp;会员积分大于&nbsp;<input type="text" name="pay_points_gt" size="8" />&nbsp;会员积分小于&nbsp;<input type="text" name="pay_points_lt" size="10" />
-    &nbsp;会员名称 &nbsp;<input type="text" name="keyword" /> <input type="submit" class="button" value=" 搜索 ">
+  <form action="javascript:searchOrder()" name="searchForm">
+    <!-- <img src="static/picture/icon_search_1.gif" width="26" height="22" border="0" alt="SEARCH" /> -->
+    发货单流水号<input name="delivery_sn" type="text" id="delivery_sn" size="15">
+    订单号<input name="order_sn" type="text" id="order_sn" size="15">
+    收货人<input name="consignee" type="text" id="consignee" size="15">
+    <input type="submit" value=" 搜索 " class="button" />
   </form>
 </div>
 
-<form method="POST" action="" name="listForm" onsubmit="return confirm_bath()">
+<!-- 订单列表 -->
+<form method="post" action="order.php?act=operate" name="listForm" onsubmit="return check()">
+  <div class="list-div" id="listDiv">
 
-<!-- start users list -->
-<div class="list-div" id="listDiv">
-<!--用户列表部分-->
 <table cellpadding="3" cellspacing="1">
   <tr>
     <th>
-      <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox">
-      <a href="javascript:listTable.sort('user_id'); ">编号</a><img src="static/picture/sort_desc.png">    </th>
-    <th><a href="javascript:listTable.sort('user_name'); ">会员名称</a></th>
-    <th><a href="javascript:listTable.sort('email'); ">邮件地址</a></th>
-    <th><a href="javascript:listTable.sort('is_validated'); ">是否已验证</a></th>
-    <th>可用资金</th>
-    <th>冻结资金</th>
-    <th>等级积分</th>
-    <th>消费积分</th>
-    <th><a href="javascript:listTable.sort('reg_time'); ">注册日期</a></th>
+      <input onclick='listTable.selectAll(this, "back_id")' type="checkbox" /><a href="javascript:listTable.sort('delivery_sn', 'DESC'); ">发货单流水号</a>    </th>
+    <th><a href="javascript:listTable.sort('order_sn', 'DESC'); ">订单号</a></th>
+    <th><a href="javascript:listTable.sort('add_time', 'DESC'); ">下单时间</a></th>
+    <th><a href="javascript:listTable.sort('consignee', 'DESC'); ">收货人</a></th>
+    <th><a href="javascript:listTable.sort('update_time', 'DESC'); ">发货时间</a><img src="static/picture/sort_desc_1.png"></th>
+    <th>退货时间</th>
+    <th>操作人</th>
     <th>操作</th>
   <tr>
-    <?php foreach ($list as $key => $v) { ?>
-      <tr>
-        <td><input type="checkbox" name="checkboxes[]" value="<?=$v['user_id']?>" notice="0"/><?=$v['user_id']?></td>
-        <td class="first-cell"><?=$v['user_name']?></td>
-        <td><span onclick="listTable.edit(this, 'edit_email', <?=$v['user_id']?>)"><?=$v['email']?></span></td>
-        <td align="center"> <img src="/static/picture/no.svg" width="20"> </td>
-        <td><?=$v['user_money'];?></td>
-        <td><?=$v['frozen_money'];?></td>
-        <td><?=$v['rank_points'];?></td>
-        <td><?=$v['pay_points'];?></td>
-        <td align="center"><?=$v['user_id'];?><?=$v['reg_time'];?></td>
-        <td align="center">
-          <a href="users_edit.html?id=<?=$v['user_id']?>" title="编辑">编辑</a>
-          <a href="users_address_list.html?id=<?=$v['user_id']?>" title="收货地址">收货地址</a>
-          <a href="order.php?act=list&user_id=<?=$v['user_id']?>" title="查看订单">查看订单</a>
-          <a href="account_log_list.html?id=<?=$v['user_id']?>" title="查看账目明细">查看账目明细</a>
-          <a href="javascript:confirm_redirect('您确定要删除该会员账号吗？', 'users.html?act=remove&id=<?=$v['user_id']?>')" title="移除">移除</a>
-        </td>
-      </tr>
-    <?php } ?>
-  <!--   <tr>
-    <td><input type="checkbox" name="checkboxes[]" value="1" notice="0"/>1</td>
-    <td class="first-cell">ecshop</td>
-    <td><span onclick="listTable.edit(this, 'edit_email', 1)">ecshop@ecshop.com</span></td>
-    <td align="center"> <img src="static/picture/no.svg" width="20"> </td>
-    <td>0.00</td>
-    <td>0.00</td>
-    <td>0</td>
-    <td>0</td>
-    <td align="center">2017-09-13</td>
-    <td align="center">
-      <a href="users.php?act=edit&id=1" title="编辑">编辑</a>
-      <a href="users.php?act=address_list&id=1" title="收货地址">收货地址</a>
-      <a href="order.php?act=list&user_id=1" title="查看订单">查看订单</a>
-      <a href="account_log.php?act=list&user_id=1" title="查看账目明细">查看账目明细</a>
-      <a href="javascript:confirm_redirect('您确定要删除该会员账号吗？', 'users.php?act=remove&id=1')" title="移除">移除</a>
-    </td>
-  </tr> -->
-    <tr>
-      <td colspan="2">
-      <input type="hidden" name="act" value="batch_remove" />
-      <input type="submit" id="btnSubmit" value="删除会员" disabled="true" class="button" /></td>
-      <td align="right" nowrap="true" colspan="8">
-      <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+  </table>
+
+<!-- 分页 -->
+<table id="page-table" cellspacing="0">
+  <tr>
+    <td align="right" nowrap="true">
+    <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <div id="turn-page">
   <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
   页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
-  条记录，总共 <span id="totalRecords">2</span>
+  条记录，总共 <span id="totalRecords">0</span>
   条记录
   <span id="page-link">
     <a href="javascript:listTable.gotoPageFirst()">第一页</a>
@@ -183,73 +148,79 @@ var password_len_err = "新密码和确认密码的长度不能小于6";
       <option value='1'>1</option>    </select>
   </span>
 </div>
-      </td>
+    </td>
   </tr>
 </table>
 
-</div>
-<!-- end users list -->
+  </div>
+  <div>
+    <input name="remove_back" type="submit" id="btnSubmit3" value="移除" class="button" disabled="true" onclick="{if(confirm('您确定要删除吗？')){return true;}return false;}" />
+  </div>
 </form>
-<script type="text/javascript" language="JavaScript">
-<!--
-listTable.recordCount = 2;
+<script language="JavaScript">
+listTable.recordCount = 0;
 listTable.pageCount = 1;
 
-listTable.filter.keywords = '';
-listTable.filter.rank = '0';
-listTable.filter.pay_points_gt = '0';
-listTable.filter.pay_points_lt = '0';
-listTable.filter.sort_by = 'user_id';
+listTable.filter.delivery_sn = '';
+listTable.filter.order_sn = '';
+listTable.filter.order_id = '0';
+listTable.filter.consignee = '';
+listTable.filter.sort_by = 'update_time';
 listTable.filter.sort_order = 'DESC';
-listTable.filter.record_count = '2';
-listTable.filter.page_size = '15';
 listTable.filter.page = '1';
+listTable.filter.page_size = '15';
+listTable.filter.record_count = '0';
 listTable.filter.page_count = '1';
-listTable.filter.start = '0';
 
 
-onload = function()
-{
-    document.forms['searchForm'].elements['keyword'].focus();
-    // 开始检查订单
-    startCheckOrder();
-}
-
-/**
- * 搜索用户
- */
-function searchUser()
-{
-    listTable.filter['keywords'] = Utils.trim(document.forms['searchForm'].elements['keyword'].value);
-    listTable.filter['rank'] = document.forms['searchForm'].elements['user_rank'].value;
-    listTable.filter['pay_points_gt'] = Utils.trim(document.forms['searchForm'].elements['pay_points_gt'].value);
-    listTable.filter['pay_points_lt'] = Utils.trim(document.forms['searchForm'].elements['pay_points_lt'].value);
-    listTable.filter['page'] = 1;
-    listTable.loadList();
-}
-
-function confirm_bath()
-{
-  userItems = document.getElementsByName('checkboxes[]');
-
-  cfm = '您确定要删除所有选中的会员账号吗？';
-
-  for (i=0; userItems[i]; i++)
-  {
-    if (userItems[i].checked && userItems[i].notice == 1)
+    onload = function()
     {
-      cfm = '选中的会员账户中仍有余额或欠款\n' + '您确定要删除所有选中的会员账号吗？';
-      break;
+        // 开始检查订单
+        startCheckOrder();
+                
+        //
+        listTable.query = "back_query";
     }
-  }
 
-  return confirm(cfm);
-}
-//-->
+    /**
+     * 搜索订单
+     */
+    function searchOrder()
+    {
+        listTable.filter['order_sn'] = Utils.trim(document.forms['searchForm'].elements['order_sn'].value);
+        listTable.filter['consignee'] = Utils.trim(document.forms['searchForm'].elements['consignee'].value);
+                listTable.filter['delivery_sn'] = document.forms['searchForm'].elements['delivery_sn'].value;
+        listTable.filter['page'] = 1;
+                listTable.query = "back_query";
+        listTable.loadList();
+    }
+
+    function check()
+    {
+      var snArray = new Array();
+      var eles = document.forms['listForm'].elements;
+      for (var i=0; i<eles.length; i++)
+      {
+        if (eles[i].tagName == 'INPUT' && eles[i].type == 'checkbox' && eles[i].checked && eles[i].value != 'on')
+        {
+          snArray.push(eles[i].value);
+        }
+      }
+      if (snArray.length == 0)
+      {
+        return false;
+      }
+      else
+      {
+        eles['order_id'].value = snArray.toString();
+        return true;
+      }
+    }
 </script>
 
+
 <div id="footer">
-共执行 6 个查询，用时 0.016915 秒，Gzip 已禁用，内存占用 1.171 MB<br />
+共执行 6 个查询，用时 0.012681 秒，Gzip 已禁用，内存占用 2.604 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
 <!-- 新订单提示信息 -->
 <div id="popMsg">
@@ -271,7 +242,7 @@ function confirm_bath()
 </div>
 
 <!--
-<embed src="static/flash/online.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
+<embed src="static/flash/online_1.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
 -->
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0" id="msgBeep" width="1" height="1">
   <param name="movie" value="images/online.swf">

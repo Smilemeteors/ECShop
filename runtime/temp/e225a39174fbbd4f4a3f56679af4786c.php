@@ -1,9 +1,8 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"E:\ECShop\public/../application/admin\view\order\orders_printing.html";i:1536318410;}*/ ?>
-﻿<!-- $Id: order_templates.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:82:"D:\PHPTutorial\WWW\ECShop\public/../application/admin\view\order\list_invoice.html";i:1536285027;}*/ ?>
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ECSHOP 管理中心 - 编辑订单打印模板 </title><base href="/" />
+<title>ECSHOP 管理中心 - 发货单列表 </title><base href="/" />
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="static/css/general_1.css" rel="stylesheet" type="text/css" />
@@ -98,36 +97,139 @@ var loading = "加载中...";
 <div class="mask-black" id="CMask"></div>
 <!--遮罩-->
 <h1>
-      <a class="btn btn-right" href="order.php?act=list">订单列表</a>
-  
-    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;编辑订单打印模板 </span>
+    
+    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;发货单列表 </span>
   <div style="clear:both"></div>
-</h1><form action="order.php" method="post">
-<div class="main-div">
-    <table width="100%">
-     <tr><td><input type="hidden" id="FCKeditor1" name="FCKeditor1"  style="display:none" /><input type="hidden" id="FCKeditor1___Config" value="" style="display:none" /><iframe id="FCKeditor1___Frame" width="95%" height="500" frameborder="0" scrolling="no"></iframe></td></tr>
-    </table>
-    <div class="button-div ">
-    <input type="hidden" name="act" value="edit_templates" />
-    <input type="submit" value=" 确定 " class="button" />
-  </div>
+</h1><script type="text/javascript" src="static/js/utils_1.js"></script><script type="text/javascript" src="static/js/listtable_1.js"></script><!-- 订单搜索 -->
+<div class="form-div">
+  <form action="javascript:searchOrder()" name="searchForm">
+    <!-- <img src="static/picture/icon_search_1.gif" width="26" height="22" border="0" alt="SEARCH" /> -->
+    发货单流水号<input name="delivery_sn" type="text" id="delivery_sn" size="15">
+    订单号<input name="order_sn" type="text" id="order_sn" size="15">
+    收货人<input name="consignee" type="text" id="consignee" size="15">
+    发货单状态    <select name="status" id="status">
+      <option value="-1" selected="selected">请选择...</option>
+      <option value="0">已发货</option><option value="1">退货</option><option value="2">正常</option>    </select>
+    <input type="submit" value=" 搜索 " class="button" />
+  </form>
 </div>
+
+<!-- 订单列表 -->
+<form method="post" action="order.php?act=operate" name="listForm" onsubmit="return check()">
+  <div class="list-div" id="listDiv">
+
+<table cellpadding="3" cellspacing="1">
+  <tr>
+    <th>
+      <input onclick='listTable.selectAll(this, "delivery_id")' type="checkbox" /><a href="javascript:listTable.sort('delivery_sn', 'DESC'); ">发货单流水号</a>    </th>
+    <th><a href="javascript:listTable.sort('order_sn', 'DESC'); ">订单号</a></th>
+    <th><a href="javascript:listTable.sort('add_time', 'DESC'); ">下单时间</a></th>
+    <th><a href="javascript:listTable.sort('consignee', 'DESC'); ">收货人</a></th>
+    <th><a href="javascript:listTable.sort('update_time', 'DESC'); ">发货时间</a><img src="static/picture/sort_desc_1.png"></th>
+    <th>供货商</th>
+    <th>发货单状态</th>
+    <th>操作人</th>
+    <th>操作</th>
+  <tr>
+  </table>
+
+<!-- 分页 -->
+<table id="page-table" cellspacing="0">
+  <tr>
+    <td align="right" nowrap="true">
+    <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<div id="turn-page">
+  <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
+  页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
+  条记录，总共 <span id="totalRecords">0</span>
+  条记录
+  <span id="page-link">
+    <a href="javascript:listTable.gotoPageFirst()">第一页</a>
+    <a href="javascript:listTable.gotoPagePrev()">上一页</a>
+    <a href="javascript:listTable.gotoPageNext()">下一页</a>
+    <a href="javascript:listTable.gotoPageLast()">最末页</a>
+    <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
+      <option value='1'>1</option>    </select>
+  </span>
+</div>
+    </td>
+  </tr>
+</table>
+
+  </div>
+    <div>
+
+    <input name="remove_invoice" type="submit" id="btnSubmit3" value="移除" class="button" disabled="true" onclick="{if(confirm('您确定要删除吗？')){return true;}return false;}" />
+  </div>
 </form>
-<script type="Text/Javascript" language="JavaScript">
-<!--
+<script language="JavaScript">
+listTable.recordCount = 0;
+listTable.pageCount = 1;
 
-onload = function()
-{
-  // 开始检查订单
-  startCheckOrder();
-}
+listTable.filter.delivery_sn = '';
+listTable.filter.order_sn = '';
+listTable.filter.order_id = '0';
+listTable.filter.consignee = '';
+listTable.filter.status = '-1';
+listTable.filter.sort_by = 'update_time';
+listTable.filter.sort_order = 'DESC';
+listTable.filter.page = '1';
+listTable.filter.page_size = '15';
+listTable.filter.record_count = '0';
+listTable.filter.page_count = '1';
 
-//-->
+
+    onload = function()
+    {
+        // 开始检查订单
+        startCheckOrder();
+
+        //
+        listTable.query = "delivery_query";
+    }
+
+    /**
+     * 搜索订单
+     */
+    function searchOrder()
+    {
+        listTable.filter['order_sn'] = Utils.trim(document.forms['searchForm'].elements['order_sn'].value);
+        listTable.filter['consignee'] = Utils.trim(document.forms['searchForm'].elements['consignee'].value);
+        listTable.filter['status'] = document.forms['searchForm'].elements['status'].value;
+        listTable.filter['delivery_sn'] = document.forms['searchForm'].elements['delivery_sn'].value;
+        listTable.filter['page'] = 1;
+        listTable.query = "delivery_query";
+        listTable.loadList();
+    }
+
+    function check()
+    {
+      var snArray = new Array();
+      var eles = document.forms['listForm'].elements;
+      for (var i=0; i<eles.length; i++)
+      {
+        if (eles[i].tagName == 'INPUT' && eles[i].type == 'checkbox' && eles[i].checked && eles[i].value != 'on')
+        {
+          snArray.push(eles[i].value);
+        }
+      }
+      if (snArray.length == 0)
+      {
+        return false;
+      }
+      else
+      {
+        eles['order_id'].value = snArray.toString();
+        return true;
+      }
+    }
 </script>
+
+
 <div id="footer">
-共执行 2 个查询，用时 0.012807 秒，Gzip 已禁用，内存占用 2.630 MB<br />
+共执行 7 个查询，用时 0.012704 秒，Gzip 已禁用，内存占用 2.605 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
-<script type="text/javascript" src="static/js/utils_1.js"></script><!-- 新订单提示信息 -->
+<!-- 新订单提示信息 -->
 <div id="popMsg">
   <table cellspacing="0" cellpadding="0" width="100%" bgcolor="#cfdef4" border="0">
   <tr>

@@ -1,14 +1,14 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:66:"E:\ECShop\public/../application/admin\view\order\orders_query.html";i:1536318410;}*/ ?>
-﻿<!-- $Id: order_query.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:82:"D:\PHPTutorial\WWW\ECShop\public/../application/admin\view\order\merge_orders.html";i:1536285027;}*/ ?>
+﻿<!-- $Id: merge_order.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ECSHOP 管理中心 - 订单查询 </title><base href="/" />
+<title>ECSHOP 管理中心 - 合并订单 </title><base href="/" />
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="static/css/general.css" rel="stylesheet" type="text/css" />
-<link href="static/css/main.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="static/js/transport.js"></script><script type="text/javascript" src="static/js/common.js"></script>
+<link href="static/css/general_1.css" rel="stylesheet" type="text/css" />
+<link href="static/css/main_1.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="static/js/transport_1.js"></script><script type="text/javascript" src="static/js/common_1.js"></script>
 <style>
   .panel-icloud .panel-right iframe {
     height: 300px;
@@ -100,128 +100,71 @@ var loading = "加载中...";
 <h1>
       <a class="btn btn-right" href="order.php?act=list">订单列表</a>
   
-    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;订单查询 </span>
+    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;合并订单 </span>
   <div style="clear:both"></div>
-</h1><script type="text/javascript" src="static/js/calendar.js"></script>
-<link href="static/css/calendar.css" rel="stylesheet" type="text/css" />
-<div class="main-div">
-<form action="order.php?act=list" method="post" enctype="multipart/form-data" name="searchForm">
-  <div class="panel-hint panel-order-query">
-    <div class="panel-hd">
-      <span class="hd-title">ECshop管理中心 - 订单查询</span>
-      <span class="hd-cross" onclick="btnClose(this);"></span>
-    </div>
-    <div class="panel-bd">
-      <table cellspacing="1" cellpadding="3" width="100%">
-        <tr>
-          <td><div align="right"><strong>订单号：</strong></div></td>
-          <td colspan="3"><input name="order_sn" type="text" id="order_sn" size="30"></td>
-        </tr>
-        <tr>
-          <td><div align="right"><strong>电子邮件：</strong></div></td>
-          <td colspan="3"><input name="email" type="text" id="email" size="40"></td>
-        </tr>
-        <tr>
-          <td><div align="right"><strong>购货人：</strong></div></td>
-          <td><input name="user_name" type="text" id="user_name" size="20"></td>
-          <td><div align="right"><strong>收货人：</strong></div></td>
-          <td><input name="consignee" type="text" id="consignee" size="20"></td>
-        </tr>
-        <tr>
-          <td><div align="right"><strong>地址：</strong></div></td>
-          <td><input name="address" type="text" id="address" size="20"></td>
-          <td><div align="right"><strong>邮编：</strong></div></td>
-          <td><input name="zipcode" type="text" id="zipcode" size="20"></td>
-        </tr>
-        <tr>
-          <td><div align="right"><strong>电话：</strong></div></td>
-          <td><input name="tel" type="text" id="tel" size="20"></td>
-          <td><div align="right"><strong>手机：</strong></div></td>
-          <td><input name="mobile" type="text" id="mobile" size="20"></td>
-        </tr>
-        <tr>
-          <td><div align="right"><strong>所在地区：</strong></div></td>
-          <td colspan="3"><select name="country" id="selCountries" onchange="region.changed(this, 1, 'selProvinces')">
-            <option value="0">请选择...</option>
-                        <option value="1">中国</option>
-                      </select>
-            <select name="province" id="selProvinces" onchange="region.changed(this, 2, 'selCities')">
-              <option value="0">请选择...</option>
-            </select>
-            <select name="city" id="selCities" onchange="region.changed(this, 3, 'selDistricts')">
-              <option value="0">请选择...</option>
-            </select>
-            <select name="district" id="selDistricts">
-              <option value="0">请选择...</option>
-            </select></td>
-        </tr>
-        <tr>
-          <td><div align="right"><strong>配送方式：</strong></div></td>
-          <td><select name="shipping_id" id="select4">
-            <option value="0">请选择...</option>
-                      </select></td>
-          <td><div align="right"><strong>支付方式：</strong></div></td>
-          <td><select name="pay_id" id="select5">
-            <option value="0">请选择...</option>
-                        <option value="1"><font color="#FF0000">天工收银</font></option>
-                      </select></td>
-        </tr>
-        <tr>
-          <td><div align="right"><strong>下单时间：</strong></div></td>
-          <td>
-            <input type="text" name="start_time" maxlength="60" size="20" readonly="readonly" id="start_time_id" /><button name="start_time_btn" type="button" id="start_time_btn" onclick="return showCalendar('start_time_id', '%Y-%m-%d %H:%M', '24', false, 'start_time_btn');" class="cal"><img src="static/picture/cal.png" alt=""></button>
-            ~
-            <input type="text" name="end_time" maxlength="60" size="20" readonly="readonly" id="end_time_id" /><button name="end_time_btn" type="button" id="end_time_btn" onclick="return showCalendar('end_time_id', '%Y-%m-%d %H:%M', '24', false, 'end_time_btn');" class="cal"><img src="static/picture/cal.png" alt=""></button>
-          </td>
-        </tr>
-        <tr>
-          <td><div align="right"><strong>订单状态：</strong></div></td>
-          <td colspan="3">
-            <select name="order_status" id="select9">
-              <option value="-1">请选择...</option>
-              <option value="0">未确认</option><option value="1">已确认</option><option value="2"><font color="red"> 取消</font></option><option value="3"><font color="red">无效</font></option><option value="4"><font color="red">退货</font></option><option value="5">已分单</option><option value="6">部分分单</option>            </select>
-            <strong>付款状态：</strong>        <select name="pay_status" id="select11">
-            <option value="-1">请选择...</option>
-            <option value="0">未付款</option><option value="1">付款中</option><option value="2">已付款</option>          </select>
-            <strong>发货状态：</strong>        <select name="shipping_status" id="select10">
-            <option value="-1">请选择...</option>
-            <option value="0">未发货</option><option value="3">配货中</option><option value="1">已发货</option><option value="2">收货确认</option><option value="4">已发货(部分商品)</option><option value="5">发货中</option>          </select></td>
-        </tr>
-      </table>
-    </div>
-    <div class="panel-ft">
-      <tr>
-        <td colspan="4"><div align="center">
-        </div></td>
-      </tr>
-      <!--<button class="btn-act btn-confirm" data-role="true" onclick="goBind(this)">去绑定</button>-->
-      <input class="btn" name="query" type="submit" class="button" id="query" value=" 搜索 " />
-      <input class="btn btn-def" name="reset" type="reset" class='button' value=' 重置 ' />
-      <!--<button class="btn-act btn-cancel" onclick="btnCancel(this);">知道了，不再提示</button>-->
-    </div>
-  </div>
-</form>
-</div>
-<script type="text/javascript" src="static/js/region.js"></script>
-<script language="JavaScript">
-region.isAdmin = true;
-onload = function() {
-  // 开始检查订单
-  startCheckOrder();
+</h1><script type="text/javascript" src="static/js/validator.js"></script><div class="main-div">
+<table cellspacing="1" cellpadding="3" width="100%">
+    <tr>
+    <td class="label"><a href="javascript:showNotice('noticeOrderSn');" title="点击此处查看提示信息"><img src="static/picture/notice.svg" width="16" height="16" border="0" alt="点击此处查看提示信息"></a>主订单：</td>
 
-}
-/*关闭按钮*/
-function btnClose(item){
-  var par  = item.parentElement.parentElement;
-  console.dir(par);
-  par.style.display = 'none';
-}
+    <td><input name="to_order_sn" type="text" id="to_order_sn" >
+      <select name="to_list" id="to_list" onchange="if (this.value != '') document.getElementById('to_order_sn').value = this.value;" >
+      <option value="">请选择...</option>
+                        </select>
+      <span class="notice-span" style="display:block"  id="noticeOrderSn">当两个订单不一致时，合并后的订单信息（如：支付方式、配送方式、包装、贺卡、红包等）以主订单为准。</span></td>
+  </tr>
+  <tr>
+    <td class="label">从订单：</td>
+    <td><input name="from_order_sn" type="text" id="from_order_sn" >
+      <select name="from_list" onchange="if (this.value != '') document.getElementById('from_order_sn').value = this.value;">
+      <option value="">请选择...</option>
+                        </select></td>
+  </tr>
+  <tr>
+    <td colspan="2"><div align="center">
+      <input name="merge" type="button" id="merge" value="合并" class="button" onclick="if (confirm(confirm_merge)) merge()"  />
+    </div></td>
+    </tr>
+    </table>
+</div>
+
+<script language="JavaScript">
+    /**
+     * 合并
+     */
+    function merge()
+    {
+        var fromOrderSn = document.getElementById('from_order_sn').value;
+        var toOrderSn = document.getElementById('to_order_sn').value;
+        Ajax.call('order.php?is_ajax=1&act=ajax_merge_order','from_order_sn=o' + fromOrderSn + '&to_order_sn=o' + toOrderSn, mergeResponse, 'POST', 'JSON');
+    }
+
+    function mergeResponse(result)
+    {
+      if (result.message.length > 0)
+      {
+        alert(result.message);
+      }
+      if (result.error == 0)
+      {
+        //成功则清除用户填写信息
+        document.getElementById('from_order_sn').value = '';
+        document.getElementById('to_order_sn').value = '';
+        location.reload();
+      }
+    }
+
+    onload = function()
+    {
+        // 开始检查订单
+        startCheckOrder();
+    }
 </script>
 
 <div id="footer">
-共执行 5 个查询，用时 0.053493 秒，Gzip 已禁用，内存占用 2.607 MB<br />
+共执行 4 个查询，用时 0.014921 秒，Gzip 已禁用，内存占用 2.601 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
-<script type="text/javascript" src="static/js/utils.js"></script><!-- 新订单提示信息 -->
+<script type="text/javascript" src="static/js/utils_1.js"></script><!-- 新订单提示信息 -->
 <div id="popMsg">
   <table cellspacing="0" cellpadding="0" width="100%" bgcolor="#cfdef4" border="0">
   <tr>
@@ -241,7 +184,7 @@ function btnClose(item){
 </div>
 
 <!--
-<embed src="static/flash/online.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
+<embed src="static/flash/online_1.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
 -->
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0" id="msgBeep" width="1" height="1">
   <param name="movie" value="images/online.swf">

@@ -1,64 +1,15 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:64:"E:\ECShop\public/../application/admin\view\member\user_rank.html";i:1536318410;}*/ ?>
-﻿<!-- $Id: user_rank.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"D:\PHPTutorial\WWW\ECShop\public/../application/admin\view\quanxi\suppliers.html";i:1536368900;}*/ ?>
+﻿<!-- $Id: agency_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ECSHOP 管理中心 - 会员等级 </title>
+<title>ECSHOP 管理中心 - 供货商列表 </title>
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="/static/css/general.css" rel="stylesheet" type="text/css" />
-<link href="/static/css/main.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="/static/js/transport.js"></script><script type="text/javascript" src="/static/js/common.js"></script>
-<style>
-  .panel-icloud .panel-right iframe {
-    height: 300px;
-    margin-top: 15px;
-  }
-  .panel-hint{
-    top: 0%;
-  }
-</style>
+<link href="/static/css/general_2.css" rel="stylesheet" type="text/css" />
+<link href="/static/css/main_2.css" rel="stylesheet" type="text/css" />
 
-<script>
-<!--
-// 这里把JS用到的所有语言都赋值到这里
-var process_request = "正在处理您的请求...";
-var todolist_caption = "记事本";
-var todolist_autosave = "自动保存";
-var todolist_save = "保存";
-var todolist_clear = "清除";
-var todolist_confirm_save = "是否将更改保存到记事本？";
-var todolist_confirm_clear = "是否清空内容？";
-var remove_confirm = "您确定要删除选定的会员等级吗？";
-var rank_name_empty = "您没有输入会员等级名称。";
-var integral_min_invalid = "您没有输入积分下限或者积分下限不是一个整数。";
-var integral_max_invalid = "您没有输入积分上限或者积分上限不是一个整数。";
-var discount_invalid = "您没有输入折扣率或者折扣率无效。";
-var integral_max_small = "积分上限必须大于积分下限。";
-var lang_remove = "移除";
-//-->
-/*关闭按钮*/
-  function get_certificate(){
-	  var panel = document.getElementById('panelCloud');
-	  var mask  = document.getElementById('CMask')||null;
-	  var frame = document.getElementById('CFrame');
-	  if(panel&&CMask&&frame){
-	      panel.style.display = 'block';
-	      mask.style.display = 'block';
-	      frame.src = 'https://openapi.shopex.cn/oauth/authorize?response_type=code&client_id=yogfss4l&redirect_uri=http%3A%2F%2F127.0.0.1%2Fshixun%2FEC4%2Fsource%2Fecshop%2Fadmin%2Fcertificate.php%3Fact%3Dget_certificate%26type%3Dindex&view=auth_ecshop';
-	    }
-	}
-
-	/*关闭按钮*/
-	function btnCancel(item){
-	  var par  = item.offsetParent;
-	  var mask  = document.getElementById('CMask')||null;
-	  var frame = document.getElementById('CFrame');
-	  par.style.display = 'none';
-	  if(mask){mask.style.display = 'none';}
-	  frame.src = '';
-	}
-</script>
 </head>
 <body>
 <!--云起激活系统面板-->
@@ -87,73 +38,100 @@ var lang_remove = "移除";
 <div class="mask-black" id="CMask"></div>
 <!--遮罩-->
 <h1>
-      <a class="btn btn-right" href="user_rank_add.html">添加会员等级</a>
+      <a class="btn btn-right" href="./suppliers_add.html">添加供货商</a>
   
-    <span class="action-span1"><a href="admin/Index/index_main.html">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;会员等级 </span>
+    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;供货商列表 </span>
   <div style="clear:both"></div>
-</h1><script type="text/javascript" src="static/js/utils.js"></script><script type="text/javascript" src="static/js/listtable.js"></script>
-<form method="post" action="" name="listForm">
-<!-- start ads list -->
+</h1><script type="text/javascript" src="static/js/utils_2.js"></script><script type="text/javascript" src="static/js/listtable_2.js"></script>
+<form method="post" action="" name="listForm" onsubmit="return confirm(batch_drop_confirm);">
 <div class="list-div" id="listDiv">
 
-<table cellspacing='1' id="list-table">
+  <table cellpadding="3" cellspacing="1">
+    <tr>
+      <th> <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox" />
+          <a href="javascript:listTable.sort('suppliers_id'); ">编号</a><img src="static/picture/sort_desc_1.png"> </th>
+      <th><a href="javascript:listTable.sort('suppliers_name'); ">供货商名称</a></th>
+      <th>供货商描述</th>
+      <th>状态</th>
+      <th>操作</th>
+    </tr>
+        <?php foreach ($list as $key => $v) { ?>
+          <tr>
+      <td><input type="checkbox" name="checkboxes[]" value="<?=$v['suppliers_id'];?>" />
+        <?=$v['suppliers_id'];?></td>
+      <td class="first-cell">
+        <span onclick="javascript:listTable.edit(this, 'edit_suppliers_name', <?=$v['suppliers_id'];?>)"><?=$v['suppliers_name']?>      </span></td>
+      <td><?=$v['suppliers_desc']?></td>
+      <td align="center"><img src="static/picture/yes_1.svg" width="20" onclick="listTable.toggle(this, 'is_check', <?=$v['suppliers_id'];?>)" style="cursor:pointer;"/></td>
+      <td align="center">
+        <a href="suppliers_edit.html?id=<?=$v['suppliers_id'];?>" title="编辑">编辑</a> |
+        <a href="javascript:void(0);" onclick="listTable.remove(<?=$v['suppliers_id'];?>, '您确认要删除这条记录吗?')" title="移除">移除</a>      </td>
+    </tr>
+        <?php } ?>
+        <!-- <tr>
+      <td><input type="checkbox" name="checkboxes[]" value="2" />
+        2</td>
+      <td class="first-cell">
+        <span onclick="javascript:listTable.edit(this, 'edit_suppliers_name', 2)">上海供货商      </span></td>
+      <td>上海供货商</td>
+			<td align="center"><img src="static/picture/yes_1.svg" width="20" onclick="listTable.toggle(this, 'is_check', 2)" style="cursor:pointer;"/></td>
+      <td align="center">
+        <a href="suppliers.php?act=edit&id=2" title="编辑">编辑</a> |
+        <a href="javascript:void(0);" onclick="listTable.remove(2, '您确认要删除这条记录吗?')" title="移除">移除</a>      </td>
+    </tr> -->
+      </table>
+<table id="page-table" cellspacing="0">
   <tr>
-    <th>会员等级名称</th>
-    <th>积分下限</th>
-    <th>积分上限</th>
-    <th>初始折扣率(%)</th>
-    <th>特殊会员组</th>
-    <th>显示价格</th>
-    <th>操作</th>
+    <td>
+      <input name="remove" type="submit" id="btnSubmit" value="删除" class="button" disabled="true" />
+      <input name="act" type="hidden" value="batch" />
+    </td>
+    <td align="right" nowrap="true">
+    <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<div id="turn-page">
+  <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
+  页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
+  条记录，总共 <span id="totalRecords">2</span>
+  条记录
+  <span id="page-link">
+    <a href="javascript:listTable.gotoPageFirst()">第一页</a>
+    <a href="javascript:listTable.gotoPagePrev()">上一页</a>
+    <a href="javascript:listTable.gotoPageNext()">下一页</a>
+    <a href="javascript:listTable.gotoPageLast()">最末页</a>
+    <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
+      <option value='1'>1</option>    </select>
+  </span>
+</div>
+    </td>
   </tr>
-    <tr>
-    <td class="first-cell" ><span onclick="listTable.edit(this,'edit_name', 1)">注册用户</span></td>
-    <td align="right"><span  onclick="listTable.edit(this, 'edit_min_points', 1)"  >0</span></td>
-    <td align="right"><span  onclick="listTable.edit(this, 'edit_max_points', 1)"  >10000</span></td>
-    <td align="right"><span onclick="listTable.edit(this, 'edit_discount', 1)">100</span></td>
-    <td align="center"><img src="static/picture/no.svg" width="20" onclick="listTable.toggle(this, 'toggle_special', 1)" /></td>
-    <td align="center"><img src="static/picture/yes.svg" width="20" onclick="listTable.toggle(this, 'toggle_showprice', 1)" /></td>
-    <td align="center">
-    <a href="javascript:;" onclick="listTable.remove(1, '您确认要删除这条记录吗?')" title="移除"><img src="static/picture/icon_drop.svg" border="0" height="16" width="16"></a></td>
-  </tr>
-    <tr>
-    <td class="first-cell" ><span onclick="listTable.edit(this,'edit_name', 2)">vip</span></td>
-    <td align="right"><span  onclick="listTable.edit(this, 'edit_min_points', 2)"  >10000</span></td>
-    <td align="right"><span  onclick="listTable.edit(this, 'edit_max_points', 2)"  >10000000</span></td>
-    <td align="right"><span onclick="listTable.edit(this, 'edit_discount', 2)">95</span></td>
-    <td align="center"><img src="static/picture/no.svg" width="20" onclick="listTable.toggle(this, 'toggle_special', 2)" /></td>
-    <td align="center"><img src="static/picture/yes.svg" width="20" onclick="listTable.toggle(this, 'toggle_showprice', 2)" /></td>
-    <td align="center">
-    <a href="javascript:;" onclick="listTable.remove(2, '您确认要删除这条记录吗?')" title="移除"><img src="static/picture/icon_drop.svg" border="0" height="16" width="16"></a></td>
-  </tr>
-    <tr>
-    <td class="first-cell" ><span onclick="listTable.edit(this,'edit_name', 3)">代销用户</span></td>
-    <td align="right"><span  >0</span></td>
-    <td align="right"><span  >0</span></td>
-    <td align="right"><span onclick="listTable.edit(this, 'edit_discount', 3)">90</span></td>
-    <td align="center"><img src="static/picture/yes.svg" width="20" onclick="listTable.toggle(this, 'toggle_special', 3)" /></td>
-    <td align="center"><img src="static/picture/no.svg" width="20" onclick="listTable.toggle(this, 'toggle_showprice', 3)" /></td>
-    <td align="center">
-    <a href="javascript:;" onclick="listTable.remove(3, '您确认要删除这条记录吗?')" title="移除"><img src="static/picture/icon_drop.svg" border="0" height="16" width="16"></a></td>
-  </tr>
-    </table>
+</table>
 
 </div>
-<!-- end user ranks list -->
 </form>
-<script type="Text/Javascript" language="JavaScript">
-<!--
 
-onload = function()
-{
-    // 开始检查订单
-    startCheckOrder();
-}
+<script type="text/javascript" language="javascript">
+  <!--
+  listTable.recordCount = 2;
+  listTable.pageCount = 1;
 
-//-->
+    listTable.filter.sort_by = 'suppliers_id';
+    listTable.filter.sort_order = 'ASC';
+    listTable.filter.page = '1';
+    listTable.filter.page_size = '15';
+    listTable.filter.record_count = '2';
+    listTable.filter.page_count = '1';
+  
+  
+  onload = function()
+  {
+      // 开始检查订单
+      startCheckOrder();
+  }
+  
+  //-->
 </script>
 <div id="footer">
-共执行 3 个查询，用时 0.018365 秒，Gzip 已禁用，内存占用 1.083 MB<br />
+共执行 4 个查询，用时 0.013437 秒，Gzip 已禁用，内存占用 1.113 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
 <!-- 新订单提示信息 -->
 <div id="popMsg">
@@ -175,7 +153,7 @@ onload = function()
 </div>
 
 <!--
-<embed src="static/flash/online.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
+<embed src="static/flash/online_2.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
 -->
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0" id="msgBeep" width="1" height="1">
   <param name="movie" value="images/online.swf">
