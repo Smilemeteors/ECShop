@@ -1,7 +1,4 @@
 ﻿<!-- $Id: order_info.htm 17060 2010-03-25 03:44:42Z liuhui $ -->
-<?php 
-print_r($data);
-?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -123,7 +120,7 @@ var loading = "加载中...";
     <td width="18%"><div align="right"><strong>订单号：</strong></div></td>
     <td width="34%">{$data.order_number}</td>
     <td width="15%"><div align="right"><strong>订单状态：</strong></div></td>
-    <td>order_stats</td>
+    <td>{$data.order_stats}</td>
   </tr>
   <tr>
     <td><div align="right"><strong>购货人：</strong></div></td>
@@ -133,7 +130,7 @@ var loading = "加载中...";
   </tr>
   <tr>
     <td><div align="right"><strong>支付方式：</strong></div></td>
-    <td><span class="require-field">*</span><a href="order.php?act=edit&order_id=1&step=payment" class="btn btn-def">编辑</a>    (备注: <span onclick="listTable.edit(this, 'edit_pay_note', 1)">N/A</span>)</td>
+    <td><span class="require-field">*</span><button><a href="admin/order/paytype" class="btn btn-def">编辑</a></button>    (备注: <span onclick="listTable.edit(this, 'edit_pay_note', 1)">N/A</span>)</td>
     <td><div align="right"><strong>付款时间：</strong></div></td>
     <td>未付款</td>
   </tr>
@@ -150,7 +147,7 @@ var loading = "加载中...";
     <td>管理员添加</td>
   </tr>
   <tr>
-    <th colspan="4">其他信息<a href="order.php?act=edit&order_id=1&step=other" class="btn btn-def">编辑</a></th>
+    <th colspan="4">其他信息<a href="order.php?act=edit&order_id=1&step=other" class="btn btn-def"><button>编辑</button></a></th>
     </tr>
   <tr>
     <td><div align="right"><strong>发票类型：</strong></div></td>
@@ -189,7 +186,7 @@ var loading = "加载中...";
     <td colspan="3"></td>
   </tr>
   <tr>
-    <th colspan="4">收货人信息<a href="order.php?act=edit&order_id=1&step=consignee" class="btn btn-def">编辑</a></th>
+    <th colspan="4">收货人信息<a href="order.php?act=edit&order_id=1&step=consignee" class="btn btn-def"><button>编辑</button></a></th>
     </tr>
   <tr>
     <td><div align="right"><strong>收货人：</strong></div></td>
@@ -221,7 +218,7 @@ var loading = "加载中...";
 <div class="list-div" style="margin-bottom: 5px">
 <table width="100%" cellpadding="3" cellspacing="1">
   <tr>
-    <th colspan="8" scope="col">商品信息<a href="order.php?act=edit&order_id=1&step=goods" class="btn btn-def">编辑</a></th>
+    <th colspan="8" scope="col">商品信息<a href="order.php?act=edit&order_id=1&step=goods" class="btn btn-def"><button>编辑</button></a></th>
     </tr>
   <tr>
     <td scope="col"><div align="center"><strong>商品名称 [ 品牌 ]</strong></div></td>
@@ -249,7 +246,7 @@ var loading = "加载中...";
 <div class="list-div" style="margin-bottom: 5px">
 <table width="100%" cellpadding="3" cellspacing="1">
   <tr>
-    <th>费用信息<a href="order.php?act=edit&order_id=1&step=money" class="btn btn-def">编辑</a></th>
+    <th>费用信息<a href="order.php?act=edit&order_id=1&step=money" class="btn btn-def"><button>编辑</button></a></th>
   </tr>
   <tr>
     <td><div align="right">商品总金额：<strong>￥0.00元</strong>
@@ -288,9 +285,11 @@ var loading = "加载中...";
     <td><div align="right"></div>
       <div align="right"><strong>当前可执行操作：</strong> </div></td>
     <td colspan="5">         <input name="pay" type="submit" value="付款" class="button"  />
-                      <input name="cancel" type="submit" value="取消" class="button"  />
-                 <input name="invalid" type="submit" value="无效" class="button"  />
-           <input name="after_service" type="submit" value="售后" class="button"  />                        <input name="order_id" type="hidden" value="1"></td>
+                      <button><a href="admin/order/delorder?id={$data.order_id}">移除</a></button>
+                 <button><a href="javascript: ;">无效</a></button>
+          <button><a href="javascript: ;">售后</a></button>                        
+            <button><a href="admin/order/orders_list">返回</a></button>
+           <input name="order_id" type="hidden" value="1"></td>
     </tr>
   <tr>
     <th>操作者：</th>

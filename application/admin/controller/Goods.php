@@ -7,7 +7,6 @@ use think\Paginator;
 use think\Request;
 class Goods extends Controller
 {
-
     //model调用
     public $goods;
     public function _initialize(){
@@ -41,6 +40,72 @@ class Goods extends Controller
         }
         echo json_encode($arr);
     }
+    //分类状态修改
+    public function cat_change_parent()
+    {
+        $cat_id = input('get.cat_id');
+        $status = input('get.status');
+        if($status==1){
+            $res = Db("cat")->where("cat_id",$cat_id)->update(["parent_id"=>'0']);
+        }else{
+            $res = Db("cat")->where("cat_id",$cat_id)->update(["parent_id"=>'1']);
+        }
+        
+        if($res){
+            $arr['status'] = 0;
+            $arr['data'] = '';
+            $arr['msg'] = '成功';
+        }else{
+            $arr['status'] = 1;
+            $arr['data'] = '';
+            $arr['msg'] = '失败';
+        }
+        echo json_encode($arr);
+    }
+    public function cat_change_show()
+    {
+        $cat_id = input('get.cat_id');
+        $status = input('get.status');
+        if($status==1){
+            $res = Db("cat")->where("cat_id",$cat_id)->update(["is_show"=>'0']);
+        }else{
+            $res = Db("cat")->where("cat_id",$cat_id)->update(["is_show"=>'1']);
+        }
+        
+        if($res){
+            $arr['status'] = 0;
+            $arr['data'] = '';
+            $arr['msg'] = '成功';
+        }else{
+            $arr['status'] = 1;
+            $arr['data'] = '';
+            $arr['msg'] = '失败';
+        }
+        echo json_encode($arr);
+    }
+    //品牌状态修改
+    public function brand_change_status()
+    {
+        $goods_id = input('get.goods_id');
+        $status = input('get.status');
+        if($status==1){
+            $res = Db("goods")->where("goods_id",$goods_id)->update(["is_put"=>'0']);
+        }else{
+            $res = Db("goods")->where("goods_id",$goods_id)->update(["is_put"=>'1']);
+        }
+        
+        if($res){
+            $arr['status'] = 0;
+            $arr['data'] = '';
+            $arr['msg'] = '成功';
+        }else{
+            $arr['status'] = 1;
+            $arr['data'] = '';
+            $arr['msg'] = '失败';
+        }
+        echo json_encode($arr);
+    }
+
     //商品列表及点击该
     public function goods_change_put()
     {
@@ -262,13 +327,50 @@ class Goods extends Controller
         return view('goods_trash',['arr'=>$arr]);
     }
 
+    //分类
+    //
+    //分类添加
+    //
+    public function category_add()
+    {
+        return view('category_add');
+    }
+    public function cat_add_do()
+    {
+        $data = Request::instance()->post();
+        $arr = Db::name('cat')->insert($data);
+        if($arr){
+            $this->success('添加成功','goods/category_list');
+        }else{
+            $this->error('添加失败','goods/cat_add_do');
+        }
+    }
+    //分类展示
+     public function category_list()
+     {
+        $arr =$this->goods->shows();
+        return $this->fetch('category_list',['arr' => $arr]);
+    }
+    //分类删除
+    //
+    public function category_del(){
+        $cat_id=$_GET['id'];
+        $res =$this->goods->del($cat_id);
+        if($res){
+            echo "<script>alert('删除成功');location.href='category_list'</script>";
+        }else{
+            echo "<script>alert('删除失败');location.href='category_list'</script>";
+        }
+    }
+
+
+
 
 
     //评论部分
     //评论添加
     public function comment_manage_add()
     {
-        
         return view('comment_manage_add');
     }
     //评论展示
@@ -277,16 +379,12 @@ class Goods extends Controller
         $res = $this->goods->comment_show();
         return view('comment_manage_list',['res'=>$res]);
     }
-
-    public function category_list()
-    {
-         return view('category_list');
-    }
     //属性展示
     public function attribute_list()
     {
+        $res = Db::table('goods_type')->select();
         $arr = Db::table('attribute')->select();
-        return view('attribute_list',['arr'=>$arr]);
+        return view('attribute_list',['arr'=>$arr,'res'=>$res]);
     }
     public function attribute_add(){
         return view('attribute_add');

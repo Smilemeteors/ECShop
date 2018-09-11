@@ -45,7 +45,7 @@ class Member extends Controller
 	}
 	public function users_edit()
 	{
-		return view('user_edit');
+		return view('users_edit');
 	}
 	public function user_msg()
 	{
