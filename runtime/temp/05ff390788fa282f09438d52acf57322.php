@@ -1,8 +1,4 @@
-<<<<<<< HEAD:runtime/temp/05ff390788fa282f09438d52acf57322.php
 <?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"D:\PHPTutorial\WWW\ECShop\public/../application/admin\view\index\index_menu.html";i:1536368900;}*/ ?>
-=======
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\index\index_menu.html";i:1536379138;}*/ ?>
->>>>>>> bf7b50e7c004410b6e2960cf3808a3393a152e70:runtime/temp/938028341bfee9f4e4652d217eab32ad.php
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>

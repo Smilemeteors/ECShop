@@ -1,15 +1,14 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:91:"D:\PHPTutorial\WWW\ECShop\public/../application/admin\view\order\shortage_registration.html";i:1536285027;}*/ ?>
-﻿<!-- $Id: booking_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"D:\PHPTutorial\WWW\ECShop\public/../application/admin\view\member\user_rank.html";i:1536285027;}*/ ?>
+﻿<!-- $Id: user_rank.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ECSHOP 管理中心 - 全部缺货登记信息 </title><base href="/" />
+<title>ECSHOP 管理中心 - 会员等级 </title>
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="static/css/general_1.css" rel="stylesheet" type="text/css" />
-<link href="static/css/main_1.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="static/js/transport_1.js"></script><script type="text/javascript" src="static/js/common_1.js"></script>
+<link href="/static/css/general.css" rel="stylesheet" type="text/css" />
+<link href="/static/css/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/static/js/transport.js"></script><script type="text/javascript" src="/static/js/common.js"></script>
 <style>
   .panel-icloud .panel-right iframe {
     height: 300px;
@@ -30,7 +29,13 @@ var todolist_save = "保存";
 var todolist_clear = "清除";
 var todolist_confirm_save = "是否将更改保存到记事本？";
 var todolist_confirm_clear = "是否清空内容？";
-var no_note = "请输入备注信息";
+var remove_confirm = "您确定要删除选定的会员等级吗？";
+var rank_name_empty = "您没有输入会员等级名称。";
+var integral_min_invalid = "您没有输入积分下限或者积分下限不是一个整数。";
+var integral_max_invalid = "您没有输入积分上限或者积分上限不是一个整数。";
+var discount_invalid = "您没有输入折扣率或者折扣率无效。";
+var integral_max_small = "积分上限必须大于积分下限。";
+var lang_remove = "移除";
 //-->
 /*关闭按钮*/
   function get_certificate(){
@@ -40,7 +45,7 @@ var no_note = "请输入备注信息";
 	  if(panel&&CMask&&frame){
 	      panel.style.display = 'block';
 	      mask.style.display = 'block';
-	      frame.src = 'https://openapi.shopex.cn/oauth/authorize?response_type=code&client_id=yogfss4l&redirect_uri=http%3A%2F%2F127.0.0.1%2FECShop1%2Fsource%2Fecshop%2Fadmin%2Fcertificate.php%3Fact%3Dget_certificate%26type%3Dindex&view=auth_ecshop';
+	      frame.src = 'https://openapi.shopex.cn/oauth/authorize?response_type=code&client_id=yogfss4l&redirect_uri=http%3A%2F%2F127.0.0.1%2Fshixun%2FEC4%2Fsource%2Fecshop%2Fadmin%2Fcertificate.php%3Fact%3Dget_certificate%26type%3Dindex&view=auth_ecshop';
 	    }
 	}
 
@@ -82,93 +87,73 @@ var no_note = "请输入备注信息";
 <div class="mask-black" id="CMask"></div>
 <!--遮罩-->
 <h1>
-    
-    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;全部缺货登记信息 </span>
+      <a class="btn btn-right" href="user_rank_add.html">添加会员等级</a>
+  
+    <span class="action-span1"><a href="admin/Index/index_main.html">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;会员等级 </span>
   <div style="clear:both"></div>
-</h1><script type="text/javascript" src="static/js/utils_1.js"></script><script type="text/javascript" src="static/js/listtable_1.js"></script><div class="form-div">
-  <form action="javascript:searchGoodsname()" name="searchForm">
-    <img src="static/picture/icon_search.svg" width="26" height="22" border="0" alt="SEARCH" />
-    缺货商品名 <input type="text" name="keyword" /> <input type="submit" value=" 搜索 " class="button" />
-  </form>
-</div>
-
-<form method="POST" action="" name="listForm">
+</h1><script type="text/javascript" src="static/js/utils.js"></script><script type="text/javascript" src="static/js/listtable.js"></script>
+<form method="post" action="" name="listForm">
+<!-- start ads list -->
 <div class="list-div" id="listDiv">
 
-  <table cellpadding="3" cellspacing="1">
+<table cellspacing='1' id="list-table">
+  <tr>
+    <th>会员等级名称</th>
+    <th>积分下限</th>
+    <th>积分上限</th>
+    <th>初始折扣率(%)</th>
+    <th>特殊会员组</th>
+    <th>显示价格</th>
+    <th>操作</th>
+  </tr>
     <tr>
-      <th><a href="javascript:listTable.sort('rec_id'); ">编号</a></th>
-      <th><a href="javascript:listTable.sort('link_man'); ">联系人</a></th>
-      <th><a href="javascript:listTable.sort('goods_name'); ">缺货商品名</a></th>
-      <th><a href="javascript:listTable.sort('goods_number'); ">数量</a></th>
-      <th><a href="javascript:listTable.sort('booking_time'); ">登记时间</a></th>
-      <th><a href="javascript:listTable.sort('is_dispose'); ">是否已处理</a></th>
-      <th>操作</th>
-    </tr>
-        <tr><td class="no-records" colspan="10">没有找到任何记录</td></tr>
-      </table>
-
-  <table cellpadding="4" cellspacing="0">
+    <td class="first-cell" ><span onclick="listTable.edit(this,'edit_name', 1)">注册用户</span></td>
+    <td align="right"><span  onclick="listTable.edit(this, 'edit_min_points', 1)"  >0</span></td>
+    <td align="right"><span  onclick="listTable.edit(this, 'edit_max_points', 1)"  >10000</span></td>
+    <td align="right"><span onclick="listTable.edit(this, 'edit_discount', 1)">100</span></td>
+    <td align="center"><img src="static/picture/no.svg" width="20" onclick="listTable.toggle(this, 'toggle_special', 1)" /></td>
+    <td align="center"><img src="static/picture/yes.svg" width="20" onclick="listTable.toggle(this, 'toggle_showprice', 1)" /></td>
+    <td align="center">
+    <a href="javascript:;" onclick="listTable.remove(1, '您确认要删除这条记录吗?')" title="移除"><img src="static/picture/icon_drop.svg" border="0" height="16" width="16"></a></td>
+  </tr>
     <tr>
-      <td align="right"><!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-<div id="turn-page">
-  <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
-  页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
-  条记录，总共 <span id="totalRecords">0</span>
-  条记录
-  <span id="page-link">
-    <a href="javascript:listTable.gotoPageFirst()">第一页</a>
-    <a href="javascript:listTable.gotoPagePrev()">上一页</a>
-    <a href="javascript:listTable.gotoPageNext()">下一页</a>
-    <a href="javascript:listTable.gotoPageLast()">最末页</a>
-    <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
-      <option value='1'>1</option>    </select>
-  </span>
-</div>
-</td>
-    </tr>
-  </table>
+    <td class="first-cell" ><span onclick="listTable.edit(this,'edit_name', 2)">vip</span></td>
+    <td align="right"><span  onclick="listTable.edit(this, 'edit_min_points', 2)"  >10000</span></td>
+    <td align="right"><span  onclick="listTable.edit(this, 'edit_max_points', 2)"  >10000000</span></td>
+    <td align="right"><span onclick="listTable.edit(this, 'edit_discount', 2)">95</span></td>
+    <td align="center"><img src="static/picture/no.svg" width="20" onclick="listTable.toggle(this, 'toggle_special', 2)" /></td>
+    <td align="center"><img src="static/picture/yes.svg" width="20" onclick="listTable.toggle(this, 'toggle_showprice', 2)" /></td>
+    <td align="center">
+    <a href="javascript:;" onclick="listTable.remove(2, '您确认要删除这条记录吗?')" title="移除"><img src="static/picture/icon_drop.svg" border="0" height="16" width="16"></a></td>
+  </tr>
+    <tr>
+    <td class="first-cell" ><span onclick="listTable.edit(this,'edit_name', 3)">代销用户</span></td>
+    <td align="right"><span  >0</span></td>
+    <td align="right"><span  >0</span></td>
+    <td align="right"><span onclick="listTable.edit(this, 'edit_discount', 3)">90</span></td>
+    <td align="center"><img src="static/picture/yes.svg" width="20" onclick="listTable.toggle(this, 'toggle_special', 3)" /></td>
+    <td align="center"><img src="static/picture/no.svg" width="20" onclick="listTable.toggle(this, 'toggle_showprice', 3)" /></td>
+    <td align="center">
+    <a href="javascript:;" onclick="listTable.remove(3, '您确认要删除这条记录吗?')" title="移除"><img src="static/picture/icon_drop.svg" border="0" height="16" width="16"></a></td>
+  </tr>
+    </table>
 
 </div>
+<!-- end user ranks list -->
 </form>
-
-<script type="text/javascript" language="JavaScript">
+<script type="Text/Javascript" language="JavaScript">
 <!--
-  listTable.recordCount = 0;
-  listTable.pageCount = 1;
 
-    listTable.filter.keywords = '';
-    listTable.filter.dispose = '0';
-    listTable.filter.sort_by = 'sort_order';
-    listTable.filter.sort_order = 'DESC';
-    listTable.filter.record_count = '0';
-    listTable.filter.page_size = '15';
-    listTable.filter.page = '1';
-    listTable.filter.page_count = '1';
-    listTable.filter.start = '0';
-  
-  
-  onload = function()
-  {
+onload = function()
+{
     // 开始检查订单
     startCheckOrder();
-  }
+}
 
-  /**
-   * 搜索标题
-   */
-  function searchGoodsname()
-  {
-      var keyword = Utils.trim(document.forms['searchForm'].elements['keyword'].value);
-      listTable.filter['keywords'] = keyword;
-      listTable.filter['page'] = 1;
-      listTable.loadList("get_bookinglist");
-  }
-  
 //-->
 </script>
 <div id="footer">
-共执行 4 个查询，用时 0.014465 秒，Gzip 已禁用，内存占用 1.086 MB<br />
+共执行 3 个查询，用时 0.018365 秒，Gzip 已禁用，内存占用 1.083 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
 <!-- 新订单提示信息 -->
 <div id="popMsg">
@@ -190,7 +175,7 @@ var no_note = "请输入备注信息";
 </div>
 
 <!--
-<embed src="static/flash/online_1.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
+<embed src="static/flash/online.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
 -->
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0" id="msgBeep" width="1" height="1">
   <param name="movie" value="images/online.swf">

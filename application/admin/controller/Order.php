@@ -7,7 +7,7 @@ class Order extends \think\Controller
 	// 订单列表
 	public function orders_list()
 	{
-		$data = Db('order')->select();
+		$data = Db::name('order')->paginate(5);
 		$this->assign('data',$data);
 		return view('orders_list');
 	}
@@ -24,11 +24,11 @@ class Order extends \think\Controller
 		$id = isset($_GET['id'])?$_GET['id']:'';
 		$res = Db('order')->where('order_id',"$id")->delete();
 		if($res){
-			$data = Db('order')->select();
+			$data = Db::name('order')->paginate(5);
 			$this->assign('data',$data);
 			return view('orders_list');	
 		}else{
-			$data = Db('order')->select();
+			$data = Db::name('order')->paginate(5);
 			$this->assign('data',$data);
 			return view('orders_list');
 		}
@@ -36,6 +36,14 @@ class Order extends \think\Controller
 	public function paytype()
 	{
 		return view('paytype');
+	}
+	public function other()
+	{
+		return view('other');
+	}
+	public function consignee()
+	{
+		return view('consignee');
 	}
 	// 订单查询   
 	public function orders_query()

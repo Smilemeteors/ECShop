@@ -1,10 +1,8 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:91:"D:\PHPTutorial\WWW\ECShop\public/../application/admin\view\order\shortage_registration.html";i:1536285027;}*/ ?>
-﻿<!-- $Id: booking_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"D:\PHPTutorial\WWW\ECShop\public/../application/admin\view\order\list_return.html";i:1536285027;}*/ ?>
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ECSHOP 管理中心 - 全部缺货登记信息 </title><base href="/" />
+<title>ECSHOP 管理中心 - 退货单列表 </title><base href="/" />
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="static/css/general_1.css" rel="stylesheet" type="text/css" />
@@ -30,7 +28,24 @@ var todolist_save = "保存";
 var todolist_clear = "清除";
 var todolist_confirm_save = "是否将更改保存到记事本？";
 var todolist_confirm_clear = "是否清空内容？";
-var no_note = "请输入备注信息";
+var remove_confirm = "删除订单将清除该订单的所有信息。您确定要这么做吗？";
+var confirm_merge = "您确实要合并这两个订单吗？";
+var input_price = "自定义价格";
+var pls_search_user = "请搜索并选择会员";
+var confirm_drop = "确认要删除该商品吗？";
+var invalid_goods_number = "商品数量不正确";
+var pls_search_goods = "请搜索并选择商品";
+var pls_select_area = "请完整选择所在地区";
+var pls_select_shipping = "请选择配送方式";
+var pls_select_payment = "请选择支付方式";
+var pls_select_pack = "请选择包装";
+var pls_select_card = "请选择贺卡";
+var pls_input_note = "请您填写备注！";
+var pls_input_cancel = "请您填写取消原因！";
+var pls_select_refund = "请选择退款方式！";
+var pls_select_agency = "请选择办事处！";
+var pls_select_other_agency = "该订单现在就属于这个办事处，请选择其他办事处！";
+var loading = "加载中...";
 //-->
 /*关闭按钮*/
   function get_certificate(){
@@ -83,34 +98,42 @@ var no_note = "请输入备注信息";
 <!--遮罩-->
 <h1>
     
-    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;全部缺货登记信息 </span>
+    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;退货单列表 </span>
   <div style="clear:both"></div>
-</h1><script type="text/javascript" src="static/js/utils_1.js"></script><script type="text/javascript" src="static/js/listtable_1.js"></script><div class="form-div">
-  <form action="javascript:searchGoodsname()" name="searchForm">
-    <img src="static/picture/icon_search.svg" width="26" height="22" border="0" alt="SEARCH" />
-    缺货商品名 <input type="text" name="keyword" /> <input type="submit" value=" 搜索 " class="button" />
+</h1><script type="text/javascript" src="static/js/utils_1.js"></script><script type="text/javascript" src="static/js/listtable_1.js"></script><!-- 订单搜索 -->
+<div class="form-div">
+  <form action="javascript:searchOrder()" name="searchForm">
+    <!-- <img src="static/picture/icon_search_1.gif" width="26" height="22" border="0" alt="SEARCH" /> -->
+    发货单流水号<input name="delivery_sn" type="text" id="delivery_sn" size="15">
+    订单号<input name="order_sn" type="text" id="order_sn" size="15">
+    收货人<input name="consignee" type="text" id="consignee" size="15">
+    <input type="submit" value=" 搜索 " class="button" />
   </form>
 </div>
 
-<form method="POST" action="" name="listForm">
-<div class="list-div" id="listDiv">
+<!-- 订单列表 -->
+<form method="post" action="order.php?act=operate" name="listForm" onsubmit="return check()">
+  <div class="list-div" id="listDiv">
 
-  <table cellpadding="3" cellspacing="1">
-    <tr>
-      <th><a href="javascript:listTable.sort('rec_id'); ">编号</a></th>
-      <th><a href="javascript:listTable.sort('link_man'); ">联系人</a></th>
-      <th><a href="javascript:listTable.sort('goods_name'); ">缺货商品名</a></th>
-      <th><a href="javascript:listTable.sort('goods_number'); ">数量</a></th>
-      <th><a href="javascript:listTable.sort('booking_time'); ">登记时间</a></th>
-      <th><a href="javascript:listTable.sort('is_dispose'); ">是否已处理</a></th>
-      <th>操作</th>
-    </tr>
-        <tr><td class="no-records" colspan="10">没有找到任何记录</td></tr>
-      </table>
+<table cellpadding="3" cellspacing="1">
+  <tr>
+    <th>
+      <input onclick='listTable.selectAll(this, "back_id")' type="checkbox" /><a href="javascript:listTable.sort('delivery_sn', 'DESC'); ">发货单流水号</a>    </th>
+    <th><a href="javascript:listTable.sort('order_sn', 'DESC'); ">订单号</a></th>
+    <th><a href="javascript:listTable.sort('add_time', 'DESC'); ">下单时间</a></th>
+    <th><a href="javascript:listTable.sort('consignee', 'DESC'); ">收货人</a></th>
+    <th><a href="javascript:listTable.sort('update_time', 'DESC'); ">发货时间</a><img src="static/picture/sort_desc_1.png"></th>
+    <th>退货时间</th>
+    <th>操作人</th>
+    <th>操作</th>
+  <tr>
+  </table>
 
-  <table cellpadding="4" cellspacing="0">
-    <tr>
-      <td align="right"><!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<!-- 分页 -->
+<table id="page-table" cellspacing="0">
+  <tr>
+    <td align="right" nowrap="true">
+    <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <div id="turn-page">
   <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
   页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
@@ -125,50 +148,79 @@ var no_note = "请输入备注信息";
       <option value='1'>1</option>    </select>
   </span>
 </div>
-</td>
-    </tr>
-  </table>
+    </td>
+  </tr>
+</table>
 
-</div>
+  </div>
+  <div>
+    <input name="remove_back" type="submit" id="btnSubmit3" value="移除" class="button" disabled="true" onclick="{if(confirm('您确定要删除吗？')){return true;}return false;}" />
+  </div>
 </form>
+<script language="JavaScript">
+listTable.recordCount = 0;
+listTable.pageCount = 1;
 
-<script type="text/javascript" language="JavaScript">
-<!--
-  listTable.recordCount = 0;
-  listTable.pageCount = 1;
+listTable.filter.delivery_sn = '';
+listTable.filter.order_sn = '';
+listTable.filter.order_id = '0';
+listTable.filter.consignee = '';
+listTable.filter.sort_by = 'update_time';
+listTable.filter.sort_order = 'DESC';
+listTable.filter.page = '1';
+listTable.filter.page_size = '15';
+listTable.filter.record_count = '0';
+listTable.filter.page_count = '1';
 
-    listTable.filter.keywords = '';
-    listTable.filter.dispose = '0';
-    listTable.filter.sort_by = 'sort_order';
-    listTable.filter.sort_order = 'DESC';
-    listTable.filter.record_count = '0';
-    listTable.filter.page_size = '15';
-    listTable.filter.page = '1';
-    listTable.filter.page_count = '1';
-    listTable.filter.start = '0';
-  
-  
-  onload = function()
-  {
-    // 开始检查订单
-    startCheckOrder();
-  }
 
-  /**
-   * 搜索标题
-   */
-  function searchGoodsname()
-  {
-      var keyword = Utils.trim(document.forms['searchForm'].elements['keyword'].value);
-      listTable.filter['keywords'] = keyword;
-      listTable.filter['page'] = 1;
-      listTable.loadList("get_bookinglist");
-  }
-  
-//-->
+    onload = function()
+    {
+        // 开始检查订单
+        startCheckOrder();
+                
+        //
+        listTable.query = "back_query";
+    }
+
+    /**
+     * 搜索订单
+     */
+    function searchOrder()
+    {
+        listTable.filter['order_sn'] = Utils.trim(document.forms['searchForm'].elements['order_sn'].value);
+        listTable.filter['consignee'] = Utils.trim(document.forms['searchForm'].elements['consignee'].value);
+                listTable.filter['delivery_sn'] = document.forms['searchForm'].elements['delivery_sn'].value;
+        listTable.filter['page'] = 1;
+                listTable.query = "back_query";
+        listTable.loadList();
+    }
+
+    function check()
+    {
+      var snArray = new Array();
+      var eles = document.forms['listForm'].elements;
+      for (var i=0; i<eles.length; i++)
+      {
+        if (eles[i].tagName == 'INPUT' && eles[i].type == 'checkbox' && eles[i].checked && eles[i].value != 'on')
+        {
+          snArray.push(eles[i].value);
+        }
+      }
+      if (snArray.length == 0)
+      {
+        return false;
+      }
+      else
+      {
+        eles['order_id'].value = snArray.toString();
+        return true;
+      }
+    }
 </script>
+
+
 <div id="footer">
-共执行 4 个查询，用时 0.014465 秒，Gzip 已禁用，内存占用 1.086 MB<br />
+共执行 6 个查询，用时 0.012681 秒，Gzip 已禁用，内存占用 2.604 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
 <!-- 新订单提示信息 -->
 <div id="popMsg">

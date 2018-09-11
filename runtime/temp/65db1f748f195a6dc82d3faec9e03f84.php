@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"D:\PHPTutorial\WWW\ECShop\public/../application/admin\view\order\details.html";i:1536376874;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"D:\PHPTutorial\WWW\ECShop\public/../application/admin\view\order\details.html";i:1536627054;}*/ ?>
 ﻿<!-- $Id: order_info.htm 17060 2010-03-25 03:44:42Z liuhui $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -98,7 +98,7 @@ var loading = "加载中...";
 <div class="mask-black" id="CMask"></div>
 <!--遮罩-->
 <h1>
-      <a class="btn btn-right" href="order.php?act=list&uselastfilter=1">订单列表</a>
+      <a class="btn btn-right" href="admin/order/orders_list">订单列表</a>
   
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;订单信息 </span>
   <div style="clear:both"></div>
@@ -148,7 +148,7 @@ var loading = "加载中...";
     <td>管理员添加</td>
   </tr>
   <tr>
-    <th colspan="4">其他信息<a href="order.php?act=edit&order_id=1&step=other" class="btn btn-def"><button>编辑</button></a></th>
+    <th colspan="4">其他信息<button><a href="admin/order/other" class="btn btn-def">编辑</a></button></th>
     </tr>
   <tr>
     <td><div align="right"><strong>发票类型：</strong></div></td>
@@ -187,7 +187,7 @@ var loading = "加载中...";
     <td colspan="3"></td>
   </tr>
   <tr>
-    <th colspan="4">收货人信息<a href="order.php?act=edit&order_id=1&step=consignee" class="btn btn-def"><button>编辑</button></a></th>
+    <th colspan="4">收货人信息<button><a href="admin/order/consignee" class="btn btn-def">编辑</a></button></th>
     </tr>
   <tr>
     <td><div align="right"><strong>收货人：</strong></div></td>
