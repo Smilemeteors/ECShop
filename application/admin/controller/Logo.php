@@ -23,19 +23,23 @@ class Logo extends Controller
     public function addLogo()
     {
         // 如果post接收数据添加，如果get返回添加页面
-    	if ($_POST) {
-    		//获取需要入库的数据
-    		$data = Request::instance()->post();
-    		$data['ad_img'] = $this->upload();
-    		// print_r($data['ad_img']);die;
-            // 添加信息
-    		$res = Db('place')->insert($data); 
+	   if ($_POST) {
+		//获取需要入库的数据
+		$data = Request::instance()->post();
+		$data['ad_img'] = $this->upload();
+		// print_r($data['ad_img']);die;
+        // 添加信息
+		$res = Db('place')->insert($data); 
+        if($res){
+        $this->success('添加成功','logo/logo');
+        }else{
+            $this->error('添加失败','logo/addlogo');
+        }
             // 渲染模板 
-    		return view('logo');	
     	} else {
     		return view('addLogo');
     	}   	
-    }
+      }
     //广告上传
 	public function upload(){
 	    // 获取表单上传文件 例如上传了001.jpg
