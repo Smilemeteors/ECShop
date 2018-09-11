@@ -247,10 +247,10 @@ class Goods extends Controller
         $request = Request::instance()->post();
         $request['brand_logo']=$this->brand_upload();
         $res=$this->goods->inserts($request);
-        if($res) {
-            echo "<script>alert('上传成功');location.href='brand_list'</script>";
+        if($arr){
+            $this->success('上传成功','goods/brand_list');
         }else{
-            echo "<script>alert('上传失败');location.href='brand_add'</script>";
+            $this->error('上传失败','goods/brand_add');
         }
     }
     //文件上传
@@ -296,13 +296,13 @@ class Goods extends Controller
     public function goods_type_upd()
     {
         $id = Request::instance()->get('id');
-        $arr = Db::table('goods_type')->where('cat_id',$id)->select();
+        $arr = Db::table('goods_type')->where('type_id',$id)->select();
         return view('goods_type_upd',['arr'=>$arr]);
     }
     //类型表的修改
     public function goods_type_upd_do(){
         $data = Request::instance()->post();
-        $arr = Db::table('goods_type')->where('cat_id', $data['cat_id'])->update($data);
+        $arr = Db::table('goods_type')->where('type_id', $data['type_id'])->update($data);
         if($arr){
             $this->success('修改成功','goods/goods_type_manage');
         }else{
@@ -313,7 +313,7 @@ class Goods extends Controller
     {
         $id = Request::instance()->get('id');
 //        print_r($id);die;
-        $arr = Db::table('goods_type')->where('cat_id',$id)->delete();
+        $arr = Db::table('goods_type')->where('type_id',$id)->delete();
         if($arr){
             $this->success('删除成功','goods/goods_type_manage');
         }else{

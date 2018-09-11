@@ -17,6 +17,7 @@ return [
     // 数据库名
 
     'database'        => 'ecshops',
+
     // 用户名
     'username'        => 'root',
     // 密码

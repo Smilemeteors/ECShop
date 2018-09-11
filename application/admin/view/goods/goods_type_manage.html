@@ -41,7 +41,7 @@
     <td align="center">
       <a href="{:url('attribute_list')}?id=<?php echo $v['type_id']; ?>" title="属性列表">属性列表</a> |
       <a href="{:url('goods_type_upd')}?id=<?php echo $v['type_id']; ?>" title="编辑">编辑</a> |
-      <a href="{:url('goods_type_del')}?id=<?php echo $v['type_id']; ?>" onclick="listTable.remove(1, '删除商品类型将会清除该类型下的所有属性。\n您确定要删除选定的商品类型吗？')" title="移除">移除</a>
+      <a href="{:url('goods_type_del')}?id=<?php echo $v['type_id']; ?>">移除</a>
     </td>
   </tr>
   <?php endforeach ?>
