@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"E:\ECShop\public/../application/admin\view\goods\comment_manage_list.html";i:1536318410;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"E:\ECShop\public/../application/admin\view\goods\comment_manage_list.html";i:1536379459;}*/ ?>
 <!-- $Id: comment_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -31,54 +31,30 @@
   <tr>
     <th>
       <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox">
-      <a href="javascript:listTable.sort('comment_id'); ">编号</a> </th>
-    <th><a href="javascript:listTable.sort('user_name'); ">用户名</a></th>
-    <th><a href="javascript:listTable.sort('comment_type'); ">类型</a></th>
-    <th><a href="javascript:listTable.sort('id_value'); ">评论对象</a></th>
-    <th><a href="javascript:listTable.sort('ip_address'); ">IP地址</a></th>
-    <th><a href="javascript:listTable.sort('add_time'); ">评论时间</a><img src="static/picture/sort_desc.png"/></th>
+      <a>编号</a> </th>
+    <th><a>用户名</a></th>
+    <th><a>类型</a></th>
+    <th><a>评论对象</a></th>
+    <th><a>IP地址</a></th>
+    <th><a>评论时间</a><img src="static/picture/sort_desc.png"/></th>
     <th>状态</th>
     <th>操作</th>
   </tr>
-    <tr>
-    <td><input value="6" name="checkboxes[]" type="checkbox">6</td>
-    <td>ecshop</td>
-    <td>商品</td>
-    <td><a href="../goods.php?id=59" target="_blank"> 标准高透贴膜(2片装) </td>
+    <?php if(is_array($res) || $res instanceof \think\Collection || $res instanceof \think\Paginator): $i = 0; $__LIST__ = $res;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+  <tr>
+    <td><input value="4" name="checkboxes[]" type="checkbox"><?php echo $v['comment_id']; ?></td>
+    <td><?php echo $v['name']; ?></td>
+    <td><?php echo $v['type_name']; ?></td>
+    <td><a href="../goods.php?id=60" target="_blank"><?php echo $v['goods_name']; ?></td>
     <td>180.169.8.10</td>
-    <td align="center">2016-05-11 14:58:49</td>
-    <td align="center">隐藏</td>
-    <td align="center">
-      <a href="comment_manage.php?act=reply&amp;id=6">查看详情</a> |
-      <a href="javascript:" onclick="listTable.remove(6, '您确认要删除这条记录吗?')">移除</a>
-    </td>
-  </tr>
-      <tr>
-    <td><input value="5" name="checkboxes[]" type="checkbox">5</td>
-    <td>ecshop</td>
-    <td>商品</td>
-    <td><a href="../goods.php?id=59" target="_blank"> 标准高透贴膜(2片装) </td>
-    <td>180.169.8.10</td>
-    <td align="center">2016-05-11 14:57:57</td>
-    <td align="center">隐藏</td>
-    <td align="center">
-      <a href="comment_manage.php?act=reply&amp;id=5">查看详情</a> |
-      <a href="javascript:" onclick="listTable.remove(5, '您确认要删除这条记录吗?')">移除</a>
-    </td>
-  </tr>
-      <tr>
-    <td><input value="4" name="checkboxes[]" type="checkbox">4</td>
-    <td>ecshop</td>
-    <td>商品</td>
-    <td><a href="../goods.php?id=60" target="_blank">指环式防滑手机支架</td>
-    <td>180.169.8.10</td>
-    <td align="center">2016-05-11 14:57:21</td>
-    <td align="center">隐藏</td>
+    <td align="center"><?php echo $v['time']; ?></td>
+    <td align="center"><?php echo $v['is_show']; ?></td>
     <td align="center">
       <a href="comment_manage.php?act=reply&amp;id=4">查看详情</a> |
       <a href="javascript:" onclick="listTable.remove(4, '您确认要删除这条记录吗?')">移除</a>
     </td>
   </tr>
+    <?php endforeach; endif; else: echo "" ;endif; ?>
       </table>
 
   <table cellpadding="4" cellspacing="0">
