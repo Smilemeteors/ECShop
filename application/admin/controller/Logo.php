@@ -26,6 +26,7 @@ class Logo extends Controller
     	if ($_POST) {
     		//获取需要入库的数据
     		$data = Request::instance()->post();
+            // var_dump($data);die;
     		$data['ad_img'] = $this->upload();
     		// print_r($data['ad_img']);die;
             // 添加信息

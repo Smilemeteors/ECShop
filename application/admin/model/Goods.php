@@ -7,6 +7,14 @@ use think\Paginator;
 
 class Goods extends Model
 {
+	//删除分类
+	public function del($cat_id){
+        return Db::table('cat')->delete($cat_id);
+    }
+	public function shows()
+	{
+        return Db::table('cat')->select();
+    }
     public function goods_Show()
 	{
 		return $res = Db::name('goods')->where('is_delete',1)->paginate(5);
