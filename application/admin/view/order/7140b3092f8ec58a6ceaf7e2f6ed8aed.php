@@ -1,5 +1,5 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:65:"E:\ECShop\public/../application/admin\view\order\orders_list.html";i:1536325150;}*/ ?>
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>ECSHOP 管理中心</title>
@@ -57,20 +57,20 @@
     <th><a href="javascript:; ">订单状态</a></th>
     <th><a href="javascript:; ">操作</a></th>
   <tr>
-  {volist name='data' id='user'}
+  <?php foreach($data as $k => $v){?>
     <tr>
-    <td><input type="checkbox" name="test" value="{$user.order_id}">
-    {$user.order_number}</td>
-    <td class="first-cell"><span>{$user.order_data}</span></td>
-    <td><span>{$user.consignee}</span></td>
-    <td align="right"><span>¥{$user.total_money}元</span></td>
-    <td align="right"><span>¥{$user.order_amount}元</span></td>
-    <td>{$user.order_stats}</td>
-    <td><a href="admin/Order/details?id={$user.order_id}">查看</a><br />
-        <a href="admin/Order/delorder?id={$user.order_id}">移除</a>
+    <td><input type="checkbox" name="test" value="<?php echo $v['order_id']; ?>">
+    <?php echo $v['order_number']; ?></td>
+    <td class="first-cell"><span><?php echo $v['order_data']; ?></span></td>
+    <td><span><?php echo $v['consignee']; ?></span></td>
+    <td align="right"><span>¥<?php echo $v['total_money']; ?>元</span></td>
+    <td align="right"><span>¥<?php echo $v['order_amount']; ?>元</span></td>
+    <td><?php echo $v['order_stats']; ?></td>
+    <td><a href="admin/Order/details?id=<?php echo $v['order_id']; ?>">查看</a><br />
+        <a href="javascript:; ">移除</a>
     </td>
     </tr>
-  {/volist}
+  <?php }?>
   </table>
 
 
@@ -87,7 +87,18 @@
     <td align="right" nowrap="true">
     <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <div id="turn-page">
-    {$data->render()}
+  <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
+  页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
+  条记录，总共 <span id="totalRecords">0</span>
+  条记录
+  <span id="page-link">
+    <a href="javascript:listTable.gotoPageFirst()">第一页</a>
+    <a href="javascript:listTable.gotoPagePrev()">上一页</a>
+    <a href="javascript:listTable.gotoPageNext()">下一页</a>
+    <a href="javascript:listTable.gotoPageLast()">最末页</a>
+    <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
+      <option value='1'>1</option>    </select>
+  </span>
 </div>
     </td>
   </tr>

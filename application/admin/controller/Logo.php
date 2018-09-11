@@ -23,6 +23,7 @@ class Logo extends Controller
     public function addLogo()
     {
         // 如果post接收数据添加，如果get返回添加页面
+<<<<<<< HEAD
 	   if ($_POST) {
 		//获取需要入库的数据
 		$data = Request::instance()->post();
@@ -35,6 +36,16 @@ class Logo extends Controller
         }else{
             $this->error('添加失败','logo/addlogo');
         }
+=======
+    	if ($_POST) {
+    		//获取需要入库的数据
+    		$data = Request::instance()->post();
+            // var_dump($data);die;
+    		$data['ad_img'] = $this->upload();
+    		// print_r($data['ad_img']);die;
+            // 添加信息
+    		$res = Db('place')->insert($data); 
+>>>>>>> 14159b96578711a1c0c63847bb76edfe44e2f06c
             // 渲染模板 
     	} else {
     		return view('addLogo');
