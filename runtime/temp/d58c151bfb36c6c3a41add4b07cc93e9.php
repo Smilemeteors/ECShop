@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_trash.html";i:1536631166;}*/ ?>
 <!-- $Id: goods_trash.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -59,7 +60,7 @@
     <td><?php echo $v['goods_sn']; ?></td>
     <td><?php echo $v['shop_price']; ?></td>
     <td>
-      <a href="{:url('goods_trash_del')}?id=<?php echo $v['goods_id']; ?>" class="btn btn-danger btn-sm shiny">
+      <a href="<?php echo url('goods_trash_del'); ?>?id=<?php echo $v['goods_id']; ?>" class="btn btn-danger btn-sm shiny">
         <i class="fa fa-trash-o"></i> 删除</a>
     </td>
   </tr>
@@ -158,7 +159,7 @@
     <td><?php echo $v['goods_sn']; ?></td>
     <td><?php echo $v['shop_price']; ?></td>
     <td>
-      <a href="{:url('goods_trash_del')}?id=<?php echo $v['goods_id']; ?>" class="btn btn-danger btn-sm shiny">
+      <a href="<?php echo url('goods_trash_del'); ?>?id=<?php echo $v['goods_id']; ?>" class="btn btn-danger btn-sm shiny">
         <i class="fa fa-trash-o"></i> 删除</a>
     </td>
   </tr>

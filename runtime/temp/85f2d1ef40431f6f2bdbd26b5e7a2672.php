@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_type_add.html";i:1536630033;}*/ ?>
 ﻿<!-- $Id: goods_type_info.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -18,7 +19,7 @@
   <div style="clear:both"></div>
 </h1>
 <div class="main-div">
-  <form action="{:url('goods_type_add_do')}" method="post" name="theForm" onsubmit="return validate();">
+  <form action="<?php echo url('goods_type_add_do'); ?>" method="post" name="theForm" onsubmit="return validate();">
     <table cellspacing="1" cellpadding="3" width="100%">
       <tr>
         <td class="label">商品类型名称:</td>

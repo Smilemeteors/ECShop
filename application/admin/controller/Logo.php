@@ -115,7 +115,11 @@ class Logo extends Controller
             // print_r($arr['position_style']);die;
             $res = Db('position')->insert($arr);
             // print_r($res);die;
-            return view('position');
+            if ($res) {
+                $this->success('添加成功','position');
+            }else{
+                $this->error('添加失败','addPosition');
+            }
         } else {
             return view('addPosition');
         }	
