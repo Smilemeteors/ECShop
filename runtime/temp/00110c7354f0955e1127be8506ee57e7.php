@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:70:"D:\phpstudy\WWW\ECShop\public/../application/admin\view\logo\logo.html";i:1536369664;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:70:"D:\phpstudy\WWW\ECShop\public/../application/admin\view\logo\logo.html";i:1536539348;}*/ ?>
 ﻿<!-- $Id: ads_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -101,7 +101,7 @@ var empty_position_style = "广告位的模版不能为空!";
     <td align="left"><span><?php echo $val['media_type'] ?></span></td>
     <td align="center"><span><?php echo $val['start_time'] ?></span></td>
     <td align="center"><span><?php echo $val['end_time'] ?></span></td>
-    <td align="center"><span><?php echo $val['link_man'] ?></span></td>
+    <td align="center"><span class="link_man"><?php echo $val['link_man'] ?></span></td>
     <td align="center"><span><?php echo $val['link_phone'] ?></span></td>
     <td align="center"><span><?php echo $val['link_email'] ?></span></td>
     <td align="right"><span>
@@ -157,3 +157,6 @@ var empty_position_style = "广告位的模版不能为空!";
 </div>
 </body>
 </html>
+
+
+

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"D:\phpstudy\WWW\ECShop\public/../application/admin\view\order\orders_list.html";i:1536366716;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"D:\phpstudy\WWW\ECShop\public/../application/admin\view\order\orders_list.html";i:1536380417;}*/ ?>
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -67,7 +67,7 @@
     <td align="right"><span>¥<?php echo $v['order_amount']; ?>元</span></td>
     <td><?php echo $v['order_stats']; ?></td>
     <td><a href="admin/Order/details?id=<?php echo $v['order_id']; ?>">查看</a><br />
-        <a href="javascript:; ">移除</a>
+        <a href="admin/Order/delorder?id=<?php echo $v['order_id']; ?>">移除</a>
     </td>
     </tr>
   <?php }?>

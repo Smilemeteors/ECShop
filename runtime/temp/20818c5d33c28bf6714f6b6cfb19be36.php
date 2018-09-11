@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"D:\phpstudy\WWW\ECShop\public/../application/admin\view\goods\goods_list.html";i:1536366716;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"D:\phpstudy\WWW\ECShop\public/../application/admin\view\goods\goods_list.html";i:1536380417;}*/ ?>
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -114,7 +114,7 @@ th{text-align:center;}
       <a href="admin/error/error_1" target="_blank" title="查看">查看</a>
       <a href="admin/goods/goods_add" title="编辑">编辑</a>
       <a href="admin/goods/goods_add" title="复制">复制</a>
-      <a href="javascript:;" class="hs" title="回收站">回收站</a>
+      <a href="javascript:;" id='<?php echo $v['goods_id']; ?>' class="hsz" value="<?php echo $v['is_delete']; ?>" title="回收站">回收站</a>
       <img src="static/picture/empty.gif" width="16" height="16" border="0">        </td>
   </tr>
   <?php endforeach; endif; else: echo "" ;endif; ?>
@@ -122,9 +122,31 @@ th{text-align:center;}
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
-  $(document).on('click','.hs',function()
+  $(document).on('click','.hsz',function()
   {
-    alert('回收站没做呢！');
+    var r=confirm("你确定要放入回收站吗？");
+    if(!r){return};
+    var status = $(this).attr('value');
+    var goods_id = $(this).attr('id');
+    var obj = $(this);
+    $.ajax({
+      url:"<?php echo url('goods/trash_do'); ?>",
+      data:{status:status,goods_id:goods_id},
+      dataType:"json",
+      success:function(res){
+        if(res.status==1){
+          alert(res.msg);
+          return false;
+        }else{
+          if(status==1){
+            alert('放入回收站成功')
+            obj.parent().parent().remove();
+          }else{
+            alert('放入回收站失败')
+          }
+        }
+      }
+    })
   })
   //上架
   $(document).on('click','.is_put',function(){
