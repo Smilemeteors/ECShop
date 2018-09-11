@@ -6,9 +6,9 @@
 <title>ECSHOP 管理中心 - 添加订单 </title><base href="/" />
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="static/css/general_4.css" rel="stylesheet" type="text/css" />
-<link href="static/css/main_4.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="static/js/transport_4.js"></script><script type="text/javascript" src="static/js/common_4.js"></script>
+<link href="static/css/general_6.css" rel="stylesheet" type="text/css" />
+<link href="static/css/main_6.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="static/js/transport_6.js"></script><script type="text/javascript" src="static/js/common_6.js"></script>
 <style>
   .panel-icloud .panel-right iframe {
     height: 300px;
@@ -101,34 +101,47 @@ var loading = "加载中...";
     
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;添加订单 </span>
   <div style="clear:both"></div>
-</h1><script type="text/javascript" src="static/js/utils_4.js"></script><script type="text/javascript" src="static/js/validator_1.js"></script>
-<form name="theForm" action="order.php?act=step_post&step=payment&order_id=1&step_act=edit" method="post" onsubmit="return checkPayment()">
+</h1><script type="text/javascript" src="static/js/utils_6.js"></script><script type="text/javascript" src="static/js/validator_3.js"></script><script type="text/javascript" src="static/js/region_1.js"></script>
+<script type="text/javascript">
+region.isAdmin=true;
+</script>
+<form name="theForm" action="order.php?act=step_post&step=consignee&order_id=3&step_act=edit" method="post" onsubmit="return checkConsignee()">
 <div class="list-div">
 <table cellpadding="3" cellspacing="1">
-  <tr>
-    <th width="5%">&nbsp;</th>
-    <th width="20%">名称</th>
-    <th>描述</th>
-    <th width="15%">手续费</th>
+    <tr>
+    <th width="150" align="left">收货人：</th>
+    <td><input name="consignee" type="text" value="" />
+      <span class="require-field">*</span></td>
   </tr>
     <tr>
-    <td><input type="radio" name="payment" value="1"  /></td>
-    <td><font color="#FF0000">天工收银</font></td>
-    <td><font color="#FF0000">天工收银是上海商派2015年正式推出的专业集成支付平台，致力于为各类用户提供融合、便捷、安全的场景支付服务。</font></td>
-    <td align="right">0</td>
+    <th align="left">电子邮件：</th>
+    <td><input name="email" type="text" value="" size="40" />
+    <span class="require-field">*</span></td>
+  </tr>
+    <tr>
+    <th align="left">电话：</th>
+    <td><input name="tel" type="text" value="" />
+    <span class="require-field">*</span></td>
+  </tr>
+  <tr>
+    <th align="left">手机：</th>
+    <td><input name="mobile" type="text" value="" /></td>
   </tr>
   </table>
 </div>
-  <p align="center">
-        <button><a href="admin/order/details">确定</a></button>
-   <button><a href="admin/order/details">取消</a></button>
+
+<div align="center">
+  <p>
+     <button><a href="admin/order/details" class="btn btn-def">确定</a></button>
+    <button><a href="admin/order/details" class="btn btn-def">取消</a></button>
   </p>
+</div>
 </form>
 
 
 <script language="JavaScript">
-  var step = 'payment';
-  var orderId = 1;
+  var step = 'consignee';
+  var orderId = 3;
   var act = 'edit';
 
   function checkUser()
@@ -439,14 +452,14 @@ var loading = "加载中...";
   function loadAddress(addressId)
   {
 
-    location.href += 'order.php?act=edit&order_id=1&step=payment&address_id=' + addressId;
+    location.href += 'order.php?act=edit&order_id=3&step=consignee&address_id=' + addressId;
 
   }
 </script>
 
 
 <div id="footer">
-共执行 6 个查询，用时 0.033656 秒，Gzip 已禁用，内存占用 2.623 MB<br />
+共执行 5 个查询，用时 0.038417 秒，Gzip 已禁用，内存占用 2.620 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
 <!-- 新订单提示信息 -->
 <div id="popMsg">
@@ -468,7 +481,7 @@ var loading = "加载中...";
 </div>
 
 <!--
-<embed src="static/flash/online_4.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
+<embed src="static/flash/online_6.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
 -->
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0" id="msgBeep" width="1" height="1">
   <param name="movie" value="images/online.swf">

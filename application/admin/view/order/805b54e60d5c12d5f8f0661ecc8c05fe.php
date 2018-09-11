@@ -1,119 +1,71 @@
-﻿<!-- $Id: ads_info.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:59:"E:\ECShop\public/../application/admin\view\quanxi\role.html";i:1536325150;}*/ ?>
+﻿<!-- $Id: role_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ECSHOP 管理中心 - 添加广告 </title>
-<base href="/" />
+<title>ECSHOP 管理中心 - 角色管理 </title>
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="static/css/general.css" rel="stylesheet" type="text/css" />
-<link href="static/css/main.css" rel="stylesheet" type="text/css" /><script type="text/javascript" src="static/js/transport_2.js"></script><script type="text/javascript" src="static/js/common_2.js"></script>
-<style>
-  .panel-icloud .panel-right iframe {
-    height: 300px;
-    margin-top: 15px;
-  }
-  .panel-hint{
-    top: 0%;
-  }
-</style>
+<link href="/static/css/general_2.css" rel="stylesheet" type="text/css" />
+<link href="/static/css/main_2.css" rel="stylesheet" type="text/css" />
+
 </head>
 <body>
-<h1>
-    <a class="btn btn-right" href="admin/logo/logo">广告列表</a>
-    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;添加广告 </span>
-  <div style="clear:both"></div>
-</h1><script type="text/javascript" src="static/js/calendar.js"></script>
-<link href="static/css/calendar.css" rel="stylesheet" type="text/css" />
-<div class="main-div">
-<form action="admin/logo/addLogo" method="post" name="theForm" enctype="multipart/form-data" onsubmit="return validate()">
-  <table width="100%" id="general-table">
-    <tr>
-      <td  class="label">
-        <a href="javascript:showNotice('NameNotic');" title="点击此处查看提示信息">
-        <img src="static/picture/notice.svg" width="16" height="16" border="0" alt="点击此处查看提示信息"></a>广告名称</td>
-      <td>
-        <input type="text" name="ad_name" value="" size="35" />
-        <br /><span class="notice-span" style="display:block"  id="NameNotic">广告名称只是作为辨别多个广告条目之用，并不显示在广告中</span>
-      </td>
-    </tr>
-    <tr>
-      <td class="label">媒介类型</td>
-      <td>
-       <select name="media_type" onchange="showMedia(this.value)">
-          <option value='图片'>图片</option>
-          <option value='Flash'>Flash</option>
-          <option value='代码'>代码</option>
-          <option value='文字'>文字</option>
-       </select>
-      </td>
-    </tr>
-	  <tr>
-      <td  class="label">广告位置</td>
-      <td>
-        <select name="position_id">
-          <option value='0'>站外广告</option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td  class="label">开始日期</td>
-      <td>
-        <input name="start_time" type="text" id="start_time" size="22" value='2018-09-06' readonly="readonly" /><button name="selbtn1" type="button" id="selbtn1" onclick="return showCalendar('start_time', '%Y-%m-%d', false, false, 'selbtn1');" class="cal"><img src="static/picture/cal.png" alt=""></button>
-      </td>
-    </tr>
-    <tr>
-      <td class="label">结束日期</td>
-      <td>
-        <input name="end_time" type="text" id="end_time" size="22" value='2018-10-06' readonly="readonly"><button name="selbtn2" type="button" id="selbtn2" onclick="return showCalendar('end_time', '%Y-%m-%d', false, false, 'selbtn2');" class="cal"><img src="static/picture/cal.png" alt=""></button>
-      </td>
-    </tr>
-      <tbody id="0">
-    <tr>
-      <td  class="label">
-        <a href="javascript:showNotice('AdCodeImg');" title="点击此处查看提示信息">
-        <img src="static/picture/notice.svg" width="16" height="16" border="0" alt="点击此处查看提示信息"></a>上传广告图片</td>
-      <td>
-        <input type='file' name='ad_img' size='35' />
-        <br /><span class="notice-span" style="display:block"  id="AdCodeImg">上传该广告的图片文件,或者你也可以指定一个远程URL地址为广告的图片</span>
-      </td>
-    </tr>
-    <tr>
-      <td  class="label">是否开启</td>
-      <td>
-        <input type="radio" name="enabled" value="1"  checked="true"  />开启        <input type="radio" name="enabled" value="0"  />关闭      </td>
-    </tr>
-    <tr>
-      <td  class="label">广告联系人</td>
-      <td>
-        <input type="text" name="link_man" value="" size="35" />
-      </td>
-    </tr>
-    <tr>
-      <td  class="label">联系人Email</td>
-      <td>
-        <input type="text" name="link_email" value="" size="35" />
-      </td>
-    </tr>
-    <tr>
-      <td  class="label">联系电话</td>
-      <td>
-        <input type="text" name="link_phone" value="" size="35" />
-      </td>
-    </tr>
-    <tr>
-       <td class="label">&nbsp;</td>
-       <td>
-        <input type="submit" value=" 确定 " class="button" />
-        <input type="reset" value=" 重置 " class="button" />
-      </td>
-    </tr>
- </table>
-
-</form>
+<!--云起激活系统面板-->
+<div class="panel-hint panel-icloud" id="panelCloud">
+  <div class="panel-cross"><span onclick="btnCancel(this)">Ｘ</span></div>
+  <div class="panel-title">
+    <span class="tit">您需要激活系统</span>
+    <p>用云起账号激活您的系统，享受物流查询，天工收银，手机短信等更多应用和服务</p>
+  </div>
+  <div class="panel-left">
+    <span>没有云起账号吗？</span>
+    <p>点击下列按钮一步完成注册激活！</p>
+    <a href="https://account.shopex.cn/reg?refer=yunqi_ecshop" target="_blank" class="btn btn-yellow">免费注册云起账号</a>
+  </div>
+  <div class="panel-right">
+    <h5 class="logo">云起</h5>
+    <p>正在激活中</p>
+    <iframe src="" frameborder="0" id="CFrame"></iframe>
+    <div class="cloud-passw">
+      <a target="_blank" href="https://account.shopex.cn/forget?">忘记密码？</a>
+    </div>
+  </div>
 </div>
+<!--云起激活系统面板-->
+<!--遮罩-->
+<div class="mask-black" id="CMask"></div>
+<!--遮罩-->
+<h1>
+      <a class="btn btn-right" href="role_add.html">添加角色</a>
+  
+    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;角色管理 </span>
+  <div style="clear:both"></div>
+</h1>
+<div class="list-div" id="listDiv">
+
+<table cellspacing='1' cellpadding='3' id='list-table'>
+  <tr>
+    <th>角色名</th>
+    <th>角色描述</th>
+    <th>操作</th>
+  </tr>
+  <?php foreach ($list as $v) { ?>
+    <tr>
+    <td class="first-cell" ><?=$v['role_name'];?></td>
+    <td class="first-cell" ><?=$v['role_desc'];?></td>
+    <td align="center">
+      <a href="role_edit.html?id=<?=$v['role_id'];?>" title="编辑">编辑</a>&nbsp;&nbsp;
+      <a href="javascript:;" onclick="listTable.remove(<?=$v['role_id'];?>, '您确认要删除这条记录吗?')" title="移除">移除</a></td>
+  </tr>
+  <?php } ?>
+  </table>
+
+</div>
+
 <div id="footer">
-共执行 3 个查询，用时 0.009382 秒，Gzip 已禁用，内存占用 1.189 MB<br />
+共执行 3 个查询，用时 0.013600 秒，Gzip 已禁用，内存占用 1.078 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
 <!-- 新订单提示信息 -->
 <div id="popMsg">
@@ -133,6 +85,10 @@
   </tr>
   </table>
 </div>
+
+<!--
+<embed src="static/flash/online_2.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
+-->
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0" id="msgBeep" width="1" height="1">
   <param name="movie" value="images/online.swf">
   <param name="quality" value="high">

@@ -94,7 +94,7 @@ class Logo extends Controller
     public function position()
     {
         // 查询状态为1的用户数据 并且每页显示5条数据
-        $list = Db::name('position')->paginate(5);
+        $res = Db::name('position')->paginate(5);
         // 把分页数据赋值给模板变量list
         $this->assign('re', $res);
         // 渲染模板输出
@@ -111,7 +111,11 @@ class Logo extends Controller
             // print_r($arr['position_style']);die;
             $res = Db('position')->insert($arr);
             // print_r($res);die;
-            return view('position');
+            if ($res) {
+                $this->success('添加成功','Logo/position');
+            } else {
+                $this->success('添加失败','Logo/addPosition');
+            }
         } else {
             return view('addPosition');
         }	
@@ -133,6 +137,7 @@ class Logo extends Controller
             }
         }
     }
+
     //广告位修改
     public function upPosition()
     {
@@ -141,7 +146,7 @@ class Logo extends Controller
     //广告位删除
     public function delPosition()
     {
-        // 接收id
+        //接id
         $id = $_GET['id'];
         // 删除信息
         $position = Db('position');
@@ -149,18 +154,22 @@ class Logo extends Controller
         // print_r($res);
         // 判断
         if ($res) {
-            // 查询
-            $position = Db('position');
-            $res = $position->select();
+            //查询 
+             $data = Db::name('position')->paginate(5);
+            // print_r($data);die; 
             // 赋值
-            $this->assign('re',$res);
+            $this->assign('re',$data);
             // 渲染模板
-            return view('position');        
+            $this->success('删除成功','Logo/position');
+            // return view('position');
         } else {
-            $position = Db('position');
-            $res = $position->select();
-            $this->assign('re',$res);
-            return view('position'); 
+            //查询 
+            $data = Db::name('position')->paginate(5);
+            // print_r($data);die; 
+            // 赋值
+            $this->assign('re',$data);
+            // 渲染模板
+            $this->success('删除失败','Logo/position');
         }
     }
     //广告位详情
