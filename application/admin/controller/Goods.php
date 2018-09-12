@@ -209,9 +209,11 @@ class Goods extends Controller
     
     //品牌部分
     public function brand_list(){
-        $res = $this->goods->brand_show();
+        $find = input('post.find');
+        $res = $this->goods->brand_show($find);
         return view('brand_list',['res'=>$res]);
     }
+
     //品牌修改
     public function brand_upd(){
         $id = Request::instance()->get('id');
@@ -278,6 +280,22 @@ class Goods extends Controller
         $id = input('get.id');
         $brand_name = input('get.brand_name');
         $res = Db("brand")->where("brand_id",$id)->update(["brand_name"=>$brand_name]);
+        if(empty($res)){
+            $arr['status'] = 0;
+            $arr['data'] = '';
+            $arr['msg'] = '成功';
+        }else{
+            $arr['status'] = 1;
+            $arr['data'] = '';
+            $arr['msg'] = '失败';
+        }
+        echo json_encode($arr);
+    }
+    public function brand_sort_order()
+    {
+        $id = input('get.id');
+        $sort_order = input('get.sort_order');
+        $res = Db("brand")->where("brand_id",$id)->update(["sort_order"=>$sort_order]);
         if(empty($res)){
             $arr['status'] = 0;
             $arr['data'] = '';

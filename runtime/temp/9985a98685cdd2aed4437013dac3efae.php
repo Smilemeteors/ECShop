@@ -1,5 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\brand_list.html";i:1536671983;}*/ ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\brand_list.html";i:1536736121;}*/ ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <base href="/" />
@@ -9,6 +8,10 @@
 <link href="static/css/general.css" rel="stylesheet" type="text/css" />
 <link href="static/css/main.css" rel="stylesheet" type="text/css" />
 </head>
+<style>
+*{margin:0;padding:0;}
+th{text-align:center;}
+</style>
 <body>
 <h1>
 <a class="btn btn-right" href="brand.php?act=add">添加品牌</a>
@@ -16,10 +19,10 @@
   <div style="clear:both"></div>
 </h1>
 <div class="form-div">
-  <form action="javascript:search_brand()" name="searchForm">
+  <form action="<?php echo url('goods/brand_list'); ?>" method="post" name="searchForm">
     <img src="static/images/icon_search.svg" width="26" height="22" border="0" alt="SEARCH" />
-     <input type="text" name="brand_name" size="15" />
-    <input type="submit" value=" 搜索 " class="button" />
+     <input type="text" name="find" />
+    <input type="submit" value=" 搜索" />
   </form>
 </div>
 <form method="post" action="" name="listForm">
@@ -37,12 +40,11 @@
     <tr>
       <td id="<?php echo $v['brand_id']; ?>" class="first-cell">
         <span style="float:right"><a href="uploads/<?php echo $v['brand_logo']; ?>" target="_brank"><img src="static/images/image.svg" width="16" height="16" border="0" alt=品牌LOGO /></a></span>
-        <span class="change_name">
-        <?php echo $v['brand_name']; ?></span>
+        <span class="change_name"><?php echo $v['brand_name']; ?></span>
       </td>
       <td><a href="<?php echo $v['site_url']; ?>" target="_brank"><?php echo $v['site_url']; ?></a></td>
       <td align="left"><?php echo $v['brand_describe']; ?></td>
-      <td align="right"><span><?php echo $v['sort_order']; ?></span></td>
+      <td id="<?php echo $v['brand_id']; ?>" align="right"><span class="sort_order"><?php echo $v['sort_order']; ?></span></td>
       <td align="center">
         <?php if(in_array(($v['is_show']), explode(',',"1"))): ?>
         <img src="static/picture/yes.svg" class="is_show" id="<?php echo $v['brand_id']; ?>" value='<?php echo $v['is_show']; ?>' width="20"/>
@@ -58,26 +60,12 @@
     <?php endforeach; endif; else: echo "" ;endif; ?>
     <tr>
       <td align="right" nowrap="true" colspan="6">
-      <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-<div id="turn-page">
-  <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
-  页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
-  条记录，总共 <span id="totalRecords">3</span>
-  条记录
-  <span id="page-link">
-    <a href="javascript:listTable.gotoPageFirst()">第一页</a>
-    <a href="javascript:listTable.gotoPagePrev()">上一页</a>
-    <a href="javascript:listTable.gotoPageNext()">下一页</a>
-    <a href="javascript:listTable.gotoPageLast()">最末页</a>
-    <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
-      <option value='1'>1</option>    </select>
-  </span>
-</div>
+      <div class="page" style="float:right; margin-bottom:10px;" >
+        <?php echo $res->render(); ?>
+      </div>
       </td>
     </tr>
   </table>
-
-<!-- end brand list -->
 </div>
 </form>
 <div id="footer">
@@ -104,6 +92,13 @@
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
+//分页
+$(document).on('blur','.pages',function(){
+  var page = $(this).val();
+})
+
+
+
 $(document).on('click','.is_show',function(){
     var status = $(this).attr('value');
     var brand_id = $(this).attr('id');
@@ -132,6 +127,7 @@ $(document).on('click','.is_show',function(){
       }
     })
   })
+//名称及点击该
 $(document).on('click','.change_name',function(){
   var brand_name = $(this).text();
   var obj = $(this);
@@ -155,29 +151,29 @@ $(document).on('blur','.changes_name',function(){
     }}
   })
 })
-</script>
-<!-- $(document).on('click','.change_name',function(){
-  var brand_name = $(this).html();
+//排序及点击该
+$(document).on('click','.sort_order',function(){
+  var sort_order = $(this).text();
   var obj = $(this);
-  var input = $("<input class='name' type='text' value='"+brand_name+"' />");
+  var input = $("<span class='sort_order'><input class='name' type='text' value='"+sort_order+"' /></span>");
   obj.html(input);
-  $(".name").focus();
-  $(":text").select();
-   // input.click(function(){return false;});
-   // input.trigger("ocus");
+  input.click(function(){return false;});
+  input.trigger("ocus");
 })
-$(document).on('blur','.name',function(){
-  var brand_name = $(this).val();
+$(document).on('blur','.sort_order',function(){
+  var sort_order = $('.name').val();
   var id = $(this).parents('td').attr('id');
-  $(this).parent('.change_name').html(brand_name);
+  var obj = $(this);
   $.ajax({
-    url:"<?php echo url('goods/brand_change_name'); ?>",
-    data:{brand_name:brand_name,id:id},
+    url:"<?php echo url('goods/brand_sort_order'); ?>",
+    data:{sort_order:sort_order,id:id},
     dataType:"json",
     success:function(res){
-      if (res.status==0) {
-
+      if (status==0) {
+      var input = $("<span class='sort_order'>"+sort_order+"</span>");
+      obj.html(input);    
     }}
   })
-}) -->
+})
+</script>
 </html>
