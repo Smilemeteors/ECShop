@@ -15,6 +15,18 @@ class Quanxi extends Controller
 		$this->assign('list',$data);
 		return view('agency');
 	}
+	public function agency_del()
+	{
+		$id=input("id");   
+		// echo $id;    
+        $res=Db('agency')->where('agency_id='.$id)->delete();
+        if ($res) {
+        	return $this->success('删除成功',"admin/Quanxi/agency");
+        }
+        else{
+        	return $this->error('删除失败',"admin/Quanxi/agency");
+        }
+	}
 	public function agency_edit()
 	{
 		$id = input('id');
@@ -66,6 +78,19 @@ class Quanxi extends Controller
 		// var_dump($data);die;
 		$this->assign('list', $data);
 		return $this->fetch('privilege');
+	}
+	public function privilege_del()
+	{
+		$id=input("id");   
+		// echo $id;    
+        $res=Db('admin')->where('admin_id='.$id)->delete();
+        if ($res) {
+        	return $this->success('删除成功',"admin/Quanxi/privilege");
+        }
+        else{
+        	return $this->error('删除失败',"admin/Quanxi/privilege");
+        }
+		
 	}
 	public function privilege_add()
 	{
@@ -163,6 +188,18 @@ class Quanxi extends Controller
 		}
 		return view('role_edit');
 	}
+	public function role_del()
+	{
+		$id=input("id");   
+		// echo $id;    
+        $res=Db('role')->where('role_id='.$id)->delete();
+        if ($res) {
+        	return $this->success('删除成功',"admin/Quanxi/role");
+        }
+        else{
+        	return $this->error('删除失败',"admin/Quanxi/role");
+        }
+	}
 	public function suppliers()
 	{
 		$data =Db('suppliers')->select();
@@ -209,5 +246,17 @@ class Quanxi extends Controller
 			return;		
 		}
 		return view('suppliers_edit');
+	}
+	public function suppliers_del()
+	{
+		$id=input("id");   
+		// echo $id;    
+        $res=Db('suppliers')->where('suppliers_id='.$id)->delete();
+        if ($res) {
+        	return $this->success('删除成功',"admin/Quanxi/suppliers");
+        }
+        else{
+        	return $this->error('删除失败',"admin/Quanxi/suppliers");
+        }
 	}
 }
