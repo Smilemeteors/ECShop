@@ -20,9 +20,20 @@ class Goods extends Model
 		return $res = Db::name('goods')->where('is_delete',1)->paginate(5);
 	}
 
-	public function brand_show(){
-        return $res= Db::name('brand')->paginate(5);
+	public function brand_show($find){
+		$pageParam['query']['find'] = $find;
+        return $res= Db::name('brand')->where('brand_name','like','%'.$find.'%')->order('sort_order order')->paginate(10,false,$pageParam);
     }
+    /* $find = Request::instance()->param('find');
+    //活动的id
+    $id = Request::instance()->param('a_id');
+
+    //搜索结果分页：要给paginate函数中传入第三个参数$pageParam，这个参数中要包含搜索的值$pageParam['query']['find']
+
+    $pageParam['query']['find'] = $find;
+    $result = db('activity_record')->where('activityid','=',$id)->where('name|mobile|openid','like','%'.$find.'%')->order(['id'=>'desc'])->paginate(10,false,$pageParam);
+
+    return $result;*/
 
     public function comment_show(){
         return $res= Db::name('comment')->paginate(5);

@@ -62,17 +62,17 @@
         <td><?=$v['agency_desc']?></td>
         <td align="center">
           <a href="agency_edit.html?id=<?=$v['agency_id']?>" title="编辑">编辑</a> |
-          <a href="javascript:;" onclick="listTable.remove(<?=$v['agency_id']?>, '您确认要删除这条记录吗?')" title="移除">移除</a>      </td>
+          <a href="{:url('agency_del')}?id=<?=$v['agency_id']?>" title="移除">移除</a>      </td>
       </tr>
     <?php } ?>
         
       </table>
 <table id="page-table" cellspacing="0">
   <tr>
-    <td>
+    <!-- <td>
       <input name="remove" type="submit" id="btnSubmit" value="删除" class="button" disabled="true" />
       <input name="act" type="hidden" value="batch" />
-    </td>
+    </td> -->
     <td align="right" nowrap="true">
     <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <div id="turn-page">

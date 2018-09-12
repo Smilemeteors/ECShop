@@ -95,6 +95,7 @@ var password_len_err = "新密码和确认密码的长度不能小于6";
   <div style="clear:both"></div>
 </h1><div class="main-div">
 <form method="post" action="" name="theForm" onsubmit="return validate()">
+
 <?php foreach ($list as $key => $v) { ?>
   <table width="100%" >
   <tr>
@@ -120,7 +121,7 @@ var password_len_err = "新密码和确认密码的长度不能小于6";
   </tr>
     <tr>
     <td class="label">邮件地址:</td>
-    <td><input type="text" name="email" maxlength="60" size="40" value="vip@ecshop.com" /><span class="require-field">*</span></td>
+    <td><input type="text" name="email" maxlength="60" size="40" value="<?=$v['email']?>" /><span class="require-field">*</span></td>
   </tr>
     <tr>
     <td class="label">新密码:</td>
@@ -146,7 +147,7 @@ var password_len_err = "新密码和确认密码的长度不能小于6";
   </tr>
   <tr>
     <td class="label">信用额度:</td>
-    <td><input name="credit_line" type="text" id="credit_line" value="0.00" size="10" /></td>
+    <td><input name="credit_line" type="text" id="credit_line" value="<?=$v['credit_line']?>" size="10" /></td>
   </tr>
     <tr>
     <td class="label">QQ:</td>

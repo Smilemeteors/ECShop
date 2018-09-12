@@ -56,7 +56,7 @@
     <td class="first-cell" ><?=$v['role_desc'];?></td>
     <td align="center">
       <a href="role_edit.html?id=<?=$v['role_id'];?>" title="编辑">编辑</a>&nbsp;&nbsp;
-      <a href="javascript:;" onclick="listTable.remove(<?=$v['role_id'];?>, '您确认要删除这条记录吗?')" title="移除">移除</a></td>
+      <a href="{:url('role_del')}?id=<?=$v['role_id']?>" title="移除">移除</a></td>
   </tr>
   <?php } ?>
   </table>
