@@ -1,6 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\category_list.html";i:1536584352;}*/ ?>
-<!-- $Id: category_list.htm 17019 2010-01-29 10:10:34Z liuhui $ -->
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\category_list.html";i:1536738575;}*/ ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head><base href="/" />
 <title>ECSHOP 管理中心 - 商品分类 </title>
@@ -11,7 +9,7 @@
 </head>
 <body>
 <h1>
-      <a class="btn btn-right" href="admin/goods/category_add">添加分类</a>
+<a class="btn btn-right" href="admin/goods/category_add">添加分类</a>
   
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;商品分类 </span>
   <div style="clear:both"></div>
