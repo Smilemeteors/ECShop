@@ -1,14 +1,38 @@
 <?php
 namespace app\admin\controller;
-
+use thinkphp\library\think\paginator;
 use think\Controller;
 class Member extends Controller
 {
 	public function users()
 	{
-		$data = Db('users')->select();
+		// where('is_delete',1)->paginate(5);
+		$data = Db('users')->paginate(1);
+		$page = $data->render();
 		$this->assign('list',$data);
+		$this->assign('page',$page);
 		return view('users');
+	}
+	public function user_put()
+	{
+		$user_id = input('get.user_id');
+        $status = input('get.status');
+        if($status==1){
+            $res = Db("users")->where("user_id",$user_id)->update(["is_validated"=>'0']);
+        }else{
+            $res = Db("users")->where("user_id",$user_id)->update(["is_validated"=>'1']);
+        }
+        
+        if($res){
+            $arr['status'] = 0;
+            $arr['data'] = '';
+            $arr['msg'] = '成功';
+        }else{
+            $arr['status'] = 1;
+            $arr['data'] = '';
+            $arr['msg'] = '失败';
+        }
+        echo json_encode($arr);
 	}
 	public function user_add()
 	{
@@ -146,6 +170,48 @@ class Member extends Controller
         else{
         	return $this->error('删除失败',"admin/Member/user_rank");
         }
+	}
+	public function user_rank_put()
+	{
+		$rank_id = input('get.rank_id');
+        $status = input('get.status');
+        if($status==1){
+            $res = Db("user_rank")->where("rank_id",$rank_id)->update(["special_rank"=>'0']);
+        }else{
+            $res = Db("user_rank")->where("rank_id",$rank_id)->update(["special_rank"=>'1']);
+        }
+        
+        if($res){
+            $arr['status'] = 0;
+            $arr['data'] = '';
+            $arr['msg'] = '成功';
+        }else{
+            $arr['status'] = 1;
+            $arr['data'] = '';
+            $arr['msg'] = '失败';
+        }
+        echo json_encode($arr);
+	}
+	public function user_rank_put1()
+	{
+		$rank_id = input('get.rank_id');
+        $status = input('get.status');
+        if($status==1){
+            $res = Db("user_rank")->where("rank_id",$rank_id)->update(["show_price"=>'0']);
+        }else{
+            $res = Db("user_rank")->where("rank_id",$rank_id)->update(["show_price"=>'1']);
+        }
+        
+        if($res){
+            $arr['status'] = 0;
+            $arr['data'] = '';
+            $arr['msg'] = '成功';
+        }else{
+            $arr['status'] = 1;
+            $arr['data'] = '';
+            $arr['msg'] = '失败';
+        }
+        echo json_encode($arr);
 	}
 	// public function integrate()
 	// {

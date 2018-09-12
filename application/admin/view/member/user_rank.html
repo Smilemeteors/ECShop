@@ -111,8 +111,20 @@ var lang_remove = "移除";
       <td align="right"><span  onclick="listTable.edit(this, 'edit_min_points', <?=$v['rank_id']?>)"  ><?=$v['min_points']?></span></td>
       <td align="right"><span  onclick="listTable.edit(this, 'edit_max_points', <?=$v['rank_id']?>)"  ><?=$v['max_points']?></span></td>
       <td align="right"><span onclick="listTable.edit(this, 'edit_discount', <?=$v['rank_id']?>)"><?=$v['discount']?></span></td>
-      <td align="center"><img src="/static/picture/no.svg" width="20" onclick="listTable.toggle(this, 'toggle_special', <?=$v['rank_id']?>)" /></td>
-      <td align="center"><img src="/static/picture/yes.svg" width="20" onclick="listTable.toggle(this, 'toggle_showprice', <?=$v['rank_id']?>)" /></td>
+      <td align="center">
+          {in name="$v.special_rank" value="1"}
+          <img src="/static/picture/yes.svg" class="special_rank" id="{$v.rank_id}"  value='{$v.special_rank}' width="20"/>
+          {else/}
+          <img src="/static/picture/no.svg" class="special_rank" id="{$v.rank_id}"  value='{$v.special_rank}' width="20"/>
+          {/in}
+      </td>
+      <td align="center">
+          {in name="$v.show_price" value="1"}
+          <img src="/static/picture/yes.svg" class="show_price" id="{$v.rank_id}"  value='{$v.show_price}' width="20"/>
+          {else/}
+          <img src="/static/picture/no.svg" class="show_price" id="{$v.rank_id}"  value='{$v.show_price}' width="20"/>
+          {/in}
+        </td>
       <td align="center">
       <a href="{:url('user_rank_del')}?id=<?=$v['rank_id']?>" title="移除">移除</a></td>
     </tr>
@@ -143,9 +155,63 @@ var lang_remove = "移除";
 </div>
 <!-- end user ranks list -->
 </form>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="Text/Javascript" language="JavaScript">
 <!--
+$(document).on('click','.special_rank',function(){
+    var status = $(this).attr('value');
+    var rank_id = $(this).attr('id');
+    var obj = $(this);
+    $.ajax({
+      url:"{:url('user_rank_put')}",
+      data:{status:status,rank_id:rank_id},
+      dataType:"json",
+      success:function(res){
+        if(res.status==1){
+          alert(res.msg);
+          return false;
+        }else{
 
+          if(status==1){
+
+            obj.prop("src","/static/picture/no.svg");
+            obj.attr("value",0)
+          }else{
+
+            obj.prop("src","/static/picture/yes.svg");
+            obj.attr("value",1)
+          }
+        }
+      }
+    })
+  })
+$(document).on('click','.show_price',function(){
+    var status = $(this).attr('value');
+    var rank_id = $(this).attr('id');
+    var obj = $(this);
+    $.ajax({
+      url:"{:url('user_rank_put1')}",
+      data:{status:status,rank_id:rank_id},
+      dataType:"json",
+      success:function(res){
+        if(res.status==1){
+          alert(res.msg);
+          return false;
+        }else{
+
+          if(status==1){
+
+            obj.prop("src","/static/picture/no.svg");
+            obj.attr("value",0)
+          }else{
+
+            obj.prop("src","/static/picture/yes.svg");
+            obj.attr("value",1)
+          }
+        }
+      }
+    })
+  })
 onload = function()
 {
     // 开始检查订单
