@@ -327,7 +327,43 @@ class Goods extends Controller
         $arr = Db::table('goods_type')->select();
         return view('goods_type_manage',['arr'=>$arr]);
     }
-
+    public function type_change_name()
+    {
+        $id = input('get.id');
+        $type_name = input('get.type_name');
+        $res = Db("goods_type")->where("type_id",$id)->update(["type_name"=>$type_name]);
+        if(empty($res)){
+            $arr['status'] = 0;
+            $arr['data'] = '';
+            $arr['msg'] = '成功';
+        }else{
+            $arr['status'] = 1;
+            $arr['data'] = '';
+            $arr['msg'] = '失败';
+        }
+        echo json_encode($arr);
+    }
+    public function type_change_status()
+    {
+        $type_id = input('get.type_id');
+        $status = input('get.status');
+        if($status==1){
+            $res = Db("goods_type")->where("type_id",$type_id)->update(["status"=>'0']);
+        }else{
+            $res = Db("goods_type")->where("type_id",$type_id)->update(["status"=>'1']);
+        }
+        
+        if($res){
+            $arr['status'] = 0;
+            $arr['data'] = '';
+            $arr['msg'] = '成功';
+        }else{
+            $arr['status'] = 1;
+            $arr['data'] = '';
+            $arr['msg'] = '失败';
+        }
+        echo json_encode($arr);
+    }
     public function goods_type_add()
     {
         return view('goods_type_add');
