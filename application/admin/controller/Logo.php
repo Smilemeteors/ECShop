@@ -10,14 +10,12 @@ class Logo extends Controller
     //广告展示
     public function logo()
     {
-        //查询所有信息
-    	$place = Db('place');
-    	$data = $place->select(); 
-        // print_r($data);die; 
-        // 赋值
-        $this->assign('arr',$data);
-        //渲染模板
-        return view('logo');
+        // 查询状态为1的用户数据 并且每页显示10条数据
+        $list = Db::name('place')->paginate(5);
+        // 把分页数据赋值给模板变量list
+        $this->assign('arr', $list);
+        // 渲染模板输出
+        return $this->fetch();
     }
     //广告添加
     public function addLogo()
@@ -29,6 +27,7 @@ class Logo extends Controller
             $data['ad_img'] = $this->upload();
             // print_r($data['ad_img']);die;
             // 添加信息
+<<<<<<< HEAD
             $res = Db('place')->insert($data);
             if($res){
                 $this->success('添加成功','logo/logo');
@@ -39,6 +38,17 @@ class Logo extends Controller
         } else {
             return view('addLogo');
         }
+=======
+    		$res = Db('place')->insert($data); 
+            if ($res) {
+               $this->success('添加成功','Logo/logo');
+            } else {
+                $this->success('添加失败','Logo/addLogo');
+            }	
+    	} else {
+    		return view('addLogo');
+    	}   	
+>>>>>>> c10b69432aca3b1286e3988fee61601bcd5a8f99
     }
     //广告上传
 	public function upload(){
@@ -47,9 +57,9 @@ class Logo extends Controller
 	    // 移动到框架应用根目录/public/uploads/ 目录下
 	    if($file){
 	        $info = $file->move(ROOT_PATH . 'public'.'/uploads');
-	       // var_dump($info);die;
+	        // var_dump($info);die;
 	        if($info){
-	            // 输出 42a79759f284b767dfcb2a0197904287.jpg
+	            // 输出 
 	            return $info->getFilename(); 
 	        }else{
 	            // 上传失败获取错误信息
@@ -74,35 +84,33 @@ class Logo extends Controller
         // 判断
         if ($res) {
             //查询 
-            $place = Db('place');
-            $data = $place->select(); 
+             $data = Db::name('place')->paginate(5);
             // print_r($data);die; 
             // 赋值
             $this->assign('arr',$data);
             // 渲染模板
-            return view('logo');
+            $this->success('删除成功','Logo/logo');
+            // return view('logo');
         } else {
             //查询 
-            $place = Db('place');
-            $data = $place->select(); 
+            $data = Db::name('place')->paginate(5);
             // print_r($data);die; 
             // 赋值
             $this->assign('arr',$data);
             // 渲染模板
-            return view('logo');
+            $this->success('删除失败','Logo/logo');
         }
         
     }
     //广告位展示
     public function position()
     {
-        // 查询所有信息
-        $position = Db('position');
-        $res = $position->select();
-        // 赋值
-        $this->assign('re',$res);
-        // 渲染模板
-    	return view('position');
+        // 查询状态为1的用户数据 并且每页显示5条数据
+        $res = Db::name('position')->paginate(5);
+        // 把分页数据赋值给模板变量list
+        $this->assign('re', $res);
+        // 渲染模板输出
+        return $this->fetch();
     }
     //广告位添加
     public function addPosition()
@@ -115,7 +123,11 @@ class Logo extends Controller
             // print_r($arr['position_style']);die;
             $res = Db('position')->insert($arr);
             // print_r($res);die;
-            return view('position');
+            if ($res) {
+                $this->success('添加成功','Logo/position');
+            } else {
+                $this->success('添加失败','Logo/addPosition');
+            }
         } else {
             return view('addPosition');
         }	
@@ -137,6 +149,7 @@ class Logo extends Controller
             }
         }
     }
+
     //广告位修改
     public function upPosition()
     {
@@ -145,7 +158,7 @@ class Logo extends Controller
     //广告位删除
     public function delPosition()
     {
-        // 接收id
+        //接id
         $id = $_GET['id'];
         // 删除信息
         $position = Db('position');
@@ -153,18 +166,22 @@ class Logo extends Controller
         // print_r($res);
         // 判断
         if ($res) {
-            // 查询
-            $position = Db('position');
-            $res = $position->select();
+            //查询 
+             $data = Db::name('position')->paginate(5);
+            // print_r($data);die; 
             // 赋值
-            $this->assign('re',$res);
+            $this->assign('re',$data);
             // 渲染模板
-            return view('position');        
+            $this->success('删除成功','Logo/position');
+            // return view('position');
         } else {
-            $position = Db('position');
-            $res = $position->select();
-            $this->assign('re',$res);
-            return view('position'); 
+            //查询 
+            $data = Db::name('position')->paginate(5);
+            // print_r($data);die; 
+            // 赋值
+            $this->assign('re',$data);
+            // 渲染模板
+            $this->success('删除失败','Logo/position');
         }
     }
     //广告位详情

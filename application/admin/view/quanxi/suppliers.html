@@ -64,7 +64,7 @@
       <td align="center"><img src="static/picture/yes_1.svg" width="20" onclick="listTable.toggle(this, 'is_check', <?=$v['suppliers_id'];?>)" style="cursor:pointer;"/></td>
       <td align="center">
         <a href="suppliers_edit.html?id=<?=$v['suppliers_id'];?>" title="编辑">编辑</a> |
-        <a href="javascript:void(0);" onclick="listTable.remove(<?=$v['suppliers_id'];?>, '您确认要删除这条记录吗?')" title="移除">移除</a>      </td>
+        <a href="{:url('suppliers_del')}?id=<?=$v['suppliers_id'];?>" onclick="listTable.remove(<?=$v['suppliers_id'];?>, '您确认要删除这条记录吗?')" title="移除">移除</a>      </td>
     </tr>
         <?php } ?>
         <!-- <tr>
@@ -116,7 +116,7 @@
     listTable.filter.sort_by = 'suppliers_id';
     listTable.filter.sort_order = 'ASC';
     listTable.filter.page = '1';
-    listTable.filter.page_size = '15';
+    listTable.filter.page_size = '2';
     listTable.filter.record_count = '2';
     listTable.filter.page_count = '1';
   

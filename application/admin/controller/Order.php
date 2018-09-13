@@ -7,7 +7,7 @@ class Order extends \think\Controller
 	// 订单列表
 	public function orders_list()
 	{
-		$data = Db('order')->select();
+		$data = Db::name('order')->paginate(5);
 		$this->assign('data',$data);
 		return view('orders_list');
 	}
@@ -24,11 +24,11 @@ class Order extends \think\Controller
 		$id = isset($_GET['id'])?$_GET['id']:'';
 		$res = Db('order')->where('order_id',"$id")->delete();
 		if($res){
-			$data = Db('order')->select();
+			$data = Db::name('order')->paginate(5);
 			$this->assign('data',$data);
 			return view('orders_list');	
 		}else{
-			$data = Db('order')->select();
+			$data = Db::name('order')->paginate(5);
 			$this->assign('data',$data);
 			return view('orders_list');
 		}
@@ -37,10 +37,42 @@ class Order extends \think\Controller
 	{
 		return view('paytype');
 	}
+	public function other()
+	{
+		return view('other');
+	}
+	public function consignee()
+	{
+		return view('consignee');
+	}
+	public function goods()
+	{
+		return view('goods');
+	}
+	public function cost()
+	{
+		return view('cost');
+	}
 	// 订单查询   
 	public function orders_query()
 	{
 		return view('orders_query');
+	}
+	public function search()
+	{
+		$order_number = isset($_POST['order_number'])?$_POST['order_number']:'';
+		$consignee = isset($_POST['consignee'])?$_POST['consignee']:'';		
+		if(empty($order_number) && empty($consignee)){
+			$data = Db::name('order')->paginate(5);
+		}else if(empty($order_number)){
+			$data = Db::name('order')->where('consignee',"$consignee")->paginate(5);
+		}else if(empty($consignee)){
+			$data = Db::name('order')->where('order_number',"$order_number")->paginate(5);
+		}else{
+			$data = Db::name('order')->where(['consignee'=>"$consignee",'order_number'=>"$order_number"])->paginate(5);
+		}
+		$this->assign('data',$data);
+		return view('orders_list');
 	}
 	// 订单合并
 	public function merge_orders()
