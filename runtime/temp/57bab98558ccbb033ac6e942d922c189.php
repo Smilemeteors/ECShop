@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:79:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\category_add.html";i:1536807780;}*/ ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <base href="/">
@@ -15,7 +16,7 @@
   <div style="clear:both"></div>
 </h1><!-- start add new category form -->
 <div class="main-div">
-  <form action="{:url('goods/category_add')}" method="post" enctype="multipart/form-data">
+  <form action="<?php echo url('goods/category_add'); ?>" method="post" enctype="multipart/form-data">
     <table>
       <tr>
           <td class="label">分类名称:</td>
@@ -27,9 +28,9 @@
               <input type="hidden" name="path" value="" id="path" />
               <select name="parent_id" id="select">
                   <option value="0">顶级分类</option>
-                  {foreach $cate as $v}
-                  <option value="{$v.cat_id}" path="{$v.path}"><?php echo str_repeat("&nbsp;&nbsp;&nbsp;├",substr_count($v['new'],"-")-1) ?>{$v.cat_name}</option>
-                  {/foreach}
+                  <?php foreach($cate as $v): ?>
+                  <option value="<?php echo $v['cat_id']; ?>" path="<?php echo $v['path']; ?>"><?php echo str_repeat("&nbsp;&nbsp;&nbsp;├",substr_count($v['new'],"-")-1) ?><?php echo $v['cat_name']; ?></option>
+                  <?php endforeach; ?>
               </select>
           </td>
       </tr>

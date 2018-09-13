@@ -12,6 +12,20 @@ class Goods extends Controller
     public function _initialize(){
         $this->goods = model('Goods');
     }
+    //商品添加
+    //
+    //
+    
+    
+
+
+
+    
+    //
+    //
+    //商品添加
+
+
     //商品列表
     public function goods_list()
     {
@@ -209,8 +223,9 @@ class Goods extends Controller
     
     //品牌部分
     public function brand_list(){
+        $pages = 5;
         $find = input('post.find');
-        $res = $this->goods->brand_show($find);
+        $res = $this->goods->brand_show($find,$pages);
         return view('brand_list',['res'=>$res]);
     }
 
@@ -364,42 +379,114 @@ class Goods extends Controller
 
     //分类
     //
-    //分类添加
-    //
-    public function category_add()
-    {
-        return view('category_add');
-    }
-    public function cat_add_do()
-    {
-        $data = Request::instance()->post();
-        $arr = Db::name('cat')->insert($data);
-        if($arr){
-            $this->success('添加成功','goods/category_list');
-        }else{
-            $this->error('添加失败','goods/cat_add_do');
+    //添加商品分类
+    public function category_add(){
+            if(request()->isPost()){
+                $data['cat_name'] = input('post.cat_name');
+                $data['parent_id'] = input('post.parent_id');
+                $data['is_show'] = input('post.is_show');
+                $data['is_nav'] = input('post.is_nav');
+                $data['cat_desc'] = input('post.cat_desc');
+                $data['path'] = input('post.path');
+                $re = $this->goods->addData($data);
+                if($re){
+                    $this->redirect('goods/category_list');
+                }else{
+                    $this->error('添加失败');
+                }
+            }else{
+                $cate = $this->goods->getPathList("cat_id");
+                return $this->fetch('category_add',['cate'=>$cate]);
+            }
         }
-    }
+        public function cate_del(){
+            $cat_id=input("get.id");
+            //查询是否有子集
+            $res=Db("classify")->where('parent_id',$cat_id)->select();
+            if (!empty($res)){
+                $arr=[
+                    'code' => 0,
+                    'msg' => '有子集,无法删除'
+                ];
+
+            }else{
+                $result=Db("classify")->where('cat_id',$cat_id)->delete();
+                $arr=[
+                    'code' => 0,
+                    'msg' => '删除成功'
+                ];
+            }
+            echo json_encode($arr);
+        }
     //分类展示
-     public function category_list()
-     {
+    public function category_list(){
         $arr =$this->goods->shows();
+//        var_dump($arr);die;
         return $this->fetch('category_list',['arr' => $arr]);
     }
-    //分类删除
-    //
+    //分类即点即改
+    public function category_shows(){
+        $cat_id = input('get.cat_id');
+        $status = input('get.status');
+        //放入回收站后变为0
+        if($status==1){
+            $res = Db("classify")->where("cat_id",$cat_id)->update(["is_nav"=>'0']);
+        }else{
+            $res = Db("classify")->where("cat_id",$cat_id)->update(["is_nav"=>'1']);
+        }
+        if($res){
+            $arr['status'] = 0;
+            $arr['data'] = '';
+            $arr['msg'] = '成功';
+        }else{
+            $arr['status'] = 1;
+            $arr['data'] = '';
+            $arr['msg'] = '失败';
+        }
+        echo json_encode($arr);
+    }
+    public function category_lists(){
+        $cat_id = input('get.cat_id');
+        $status = input('get.status');
+        //放入回收站后变为0
+        if($status==1){
+            $res = Db("classify")->where("cat_id",$cat_id)->update(["is_show"=>'0']);
+        }else{
+            $res = Db("classify")->where("cat_id",$cat_id)->update(["is_show"=>'1']);
+        }
+        if($res){
+            $arr['status'] = 0;
+            $arr['data'] = '';
+            $arr['msg'] = '成功';
+        }else{
+            $arr['status'] = 1;
+            $arr['data'] = '';
+            $arr['msg'] = '失败';
+        }
+        echo json_encode($arr);
+    }
+    //转移商品
+    public function category_move(){
+        return view('category_move');
+    }
+    //编辑商品分类
+    public function category_edit(){
+            $id=$_GET['id'];
+            $arr = $this->goods->find($id);
+            return $this->fetch('category_edit',['arr' => $arr]);
+    }
+
+    //商品分类删除
     public function category_del(){
         $cat_id=$_GET['id'];
-        $res =$this->goods->del($cat_id);
+//        var_dump($cat_id);die;
+        $res=$this->goods->del($cat_id);
         if($res){
             echo "<script>alert('删除成功');location.href='category_list'</script>";
         }else{
             echo "<script>alert('删除失败');location.href='category_list'</script>";
         }
     }
-
-
-
 
 
     //评论部分

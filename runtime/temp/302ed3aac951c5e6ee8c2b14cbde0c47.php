@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_add.html";i:1536738630;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_add.html";i:1536812124;}*/ ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <base href="/" />
@@ -7,8 +7,69 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="static/css/general.css" rel="stylesheet" type="text/css" />
 <link href="static/css/main.css" rel="stylesheet" type="text/css" />
-<!-- <script type="text/javascript" src="static/js/transport.js"> --></script><script type="text/javascript" src="static/js/common.js"></script>
+</script><script type="text/javascript" src="static/js/common.js"></script>
 </head>
+<script>
+<!--
+// 这里把JS用到的所有语言都赋值到这里
+var process_request = "正在处理您的请求...";
+var todolist_caption = "记事本";
+var todolist_autosave = "自动保存";
+var todolist_save = "保存";
+var todolist_clear = "清除";
+var todolist_confirm_save = "是否将更改保存到记事本？";
+var todolist_confirm_clear = "是否清空内容？";
+var goods_name_not_null = "商品名称不能为空。";
+var goods_cat_not_null = "商品分类必须选择。";
+var category_cat_not_null = "分类名称不能为空";
+var brand_cat_not_null = "品牌名称不能为空";
+var goods_cat_not_leaf = "您选择的商品分类不是底级分类，请选择底级分类。";
+var shop_price_not_null = "本店售价不能为空。";
+var shop_price_not_number = "本店售价不是数值。";
+var select_please = "请选择...";
+var button_add = "添加";
+var button_del = "删除";
+var spec_value_not_null = "规格不能为空";
+var spec_price_not_number = "加价不是数字";
+var market_price_not_number = "市场价格不是数字";
+var goods_number_not_int = "商品库存不是整数";
+var warn_number_not_int = "库存警告不是整数";
+var promote_not_lt = "促销开始日期不能大于结束日期";
+var promote_start_not_null = "促销开始时间不能为空";
+var promote_end_not_null = "促销结束时间不能为空";
+var drop_img_confirm = "您确实要删除该图片吗？";
+var batch_no_on_sale = "您确实要将选定的商品下架吗？";
+var batch_trash_confirm = "您确实要把选中的商品放入回收站吗？";
+var go_category_page = "本页数据将丢失，确认要去商品分类页添加分类吗？";
+var go_brand_page = "本页数据将丢失，确认要去商品品牌页添加品牌吗？";
+var volume_num_not_null = "请输入优惠数量";
+var volume_num_not_number = "优惠数量不是数字";
+var volume_price_not_null = "请输入优惠价格";
+var volume_price_not_number = "优惠价格不是数字";
+var cancel_color = "无样式";
+//-->
+/*关闭按钮*/
+  function get_certificate(){
+    var panel = document.getElementById('panelCloud');
+    var mask  = document.getElementById('CMask')||null;
+    var frame = document.getElementById('CFrame');
+    if(panel&&CMask&&frame){
+        panel.style.display = 'block';
+        mask.style.display = 'block';
+        frame.src = 'https://openapi.shopex.cn/oauth/authorize?response_type=code&client_id=yogfss4l&redirect_uri=http%3A%2F%2F127.0.0.1%2FECShop1%2Fsource%2Fecshop%2Fadmin%2Fcertificate.php%3Fact%3Dget_certificate%26type%3Dindex&view=auth_ecshop';
+      }
+  }
+
+  /*关闭按钮*/
+  function btnCancel(item){
+    var par  = item.offsetParent;
+    var mask  = document.getElementById('CMask')||null;
+    var frame = document.getElementById('CFrame');
+    par.style.display = 'none';
+    if(mask){mask.style.display = 'none';}
+    frame.src = '';
+  }
+</script>
 <body>
 <h1>
       <a class="btn btn-right" href="goods.php?act=list">商品列表</a>
@@ -113,7 +174,7 @@
           </tr>
           
           <!--鍟嗗搧浼樻儬浠锋牸-->
-          <tr>
+          <!-- <tr>
             <td class="label"><a href="javascript:showNotice('volumePrice');" title="点击此处查看提示信息"><img src="static/picture/notice.svg" width="16" height="16" border="0" alt="点击此处查看提示信息"></a>商品优惠价格：</td>
             <td>
               <table width="100%" id="tbody-volume" align="center">
@@ -127,7 +188,7 @@
                               </table>
               <span class="notice-span" style="display:block"  id="volumePrice">购买数量达到优惠数量时享受的优惠价格</span>
             </td>
-          </tr>
+          </tr> -->
           <!--鍟嗗搧浼樻儬浠锋牸 end -->
 
           <tr>
@@ -136,12 +197,12 @@
               <input type="button" class="btn btn-def" value="取整数" onclick="integral_market_price()" />
             </td>
           </tr>
-          <tr>
+         <!--  <tr>
             <td class="label">虚拟销量：</td>
             <td><input type="text" name="virtual_sales" value="0" size="20" />
             </td>
-          </tr>
-          <tr>
+          </tr> -->
+          <!-- <tr>
             <td class="label"><a href="javascript:showNotice('giveIntegral');" title="点击此处查看提示信息"><img src="static/picture/notice.svg" width="16" height="16" border="0" alt="点击此处查看提示信息"></a> 赠送消费积分数：</td>
             <td><input type="text" name="give_integral" value="-1" size="20" />
             <br /><span class="notice-span" style="display:block"  id="giveIntegral">购买该商品时赠送消费积分数,-1表示按商品价格赠送</span></td>
@@ -156,7 +217,7 @@
             <td><input type="text" name="integral" value="0" size="20" onblur="parseint_integral()";/>
               <br /><span class="notice-span" style="display:block"  id="noticPoints">(此处需填写金额)购买该商品时最多可以使用积分的金额</span>
             </td>
-          </tr>
+          </tr> -->
           <tr>
             <td class="label"><label for="is_promote"><input type="checkbox" id="is_promote" name="is_promote" value="1"  onclick="handlePromote(this.checked);" /> 促销价：</label></td>
             <td id="promote_3"><input type="text" id="promote_1" name="promote_price" value="0" size="20" /></td>
@@ -175,23 +236,16 @@
                             <br /><input type="text" size="40" value="商品图片外部URL" style="color:#aaa;" onfocus="if (this.value == '商品图片外部URL'){this.value='http://';this.style.color='#000';}" name="goods_img_url"/>
             </td>
           </tr>
-          <tr id="auto_thumb_1">
+         <!--  <tr id="auto_thumb_1">
             <td class="label"> 上传商品缩略图：</td>
             <td id="auto_thumb_3">
               <input type="file" name="goods_thumb" size="35" />
                               <img src="static/picture/no.svg" width="16">
                             <br /><input type="text" size="40" value="商品缩略图外部URL" style="color:#aaa;" onfocus="if (this.value == '商品缩略图外部URL'){this.value='http://';this.style.color='#000';}" name="goods_thumb_url"/>
                             <br /><label for="auto_thumb"><input type="checkbox" id="auto_thumb" name="auto_thumb" checked="true" value="1" onclick="handleAutoThumb(this.checked)" />自动生成商品缩略图</label>            </td>
-          </tr>
+          </tr> -->
         </table>
 
-        <!-- 璇︾粏鎻忚堪 -->
-<!--         <table width="90%" id="detail-table" style="display:none">
-          <tr>
-            <td><input type="hidden" id="goods_desc" name="goods_desc" value="" style="display:none" /><input type="hidden" id="goods_desc___Config" value="" style="display:none" /><iframe id="goods_desc___Frame" src="../includes/fckeditor/editor/fckeditor.html?InstanceName=goods_desc&amp;Toolbar=Normal" width="100%" height="320" frameborder="0" scrolling="no"></iframe></td>
-          </tr>
-        </table>
- -->
         <!-- 鍏朵粬淇℃伅 -->
         <table width="90%" id="mix-table" style="display:none" align="center">
                     <tr>
@@ -200,7 +254,6 @@
           </tr>
                               <tr>
             <td class="label"><a href="javascript:showNotice('noticeStorage');" title="点击此处查看提示信息"><img src="static/picture/notice.svg" width="16" height="16" border="0" alt="点击此处查看提示信息"></a> 商品库存数量：</td>
-<!--            <td><input type="text" name="goods_number" value="1" size="20"  /><br />-->
             <td><input type="text" name="goods_number" value="1" size="20" /><br />
             <span class="notice-span" style="display:block"  id="noticeStorage">库存在商品为虚货或商品存在货品时为不可编辑状态，库存数值取决于其虚货数量或货品数量</span></td>
           </tr>
@@ -245,7 +298,7 @@
           <tr>
               <td class="label"><a href="javascript:showNotice('noticeGoodsType');" title="点击此处查看提示信息"><img src="static/picture/notice.svg" width="16" height="16" border="0" alt="点击此处查看提示信息"></a>商品类型：</td>
               <td>
-                <select name="goods_type" onchange="getAttrList(0)">
+                <select name="goods_type">
                   <option value="0">请选择商品类型</option>
                   <option value='1'>书</option><option value='2'>音乐</option><option value='3'>电影</option><option value='5'>笔记本电脑</option><option value='6'>数码相机</option><option value='7'>数码摄像机</option><option value='8'>化妆品</option><option value='9'>精品手机</option>                </select><br />
               <span class="notice-span" style="display:block"  id="noticeGoodsType">请选择商品的所属类型，进而完善此商品的属性</span></td>
@@ -409,22 +462,6 @@
   }
     Ajax.call('goods.php?is_ajax=1&act=check_goods_sn', "goods_sn=" + goods_sn + "&goods_id=" + goods_id, callback, "GET", "JSON");
 }
-
-  /**
-   * 鍒囨崲鍟嗗搧绫诲瀷
-   */
-  function getAttrList(goodsId)
-  {
-      var selGoodsType = document.forms['theForm'].elements['goods_type'];
-
-      if (selGoodsType != undefined)
-      {
-          var goodsType = selGoodsType.options[selGoodsType.selectedIndex].value;
-
-          Ajax.call('goods.php?is_ajax=1&act=get_attr', 'goods_id=' + goodsId + "&goods_type=" + goodsType, setAttrList, "GET", "JSON");
-      }
-  }
-
   function setAttrList(result, text_result)
   {
     document.getElementById('tbody-goodsAttr').innerHTML = result.content;
@@ -615,7 +652,7 @@
   {
       if(confirm(go_brand_page))
       {
-          window.location.href='brand.php?act=add';
+          window.location.href='<?php echo url("brand_add"); ?>';
       }
       else
       {
@@ -767,7 +804,7 @@
     {
         if(confirm(go_category_page))
         {
-            window.location.href='category.php?act=add';
+            window.location.href='<?php echo url("category_add"); ?>';
         }
         else
         {
@@ -1039,159 +1076,5 @@
   </tr>
   </table>
 </div>
-
-<!--
-<embed src="static/flash/online.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
--->
-<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0" id="msgBeep" width="1" height="1">
-  <param name="movie" value="images/online.swf">
-  <param name="quality" value="high">
-  <embed src="images/online.swf" name="msgBeep" id="msgBeep" quality="high" width="0" height="0" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?p1_prod_version=shockwaveflash">
-  </embed>
-</object>
-
-<script language="JavaScript">
-document.onmousemove=function(e)
-{
-  var obj = Utils.srcElement(e);
-  if (typeof(obj.onclick) == 'function' && obj.onclick.toString().indexOf('listTable.edit') != -1)
-  {
-    obj.title = '点击修改内容';
-    obj.style.cssText = 'background-color: #eee;';
-    obj.onmouseout = function(e)
-    {
-      this.style.cssText = '';
-    }
-  }
-  else if (typeof(obj.href) != 'undefined' && obj.href.indexOf('listTable.sort') != -1)
-  {
-    obj.title = '点击对列表排序';
-  }
-}
-<!--
-
-
-var MyTodolist;
-function showTodoList(adminid)
-{
-  if(!MyTodolist)
-  {
-    var global = $import("../js/global.js","js");
-    global.onload = global.onreadystatechange= function()
-    {
-      if(this.readyState && this.readyState=="loading")return;
-      var md5 = $import("js/md5.js","js");
-      md5.onload = md5.onreadystatechange= function()
-      {
-        if(this.readyState && this.readyState=="loading")return;
-        var todolist = $import("js/todolist.js","js");
-        todolist.onload = todolist.onreadystatechange = function()
-        {
-          if(this.readyState && this.readyState=="loading")return;
-          MyTodolist = new Todolist();
-          MyTodolist.show();
-        }
-      }
-    }
-  }
-  else
-  {
-    if(MyTodolist.visibility)
-    {
-      MyTodolist.hide();
-    }
-    else
-    {
-      MyTodolist.show();
-    }
-  }
-}
-
-if (Browser.isIE)
-{
-  onscroll = function()
-  {
-    //document.getElementById('calculator').style.top = document.body.scrollTop;
-    document.getElementById('popMsg').style.top = (document.body.scrollTop + document.body.clientHeight - document.getElementById('popMsg').offsetHeight) + "px";
-  }
-}
-
-if (document.getElementById("listDiv"))
-{
-  document.getElementById("listDiv").onmouseover = function(e)
-  {
-    obj = Utils.srcElement(e);
-
-    if (obj)
-    {
-      if (obj.parentNode.tagName.toLowerCase() == "tr") row = obj.parentNode;
-      else if (obj.parentNode.parentNode.tagName.toLowerCase() == "tr") row = obj.parentNode.parentNode;
-      else return;
-
-      for (i = 0; i < row.cells.length; i++)
-      {
-        if (row.cells[i].tagName != "TH") row.cells[i].style.backgroundColor = '#F4FAFB';
-      }
-    }
-
-  }
-
-  document.getElementById("listDiv").onmouseout = function(e)
-  {
-    obj = Utils.srcElement(e);
-
-    if (obj)
-    {
-      if (obj.parentNode.tagName.toLowerCase() == "tr") row = obj.parentNode;
-      else if (obj.parentNode.parentNode.tagName.toLowerCase() == "tr") row = obj.parentNode.parentNode;
-      else return;
-
-      for (i = 0; i < row.cells.length; i++)
-      {
-          if (row.cells[i].tagName != "TH") row.cells[i].style.backgroundColor = '#FFF';
-      }
-    }
-  }
-
-  document.getElementById("listDiv").onclick = function(e)
-  {
-    var obj = Utils.srcElement(e);
-
-    if (obj.tagName == "INPUT" && obj.type == "checkbox")
-    {
-      if (!document.forms['listForm'])
-      {
-        return;
-      }
-      var nodes = document.forms['listForm'].elements;
-      var checked = false;
-
-      for (i = 0; i < nodes.length; i++)
-      {
-        if (nodes[i].checked)
-        {
-           checked = true;
-           break;
-         }
-      }
-
-      if(document.getElementById("btnSubmit"))
-      {
-        document.getElementById("btnSubmit").disabled = !checked;
-      }
-      for (i = 1; i <= 10; i++)
-      {
-        if (document.getElementById("btnSubmit" + i))
-        {
-          document.getElementById("btnSubmit" + i).disabled = !checked;
-        }
-      }
-    }
-  }
-
-}
-
-//-->
-</script>
 </body>
 </html>

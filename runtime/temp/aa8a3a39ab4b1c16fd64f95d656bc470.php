@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\brand_upd.html";i:1536750585;}*/ ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <base href="/" />
@@ -15,16 +16,16 @@
     <div style="clear:both"></div>
 </h1><div class="main-div">
     <form method="post" action="admin/goods/brand_upd_do" name="theForm" enctype="multipart/form-data">
-        {volist name='arr' id='v'}
-        <input type="hidden" name="brand_id" value="{$v.brand_id}">
+        <?php if(is_array($arr) || $arr instanceof \think\Collection || $arr instanceof \think\Paginator): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+        <input type="hidden" name="brand_id" value="<?php echo $v['brand_id']; ?>">
         <table cellspacing="1" cellpadding="3" width="100%">
             <tr>
                 <td class="label">品牌名称</td>
-                <td><input type="text" name="brand_name" maxlength="60" value="{$v.brand_name}" /><span class="require-field">*</span></td>
+                <td><input type="text" name="brand_name" maxlength="60" value="<?php echo $v['brand_name']; ?>" /><span class="require-field">*</span></td>
             </tr>
             <tr>
                 <td class="label">品牌网址</td>
-                <td><input type="text" name="site_url" maxlength="60" size="40" value="{$v.site_url}" /></td>
+                <td><input type="text" name="site_url" maxlength="60" size="40" value="<?php echo $v['site_url']; ?>" /></td>
             </tr>
             <tr>
                 <td class="label"><a href="javascript:showNotice('warn_brandlogo');" title="点击此处查看提示信息">
@@ -75,7 +76,7 @@
             </td>
         </tr>
     </table>
-    {/volist}
+    <?php endforeach; endif; else: echo "" ;endif; ?>
 </div>
 
 </body>

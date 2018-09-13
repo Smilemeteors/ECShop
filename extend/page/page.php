@@ -49,7 +49,7 @@ class Page extends Paginator
 
     //
     protected function pages(){
-        return "<p class='pageRemark'>" .$this->currentPage. "&nbsp;/&nbsp;" .$this->lastPage. "页&nbsp;,每页 &nbsp;</p>&nbsp<input style='float:left;width:70px;height:25px;' class='pages' type='text'><p class='pageRemark'>&nbsp;条记录，</p>";
+        return "<p class='pageRemark'>" .$this->currentPage. "&nbsp;/&nbsp;" .$this->lastPage. "页&nbsp;,</p>";
     }
 
     /**

@@ -7,22 +7,35 @@ use think\Paginator;
 
 class Goods extends Model
 {
-	//删除分类
-	public function del($cat_id){
-        return Db::table('cat')->delete($cat_id);
+	//分类
+	public function addData($data){
+        return Db::table('classify')->insert($data);
     }
-	public function shows()
-	{
-        return Db::table('cat')->select();
+    public function shows(){
+        return Db::table('classify')->select();
     }
-    public function goods_Show()
+    public function find($id){
+        return Db::table('classify')->find($id);
+    }
+    public function upd($request,$cat_id){
+        return Db::table('classify')->where("cat_id=$cat_id")->update($request);
+    }
+    public function del($cat_id){
+        return Db::table('classify')->delete($cat_id);
+    }
+    public function getPathList($id,$path='path'){
+        $result=Db::query("SELECT *,CONCAT($path,'-',$id) as new FROM classify ORDER BY new");
+        return $result;
+    }
+	//分类
+	public function goods_Show()
 	{
 		return $res = Db::name('goods')->where('is_delete',1)->paginate(5);
 	}
 
-	public function brand_show($find){
+	public function brand_show($find,$pages){
 		$pageParam['query']['find'] = $find;
-        return $res= Db::name('brand')->where('brand_name','like','%'.$find.'%')->order('sort_order order')->paginate(10,false,$pageParam);
+        return $res= Db::name('brand')->where('brand_name','like','%'.$find.'%')->order('sort_order order')->paginate($pages,false,$pageParam);
     }
     /* $find = Request::instance()->param('find');
     //活动的id
