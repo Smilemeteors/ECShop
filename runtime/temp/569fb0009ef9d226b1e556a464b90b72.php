@@ -1,8 +1,9 @@
-﻿<!-- $Id: user_rank.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:90:"D:\PHPTutorial\WWW\ECShop\public/../application/admin\view\member\user_account_manage.html";i:1536285027;}*/ ?>
+﻿<!-- $Id: user_account_manage.htm 14598 2008-05-21 07:41:15Z testyang $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ECSHOP 管理中心 - 会员等级 </title>
+<title>ECSHOP 管理中心 - 资金管理 </title>
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="/static/css/general.css" rel="stylesheet" type="text/css" />
@@ -28,13 +29,6 @@ var todolist_save = "保存";
 var todolist_clear = "清除";
 var todolist_confirm_save = "是否将更改保存到记事本？";
 var todolist_confirm_clear = "是否清空内容？";
-var remove_confirm = "您确定要删除选定的会员等级吗？";
-var rank_name_empty = "您没有输入会员等级名称。";
-var integral_min_invalid = "您没有输入积分下限或者积分下限不是一个整数。";
-var integral_max_invalid = "您没有输入积分上限或者积分上限不是一个整数。";
-var discount_invalid = "您没有输入折扣率或者折扣率无效。";
-var integral_max_small = "积分上限必须大于积分下限。";
-var lang_remove = "移除";
 //-->
 /*关闭按钮*/
   function get_certificate(){
@@ -86,142 +80,85 @@ var lang_remove = "移除";
 <div class="mask-black" id="CMask"></div>
 <!--遮罩-->
 <h1>
-      <a class="btn btn-right" href="user_rank_add.html">添加会员等级</a>
-  
-    <span class="action-span1"><a href="admin/Index/index_main.html">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;会员等级 </span>
-  <div style="clear:both"></div>
-</h1><script type="text/javascript" src="static/js/utils.js"></script><script type="text/javascript" src="static/js/listtable.js"></script>
-<form method="post" action="" name="listForm">
-<!-- start ads list -->
-<div class="list-div" id="listDiv">
-
-<table cellspacing='1' id="list-table">
-  <tr>
-    <th>会员等级名称</th>
-    <th>积分下限</th>
-    <th>积分上限</th>
-    <th>初始折扣率(%)</th>
-    <th>特殊会员组</th>
-    <th>显示价格</th>
-    <th>操作</th>
-  </tr>
-  <?php foreach ($list as $k => $v) { ?>
-      <tr>
-      <td class="first-cell" ><span onclick="listTable.edit(this,'edit_name', <?=$v['rank_id']?>)"><?=$v['rank_name']?></span></td>
-      <td align="right"><span  onclick="listTable.edit(this, 'edit_min_points', <?=$v['rank_id']?>)"  ><?=$v['min_points']?></span></td>
-      <td align="right"><span  onclick="listTable.edit(this, 'edit_max_points', <?=$v['rank_id']?>)"  ><?=$v['max_points']?></span></td>
-      <td align="right"><span onclick="listTable.edit(this, 'edit_discount', <?=$v['rank_id']?>)"><?=$v['discount']?></span></td>
-      <td align="center">
-          {in name="$v.special_rank" value="1"}
-          <img src="/static/picture/yes.svg" class="special_rank" id="{$v.rank_id}"  value='{$v.special_rank}' width="20"/>
-          {else/}
-          <img src="/static/picture/no.svg" class="special_rank" id="{$v.rank_id}"  value='{$v.special_rank}' width="20"/>
-          {/in}
-      </td>
-      <td align="center">
-          {in name="$v.show_price" value="1"}
-          <img src="/static/picture/yes.svg" class="show_price" id="{$v.rank_id}"  value='{$v.show_price}' width="20"/>
-          {else/}
-          <img src="/static/picture/no.svg" class="show_price" id="{$v.rank_id}"  value='{$v.show_price}' width="20"/>
-          {/in}
-        </td>
-      <td align="center">
-      <a href="{:url('user_rank_del')}?id=<?=$v['rank_id']?>" title="移除">移除</a></td>
-    </tr>
-  <?php } ?>
     
-    <!-- <tr>
-    <td class="first-cell" ><span onclick="listTable.edit(this,'edit_name', 2)">vip</span></td>
-    <td align="right"><span  onclick="listTable.edit(this, 'edit_min_points', 2)"  >10000</span></td>
-    <td align="right"><span  onclick="listTable.edit(this, 'edit_max_points', 2)"  >10000000</span></td>
-    <td align="right"><span onclick="listTable.edit(this, 'edit_discount', 2)">95</span></td>
-    <td align="center"><img src="static/picture/no.svg" width="20" onclick="listTable.toggle(this, 'toggle_special', 2)" /></td>
-    <td align="center"><img src="static/picture/yes.svg" width="20" onclick="listTable.toggle(this, 'toggle_showprice', 2)" /></td>
-    <td align="center">
-    <a href="javascript:;" onclick="listTable.remove(2, '您确认要删除这条记录吗?')" title="移除"><img src="static/picture/icon_drop.svg" border="0" height="16" width="16"></a></td>
-  </tr>
-    <tr>
-    <td class="first-cell" ><span onclick="listTable.edit(this,'edit_name', 3)">代销用户</span></td>
-    <td align="right"><span  >0</span></td>
-    <td align="right"><span  >0</span></td>
-    <td align="right"><span onclick="listTable.edit(this, 'edit_discount', 3)">90</span></td>
-    <td align="center"><img src="static/picture/yes.svg" width="20" onclick="listTable.toggle(this, 'toggle_special', 3)" /></td>
-    <td align="center"><img src="static/picture/no.svg" width="20" onclick="listTable.toggle(this, 'toggle_showprice', 3)" /></td>
-    <td align="center">
-    <a href="javascript:;" onclick="listTable.remove(3, '您确认要删除这条记录吗?')" title="移除"><img src="static/picture/icon_drop.svg" border="0" height="16" width="16"></a></td>
-  </tr> -->
-    </table>
-
+    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;资金管理 </span>
+  <div style="clear:both"></div>
+</h1><script type="text/javascript" src="static/js/utils.js"></script><script type="text/javascript" src="static/js/listtable.js"></script><script type="text/javascript" src="static/js/calendar.js"></script>
+<link href="static/css/calendar.css" rel="stylesheet" type="text/css" />
+<div class="form-div">
+  <form name="TimeInterval" action="user_account_manage.php" method="post" style="margin:0px">
+    开始日期&nbsp;
+    <input name="start_date" type="text" id="start_date" size="15" value='2018-08-28' readonly="readonly" />
+    <button name="selbtn1" type="button" id="selbtn1" onclick="return showCalendar('start_date', '%Y-%m-%d', false, false, 'selbtn1');" class="cal"><img src="static/picture/cal.png" alt=""></button>
+    结束日期&nbsp;
+    <input name="end_date" type="text" id="end_date" size="15" value='2018-09-04' readonly="readonly" />
+    <button name="selbtn2" type="button" id="selbtn2" onclick="return showCalendar('end_date', '%Y-%m-%d', false, false, 'selbtn2');" class="cal"><img src="static/picture/cal.png" alt=""></button>
+    <input type="submit" name="submit" value="查询" class="button" />
+  </form>
 </div>
-<!-- end user ranks list -->
-</form>
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<!-- start charger  -->
+<div class="list-div">
+<table cellspacing='1' cellpadding='3'>
+  <tr>
+    <th colspan="4" class="group-title">会员账户信息</th>
+  </tr>
+  <tr>
+    <td width="20%"><a href="user_account.php?act=list&process_type=0&ispaid=1&start_date=2018-08-28&end_date=2018-09-04">用户充值总额</a></td>
+    <td width="30%"><strong>￥0.00元</strong></td>
+    <td width="20%"><a href="user_account.php?act=list&process_type=1&ispaid=1&start_date=2018-08-28&end_date=2018-09-04">提现金额</a></td>
+    <td width="30%"><strong>￥0.00元</strong></td>
+  </tr>
+  <tr>
+    <td><a href="users.php?act=list">用户可用资金</a></td>
+    <td><strong>￥0.00元</strong></td>
+    <td><a href="users.php?act=list">用户冻结资金</a></td>
+    <td><strong style="color: red">￥0.00元</strong></td>
+  </tr>
+</table>
+</div>
+<!-- end charge -->
+<br />
+<!-- start -->
+<div class="list-div">
+<table cellspacing='1' cellpadding='3'>
+  <tr>
+    <th colspan="4" class="group-title">余额使用信息</th>
+  </tr>
+  <tr>
+    <td width="20%"><a href="user_account_manage.php?act=surplus&start_date=2018-08-28&end_date=2018-09-04">交易使用余额</a></td>
+    <td width="30%"><strong>￥0.00元</strong></td>
+    <td width="20%"><a href="user_account_manage.php?act=surplus&start_date=2018-08-28&end_date=2018-09-04">积分使用余额</a></td>
+    <td width="30%"><strong >￥0.00元</strong></td>
+  </tr>
+  <tr>
+    <td><a href="goods.php?act=list&amp;intro_type=is_new"></a></td>
+    <td><strong></strong></td>
+    <td><a href="goods.php?act=list&amp;intro_type=is_best"></a></td>
+    <td><strong></strong></td>
+  </tr>
+  <tr>
+    <td><a href="goods.php?act=list&amp;intro_type=is_hot"></a></td>
+    <td><strong></strong></td>
+    <td><a href="goods.php?act=list&amp;intro_type=is_promote"></a></td>
+    <td><strong></strong></td>
+  </tr>
+</table>
+</div>
+<!-- end  -->
+<br />
+
 <script type="Text/Javascript" language="JavaScript">
 <!--
-$(document).on('click','.special_rank',function(){
-    var status = $(this).attr('value');
-    var rank_id = $(this).attr('id');
-    var obj = $(this);
-    $.ajax({
-      url:"{:url('user_rank_put')}",
-      data:{status:status,rank_id:rank_id},
-      dataType:"json",
-      success:function(res){
-        if(res.status==1){
-          alert(res.msg);
-          return false;
-        }else{
-
-          if(status==1){
-
-            obj.prop("src","/static/picture/no.svg");
-            obj.attr("value",0)
-          }else{
-
-            obj.prop("src","/static/picture/yes.svg");
-            obj.attr("value",1)
-          }
-        }
-      }
-    })
-  })
-$(document).on('click','.show_price',function(){
-    var status = $(this).attr('value');
-    var rank_id = $(this).attr('id');
-    var obj = $(this);
-    $.ajax({
-      url:"{:url('user_rank_put1')}",
-      data:{status:status,rank_id:rank_id},
-      dataType:"json",
-      success:function(res){
-        if(res.status==1){
-          alert(res.msg);
-          return false;
-        }else{
-
-          if(status==1){
-
-            obj.prop("src","/static/picture/no.svg");
-            obj.attr("value",0)
-          }else{
-
-            obj.prop("src","/static/picture/yes.svg");
-            obj.attr("value",1)
-          }
-        }
-      }
-    })
-  })
 onload = function()
 {
-    // 开始检查订单
-    startCheckOrder();
+  /* 检查订单 */
+  startCheckOrder();
 }
-
 //-->
 </script>
+
 <div id="footer">
-共执行 3 个查询，用时 0.018365 秒，Gzip 已禁用，内存占用 1.083 MB<br />
+共执行 6 个查询，用时 0.022467 秒，Gzip 已禁用，内存占用 1.384 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
 <!-- 新订单提示信息 -->
 <div id="popMsg">

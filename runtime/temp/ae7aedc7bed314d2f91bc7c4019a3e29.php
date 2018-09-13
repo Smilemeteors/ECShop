@@ -1,8 +1,9 @@
-﻿<!-- $Id: user_rank.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:79:"D:\PHPTutorial\WWW\ECShop\public/../application/admin\view\member\user_msg.html";i:1536285027;}*/ ?>
+﻿<!-- $Id: msg_list.htm 15616 2009-02-18 05:16:22Z sunxiaodong $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ECSHOP 管理中心 - 会员等级 </title>
+<title>ECSHOP 管理中心 - 会员留言 </title>
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="/static/css/general.css" rel="stylesheet" type="text/css" />
@@ -28,13 +29,9 @@ var todolist_save = "保存";
 var todolist_clear = "清除";
 var todolist_confirm_save = "是否将更改保存到记事本？";
 var todolist_confirm_clear = "是否清空内容？";
-var remove_confirm = "您确定要删除选定的会员等级吗？";
-var rank_name_empty = "您没有输入会员等级名称。";
-var integral_min_invalid = "您没有输入积分下限或者积分下限不是一个整数。";
-var integral_max_invalid = "您没有输入积分上限或者积分上限不是一个整数。";
-var discount_invalid = "您没有输入折扣率或者折扣率无效。";
-var integral_max_small = "积分上限必须大于积分下限。";
-var lang_remove = "移除";
+var no_content = "内容不能为空";
+var no_reply_content = "回复内容不能为空";
+var no_title = "主题不能为空";
 //-->
 /*关闭按钮*/
   function get_certificate(){
@@ -86,142 +83,144 @@ var lang_remove = "移除";
 <div class="mask-black" id="CMask"></div>
 <!--遮罩-->
 <h1>
-      <a class="btn btn-right" href="user_rank_add.html">添加会员等级</a>
-  
-    <span class="action-span1"><a href="admin/Index/index_main.html">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;会员等级 </span>
+    
+    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;会员留言 </span>
   <div style="clear:both"></div>
-</h1><script type="text/javascript" src="static/js/utils.js"></script><script type="text/javascript" src="static/js/listtable.js"></script>
-<form method="post" action="" name="listForm">
-<!-- start ads list -->
+</h1><script type="text/javascript" src="static/js/utils.js"></script><script type="text/javascript" src="static/js/listtable.js"></script><div class="form-div">
+  <form action="javascript:searchMsg()" name="searchForm">
+    <img src="static/picture/icon_search.svg" width="26" height="22" border="0" alt="SEARCH" />
+    类型:
+    <select name="msg_type">
+      <option value="-1">请选择...</option>
+      <option value="0">留言</option>
+      <option value="1">投诉</option>
+      <option value="2">询问</option>
+      <option value="3">售后</option>
+      <option value="4">求购</option>
+	  <option value="5">商家留言</option>
+    </select>
+    留言标题: <input type="text" name="keyword" /> <input type="submit" class="button" value=" 搜索 " />
+  </form>
+</div>
+<form method="POST" action="user_msg.php?act=batch_drop" name="listForm" onsubmit="return confirm_bath()">
+<!-- start article list -->
 <div class="list-div" id="listDiv">
-
-<table cellspacing='1' id="list-table">
+<table cellpadding="3" cellspacing="1">
   <tr>
-    <th>会员等级名称</th>
-    <th>积分下限</th>
-    <th>积分上限</th>
-    <th>初始折扣率(%)</th>
-    <th>特殊会员组</th>
-    <th>显示价格</th>
+    <th>
+      <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox" />
+      <a href="javascript:listTable.sort('msg_id'); ">编号</a><img src="static/picture/sort_desc.png">    </th>
+    <th><a href="javascript:listTable.sort('user_name'); ">用户名</a></th>
+    <th><a href="javascript:listTable.sort('msg_title'); ">留言标题</a></th>
+    <th><a href="javascript:listTable.sort('msg_type'); ">类型</a></th>
+    <th><a href="javascript:listTable.sort('msg_time'); ">留言时间</a></th>
+    <th><a href="javascript:listTable.sort('msg_status'); ">状态</a></th>
+    <th><a href="javascript:listTable.sort('reply'); ">回复</a></th>
     <th>操作</th>
   </tr>
-  <?php foreach ($list as $k => $v) { ?>
-      <tr>
-      <td class="first-cell" ><span onclick="listTable.edit(this,'edit_name', <?=$v['rank_id']?>)"><?=$v['rank_name']?></span></td>
-      <td align="right"><span  onclick="listTable.edit(this, 'edit_min_points', <?=$v['rank_id']?>)"  ><?=$v['min_points']?></span></td>
-      <td align="right"><span  onclick="listTable.edit(this, 'edit_max_points', <?=$v['rank_id']?>)"  ><?=$v['max_points']?></span></td>
-      <td align="right"><span onclick="listTable.edit(this, 'edit_discount', <?=$v['rank_id']?>)"><?=$v['discount']?></span></td>
-      <td align="center">
-          {in name="$v.special_rank" value="1"}
-          <img src="/static/picture/yes.svg" class="special_rank" id="{$v.rank_id}"  value='{$v.special_rank}' width="20"/>
-          {else/}
-          <img src="/static/picture/no.svg" class="special_rank" id="{$v.rank_id}"  value='{$v.special_rank}' width="20"/>
-          {/in}
-      </td>
-      <td align="center">
-          {in name="$v.show_price" value="1"}
-          <img src="/static/picture/yes.svg" class="show_price" id="{$v.rank_id}"  value='{$v.show_price}' width="20"/>
-          {else/}
-          <img src="/static/picture/no.svg" class="show_price" id="{$v.rank_id}"  value='{$v.show_price}' width="20"/>
-          {/in}
-        </td>
-      <td align="center">
-      <a href="{:url('user_rank_del')}?id=<?=$v['rank_id']?>" title="移除">移除</a></td>
-    </tr>
-  <?php } ?>
-    
-    <!-- <tr>
-    <td class="first-cell" ><span onclick="listTable.edit(this,'edit_name', 2)">vip</span></td>
-    <td align="right"><span  onclick="listTable.edit(this, 'edit_min_points', 2)"  >10000</span></td>
-    <td align="right"><span  onclick="listTable.edit(this, 'edit_max_points', 2)"  >10000000</span></td>
-    <td align="right"><span onclick="listTable.edit(this, 'edit_discount', 2)">95</span></td>
-    <td align="center"><img src="static/picture/no.svg" width="20" onclick="listTable.toggle(this, 'toggle_special', 2)" /></td>
-    <td align="center"><img src="static/picture/yes.svg" width="20" onclick="listTable.toggle(this, 'toggle_showprice', 2)" /></td>
-    <td align="center">
-    <a href="javascript:;" onclick="listTable.remove(2, '您确认要删除这条记录吗?')" title="移除"><img src="static/picture/icon_drop.svg" border="0" height="16" width="16"></a></td>
-  </tr>
     <tr>
-    <td class="first-cell" ><span onclick="listTable.edit(this,'edit_name', 3)">代销用户</span></td>
-    <td align="right"><span  >0</span></td>
-    <td align="right"><span  >0</span></td>
-    <td align="right"><span onclick="listTable.edit(this, 'edit_discount', 3)">90</span></td>
-    <td align="center"><img src="static/picture/yes.svg" width="20" onclick="listTable.toggle(this, 'toggle_special', 3)" /></td>
-    <td align="center"><img src="static/picture/no.svg" width="20" onclick="listTable.toggle(this, 'toggle_showprice', 3)" /></td>
+    <td><input type="checkbox" name="checkboxes[]" value="1" />1</td>
+    <td align="center">ecshop</td>
+    <td align="left">三星SGH-F258什么时候到</td>
+    <td align="center">求购</a></td>
+    <td align="center"  nowrap="nowrap">2009-05-12 13:46:37</td>
+        <td align="center">显示</td>
+        <td align="center">未回复</td>
     <td align="center">
-    <a href="javascript:;" onclick="listTable.remove(3, '您确认要删除这条记录吗?')" title="移除"><img src="static/picture/icon_drop.svg" border="0" height="16" width="16"></a></td>
-  </tr> -->
-    </table>
-
+      <a href="user_msg.php?act=view&id=1" title="查看详情">
+        <img src="static/picture/icon_view.svg" border="0" height="16" width="16" />
+      </a>
+      <a href="javascript:;" onclick="listTable.remove(1, '您确认要删除这条记录吗?')"  title="移除">
+        <img src="static/picture/icon_drop.svg" border="0" height="16" width="16">
+      </a>
+    </td>
+  </tr>
+  </table>
+<table id="page-table" cellspacing="0">
+<tr>
+  <td><div>
+      <select name="sel_action">
+	    <option value="">请选择...</option>
+        <option value="remove">删除留言</option>
+        <option value="allow">允许显示</option>
+        <option value="deny">禁止显示</option>
+      </select>
+      <input type="hidden" name="act" value="batch" />
+      <input type="submit" name="drop" id="btnSubmit" value=" 确定 " class="button" disabled="true" /></div></td>
+  <td align="right" nowrap="true">
+  <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<div id="turn-page">
+  <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
+  页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
+  条记录，总共 <span id="totalRecords">1</span>
+  条记录
+  <span id="page-link">
+    <a href="javascript:listTable.gotoPageFirst()">第一页</a>
+    <a href="javascript:listTable.gotoPagePrev()">上一页</a>
+    <a href="javascript:listTable.gotoPageNext()">下一页</a>
+    <a href="javascript:listTable.gotoPageLast()">最末页</a>
+    <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
+      <option value='1'>1</option>    </select>
+  </span>
 </div>
-<!-- end user ranks list -->
+  </td>
+</tr>
+</table>
+</div>
+<!-- end article list -->
 </form>
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="Text/Javascript" language="JavaScript">
+<script type="text/javascript" language="JavaScript">
+listTable.recordCount = 1;
+listTable.pageCount = 1;
+cfm = new Object();
+cfm['allow'] = '你确定要允许显示所选评论吗？';
+cfm['remove'] = '你确定要删除所选评论吗？';
+cfm['deny'] = '你确定要禁止显示所选评论吗？';
+listTable.filter.keywords = '';
+listTable.filter.msg_type = '-1';
+listTable.filter.sort_by = 'f.msg_id';
+listTable.filter.sort_order = 'DESC';
+listTable.filter.record_count = '1';
+listTable.filter.page_size = '15';
+listTable.filter.page = '1';
+listTable.filter.page_count = '1';
+listTable.filter.start = '0';
+
 <!--
-$(document).on('click','.special_rank',function(){
-    var status = $(this).attr('value');
-    var rank_id = $(this).attr('id');
-    var obj = $(this);
-    $.ajax({
-      url:"{:url('user_rank_put')}",
-      data:{status:status,rank_id:rank_id},
-      dataType:"json",
-      success:function(res){
-        if(res.status==1){
-          alert(res.msg);
-          return false;
-        }else{
-
-          if(status==1){
-
-            obj.prop("src","/static/picture/no.svg");
-            obj.attr("value",0)
-          }else{
-
-            obj.prop("src","/static/picture/yes.svg");
-            obj.attr("value",1)
-          }
-        }
-      }
-    })
-  })
-$(document).on('click','.show_price',function(){
-    var status = $(this).attr('value');
-    var rank_id = $(this).attr('id');
-    var obj = $(this);
-    $.ajax({
-      url:"{:url('user_rank_put1')}",
-      data:{status:status,rank_id:rank_id},
-      dataType:"json",
-      success:function(res){
-        if(res.status==1){
-          alert(res.msg);
-          return false;
-        }else{
-
-          if(status==1){
-
-            obj.prop("src","/static/picture/no.svg");
-            obj.attr("value",0)
-          }else{
-
-            obj.prop("src","/static/picture/yes.svg");
-            obj.attr("value",1)
-          }
-        }
-      }
-    })
-  })
 onload = function()
 {
+    document.forms['searchForm'].elements['keyword'].focus();
     // 开始检查订单
     startCheckOrder();
 }
 
+/**
+ * 搜索标题
+ */
+function searchMsg()
+{
+    var keyword = Utils.trim(document.forms['searchForm'].elements['keyword'].value);
+    var msgType = document.forms['searchForm'].elements['msg_type'].value;
+
+    listTable.filter['keywords'] = Utils.trim(document.forms['searchForm'].elements['keyword'].value);
+    listTable.filter['msg_type'] = document.forms['searchForm'].elements['msg_type'].value;
+    listTable.filter['page'] = 1;
+    listTable.loadList();
+}
+
+function confirm_bath()
+{
+    var action = document.forms['listForm'].elements['sel_action'].value;
+    if (action == 'allow'||action == 'remove'||action == 'deny')
+      {
+          return confirm(cfm[action]);
+      }
+}
 //-->
 </script>
+
 <div id="footer">
-共执行 3 个查询，用时 0.018365 秒，Gzip 已禁用，内存占用 1.083 MB<br />
+共执行 2 个查询，用时 0.016423 秒，Gzip 已禁用，内存占用 1.114 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
 <!-- 新订单提示信息 -->
 <div id="popMsg">

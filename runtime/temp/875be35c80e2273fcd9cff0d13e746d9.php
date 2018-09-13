@@ -1,4 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"D:\PHPTutorial\WWW\ECShop\public/../application/admin\view\order\orders_list.html";i:1536653600;}*/ ?>
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -57,20 +58,20 @@
     <th><center><a href="javascript:; ">订单状态</a></center></th>
     <th><center><a href="javascript:; ">操作</a></center></th>
   <tr>
-  {volist name='data' id='user'}
+  <?php if(is_array($data) || $data instanceof \think\Collection || $data instanceof \think\Paginator): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$user): $mod = ($i % 2 );++$i;?>
     <tr>
-    <td><input type="checkbox" name="test" value="{$user.order_id}">
-    {$user.order_number}</td>
-    <td class="first-cell"><span>{$user.order_data}</span></td>
-    <td><span>{$user.consignee}</span></td>
-    <td align="right"><span>¥{$user.total_money}元</span></td>
-    <td align="right"><span>¥{$user.order_amount}元</span></td>
-    <td>{$user.order_stats}</td>
-    <td><a href="admin/Order/details?id={$user.order_id}">查看</a><br />
-        <a href="admin/Order/delorder?id={$user.order_id}">移除</a>
+    <td><input type="checkbox" name="test" value="<?php echo $user['order_id']; ?>">
+    <?php echo $user['order_number']; ?></td>
+    <td class="first-cell"><span><?php echo $user['order_data']; ?></span></td>
+    <td><span><?php echo $user['consignee']; ?></span></td>
+    <td align="right"><span>¥<?php echo $user['total_money']; ?>元</span></td>
+    <td align="right"><span>¥<?php echo $user['order_amount']; ?>元</span></td>
+    <td><?php echo $user['order_stats']; ?></td>
+    <td><a href="admin/Order/details?id=<?php echo $user['order_id']; ?>">查看</a><br />
+        <a href="admin/Order/delorder?id=<?php echo $user['order_id']; ?>">移除</a>
     </td>
     </tr>
-  {/volist}
+  <?php endforeach; endif; else: echo "" ;endif; ?>
   </table>
 
 
@@ -87,7 +88,7 @@
     <td align="right" nowrap="true">
     <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <div id="turn-page">
-    {$data->render()}
+    <?php echo $data->render(); ?>
 </div>
     </td>
   </tr>

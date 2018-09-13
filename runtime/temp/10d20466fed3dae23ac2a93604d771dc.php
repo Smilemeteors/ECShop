@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"D:\PHPTutorial\WWW\ECShop\public/../application/admin\view\member\user_rank.html";i:1536285027;}*/ ?>
 ﻿<!-- $Id: user_rank.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -105,32 +106,17 @@ var lang_remove = "移除";
     <th>显示价格</th>
     <th>操作</th>
   </tr>
-  <?php foreach ($list as $k => $v) { ?>
-      <tr>
-      <td class="first-cell" ><span onclick="listTable.edit(this,'edit_name', <?=$v['rank_id']?>)"><?=$v['rank_name']?></span></td>
-      <td align="right"><span  onclick="listTable.edit(this, 'edit_min_points', <?=$v['rank_id']?>)"  ><?=$v['min_points']?></span></td>
-      <td align="right"><span  onclick="listTable.edit(this, 'edit_max_points', <?=$v['rank_id']?>)"  ><?=$v['max_points']?></span></td>
-      <td align="right"><span onclick="listTable.edit(this, 'edit_discount', <?=$v['rank_id']?>)"><?=$v['discount']?></span></td>
-      <td align="center">
-          {in name="$v.special_rank" value="1"}
-          <img src="/static/picture/yes.svg" class="special_rank" id="{$v.rank_id}"  value='{$v.special_rank}' width="20"/>
-          {else/}
-          <img src="/static/picture/no.svg" class="special_rank" id="{$v.rank_id}"  value='{$v.special_rank}' width="20"/>
-          {/in}
-      </td>
-      <td align="center">
-          {in name="$v.show_price" value="1"}
-          <img src="/static/picture/yes.svg" class="show_price" id="{$v.rank_id}"  value='{$v.show_price}' width="20"/>
-          {else/}
-          <img src="/static/picture/no.svg" class="show_price" id="{$v.rank_id}"  value='{$v.show_price}' width="20"/>
-          {/in}
-        </td>
-      <td align="center">
-      <a href="{:url('user_rank_del')}?id=<?=$v['rank_id']?>" title="移除">移除</a></td>
-    </tr>
-  <?php } ?>
-    
-    <!-- <tr>
+    <tr>
+    <td class="first-cell" ><span onclick="listTable.edit(this,'edit_name', 1)">注册用户</span></td>
+    <td align="right"><span  onclick="listTable.edit(this, 'edit_min_points', 1)"  >0</span></td>
+    <td align="right"><span  onclick="listTable.edit(this, 'edit_max_points', 1)"  >10000</span></td>
+    <td align="right"><span onclick="listTable.edit(this, 'edit_discount', 1)">100</span></td>
+    <td align="center"><img src="static/picture/no.svg" width="20" onclick="listTable.toggle(this, 'toggle_special', 1)" /></td>
+    <td align="center"><img src="static/picture/yes.svg" width="20" onclick="listTable.toggle(this, 'toggle_showprice', 1)" /></td>
+    <td align="center">
+    <a href="javascript:;" onclick="listTable.remove(1, '您确认要删除这条记录吗?')" title="移除"><img src="static/picture/icon_drop.svg" border="0" height="16" width="16"></a></td>
+  </tr>
+    <tr>
     <td class="first-cell" ><span onclick="listTable.edit(this,'edit_name', 2)">vip</span></td>
     <td align="right"><span  onclick="listTable.edit(this, 'edit_min_points', 2)"  >10000</span></td>
     <td align="right"><span  onclick="listTable.edit(this, 'edit_max_points', 2)"  >10000000</span></td>
@@ -149,69 +135,15 @@ var lang_remove = "移除";
     <td align="center"><img src="static/picture/no.svg" width="20" onclick="listTable.toggle(this, 'toggle_showprice', 3)" /></td>
     <td align="center">
     <a href="javascript:;" onclick="listTable.remove(3, '您确认要删除这条记录吗?')" title="移除"><img src="static/picture/icon_drop.svg" border="0" height="16" width="16"></a></td>
-  </tr> -->
+  </tr>
     </table>
 
 </div>
 <!-- end user ranks list -->
 </form>
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="Text/Javascript" language="JavaScript">
 <!--
-$(document).on('click','.special_rank',function(){
-    var status = $(this).attr('value');
-    var rank_id = $(this).attr('id');
-    var obj = $(this);
-    $.ajax({
-      url:"{:url('user_rank_put')}",
-      data:{status:status,rank_id:rank_id},
-      dataType:"json",
-      success:function(res){
-        if(res.status==1){
-          alert(res.msg);
-          return false;
-        }else{
 
-          if(status==1){
-
-            obj.prop("src","/static/picture/no.svg");
-            obj.attr("value",0)
-          }else{
-
-            obj.prop("src","/static/picture/yes.svg");
-            obj.attr("value",1)
-          }
-        }
-      }
-    })
-  })
-$(document).on('click','.show_price',function(){
-    var status = $(this).attr('value');
-    var rank_id = $(this).attr('id');
-    var obj = $(this);
-    $.ajax({
-      url:"{:url('user_rank_put1')}",
-      data:{status:status,rank_id:rank_id},
-      dataType:"json",
-      success:function(res){
-        if(res.status==1){
-          alert(res.msg);
-          return false;
-        }else{
-
-          if(status==1){
-
-            obj.prop("src","/static/picture/no.svg");
-            obj.attr("value",0)
-          }else{
-
-            obj.prop("src","/static/picture/yes.svg");
-            obj.attr("value",1)
-          }
-        }
-      }
-    })
-  })
 onload = function()
 {
     // 开始检查订单

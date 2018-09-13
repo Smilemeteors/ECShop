@@ -1,8 +1,9 @@
-﻿<!-- $Id: user_rank.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:83:"D:\PHPTutorial\WWW\ECShop\public/../application/admin\view\member\user_account.html";i:1536285027;}*/ ?>
+﻿<!-- $Id: user_account_list.htm 17030 2010-02-08 09:39:33Z sxc_shop $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ECSHOP 管理中心 - 会员等级 </title>
+<title>ECSHOP 管理中心 - 充值和提现申请 </title>
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="/static/css/general.css" rel="stylesheet" type="text/css" />
@@ -28,13 +29,13 @@ var todolist_save = "保存";
 var todolist_clear = "清除";
 var todolist_confirm_save = "是否将更改保存到记事本？";
 var todolist_confirm_clear = "是否清空内容？";
-var remove_confirm = "您确定要删除选定的会员等级吗？";
-var rank_name_empty = "您没有输入会员等级名称。";
-var integral_min_invalid = "您没有输入积分下限或者积分下限不是一个整数。";
-var integral_max_invalid = "您没有输入积分上限或者积分上限不是一个整数。";
-var discount_invalid = "您没有输入折扣率或者折扣率无效。";
-var integral_max_small = "积分上限必须大于积分下限。";
-var lang_remove = "移除";
+var user_id_empty = "会员名称不能为空！";
+var deposit_amount_empty = "请输入充值的金额！";
+var pay_code_empty = "请选择支付方式";
+var deposit_amount_error = "请按正确的格式输入充值的金额！";
+var deposit_type_empty = "请填写类型！";
+var deposit_notic_empty = "请填写管理员备注！";
+var deposit_desc_empty = "请填写会员描述！";
 //-->
 /*关闭按钮*/
   function get_certificate(){
@@ -86,142 +87,118 @@ var lang_remove = "移除";
 <div class="mask-black" id="CMask"></div>
 <!--遮罩-->
 <h1>
-      <a class="btn btn-right" href="user_rank_add.html">添加会员等级</a>
+      <a class="btn btn-right" href="user_account_add.html">添加申请</a>
   
-    <span class="action-span1"><a href="admin/Index/index_main.html">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;会员等级 </span>
+    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;充值和提现申请 </span>
   <div style="clear:both"></div>
-</h1><script type="text/javascript" src="static/js/utils.js"></script><script type="text/javascript" src="static/js/listtable.js"></script>
-<form method="post" action="" name="listForm">
-<!-- start ads list -->
-<div class="list-div" id="listDiv">
+</h1><script type="text/javascript" src="static/js/utils.js"></script><script type="text/javascript" src="static/js/listtable.js"></script><div class="form-div">
+  <form action="javascript:searchUser()" name="searchForm">
+    <!-- <img src="static/picture/icon_search.gif" width="25" height="22" border="0" alt="SEARCH" /> -->
+    会员名称 <input type="text" name="keyword" size="10" />
+      <select name="process_type">
+        <option value="-1">类型</option>
+        <option value="0" >充值</option>
+        <option value="1" >提现</option>
+      </select>
+      <select name="payment">
+      <option value="">支付方式</option>
+      <option value="余额支付">余额支付</option><option value="银行汇款/转帐">银行汇款/转帐</option><option value="<font color="#FF0000">天工收银</font>"><font color="#FF0000">天工收银</font></option>      </select>
+      <select name="is_paid">
+        <option value="-1">到款状态</option>
+        <option value="0" >未确认</option>
+        <option value="1" >已完成</option>
+        <option value="2">取消</option>
+      </select>
+      <input type="submit" value=" 搜索 " class="button" />
+  </form>
+</div>
 
-<table cellspacing='1' id="list-table">
+<form method="POST" action="" name="listForm">
+<!-- start user_deposit list -->
+<div class="list-div" id="listDiv">
+<table cellpadding="3" cellspacing="1">
   <tr>
-    <th>会员等级名称</th>
-    <th>积分下限</th>
-    <th>积分上限</th>
-    <th>初始折扣率(%)</th>
-    <th>特殊会员组</th>
-    <th>显示价格</th>
+    <th><a href="javascript:listTable.sort('user_name', 'DESC'); ">会员名称</a></th>
+    <th><a href="javascript:listTable.sort('add_time', 'DESC'); ">操作日期</a></th>
+    <th><a href="javascript:listTable.sort('process_type', 'DESC'); ">类型</a></th>
+    <th><a href="javascript:listTable.sort('amount', 'DESC'); ">金额</a></th>
+    <th><a href="javascript:listTable.sort('payment', 'DESC'); ">支付方式</a></th>
+    <th><a href="javascript:listTable.sort('is_paid', 'DESC'); ">到款状态</a></th>
+    <th>操作员</th>
     <th>操作</th>
   </tr>
-  <?php foreach ($list as $k => $v) { ?>
-      <tr>
-      <td class="first-cell" ><span onclick="listTable.edit(this,'edit_name', <?=$v['rank_id']?>)"><?=$v['rank_name']?></span></td>
-      <td align="right"><span  onclick="listTable.edit(this, 'edit_min_points', <?=$v['rank_id']?>)"  ><?=$v['min_points']?></span></td>
-      <td align="right"><span  onclick="listTable.edit(this, 'edit_max_points', <?=$v['rank_id']?>)"  ><?=$v['max_points']?></span></td>
-      <td align="right"><span onclick="listTable.edit(this, 'edit_discount', <?=$v['rank_id']?>)"><?=$v['discount']?></span></td>
-      <td align="center">
-          {in name="$v.special_rank" value="1"}
-          <img src="/static/picture/yes.svg" class="special_rank" id="{$v.rank_id}"  value='{$v.special_rank}' width="20"/>
-          {else/}
-          <img src="/static/picture/no.svg" class="special_rank" id="{$v.rank_id}"  value='{$v.special_rank}' width="20"/>
-          {/in}
-      </td>
-      <td align="center">
-          {in name="$v.show_price" value="1"}
-          <img src="/static/picture/yes.svg" class="show_price" id="{$v.rank_id}"  value='{$v.show_price}' width="20"/>
-          {else/}
-          <img src="/static/picture/no.svg" class="show_price" id="{$v.rank_id}"  value='{$v.show_price}' width="20"/>
-          {/in}
-        </td>
-      <td align="center">
-      <a href="{:url('user_rank_del')}?id=<?=$v['rank_id']?>" title="移除">移除</a></td>
-    </tr>
-  <?php } ?>
-    
-    <!-- <tr>
-    <td class="first-cell" ><span onclick="listTable.edit(this,'edit_name', 2)">vip</span></td>
-    <td align="right"><span  onclick="listTable.edit(this, 'edit_min_points', 2)"  >10000</span></td>
-    <td align="right"><span  onclick="listTable.edit(this, 'edit_max_points', 2)"  >10000000</span></td>
-    <td align="right"><span onclick="listTable.edit(this, 'edit_discount', 2)">95</span></td>
-    <td align="center"><img src="static/picture/no.svg" width="20" onclick="listTable.toggle(this, 'toggle_special', 2)" /></td>
-    <td align="center"><img src="static/picture/yes.svg" width="20" onclick="listTable.toggle(this, 'toggle_showprice', 2)" /></td>
-    <td align="center">
-    <a href="javascript:;" onclick="listTable.remove(2, '您确认要删除这条记录吗?')" title="移除"><img src="static/picture/icon_drop.svg" border="0" height="16" width="16"></a></td>
-  </tr>
     <tr>
-    <td class="first-cell" ><span onclick="listTable.edit(this,'edit_name', 3)">代销用户</span></td>
-    <td align="right"><span  >0</span></td>
-    <td align="right"><span  >0</span></td>
-    <td align="right"><span onclick="listTable.edit(this, 'edit_discount', 3)">90</span></td>
-    <td align="center"><img src="static/picture/yes.svg" width="20" onclick="listTable.toggle(this, 'toggle_special', 3)" /></td>
-    <td align="center"><img src="static/picture/no.svg" width="20" onclick="listTable.toggle(this, 'toggle_showprice', 3)" /></td>
-    <td align="center">
-    <a href="javascript:;" onclick="listTable.remove(3, '您确认要删除这条记录吗?')" title="移除"><img src="static/picture/icon_drop.svg" border="0" height="16" width="16"></a></td>
-  </tr> -->
-    </table>
-
+    <td class="no-records" colspan="8">没有找到任何记录</td>
+  </tr>
+  
+<table id="page-table" cellspacing="0">
+<tr>
+  <td>&nbsp;</td>
+  <td align="right" nowrap="true">
+  <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<div id="turn-page">
+  <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
+  页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
+  条记录，总共 <span id="totalRecords">0</span>
+  条记录
+  <span id="page-link">
+    <a href="javascript:listTable.gotoPageFirst()">第一页</a>
+    <a href="javascript:listTable.gotoPagePrev()">上一页</a>
+    <a href="javascript:listTable.gotoPageNext()">下一页</a>
+    <a href="javascript:listTable.gotoPageLast()">最末页</a>
+    <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
+      <option value='1'>1</option>    </select>
+  </span>
 </div>
-<!-- end user ranks list -->
+  </td>
+</tr>
+</table>
+</div>
+<!-- end user_deposit list -->
 </form>
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="Text/Javascript" language="JavaScript">
+
+<script type="text/javascript" language="JavaScript">
+listTable.recordCount = 0;
+listTable.pageCount = 1;
+listTable.filter.user_id = '0';
+listTable.filter.keywords = '';
+listTable.filter.process_type = '-1';
+listTable.filter.payment = '';
+listTable.filter.is_paid = '-1';
+listTable.filter.sort_by = 'add_time';
+listTable.filter.sort_order = 'DESC';
+listTable.filter.start_date = '';
+listTable.filter.end_date = '';
+listTable.filter.record_count = '0';
+listTable.filter.page_size = '15';
+listTable.filter.page = '1';
+listTable.filter.page_count = '1';
+listTable.filter.start = '0';
+
 <!--
-$(document).on('click','.special_rank',function(){
-    var status = $(this).attr('value');
-    var rank_id = $(this).attr('id');
-    var obj = $(this);
-    $.ajax({
-      url:"{:url('user_rank_put')}",
-      data:{status:status,rank_id:rank_id},
-      dataType:"json",
-      success:function(res){
-        if(res.status==1){
-          alert(res.msg);
-          return false;
-        }else{
 
-          if(status==1){
-
-            obj.prop("src","/static/picture/no.svg");
-            obj.attr("value",0)
-          }else{
-
-            obj.prop("src","/static/picture/yes.svg");
-            obj.attr("value",1)
-          }
-        }
-      }
-    })
-  })
-$(document).on('click','.show_price',function(){
-    var status = $(this).attr('value');
-    var rank_id = $(this).attr('id');
-    var obj = $(this);
-    $.ajax({
-      url:"{:url('user_rank_put1')}",
-      data:{status:status,rank_id:rank_id},
-      dataType:"json",
-      success:function(res){
-        if(res.status==1){
-          alert(res.msg);
-          return false;
-        }else{
-
-          if(status==1){
-
-            obj.prop("src","/static/picture/no.svg");
-            obj.attr("value",0)
-          }else{
-
-            obj.prop("src","/static/picture/yes.svg");
-            obj.attr("value",1)
-          }
-        }
-      }
-    })
-  })
 onload = function()
 {
     // 开始检查订单
     startCheckOrder();
 }
-
+/**
+ * 搜索用户
+ */
+function searchUser()
+{
+    listTable.filter['keywords'] = Utils.trim(document.forms['searchForm'].elements['keyword'].value);
+    listTable.filter['process_type'] = document.forms['searchForm'].elements['process_type'].value;
+    listTable.filter['payment'] = Utils.trim(document.forms['searchForm'].elements['payment'].value);
+    listTable.filter['is_paid'] = document.forms['searchForm'].elements['is_paid'].value;
+    listTable.filter['page'] = 1;
+    listTable.loadList();
+}
 //-->
 </script>
+
 <div id="footer">
-共执行 3 个查询，用时 0.018365 秒，Gzip 已禁用，内存占用 1.083 MB<br />
+共执行 5 个查询，用时 0.016352 秒，Gzip 已禁用，内存占用 1.133 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
 <!-- 新订单提示信息 -->
 <div id="popMsg">
