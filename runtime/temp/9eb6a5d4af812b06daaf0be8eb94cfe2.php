@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"E:\ECShop\public/../application/admin\view\goods\comment_manage_list.html";i:1536379459;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"E:\ECShop\public/../application/admin\view\goods\comment_manage_list.html";i:1536733393;}*/ ?>
 <!-- $Id: comment_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -12,7 +12,6 @@
 </head>
 <body>
 <h1>
-    
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;用户评论 </span>
   <div style="clear:both"></div>
 </h1><div class="form-div">
@@ -33,6 +32,8 @@
       <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox">
       <a>编号</a> </th>
     <th><a>用户名</a></th>
+    <th><a>邮箱</a></th>
+    <th><a>评论内容</a></th>
     <th><a>类型</a></th>
     <th><a>评论对象</a></th>
     <th><a>IP地址</a></th>
@@ -40,21 +41,21 @@
     <th>状态</th>
     <th>操作</th>
   </tr>
-    <?php if(is_array($res) || $res instanceof \think\Collection || $res instanceof \think\Paginator): $i = 0; $__LIST__ = $res;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+  <?php foreach ($arr as $key => $v): ?>
   <tr>
     <td><input value="4" name="checkboxes[]" type="checkbox"><?php echo $v['comment_id']; ?></td>
-    <td><?php echo $v['name']; ?></td>
-    <td><?php echo $v['type_name']; ?></td>
-    <td><a href="../goods.php?id=60" target="_blank"><?php echo $v['goods_name']; ?></td>
-    <td>180.169.8.10</td>
-    <td align="center"><?php echo $v['time']; ?></td>
-    <td align="center"><?php echo $v['is_show']; ?></td>
+    <td><?php echo $v['user_name']; ?></td>
+    <td><?php echo $v['email']; ?></td>
+    <td><?php echo $v['reply_content']; ?></td>
+    <td><?php echo $v['comment_type']; ?></td>
+    <td><?php echo $v['id_value']; ?></td>
+    <td><?php echo $v['add_time']; ?></td>
     <td align="center">
-      <a href="comment_manage.php?act=reply&amp;id=4">查看详情</a> |
-      <a href="javascript:" onclick="listTable.remove(4, '您确认要删除这条记录吗?')">移除</a>
+      <a href="<?php echo url('comment_manage_details'); ?>">查看详情</a> |
+      <a href="<?php echo url('comment_manage_del'); ?>?id=<?php echo $v['comment_id']; ?>" onclick="listTable.remove(4, '您确认要删除这条记录吗?')" title="移除">移除</a>
     </td>
   </tr>
-    <?php endforeach; endif; else: echo "" ;endif; ?>
+  <?php endforeach ?>
       </table>
 
   <table cellpadding="4" cellspacing="0">

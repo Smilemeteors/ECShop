@@ -342,7 +342,7 @@ class Goods extends Controller
         if($arr){
             $this->success('添加成功','goods/category_list');
         }else{
-            $this->error('添加失败','goods/cat_add_do');
+            $this->error('添加失败','goods/cat_add');
         }
     }
     //分类展示
@@ -368,17 +368,29 @@ class Goods extends Controller
 
 
     //评论部分
-    //评论添加
-    public function comment_manage_add()
+    //评论详情
+    public function comment_manage_details()
     {
-        return view('comment_manage_add');
+        $arr = Db::table('comment')->select();
+        return view('comment_manage_details',['arr'=>$arr]);
+    }
+    //评论回复
+    public function comment_manage_add(){
+        $data = Request::instance()->post();
+        $arr = Db::table('reply')->insert($data);
+        if($arr){
+            $this->success('回复成功','goods/comment_manage_list');
+        }else{
+            $this->error('回复失败','goods/comment_manage_details');
+        }
     }
     //评论展示
     public function comment_manage_list()
     {
-        $res = $this->goods->comment_show();
-        return view('comment_manage_list',['res'=>$res]);
+        $arr = Db::table('comment_manage')->select();
+        return view('comment_manage_list',['arr'=>$arr]);
     }
+
     //属性展示
     public function attribute_list()
     {
