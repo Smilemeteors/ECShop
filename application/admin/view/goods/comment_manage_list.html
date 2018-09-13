@@ -11,7 +11,6 @@
 </head>
 <body>
 <h1>
-    
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;用户评论 </span>
   <div style="clear:both"></div>
 </h1><div class="form-div">
@@ -32,6 +31,8 @@
       <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox">
       <a>编号</a> </th>
     <th><a>用户名</a></th>
+    <th><a>邮箱</a></th>
+    <th><a>评论内容</a></th>
     <th><a>类型</a></th>
     <th><a>评论对象</a></th>
     <th><a>IP地址</a></th>
@@ -39,21 +40,21 @@
     <th>状态</th>
     <th>操作</th>
   </tr>
-    {volist name='res' id='v'}
+  <?php foreach ($arr as $key => $v): ?>
   <tr>
-    <td><input value="4" name="checkboxes[]" type="checkbox">{$v.comment_id}</td>
-    <td>{$v.name}</td>
-    <td>{$v.type_name}</td>
-    <td><a href="../goods.php?id=60" target="_blank">{$v.goods_name}</td>
-    <td>180.169.8.10</td>
-    <td align="center">{$v.time}</td>
-    <td align="center">{$v.is_show}</td>
+    <td><input value="4" name="checkboxes[]" type="checkbox"><?php echo $v['comment_id']; ?></td>
+    <td><?php echo $v['user_name']; ?></td>
+    <td><?php echo $v['email']; ?></td>
+    <td><?php echo $v['reply_content']; ?></td>
+    <td><?php echo $v['comment_type']; ?></td>
+    <td><?php echo $v['id_value']; ?></td>
+    <td><?php echo $v['add_time']; ?></td>
     <td align="center">
-      <a href="comment_manage.php?act=reply&amp;id=4">查看详情</a> |
-      <a href="javascript:" onclick="listTable.remove(4, '您确认要删除这条记录吗?')">移除</a>
+      <a href="{:url('comment_manage_details')}">查看详情</a> |
+      <a href="{:url('comment_manage_del')}?id=<?php echo $v['comment_id']; ?>" onclick="listTable.remove(4, '您确认要删除这条记录吗?')" title="移除">移除</a>
     </td>
   </tr>
-    {/volist}
+  <?php endforeach ?>
       </table>
 
   <table cellpadding="4" cellspacing="0">
