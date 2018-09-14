@@ -10,9 +10,10 @@ class Quanxi extends Controller
 	}
 	public function agency()
 	{
-		$data = Db('agency')->select();
-		// var_dump($data);
+		$data = Db('agency')->paginate(2);
+		$page = $data->render();
 		$this->assign('list',$data);
+		$this->assign('page',$page);
 		return view('agency');
 	}
 	public function agency_del()
@@ -129,7 +130,7 @@ class Quanxi extends Controller
 			$data = [		//接受传递的参数
 				'admin_name' => input('user_name'),
 				'admin_email' => input('email'),
-				'admin_pwd' => md5(input('password')),
+				'admin_pwd' => md5(input('new_password')),
 				// 'date_time'=> date("Y-m-d H:i:s",time()),
 			];
 			
@@ -202,9 +203,10 @@ class Quanxi extends Controller
 	}
 	public function suppliers()
 	{
-		$data =Db('suppliers')->select();
-		// var_dump($data);die;
+		$data =Db('suppliers')->paginate(2);
+		$page = $data->render();
 		$this->assign('list', $data);
+		$this->assign('page',$page);
 		return view('suppliers');
 	}
 	public function suppliers_add()
