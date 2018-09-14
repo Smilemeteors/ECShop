@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\index\index_menu.html";i:1536910175;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\index\index_menu.html";i:1536915157;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -93,7 +93,6 @@
             <li id="sub-menu-03_users_list" class="menu-item" onclick="showact(this, event)"><a href="admin/member/users" target="main-frame">会员列表</a></li>
             <li id="sub-menu-04_users_add" class="menu-item" onclick="showact(this, event)"><a href="admin/member/user_add" target="main-frame">添加会员</a></li>
             <li id="sub-menu-05_user_rank_list" class="menu-item" onclick="showact(this, event)"><a href="admin/member/user_rank" target="main-frame">会员等级</a></li>
-            <li id="sub-menu-06_list_integrate" class="menu-item" onclick="showact(this, event)"><a href="admin/member/integrate" target="main-frame">会员整合</a></li>
             <li id="sub-menu-08_unreply_msg" class="menu-item" onclick="showact(this, event)"><a href="admin/member/user_msg" target="main-frame">会员留言</a></li>
             <li id="sub-menu-09_user_account" class="menu-item" onclick="showact(this, event)"><a href="admin/member/user_account" target="main-frame">充值和提现申请</a></li>
             <li id="sub-menu-10_user_account_manage" class="menu-item" onclick="showact(this, event)"><a href="admin/member/user_account_manage" target="main-frame">资金管理</a></li>
