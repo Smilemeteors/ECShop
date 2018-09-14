@@ -1,6 +1,5 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:64:"E:\ECShop\public/../application/admin\view\goods\goods_list.html";i:1536626420;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:64:"E:\ECShop\public/../application/admin\view\goods\goods_list.html";i:1536827095;}*/ ?>
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <base href="/" />
@@ -9,16 +8,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="static/css/general.css" rel="stylesheet" type="text/css" />
 <link href="static/css/main.css" rel="stylesheet" type="text/css" />
-<style>
-*{margin:0;padding:0;}
-th{text-align:center;}
-</style>
 </head>
-<script src="static/color.js"></script>
-<body id="div_c" onload="changeColor()">
+<body>
 <div>
 <h1>
-      <a href="admin/goods/goods_add" class="btn btn-right btn-add-goods">添加新商品</a>
+    <a href="admin/goods/goods_add" class="btn btn-right btn-add-goods">添加新商品</a>
   <a class="btn btn-right" href="http://yunqi.shopex.cn/products/huodiantong" target="_blank">快速录入商品</a>
   
     <span class="action-span1"><a href="/admin"><b>ECSHOP 管理中心</b></a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;商品列表 </span>
