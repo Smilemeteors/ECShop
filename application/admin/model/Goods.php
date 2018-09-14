@@ -27,12 +27,28 @@ class Goods extends Model
         $result=Db::query("SELECT *,CONCAT($path,'-',$id) as new FROM classify ORDER BY new");
         return $result;
     }
+    public function getCatList($cat_id)
+    {
+        return Db::table('classify')->where("cat_id=$cat_id")->select();
+    }
+    public function cat()
+    {
+        return Db::table('classify')->select();
+    }
 	//分类
-	public function goods_Show()
+	public function goods_Show($keyword,$pages)
 	{
-		return $res = Db::name('goods')->where('is_delete',1)->paginate(5);
+		// return $res = Db::name('goods')->where('is_delete',1)->paginate(5);
+		$pageParam['query']['keyword'] = $keyword;
+        return $res= Db::name('goods')->where('is_delete',1)->where('goods_name','like','%'.$keyword.'%')->order('sort_order order')->paginate($pages,false,$pageParam);
 	}
 
+	//品牌
+	public function getBrandList()
+	{
+        return Db::table('brand')->select();
+	}
+	//品牌搜索+分页
 	public function brand_show($find,$pages){
 		$pageParam['query']['find'] = $find;
         return $res= Db::name('brand')->where('brand_name','like','%'.$find.'%')->order('sort_order order')->paginate($pages,false,$pageParam);

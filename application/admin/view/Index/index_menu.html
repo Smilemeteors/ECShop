@@ -92,7 +92,6 @@
             <li id="sub-menu-03_users_list" class="menu-item" onclick="showact(this, event)"><a href="admin/member/users" target="main-frame">会员列表</a></li>
             <li id="sub-menu-04_users_add" class="menu-item" onclick="showact(this, event)"><a href="admin/member/user_add" target="main-frame">添加会员</a></li>
             <li id="sub-menu-05_user_rank_list" class="menu-item" onclick="showact(this, event)"><a href="admin/member/user_rank" target="main-frame">会员等级</a></li>
-            <li id="sub-menu-06_list_integrate" class="menu-item" onclick="showact(this, event)"><a href="admin/member/integrate" target="main-frame">会员整合</a></li>
             <li id="sub-menu-08_unreply_msg" class="menu-item" onclick="showact(this, event)"><a href="admin/member/user_msg" target="main-frame">会员留言</a></li>
             <li id="sub-menu-09_user_account" class="menu-item" onclick="showact(this, event)"><a href="admin/member/user_account" target="main-frame">充值和提现申请</a></li>
             <li id="sub-menu-10_user_account_manage" class="menu-item" onclick="showact(this, event)"><a href="admin/member/user_account_manage" target="main-frame">资金管理</a></li>
@@ -111,6 +110,7 @@
                         </ul>
           </div>
                   </li>
+<<<<<<< HEAD
           <li key="11_system" class="icon-system" data-url="admin/system/accuse_list" data-key="01_shop_config" name="menu" onclick="showsub(this)">
               投诉中心                    <div class="submenu">
               <div class="title">投诉中心</div>
@@ -119,6 +119,26 @@
               </ul>
           </div>
           </li>
+=======
+                          <li key="11_system" class="icon-system" data-url="shop_config.php?act=list_edit" data-key="01_shop_config" name="menu" onclick="showsub(this)">
+          系统设置                    <div class="submenu">
+            <div class="title">系统设置</div>
+            <ul>
+            <li id="sub-menu-01_shop_config" class="menu-item" onclick="showact(this, event)"><a href="shop_config.php?act=list_edit"target="main-frame">商店设置</a></li>
+            <li id="sub-menu-021_reg_fields" class="menu-item" onclick="showact(this, event)"><a href="reg_fields.php?act=list" target="main-frame">会员注册项设置</a></li>
+            <li id="sub-menu-02_payment_list" class="menu-item" onclick="showact(this, event)"><a href="payment.php?act=list" target="main-frame">支付方式</a></li>
+            <li id="sub-menu-03_shipping_list" class="menu-item" onclick="showact(this, event)"><a href="shipping.php?act=list" target="main-frame">配送方式</a></li>
+            <li id="sub-menu-04_mail_settings" class="menu-item" onclick="showact(this, event)"><a href="shop_config.php?act=mail_settings" target="main-frame">邮件服务器设置</a></li>
+            <li id="sub-menu-05_area_list" class="menu-item" onclick="showact(this, event)"><a href="area_manage.php?act=list" target="main-frame">地区列表</a></li>
+            <li id="sub-menu-07_cron_schcron" class="menu-item" onclick="showact(this, event)"><a href="cron.php?act=list" target="main-frame">计划任务</a></li>
+            <li id="sub-menu-08_friendlink_list" class="menu-item" onclick="showact(this, event)"><a href="friend_link.php?act=list" target="main-frame">友情链接</a></li>
+            <li id="sub-menu-captcha_manage" class="menu-item" onclick="showact(this, event)"><a href="captcha_manage.php?act=main" target="main-frame">验证码管理</a></li>
+            <li id="sub-menu-check_file_priv" class="menu-item" onclick="showact(this, event)"><a href="check_file_priv.php?act=check" target="main-frame">文件权限检测</a></li>
+            <li id="sub-menu-file_check" class="menu-item" onclick="showact(this, event)"><a href="filecheck.php" target="main-frame">文件校验</a></li>
+            <li id="sub-menu-navigator" class="menu-item" onclick="showact(this, event)"><a href="navigator.php?act=list" target="main-frame">自定义导航栏</a></li>
+            <li id="sub-menu-sitemap" class="menu-item" onclick="showact(this, event)"><a href="sitemap.php" target="main-frame">站点地图</a></li>
+                        </ul>
+>>>>>>> 078a7cd9446889f1673fe4098c2caf032628735b
           </div>
                   </li>
                         </ul>

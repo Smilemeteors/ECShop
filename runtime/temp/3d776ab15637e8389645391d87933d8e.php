@@ -1,8 +1,4 @@
-<<<<<<< HEAD:runtime/temp/9eb6a5d4af812b06daaf0be8eb94cfe2.php
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"E:\ECShop\public/../application/admin\view\goods\comment_manage_list.html";i:1536733393;}*/ ?>
-=======
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:86:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\comment_manage_list.html";i:1536376635;}*/ ?>
->>>>>>> c10b69432aca3b1286e3988fee61601bcd5a8f99:runtime/temp/3d776ab15637e8389645391d87933d8e.php
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:86:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\comment_manage_list.html";i:1536889320;}*/ ?>
 <!-- $Id: comment_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

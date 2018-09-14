@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:70:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\logo\logo.html";i:1536672903;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:70:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\logo\logo.html";i:1536889320;}*/ ?>
 ﻿<!-- $Id: ads_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -83,22 +83,23 @@ var empty_position_style = "广告位的模版不能为空!";
 <div class="list-div" id="listDiv">
 
 <table cellpadding="3" cellspacing="1">
-  <tr>
-    <th><a href="javascript:listTable.sort('ad_name'); ">广告名称</a><img src="static/picture/sort_desc.png"/></th>
-    <th><a href="javascript:listTable.sort('position_id'); ">广告位置</a></th>
-    <th><a href="javascript:listTable.sort('media_type'); ">媒介类型</a></th>
-    <th><a href="javascript:listTable.sort('start_date'); ">开始日期</a></th>
-    <th><a href="javascript:listTable.sort('end_date'); ">结束日期</a></th>
-    <th><a href="javascript:listTable.sort('link_man'); ">广告联系人</a></th>
-    <th><a href="javascript:listTable.sort('link_man'); ">联系人Email</a></th>
-    <th><a href="javascript:listTable.sort('link_man'); ">联系电话</a></th>
-    <th>操作</th>
+  <tr> 
+    <th><center><a href="javascript:listTable.sort('ad_name'); ">广告名称</a><img src="static/picture/sort_desc.png"/></center></th>
+    <th><center><a href="javascript:listTable.sort('position_name'); ">广告位置</a></center></th>
+    <th><center><a href="javascript:listTable.sort('media_type'); ">媒介类型</a></center></th>
+    <th><center><a href="javascript:listTable.sort('start_date'); ">开始日期</a></center></th>
+    <th><center><a href="javascript:listTable.sort('end_date'); ">结束日期</a></center></th>
+    <th><center><a href="javascript:listTable.sort('link_man'); ">广告联系人</a></center></th>
+    <th><center><a href="javascript:listTable.sort('link_man'); ">联系人Email</a></center></th>
+    <th><center><a href="javascript:listTable.sort('link_man'); ">联系电话</a></center></th>
+    <th><center>操作</center></th>
+
   <?php foreach ($arr as $key => $val) { ?>
   <tr>
     <td class="first-cell">
     <span onclick="javascript:listTable.edit(this, 'edit_ad_name', 7)"><?php echo $val['ad_name'] ?></span>
     </td>
-    <td align="left"><span><?php echo $val['position_id'] ?></span>
+    <td align="left"><span><?php echo $val['position_name'] ?></span>
     </td>
     <td align="left"><span><?php echo $val['media_type'] ?></span></td>
     <td align="center"><span><?php echo $val['start_time'] ?></span></td>
@@ -112,6 +113,7 @@ var empty_position_style = "广告位的模版不能为空!";
     </td>
   </tr>
   <?php } ?>
+
   <!-- <tr><td class="no-records" colspan="10">您还没有添加广告</td></tr> -->
   <tr>
     <td align="right" nowrap="true" colspan="10"><!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->

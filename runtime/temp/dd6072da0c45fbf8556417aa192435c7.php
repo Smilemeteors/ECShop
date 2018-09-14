@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\member\users.html";i:1536736832;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\member\users.html";i:1536819264;}*/ ?>
 ﻿<!-- $Id: users_list.htm 17053 2010-03-15 06:50:26Z sxc_shop $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -8,7 +8,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="/static/css/general.css" rel="stylesheet" type="text/css" />
 <link href="/static/css/main.css" rel="stylesheet" type="text/css" />
-
+<style>
+/*分页*/
+.pagination {}
+.pagination li {display: inline-block;margin-right: -1px;padding: 5px;border: 1px solid #e2e2e2;min-width: 20px;text-align: center;}
+.pagination li.active {background: #009688;color: #fff;border: 1px solid #009688;}
+.pagination li a {display: block;text-align: center;}
+</style>
 </head>
 <body>
 <!--云起激活系统面板-->
@@ -78,11 +84,25 @@
         <td><input type="checkbox" name="checkboxes[]" value="<?=$v['user_id']?>" notice="0"/><?=$v['user_id']?></td>
         <td class="first-cell"><?=$v['user_name']?></td>
         <td><span onclick="listTable.edit(this, 'edit_email', <?=$v['user_id']?>)"><?=$v['email']?></span></td>
-        <td align="center"> <img src="/static/picture/no.svg" width="20"> </td>
-        <td>0.00</td>
-        <td>0.00</td>
-        <td>0</td>
-        <td>0</td>
+        
+
+          <?php if(in_array(($v['is_validated']), explode(',',"1"))): ?>
+          <td align="center">
+            <img src="/static/picture/yes.svg" class="is_validated" id="<?php echo $v['user_id']; ?>"  value='<?php echo $v['is_validated']; ?>' width="20"/>
+          </td>
+          <td><?=$v['user_money']?></td>
+          <td><?=$v['frozen_money']?></td>
+          <td><?=$v['pay_points']?></td>
+          <td><?=$v['rank_points']?></td>
+          <?php else: ?>
+          <td align="center">
+            <img src="/static/picture/no.svg" class="is_validated" id="<?php echo $v['user_id']; ?>"  value='<?php echo $v['is_validated']; ?>' width="20"/>
+          </td>
+          <td>0.00</td>
+          <td>0.00</td>
+          <td>0</td>
+          <td>0</td>
+          <?php endif; ?>                
         <td align="center"><?=$v['reg_time'];?></td>
         <td align="center">
           <a href="<?php echo url('users_edit'); ?>?id=<?=$v['user_id']?>" title="编辑">编辑</a>
@@ -117,7 +137,7 @@
       <!-- <input type="submit" id="btnSubmit" value="删除会员" disabled="true" class="button" /></td> -->
       <td align="right" nowrap="true" colspan="8">
       <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-<div id="turn-page">
+<!-- <div id="turn-page">
   <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
   页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
   条记录，总共 <span id="totalRecords">2</span>
@@ -130,7 +150,10 @@
     <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
       <option value='1'>1</option>    </select>
   </span>
-</div>
+</div> -->
+      <div class="pagination">
+        <?php echo $page; ?>
+      </div>
       </td>
   </tr>
 </table>
@@ -138,8 +161,37 @@
 </div>
 <!-- end users list -->
 </form>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" language="JavaScript">
 <!--
+$(document).on('click','.is_validated',function(){
+    var status = $(this).attr('value');
+    var user_id = $(this).attr('id');
+    var obj = $(this);
+    $.ajax({
+      url:"<?php echo url('user_put'); ?>",
+      data:{status:status,user_id:user_id},
+      dataType:"json",
+      success:function(res){
+        if(res.status==1){
+          alert(res.msg);
+          return false;
+        }else{
+
+          if(status==1){
+
+            obj.prop("src","/static/picture/no.svg");
+            obj.attr("value",0)
+          }else{
+
+            obj.prop("src","/static/picture/yes.svg");
+            obj.attr("value",1)
+          }
+        }
+      }
+    })
+  })
+
 listTable.recordCount = 2;
 listTable.pageCount = 1;
 

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\logo\position.html";i:1536672903;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\logo\position.html";i:1536889320;}*/ ?>
 ﻿<!-- $Id: ad_position_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -25,11 +25,11 @@
 
 <table cellpadding="3" cellspacing="1">
   <tr>
-    <th>广告位名称</th>
-    <th>位置宽度</th>
-    <th>位置高度</th>
-    <th>广告位描述</th>
-    <th>操作</th>
+    <th><center>广告位名称</center></th>
+    <th><center>位置宽度</center></th>
+    <th><center>位置高度</center></th>
+    <th><center>广告位描述</center></th>
+    <th><center>操作</center></th>
   </tr>
   <?php foreach ($re as $key => $val) { ?>
   <tr>

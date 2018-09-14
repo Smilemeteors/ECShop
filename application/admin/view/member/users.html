@@ -52,9 +52,15 @@
 <div class="form-div">
   <form action="javascript:searchUser()" name="searchForm">
     <!-- <img src="/static/picture/icon_search.gif" width="26" height="22" border="0" alt="SEARCH" /> -->
-    &nbsp;会员等级 <select name="user_rank"><option value="0">所有等级</option><option value="1">注册用户</option><option value="3">代销用户</option><option value="2">vip</option></select>
+    &nbsp;会员等级 <select name="user_rank">
+    <option value="0">所有等级</option>
+    <?php foreach ($to as $key => $va){ ?>          
+    <option value="<?=$va['rank_id']?>" id="<?=$va['rank_id']?>"><?=$va['rank_name']?></option>
+    <?php } ?>
+   </select>
     &nbsp;会员积分大于&nbsp;<input type="text" name="pay_points_gt" size="8" />&nbsp;会员积分小于&nbsp;<input type="text" name="pay_points_lt" size="10" />
-    &nbsp;会员名称 &nbsp;<input type="text" name="keyword" /> <input type="submit" class="button" value=" 搜索 ">
+    &nbsp;会员名称 &nbsp;<input type="text" name="keyword" /> 
+    <input type="submit" class="button" value=" 搜索 ">
   </form>
 </div>
 
@@ -80,7 +86,7 @@
   <tr>
     <?php foreach ($list as $key => $v) { ?>
       <tr>
-        <td><input type="checkbox" name="checkboxes[]" value="<?=$v['user_id']?>" notice="0"/><?=$v['user_id']?></td>
+        <td><input type="checkbox" name="checkboxes[]" value="1" notice="0"/><?=$v['user_id']?></td>
         <td class="first-cell"><?=$v['user_name']?></td>
         <td><span onclick="listTable.edit(this, 'edit_email', <?=$v['user_id']?>)"><?=$v['email']?></span></td>
         
@@ -131,25 +137,12 @@
     </td>
   </tr> -->
     <tr>
-      <td colspan="2">
+      <td colspan="3">
       <input type="hidden" name="act" value="batch_remove" />
       <!-- <input type="submit" id="btnSubmit" value="删除会员" disabled="true" class="button" /></td> -->
       <td align="right" nowrap="true" colspan="8">
       <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-<!-- <div id="turn-page">
-  <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
-  页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
-  条记录，总共 <span id="totalRecords">2</span>
-  条记录
-  <span id="page-link">
-    <a href="javascript:listTable.gotoPageFirst()">第一页</a>
-    <a href="javascript:listTable.gotoPagePrev()">上一页</a>
-    <a href="javascript:listTable.gotoPageNext()">下一页</a>
-    <a href="javascript:listTable.gotoPageLast()">最末页</a>
-    <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
-      <option value='1'>1</option>    </select>
-  </span>
-</div> -->
+
       <div class="pagination">
         {$page}
       </div>
@@ -190,7 +183,10 @@ $(document).on('click','.is_validated',function(){
       }
     })
   })
-
+// $(document).on('click',".button",function(){
+//     var user_id = $(this).attr('.{$va.rank_id}');
+//     alert(user_id)
+// })
 listTable.recordCount = 2;
 listTable.pageCount = 1;
 

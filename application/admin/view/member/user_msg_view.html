@@ -82,20 +82,35 @@ var no_title = "主题不能为空";
 <div class="mask-black" id="CMask"></div>
 <!--遮罩-->
 <h1>
-      <a class="btn btn-right" href="user_msg.php?act=list_all">会员留言</a>
+      <a class="btn btn-right" href="{:url('user_msg')}">会员留言</a>
   
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;回复 </span>
   <div style="clear:both"></div>
 </h1><div class="main-div">
   <table width="98%">
+  <?php foreach ($list as $key => $v) { ?>
     <tr>
       <td style="padding: 0px 20px">
-        <h3>三星SGH-F258什么时候到</h3>
+        <h3><?=$v['msg_title']?></h3>
         <hr size="1" />
-        <div>三星SGH-F258什么时候有货</div>
+        <div><?=$v['msg_content']?></div>
                 <div align="right"  nowrap="nowrap">【 留言板 】<a href="mailto:ecshop@ecshop.com">ecshop</a> @ 2009-05-12 13:46:37</div>
       </td>
     </tr>
+  
+
+    <div class="main-div">
+      <table width="98%">
+        <tr>
+          <td style="padding: 0px 20px">
+            <h3><?=$v['user_name']?> 于 <?=$v['msg_time']?> 回复:</h3>
+            <hr size="1" />
+            <div><?=$v['msg_content']?></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+<?php } ?>
     <tr>
       <td align="center">
                 <input type="button" onclick="location.href='user_msg.php?act=check&check=forbid&id=1'" value="禁止显示" class="button" />
@@ -107,7 +122,7 @@ var no_title = "主题不能为空";
 
 
 <div class="main-div">
-<form method="post" action="user_msg.php?act=action" name="theForm"  onsubmit="return validate()">
+<form method="post" action="" name="theForm"  onsubmit="return validate()">
 <table border="0" width="98%">
   <tr>
     <td>email:</td>
@@ -186,9 +201,9 @@ onload = function()
 <embed src="static/flash/online.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
 -->
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0" id="msgBeep" width="1" height="1">
-  <param name="movie" value="images/online.swf">
+  <param name="movie" value="/static/images/online.swf">
   <param name="quality" value="high">
-  <embed src="images/online.swf" name="msgBeep" id="msgBeep" quality="high" width="0" height="0" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?p1_prod_version=shockwaveflash">
+  <embed src="/static/simages/online.swf" name="msgBeep" id="msgBeep" quality="high" width="0" height="0" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?p1_prod_version=shockwaveflash">
   </embed>
 </object>
 

@@ -13,15 +13,46 @@ class Goods extends Controller
         $this->goods = model('Goods');
     }
     //商品添加
+<<<<<<< HEAD
 
+=======
+    //
+    //
+    public function goods_add()
+    {
+        $brand = $this->goods->getBrandList();
+        $cate = $this->goods->getPathList("cat_id");
+        return view('goods_add',['cate'=>$cate,'brand'=>$brand]);
+    }
+    public function goods_add_do()
+    {
+        $parent_id = input('get.parent_id');
+        $cat_name = input('get.cat_name');
+        $brand_name = input('get.brand_name');
+        $data = Request::instance()->post();
+        // print_r($data);die;
+        $arr = Db::name('goods')->insert($data);
+        if($arr){
+            $this->success('添加成功','goods/goods_list');
+        }else{
+            $this->error('添加失败','goods/goods_add');
+        }
+
+    }
+    //
+    //
+>>>>>>> 078a7cd9446889f1673fe4098c2caf032628735b
     //商品添加
-
 
     //商品列表
     public function goods_list()
     {
-        $res = $this->goods->goods_Show();
+        $pages = 5;
+        $keyword = input('post.keyword');
+        $res = $this->goods->goods_Show($keyword,$pages);
         return view('goods_list',['res'=>$res]);
+        // $res = $this->goods->goods_Show();
+        // return view('goods_list',['res'=>$res]);
     }
     //商品列表的回收站
     public function trash_do()
@@ -207,10 +238,7 @@ class Goods extends Controller
     // 
     // 
     // 
-    public function goods_add()
-    {
-        return view('goods_add');
-    }
+
     
     //品牌部分
     public function brand_list(){
@@ -318,7 +346,43 @@ class Goods extends Controller
         $arr = Db::table('goods_type')->select();
         return view('goods_type_manage',['arr'=>$arr]);
     }
-
+    public function type_change_name()
+    {
+        $id = input('get.id');
+        $type_name = input('get.type_name');
+        $res = Db("goods_type")->where("type_id",$id)->update(["type_name"=>$type_name]);
+        if(empty($res)){
+            $arr['status'] = 0;
+            $arr['data'] = '';
+            $arr['msg'] = '成功';
+        }else{
+            $arr['status'] = 1;
+            $arr['data'] = '';
+            $arr['msg'] = '失败';
+        }
+        echo json_encode($arr);
+    }
+    public function type_change_status()
+    {
+        $type_id = input('get.type_id');
+        $status = input('get.status');
+        if($status==1){
+            $res = Db("goods_type")->where("type_id",$type_id)->update(["status"=>'0']);
+        }else{
+            $res = Db("goods_type")->where("type_id",$type_id)->update(["status"=>'1']);
+        }
+        
+        if($res){
+            $arr['status'] = 0;
+            $arr['data'] = '';
+            $arr['msg'] = '成功';
+        }else{
+            $arr['status'] = 1;
+            $arr['data'] = '';
+            $arr['msg'] = '失败';
+        }
+        echo json_encode($arr);
+    }
     public function goods_type_add()
     {
         return view('goods_type_add');
@@ -369,6 +433,7 @@ class Goods extends Controller
     }
 
     //分类
+<<<<<<< HEAD
     //分类添加
     //
 //    public function category_add()
@@ -385,6 +450,11 @@ class Goods extends Controller
             $this->error('添加失败', 'goods/cat_add');
         }
     }
+=======
+    //
+    //分类添加
+    //
+>>>>>>> 078a7cd9446889f1673fe4098c2caf032628735b
     //添加商品分类
     public function category_add(){
             if(request()->isPost()){
@@ -394,6 +464,8 @@ class Goods extends Controller
                 $data['is_nav'] = input('post.is_nav');
                 $data['cat_desc'] = input('post.cat_desc');
                 $data['path'] = input('post.path');
+                $data['sort'] = input('post.sort');
+                $data['measure_unit'] = input('post.measure_unit');
                 $re = $this->goods->addData($data);
                 if($re){
                     $this->redirect('goods/category_list');
@@ -405,6 +477,7 @@ class Goods extends Controller
                 return $this->fetch('category_add',['cate'=>$cate]);
             }
         }
+
         public function cate_del(){
             $cat_id=input("get.id");
             //查询是否有子集
@@ -427,8 +500,9 @@ class Goods extends Controller
     //分类展示
     public function category_list(){
         $arr =$this->goods->shows();
-//        var_dump($arr);die;
-        return $this->fetch('category_list',['arr' => $arr]);
+//        var_dump($arr);die; 
+        $cate=$this->goods->getPathList("cat_id");
+        return $this->fetch('category_list',['arr' => $arr,'arr'=>$cate]);
     }
     //分类即点即改
     public function category_shows(){
@@ -473,13 +547,27 @@ class Goods extends Controller
     }
     //转移商品
     public function category_move(){
-        return view('category_move');
+        $cat_id = input('get.id');
+        $cate = $this->goods->getCatList($cat_id);
+        $list = $this->goods->cat();
+        return view('category_move',['cate'=>$cate,'list'=>$list]);
+    }
+    public function category_move_do(){
+        $data = Request::instance()->post();
+        $cat_id = input('post.cat_id');
+        $this->success('功能维护中','goods/category_list');
+        // $arr = Db::table('classify')->where('cat_id',$cat_id)->update($data);
+        // if($arr){
+        //     $this->success('修改成功','goods/category_list');
+        // }else{
+        //     $this->error('修改失败','goods/category_list');
+        // }
     }
     //编辑商品分类
     public function category_edit(){
-            $id=$_GET['id'];
-            $arr = $this->goods->find($id);
-            return $this->fetch('category_edit',['arr' => $arr]);
+        $id=$_GET['id'];
+        $arr = $this->goods->find($id);
+        return $this->fetch('category_edit',['arr' => $arr]);
     }
 
     //商品分类删除
@@ -515,6 +603,7 @@ class Goods extends Controller
     //评论展示
     public function comment_manage_list()
     {
+        $type_id = input('get.type_id');
         $arr = Db::table('comment_manage')->select();
         return view('comment_manage_list',['arr'=>$arr]);
     }
@@ -523,11 +612,21 @@ class Goods extends Controller
     public function attribute_list()
     {
         $res = Db::table('goods_type')->select();
-        $arr = Db::table('attribute')->select();
+        $arrs = Db::table('attribute')->paginate(3);
+        return view('attribute_list',['arr'=>$arrs,'res'=>$res]);
+    }
+    public function attribute_list_do()
+    {
+        $type_id = input('get.id');
+        // print_r($type_id);die;name('comment')->paginate(5)
+        $res = Db::table('goods_type')->select();
+        $arr = Db::table('attribute')->where("type_id=$type_id")->paginate();
         return view('attribute_list',['arr'=>$arr,'res'=>$res]);
     }
+
     public function attribute_add(){
-        return view('attribute_add');
+        $res = Db::table('goods_type')->select();
+        return view('attribute_add',['res'=>$res]);
     }
     public function attribute_add_do(){
         $data = Request::instance()->post();

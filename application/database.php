@@ -15,7 +15,10 @@ return [
     // 服务器地址
     'hostname'        => '127.0.0.1',
     // 数据库名
+<<<<<<< HEAD
     'database'        => 'ecshop1',
+=======
+>>>>>>> 078a7cd9446889f1673fe4098c2caf032628735b
     'database'        => 'ecshop',
     // 用户名
     'username'        => 'root',

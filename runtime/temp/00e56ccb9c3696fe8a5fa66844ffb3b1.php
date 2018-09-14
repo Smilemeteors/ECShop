@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_type_manage.html";i:1536738709;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_type_manage.html";i:1536889320;}*/ ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head><base href="/" />
 <title>ECSHOP 管理中心 - 商品类型 </title>
@@ -27,7 +27,7 @@
   </tr>
      <?php foreach ($arr as $key => $v): ?>
     <tr>
-    <td class="first-cell"><span onclick="javascript:listTable.edit(this, 'edit_type_name', 1)"><?php echo $v['type_name']; ?></span></td>
+    <td class="first-cell" id="<?php echo $v['type_id'];?>"><span class='type_name'><?php echo $v['type_name']; ?></span></td>
     <td><?php echo $v['attr_group']; ?></td>
     <td align="right"><?php echo $v['enabled']; ?></td>
     <td align="center">
@@ -69,3 +69,57 @@
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
 </body>
 </html>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+ $(document).on('click','.type_name',function(){
+  var type_name = $(this).text();
+  var obj = $(this);
+  var input = $("<span class='type_name'><input class='name' type='text' value='"+type_name+"' /></span>");
+  obj.html(input);
+  input.click(function(){return false;});
+  input.trigger("ocus");
+})
+ $(document).on('blur','.type_name',function(){  
+  var type_name = $('.name').val();
+  var id = $(this).parents('td').attr('id');
+  var obj = $(this);
+  $.ajax({
+    url:"<?php echo url('goods/type_change_name'); ?>",
+    data:{type_name:type_name,id:id},
+    dataType:"json",
+    success:function(res){
+      if (status==0) {
+      var input = $("<span class='type_name'>"+type_name+"</span>");
+      obj.html(input);    
+    }}
+  })
+})
+ $(document).on('click','.status',function(){
+    var status = $(this).attr('value');
+    var type_id = $(this).attr('id');
+    var obj = $(this);
+    $.ajax({
+      url:"<?php echo url('goods/type_change_status'); ?>",
+      data:{status:status,type_id:type_id},
+      dataType:"json",
+      success:function(res){
+        if(res.status==1){
+
+          alert(res.msg);
+          return false;
+        }else{
+
+          if(status==1){
+
+            obj.prop("src","static/picture/no.svg");
+            obj.attr("value",0)
+          }else{
+
+            obj.prop("src","static/picture/yes.svg");
+            obj.attr("value",1)
+          }
+        }
+      }
+    })
+  })
+</script>

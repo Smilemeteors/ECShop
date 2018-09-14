@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_add.html";i:1536812124;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_add.html";i:1536906487;}*/ ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <base href="/" />
@@ -72,7 +72,7 @@ var cancel_color = "无样式";
 </script>
 <body>
 <h1>
-      <a class="btn btn-right" href="goods.php?act=list">商品列表</a>
+      <a class="btn btn-right" href="<?php echo url('goods/good_list'); ?>">商品列表</a>
   
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;添加新商品 </span>
   <div style="clear:both"></div>
@@ -98,7 +98,7 @@ var cancel_color = "无样式";
 
     <!-- tab body -->
     <div id="tabbody-div">
-      <form enctype="multipart/form-data" action="" method="post" name="theForm" >
+      <form action="<?php echo url('goods_add_do'); ?>" method="post" name="theForm" >
         <!-- 鏈€澶ф枃浠堕檺鍒 -->
         <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
         <!-- 閫氱敤淇℃伅 -->
@@ -119,14 +119,22 @@ var cancel_color = "无样式";
           </tr>
           <tr>
             <td class="label">商品分类：</td>
-            <td><select name="cat_id" onchange="hideCatDiv()"><option value="0">请选择...</option><option value="26" >家用电器</option><option value="27" >&nbsp;&nbsp;&nbsp;&nbsp;大家电</option><option value="30" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;家电配件</option><option value="31" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;洗衣机</option><option value="28" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;平板电脑</option><option value="32" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;冰箱</option><option value="29" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;家用空调</option><option value="25" >数码时尚</option><option value="18" >智能硬件</option><option value="22" >移动电源</option><option value="12" >充值卡</option><option value="1" >手机类型</option><option value="4" >&nbsp;&nbsp;&nbsp;&nbsp;3G手机</option><option value="3" >&nbsp;&nbsp;&nbsp;&nbsp;小型手机</option><option value="6" >手机</option><option value="8" >&nbsp;&nbsp;&nbsp;&nbsp;耳机</option><option value="9" >&nbsp;&nbsp;&nbsp;&nbsp;电池</option><option value="19" >配件</option><option value="24" selected='ture'>&nbsp;&nbsp;&nbsp;&nbsp;数码时尚</option><option value="20" >&nbsp;&nbsp;&nbsp;&nbsp;保护壳</option><option value="16" >服装</option></select>
-                            <button type="button" class="btn btn-def " onclick="rapidCatAdd()">添加分类</button>
-              <span id="category_add" style="display:none;">
-              <input type="text" class="text" size="10" name="addedCategoryName" />
-               <button type="button" class="btn btn-def " onclick="addCategory()" title=" 确定 "> 确定 </button>
-               <button type="button" class="btn btn-def " onclick="return goCatPage()" title="分类管理">分类管理</button>
-               <button type="button" class="btn btn-def " onclick="hideCatDiv()" title="隐藏"><<</button>
-               </span>
+            <td>
+  <select name="cat_id" onchange="hideCatDiv()" id="select_cat">
+        <option value="0" class='cat_none'>顶级分类</option>
+        <?php foreach($cate as $v): ?>
+        <option value="<?php echo $v['parent_id']; ?>" id="op" path="<?php echo $v['path']; ?>">
+        <?php echo str_repeat("&nbsp;&nbsp;&nbsp;├",substr_count($v['new'],"-")-1) ?><?php echo $v['cat_name']; ?>
+        </option>
+        <?php endforeach; ?>
+    </select>
+  <button type="button" class="btn btn-def " onclick="rapidCatAdd()">添加分类</button>
+    <span id="category_add" style="display:none;">
+    <input type="text" class="cat_text" size="10" name="addedCategoryName" />
+     <button type="button" class="btn btn-def " id="addCategory" title=" 确定 "> 确定 </button>
+     <button type="button" class="btn btn-def " onclick="return goCatPage()" title="分类管理">分类管理</button>
+     <button type="button" class="btn btn-def " onclick="hideCatDiv()" title="隐藏"><<</button>
+     </span>
                               <span class="require-field">*</span>            </td>
           </tr>
           <tr>
@@ -137,7 +145,13 @@ var cancel_color = "无样式";
           </tr>
           <tr>
             <td class="label">商品品牌：</td>
-            <td><select name="brand_id" onchange="hideBrandDiv()" ><option value="0">请选择...<option value="4">飞利浦</option><option value="5">夏新</option><option value="15" selected>仓品</option></select>
+            <td>
+            <select name="brand_id" onchange="hideBrandDiv()" id="select_brand" >
+            <option value="0" selected>请选择...</option>
+        <?php foreach($brand as $v): ?>
+            <option value="<?php echo $v['brand_id']; ?>" id="op"><?php echo $v['brand_name']; ?></option>
+        <?php endforeach; ?>
+            </select>
                             <button type="button" class="btn btn-def " onclick="rapidBrandAdd()">添加品牌</button>
               <span id="brand_add" style="display:none;">
               <input type="text" class="text" size="15" name="addedBrandName" />
@@ -169,55 +183,15 @@ var cancel_color = "无样式";
                             vip<span id="nrank_2"></span><input type="text" id="rank_2" name="user_price[]" value="-1" onkeyup="if(parseInt(this.value)<-1){this.value='-1';};set_price_note(2)" size="8" />
               <input type="hidden" name="user_rank[]" value="2" />
                             <br />
-              <span class="notice-span" style="display:block"  id="noticeUserPrice">会员价格为-1时表示会员价格按会员等级折扣率计算。你也可以为每个等级指定一个固定价格</span>
+              <span cl品牌ass="notice-span" style="display:block"  id="noticeUserPrice">会员价格为-1时表示会员价格按会员等级折扣率计算。你也可以为每个等级指定一个固定价格</span>
             </td>
           </tr>
-          
-          <!--鍟嗗搧浼樻儬浠锋牸-->
-          <!-- <tr>
-            <td class="label"><a href="javascript:showNotice('volumePrice');" title="点击此处查看提示信息"><img src="static/picture/notice.svg" width="16" height="16" border="0" alt="点击此处查看提示信息"></a>商品优惠价格：</td>
-            <td>
-              <table width="100%" id="tbody-volume" align="center">
-                                <tr>
-                  <td>
-                                            <a href="javascript:;" onclick="addVolumePrice(this)">[+]</a>
-                                          优惠数量 <input type="text" name="volume_number[]" size="8" value=""/>
-                     优惠价格 <input type="text" name="volume_price[]" size="8" value=""/>
-                  </td>
-                </tr>
-                              </table>
-              <span class="notice-span" style="display:block"  id="volumePrice">购买数量达到优惠数量时享受的优惠价格</span>
-            </td>
-          </tr> -->
-          <!--鍟嗗搧浼樻儬浠锋牸 end -->
-
           <tr>
             <td class="label">市场售价：</td>
             <td><input type="text" name="market_price" value="0" size="20" />
               <input type="button" class="btn btn-def" value="取整数" onclick="integral_market_price()" />
             </td>
           </tr>
-         <!--  <tr>
-            <td class="label">虚拟销量：</td>
-            <td><input type="text" name="virtual_sales" value="0" size="20" />
-            </td>
-          </tr> -->
-          <!-- <tr>
-            <td class="label"><a href="javascript:showNotice('giveIntegral');" title="点击此处查看提示信息"><img src="static/picture/notice.svg" width="16" height="16" border="0" alt="点击此处查看提示信息"></a> 赠送消费积分数：</td>
-            <td><input type="text" name="give_integral" value="-1" size="20" />
-            <br /><span class="notice-span" style="display:block"  id="giveIntegral">购买该商品时赠送消费积分数,-1表示按商品价格赠送</span></td>
-          </tr>
-          <tr>
-            <td class="label"><a href="javascript:showNotice('rankIntegral');" title="点击此处查看提示信息"><img src="static/picture/notice.svg" width="16" height="16" border="0" alt="点击此处查看提示信息"></a> 赠送等级积分数：</td>
-            <td><input type="text" name="rank_integral" value="-1" size="20" />
-            <br /><span class="notice-span" style="display:block"  id="rankIntegral">购买该商品时赠送等级积分数,-1表示按商品价格赠送</span></td>
-          </tr>
-          <tr>
-            <td class="label"><a href="javascript:showNotice('noticPoints');" title="点击此处查看提示信息"><img src="static/picture/notice.svg" width="16" height="16" border="0" alt="点击此处查看提示信息"></a> 积分购买金额：</td>
-            <td><input type="text" name="integral" value="0" size="20" onblur="parseint_integral()";/>
-              <br /><span class="notice-span" style="display:block"  id="noticPoints">(此处需填写金额)购买该商品时最多可以使用积分的金额</span>
-            </td>
-          </tr> -->
           <tr>
             <td class="label"><label for="is_promote"><input type="checkbox" id="is_promote" name="is_promote" value="1"  onclick="handlePromote(this.checked);" /> 促销价：</label></td>
             <td id="promote_3"><input type="text" id="promote_1" name="promote_price" value="0" size="20" /></td>
@@ -236,14 +210,6 @@ var cancel_color = "无样式";
                             <br /><input type="text" size="40" value="商品图片外部URL" style="color:#aaa;" onfocus="if (this.value == '商品图片外部URL'){this.value='http://';this.style.color='#000';}" name="goods_img_url"/>
             </td>
           </tr>
-         <!--  <tr id="auto_thumb_1">
-            <td class="label"> 上传商品缩略图：</td>
-            <td id="auto_thumb_3">
-              <input type="file" name="goods_thumb" size="35" />
-                              <img src="static/picture/no.svg" width="16">
-                            <br /><input type="text" size="40" value="商品缩略图外部URL" style="color:#aaa;" onfocus="if (this.value == '商品缩略图外部URL'){this.value='http://';this.style.color='#000';}" name="goods_thumb_url"/>
-                            <br /><label for="auto_thumb"><input type="checkbox" id="auto_thumb" name="auto_thumb" checked="true" value="1" onclick="handleAutoThumb(this.checked)" />自动生成商品缩略图</label>            </td>
-          </tr> -->
         </table>
 
         <!-- 鍏朵粬淇℃伅 -->
@@ -379,7 +345,7 @@ var cancel_color = "无样式";
 
         <div class="button-div">
           <input type="hidden" name="goods_id" value="0" />
-                    <input type="button" value=" 确定 " class="button" onclick="validate('0')" />
+                    <input type="submit" value=" 确定 " class="button" onclick="validate('0')" />
           <input type="reset" value=" 重置 " class="button" />
         </div>
         <input type="hidden" name="act" value="insert" />
@@ -387,7 +353,12 @@ var cancel_color = "无样式";
     </div>
 </div>
 <!-- end goods form -->
-<script type="text/javascript" src="static/js/validator.js"></script><script type="text/javascript" src="static/js/tab.js"></script>
+<script type="text/javascript" src="static/js/validator.js"></script>
+<script type="text/javascript" src="static/js/tab.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="static/goods_add.js"></script>
+
+
 <script language="JavaScript">
   var goodsId = '0';
   var elements = document.forms['theForm'].elements;
@@ -716,20 +687,21 @@ var cancel_color = "无样式";
       return;
   }
 
-  function addCategory()
-  {
-      var parent_id = document.forms['theForm'].elements['cat_id'];
-      var cat = document.forms['theForm'].elements['addedCategoryName'];
-      if(cat.value.replace(/^\s+|\s+$/g, '') == '')
-      {
-          alert(category_cat_not_null);
-          return;
-      }
 
-      var params = 'parent_id=' + parent_id.value;
-      params += '&cat=' + cat.value;
-      Ajax.call('category.php?is_ajax=1&act=add_category', params, addCatResponse, 'GET', 'JSON');
-  }
+
+  // function addCategory()
+  // {
+  //     var parent_id = document.forms['theForm'].elements['cat_id'];
+  //     var cat = document.forms['theForm'].elements['addedCategoryName'];
+
+  //     if(cat.value.replace(/^\s+|\s+$/g, '') == '')
+  //     {
+  //         alert(category_cat_not_null);
+  //         return;
+  //     }
+  //     alert(parent_id);
+      
+  // }
 
   function hideCatDiv()
   {

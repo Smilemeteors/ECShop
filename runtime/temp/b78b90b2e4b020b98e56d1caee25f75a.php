@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\category_list.html";i:1536808762;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\category_list.html";i:1536912974;}*/ ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <base href="/" />
@@ -22,7 +22,7 @@
 <table width="100%" cellspacing="1" cellpadding="2" id="list-table">
   <tr>
     <th>分类名称</th>
-    <th>商品数量</th>
+    <!-- <th>商品数量</th> -->
     <th>数量单位</th>
     <th>商品描述</th>
     <th>导航栏</th>
@@ -34,11 +34,11 @@
   <?php foreach($arr as $k=>$v): ?>
     <tr align="center" class="0" id="0_1">
     <td align="left" class="first-cell" >
-            <img src="static/picture/menu_minus.gif" id="icon_0_1" width="9" height="9" border="0" style="margin-left:0em" />
-            <span><a href="<?php echo url('goods/goods'); ?>?id=<?php echo $v['cat_id']; ?>"><?php echo $v['cat_name']; ?></a></span>
-        </td>
-    <td></td>
-    <td></td>
+    <span><b style="text-decoration:none; align:left;" href="<?php echo url('goods/goods'); ?>?id=<?php echo $v['cat_id']; ?>"><?php echo str_repeat("&nbsp;&nbsp;&nbsp;<img src='static/picture/menu_minus.gif' id='icon_0_1' width='9' height='9' border='0' style='margin-left:0em' />",substr_count($v['new'],"-")-1) ?><?php echo $v['cat_name']; ?></b>
+    </span>
+    </td>
+    <!-- <td></td> -->
+    <td><?php echo $v['measure_unit']; ?></td>
     <td width="10%"><?php echo $v['cat_desc']; ?></td>
     <td width="10%">
       <?php if(in_array(($v['is_nav']), explode(',',"1"))): ?>
@@ -91,6 +91,7 @@
 </html>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script>
+
     $(document).on('click','.is_show',function(){
         var status = $(this).attr('value');
         var cat_id = $(this).attr('id');

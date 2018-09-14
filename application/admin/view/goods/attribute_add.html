@@ -25,9 +25,12 @@
             <tr>
                 <td class="label">所属商品类型：</td>
                 <td>
-                    <select name="cat_id" onchange="onChangeGoodsType(this.value)">
+                    <select name='type_id'>
                         <option value="0">请选择...</option>
-                        <option value='1' selected="true">书</option><option value='2'>音乐</option><option value='3'>电影</option><option value='4'>手机</option><option value='5'>笔记本电脑</option><option value='6'>数码相机</option><option value='7'>数码摄像机</option><option value='8'>化妆品</option><option value='9'>精品手机</option>          </select> <span class="require-field">*</span>        </td>
+                        {volist name='res' id='v'}
+                                <option value="{$v.type_id}">{$v.type_name}</option>
+                        {/volist}
+                        </select> <span class="require-field">*</span>        </td>
             </tr>
             <tr id="attrGroups" style="display:none">
                 <td class="label">属性分组：</td>
