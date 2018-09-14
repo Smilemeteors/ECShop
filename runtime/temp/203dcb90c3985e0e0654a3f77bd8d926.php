@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\attribute_add.html";i:1536911303;}*/ ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <base href="/">
@@ -9,12 +10,12 @@
 </head>
 <body>
 <h1>
-    <a class="btn btn-right" href="{:url('/admin/goods/goods_type_manage')}">商品属性</a>
+    <a class="btn btn-right" href="<?php echo url('/admin/goods/goods_type_manage'); ?>">商品属性</a>
 
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;添加属性 </span>
     <div style="clear:both"></div>
 </h1><div class="main-div">
-    <form action="{:url('attribute_add_do')}"  method="post" name="theForm" onsubmit="return validate();">
+    <form action="<?php echo url('attribute_add_do'); ?>"  method="post" name="theForm" onsubmit="return validate();">
         <table width="100%" id="general-table">
             <tr>
                 <td class="label">属性名称：</td>
@@ -27,9 +28,9 @@
                 <td>
                     <select name='type_id'>
                         <option value="0">请选择...</option>
-                        {volist name='res' id='v'}
-                                <option value="{$v.type_id}">{$v.type_name}</option>
-                        {/volist}
+                        <?php if(is_array($res) || $res instanceof \think\Collection || $res instanceof \think\Paginator): $i = 0; $__LIST__ = $res;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+                                <option value="<?php echo $v['type_id']; ?>"><?php echo $v['type_name']; ?></option>
+                        <?php endforeach; endif; else: echo "" ;endif; ?>
                         </select> <span class="require-field">*</span>        </td>
             </tr>
             <tr id="attrGroups" style="display:none">

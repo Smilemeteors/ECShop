@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\attribute_list.html";i:1536799445;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\attribute_list.html";i:1536911961;}*/ ?>
 ﻿﻿<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <base href="/">
@@ -19,11 +19,13 @@
   <form action="" name="searchForm">
     <img src="static/picture/icon_search.svg" width="26" height="22" border="0" alt="SEARCH" />
     按商品类型显示：
-    <select name="goods_type" onChange="changelocation()">
-      <option value="0">所有商品类型</option>
+    <select name="goods_type" id='type'>
+      <option value="0" >所有商品类型</option>
       <?php if(is_array($res) || $res instanceof \think\Collection || $res instanceof \think\Paginator): $i = 0; $__LIST__ = $res;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
-      <option id='type' value="<?php echo $v['type_id']; ?>" onChange="changelocation()" ><?php echo $v['type_name']; ?></option>
+      <option value="<?php echo $v['type_id']; ?>"><?php echo $v['type_name']; ?></option>
       <?php endforeach; endif; else: echo "" ;endif; ?>
+      <option value="0" selected >请选择...</option>
+      
     </select>
   </form>
 </div>
@@ -33,7 +35,7 @@
 
   <table cellpadding="3" cellspacing="1">
     <tr>
-      <input onclick='listTable.selectAll(this,"checkeboxes[]")' type="checkbox">
+     <td><input onclick='listTable.selectAll(this, "checkboxes[]")' type="checkbox"></td>
       <th>编号</th>
       <th>属性名称</th>
       <th>商品类型</th>
@@ -42,8 +44,10 @@
       <th>排序</th>
       <th>操作</th>
     </tr>
+    <bodey>
     <?php foreach ($arr as $key => $v): ?>
         <tr>
+      <td><input type="checkbox"></td>
       <td nowrap="true" valign="top"><?php echo $v['attr_id']; ?></td>
       <td class="first-cell" nowrap="true" valign="top"><?php echo $v['attr_name']; ?></td>
       <td nowrap="true" valign="top"><?php echo $v['type_id']; ?></td>
@@ -55,24 +59,14 @@
       </td>
     </tr>
     <?php endforeach ?>
+    </bodey>
       </table>
   <table cellpadding="4" cellspacing="0">
     <tr>
-      <td><input type="submit" id="btnSubmit" value="删除" class="button" disabled="true" /></td>
+      <td><input type="submit" style="float:left;" id="btnSubmit" value="删除" class="button" disabled="true" /></td>
       <td align="right"><!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-<div id="turn-page">
-  <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
-  页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
-  条记录，总共 <span id="totalRecords">12</span>
-  条记录
-  <span id="page-link">
-    <a href="javascript:listTable.gotoPageFirst()">第一页</a>
-    <a href="javascript:listTable.gotoPagePrev()">上一页</a>
-    <a href="javascript:listTable.gotoPageNext()">下一页</a>
-    <a href="javascript:listTable.gotoPageLast()">最末页</a>
-    <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
-      <option value='1'>1</option>    </select>
-  </span>
+<div class="page" style="float:right;" >
+  <?php echo $arr->render(); ?>
 </div>
 </td>
     </tr>
@@ -102,7 +96,16 @@
   </table>
 </div>
 </body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
-
+$(document).on('change','#type',function(){
+    var id = $(this).val();
+    var obj = $(this);
+    if (id==0) {
+      window.location.href='<?php echo url("goods/attribute_list"); ?>';
+    }else{
+    window.location.href='<?php echo url("goods/attribute_list_do"); ?>?id='+id+'';
+    }
+})
 </script>
 </html>

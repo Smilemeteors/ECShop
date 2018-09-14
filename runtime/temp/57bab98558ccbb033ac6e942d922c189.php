@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:79:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\category_add.html";i:1536829573;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:79:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\category_add.html";i:1536910304;}*/ ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <base href="/">
@@ -46,7 +46,7 @@
       <tr>
         <td class="label">排序:</td>
         <td>
-          <input type="text" name='sort_order'  value="50" size="15" />
+          <input type="text" name='sort'  value="50" size="15" />
         </td>
       </tr>
       <tr>

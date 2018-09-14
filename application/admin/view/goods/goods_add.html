@@ -71,7 +71,7 @@ var cancel_color = "无样式";
 </script>
 <body>
 <h1>
-      <a class="btn btn-right" href="goods.php?act=list">商品列表</a>
+      <a class="btn btn-right" href="{:url('goods/good_list')}">商品列表</a>
   
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;添加新商品 </span>
   <div style="clear:both"></div>
@@ -97,7 +97,7 @@ var cancel_color = "无样式";
 
     <!-- tab body -->
     <div id="tabbody-div">
-      <form enctype="multipart/form-data" action="" method="post" name="theForm" >
+      <form action="{:url('goods_add_do')}" method="post" name="theForm" >
         <!-- 鏈€澶ф枃浠堕檺鍒 -->
         <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
         <!-- 閫氱敤淇℃伅 -->
@@ -119,7 +119,7 @@ var cancel_color = "无样式";
           <tr>
             <td class="label">商品分类：</td>
             <td>
-  <select name="cat_id" onchange="hideCatDiv()" id="select">
+  <select name="cat_id" onchange="hideCatDiv()" id="select_cat">
         <option value="0" class='cat_none'>顶级分类</option>
         {foreach $cate as $v}
         <option value="{$v.parent_id}" id="op" path="{$v.path}">
@@ -144,7 +144,13 @@ var cancel_color = "无样式";
           </tr>
           <tr>
             <td class="label">商品品牌：</td>
-            <td><select name="brand_id" onchange="hideBrandDiv()" ><option value="0">请选择...<option value="4">飞利浦</option><option value="5">夏新</option><option value="15" selected>仓品</option></select>
+            <td>
+            <select name="brand_id" onchange="hideBrandDiv()" id="select_brand" >
+            <option value="0" selected>请选择...</option>
+        {foreach $brand as $v}
+            <option value="{$v.brand_id}" id="op">{$v.brand_name}</option>
+        {/foreach}
+            </select>
                             <button type="button" class="btn btn-def " onclick="rapidBrandAdd()">添加品牌</button>
               <span id="brand_add" style="display:none;">
               <input type="text" class="text" size="15" name="addedBrandName" />
@@ -176,7 +182,7 @@ var cancel_color = "无样式";
                             vip<span id="nrank_2"></span><input type="text" id="rank_2" name="user_price[]" value="-1" onkeyup="if(parseInt(this.value)<-1){this.value='-1';};set_price_note(2)" size="8" />
               <input type="hidden" name="user_rank[]" value="2" />
                             <br />
-              <span class="notice-span" style="display:block"  id="noticeUserPrice">会员价格为-1时表示会员价格按会员等级折扣率计算。你也可以为每个等级指定一个固定价格</span>
+              <span cl品牌ass="notice-span" style="display:block"  id="noticeUserPrice">会员价格为-1时表示会员价格按会员等级折扣率计算。你也可以为每个等级指定一个固定价格</span>
             </td>
           </tr>
           <tr>
@@ -338,7 +344,7 @@ var cancel_color = "无样式";
 
         <div class="button-div">
           <input type="hidden" name="goods_id" value="0" />
-                    <input type="button" value=" 确定 " class="button" onclick="validate('0')" />
+                    <input type="submit" value=" 确定 " class="button" onclick="validate('0')" />
           <input type="reset" value=" 重置 " class="button" />
         </div>
         <input type="hidden" name="act" value="insert" />
