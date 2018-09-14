@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:79:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\category_add.html";i:1536807780;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:79:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\category_add.html";i:1536829573;}*/ ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <base href="/">
@@ -10,17 +10,18 @@
 </head>
 <body>
 <h1>
-      <a class="btn btn-right" href="/index/goods/category_list">商品分类</a>
+      <a class="btn btn-right" href="<?php echo url('category_list'); ?>">商品分类</a>
   
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;添加分类 </span>
   <div style="clear:both"></div>
 </h1><!-- start add new category form -->
 <div class="main-div">
-  <form action="<?php echo url('goods/category_add'); ?>" method="post" enctype="multipart/form-data">
+  <form action="<?php echo url('goods/category_add'); ?>" id="theForm" method="post" enctype="multipart/form-data">
     <table>
       <tr>
           <td class="label">分类名称:</td>
-          <td><input type="text" name="cat_name" maxlength="20" value="" size="27"> <font color="red">*</font></td>
+          <td><input type="text" name="cat_name" maxlength="20" value="" size="27">
+          <font color="red">*</font></td>
       </tr>
       <tr>
           <td class="label">上级分类:</td>
@@ -29,12 +30,25 @@
               <select name="parent_id" id="select">
                   <option value="0">顶级分类</option>
                   <?php foreach($cate as $v): ?>
-                  <option value="<?php echo $v['cat_id']; ?>" path="<?php echo $v['path']; ?>"><?php echo str_repeat("&nbsp;&nbsp;&nbsp;├",substr_count($v['new'],"-")-1) ?><?php echo $v['cat_name']; ?></option>
+                  <option value="<?php echo $v['cat_id']; ?>" path="<?php echo $v['path']; ?>">
+                  <?php echo str_repeat("&nbsp;&nbsp;&nbsp;├",substr_count($v['new'],"-")-1) ?><?php echo $v['cat_name']; ?>
+                  </option>
                   <?php endforeach; ?>
               </select>
           </td>
       </tr>
-
+      <tr id="measure_unit">
+        <td class="label">数量单位:</td>
+        <td>
+          <input type="text" name='measure_unit' value='' size="12" />
+        </td>
+      </tr>
+      <tr>
+        <td class="label">排序:</td>
+        <td>
+          <input type="text" name='sort_order'  value="50" size="15" />
+        </td>
+      </tr>
       <tr>
           <td class="label">是否显示:</td>
           <td><input type="radio" name="is_show" value="1" checked="true"> 是<input type="radio" name="is_show" value="0"> 否  </td>
@@ -66,7 +80,8 @@
   <tr>
     <td style="color: #0f2c8c" width="30" height="24"></td>
     <td style="font-weight: normal; color: #1f336b; padding-top: 4px;padding-left: 4px" valign="center" width="100%"> 新订单通知</td>
-    <td style="padding-top: 2px;padding-right:2px" valign="center" align="right" width="19"><span title="关闭" style="cursor: hand;cursor:pointer;color:red;font-size:12px;font-weight:bold;margin-right:4px;" onclick="Message.close()" >×</span><!-- <img title=关闭 style="cursor: hand" onclick=closediv() hspace=3 src="static/picture/msgclose.jpg"> --></td>
+    <td style="padding-top: 2px;padding-right:2px" valign="center" align="right" width="19"><span title="关闭" style="cursor: hand;cursor:pointer;color:red;font-size:12px;font-weight:bold;margin-right:4px;" onclick="Message.close()" >×</span>
+    </td>
   </tr>
   <tr>
     <td style="padding-right: 1px; padding-bottom: 1px" colspan="3" height="70">

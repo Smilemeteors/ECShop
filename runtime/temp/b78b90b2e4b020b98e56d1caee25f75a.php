@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\category_list.html";i:1536808762;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\category_list.html";i:1536826194;}*/ ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <base href="/" />
@@ -34,9 +34,9 @@
   <?php foreach($arr as $k=>$v): ?>
     <tr align="center" class="0" id="0_1">
     <td align="left" class="first-cell" >
-            <img src="static/picture/menu_minus.gif" id="icon_0_1" width="9" height="9" border="0" style="margin-left:0em" />
-            <span><a href="<?php echo url('goods/goods'); ?>?id=<?php echo $v['cat_id']; ?>"><?php echo $v['cat_name']; ?></a></span>
-        </td>
+    <span><a style="text-decoration:none;" href="<?php echo url('goods/goods'); ?>?id=<?php echo $v['cat_id']; ?>"><?php echo str_repeat("&nbsp;&nbsp;&nbsp;<img src='static/picture/menu_minus.gif' id='icon_0_1' width='9' height='9' border='0' style='margin-left:0em' />",substr_count($v['new'],"-")-1) ?><?php echo $v['cat_name']; ?></a>
+    </span>
+    </td>
     <td></td>
     <td></td>
     <td width="10%"><?php echo $v['cat_desc']; ?></td>
@@ -91,6 +91,7 @@
 </html>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script>
+
     $(document).on('click','.is_show',function(){
         var status = $(this).attr('value');
         var cat_id = $(this).attr('id');

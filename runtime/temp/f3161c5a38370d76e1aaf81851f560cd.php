@@ -1,20 +1,64 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\member\users.html";i:1536819264;}*/ ?>
-﻿<!-- $Id: users_list.htm 17053 2010-03-15 06:50:26Z sxc_shop $ -->
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\member\user_account.html";i:1536226505;}*/ ?>
+﻿<!-- $Id: user_account_list.htm 17030 2010-02-08 09:39:33Z sxc_shop $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ECSHOP 管理中心 - 会员列表 </title>
+<title>ECSHOP 管理中心 - 充值和提现申请 </title>
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="/static/css/general.css" rel="stylesheet" type="text/css" />
 <link href="/static/css/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/static/js/transport.js"></script><script type="text/javascript" src="/static/js/common.js"></script>
 <style>
-/*分页*/
-.pagination {}
-.pagination li {display: inline-block;margin-right: -1px;padding: 5px;border: 1px solid #e2e2e2;min-width: 20px;text-align: center;}
-.pagination li.active {background: #009688;color: #fff;border: 1px solid #009688;}
-.pagination li a {display: block;text-align: center;}
+  .panel-icloud .panel-right iframe {
+    height: 300px;
+    margin-top: 15px;
+  }
+  .panel-hint{
+    top: 0%;
+  }
 </style>
+
+<script>
+<!--
+// 这里把JS用到的所有语言都赋值到这里
+var process_request = "正在处理您的请求...";
+var todolist_caption = "记事本";
+var todolist_autosave = "自动保存";
+var todolist_save = "保存";
+var todolist_clear = "清除";
+var todolist_confirm_save = "是否将更改保存到记事本？";
+var todolist_confirm_clear = "是否清空内容？";
+var user_id_empty = "会员名称不能为空！";
+var deposit_amount_empty = "请输入充值的金额！";
+var pay_code_empty = "请选择支付方式";
+var deposit_amount_error = "请按正确的格式输入充值的金额！";
+var deposit_type_empty = "请填写类型！";
+var deposit_notic_empty = "请填写管理员备注！";
+var deposit_desc_empty = "请填写会员描述！";
+//-->
+/*关闭按钮*/
+  function get_certificate(){
+	  var panel = document.getElementById('panelCloud');
+	  var mask  = document.getElementById('CMask')||null;
+	  var frame = document.getElementById('CFrame');
+	  if(panel&&CMask&&frame){
+	      panel.style.display = 'block';
+	      mask.style.display = 'block';
+	      frame.src = 'https://openapi.shopex.cn/oauth/authorize?response_type=code&client_id=yogfss4l&redirect_uri=http%3A%2F%2F127.0.0.1%2Fshixun%2FEC4%2Fsource%2Fecshop%2Fadmin%2Fcertificate.php%3Fact%3Dget_certificate%26type%3Dindex&view=auth_ecshop';
+	    }
+	}
+
+	/*关闭按钮*/
+	function btnCancel(item){
+	  var par  = item.offsetParent;
+	  var mask  = document.getElementById('CMask')||null;
+	  var frame = document.getElementById('CFrame');
+	  par.style.display = 'none';
+	  if(mask){mask.style.display = 'none';}
+	  frame.src = '';
+	}
+</script>
 </head>
 <body>
 <!--云起激活系统面板-->
@@ -43,104 +87,59 @@
 <div class="mask-black" id="CMask"></div>
 <!--遮罩-->
 <h1>
-    <a class="btn btn-right action-span6" href="http://yunqi.shopex.cn/products/crm" target="_blank">开通会员高级管理</a>
-      <a class="btn btn-right" href="user_add.html">添加会员</a>
+      <a class="btn btn-right" href="user_account_add.html">添加申请</a>
   
-    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;会员列表 </span>
+    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;充值和提现申请 </span>
   <div style="clear:both"></div>
-</h1>
-
-<div class="form-div">
+</h1><script type="text/javascript" src="static/js/utils.js"></script><script type="text/javascript" src="static/js/listtable.js"></script><div class="form-div">
   <form action="javascript:searchUser()" name="searchForm">
-    <!-- <img src="/static/picture/icon_search.gif" width="26" height="22" border="0" alt="SEARCH" /> -->
-    &nbsp;会员等级 <select name="user_rank"><option value="0">所有等级</option><option value="1">注册用户</option><option value="3">代销用户</option><option value="2">vip</option></select>
-    &nbsp;会员积分大于&nbsp;<input type="text" name="pay_points_gt" size="8" />&nbsp;会员积分小于&nbsp;<input type="text" name="pay_points_lt" size="10" />
-    &nbsp;会员名称 &nbsp;<input type="text" name="keyword" /> <input type="submit" class="button" value=" 搜索 ">
+    <!-- <img src="static/picture/icon_search.gif" width="25" height="22" border="0" alt="SEARCH" /> -->
+    会员名称 <input type="text" name="keyword" size="10" />
+      <select name="process_type">
+        <option value="-1">类型</option>
+        <option value="0" >充值</option>
+        <option value="1" >提现</option>
+      </select>
+      <select name="payment">
+      <option value="">支付方式</option>
+      <option value="余额支付">余额支付</option><option value="银行汇款/转帐">银行汇款/转帐</option><option value="<font color="#FF0000">天工收银</font>"><font color="#FF0000">天工收银</font></option>      </select>
+      <select name="is_paid">
+        <option value="-1">到款状态</option>
+        <option value="0" >未确认</option>
+        <option value="1" >已完成</option>
+        <option value="2">取消</option>
+      </select>
+      <input type="submit" value=" 搜索 " class="button" />
   </form>
 </div>
 
-<form method="POST" action="" name="listForm" onsubmit="return confirm_bath()">
-
-<!-- start users list -->
+<form method="POST" action="" name="listForm">
+<!-- start user_deposit list -->
 <div class="list-div" id="listDiv">
-<!--用户列表部分-->
 <table cellpadding="3" cellspacing="1">
   <tr>
-    <th>
-      <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox">
-      <a href="javascript:listTable.sort('user_id'); ">编号</a><img src="/static/picture/sort_desc.png">    </th>
-    <th><a href="javascript:listTable.sort('user_name'); ">会员名称</a></th>
-    <th><a href="javascript:listTable.sort('email'); ">邮件地址</a></th>
-    <th><a href="javascript:listTable.sort('is_validated'); ">是否已验证</a></th>
-    <th>可用资金</th>
-    <th>冻结资金</th>
-    <th>等级积分</th>
-    <th>消费积分</th>
-    <th><a href="javascript:listTable.sort('reg_time'); ">注册日期</a></th>
+    <th><a href="javascript:listTable.sort('user_name', 'DESC'); ">会员名称</a></th>
+    <th><a href="javascript:listTable.sort('add_time', 'DESC'); ">操作日期</a></th>
+    <th><a href="javascript:listTable.sort('process_type', 'DESC'); ">类型</a></th>
+    <th><a href="javascript:listTable.sort('amount', 'DESC'); ">金额</a></th>
+    <th><a href="javascript:listTable.sort('payment', 'DESC'); ">支付方式</a></th>
+    <th><a href="javascript:listTable.sort('is_paid', 'DESC'); ">到款状态</a></th>
+    <th>操作员</th>
     <th>操作</th>
-  <tr>
-    <?php foreach ($list as $key => $v) { ?>
-      <tr>
-        <td><input type="checkbox" name="checkboxes[]" value="<?=$v['user_id']?>" notice="0"/><?=$v['user_id']?></td>
-        <td class="first-cell"><?=$v['user_name']?></td>
-        <td><span onclick="listTable.edit(this, 'edit_email', <?=$v['user_id']?>)"><?=$v['email']?></span></td>
-        
-
-          <?php if(in_array(($v['is_validated']), explode(',',"1"))): ?>
-          <td align="center">
-            <img src="/static/picture/yes.svg" class="is_validated" id="<?php echo $v['user_id']; ?>"  value='<?php echo $v['is_validated']; ?>' width="20"/>
-          </td>
-          <td><?=$v['user_money']?></td>
-          <td><?=$v['frozen_money']?></td>
-          <td><?=$v['pay_points']?></td>
-          <td><?=$v['rank_points']?></td>
-          <?php else: ?>
-          <td align="center">
-            <img src="/static/picture/no.svg" class="is_validated" id="<?php echo $v['user_id']; ?>"  value='<?php echo $v['is_validated']; ?>' width="20"/>
-          </td>
-          <td>0.00</td>
-          <td>0.00</td>
-          <td>0</td>
-          <td>0</td>
-          <?php endif; ?>                
-        <td align="center"><?=$v['reg_time'];?></td>
-        <td align="center">
-          <a href="<?php echo url('users_edit'); ?>?id=<?=$v['user_id']?>" title="编辑">编辑</a>
-          <a href="user_address_list.html?id=<?=$v['user_id']?>" title="收货地址">收货地址</a>
-          <a href="<?php echo url('orders_list'); ?>?user_id=<?=$v['user_id']?>" title="查看订单">查看订单</a>
-          <a href="account_log_list.html?id=<?=$v['user_id']?>" title="查看账目明细">查看账目明细</a>
-          <a href="<?php echo url('users_del'); ?>?id=<?=$v['user_id']?>" title="移除">移除</a>
-        </td>
-      </tr>
-    <?php } ?>
-  <!--   <tr>
-    <td><input type="checkbox" name="checkboxes[]" value="1" notice="0"/>1</td>
-    <td class="first-cell">ecshop</td>
-    <td><span onclick="listTable.edit(this, 'edit_email', 1)">ecshop@ecshop.com</span></td>
-    <td align="center"> <img src="static/picture/no.svg" width="20"> </td>
-    <td>0.00</td>
-    <td>0.00</td>
-    <td>0</td>
-    <td>0</td>
-    <td align="center">2017-09-13</td>
-    <td align="center">
-      <a href="users.php?act=edit&id=1" title="编辑">编辑</a>
-      <a href="users.php?act=address_list&id=1" title="收货地址">收货地址</a>
-      <a href="order.php?act=list&user_id=1" title="查看订单">查看订单</a>
-      <a href="account_log.php?act=list&user_id=1" title="查看账目明细">查看账目明细</a>
-      <a href="javascript:confirm_redirect('您确定要删除该会员账号吗？', 'users.php?act=remove&id=1')" title="移除">移除</a>
-    </td>
-  </tr> -->
+  </tr>
     <tr>
-      <td colspan="2">
-      <input type="hidden" name="act" value="batch_remove" />
-      <!-- <input type="submit" id="btnSubmit" value="删除会员" disabled="true" class="button" /></td> -->
-      <td align="right" nowrap="true" colspan="8">
-      <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-<!-- <div id="turn-page">
+    <td class="no-records" colspan="8">没有找到任何记录</td>
+  </tr>
+  
+<table id="page-table" cellspacing="0">
+<tr>
+  <td>&nbsp;</td>
+  <td align="right" nowrap="true">
+  <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<div id="turn-page">
   <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
   页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
-  条记录，总共 <span id="totalRecords">2</span>
+  条记录，总共 <span id="totalRecords">0</span>
   条记录
   <span id="page-link">
     <a href="javascript:listTable.gotoPageFirst()">第一页</a>
@@ -150,106 +149,56 @@
     <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
       <option value='1'>1</option>    </select>
   </span>
-</div> -->
-      <div class="pagination">
-        <?php echo $page; ?>
-      </div>
-      </td>
-  </tr>
-</table>
-
 </div>
-<!-- end users list -->
+  </td>
+</tr>
+</table>
+</div>
+<!-- end user_deposit list -->
 </form>
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
 <script type="text/javascript" language="JavaScript">
-<!--
-$(document).on('click','.is_validated',function(){
-    var status = $(this).attr('value');
-    var user_id = $(this).attr('id');
-    var obj = $(this);
-    $.ajax({
-      url:"<?php echo url('user_put'); ?>",
-      data:{status:status,user_id:user_id},
-      dataType:"json",
-      success:function(res){
-        if(res.status==1){
-          alert(res.msg);
-          return false;
-        }else{
-
-          if(status==1){
-
-            obj.prop("src","/static/picture/no.svg");
-            obj.attr("value",0)
-          }else{
-
-            obj.prop("src","/static/picture/yes.svg");
-            obj.attr("value",1)
-          }
-        }
-      }
-    })
-  })
-
-listTable.recordCount = 2;
+listTable.recordCount = 0;
 listTable.pageCount = 1;
-
+listTable.filter.user_id = '0';
 listTable.filter.keywords = '';
-listTable.filter.rank = '0';
-listTable.filter.pay_points_gt = '0';
-listTable.filter.pay_points_lt = '0';
-listTable.filter.sort_by = 'user_id';
+listTable.filter.process_type = '-1';
+listTable.filter.payment = '';
+listTable.filter.is_paid = '-1';
+listTable.filter.sort_by = 'add_time';
 listTable.filter.sort_order = 'DESC';
-listTable.filter.record_count = '2';
+listTable.filter.start_date = '';
+listTable.filter.end_date = '';
+listTable.filter.record_count = '0';
 listTable.filter.page_size = '15';
 listTable.filter.page = '1';
 listTable.filter.page_count = '1';
 listTable.filter.start = '0';
 
+<!--
 
 onload = function()
 {
-    document.forms['searchForm'].elements['keyword'].focus();
     // 开始检查订单
     startCheckOrder();
 }
-
 /**
  * 搜索用户
  */
 function searchUser()
 {
     listTable.filter['keywords'] = Utils.trim(document.forms['searchForm'].elements['keyword'].value);
-    listTable.filter['rank'] = document.forms['searchForm'].elements['user_rank'].value;
-    listTable.filter['pay_points_gt'] = Utils.trim(document.forms['searchForm'].elements['pay_points_gt'].value);
-    listTable.filter['pay_points_lt'] = Utils.trim(document.forms['searchForm'].elements['pay_points_lt'].value);
+    listTable.filter['process_type'] = document.forms['searchForm'].elements['process_type'].value;
+    listTable.filter['payment'] = Utils.trim(document.forms['searchForm'].elements['payment'].value);
+    listTable.filter['is_paid'] = document.forms['searchForm'].elements['is_paid'].value;
     listTable.filter['page'] = 1;
     listTable.loadList();
-}
-
-function confirm_bath()
-{
-  userItems = document.getElementsByName('checkboxes[]');
-
-  cfm = '您确定要删除所有选中的会员账号吗？';
-
-  for (i=0; userItems[i]; i++)
-  {
-    if (userItems[i].checked && userItems[i].notice == 1)
-    {
-      cfm = '选中的会员账户中仍有余额或欠款\n' + '您确定要删除所有选中的会员账号吗？';
-      break;
-    }
-  }
-
-  return confirm(cfm);
 }
 //-->
 </script>
 
 <div id="footer">
-共执行 6 个查询，用时 0.016915 秒，Gzip 已禁用，内存占用 1.171 MB<br />
+共执行 5 个查询，用时 0.016352 秒，Gzip 已禁用，内存占用 1.133 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
 <!-- 新订单提示信息 -->
 <div id="popMsg">

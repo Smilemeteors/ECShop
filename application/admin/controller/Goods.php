@@ -15,22 +15,30 @@ class Goods extends Controller
     //商品添加
     //
     //
-    
-    
+    public function goods_add()
+    {
+        $brand = $this->goods->getBrandList();
+        $cate = $this->goods->getPathList("cat_id");
+        return view('goods_add',['cate'=>$cate,'brand'=>$brand]);
+    }
+    public function goods_add_do()
+    {
+        $parent_id = input('get.parent_id');
 
-
-
-    
+    }
     //
     //
     //商品添加
 
-
     //商品列表
     public function goods_list()
     {
-        $res = $this->goods->goods_Show();
+        $pages = 5;
+        $keyword = input('post.keyword');
+        $res = $this->goods->goods_Show($keyword,$pages);
         return view('goods_list',['res'=>$res]);
+        // $res = $this->goods->goods_Show();
+        // return view('goods_list',['res'=>$res]);
     }
     //商品列表的回收站
     public function trash_do()
@@ -216,10 +224,7 @@ class Goods extends Controller
     // 
     // 
     // 
-    public function goods_add()
-    {
-        return view('goods_add');
-    }
+
     
     //品牌部分
     public function brand_list(){
@@ -421,8 +426,9 @@ class Goods extends Controller
     //分类展示
     public function category_list(){
         $arr =$this->goods->shows();
-//        var_dump($arr);die;
-        return $this->fetch('category_list',['arr' => $arr]);
+//        var_dump($arr);die; 
+        $cate=$this->goods->getPathList("cat_id");
+        return $this->fetch('category_list',['arr' => $arr,'arr'=>$cate]);
     }
     //分类即点即改
     public function category_shows(){
