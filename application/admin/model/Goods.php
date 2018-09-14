@@ -27,6 +27,14 @@ class Goods extends Model
         $result=Db::query("SELECT *,CONCAT($path,'-',$id) as new FROM classify ORDER BY new");
         return $result;
     }
+    public function getCatList($cat_id)
+    {
+        return Db::table('classify')->where("cat_id=$cat_id")->select();
+    }
+    public function cat()
+    {
+        return Db::table('classify')->select();
+    }
 	//分类
 	public function goods_Show($keyword,$pages)
 	{

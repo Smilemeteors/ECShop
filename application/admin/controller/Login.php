@@ -23,9 +23,13 @@ class Login extends Controller{
         $arr = Db::table('user')->where("User_name='$User_name' and User_pwd='$User_pwd'")->find();
         if ($arr){
 //            $this->success('恭喜您登录成功','admin/index/index');
-            echo "<script>alert('恭喜您登录成功');location.href='http://www.ecshop4.0.com/admin'</script>";
+            echo "<script>alert('恭喜您登录成功');location.href='http://www.ecshop4.0.com/admin/index/index'</script>";
         }else
             echo "<script>alert('用户名密码或验证码错误');location.href='login'</script>";
     }
+    }
+    public function logout(){
+        session(null); // 清空当前的session
+        return $this->success('退出成功，跳转中...',url('login'));
     }
 }
