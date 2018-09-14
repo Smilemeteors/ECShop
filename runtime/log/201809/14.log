@@ -6544,3 +6544,277 @@
 [ sql ] [ SQL ] SHOW COLUMNS FROM `brand` [ RunTime:0.009682s ]
 [ sql ] [ SQL ] SELECT * FROM `brand` [ RunTime:0.000582s ]
 [ sql ] [ SQL ] SELECT *,CONCAT(path,'-',cat_id) as new FROM classify ORDER BY new [ RunTime:0.000715s ]
+---------------------------------------------------------------
+[ 2018-09-14T17:01:12+08:00 ] 127.0.0.1 GET /admin/goods/goods_type_manage
+[ info ] www.ecshop4.0.com/admin/goods/goods_type_manage [运行时间：0.078333s][吞吐率：12.77req/s] [内存消耗：2,291.94kb] [文件加载：51]
+[ info ] [ LANG ] E:\phpStudy\WWW\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'goods_type_manage',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'ECS_LastCheckOrder=Fri%2C%2014%20Sep%202018%2008%3A59%3A39%20GMT; pgv_pvi=2783815680',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/Index/index_menu',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->goods_type_manage[ E:\phpStudy\WWW\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_type_manage.html [ array (
+  0 => 'arr',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010686s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods_type` [ RunTime:0.013400s ]
+[ sql ] [ SQL ] SELECT * FROM `goods_type` [ RunTime:0.000516s ]
+---------------------------------------------------------------
+[ 2018-09-14T17:01:13+08:00 ] 127.0.0.1 GET /admin/goods/attribute_list.html?id=1
+[ info ] www.ecshop4.0.com/admin/goods/attribute_list.html?id=1 [运行时间：0.074263s][吞吐率：13.47req/s] [内存消耗：2,372.45kb] [文件加载：55]
+[ info ] [ LANG ] E:\phpStudy\WWW\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'attribute_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'ECS_LastCheckOrder=Fri%2C%2014%20Sep%202018%2008%3A59%3A39%20GMT; pgv_pvi=2783815680',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/goods/goods_type_manage',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->attribute_list[ E:\phpStudy\WWW\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\attribute_list.html [ array (
+  0 => 'arr',
+  1 => 'res',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002848s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods_type` [ RunTime:0.020473s ]
+[ sql ] [ SQL ] SELECT * FROM `goods_type` [ RunTime:0.000442s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attribute` [ RunTime:0.009469s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attribute` LIMIT 1 [ RunTime:0.000343s ]
+[ sql ] [ SQL ] SELECT * FROM `attribute` LIMIT 0,3 [ RunTime:0.000443s ]
+---------------------------------------------------------------
+[ 2018-09-14T17:01:14+08:00 ] 127.0.0.1 GET /admin/goods/attribute_list_do.html?id=2
+[ info ] www.ecshop4.0.com/admin/goods/attribute_list_do.html?id=2 [运行时间：0.070263s][吞吐率：14.23req/s] [内存消耗：2,372.74kb] [文件加载：55]
+[ info ] [ LANG ] E:\phpStudy\WWW\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'attribute_list_do',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'ECS_LastCheckOrder=Fri%2C%2014%20Sep%202018%2008%3A59%3A39%20GMT; pgv_pvi=2783815680',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/goods/attribute_list.html?id=1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->attribute_list_do[ E:\phpStudy\WWW\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\attribute_list.html [ array (
+  0 => 'arr',
+  1 => 'res',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002706s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods_type` [ RunTime:0.013972s ]
+[ sql ] [ SQL ] SELECT * FROM `goods_type` [ RunTime:0.000535s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attribute` [ RunTime:0.009440s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attribute` WHERE  (  type_id=2 ) LIMIT 1 [ RunTime:0.000538s ]
+[ sql ] [ SQL ] SELECT * FROM `attribute` WHERE  (  type_id=2 ) LIMIT 0,8 [ RunTime:0.000578s ]
+---------------------------------------------------------------
+[ 2018-09-14T17:01:16+08:00 ] 127.0.0.1 GET /admin/goods/attribute_list_do.html?id=1
+[ info ] www.ecshop4.0.com/admin/goods/attribute_list_do.html?id=1 [运行时间：0.089223s][吞吐率：11.21req/s] [内存消耗：2,371.87kb] [文件加载：55]
+[ info ] [ LANG ] E:\phpStudy\WWW\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'attribute_list_do',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'ECS_LastCheckOrder=Fri%2C%2014%20Sep%202018%2008%3A59%3A39%20GMT; pgv_pvi=2783815680',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/goods/attribute_list_do.html?id=2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->attribute_list_do[ E:\phpStudy\WWW\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\attribute_list.html [ array (
+  0 => 'arr',
+  1 => 'res',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003718s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods_type` [ RunTime:0.011181s ]
+[ sql ] [ SQL ] SELECT * FROM `goods_type` [ RunTime:0.000561s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attribute` [ RunTime:0.011239s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attribute` WHERE  (  type_id=1 ) LIMIT 1 [ RunTime:0.000818s ]
+[ sql ] [ SQL ] SELECT * FROM `attribute` WHERE  (  type_id=1 ) LIMIT 0,8 [ RunTime:0.000394s ]
+---------------------------------------------------------------
+[ 2018-09-14T17:01:18+08:00 ] 127.0.0.1 GET /admin/goods/attribute_list_do.html?id=1
+[ info ] www.ecshop4.0.com/admin/goods/attribute_list_do.html?id=1 [运行时间：0.067826s][吞吐率：14.74req/s] [内存消耗：2,371.87kb] [文件加载：55]
+[ info ] [ LANG ] E:\phpStudy\WWW\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'attribute_list_do',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'ECS_LastCheckOrder=Fri%2C%2014%20Sep%202018%2008%3A59%3A39%20GMT; pgv_pvi=2783815680',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/goods/attribute_list_do.html?id=1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->attribute_list_do[ E:\phpStudy\WWW\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\attribute_list.html [ array (
+  0 => 'arr',
+  1 => 'res',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003932s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods_type` [ RunTime:0.010775s ]
+[ sql ] [ SQL ] SELECT * FROM `goods_type` [ RunTime:0.000420s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attribute` [ RunTime:0.011451s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attribute` WHERE  (  type_id=1 ) LIMIT 1 [ RunTime:0.000364s ]
+[ sql ] [ SQL ] SELECT * FROM `attribute` WHERE  (  type_id=1 ) LIMIT 0,8 [ RunTime:0.000440s ]
+---------------------------------------------------------------
+[ 2018-09-14T17:01:19+08:00 ] 127.0.0.1 GET /admin/goods/attribute_list_do.html?id=1
+[ info ] www.ecshop4.0.com/admin/goods/attribute_list_do.html?id=1 [运行时间：0.096052s][吞吐率：10.41req/s] [内存消耗：2,371.87kb] [文件加载：55]
+[ info ] [ LANG ] E:\phpStudy\WWW\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'attribute_list_do',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'ECS_LastCheckOrder=Fri%2C%2014%20Sep%202018%2008%3A59%3A39%20GMT; pgv_pvi=2783815680',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/goods/attribute_list_do.html?id=1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->attribute_list_do[ E:\phpStudy\WWW\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\attribute_list.html [ array (
+  0 => 'arr',
+  1 => 'res',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004471s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods_type` [ RunTime:0.013994s ]
+[ sql ] [ SQL ] SELECT * FROM `goods_type` [ RunTime:0.000485s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attribute` [ RunTime:0.014068s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attribute` WHERE  (  type_id=1 ) LIMIT 1 [ RunTime:0.000490s ]
+[ sql ] [ SQL ] SELECT * FROM `attribute` WHERE  (  type_id=1 ) LIMIT 0,8 [ RunTime:0.000663s ]
+---------------------------------------------------------------
+[ 2018-09-14T17:01:20+08:00 ] 127.0.0.1 GET /admin/goods/attribute_list.html
+[ info ] www.ecshop4.0.com/admin/goods/attribute_list.html [运行时间：0.062070s][吞吐率：16.11req/s] [内存消耗：2,372.09kb] [文件加载：55]
+[ info ] [ LANG ] E:\phpStudy\WWW\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'attribute_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'ECS_LastCheckOrder=Fri%2C%2014%20Sep%202018%2008%3A59%3A39%20GMT; pgv_pvi=2783815680',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/admin/goods/attribute_list_do.html?id=1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->attribute_list[ E:\phpStudy\WWW\ECShop\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\attribute_list.html [ array (
+  0 => 'arr',
+  1 => 'res',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002616s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods_type` [ RunTime:0.009150s ]
+[ sql ] [ SQL ] SELECT * FROM `goods_type` [ RunTime:0.000478s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attribute` [ RunTime:0.008972s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attribute` LIMIT 1 [ RunTime:0.000441s ]
+[ sql ] [ SQL ] SELECT * FROM `attribute` LIMIT 0,3 [ RunTime:0.000608s ]
