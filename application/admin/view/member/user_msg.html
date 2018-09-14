@@ -7,53 +7,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="/static/css/general.css" rel="stylesheet" type="text/css" />
 <link href="/static/css/main.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="/static/js/transport.js"></script><script type="text/javascript" src="/static/js/common.js"></script>
 <style>
-  .panel-icloud .panel-right iframe {
-    height: 300px;
-    margin-top: 15px;
-  }
-  .panel-hint{
-    top: 0%;
-  }
+/*分页*/
+.pagination {}
+.pagination li {display: inline-block;margin-right: -1px;padding: 5px;border: 1px solid #e2e2e2;min-width: 20px;text-align: center;}
+.pagination li.active {background: #009688;color: #fff;border: 1px solid #009688;}
+.pagination li a {display: block;text-align: center;}
 </style>
-
-<script>
-<!--
-// 这里把JS用到的所有语言都赋值到这里
-var process_request = "正在处理您的请求...";
-var todolist_caption = "记事本";
-var todolist_autosave = "自动保存";
-var todolist_save = "保存";
-var todolist_clear = "清除";
-var todolist_confirm_save = "是否将更改保存到记事本？";
-var todolist_confirm_clear = "是否清空内容？";
-var no_content = "内容不能为空";
-var no_reply_content = "回复内容不能为空";
-var no_title = "主题不能为空";
-//-->
-/*关闭按钮*/
-  function get_certificate(){
-	  var panel = document.getElementById('panelCloud');
-	  var mask  = document.getElementById('CMask')||null;
-	  var frame = document.getElementById('CFrame');
-	  if(panel&&CMask&&frame){
-	      panel.style.display = 'block';
-	      mask.style.display = 'block';
-	      frame.src = 'https://openapi.shopex.cn/oauth/authorize?response_type=code&client_id=yogfss4l&redirect_uri=http%3A%2F%2F127.0.0.1%2Fshixun%2FEC4%2Fsource%2Fecshop%2Fadmin%2Fcertificate.php%3Fact%3Dget_certificate%26type%3Dindex&view=auth_ecshop';
-	    }
-	}
-
-	/*关闭按钮*/
-	function btnCancel(item){
-	  var par  = item.offsetParent;
-	  var mask  = document.getElementById('CMask')||null;
-	  var frame = document.getElementById('CFrame');
-	  par.style.display = 'none';
-	  if(mask){mask.style.display = 'none';}
-	  frame.src = '';
-	}
-</script>
 </head>
 <body>
 <!--云起激活系统面板-->
@@ -85,9 +45,9 @@ var no_title = "主题不能为空";
     
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;会员留言 </span>
   <div style="clear:both"></div>
-</h1><script type="text/javascript" src="static/js/utils.js"></script><script type="text/javascript" src="static/js/listtable.js"></script><div class="form-div">
-  <form action="javascript:searchMsg()" name="searchForm">
-    <img src="static/picture/icon_search.svg" width="26" height="22" border="0" alt="SEARCH" />
+</h1></script><div class="form-div">
+  <form action="" name="searchForm">
+    <img src="/static/picture/icon_search.svg" width="26" height="22" border="0" alt="SEARCH" />
     类型:
     <select name="msg_type">
       <option value="-1">请选择...</option>
@@ -101,14 +61,14 @@ var no_title = "主题不能为空";
     留言标题: <input type="text" name="keyword" /> <input type="submit" class="button" value=" 搜索 " />
   </form>
 </div>
-<form method="POST" action="user_msg.php?act=batch_drop" name="listForm" onsubmit="return confirm_bath()">
+<form method="POST" action="" name="listForm" onsubmit="return confirm_bath()">
 <!-- start article list -->
 <div class="list-div" id="listDiv">
 <table cellpadding="3" cellspacing="1">
   <tr>
     <th>
       <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox" />
-      <a href="javascript:listTable.sort('msg_id'); ">编号</a><img src="static/picture/sort_desc.png">    </th>
+      <a href="javascript:listTable.sort('msg_id'); ">编号</a><img src="/static/picture/sort_desc.png">    </th>
     <th><a href="javascript:listTable.sort('user_name'); ">用户名</a></th>
     <th><a href="javascript:listTable.sort('msg_title'); ">留言标题</a></th>
     <th><a href="javascript:listTable.sort('msg_type'); ">类型</a></th>
@@ -117,38 +77,32 @@ var no_title = "主题不能为空";
     <th><a href="javascript:listTable.sort('reply'); ">回复</a></th>
     <th>操作</th>
   </tr>
-    <tr>
-    <td><input type="checkbox" name="checkboxes[]" value="1" />1</td>
-    <td align="center">ecshop</td>
-    <td align="left">三星SGH-F258什么时候到</td>
-    <td align="center">求购</a></td>
-    <td align="center"  nowrap="nowrap">2009-05-12 13:46:37</td>
-        <td align="center">显示</td>
-        <td align="center">未回复</td>
-    <td align="center">
-      <a href="user_msg.php?act=view&id=1" title="查看详情">
-        <img src="static/picture/icon_view.svg" border="0" height="16" width="16" />
-      </a>
-      <a href="javascript:;" onclick="listTable.remove(1, '您确认要删除这条记录吗?')"  title="移除">
-        <img src="static/picture/icon_drop.svg" border="0" height="16" width="16">
-      </a>
-    </td>
-  </tr>
-  </table>
-<table id="page-table" cellspacing="0">
+  <?php foreach ($list as $key => $v) { ?>
+      <tr>
+      <td><input type="checkbox" name="checkboxes[]" value="1" /><?=$v['msg_id']?></td>
+      <td align="center"><?=$v['user_name']?></td>
+      <td align="left"><?=$v['msg_title']?></td>
+      <td align="center"><?=$v['msg_type']?></a></td>
+      <td align="center"  nowrap="nowrap"><?=$v['msg_time']?></td>
+          <td align="center"><?=$v['msg_status']?></td>
+          <td align="center">回复</td>
+      <td align="center">
+        <a href="user_msg_view.html?id=<?=$v['msg_id']?>" title="查看详情">
+          查看详情
+        </a>
+        <a href="{:url('user_msg_del')}?id=<?=$v['msg_id']?>" onclick="listTable.remove(<?=$v['msg_id']?>, '您确认要删除这条记录吗?')"  title="移除">
+          移除
+        </a>
+      </td>
+    </tr>
+  <?php } ?>
+
 <tr>
-  <td><div>
-      <select name="sel_action">
-	    <option value="">请选择...</option>
-        <option value="remove">删除留言</option>
-        <option value="allow">允许显示</option>
-        <option value="deny">禁止显示</option>
-      </select>
-      <input type="hidden" name="act" value="batch" />
-      <input type="submit" name="drop" id="btnSubmit" value=" 确定 " class="button" disabled="true" /></div></td>
-  <td align="right" nowrap="true">
+  <td colspan="2"></td>
+      <!-- <input type="hidden" name="act" value="batch_remove" /> -->
+    <td align="right" nowrap="true" colspan="8">
   <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-<div id="turn-page">
+<!-- <div id="turn-page">
   <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
   页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
   条记录，总共 <span id="totalRecords">1</span>
@@ -161,13 +115,17 @@ var no_title = "主题不能为空";
     <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
       <option value='1'>1</option>    </select>
   </span>
-</div>
+</div> -->
+    <div class="pagination">
+        {$page}
+      </div>
   </td>
 </tr>
 </table>
 </div>
 <!-- end article list -->
 </form>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" language="JavaScript">
 listTable.recordCount = 1;
 listTable.pageCount = 1;

@@ -86,7 +86,7 @@ var deposit_desc_empty = "请填写会员描述！";
 <div class="mask-black" id="CMask"></div>
 <!--遮罩-->
 <h1>
-      <a class="btn btn-right" href="user_account_add.html">添加申请</a>
+      <a class="btn btn-right" href="user_account_add.html?id=1">添加申请</a>
   
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;充值和提现申请 </span>
   <div style="clear:both"></div>
@@ -126,9 +126,21 @@ var deposit_desc_empty = "请填写会员描述！";
     <th>操作员</th>
     <th>操作</th>
   </tr>
-    <tr>
-    <td class="no-records" colspan="8">没有找到任何记录</td>
-  </tr>
+    <?php foreach ($list as $key => $v) { ?>
+      <tr>
+        <td><?=$v['user_name']?></td>
+        <td align="center"><?=$v['add_time']?></td>
+        <td align="center"><?=$v['process_type']?></td>
+        <td align="right">￥<?=$v['amount']?>元</td>
+        <td><?=$v['payment']?></td>
+        <td align="center"><?=$v['is_paid']?></td>
+        <td align="center"><?=$v['admin_user']?>    
+        <td align="center">
+            <a href="user_account_check.html?id=<?=$v['id']?>" title="到款审核">到款审核</a>
+        <a href="javascript:;" onclick="listTable.remove(1, '您确认要删除这条记录吗?')" title="删除" >删除</a>
+            </td>
+      </tr>
+    <?php } ?>
   
 <table id="page-table" cellspacing="0">
 <tr>
@@ -136,7 +148,7 @@ var deposit_desc_empty = "请填写会员描述！";
   <td align="right" nowrap="true">
   <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <div id="turn-page">
-  <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
+ <!--  <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
   页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
   条记录，总共 <span id="totalRecords">0</span>
   条记录
@@ -147,7 +159,8 @@ var deposit_desc_empty = "请填写会员描述！";
     <a href="javascript:listTable.gotoPageLast()">最末页</a>
     <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
       <option value='1'>1</option>    </select>
-  </span>
+  </span> -->
+  {$page}
 </div>
   </td>
 </tr>

@@ -6,9 +6,10 @@ class Member extends Controller
 {
 	public function users()
 	{
-		// where('is_delete',1)->paginate(5);
-		$data = Db('users')->paginate(1);
+		$lists = Db('user_rank')->select();
+		$data = Db('users')->paginate(2);
 		$page = $data->render();
+		$this ->assign('to',$lists);
 		$this->assign('list',$data);
 		$this->assign('page',$page);
 		return view('users');
@@ -67,10 +68,10 @@ class Member extends Controller
 		}
 		return view('user_add');
 	}
-	public function user_address_list()
-	{
-		return view('user_address_list');
-	}
+	// public function user_address_list()
+	// {
+	// 	return view('user_address_list');
+	// }
 	public function users_edit()
 	{
 		$id = input('id');
@@ -83,7 +84,7 @@ class Member extends Controller
 			$data = [		//接受传递的参数
 				'user_name' => input('user_name'),
 				'email' => input('email'),	
-				'password' => input('password'),
+				'password' => md5(input('password')),
 				'sex' => input('sex'),
 				'birthday' => input('birthday'),
 				'user_money' => input('user_money'),
@@ -124,10 +125,29 @@ class Member extends Controller
 	}
 	public function user_msg()
 	{
+		$data = Db('feedback')->paginate(1);
+		$page = $data->render();
+		$this->assign('list',$data);
+		$this->assign('page',$page);
 		return view('user_msg');
+	}
+	public function user_msg_del()
+	{
+		$id=input("id");   
+		// echo $id;    
+        $res=Db('feedback')->where('msg_id='.$id)->delete();
+        if ($res) {
+        	return $this->success('删除成功',"admin/Member/user_msg");
+        }
+        else{
+        	return $this->error('删除失败',"admin/Member/user_msg");
+        }
 	}
 	public function user_msg_view()
 	{
+		$id=input("id"); 
+		$data=Db('feedback')->where('msg_id='.$id)->select();
+		$this->assign('list',$data);
 		return view('user_msg_view');
 	}
 	public function user_rank()
@@ -180,7 +200,6 @@ class Member extends Controller
         }else{
             $res = Db("user_rank")->where("rank_id",$rank_id)->update(["special_rank"=>'1']);
         }
-        
         if($res){
             $arr['status'] = 0;
             $arr['data'] = '';
@@ -219,23 +238,55 @@ class Member extends Controller
 	// }
 	public function user_account()
 	{
+		$data = Db('user_account')->alias('a')->join( 'users u on',' a.user_id=u.user_id' )->paginate(1);
+		$page = $data->render();
+		$this->assign('list',$data);
+		$this->assign('page',$page);
 		return view('user_account');
 	}
 	public function user_account_add()
 	{
+		$id = input('id');
+		if(request()->isPost()){ 
+			$data = [		//接受传递的参数
+				'user_id' => input('user_id'),
+				'admin_user' => $id,
+				'amount' => input('amount'),
+				'add_time' => date("Y-m-d H:i:s",time()),
+				'paid_time' => date("Y-m-d H:i:s",time()),
+				'admin_note' => input('admin_note'),
+				'user_note' => input('user_note'),
+				'process_type' => input('process_type'),
+				'payment' => input('payment'),
+				'is_paid' => input('is_paid'),
+			];
+			
+		/*	Db('表名') 数据库助手函数*/
+			if(Db('user_account') -> insert($data)){		//添加数据
+				return $this->success('提交申请成功',"admin/Member/user_account");	//成功后跳转  lst 界面
+			}else{
+				return $this->error('提交申请失败');
+			}
+			return;
+		
+		}
 		return view('user_account_add');
+	}
+	public function user_account_check()
+	{
+		return view('user_account_check');
 	}
 	public function user_account_manage()
 	{
 		return view('user_account_manage');
 	}
-	public function account_log()
+	public function account_log_add()
 	{
-		return view('account_log');
+		return view('account_log_add');
 	}
-	public function account_list()
+	public function account_log_list()
 	{
-		return view('account_list');
+		return view('account_log_list');
 	}
 	
 }
