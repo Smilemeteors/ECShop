@@ -12,19 +12,8 @@ class Goods extends Controller
     public function _initialize(){
         $this->goods = model('Goods');
     }
-    //商品添加
-    //
-    //
-    
-    
 
-
-
-    
-    //
-    //
-    //商品添加
-
+ 
 
     //商品列表
     public function goods_list()
@@ -414,23 +403,6 @@ class Goods extends Controller
     }
 
     //分类
-    //
-<<<<<<< HEAD
-    //分类添加
-    //
-    public function category_add()
-    {
-        return view('category_add');
-    }
-    public function cat_add_do()
-    {
-        $data = Request::instance()->post();
-        $arr = Db::name('cat')->insert($data);
-        if($arr){
-            $this->success('添加成功','goods/category_list');
-        }else{
-            $this->error('添加失败','goods/cat_add');
-=======
     //添加商品分类
     public function category_add(){
             if(request()->isPost()){
@@ -469,7 +441,7 @@ class Goods extends Controller
                 ];
             }
             echo json_encode($arr);
->>>>>>> c10b69432aca3b1286e3988fee61601bcd5a8f99
+
         }
     //分类展示
     public function category_list(){
