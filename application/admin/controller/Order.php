@@ -90,6 +90,10 @@ class Order extends \think\Controller
 		return view('shortage_registration');
 	}
 	// 添加订单
+	public function user_order()
+	{
+		return view('user_order');
+	}
 	public function add_order()
 	{
 		return view('add_order');
