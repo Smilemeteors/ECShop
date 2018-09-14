@@ -30,6 +30,7 @@ class Logo extends Controller
     		$data['ad_img'] = $this->upload();
     		// print_r($data['ad_img']);die;
             // 添加信息
+<<<<<<< HEAD
     		$res = Db('place')->insert($data); 
             if ($res) {
                 $this->success('添加成功','Logo/logo');
@@ -41,6 +42,18 @@ class Logo extends Controller
             $this->assign('re',$re);
     		return view('addLogo');
     	}   	
+=======
+            $res = Db('place')->insert($data);
+            if ($res) {
+                $this->success('添加成功', 'logo/logo');
+            } else {
+                $this->error('添加失败', 'logo/addlogo');
+            }
+            // 渲染模板
+        } else {
+            return view('addLogo');
+        }
+>>>>>>> d02279c8bd649850bebd51017af70eaa8a5973fe
     }
     //广告上传
 	public function upload(){
@@ -127,6 +140,7 @@ class Logo extends Controller
         }       
     }
 
+<<<<<<< HEAD
     //修改广告名称
     public function new_name()
     {
@@ -143,6 +157,8 @@ class Logo extends Controller
         }   
         echo json_encode($arr);    
     }
+=======
+>>>>>>> d02279c8bd649850bebd51017af70eaa8a5973fe
 
     //广告位展示
     public function position()
@@ -270,6 +286,7 @@ class Logo extends Controller
         // 渲染模板
         return view('detail');   
     }
+<<<<<<< HEAD
 
     //修改广告位名称
     public function change_name()
@@ -321,3 +338,6 @@ class Logo extends Controller
     }
 
 }
+=======
+}
+>>>>>>> d02279c8bd649850bebd51017af70eaa8a5973fe

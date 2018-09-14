@@ -58,19 +58,19 @@
      <tr>
     <td class="label">
       <a href="javascript:showNotice('passwordNotic');" title="点击此处查看提示信息">
-        <img src="static/picture/notice.svg" width="16" height="16" border="0" alt="点击此处查看提示信息"></a>旧密码</td>
+        <img src="/static/picture/notice.svg" width="16" height="16" border="0" alt="点击此处查看提示信息"></a>旧密码</td>
     <td>
-      <input type="password" name="old_password" size="34" /><span class="require-field">*</span>      <br /><span class="notice-span" style="display:block"  id="passwordNotic">如果要修改密码,请先填写旧密码,如留空,密码保持不变</span></td>
+      <input type="password" name="old_password" id="old_password" size="34" /><span class="require-field">*</span>      <br /><span class="notice-span" style="display:block"  id="passwordNotic">如果要修改密码,请先填写旧密码,如留空,密码保持不变</span></td>
   </tr>
   <tr>
     <td class="label">新密码</td>
     <td>
-      <input type="password" name="new_password" maxlength="32" size="34" /><span class="require-field">*</span></td>
+      <input type="password" name="new_password" id="new_password" maxlength="32" size="34" /><span class="require-field">*</span></td>
   </tr>
   <tr>
     <td class="label">确认密码</td>
     <td>
-      <input type="password" name="pwd_confirm" value="" size="34" /><span class="require-field">*</span></td>
+      <input type="password" name="pwd_confirm" id="pwd_confirm" value="" size="34" /><span class="require-field">*</span></td>
   </tr>
            <tr>
     <td colspan="2" align="center">
@@ -84,9 +84,27 @@
 </table>
 </form>
 </div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" src="static/js/utils.js"></script><script type="text/javascript" src="static/js/validator.js"></script><script language="JavaScript">
 var action = "edit";
-<!--
+
+$(document).on('blur','#new_password',function(){ 
+    var new_password = $("#new_password").val();   
+    var old_password = $("#old_password").val(); 
+    if (old_password == new_password) {
+        alert("新密码不能和旧密码一样");exit;
+    }else{
+      $(document).on('blur','#pwd_confirm',function(){
+        var new_password = $("#new_password").val();
+        var pwd_confirm = $("#pwd_confirm").val(); 
+        if (new_password != pwd_confirm) {
+            alert("密码不一致");exit;
+        }
+
+      })
+    }
+  })
+
 
 document.forms['theForm'].elements['user_name'].focus();
 onload = function()

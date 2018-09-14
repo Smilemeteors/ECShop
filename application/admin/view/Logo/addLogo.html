@@ -180,7 +180,11 @@ function ck_email(){
 
 function ck_phone(){
   var link_phone = document.getElementById("link_phone").value;
+<<<<<<< HEAD
   var reg = /^1[35678]\d{9}$/;
+=======
+  var reg = /^1[3578]\d{9}$/;
+>>>>>>> d02279c8bd649850bebd51017af70eaa8a5973fe
   if (reg.test(link_phone)) {
     document.getElementById('info_phone').innerHTML="";
     return true;
