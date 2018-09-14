@@ -13,13 +13,10 @@ class Goods extends Controller
         $this->goods = model('Goods');
     }
     //商品添加
-<<<<<<< HEAD
 
 
 
     //
-=======
->>>>>>> 1004f34f61ea7bb8ec80433234fd11714c6e51b7
     //
     public function goods_add()
     {
@@ -42,12 +39,9 @@ class Goods extends Controller
         }
 
     }
-<<<<<<< HEAD
     //
     //
     //商品添加
-=======
->>>>>>> 1004f34f61ea7bb8ec80433234fd11714c6e51b7
 
     //商品列表
     public function goods_list()
@@ -235,7 +229,6 @@ class Goods extends Controller
         }
         echo json_encode($arr);
     }
-<<<<<<< HEAD
 
 
     //
@@ -248,8 +241,6 @@ class Goods extends Controller
     // 
 
     
-=======
->>>>>>> 1004f34f61ea7bb8ec80433234fd11714c6e51b7
     //品牌部分
     public function brand_list(){
         $pages = 5;
@@ -441,14 +432,11 @@ class Goods extends Controller
         $arr = Db::table('goods')->where('is_delete',0)->select();
         return view('goods_trash',['arr'=>$arr]);
     }
-<<<<<<< HEAD
 
 
 
     //分类
 
-=======
->>>>>>> 1004f34f61ea7bb8ec80433234fd11714c6e51b7
     //分类添加
     //
 //    public function category_add()
@@ -466,12 +454,9 @@ class Goods extends Controller
         }
     }
 
-<<<<<<< HEAD
     //
     //分类添加
     //
-=======
->>>>>>> 1004f34f61ea7bb8ec80433234fd11714c6e51b7
     //添加商品分类
     public function category_add(){
             if(request()->isPost()){
@@ -513,10 +498,7 @@ class Goods extends Controller
                 ];
             }
             echo json_encode($arr);
-<<<<<<< HEAD
 
-=======
->>>>>>> 1004f34f61ea7bb8ec80433234fd11714c6e51b7
         }
     //分类展示
     public function category_list(){
