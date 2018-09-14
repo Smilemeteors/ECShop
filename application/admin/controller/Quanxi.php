@@ -55,6 +55,8 @@ class Quanxi extends Controller
 	}
 	public function agency_add()
 	{
+		$province = Db('region')->where ( array('parent_id'=>1) )->select ();
+    	$this->assign('province',$province);
 		if(request()->isPost()){ 
 			$data = [		//接受传递的参数
 				'agency_name' => input('agency_name'),
@@ -71,6 +73,16 @@ class Quanxi extends Controller
 		
 		}
 		return view('agency_add');
+	}
+	public function index()
+	{
+		$parent_id['parent_id'] = input('post.pro_id','addslashes');
+		$region = Db('Region')->where($parent_id)->select();
+		$opt = '<option>--请选择市区--</option>';
+		foreach($region as $key=>$val){
+		    $opt .= "<option value='{$val['region_id']}'>{$val['region_name']}</option>";
+		 }
+		 echo json_encode($opt);
 	}
 	public function privilege()
 	{

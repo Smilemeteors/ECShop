@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"D:\phpstudy\WWW\shixun\ECShop\public/../application/admin\view\quanxi\agency.html";i:1536897612;}*/ ?>
 ﻿<!-- $Id: agency_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -62,7 +63,7 @@
         <td><?=$v['agency_desc']?></td>
         <td align="center">
           <a href="agency_edit.html?id=<?=$v['agency_id']?>" title="编辑">编辑</a> |
-          <a href="{:url('agency_del')}?id=<?=$v['agency_id']?>" title="移除">移除</a>      </td>
+          <a href="<?php echo url('agency_del'); ?>?id=<?=$v['agency_id']?>" title="移除">移除</a>      </td>
       </tr>
     <?php } ?>
 
@@ -76,7 +77,7 @@
     <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
     <div id="turn-page" align="center">
       
-      {$page}
+      <?php echo $page; ?>
     </div> 
     </td>
   </tr>

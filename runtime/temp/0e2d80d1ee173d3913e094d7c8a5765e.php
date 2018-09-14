@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:83:"D:\phpstudy\WWW\shixun\ECShop\public/../application/admin\view\member\user_msg.html";i:1536897777;}*/ ?>
 ﻿<!-- $Id: msg_list.htm 15616 2009-02-18 05:16:22Z sunxiaodong $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -90,7 +91,7 @@
         <a href="user_msg_view.html?id=<?=$v['msg_id']?>" title="查看详情">
           查看详情
         </a>
-        <a href="{:url('user_msg_del')}?id=<?=$v['msg_id']?>" onclick="listTable.remove(<?=$v['msg_id']?>, '您确认要删除这条记录吗?')"  title="移除">
+        <a href="<?php echo url('user_msg_del'); ?>?id=<?=$v['msg_id']?>" onclick="listTable.remove(<?=$v['msg_id']?>, '您确认要删除这条记录吗?')"  title="移除">
           移除
         </a>
       </td>
@@ -104,7 +105,7 @@
   <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
     <div id="turn-page" align="center">
       
-      {$page}
+      <?php echo $page; ?>
     </div>
   </td>
 </tr>

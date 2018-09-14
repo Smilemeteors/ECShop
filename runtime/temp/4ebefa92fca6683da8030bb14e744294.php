@@ -1,19 +1,60 @@
-﻿<!-- $Id: msg_list.htm 15616 2009-02-18 05:16:22Z sunxiaodong $ -->
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:88:"D:\phpstudy\WWW\shixun\ECShop\public/../application/admin\view\member\user_msg_view.html";i:1536821770;}*/ ?>
+﻿<!-- $Id: msg_info.htm 16854 2009-12-07 06:20:09Z sxc_shop $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ECSHOP 管理中心 - 会员留言 </title>
+<title>ECSHOP 管理中心 - 回复 </title>
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="/static/css/general.css" rel="stylesheet" type="text/css" />
 <link href="/static/css/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/static/js/transport.js"></script><script type="text/javascript" src="/static/js/common.js"></script>
 <style>
-/*分页*/
-.pagination {}
-.pagination li {display: inline-block;margin-right: -1px;padding: 5px;border: 1px solid #e2e2e2;min-width: 20px;text-align: center;}
-.pagination li.active {background: #009688;color: #fff;border: 1px solid #009688;}
-.pagination li a {display: block;text-align: center;}
+  .panel-icloud .panel-right iframe {
+    height: 300px;
+    margin-top: 15px;
+  }
+  .panel-hint{
+    top: 0%;
+  }
 </style>
+
+<script>
+<!--
+// 这里把JS用到的所有语言都赋值到这里
+var process_request = "正在处理您的请求...";
+var todolist_caption = "记事本";
+var todolist_autosave = "自动保存";
+var todolist_save = "保存";
+var todolist_clear = "清除";
+var todolist_confirm_save = "是否将更改保存到记事本？";
+var todolist_confirm_clear = "是否清空内容？";
+var no_content = "内容不能为空";
+var no_reply_content = "回复内容不能为空";
+var no_title = "主题不能为空";
+//-->
+/*关闭按钮*/
+  function get_certificate(){
+	  var panel = document.getElementById('panelCloud');
+	  var mask  = document.getElementById('CMask')||null;
+	  var frame = document.getElementById('CFrame');
+	  if(panel&&CMask&&frame){
+	      panel.style.display = 'block';
+	      mask.style.display = 'block';
+	      frame.src = 'https://openapi.shopex.cn/oauth/authorize?response_type=code&client_id=yogfss4l&redirect_uri=http%3A%2F%2F127.0.0.1%2Fshixun%2FEC4%2Fsource%2Fecshop%2Fadmin%2Fcertificate.php%3Fact%3Dget_certificate%26type%3Dindex&view=auth_ecshop';
+	    }
+	}
+
+	/*关闭按钮*/
+	function btnCancel(item){
+	  var par  = item.offsetParent;
+	  var mask  = document.getElementById('CMask')||null;
+	  var frame = document.getElementById('CFrame');
+	  par.style.display = 'none';
+	  if(mask){mask.style.display = 'none';}
+	  frame.src = '';
+	}
+</script>
 </head>
 <body>
 <!--云起激活系统面板-->
@@ -42,129 +83,101 @@
 <div class="mask-black" id="CMask"></div>
 <!--遮罩-->
 <h1>
-    
-    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;会员留言 </span>
+      <a class="btn btn-right" href="<?php echo url('user_msg'); ?>">会员留言</a>
+  
+    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;回复 </span>
   <div style="clear:both"></div>
-</h1></script><div class="form-div">
-  <form action="" name="searchForm">
-    <img src="/static/picture/icon_search.svg" width="26" height="22" border="0" alt="SEARCH" />
-    类型:
-    <select name="msg_type">
-      <option value="-1">请选择...</option>
-      <option value="0">留言</option>
-      <option value="1">投诉</option>
-      <option value="2">询问</option>
-      <option value="3">售后</option>
-      <option value="4">求购</option>
-	  <option value="5">商家留言</option>
-    </select>
-    留言标题: <input type="text" name="keyword" /> <input type="submit" class="button" value=" 搜索 " />
-  </form>
-</div>
-<form method="POST" action="" name="listForm" onsubmit="return confirm_bath()">
-<!-- start article list -->
-<div class="list-div" id="listDiv">
-<table cellpadding="3" cellspacing="1">
-  <tr>
-    <th>
-      <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox" />
-      <a href="javascript:listTable.sort('msg_id'); ">编号</a><img src="/static/picture/sort_desc.png">    </th>
-    <th><a href="javascript:listTable.sort('user_name'); ">用户名</a></th>
-    <th><a href="javascript:listTable.sort('msg_title'); ">留言标题</a></th>
-    <th><a href="javascript:listTable.sort('msg_type'); ">类型</a></th>
-    <th><a href="javascript:listTable.sort('msg_time'); ">留言时间</a></th>
-    <th><a href="javascript:listTable.sort('msg_status'); ">状态</a></th>
-    <th><a href="javascript:listTable.sort('reply'); ">回复</a></th>
-    <th>操作</th>
-  </tr>
+</h1><div class="main-div">
+  <table width="98%">
   <?php foreach ($list as $key => $v) { ?>
-      <tr>
-      <td><input type="checkbox" name="checkboxes[]" value="1" /><?=$v['msg_id']?></td>
-      <td align="center"><?=$v['user_name']?></td>
-      <td align="left"><?=$v['msg_title']?></td>
-      <td align="center"><?=$v['msg_type']?></a></td>
-      <td align="center"  nowrap="nowrap"><?=$v['msg_time']?></td>
-          <td align="center"><?=$v['msg_status']?></td>
-          <td align="center">回复</td>
-      <td align="center">
-        <a href="user_msg_view.html?id=<?=$v['msg_id']?>" title="查看详情">
-          查看详情
-        </a>
-        <a href="{:url('user_msg_del')}?id=<?=$v['msg_id']?>" onclick="listTable.remove(<?=$v['msg_id']?>, '您确认要删除这条记录吗?')"  title="移除">
-          移除
-        </a>
+    <tr>
+      <td style="padding: 0px 20px">
+        <h3><?=$v['msg_title']?></h3>
+        <hr size="1" />
+        <div><?=$v['msg_content']?></div>
+                <div align="right"  nowrap="nowrap">【 留言板 】<a href="mailto:ecshop@ecshop.com">ecshop</a> @ 2009-05-12 13:46:37</div>
       </td>
     </tr>
-  <?php } ?>
+  
 
-<tr>
-  <td colspan="3" ></td>
-      <!-- <input type="hidden" name="act" value="batch_remove" /> -->
-    <td align="right" nowrap="true">
-  <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-    <div id="turn-page" align="center">
-      
-      {$page}
+    <div class="main-div">
+      <table width="98%">
+        <tr>
+          <td style="padding: 0px 20px">
+            <h3><?=$v['user_name']?> 于 <?=$v['msg_time']?> 回复:</h3>
+            <hr size="1" />
+            <div><?=$v['msg_content']?></div>
+          </td>
+        </tr>
+      </table>
     </div>
-  </td>
-</tr>
-</table>
+<?php } ?>
+    <tr>
+      <td align="center">
+                <input type="button" onclick="location.href='user_msg.php?act=check&check=forbid&id=1'" value="禁止显示" class="button" />
+            </td>
+    </tr>
+  </table>
 </div>
-<!-- end article list -->
-</form>
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript" language="JavaScript">
-listTable.recordCount = 1;
-listTable.pageCount = 1;
-cfm = new Object();
-cfm['allow'] = '你确定要允许显示所选评论吗？';
-cfm['remove'] = '你确定要删除所选评论吗？';
-cfm['deny'] = '你确定要禁止显示所选评论吗？';
-listTable.filter.keywords = '';
-listTable.filter.msg_type = '-1';
-listTable.filter.sort_by = 'f.msg_id';
-listTable.filter.sort_order = 'DESC';
-listTable.filter.record_count = '1';
-listTable.filter.page_size = '15';
-listTable.filter.page = '1';
-listTable.filter.page_count = '1';
-listTable.filter.start = '0';
 
+
+
+<div class="main-div">
+<form method="post" action="" name="theForm"  onsubmit="return validate()">
+<table border="0" width="98%">
+  <tr>
+    <td>email:</td>
+    <td><input name="user_email" id="user_email"  type="text" value=""></td>
+  </tr>
+  <tr>
+    <td>回复内容:</td>
+    <td rowspan="2"><textarea name="msg_content" cols="50" rows="4" wrap="VIRTUAL" id="msg_content"></textarea></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><input name="send_email_notice" type="checkbox" value='1'/>邮件通知</td>
+  </tr>
+    <tr>
+    <td>&nbsp;</td>
+    <td>
+      <input type="hidden" name="msg_id" value="1">      
+      <input type="hidden" name="parent_id" value="">
+      <input name="Submit" value=" 确定 " type="submit" class="button">
+      <input type="reset" value=" 重置 " class="button">
+          </td>
+  </tr>
+</table>
+</form>
+</div>
+<script type="text/javascript" src="/static/js/utils.js"></script><script type="text/javascript" src="/static/js/validator.js"></script><script language="JavaScript">
 <!--
+
+document.forms['theForm'].elements['msg_content'].focus();
+
+/**
+ * 检查表单输入的数据
+ */
+function validate()
+{
+    validator = new Validator("theForm");
+    validator.required("msg_content",  no_reply_content);
+    return validator.passed();
+}
+
 onload = function()
 {
-    document.forms['searchForm'].elements['keyword'].focus();
     // 开始检查订单
     startCheckOrder();
 }
-
-/**
- * 搜索标题
- */
-function searchMsg()
-{
-    var keyword = Utils.trim(document.forms['searchForm'].elements['keyword'].value);
-    var msgType = document.forms['searchForm'].elements['msg_type'].value;
-
-    listTable.filter['keywords'] = Utils.trim(document.forms['searchForm'].elements['keyword'].value);
-    listTable.filter['msg_type'] = document.forms['searchForm'].elements['msg_type'].value;
-    listTable.filter['page'] = 1;
-    listTable.loadList();
-}
-
-function confirm_bath()
-{
-    var action = document.forms['listForm'].elements['sel_action'].value;
-    if (action == 'allow'||action == 'remove'||action == 'deny')
-      {
-          return confirm(cfm[action]);
-      }
-}
 //-->
-</script>
 
+</script>
 <div id="footer">
-共执行 2 个查询，用时 0.016423 秒，Gzip 已禁用，内存占用 1.114 MB<br />
+共执行 3 个查询，用时 0.026733 秒，Gzip 已禁用，内存占用 1.123 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
 <!-- 新订单提示信息 -->
 <div id="popMsg">
@@ -191,7 +204,7 @@ function confirm_bath()
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0" id="msgBeep" width="1" height="1">
   <param name="movie" value="/static/images/online.swf">
   <param name="quality" value="high">
-  <embed src="/static/images/online.swf" name="msgBeep" id="msgBeep" quality="high" width="0" height="0" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?p1_prod_version=shockwaveflash">
+  <embed src="/static/simages/online.swf" name="msgBeep" id="msgBeep" quality="high" width="0" height="0" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?p1_prod_version=shockwaveflash">
   </embed>
 </object>
 
@@ -225,11 +238,11 @@ function showTodoList(adminid)
     global.onload = global.onreadystatechange= function()
     {
       if(this.readyState && this.readyState=="loading")return;
-      var md5 = $import("/static/js/md5.js","js");
+      var md5 = $import("js/md5.js","js");
       md5.onload = md5.onreadystatechange= function()
       {
         if(this.readyState && this.readyState=="loading")return;
-        var todolist = $import("/static/js/todolist.js","js");
+        var todolist = $import("js/todolist.js","js");
         todolist.onload = todolist.onreadystatechange = function()
         {
           if(this.readyState && this.readyState=="loading")return;

@@ -1,19 +1,15 @@
-﻿<!-- $Id: msg_list.htm 15616 2009-02-18 05:16:22Z sunxiaodong $ -->
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"D:\phpstudy\WWW\shixun\ECShop\public/../application/admin\view\quanxi\suppliers.html";i:1536897813;}*/ ?>
+﻿<!-- $Id: agency_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ECSHOP 管理中心 - 会员留言 </title>
+<title>ECSHOP 管理中心 - 供货商列表 </title>
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="/static/css/general.css" rel="stylesheet" type="text/css" />
-<link href="/static/css/main.css" rel="stylesheet" type="text/css" />
-<style>
-/*分页*/
-.pagination {}
-.pagination li {display: inline-block;margin-right: -1px;padding: 5px;border: 1px solid #e2e2e2;min-width: 20px;text-align: center;}
-.pagination li.active {background: #009688;color: #fff;border: 1px solid #009688;}
-.pagination li a {display: block;text-align: center;}
-</style>
+<link href="/static/css/general_2.css" rel="stylesheet" type="text/css" />
+<link href="/static/css/main_2.css" rel="stylesheet" type="text/css" />
+
 </head>
 <body>
 <!--云起激活系统面板-->
@@ -42,129 +38,90 @@
 <div class="mask-black" id="CMask"></div>
 <!--遮罩-->
 <h1>
-    
-    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;会员留言 </span>
+      <a class="btn btn-right" href="./suppliers_add.html">添加供货商</a>
+  
+    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;供货商列表 </span>
   <div style="clear:both"></div>
-</h1></script><div class="form-div">
-  <form action="" name="searchForm">
-    <img src="/static/picture/icon_search.svg" width="26" height="22" border="0" alt="SEARCH" />
-    类型:
-    <select name="msg_type">
-      <option value="-1">请选择...</option>
-      <option value="0">留言</option>
-      <option value="1">投诉</option>
-      <option value="2">询问</option>
-      <option value="3">售后</option>
-      <option value="4">求购</option>
-	  <option value="5">商家留言</option>
-    </select>
-    留言标题: <input type="text" name="keyword" /> <input type="submit" class="button" value=" 搜索 " />
-  </form>
-</div>
-<form method="POST" action="" name="listForm" onsubmit="return confirm_bath()">
-<!-- start article list -->
+</h1><script type="text/javascript" src="static/js/utils_2.js"></script><script type="text/javascript" src="static/js/listtable_2.js"></script>
+<form method="post" action="" name="listForm" onsubmit="return confirm(batch_drop_confirm);">
 <div class="list-div" id="listDiv">
-<table cellpadding="3" cellspacing="1">
-  <tr>
-    <th>
-      <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox" />
-      <a href="javascript:listTable.sort('msg_id'); ">编号</a><img src="/static/picture/sort_desc.png">    </th>
-    <th><a href="javascript:listTable.sort('user_name'); ">用户名</a></th>
-    <th><a href="javascript:listTable.sort('msg_title'); ">留言标题</a></th>
-    <th><a href="javascript:listTable.sort('msg_type'); ">类型</a></th>
-    <th><a href="javascript:listTable.sort('msg_time'); ">留言时间</a></th>
-    <th><a href="javascript:listTable.sort('msg_status'); ">状态</a></th>
-    <th><a href="javascript:listTable.sort('reply'); ">回复</a></th>
-    <th>操作</th>
-  </tr>
-  <?php foreach ($list as $key => $v) { ?>
-      <tr>
-      <td><input type="checkbox" name="checkboxes[]" value="1" /><?=$v['msg_id']?></td>
-      <td align="center"><?=$v['user_name']?></td>
-      <td align="left"><?=$v['msg_title']?></td>
-      <td align="center"><?=$v['msg_type']?></a></td>
-      <td align="center"  nowrap="nowrap"><?=$v['msg_time']?></td>
-          <td align="center"><?=$v['msg_status']?></td>
-          <td align="center">回复</td>
-      <td align="center">
-        <a href="user_msg_view.html?id=<?=$v['msg_id']?>" title="查看详情">
-          查看详情
-        </a>
-        <a href="{:url('user_msg_del')}?id=<?=$v['msg_id']?>" onclick="listTable.remove(<?=$v['msg_id']?>, '您确认要删除这条记录吗?')"  title="移除">
-          移除
-        </a>
-      </td>
+
+  <table cellpadding="3" cellspacing="1">
+    <tr>
+      <th> <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox" />
+          <a href="javascript:listTable.sort('suppliers_id'); ">编号</a><img src="static/picture/sort_desc_1.png"> </th>
+      <th><a href="javascript:listTable.sort('suppliers_name'); ">供货商名称</a></th>
+      <th>供货商描述</th>
+      <th>状态</th>
+      <th>操作</th>
     </tr>
-  <?php } ?>
-
-<tr>
-  <td colspan="3" ></td>
-      <!-- <input type="hidden" name="act" value="batch_remove" /> -->
+        <?php foreach ($list as $key => $v) { ?>
+          <tr>
+      <td><input type="checkbox" name="checkboxes[]" value="<?=$v['suppliers_id'];?>" />
+        <?=$v['suppliers_id'];?></td>
+      <td class="first-cell">
+        <span onclick="javascript:listTable.edit(this, 'edit_suppliers_name', <?=$v['suppliers_id'];?>)"><?=$v['suppliers_name']?>      </span></td>
+      <td><?=$v['suppliers_desc']?></td>
+      <td align="center"><img src="static/picture/yes_1.svg" width="20" onclick="listTable.toggle(this, 'is_check', <?=$v['suppliers_id'];?>)" style="cursor:pointer;"/></td>
+      <td align="center">
+        <a href="suppliers_edit.html?id=<?=$v['suppliers_id'];?>" title="编辑">编辑</a> |
+        <a href="<?php echo url('suppliers_del'); ?>?id=<?=$v['suppliers_id'];?>" onclick="listTable.remove(<?=$v['suppliers_id'];?>, '您确认要删除这条记录吗?')" title="移除">移除</a>      </td>
+    </tr>
+        <?php } ?>
+        <!-- <tr>
+      <td><input type="checkbox" name="checkboxes[]" value="2" />
+        2</td>
+      <td class="first-cell">
+        <span onclick="javascript:listTable.edit(this, 'edit_suppliers_name', 2)">上海供货商      </span></td>
+      <td>上海供货商</td>
+			<td align="center"><img src="static/picture/yes_1.svg" width="20" onclick="listTable.toggle(this, 'is_check', 2)" style="cursor:pointer;"/></td>
+      <td align="center">
+        <a href="suppliers.php?act=edit&id=2" title="编辑">编辑</a> |
+        <a href="javascript:void(0);" onclick="listTable.remove(2, '您确认要删除这条记录吗?')" title="移除">移除</a>      </td>
+    </tr> -->
+      </table>
+<table id="page-table" cellspacing="0">
+  <tr>
+    <td colspan="2">
+      <!-- <input name="remove" type="submit" id="btnSubmit" value="删除" class="button" disabled="true" />
+      <input name="act" type="hidden" value="batch" /> -->
+    </td>
     <td align="right" nowrap="true">
-  <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-    <div id="turn-page" align="center">
+    <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<div id="turn-page" align="center">
       
-      {$page}
+      <?php echo $page; ?>
     </div>
-  </td>
-</tr>
+    </td>
+  </tr>
 </table>
+
 </div>
-<!-- end article list -->
 </form>
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript" language="JavaScript">
-listTable.recordCount = 1;
-listTable.pageCount = 1;
-cfm = new Object();
-cfm['allow'] = '你确定要允许显示所选评论吗？';
-cfm['remove'] = '你确定要删除所选评论吗？';
-cfm['deny'] = '你确定要禁止显示所选评论吗？';
-listTable.filter.keywords = '';
-listTable.filter.msg_type = '-1';
-listTable.filter.sort_by = 'f.msg_id';
-listTable.filter.sort_order = 'DESC';
-listTable.filter.record_count = '1';
-listTable.filter.page_size = '15';
-listTable.filter.page = '1';
-listTable.filter.page_count = '1';
-listTable.filter.start = '0';
 
-<!--
-onload = function()
-{
-    document.forms['searchForm'].elements['keyword'].focus();
-    // 开始检查订单
-    startCheckOrder();
-}
+<script type="text/javascript" language="javascript">
+  <!--
+  listTable.recordCount = 2;
+  listTable.pageCount = 1;
 
-/**
- * 搜索标题
- */
-function searchMsg()
-{
-    var keyword = Utils.trim(document.forms['searchForm'].elements['keyword'].value);
-    var msgType = document.forms['searchForm'].elements['msg_type'].value;
-
-    listTable.filter['keywords'] = Utils.trim(document.forms['searchForm'].elements['keyword'].value);
-    listTable.filter['msg_type'] = document.forms['searchForm'].elements['msg_type'].value;
-    listTable.filter['page'] = 1;
-    listTable.loadList();
-}
-
-function confirm_bath()
-{
-    var action = document.forms['listForm'].elements['sel_action'].value;
-    if (action == 'allow'||action == 'remove'||action == 'deny')
-      {
-          return confirm(cfm[action]);
-      }
-}
-//-->
+    listTable.filter.sort_by = 'suppliers_id';
+    listTable.filter.sort_order = 'ASC';
+    listTable.filter.page = '1';
+    listTable.filter.page_size = '2';
+    listTable.filter.record_count = '2';
+    listTable.filter.page_count = '1';
+  
+  
+  onload = function()
+  {
+      // 开始检查订单
+      startCheckOrder();
+  }
+  
+  //-->
 </script>
-
 <div id="footer">
-共执行 2 个查询，用时 0.016423 秒，Gzip 已禁用，内存占用 1.114 MB<br />
+共执行 4 个查询，用时 0.013437 秒，Gzip 已禁用，内存占用 1.113 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
 <!-- 新订单提示信息 -->
 <div id="popMsg">
@@ -186,12 +143,12 @@ function confirm_bath()
 </div>
 
 <!--
-<embed src="static/flash/online.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
+<embed src="static/flash/online_2.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
 -->
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0" id="msgBeep" width="1" height="1">
-  <param name="movie" value="/static/images/online.swf">
+  <param name="movie" value="images/online.swf">
   <param name="quality" value="high">
-  <embed src="/static/images/online.swf" name="msgBeep" id="msgBeep" quality="high" width="0" height="0" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?p1_prod_version=shockwaveflash">
+  <embed src="images/online.swf" name="msgBeep" id="msgBeep" quality="high" width="0" height="0" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?p1_prod_version=shockwaveflash">
   </embed>
 </object>
 
@@ -225,11 +182,11 @@ function showTodoList(adminid)
     global.onload = global.onreadystatechange= function()
     {
       if(this.readyState && this.readyState=="loading")return;
-      var md5 = $import("/static/js/md5.js","js");
+      var md5 = $import("js/md5.js","js");
       md5.onload = md5.onreadystatechange= function()
       {
         if(this.readyState && this.readyState=="loading")return;
-        var todolist = $import("/static/js/todolist.js","js");
+        var todolist = $import("js/todolist.js","js");
         todolist.onload = todolist.onreadystatechange = function()
         {
           if(this.readyState && this.readyState=="loading")return;

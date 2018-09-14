@@ -1,13 +1,64 @@
-﻿<!-- $Id: agency_info.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:87:"D:\phpstudy\WWW\shixun\ECShop\public/../application/admin\view\member\user_account.html";i:1536897684;}*/ ?>
+﻿<!-- $Id: user_account_list.htm 17030 2010-02-08 09:39:33Z sxc_shop $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ECSHOP 管理中心 - 添加办事处 </title>
+<title>ECSHOP 管理中心 - 充值和提现申请 </title>
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="/static/css/general.css" rel="stylesheet" type="text/css" />
 <link href="/static/css/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/static/js/transport.js"></script><script type="text/javascript" src="/static/js/common.js"></script>
+<style>
+  .panel-icloud .panel-right iframe {
+    height: 300px;
+    margin-top: 15px;
+  }
+  .panel-hint{
+    top: 0%;
+  }
+</style>
 
+<script>
+<!--
+// 这里把JS用到的所有语言都赋值到这里
+var process_request = "正在处理您的请求...";
+var todolist_caption = "记事本";
+var todolist_autosave = "自动保存";
+var todolist_save = "保存";
+var todolist_clear = "清除";
+var todolist_confirm_save = "是否将更改保存到记事本？";
+var todolist_confirm_clear = "是否清空内容？";
+var user_id_empty = "会员名称不能为空！";
+var deposit_amount_empty = "请输入充值的金额！";
+var pay_code_empty = "请选择支付方式";
+var deposit_amount_error = "请按正确的格式输入充值的金额！";
+var deposit_type_empty = "请填写类型！";
+var deposit_notic_empty = "请填写管理员备注！";
+var deposit_desc_empty = "请填写会员描述！";
+//-->
+/*关闭按钮*/
+  function get_certificate(){
+	  var panel = document.getElementById('panelCloud');
+	  var mask  = document.getElementById('CMask')||null;
+	  var frame = document.getElementById('CFrame');
+	  if(panel&&CMask&&frame){
+	      panel.style.display = 'block';
+	      mask.style.display = 'block';
+	      frame.src = 'https://openapi.shopex.cn/oauth/authorize?response_type=code&client_id=yogfss4l&redirect_uri=http%3A%2F%2F127.0.0.1%2Fshixun%2FEC4%2Fsource%2Fecshop%2Fadmin%2Fcertificate.php%3Fact%3Dget_certificate%26type%3Dindex&view=auth_ecshop';
+	    }
+	}
+
+	/*关闭按钮*/
+	function btnCancel(item){
+	  var par  = item.offsetParent;
+	  var mask  = document.getElementById('CMask')||null;
+	  var frame = document.getElementById('CFrame');
+	  par.style.display = 'none';
+	  if(mask){mask.style.display = 'none';}
+	  frame.src = '';
+	}
+</script>
 </head>
 <body>
 <!--云起激活系统面板-->
@@ -36,216 +87,120 @@
 <div class="mask-black" id="CMask"></div>
 <!--遮罩-->
 <h1>
-      <a class="btn btn-right" href="agency.php?act=list">办事处列表</a>
+      <a class="btn btn-right" href="user_account_add.html?id=1">添加申请</a>
   
-    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;添加办事处 </span>
+    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;充值和提现申请 </span>
   <div style="clear:both"></div>
-</h1><script type="text/javascript" src="static/js/validator.js"></script><script type="text/javascript" src="static/js/region.js"></script><div class="main-div">
-<form method="post" action="" name="theForm" enctype="multipart/form-data" onsubmit="return validate()">
-<table cellspacing="1" cellpadding="3" width="100%">
-  <tr>
-    <td class="label">办事处名称：</td>
-    <td><input type="text" name="agency_name" maxlength="60" value="" /><span class="require-field">*</span></td>
-  </tr>
-  <tr>
-    <td class="label">办事处描述：</td>
-    <td><textarea  name="agency_desc" cols="60" rows="4"  ></textarea></td>
-  </tr>
-  <tr>
-    <td class="label">
-    <a href="javascript:showNotice('noticeAdmins');" title="点击此处查看提示信息"><img src="static/picture/notice.svg" width="16" height="16" border="0" alt="点击此处查看提示信息"></a>负责该办事处的管理员：</td>
-    <td>      <input type="checkbox" name="admins[]" value="1"  />
-      admin&nbsp;&nbsp;
-          <input type="checkbox" name="admins[]" value="2"  />
-      88180801933661&nbsp;&nbsp;
-    <br />
-    <span class="notice-span" style="display:block"  id="noticeAdmins">用星号(*)标注的管理员表示已经负责其他的办事处了</span></td>
-  </tr>
-  <tr>
-    <td class="label">该办事处管辖的地区：</td>
-    <td id="regionCell"> </td>
-  </tr>
-</table>
-<hr>
-<table cellspacing="1" cellpadding="3" width="100%">
-  <caption><strong>从下面的列表中选择地区，点加号按钮添加到该办事处管辖的地区</strong></caption>
-  <tr>
-    <td width="10%">&nbsp;</td>
-    <td>一级地区：</td>
-    <td>二级地区：</td>
-    <td>三级地区：</td>
-    <td>四级地区：</td>
-    <td width="10">&nbsp;</td>
-    <td width="10%">&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td><select name="country" id="selCountries" onChange="region.changed(this, 1, 'selProvinces')" size="10">
-              <option value="1" selected>中国</option>
-          </select></td>
-    <td>
-    <!-- 省份 -->
-    <select name="pro" id="pro">
-      <?php foreach ($province as $key => $v) { ?>
-      <option value="{$v.region_id}">{$v.region_name}</option>
-     <?php } ?>
-    </select> </td>
-    <td><!-- 城市 -->
-    <select name="city" id="city">
-        <option></option>
-    </select></td>
-    <td><!-- 区县 -->
-    <select name="area" id="area">
-        <option></option>
-    </select></td>
-    <td><input type="button" value="+" class="button" onclick="addRegion()" /></td>
-    <td>&nbsp;</td>
-    
-  </tr>
-</table>
-
-<table align="center">
-  <tr>
-    <td colspan="2" align="center">
-      <input type="submit" class="button" value=" 确定 " />
-      <input type="reset" class="button" value=" 重置 " />
-      <input type="hidden" name="act" value="insert" />
-      <input type="hidden" name="id" value="0" />
-    </td>
-  </tr>
-</table>
-</form>
+</h1><script type="text/javascript" src="static/js/utils.js"></script><script type="text/javascript" src="static/js/listtable.js"></script><div class="form-div">
+  <form action="javascript:searchUser()" name="searchForm">
+    <!-- <img src="static/picture/icon_search.gif" width="25" height="22" border="0" alt="SEARCH" /> -->
+    会员名称 <input type="text" name="keyword" size="10" />
+      <select name="process_type">
+        <option value="-1">类型</option>
+        <option value="0" >充值</option>
+        <option value="1" >提现</option>
+      </select>
+      <select name="payment">
+      <option value="">支付方式</option>
+      <option value="余额支付">余额支付</option><option value="银行汇款/转帐">银行汇款/转帐</option><option value="<font color="#FF0000">天工收银</font>"><font color="#FF0000">天工收银</font></option>      </select>
+      <select name="is_paid">
+        <option value="-1">到款状态</option>
+        <option value="0" >未确认</option>
+        <option value="1" >已完成</option>
+        <option value="2">取消</option>
+      </select>
+      <input type="submit" value=" 搜索 " class="button" />
+  </form>
 </div>
-<script type="text/javascript" src="/static/js/utils.js"></script>
-<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
-<script language="JavaScript">
-    // $('#pro').change(function(){
-    //     $.ajax({
-    //         type:"post",
-    //         url:"{:URL('Quanxi/index')}",
-    //         data:'pro_id='+$('#pro').val(),
-    //         dataType:"json",
-    //         success:function(data){
-    //             console.log(data);
-    //         }
-    //     });
-    // });
-    $('#pro').change(function(){
-    $.ajax({
-        type:"post",
-        url:"{:URL('Quanxi/Index')}",
-        data:'pro_id='+$('#pro').val(),
-        dataType:"json",
-        success:function(data){
-            $('#city').html(data);
-        }
-    });
-  });
-   $('#city').change(function(){
-    $.ajax({
-        type:"post",
-        url:"{:URL('Quanxi/Index')}",
-        data:'pro_id='+$('#city').val(),
-        dataType:"json",
-        success:function(data){
-            $('#area').html(data);
-        }
-    });
-});
 
-region.isAdmin = true;
-document.forms['theForm'].elements['agency_name'].focus();
+<form method="POST" action="" name="listForm">
+<!-- start user_deposit list -->
+<div class="list-div" id="listDiv">
+<table cellpadding="3" cellspacing="1">
+  <tr>
+    <th><a href="javascript:listTable.sort('user_name', 'DESC'); ">会员名称</a></th>
+    <th><a href="javascript:listTable.sort('add_time', 'DESC'); ">操作日期</a></th>
+    <th><a href="javascript:listTable.sort('process_type', 'DESC'); ">类型</a></th>
+    <th><a href="javascript:listTable.sort('amount', 'DESC'); ">金额</a></th>
+    <th><a href="javascript:listTable.sort('payment', 'DESC'); ">支付方式</a></th>
+    <th><a href="javascript:listTable.sort('is_paid', 'DESC'); ">到款状态</a></th>
+    <th>操作员</th>
+    <th>操作</th>
+  </tr>
+    <?php foreach ($list as $key => $v) { ?>
+      <tr>
+        <td><?=$v['user_name']?></td>
+        <td align="center"><?=$v['add_time']?></td>
+        <td align="center"><?=$v['process_type']?></td>
+        <td align="right">￥<?=$v['amount']?>元</td>
+        <td><?=$v['payment']?></td>
+        <td align="center"><?=$v['is_paid']?></td>
+        <td align="center"><?=$v['admin_user']?>    
+        <td align="center">
+            <a href="user_account_check.html?id=<?=$v['id']?>" title="到款审核">到款审核</a>
+        <a href="javascript:;" onclick="listTable.remove(1, '您确认要删除这条记录吗?')" title="删除" >删除</a>
+            </td>
+      </tr>
+    <?php } ?>
+  
+<table id="page-table" cellspacing="0">
+<tr>
+  <td>&nbsp;</td>
+  <td align="right" nowrap="true">
+  <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<div id="turn-page" align="center">
+      
+      <?php echo $page; ?>
+    </div>
+  </td>
+</tr>
+</table>
+</div>
+<!-- end user_deposit list -->
+</form>
+
+<script type="text/javascript" language="JavaScript">
+listTable.recordCount = 0;
+listTable.pageCount = 1;
+listTable.filter.user_id = '0';
+listTable.filter.keywords = '';
+listTable.filter.process_type = '-1';
+listTable.filter.payment = '';
+listTable.filter.is_paid = '-1';
+listTable.filter.sort_by = 'add_time';
+listTable.filter.sort_order = 'DESC';
+listTable.filter.start_date = '';
+listTable.filter.end_date = '';
+listTable.filter.record_count = '0';
+listTable.filter.page_size = '15';
+listTable.filter.page = '1';
+listTable.filter.page_count = '1';
+listTable.filter.start = '0';
+
+<!--
+
 onload = function()
 {
-    var selCountry = document.forms['theForm'].elements['country'];
-    if (selCountry.selectedIndex >= 0)
-    {
-        region.loadProvinces(selCountry.options[selCountry.selectedIndex].value);
-    }
     // 开始检查订单
     startCheckOrder();
 }
 /**
- * 检查表单输入的数据
+ * 搜索用户
  */
-function validate()
+function searchUser()
 {
-    validator = new Validator("theForm");
-    validator.required("agency_name",  no_agencyname);
-    return validator.passed();
-}
-
-/**
- * 添加一个区域
- */
-function addRegion()
-{
-    var selCountry  = document.forms['theForm'].elements['country'];
-    var selProvince = document.forms['theForm'].elements['province'];
-    var selCity     = document.forms['theForm'].elements['city'];
-    var selDistrict = document.forms['theForm'].elements['district'];
-    var regionCell  = document.getElementById("regionCell");
-
-    if (selDistrict.selectedIndex > 0)
-    {
-        regionId = selDistrict.options[selDistrict.selectedIndex].value;
-        regionName = selDistrict.options[selDistrict.selectedIndex].text;
-    }
-    else
-    {
-        if (selCity.selectedIndex > 0)
-        {
-            regionId = selCity.options[selCity.selectedIndex].value;
-            regionName = selCity.options[selCity.selectedIndex].text;
-        }
-        else
-        {
-            if (selProvince.selectedIndex > 0)
-            {
-                regionId = selProvince.options[selProvince.selectedIndex].value;
-                regionName = selProvince.options[selProvince.selectedIndex].text;
-            }
-            else
-            {
-                if (selCountry.selectedIndex >= 0)
-                {
-                    regionId = selCountry.options[selCountry.selectedIndex].value;
-                    regionName = selCountry.options[selCountry.selectedIndex].text;
-                }
-                else
-                {
-                    return;
-                }
-            }
-        }
-    }
-
-    // 检查该地区是否已经存在
-    exists = false;
-    for (i = 0; i < document.forms['theForm'].elements.length; i++)
-    {
-      if (document.forms['theForm'].elements[i].type=="checkbox" && document.forms['theForm'].elements[i].name.substr(0, 6) == 'region')
-      {
-        if (document.forms['theForm'].elements[i].value == regionId)
-        {
-          exists = true;
-          alert(region_exists);
-          break;
-        }
-      }
-    }
-
-    // 创建checkbox
-    if (!exists)
-    {
-      regionCell.innerHTML += "<input type='checkbox' name='regions[]' value='" + regionId + "' checked='true' /> " + regionName + "&nbsp;&nbsp;";
-    }
+    listTable.filter['keywords'] = Utils.trim(document.forms['searchForm'].elements['keyword'].value);
+    listTable.filter['process_type'] = document.forms['searchForm'].elements['process_type'].value;
+    listTable.filter['payment'] = Utils.trim(document.forms['searchForm'].elements['payment'].value);
+    listTable.filter['is_paid'] = document.forms['searchForm'].elements['is_paid'].value;
+    listTable.filter['page'] = 1;
+    listTable.loadList();
 }
 //-->
 </script>
 
 <div id="footer">
-共执行 4 个查询，用时 0.010493 秒，Gzip 已禁用，内存占用 1.337 MB<br />
+共执行 5 个查询，用时 0.016352 秒，Gzip 已禁用，内存占用 1.133 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
 <!-- 新订单提示信息 -->
 <div id="popMsg">

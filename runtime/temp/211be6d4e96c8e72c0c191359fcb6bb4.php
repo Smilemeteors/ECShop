@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:85:"D:\phpstudy\WWW\shixun\ECShop\public/../application/admin\view\quanxi\agency_add.html";i:1536911445;}*/ ?>
 ﻿<!-- $Id: agency_info.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -83,11 +84,15 @@
     <td><select name="country" id="selCountries" onChange="region.changed(this, 1, 'selProvinces')" size="10">
               <option value="1" selected>中国</option>
           </select></td>
+    
+    
+
+
     <td>
     <!-- 省份 -->
     <select name="pro" id="pro">
       <?php foreach ($province as $key => $v) { ?>
-      <option value="{$v.region_id}">{$v.region_name}</option>
+      <option value="<?php echo $v['region_id']; ?>"><?php echo $v['region_name']; ?></option>
      <?php } ?>
     </select> </td>
     <td><!-- 城市 -->
@@ -122,7 +127,7 @@
     // $('#pro').change(function(){
     //     $.ajax({
     //         type:"post",
-    //         url:"{:URL('Quanxi/index')}",
+    //         url:"<?php echo URL('Quanxi/index'); ?>",
     //         data:'pro_id='+$('#pro').val(),
     //         dataType:"json",
     //         success:function(data){
@@ -133,7 +138,7 @@
     $('#pro').change(function(){
     $.ajax({
         type:"post",
-        url:"{:URL('Quanxi/Index')}",
+        url:"<?php echo URL('Quanxi/Index'); ?>",
         data:'pro_id='+$('#pro').val(),
         dataType:"json",
         success:function(data){
@@ -144,7 +149,7 @@
    $('#city').change(function(){
     $.ajax({
         type:"post",
-        url:"{:URL('Quanxi/Index')}",
+        url:"<?php echo URL('Quanxi/Index'); ?>",
         data:'pro_id='+$('#city').val(),
         dataType:"json",
         success:function(data){
