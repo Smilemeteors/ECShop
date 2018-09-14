@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:63:"E:\ECShop\public/../application/admin\view\index\index_top.html";i:1536371816;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:63:"E:\ECShop\public/../application/admin\view\index\index_top.html";i:1536890099;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -26,15 +26,11 @@
 <div id="menu-div">
   <ul>
     <!-- <li class="fix-spacel">&nbsp;</li> -->
-    <li><a href="index.php?act=main" target="main-frame">起始页</a></li>
-    <li><a href="privilege.php?act=modif" target="main-frame">设置导航栏</a></li>
-        <li><a href="goods.php?act=list" target="main-frame">商品列表</a></li>
-        <li><a href="order.php?act=list" target="main-frame">订单列表</a></li>
-        <li><a href="comment_manage.php?act=list" target="main-frame">用户评论</a></li>
-        <li><a href="users.php?act=list" target="main-frame">会员列表</a></li>
-        <li><a href="shop_config.php?act=list_edit" target="main-frame">商店设置</a></li>
-        <li><a href="lead.php?act=list" target="main-frame">店铺二维码</a></li>
-        <li><a href="service_market.php" target="main-frame">服务市场</a></li>
+    <li><a href="admin/index/index_main" target="main-frame">起始页</a></li>
+    <li><a href="admin/goods/category_list" target="main-frame">商品分类</a></li>
+        <li><a href="admin/goods/goods_list" target="main-frame">商品列表</a></li>
+        <li><a href="admin/order/orders_list" target="main-frame">订单列表</a></li>
+        <li><a href="admin/goods/comment_manage_list" target="main-frame">用户评论</a></li>
         <!--授权按钮1-->
           <li class="btn-bind">
         <img src="static/picture/authorizegk.png">

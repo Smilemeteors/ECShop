@@ -13,6 +13,9 @@ class Goods extends Controller
         $this->goods = model('Goods');
     }
     //商品添加
+
+
+
     //
     //
     public function goods_add()
@@ -226,10 +229,12 @@ class Goods extends Controller
         }
         echo json_encode($arr);
     }
+
+
     //
     //
     //
-    // 以上 及点击该
+    // 以上 即点即改
     // 
     // 
     // 
@@ -428,7 +433,27 @@ class Goods extends Controller
         return view('goods_trash',['arr'=>$arr]);
     }
 
+
+
     //分类
+
+    //分类添加
+    //
+//    public function category_add()
+//    {
+//        return view('category_add');
+//    }
+    public function cat_add_do()
+    {
+        $data = Request::instance()->post();
+        $arr = Db::name('cat')->insert($data);
+        if ($arr) {
+            $this->success('添加成功', 'goods/category_list');
+        } else {
+            $this->error('添加失败', 'goods/cat_add');
+        }
+    }
+
     //
     //分类添加
     //
@@ -473,6 +498,7 @@ class Goods extends Controller
                 ];
             }
             echo json_encode($arr);
+
         }
     //分类展示
     public function category_list(){

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\index\index_menu.html";i:1536915157;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\index\index_menu.html";i:1536917876;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -111,7 +111,15 @@
                         </ul>
           </div>
                   </li>
-                          <li key="11_system" class="icon-system" data-url="shop_config.php?act=list_edit" data-key="01_shop_config" name="menu" onclick="showsub(this)">
+          <li key="11_system" class="icon-system" data-url="admin/system/accuse_list" data-key="01_shop_config" name="menu" onclick="showsub(this)">
+              投诉中心                    <div class="submenu">
+              <div class="title">投诉中心</div>
+              <ul>
+                  <li id="sub-menu-01_shop_config" class="menu-item" onclick="showact(this, event)"><a href="admin/system/accuse_list"target="main-frame">投诉列表</a>
+              </ul>
+          </div>
+          </li>
+                          <!-- <li key="11_system" class="icon-system" data-url="shop_config.php?act=list_edit" data-key="01_shop_config" name="menu" onclick="showsub(this)">
           系统设置                    <div class="submenu">
             <div class="title">系统设置</div>
             <ul>
@@ -130,7 +138,7 @@
             <li id="sub-menu-sitemap" class="menu-item" onclick="showact(this, event)"><a href="sitemap.php" target="main-frame">站点地图</a></li>
                         </ul>
           </div>
-                  </li>
+                  </li> -->
                         </ul>
           </div>
                   </li>
@@ -145,11 +153,11 @@
     <a href="privilege.php?act=modif" target="main-frame">admin</a>
     <div class="panel-hint">
       <ul>
-        <li>
-          <a href="index.php?act=clear_cache" target="main-frame" class="fix-submenu">清除缓存</a>
-        </li>
+        <!--<li>-->
+          <!--<a href="index.php?act=clear_cache" target="main-frame" class="fix-submenu">清除缓存</a>-->
+        <!--</li>-->
         <li class="btn-exit">
-          <a href="privilege.php?act=logout" target="_top" class="fix-submenu">退出</a>
+          <a href="<?php echo url('login/logout'); ?>" target="_top" class="fix-submenu">退出</a>
         </li>
       </ul>
     </div>

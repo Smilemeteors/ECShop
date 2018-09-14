@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\quanxi\agency.html";i:1536736832;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\quanxi\agency.html";i:1536917084;}*/ ?>
 ﻿<!-- $Id: agency_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -49,7 +49,7 @@
   <table cellpadding="3" cellspacing="1">
     <tr>
       <th> <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox" />
-          <a href="javascript:listTable.sort('agency_id'); ">编号</a><img src="images/sort_desc.png"/> </th>
+          <a href="javascript:listTable.sort('agency_id'); ">编号</a><img src="/static/images/sort_desc.png"/> </th>
       <th><a href="javascript:listTable.sort('agency_name'); ">办事处名称</a></th>
       <th>办事处描述</th>
       <th>操作</th>
@@ -66,30 +66,19 @@
           <a href="<?php echo url('agency_del'); ?>?id=<?=$v['agency_id']?>" title="移除">移除</a>      </td>
       </tr>
     <?php } ?>
-        
-      </table>
-<table id="page-table" cellspacing="0">
+
   <tr>
+  <td colspan="2"></td>
     <!-- <td>
       <input name="remove" type="submit" id="btnSubmit" value="删除" class="button" disabled="true" />
       <input name="act" type="hidden" value="batch" />
     </td> -->
     <td align="right" nowrap="true">
     <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-<div id="turn-page">
-  <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
-  页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
-  条记录，总共 <span id="totalRecords">0</span>
-  条记录
-  <span id="page-link">
-    <a href="javascript:listTable.gotoPageFirst()">第一页</a>
-    <a href="javascript:listTable.gotoPagePrev()">上一页</a>
-    <a href="javascript:listTable.gotoPageNext()">下一页</a>
-    <a href="javascript:listTable.gotoPageLast()">最末页</a>
-    <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
-      <option value='1'>1</option>    </select>
-  </span>
-</div>
+    <div id="turn-page" align="center">
+      
+      <?php echo $page; ?>
+    </div> 
     </td>
   </tr>
 </table>

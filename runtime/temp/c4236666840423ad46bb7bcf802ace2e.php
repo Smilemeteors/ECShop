@@ -1,8 +1,5 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:68:"E:\ECShop\public/../application/admin\view\goods\attribute_list.html";i:1536626420;}*/ ?>
-﻿
-<!-- $Id: attribute_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:68:"E:\ECShop\public/../application/admin\view\goods\attribute_list.html";i:1536827095;}*/ ?>
+﻿﻿<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <base href="/">
 <title>ECSHOP 管理中心 - 商品属性 </title>
@@ -51,7 +48,7 @@
       <td class="first-cell" nowrap="true" valign="top"><?php echo $v['attr_name']; ?></td>
       <td nowrap="true" valign="top"><?php echo $v['type_id']; ?></td>
       <td nowrap="true" valign="top"><?php echo $v['attr_input_type']; ?></td>
-      <td align="right" nowrap="true" valign="top"><?php echo $v['sort_order']; ?></td>
+      <td align="right" nowrap="true" valign="top"><?php echo $v['sort_order']; ?></td><td></td>
       <td align="center" nowrap="true" valign="top">
         <a href="//" title="编辑">编辑</a>
         <a href="<?php echo url('attribute_del'); ?>?id=<?php echo $v['attr_id']; ?>" onclick="removeRow(1)" title="移除">移除</a>

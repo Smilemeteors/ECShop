@@ -1,7 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\ECShop\public/../application/admin\view\goods\goods_type_manage.html";i:1536626420;}*/ ?>
-<!-- $Id: goods_type.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\ECShop\public/../application/admin\view\goods\goods_type_manage.html";i:1536827095;}*/ ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head><base href="/" />
 <title>ECSHOP 管理中心 - 商品类型 </title>
@@ -42,7 +39,7 @@
     <td align="center">
       <a href="<?php echo url('attribute_list'); ?>?id=<?php echo $v['type_id']; ?>" title="属性列表">属性列表</a> |
       <a href="<?php echo url('goods_type_upd'); ?>?id=<?php echo $v['type_id']; ?>" title="编辑">编辑</a> |
-      <a href="<?php echo url('goods_type_del'); ?>?id=<?php echo $v['type_id']; ?>" onclick="listTable.remove(1, '删除商品类型将会清除该类型下的所有属性。\n您确定要删除选定的商品类型吗？')" title="移除">移除</a>
+      <a href="<?php echo url('goods_type_del'); ?>?id=<?php echo $v['type_id']; ?>">移除</a>
     </td>
   </tr>
   <?php endforeach ?>

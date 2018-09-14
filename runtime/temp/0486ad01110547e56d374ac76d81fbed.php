@@ -1,5 +1,5 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:64:"E:\ECShop\public/../application/admin\view\quanxi\privilege.html";i:1536626420;}*/ ?>
-﻿privi<!-- $Id: privilege_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:64:"E:\ECShop\public/../application/admin\view\quanxi\privilege.html";i:1536827095;}*/ ?>
+﻿<!-- $Id: privilege_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -63,7 +63,7 @@
         <a href="role_edit.html?id=<?=$v['admin_id'];?>" title="分派权限">分派权限</a>&nbsp;
         <a href="admin_logs.html?id=<?=$v['admin_id'];?>" title="查看日志">查看日志</a>&nbsp;
         <a href="privilege_edit.html?id=<?=$v['admin_id'];?>" title="编辑">编辑</a>&nbsp;
-        <a href="javascript:;" onclick="listTable.remove(2, '您确认要删除这条记录吗?')" title="移除">移除</a></td>
+        <a href="<?php echo url('privilege_del'); ?>?id=<?=$v['admin_id']?>" title="移除">移除</a></td>
     </tr>
   <?php } ?>
     

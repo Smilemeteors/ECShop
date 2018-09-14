@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\quanxi\admin_logs.html";i:1536323921;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\quanxi\admin_logs.html";i:1536917084;}*/ ?>
 ﻿<!-- $Id: admin_logs.htm 15477 2008-12-22 03:44:50Z sunxiaodong $ -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -77,7 +77,7 @@
 <table cellpadding="3" cellspacing="1">
   <tr>
     <th><input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox">
-    <a href="javascript:listTable.sort('log_id'); ">编号</a><img src="static/picture/sort_desc_1.png"/></th>
+    <a href="javascript:listTable.sort('log_id'); ">编号</a><img src="/static/picture/sort_desc_1.png"/></th>
     <th><a href="javascript:listTable.sort('user_id'); ">操作者</a></th>
     <th><a href="javascript:listTable.sort('log_time'); ">操作日期</a></th>
     <th><a href="javascript:listTable.sort('ip_address'); ">IP地址</a></th>

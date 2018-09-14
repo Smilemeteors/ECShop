@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\member\users.html";i:1536819264;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\member\users.html";i:1536917084;}*/ ?>
 ﻿<!-- $Id: users_list.htm 17053 2010-03-15 06:50:26Z sxc_shop $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -53,9 +53,15 @@
 <div class="form-div">
   <form action="javascript:searchUser()" name="searchForm">
     <!-- <img src="/static/picture/icon_search.gif" width="26" height="22" border="0" alt="SEARCH" /> -->
-    &nbsp;会员等级 <select name="user_rank"><option value="0">所有等级</option><option value="1">注册用户</option><option value="3">代销用户</option><option value="2">vip</option></select>
+    &nbsp;会员等级 <select name="user_rank">
+    <option value="0">所有等级</option>
+    <?php foreach ($to as $key => $va){ ?>          
+    <option value="<?=$va['rank_id']?>" id="<?=$va['rank_id']?>"><?=$va['rank_name']?></option>
+    <?php } ?>
+   </select>
     &nbsp;会员积分大于&nbsp;<input type="text" name="pay_points_gt" size="8" />&nbsp;会员积分小于&nbsp;<input type="text" name="pay_points_lt" size="10" />
-    &nbsp;会员名称 &nbsp;<input type="text" name="keyword" /> <input type="submit" class="button" value=" 搜索 ">
+    &nbsp;会员名称 &nbsp;<input type="text" name="keyword" /> 
+    <input type="submit" class="button" value=" 搜索 ">
   </form>
 </div>
 
@@ -81,7 +87,7 @@
   <tr>
     <?php foreach ($list as $key => $v) { ?>
       <tr>
-        <td><input type="checkbox" name="checkboxes[]" value="<?=$v['user_id']?>" notice="0"/><?=$v['user_id']?></td>
+        <td><input type="checkbox" name="checkboxes[]" value="1" notice="0"/><?=$v['user_id']?></td>
         <td class="first-cell"><?=$v['user_name']?></td>
         <td><span onclick="listTable.edit(this, 'edit_email', <?=$v['user_id']?>)"><?=$v['email']?></span></td>
         
@@ -132,28 +138,15 @@
     </td>
   </tr> -->
     <tr>
-      <td colspan="2">
+      <td colspan="3">
       <input type="hidden" name="act" value="batch_remove" />
       <!-- <input type="submit" id="btnSubmit" value="删除会员" disabled="true" class="button" /></td> -->
       <td align="right" nowrap="true" colspan="8">
       <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-<!-- <div id="turn-page">
-  <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
-  页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
-  条记录，总共 <span id="totalRecords">2</span>
-  条记录
-  <span id="page-link">
-    <a href="javascript:listTable.gotoPageFirst()">第一页</a>
-    <a href="javascript:listTable.gotoPagePrev()">上一页</a>
-    <a href="javascript:listTable.gotoPageNext()">下一页</a>
-    <a href="javascript:listTable.gotoPageLast()">最末页</a>
-    <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
-      <option value='1'>1</option>    </select>
-  </span>
-</div> -->
-      <div class="pagination">
-        <?php echo $page; ?>
-      </div>
+<div id="turn-page" align="center">
+      
+      <?php echo $page; ?>
+    </div>
       </td>
   </tr>
 </table>
@@ -191,7 +184,10 @@ $(document).on('click','.is_validated',function(){
       }
     })
   })
-
+// $(document).on('click',".button",function(){
+//     var user_id = $(this).attr('.<?php echo $va['rank_id']; ?>');
+//     alert(user_id)
+// })
 listTable.recordCount = 2;
 listTable.pageCount = 1;
 
@@ -274,9 +270,9 @@ function confirm_bath()
 <embed src="static/flash/online.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
 -->
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0" id="msgBeep" width="1" height="1">
-  <param name="movie" value="images/online.swf">
+  <param name="movie" value="/static/images/online.swf">
   <param name="quality" value="high">
-  <embed src="images/online.swf" name="msgBeep" id="msgBeep" quality="high" width="0" height="0" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?p1_prod_version=shockwaveflash">
+  <embed src="/static/images/online.swf" name="msgBeep" id="msgBeep" quality="high" width="0" height="0" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?p1_prod_version=shockwaveflash">
   </embed>
 </object>
 
@@ -306,15 +302,15 @@ function showTodoList(adminid)
 {
   if(!MyTodolist)
   {
-    var global = $import("../js/global.js","js");
+    var global = $import("/static//js/global.js","js");
     global.onload = global.onreadystatechange= function()
     {
       if(this.readyState && this.readyState=="loading")return;
-      var md5 = $import("js/md5.js","js");
+      var md5 = $import("/static/js/md5.js","js");
       md5.onload = md5.onreadystatechange= function()
       {
         if(this.readyState && this.readyState=="loading")return;
-        var todolist = $import("js/todolist.js","js");
+        var todolist = $import("/static/js/todolist.js","js");
         todolist.onload = todolist.onreadystatechange = function()
         {
           if(this.readyState && this.readyState=="loading")return;
