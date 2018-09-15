@@ -1,14 +1,17 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:87:"D:\phpstudy\WWW\shixun\ECShop\public/../application/admin\view\member\user_account.html";i:1536897684;}*/ ?>
-﻿<!-- $Id: user_account_list.htm 17030 2010-02-08 09:39:33Z sxc_shop $ -->
+﻿<!-- $Id: bonus_type_info.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+
+<script type="text/javascript" src="static/js/calendar_1.js"></script>
+<link href="static/css/calendar_1.css" rel="stylesheet" type="text/css" />
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ECSHOP 管理中心 - 充值和提现申请 </title>
+<title>ECSHOP 管理中心 - 添加红包类型 </title><base href="/" />
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="/static/css/general.css" rel="stylesheet" type="text/css" />
-<link href="/static/css/main.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="/static/js/transport.js"></script><script type="text/javascript" src="/static/js/common.js"></script>
+<link href="static/css/general.css" rel="stylesheet" type="text/css" />
+<link href="static/css/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="static/js/transport_9.js"></script><script type="text/javascript" src="static/js/common_9.js"></script>
 <style>
   .panel-icloud .panel-right iframe {
     height: 300px;
@@ -29,13 +32,21 @@ var todolist_save = "保存";
 var todolist_clear = "清除";
 var todolist_confirm_save = "是否将更改保存到记事本？";
 var todolist_confirm_clear = "是否清空内容？";
-var user_id_empty = "会员名称不能为空！";
-var deposit_amount_empty = "请输入充值的金额！";
-var pay_code_empty = "请选择支付方式";
-var deposit_amount_error = "请按正确的格式输入充值的金额！";
-var deposit_type_empty = "请填写类型！";
-var deposit_notic_empty = "请填写管理员备注！";
-var deposit_desc_empty = "请填写会员描述！";
+var type_name_empty = "请输入红包类型名称!";
+var type_money_empty = "请输入红包类型价格!";
+var order_money_empty = "请输入订单金额!";
+var type_money_isnumber = "类型金额必须为数字格式!";
+var order_money_isnumber = "订单金额必须为数字格式!";
+var bonus_sn_empty = "请输入红包的序列号!";
+var bonus_sn_number = "红包的序列号必须是数字!";
+var bonus_sum_empty = "请输入您要发放的红包数量!";
+var bonus_sum_number = "红包的发放数量必须是一个整数!";
+var bonus_type_empty = "请选择红包的类型金额!";
+var user_rank_empty = "您没有指定会员等级!";
+var user_name_empty = "您至少需要选择一个会员!";
+var invalid_min_amount = "请输入订单下限（大于0的数字）";
+var send_start_lt_end = "红包发放开始日期不能大于结束日期";
+var use_start_lt_end = "红包使用开始日期不能大于结束日期";
 //-->
 /*关闭按钮*/
   function get_certificate(){
@@ -45,7 +56,7 @@ var deposit_desc_empty = "请填写会员描述！";
 	  if(panel&&CMask&&frame){
 	      panel.style.display = 'block';
 	      mask.style.display = 'block';
-	      frame.src = 'https://openapi.shopex.cn/oauth/authorize?response_type=code&client_id=yogfss4l&redirect_uri=http%3A%2F%2F127.0.0.1%2Fshixun%2FEC4%2Fsource%2Fecshop%2Fadmin%2Fcertificate.php%3Fact%3Dget_certificate%26type%3Dindex&view=auth_ecshop';
+	      frame.src = 'https://openapi.shopex.cn/oauth/authorize?response_type=code&client_id=yogfss4l&redirect_uri=http%3A%2F%2F127.0.0.1%2FECShop2%2Fsource%2Fecshop%2Fadmin%2Fcertificate.php%3Fact%3Dget_certificate%26type%3Dindex&view=auth_ecshop';
 	    }
 	}
 
@@ -87,120 +98,116 @@ var deposit_desc_empty = "请填写会员描述！";
 <div class="mask-black" id="CMask"></div>
 <!--遮罩-->
 <h1>
-      <a class="btn btn-right" href="user_account_add.html?id=1">添加申请</a>
+      <a class="btn btn-right" href="admin/Bonus/bonus_list">红包类型</a>
   
-    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;充值和提现申请 </span>
+    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;添加红包类型 </span>
   <div style="clear:both"></div>
-</h1><script type="text/javascript" src="static/js/utils.js"></script><script type="text/javascript" src="static/js/listtable.js"></script><div class="form-div">
-  <form action="javascript:searchUser()" name="searchForm">
-    <!-- <img src="static/picture/icon_search.gif" width="25" height="22" border="0" alt="SEARCH" /> -->
-    会员名称 <input type="text" name="keyword" size="10" />
-      <select name="process_type">
-        <option value="-1">类型</option>
-        <option value="0" >充值</option>
-        <option value="1" >提现</option>
-      </select>
-      <select name="payment">
-      <option value="">支付方式</option>
-      <option value="余额支付">余额支付</option><option value="银行汇款/转帐">银行汇款/转帐</option><option value="<font color="#FF0000">天工收银</font>"><font color="#FF0000">天工收银</font></option>      </select>
-      <select name="is_paid">
-        <option value="-1">到款状态</option>
-        <option value="0" >未确认</option>
-        <option value="1" >已完成</option>
-        <option value="2">取消</option>
-      </select>
-      <input type="submit" value=" 搜索 " class="button" />
-  </form>
-</div>
-
-<form method="POST" action="" name="listForm">
-<!-- start user_deposit list -->
-<div class="list-div" id="listDiv">
-<table cellpadding="3" cellspacing="1">
+</h1><div class="main-div">
+<form action="admin/Bonus/bonus_add" method="post" name="theForm" enctype="multipart/form-data" onsubmit="return validate()">
+<table width="100%">
   <tr>
-    <th><a href="javascript:listTable.sort('user_name', 'DESC'); ">会员名称</a></th>
-    <th><a href="javascript:listTable.sort('add_time', 'DESC'); ">操作日期</a></th>
-    <th><a href="javascript:listTable.sort('process_type', 'DESC'); ">类型</a></th>
-    <th><a href="javascript:listTable.sort('amount', 'DESC'); ">金额</a></th>
-    <th><a href="javascript:listTable.sort('payment', 'DESC'); ">支付方式</a></th>
-    <th><a href="javascript:listTable.sort('is_paid', 'DESC'); ">到款状态</a></th>
-    <th>操作员</th>
-    <th>操作</th>
+    <td class="label">类型名称</td>
+    <td>
+      <input type='text' name='bonus_name' maxlength="30" value="" size='20' />    </td>
   </tr>
-    <?php foreach ($list as $key => $v) { ?>
-      <tr>
-        <td><?=$v['user_name']?></td>
-        <td align="center"><?=$v['add_time']?></td>
-        <td align="center"><?=$v['process_type']?></td>
-        <td align="right">￥<?=$v['amount']?>元</td>
-        <td><?=$v['payment']?></td>
-        <td align="center"><?=$v['is_paid']?></td>
-        <td align="center"><?=$v['admin_user']?>    
-        <td align="center">
-            <a href="user_account_check.html?id=<?=$v['id']?>" title="到款审核">到款审核</a>
-        <a href="javascript:;" onclick="listTable.remove(1, '您确认要删除这条记录吗?')" title="删除" >删除</a>
-            </td>
-      </tr>
-    <?php } ?>
-  
-<table id="page-table" cellspacing="0">
-<tr>
-  <td>&nbsp;</td>
-  <td align="right" nowrap="true">
-  <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-<div id="turn-page" align="center">
-      
-      <?php echo $page; ?>
-    </div>
-  </td>
-</tr>
+  <tr>
+    <td class="label">发放类型</td>
+    <td>
+      <input type='text' name='bonus_type' maxlength="30" value="" size='20' />    </td>
+  </tr>
+  <tr>
+    <td class="label">红包金额</td>
+    <td>
+      ¥<input type='text' name='bonus_money' maxlength="30" value="" size='20' />元  </td>
+  </tr>
+  <tr>
+    <td class="label">订单下限</td>
+    <td>
+      <input type='text' name='order_limit' maxlength="30" value="" size='20' />    </td>
+  </tr>
+  <tr>
+    <td class="label">发放数量</td>
+    <td>
+      <input type='text' name='quantity' maxlength="30" value="" size='20' />    </td>
+  </tr>
+  <tr>
+    <td class="label">使用数量</td>
+    <td>
+      <input type='text' name='use_num' maxlength="30" value="" size='20' />    </td>
+  </tr>
+  <tr>
+    <td class="label">&nbsp;</td> 
+    <td>
+      <input type="submit" value=" 确定 " class="button" />
+      <input type="reset" value=" 重置 " class="button" />
+  </tr>
 </table>
-</div>
-<!-- end user_deposit list -->
 </form>
+</div>
 
-<script type="text/javascript" language="JavaScript">
-listTable.recordCount = 0;
-listTable.pageCount = 1;
-listTable.filter.user_id = '0';
-listTable.filter.keywords = '';
-listTable.filter.process_type = '-1';
-listTable.filter.payment = '';
-listTable.filter.is_paid = '-1';
-listTable.filter.sort_by = 'add_time';
-listTable.filter.sort_order = 'DESC';
-listTable.filter.start_date = '';
-listTable.filter.end_date = '';
-listTable.filter.record_count = '0';
-listTable.filter.page_size = '15';
-listTable.filter.page = '1';
-listTable.filter.page_count = '1';
-listTable.filter.start = '0';
-
+<script type="text/javascript" src="static/js/utils_9.js"></script><script type="text/javascript" src="static/js/validator_6.js"></script>
+<script language="javascript">
 <!--
-
+document.forms['theForm'].elements['type_name'].focus();
+/**
+ * 检查表单输入的数据
+ */
+function validate()
+{
+  validator = new Validator("theForm");
+  validator.required("type_name",      type_name_empty);
+  validator.required("type_money",     type_money_empty);
+  validator.isNumber("type_money",     type_money_isnumber, true);
+  validator.islt('send_start_date', 'send_end_date', send_start_lt_end);
+  validator.islt('use_start_date', 'use_end_date', use_start_lt_end);
+  if (document.getElementById(1).style.display == "")
+  {
+    var minAmount = parseFloat(document.forms['theForm'].elements['min_amount'].value);
+    if (isNaN(minAmount) || minAmount <= 0)
+    {
+	  validator.addErrorMsg(invalid_min_amount);
+    }	
+  }
+  return validator.passed();
+}
 onload = function()
 {
-    // 开始检查订单
-    startCheckOrder();
+  
+  get_value = '';
+  
+
+  showunit(get_value)
+  // 开始检查订单
+  startCheckOrder();
 }
-/**
- * 搜索用户
- */
-function searchUser()
+/* 红包类型按订单金额发放时才填写 */
+function gObj(obj)
 {
-    listTable.filter['keywords'] = Utils.trim(document.forms['searchForm'].elements['keyword'].value);
-    listTable.filter['process_type'] = document.forms['searchForm'].elements['process_type'].value;
-    listTable.filter['payment'] = Utils.trim(document.forms['searchForm'].elements['payment'].value);
-    listTable.filter['is_paid'] = document.forms['searchForm'].elements['is_paid'].value;
-    listTable.filter['page'] = 1;
-    listTable.loadList();
+  var theObj;
+  if (document.getElementById)
+  {
+    if (typeof obj=="string") {
+      return document.getElementById(obj);
+    } else {
+      return obj.style;
+    }
+  }
+  return null;
+}
+
+function showunit(get_value)
+{
+  gObj("1").style.display =  (get_value == 2) ? "" : "none";
+  document.forms['theForm'].elements['selbtn1'].disabled  = (get_value != 1 && get_value != 2);
+  document.forms['theForm'].elements['selbtn2'].disabled  = (get_value != 1 && get_value != 2);
+
+  return;
 }
 //-->
 </script>
 
 <div id="footer">
-共执行 5 个查询，用时 0.016352 秒，Gzip 已禁用，内存占用 1.133 MB<br />
+共执行 2 个查询，用时 0.007629 秒，Gzip 已禁用，内存占用 1.178 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
 <!-- 新订单提示信息 -->
 <div id="popMsg">
@@ -222,7 +229,7 @@ function searchUser()
 </div>
 
 <!--
-<embed src="static/flash/online.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
+<embed src="static/flash/online_9.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
 -->
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0" id="msgBeep" width="1" height="1">
   <param name="movie" value="images/online.swf">

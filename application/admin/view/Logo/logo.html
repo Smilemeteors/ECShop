@@ -72,15 +72,13 @@ var empty_position_style = "广告位的模版不能为空!";
 </head>
 <body>
 <h1>
-      <a class="btn btn-right" href="admin/logo/addLogo">添加广告</a>
-  
+    <a class="btn btn-right" href="admin/logo/addLogo">添加广告</a> 
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;广告列表 </span>
   <div style="clear:both"></div>
 </h1>
 <form method="post" action="" name="listForm">
 <!-- start ads list -->
 <div class="list-div" id="listDiv">
-
 <table cellpadding="3" cellspacing="1">
   <tr> 
     <th><center><a href="javascript:listTable.sort('ad_name'); ">广告名称</a><img src="static/picture/sort_desc.png"/></center></th>
@@ -95,8 +93,8 @@ var empty_position_style = "广告位的模版不能为空!";
 
   <?php foreach ($arr as $key => $val) { ?>
   <tr>
-    <td class="first-cell">
-    <span onclick="javascript:listTable.edit(this, 'edit_ad_name', 7)"><?php echo $val['ad_name'] ?></span>
+    <td class="first-cell" id="<?php echo $val['ad_id'] ?>">
+    <span class="ad_name"><?php echo $val['ad_name'] ?></span>
     </td>
     <td align="left"><span><?php echo $val['position_name'] ?></span>
     </td>
@@ -146,5 +144,36 @@ var empty_position_style = "广告位的模版不能为空!";
   </tr>
   </table>
 </div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type='text/javascript'>
+  $(document).on('click','.ad_name',function(){
+    var ad_name = $(this).text();
+    var obj = $(this);
+    var input = $("<input type='text' class='newname' value='"+ad_name+"' />");
+    obj.html(input);
+    input.click(function(){return false;});
+    input.trigger('oucs');
+  })
+  $(document).on('blur','.ad_name',function(){
+    var ad_name = $('.newname').val();
+    var id = $(this).parent('td').attr('id');
+    var obj = $(this);
+    $.ajax({
+      url:"{:url('logo/new_name')}",
+      type:'GET',
+      data:{ad_name:ad_name,id:id},
+      dataType:"json",
+      success:function(res){
+        // console.log(res);
+        if (res.status==0 ) {  
+          var input = $("<span class='ad_name' >"+ad_name+"</span>");
+          obj.html(input); 
+        } else {
+          alert(res.message);
+        }
+      }
+    })
+  })
+</script>
 </body>
 </html>

@@ -12,6 +12,10 @@ class Goods extends Controller
     public function _initialize(){
         $this->goods = model('Goods');
     }
+
+
+ 
+
     //商品添加
 
 
@@ -42,6 +46,7 @@ class Goods extends Controller
     //
     //
     //商品添加
+
 
     //商品列表
     public function goods_list()
@@ -437,6 +442,10 @@ class Goods extends Controller
 
     //分类
 
+
+
+
+
     //分类添加
     //
 //    public function category_add()
@@ -457,6 +466,8 @@ class Goods extends Controller
     //
     //分类添加
     //
+
+
     //添加商品分类
     public function category_add(){
             if(request()->isPost()){
