@@ -39,18 +39,6 @@ class Logo extends Controller
         } else {
             return view('addLogo');
         }
-    		$res = Db('place')->insert($data); 
-            if ($res) {
-                $this->success('添加成功','Logo/logo');
-            } else {
-                $this->error('添加失败','Logo/addLogo');
-            }	
-    	} else {
-            $re = Db('position')->select();
-            $this->assign('re',$re);
-    		return view('addLogo');
-    	}
-    	}   	
     }
     //广告上传
 	public function upload(){

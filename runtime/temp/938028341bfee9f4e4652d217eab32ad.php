@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\index\index_menu.html";i:1536917885;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\index\index_menu.html";i:1536930095;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -29,7 +29,7 @@
             <li id="sub-menu-06_goods_brand_list" class="menu-item" onclick="showact(this, event)"><a href="admin/goods/brand_list" target="main-frame">商品品牌</a></li>
             <li id="sub-menu-08_goods_type" class="menu-item" onclick="showact(this, event)"><a href="admin/goods/goods_type_manage" target="main-frame">商品类型</a></li>
             <li id="sub-menu-11_goods_trash" class="menu-item" onclick="showact(this, event)"><a href="admin/goods/goods_trash" target="main-frame">商品回收站</a></li>
-            <li id="sub-menu-11_goods_trash" class="menu-item" onclick="showact(this, event)"><a href="" target="main-frame">————</a></li>
+            <!-- <li id="sub-menu-11_goods_trash" class="menu-item" onclick="showact(this, event)"><a href="" target="main-frame">————</a></li>
             <li id="sub-menu-12_batch_pic" class="menu-item" onclick="showact(this, event)"><a href="picture_batch.php" target="main-frame">图片批量处理</a></li>
             <li id="sub-menu-13_batch_add" class="menu-item" onclick="showact(this, event)"><a href="goods_batch.php?act=add" target="main-frame">商品批量上传</a></li>
             <li id="sub-menu-14_goods_export" class="menu-item" onclick="showact(this, event)"><a href="goods_export.php?act=goods_export" target="main-frame">商品批量导出</a></li>
@@ -40,7 +40,7 @@
             <li id="sub-menu-51_virtual_card_add" class="menu-item" onclick="showact(this, event)"><a href="goods.php?act=add&extension_code=virtual_card" target="main-frame">添加虚拟商品</a></li>
             <li id="sub-menu-52_virtual_card_change" class="menu-item" onclick="showact(this, event)"><a href="virtual_card.php?act=change" target="main-frame">更改加密串</a></li>
             <li id="sub-menu-goods_auto" class="menu-item" onclick="showact(this, event)"><a href="goods_auto.php?act=list" target="main-frame">商品自动上下架</a></li>
-                        </ul>
+ -->                        </ul>
           </div>
                   </li>
                           <li key="03_promotion" class="icon-promotion" data-url="admin/Promotion
@@ -119,7 +119,7 @@
               </ul>
           </div>
           </li>
-                          <!-- <li key="11_system" class="icon-system" data-url="shop_config.php?act=list_edit" data-key="01_shop_config" name="menu" onclick="showsub(this)">
+                         <li key="11_system" class="icon-system" data-url="shop_config.php?act=list_edit" data-key="01_shop_config" name="menu" onclick="showsub(this)">
           系统设置                    <div class="submenu">
             <div class="title">系统设置</div>
             <ul>
@@ -138,7 +138,7 @@
             <li id="sub-menu-sitemap" class="menu-item" onclick="showact(this, event)"><a href="sitemap.php" target="main-frame">站点地图</a></li>
                         </ul>
           </div>
-                  </li> -->
+                  </li>
                         </ul>
           </div>
                   </li>
