@@ -18,6 +18,7 @@ class Logo extends Controller
         // 渲染模板输出
         return $this->fetch();
     }
+
     //广告添加
     public function addLogo()
     {
@@ -29,6 +30,7 @@ class Logo extends Controller
     		$data['ad_img'] = $this->upload();
     		// print_r($data['ad_img']);die;
             // 添加信息
+
     		$res = Db('place')->insert($data); 
             if ($res) {
                 $this->success('添加成功','Logo/logo');
@@ -40,6 +42,13 @@ class Logo extends Controller
             $this->assign('re',$re);
     		return view('addLogo');
     	}   	
+
+            $res = Db('place')->insert($data);
+            if ($res) {
+                $this->success('添加成功', 'logo/logo');
+            } else {
+                $this->error('添加失败', 'logo/addlogo');
+            }
     }
     //广告上传
 	public function upload(){
@@ -58,6 +67,7 @@ class Logo extends Controller
 	        }
     	}
 	}
+
     //广告修改
     public function upLogo()
     {
@@ -126,6 +136,25 @@ class Logo extends Controller
     }
 
 
+    //修改广告名称
+    public function new_name()
+    {
+        //接id
+        $id = input('get.id');
+        $ad_name = input('get.ad_name');
+        $res = Db('place')->where('ad_id',$id)->update(['ad_name'=>$ad_name]);
+        if ($res) {
+            $arr['status']=0;
+            $arr['message']='成功';
+        } else {
+            $arr['status']=1;
+            $arr['message']='失败';
+        }   
+        echo json_encode($arr);    
+    }
+
+
+
     //广告位展示
     public function position()
     {
@@ -136,6 +165,7 @@ class Logo extends Controller
         // 渲染模板输出
         return $this->fetch();
     }
+
     //广告位添加
     public function addPosition()
     {
@@ -251,4 +281,58 @@ class Logo extends Controller
         // 渲染模板
         return view('detail');   
     }
+
+
+    //修改广告位名称
+    public function change_name()
+    {
+        //接id
+        $id = input('get.id');
+        $position_name = input('get.position_name');
+        $res = Db('position')->where('position_id',$id)->update(['position_name'=>$position_name]);
+        if ($res) {
+            $arr['status']=0;
+            $arr['message']='成功';
+        } else {
+            $arr['status']=1;
+            $arr['message']='失败';
+        }   
+        echo json_encode($arr);    
+    }
+    //修改广告位宽度
+    public function change_width()
+    {
+        //接id
+        $id = input('get.id');
+        $position_width = input('get.position_width');
+        $res = Db('position')->where('position_id',$id)->update(['position_width'=>$position_width]);
+        if ($res) {
+            $arr['status']=0;
+            $arr['message']='成功';
+        } else {
+            $arr['status']=1;
+            $arr['message']='失败';
+        }   
+        echo json_encode($arr);    
+    }
+    //修改广告位高度
+    public function change_height()
+    {
+        //接id
+        $id = input('get.id');
+        $position_height = input('get.position_height');
+        $res = Db('position')->where('position_id',$id)->update(['position_height'=>$position_height]);
+        if ($res) {
+            $arr['status']=0;
+            $arr['message']='成功';
+        } else {
+            $arr['status']=1;
+            $arr['message']='失败';
+        }   
+        echo json_encode($arr);    
+    }
+
 }
+
+
+

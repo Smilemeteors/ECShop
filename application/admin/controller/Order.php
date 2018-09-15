@@ -26,7 +26,7 @@ class Order extends \think\Controller
 		if($res){
 			$data = Db::name('order')->paginate(5);
 			$this->assign('data',$data);
-			return view('orders_list');	
+			$this->success("删除成功",'orders_list');	
 		}else{
 			$data = Db::name('order')->paginate(5);
 			$this->assign('data',$data);

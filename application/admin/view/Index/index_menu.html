@@ -42,13 +42,11 @@
                         </ul>
           </div>
                   </li>
-                          <li key="03_promotion" class="icon-promotion" data-url="admin/Promotion
-/type" data-key="04_bonustype_list" name="menu" onclick="showsub(this)">
+                          <li key="03_promotion" class="icon-promotion" data-url="admin/bonus/bonus_list" data-key="04_bonustype_list" name="menu" onclick="showsub(this)">
           促销管理                    <div class="submenu">
             <div class="title">促销管理</div>
             <ul>
-            <li id="sub-menu-04_bonustype_list" class="menu-item" onclick="showact(this, event)"><a href="admin/Promotion
-/type" target="main-frame">红包类型</a></li>
+            <li id="sub-menu-04_bonustype_list" class="menu-item" onclick="showact(this, event)"><a href="admin/bonus/bonus_list" target="main-frame">红包类型</a></li>
             <!-- <li id="sub-menu-06_pack_list" class="menu-item" onclick="showact(this, event)"><a href="pack.php?act=list" target="main-frame">商品包装</a></li>
             <li id="sub-menu-07_card_list" class="menu-item" onclick="showact(this, event)"><a href="card.php?act=list" target="main-frame">祝福贺卡</a></li>
             <li id="sub-menu-08_group_buy" class="menu-item" onclick="showact(this, event)"><a href="group_buy.php?act=list" target="main-frame">团购活动</a></li>
@@ -92,7 +90,6 @@
             <li id="sub-menu-03_users_list" class="menu-item" onclick="showact(this, event)"><a href="admin/member/users" target="main-frame">会员列表</a></li>
             <li id="sub-menu-04_users_add" class="menu-item" onclick="showact(this, event)"><a href="admin/member/user_add" target="main-frame">添加会员</a></li>
             <li id="sub-menu-05_user_rank_list" class="menu-item" onclick="showact(this, event)"><a href="admin/member/user_rank" target="main-frame">会员等级</a></li>
-            <li id="sub-menu-06_list_integrate" class="menu-item" onclick="showact(this, event)"><a href="admin/member/integrate" target="main-frame">会员整合</a></li>
             <li id="sub-menu-08_unreply_msg" class="menu-item" onclick="showact(this, event)"><a href="admin/member/user_msg" target="main-frame">会员留言</a></li>
             <li id="sub-menu-09_user_account" class="menu-item" onclick="showact(this, event)"><a href="admin/member/user_account" target="main-frame">充值和提现申请</a></li>
             <li id="sub-menu-10_user_account_manage" class="menu-item" onclick="showact(this, event)"><a href="admin/member/user_account_manage" target="main-frame">资金管理</a></li>
@@ -111,11 +108,19 @@
                         </ul>
           </div>
                   </li>
-                          <li key="11_system" class="icon-system" data-url="shop_config.php?act=list_edit" data-key="01_shop_config" name="menu" onclick="showsub(this)">
+          <li key="11_system" class="icon-system" data-url="admin/system/accuse_list" data-key="01_shop_config" name="menu" onclick="showsub(this)">
+              投诉中心                    <div class="submenu">
+              <div class="title">投诉中心</div>
+              <ul>
+                  <li id="sub-menu-01_shop_config" class="menu-item" onclick="showact(this, event)"><a href="admin/system/accuse_list"target="main-frame">投诉列表</a>
+              </ul>
+          </div>
+          </li>
+                         <li key="11_system" class="icon-system" data-url="shop_config.php?act=list_edit" data-key="01_shop_config" name="menu" onclick="showsub(this)">
           系统设置                    <div class="submenu">
             <div class="title">系统设置</div>
             <ul>
-            <li id="sub-menu-01_shop_config" class="menu-item" onclick="showact(this, event)"><a href="shop_config.php?act=list_edit" target="main-frame">商店设置</a></li>
+            <li id="sub-menu-01_shop_config" class="menu-item" onclick="showact(this, event)"><a href="shop_config.php?act=list_edit"target="main-frame">商店设置</a></li>
             <li id="sub-menu-021_reg_fields" class="menu-item" onclick="showact(this, event)"><a href="reg_fields.php?act=list" target="main-frame">会员注册项设置</a></li>
             <li id="sub-menu-02_payment_list" class="menu-item" onclick="showact(this, event)"><a href="payment.php?act=list" target="main-frame">支付方式</a></li>
             <li id="sub-menu-03_shipping_list" class="menu-item" onclick="showact(this, event)"><a href="shipping.php?act=list" target="main-frame">配送方式</a></li>
@@ -145,11 +150,11 @@
     <a href="privilege.php?act=modif" target="main-frame">admin</a>
     <div class="panel-hint">
       <ul>
-        <li>
-          <a href="index.php?act=clear_cache" target="main-frame" class="fix-submenu">清除缓存</a>
-        </li>
+        <!--<li>-->
+          <!--<a href="index.php?act=clear_cache" target="main-frame" class="fix-submenu">清除缓存</a>-->
+        <!--</li>-->
         <li class="btn-exit">
-          <a href="privilege.php?act=logout" target="_top" class="fix-submenu">退出</a>
+          <a href="{:url('login/logout')}" target="_top" class="fix-submenu">退出</a>
         </li>
       </ul>
     </div>

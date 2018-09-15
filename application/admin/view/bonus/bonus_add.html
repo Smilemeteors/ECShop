@@ -1,13 +1,75 @@
-﻿<!-- $Id: privilege_info.htm 16616 2009-08-27 01:56:35Z liuhui $ -->
+﻿<!-- $Id: bonus_type_info.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+
+<script type="text/javascript" src="static/js/calendar_1.js"></script>
+<link href="static/css/calendar_1.css" rel="stylesheet" type="text/css" />
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ECSHOP 管理中心 - 编辑管理员 </title>
+<title>ECSHOP 管理中心 - 添加红包类型 </title><base href="/" />
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="/static/css/general.css" rel="stylesheet" type="text/css" />
-<link href="/static/css/main.css" rel="stylesheet" type="text/css" />
+<link href="static/css/general.css" rel="stylesheet" type="text/css" />
+<link href="static/css/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="static/js/transport_9.js"></script><script type="text/javascript" src="static/js/common_9.js"></script>
+<style>
+  .panel-icloud .panel-right iframe {
+    height: 300px;
+    margin-top: 15px;
+  }
+  .panel-hint{
+    top: 0%;
+  }
+</style>
 
+<script>
+<!--
+// 这里把JS用到的所有语言都赋值到这里
+var process_request = "正在处理您的请求...";
+var todolist_caption = "记事本";
+var todolist_autosave = "自动保存";
+var todolist_save = "保存";
+var todolist_clear = "清除";
+var todolist_confirm_save = "是否将更改保存到记事本？";
+var todolist_confirm_clear = "是否清空内容？";
+var type_name_empty = "请输入红包类型名称!";
+var type_money_empty = "请输入红包类型价格!";
+var order_money_empty = "请输入订单金额!";
+var type_money_isnumber = "类型金额必须为数字格式!";
+var order_money_isnumber = "订单金额必须为数字格式!";
+var bonus_sn_empty = "请输入红包的序列号!";
+var bonus_sn_number = "红包的序列号必须是数字!";
+var bonus_sum_empty = "请输入您要发放的红包数量!";
+var bonus_sum_number = "红包的发放数量必须是一个整数!";
+var bonus_type_empty = "请选择红包的类型金额!";
+var user_rank_empty = "您没有指定会员等级!";
+var user_name_empty = "您至少需要选择一个会员!";
+var invalid_min_amount = "请输入订单下限（大于0的数字）";
+var send_start_lt_end = "红包发放开始日期不能大于结束日期";
+var use_start_lt_end = "红包使用开始日期不能大于结束日期";
+//-->
+/*关闭按钮*/
+  function get_certificate(){
+	  var panel = document.getElementById('panelCloud');
+	  var mask  = document.getElementById('CMask')||null;
+	  var frame = document.getElementById('CFrame');
+	  if(panel&&CMask&&frame){
+	      panel.style.display = 'block';
+	      mask.style.display = 'block';
+	      frame.src = 'https://openapi.shopex.cn/oauth/authorize?response_type=code&client_id=yogfss4l&redirect_uri=http%3A%2F%2F127.0.0.1%2FECShop2%2Fsource%2Fecshop%2Fadmin%2Fcertificate.php%3Fact%3Dget_certificate%26type%3Dindex&view=auth_ecshop';
+	    }
+	}
+
+	/*关闭按钮*/
+	function btnCancel(item){
+	  var par  = item.offsetParent;
+	  var mask  = document.getElementById('CMask')||null;
+	  var frame = document.getElementById('CFrame');
+	  par.style.display = 'none';
+	  if(mask){mask.style.display = 'none';}
+	  frame.src = '';
+	}
+</script>
 </head>
 <body>
 <!--云起激活系统面板-->
@@ -36,193 +98,116 @@
 <div class="mask-black" id="CMask"></div>
 <!--遮罩-->
 <h1>
-      <a class="btn btn-right" href="privilege.html">管理员列表</a>
+      <a class="btn btn-right" href="admin/Bonus/bonus_list">红包类型</a>
   
-    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;编辑管理员 </span>
+    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;添加红包类型 </span>
   <div style="clear:both"></div>
 </h1><div class="main-div">
-<form name="theForm" method="post" enctype="multipart/form-data" onsubmit="return validate();">
+<form action="admin/Bonus/bonus_add" method="post" name="theForm" enctype="multipart/form-data" onsubmit="return validate()">
 <table width="100%">
-  <?php foreach ($list as $k=>$v) { ?>
-
   <tr>
-    <td class="label">用户名</td>
+    <td class="label">类型名称</td>
     <td>
-      <input type="text" name="user_name" maxlength="20" value="<?=$v['admin_name']?>" size="34"/><span class="require-field">*</span></td>
+      <input type='text' name='bonus_name' maxlength="30" value="" size='20' />    </td>
   </tr>
   <tr>
-    <td class="label">Email地址</td>
+    <td class="label">发放类型</td>
     <td>
-      <input type="text" name="email" value="<?=$v['admin_email']?>" size="34" /><span class="require-field">*</span></td>
-  </tr>
-     <tr>
-    <td class="label">
-      <a href="javascript:showNotice('passwordNotic');" title="点击此处查看提示信息">
-        <img src="/static/picture/notice.svg" width="16" height="16" border="0" alt="点击此处查看提示信息"></a>旧密码</td>
-    <td>
-      <input type="password" name="old_password" id="old_password" size="34" /><span class="require-field">*</span>      <br /><span class="notice-span" style="display:block"  id="passwordNotic">如果要修改密码,请先填写旧密码,如留空,密码保持不变</span></td>
+      <input type='text' name='bonus_type' maxlength="30" value="" size='20' />    </td>
   </tr>
   <tr>
-    <td class="label">新密码</td>
+    <td class="label">红包金额</td>
     <td>
-      <input type="password" name="new_password" id="new_password" maxlength="32" size="34" /><span class="require-field">*</span></td>
+      ¥<input type='text' name='bonus_money' maxlength="30" value="" size='20' />元  </td>
   </tr>
   <tr>
-    <td class="label">确认密码</td>
+    <td class="label">订单下限</td>
     <td>
-      <input type="password" name="pwd_confirm" id="pwd_confirm" value="" size="34" /><span class="require-field">*</span></td>
+      <input type='text' name='order_limit' maxlength="30" value="" size='20' />    </td>
   </tr>
-           <tr>
-    <td colspan="2" align="center">
-      <input type="submit" value=" 确定 " class="button" />&nbsp;&nbsp;&nbsp;
+  <tr>
+    <td class="label">发放数量</td>
+    <td>
+      <input type='text' name='quantity' maxlength="30" value="" size='20' />    </td>
+  </tr>
+  <tr>
+    <td class="label">使用数量</td>
+    <td>
+      <input type='text' name='use_num' maxlength="30" value="" size='20' />    </td>
+  </tr>
+  <tr>
+    <td class="label">&nbsp;</td> 
+    <td>
+      <input type="submit" value=" 确定 " class="button" />
       <input type="reset" value=" 重置 " class="button" />
-      <input type="hidden" name="act" value="update" />
-      <input type="hidden" name="token" value="" />
-      <input type="hidden" name="id" value="<?=$v['admin_id']?>" /></td>
-  </tr>      
-  <?php }  ?>
+  </tr>
 </table>
 </form>
 </div>
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript" src="static/js/utils.js"></script><script type="text/javascript" src="static/js/validator.js"></script><script language="JavaScript">
-var action = "edit";
 
-$(document).on('blur','#new_password',function(){ 
-    var new_password = $("#new_password").val();   
-    var old_password = $("#old_password").val(); 
-    if (old_password == new_password) {
-        alert("新密码不能和旧密码一样");exit;
-    }else{
-      $(document).on('blur','#pwd_confirm',function(){
-        var new_password = $("#new_password").val();
-        var pwd_confirm = $("#pwd_confirm").val(); 
-        if (new_password != pwd_confirm) {
-            alert("密码不一致");exit;
-        }
-
-      })
-    }
-  })
-
-
-document.forms['theForm'].elements['user_name'].focus();
-onload = function()
-{
-    // 开始检查订单
-    startCheckOrder();
-}
-
+<script type="text/javascript" src="static/js/utils_9.js"></script><script type="text/javascript" src="static/js/validator_6.js"></script>
+<script language="javascript">
+<!--
+document.forms['theForm'].elements['type_name'].focus();
 /**
- * 切换增加按钮的状态
+ * 检查表单输入的数据
  */
-function toggleAddButton()
-{
-    var sel = document.getElementById("all_menu_list");
-    document.getElementById("btnAdd").disabled = (sel.selectedIndex > -1) ? false : true;
-}
-
-/**
- * 切换移出，上移，下移按钮状态
- */
-function toggleButtonSatus()
-{
-    var sel = document.getElementById("menus_navlist");
-    document.getElementById("btnRemove").disabled = (sel.selectedIndex > -1) ? false : true;
-    document.getElementById("btnMoveUp").disabled = (sel.selectedIndex > -1) ? false : true;
-    document.getElementById("btnMoveDown").disabled = (sel.selectedIndex > -1) ? false : true;
-}
-
-/**
- * 移动选定的列表项
- */
-function moveOptions(direction)
-{
-    var sel = document.getElementById('menus_navlist');
-    if (sel.selectedIndex == -1)
-    {
-        return;
-    }
-
-    len = sel.length
-    for (i = 0; i < len; i++)
-    {
-        if (sel.options[i].selected)
-        {
-            if (i == 0 && direction == 'up')
-            {
-                return;
-            }
-
-            newOpt = sel.options[i].cloneNode(true);
-
-            sel.removeChild(sel.options[i]);
-            tarOpt = (direction == "up") ? sel.options[i-1] : sel.options[i+1]
-            sel.insertBefore(newOpt, tarOpt);
-            newOpt.selected = true;
-            break;
-        }
-    }
-}
-
-/**
-* 检查表单输入的数据
-*/
 function validate()
 {
-  get_navlist();
-
   validator = new Validator("theForm");
-  validator.password = function (controlId, msg)
+  validator.required("type_name",      type_name_empty);
+  validator.required("type_money",     type_money_empty);
+  validator.isNumber("type_money",     type_money_isnumber, true);
+  validator.islt('send_start_date', 'send_end_date', send_start_lt_end);
+  validator.islt('use_start_date', 'use_end_date', use_start_lt_end);
+  if (document.getElementById(1).style.display == "")
   {
-    var obj = document.forms[this.formName].elements[controlId];
-    obj.value = Utils.trim(obj.value);
-    if (!(obj.value.length >= 6 && /\d+/.test(obj.value) && /[a-zA-Z]+/.test(obj.value)))
+    var minAmount = parseFloat(document.forms['theForm'].elements['min_amount'].value);
+    if (isNaN(minAmount) || minAmount <= 0)
     {
-      this.addErrorMsg(msg);
-    }
-
+	  validator.addErrorMsg(invalid_min_amount);
+    }	
   }
-
-  validator.required("user_name", user_name_empty);
-  validator.required("email", email_empty, 1);
-  validator.isEmail("email", email_error);
-
-  if (action == "add")
-  {
-    if (document.forms['theForm'].elements['password'])
-    {
-      validator.password("password", password_invaild);
-      validator.eqaul("password", "pwd_confirm", password_error);
-    }
-  }
-  if (action == "edit" || action == "modif")
-  {
-    if (document.forms['theForm'].elements['old_password'].value.length > 0)
-    {
-      validator.password("new_password", password_invaild);
-      validator.eqaul("new_password", "pwd_confirm", password_error);
-    }
-  }
-
   return validator.passed();
 }
-
-function get_navlist()
+onload = function()
 {
-  if (!document.getElementById('nav_list[]'))
-  {
-    return;
-  }
+  
+  get_value = '';
+  
 
-  document.getElementById('nav_list[]').value = joinItem(document.getElementById('menus_navlist'));
-  //alert(document.getElementById('nav_list[]').value);
+  showunit(get_value)
+  // 开始检查订单
+  startCheckOrder();
+}
+/* 红包类型按订单金额发放时才填写 */
+function gObj(obj)
+{
+  var theObj;
+  if (document.getElementById)
+  {
+    if (typeof obj=="string") {
+      return document.getElementById(obj);
+    } else {
+      return obj.style;
+    }
+  }
+  return null;
+}
+
+function showunit(get_value)
+{
+  gObj("1").style.display =  (get_value == 2) ? "" : "none";
+  document.forms['theForm'].elements['selbtn1'].disabled  = (get_value != 1 && get_value != 2);
+  document.forms['theForm'].elements['selbtn2'].disabled  = (get_value != 1 && get_value != 2);
+
+  return;
 }
 //-->
-
 </script>
+
 <div id="footer">
-共执行 4 个查询，用时 0.021585 秒，Gzip 已禁用，内存占用 1.175 MB<br />
+共执行 2 个查询，用时 0.007629 秒，Gzip 已禁用，内存占用 1.178 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
 <!-- 新订单提示信息 -->
 <div id="popMsg">
@@ -244,7 +229,7 @@ function get_navlist()
 </div>
 
 <!--
-<embed src="static/flash/online.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
+<embed src="static/flash/online_9.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
 -->
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0" id="msgBeep" width="1" height="1">
   <param name="movie" value="images/online.swf">

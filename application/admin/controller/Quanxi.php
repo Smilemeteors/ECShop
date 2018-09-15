@@ -10,9 +10,10 @@ class Quanxi extends Controller
 	}
 	public function agency()
 	{
-		$data = Db('agency')->select();
-		// var_dump($data);
+		$data = Db('agency')->paginate(2);
+		$page = $data->render();
 		$this->assign('list',$data);
+		$this->assign('page',$page);
 		return view('agency');
 	}
 	public function agency_del()
@@ -54,6 +55,8 @@ class Quanxi extends Controller
 	}
 	public function agency_add()
 	{
+		$province = Db('region')->where ( array('parent_id'=>1) )->select ();
+    	$this->assign('province',$province);
 		if(request()->isPost()){ 
 			$data = [		//接受传递的参数
 				'agency_name' => input('agency_name'),
@@ -70,6 +73,16 @@ class Quanxi extends Controller
 		
 		}
 		return view('agency_add');
+	}
+	public function index()
+	{
+		$parent_id['parent_id'] = input('post.pro_id','addslashes');
+		$region = Db('Region')->where($parent_id)->select();
+		$opt = '<option>--请选择市区--</option>';
+		foreach($region as $key=>$val){
+		    $opt .= "<option value='{$val['region_id']}'>{$val['region_name']}</option>";
+		 }
+		 echo json_encode($opt);
 	}
 	public function privilege()
 	{
@@ -129,7 +142,7 @@ class Quanxi extends Controller
 			$data = [		//接受传递的参数
 				'admin_name' => input('user_name'),
 				'admin_email' => input('email'),
-				'admin_pwd' => md5(input('password')),
+				'admin_pwd' => md5(input('new_password')),
 				// 'date_time'=> date("Y-m-d H:i:s",time()),
 			];
 			
@@ -202,9 +215,10 @@ class Quanxi extends Controller
 	}
 	public function suppliers()
 	{
-		$data =Db('suppliers')->select();
-		// var_dump($data);die;
+		$data =Db('suppliers')->paginate(2);
+		$page = $data->render();
 		$this->assign('list', $data);
+		$this->assign('page',$page);
 		return view('suppliers');
 	}
 	public function suppliers_add()
