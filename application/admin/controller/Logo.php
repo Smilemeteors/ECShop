@@ -30,8 +30,6 @@ class Logo extends Controller
     		$data['ad_img'] = $this->upload();
     		// print_r($data['ad_img']);die;
             // 添加信息
-<<<<<<< HEAD
-=======
 
     		$res = Db('place')->insert($data); 
             if ($res) {
@@ -44,21 +42,6 @@ class Logo extends Controller
             $this->assign('re',$re);
     		return view('addLogo');
     	}   	
-
->>>>>>> cc7a6d7ea928a8b9ffda10c32921c8451d7834d8
-            $res = Db('place')->insert($data);
-            if ($res) {
-                $this->success('添加成功', 'logo/logo');
-            } else {
-                $this->error('添加失败', 'logo/addlogo');
-            }
-<<<<<<< HEAD
-            // 渲染模板
-        } else {
-            return view('addLogo');
-        }
-=======
->>>>>>> cc7a6d7ea928a8b9ffda10c32921c8451d7834d8
     }
     //广告上传
 	public function upload(){
