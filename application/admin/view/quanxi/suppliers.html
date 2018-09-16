@@ -41,7 +41,7 @@
   
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;供货商列表 </span>
   <div style="clear:both"></div>
-</h1><script type="text/javascript" src="static/js/utils_2.js"></script><script type="text/javascript" src="static/js/listtable_2.js"></script>
+</h1><script type="text/javascript" src="/static/js/utils_2.js"></script><script type="text/javascript" src="/static/js/listtable_2.js"></script>
 <form method="post" action="" name="listForm" onsubmit="return confirm(batch_drop_confirm);">
 <div class="list-div" id="listDiv">
 
@@ -61,7 +61,7 @@
       <td class="first-cell">
         <span onclick="javascript:listTable.edit(this, 'edit_suppliers_name', <?=$v['suppliers_id'];?>)"><?=$v['suppliers_name']?>      </span></td>
       <td><?=$v['suppliers_desc']?></td>
-      <td align="center"><img src="static/picture/yes_1.svg" width="20" onclick="listTable.toggle(this, 'is_check', <?=$v['suppliers_id'];?>)" style="cursor:pointer;"/></td>
+      <td align="center"><img src="/static/picture/yes.svg" width="20" onclick="listTable.toggle(this, 'is_check', <?=$v['suppliers_id'];?>)" style="cursor:pointer;"/></td>
       <td align="center">
         <a href="suppliers_edit.html?id=<?=$v['suppliers_id'];?>" title="编辑">编辑</a> |
         <a href="{:url('suppliers_del')}?id=<?=$v['suppliers_id'];?>" onclick="listTable.remove(<?=$v['suppliers_id'];?>, '您确认要删除这条记录吗?')" title="移除">移除</a>      </td>
@@ -145,9 +145,9 @@
 <embed src="static/flash/online_2.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
 -->
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0" id="msgBeep" width="1" height="1">
-  <param name="movie" value="images/online.swf">
+  <param name="movie" value="/static/images/online.swf">
   <param name="quality" value="high">
-  <embed src="images/online.swf" name="msgBeep" id="msgBeep" quality="high" width="0" height="0" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?p1_prod_version=shockwaveflash">
+  <embed src="/static/images/online.swf" name="msgBeep" id="msgBeep" quality="high" width="0" height="0" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?p1_prod_version=shockwaveflash">
   </embed>
 </object>
 
@@ -181,11 +181,11 @@ function showTodoList(adminid)
     global.onload = global.onreadystatechange= function()
     {
       if(this.readyState && this.readyState=="loading")return;
-      var md5 = $import("js/md5.js","js");
+      var md5 = $import("/static/js/md5.js","js");
       md5.onload = md5.onreadystatechange= function()
       {
         if(this.readyState && this.readyState=="loading")return;
-        var todolist = $import("js/todolist.js","js");
+        var todolist = $import("/static/js/todolist.js","js");
         todolist.onload = todolist.onreadystatechange = function()
         {
           if(this.readyState && this.readyState=="loading")return;

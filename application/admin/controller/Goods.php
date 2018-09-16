@@ -13,9 +13,6 @@ class Goods extends Controller
         $this->goods = model('Goods');
     }
     //商品添加
-<<<<<<< HEAD
-
-=======
     //
     //
     public function goods_add()
@@ -41,7 +38,6 @@ class Goods extends Controller
     }
     //
     //
->>>>>>> 078a7cd9446889f1673fe4098c2caf032628735b
     //商品添加
 
     //商品列表
@@ -230,8 +226,6 @@ class Goods extends Controller
         }
         echo json_encode($arr);
     }
-<<<<<<< HEAD
-=======
     //
     //
     //
@@ -240,9 +234,6 @@ class Goods extends Controller
     // 
     // 
     // 
->>>>>>> 6f1b9b59b7a9517b5898327049b326b5c7cb6d51
-
-    
     //品牌部分
     public function brand_list(){
         $pages = 5;
@@ -435,10 +426,7 @@ class Goods extends Controller
         return view('goods_trash',['arr'=>$arr]);
     }
 
-<<<<<<< HEAD
-=======
     //分类
-<<<<<<< HEAD
     //分类添加
     //
 //    public function category_add()
@@ -455,12 +443,9 @@ class Goods extends Controller
             $this->error('添加失败', 'goods/cat_add');
         }
     }
-=======
     //
     //分类添加
     //
->>>>>>> 078a7cd9446889f1673fe4098c2caf032628735b
->>>>>>> 6f1b9b59b7a9517b5898327049b326b5c7cb6d51
     //添加商品分类
     public function category_add(){
             if(request()->isPost()){
@@ -502,10 +487,6 @@ class Goods extends Controller
                 ];
             }
             echo json_encode($arr);
-<<<<<<< HEAD
-// >>>>>>> c10b69432aca3b1286e3988fee61601bcd5a8f99
-=======
->>>>>>> 6f1b9b59b7a9517b5898327049b326b5c7cb6d51
         }
     //分类展示
     public function category_list(){
