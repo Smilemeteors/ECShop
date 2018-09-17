@@ -34,7 +34,7 @@
         <div style="overflow:hidden; word-break:break-all;">
           <table width="100%">
             <tr>
-              <td><textarea style="width:100%;height:130px;" name="" form="usrform" onfocus="this.value=' ';this.onfocus=null;">请在此处输入文本...</textarea> </td>
+              <td><textarea name="reply_content" cols="190" rows="4" wrap="VIRTUAL"><?php echo $v['reply_content']; ?></textarea></td>
             </tr>
           </table>
         </div>
@@ -43,8 +43,9 @@
     </tr>
     <tr>
       <td align="center">
-                <input type="button" onclick="location.href=&#39;comment_manage.php?act=check&amp;check=forbid&amp;id=6&#39;" value="禁止显示" class="button">
+                <input type="button" id='is_show' value="禁止显示" class="button">
             </td>
+             <!-- onclick="location.href=&#39;comment_manage.php?act=check&amp;check=forbid&amp;id=6&#39;"  -->
     </tr>
   </tbody></table>
 </div>
@@ -126,4 +127,35 @@
   </tbody></table>
 </div>
 </body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+// $(document).on('click','#is_show',function(){
+//     var status = $(this).attr('value');
+//     var brand_id = $(this).attr('id');
+//     var obj = $(this);
+//     $.ajax({
+//       url:"{:url('goods/comment_change_status')}",
+//       data:{status:status,brand_id:brand_id},
+//       dataType:"json",
+//       success:function(res){
+//         if(res.status==1){
+
+//           alert(res.msg);
+//           return false;
+//         }else{
+
+//           if(status==1){
+
+//             // obj.prop("src","static/picture/no.svg");  
+//             obj.attr("value",0)
+//           }else{
+
+//             // obj.prop("src","static/picture/yes.svg");
+//             obj.attr("value",1)
+//           }
+//         }
+//       }
+//     })
+//   })
+</script>
 </html>
