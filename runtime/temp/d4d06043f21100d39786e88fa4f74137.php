@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\logo\position.html";i:1536972606;}*/ ?>
+=======
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\logo\position.html";i:1536889320;}*/ ?>
+>>>>>>> 48b94c85455ad47fb089bd7e615b932c05b51dce
 ﻿<!-- $Id: ad_position_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -10,6 +14,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="static/css/general_1.css" rel="stylesheet" type="text/css" />
 <link href="static/css/main_1.css" rel="stylesheet" type="text/css" />
+<<<<<<< HEAD
 
 <style>
   .panel-icloud .panel-right iframe {
@@ -68,11 +73,17 @@ var empty_position_style = "广告位的模版不能为空!";
     frame.src = '';
   }
 </script>
+=======
+>>>>>>> 48b94c85455ad47fb089bd7e615b932c05b51dce
 </head>
 <body>
 
 <h1>
+<<<<<<< HEAD
     <a class="btn btn-right" href="admin/logo/addPosition">添加广告位</a>
+=======
+      <a class="btn btn-right" href="admin/logo/addPosition">添加广告位</a>
+>>>>>>> 48b94c85455ad47fb089bd7e615b932c05b51dce
   
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;广告位置 </span>
   <div style="clear:both"></div>
@@ -91,6 +102,7 @@ var empty_position_style = "广告位的模版不能为空!";
   </tr>
   <?php foreach ($re as $key => $val) { ?>
   <tr>
+<<<<<<< HEAD
     <td class="first-cell" id="<?php echo $val['position_id'] ?>">
     <span class="position_name"><?php echo $val['position_name'] ?></span>
     </td>
@@ -98,6 +110,14 @@ var empty_position_style = "广告位的模版不能为空!";
     </td>
     <td align="left" id="<?php echo $val['position_id'] ?>"><span class='position_height'><?php echo $val['position_height'] ?></span>
     </td>
+=======
+    <td class="first-cell">
+    <span onclick="javascript:listTable.edit(this, 'edit_ad_name', 7)"><?php echo $val['position_name'] ?></span>
+    </td>
+    <td align="left"><span><?php echo $val['position_width'] ?></span>
+    </td>
+    <td align="left"><span><?php echo $val['position_height'] ?></span></td>
+>>>>>>> 48b94c85455ad47fb089bd7e615b932c05b51dce
     <td align="center"><span><?php echo $val['position_desc'] ?></span></td>
     <td align="right"><span>
       <a href="admin/Logo/detail?id=<?php echo $val['position_id'] ?>" title="查看">查看</a>
@@ -151,6 +171,7 @@ var empty_position_style = "广告位的模版不能为空!";
   </tr>
   </table>
 </div>
+<<<<<<< HEAD
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type='text/javascript'>
   //修改广告位名称
@@ -241,5 +262,9 @@ var empty_position_style = "广告位的模版不能为空!";
     })
   })
 </script>
+=======
+
+
+>>>>>>> 48b94c85455ad47fb089bd7e615b932c05b51dce
 </body>
 </html>

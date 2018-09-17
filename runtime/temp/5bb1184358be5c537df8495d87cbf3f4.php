@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\order\add_order.html";i:1536972365;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\order\add_order.html";i:1536226505;}*/ ?>
 ﻿<!-- $Id -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -7,9 +7,9 @@
 <title>ECSHOP 管理中心 - 添加订单 </title><base href="/" />
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="static/css/general_8.css" rel="stylesheet" type="text/css" />
-<link href="static/css/main_8.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="static/js/transport_8.js"></script><script type="text/javascript" src="static/js/common_8.js"></script>
+<link href="static/css/general_1.css" rel="stylesheet" type="text/css" />
+<link href="static/css/main_1.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="static/js/transport_1.js"></script><script type="text/javascript" src="static/js/common_1.js"></script>
 <style>
   .panel-icloud .panel-right iframe {
     height: 300px;
@@ -57,7 +57,7 @@ var loading = "加载中...";
 	  if(panel&&CMask&&frame){
 	      panel.style.display = 'block';
 	      mask.style.display = 'block';
-	      frame.src = 'https://openapi.shopex.cn/oauth/authorize?response_type=code&client_id=yogfss4l&redirect_uri=http%3A%2F%2F127.0.0.1%2FECShop2%2Fsource%2Fecshop%2Fadmin%2Fcertificate.php%3Fact%3Dget_certificate%26type%3Dindex&view=auth_ecshop';
+	      frame.src = 'https://openapi.shopex.cn/oauth/authorize?response_type=code&client_id=yogfss4l&redirect_uri=http%3A%2F%2F127.0.0.1%2FECShop1%2Fsource%2Fecshop%2Fadmin%2Fcertificate.php%3Fact%3Dget_certificate%26type%3Dindex&view=auth_ecshop';
 	    }
 	}
 
@@ -102,87 +102,30 @@ var loading = "加载中...";
     
     <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;添加订单 </span>
   <div style="clear:both"></div>
-</h1><script type="text/javascript" src="static/js/utils_8.js"></script><script type="text/javascript" src="static/js/validator_5.js"></script>
-<form name="theForm" action="order.php?act=step_post&step=edit_goods&order_id=12&step_act=add" method="post">
-<div class="list-div">
-<table cellpadding="3" cellspacing="1">
-  <tr>
-    <th scope="col">商品名称</th>
-    <th scope="col">货号</th>
-    <th scope="col">价格</th>
-    <th scope="col">数量</th>
-    <th scope="col">属性</th>
-    <th scope="col">小计</th>
-    <th scope="col">操作</th>
-  </tr>
-    <tr>
-    <td colspan="4"><span class="require-field">备注：商品价格中已包含属性加价</span></td>
-    <td align="right"><strong>合计：</strong></td>
-    <td align="right">0</td>
-    <td>    <input name="goods_count" type="hidden" value="0" /></td>
-  </tr>
-</table>
+</h1><script type="text/javascript" src="static/js/utils_1.js"></script><script type="text/javascript" src="static/js/validator.js"></script>
+<form name="theForm" action="order.php?act=step_post&step=user&order_id=0&step_act=add" method="post" onsubmit="return checkUser()">
+<div class="main-div" style="padding: 15px">
+  <label><input type="radio" name="anonymous" value="1" checked  /> 匿名用户</label><br />
+  <label><input type="radio" name="anonymous" value="0" id="user_useridname" /> 按会员编号或会员名搜索</label>
+  <input name="keyword" type="text" value=""  />
+  <input type="button" class="button" name="search" value=" 搜索 " onclick="searchUser();"  />
+  <select name="user" ></select>
+  <p><strong>注意：</strong>搜索结果只显示前20条记录，如果没有找到相应会员，请更精确地查找。另外，如果该会员是从论坛注册的且没有在商城登录过，也无法找到，需要先在商城登录。</p>
 </div>
-</form>
-
-<form name="goodsForm" action="order.php?act=step_post&step=add_goods&order_id=12&step_act=add" method="post" onsubmit="return addToOrder()">
-<p>
-  按商品编号或商品名称或商品货号搜索  <input type="text" name="keyword" value="" />
-  <input type="button" name="search" value=" 搜索 " onclick="searchGoods();" />
-  <select name="goodslist" onchange="getGoodsInfo(this.value)"></select>
-</p>
-<div class="list-div">
-<table cellpadding="3" cellspacing="1">
-  <tr>
-    <th width="100">商品名称</th>
-    <td id="goods_name">&nbsp;</td>
-  </tr>
-  <tr>
-    <th>货号</th>
-    <td id="goods_sn">&nbsp;</td>
-  </tr>
-  <tr>
-    <th>分类</th>
-    <td id="goods_cat">&nbsp;</td>
-  </tr>
-  <tr>
-    <th>品牌</th>
-    <td id="goods_brand">&nbsp;</td>
-  </tr>
-  <tr>
-    <th>价格</th>
-    <td id="add_price">&nbsp;</td>
-  </tr>
-  <tr>
-    <th>属性<input type="hidden" name="spec_count" value="0" /></th>
-    <td id="goods_attr">&nbsp;</td>
-  </tr>
-  <tr>
-    <th>数量</th>
-    <td><input name="add_number" type="text" value="1" size="10"></td>
-  </tr>
-  <tr>
-    <td colspan="2" align="center"><input name="add_goods" type="submit" value="加入订单" /></td>
-  </tr>
-</table>
-</div>
-</form>
-<form action="order.php?act=step_post&step=goods&order_id=12&step_act=add" method="post" onsubmit="return checkGoods()">
-  <p align="center">
-    <input name="next" type="submit" class="button" value="下一步" />
-    <input type="button" value="取消" class="button" onclick="button()" />
+<div style="text-align:center">
+  <p>
+    <input name="submit" type="submit" class="button" value="下一步"  />
+    <input type="button" value="取消" class="button" onclick="location.href='order.php?act=process&func=cancel_order&order_id=0&step_act=add'" />
   </p>
+</div>
 </form>
 
 
 <script language="JavaScript">
-  var step = 'goods';
-  var orderId = 12;
+  var step = 'user';
+  var orderId = 0;
   var act = 'add';
-  function button()
-  {
-    window.history.back(-1); 
-  }
+
   function checkUser()
   {
     var eles = document.forms['theForm'].elements;
@@ -491,14 +434,14 @@ var loading = "加载中...";
   function loadAddress(addressId)
   {
 
-    location.href += 'order.php?act=add&order_id=12&step=goods&address_id=' + addressId;
+    location.href += 'order.php?act=add&order_id=&step=&address_id=' + addressId;
 
   }
 </script>
 
 
 <div id="footer">
-共执行 6 个查询，用时 0.039770 秒，Gzip 已禁用，内存占用 2.621 MB<br />
+共执行 3 个查询，用时 0.012638 秒，Gzip 已禁用，内存占用 2.601 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
 <!-- 新订单提示信息 -->
 <div id="popMsg">
@@ -520,7 +463,7 @@ var loading = "加载中...";
 </div>
 
 <!--
-<embed src="static/flash/online_8.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
+<embed src="static/flash/online_1.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
 -->
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0" id="msgBeep" width="1" height="1">
   <param name="movie" value="images/online.swf">

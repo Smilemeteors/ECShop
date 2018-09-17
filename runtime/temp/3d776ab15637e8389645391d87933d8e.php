@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:86:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\comment_manage_list.html";i:1536973462;}*/ ?>
+=======
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:86:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\comment_manage_list.html";i:1536889320;}*/ ?>
+>>>>>>> 48b94c85455ad47fb089bd7e615b932c05b51dce
 <!-- $Id: comment_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -49,9 +53,13 @@
     <td><?php echo $v['reply_content']; ?></td>
     <td><?php echo $v['comment_type']; ?></td>
     <td><?php echo $v['id_value']; ?></td>
+<<<<<<< HEAD
     <td></td>
     <td><?php echo $v['add_time']; ?></td>
     <td></td>
+=======
+    <td><?php echo $v['add_time']; ?></td>
+>>>>>>> 48b94c85455ad47fb089bd7e615b932c05b51dce
     <td align="center">
       <a href="<?php echo url('comment_manage_details'); ?>">查看详情</a> |
       <a href="<?php echo url('comment_manage_del'); ?>?id=<?php echo $v['comment_id']; ?>" onclick="listTable.remove(4, '您确认要删除这条记录吗?')" title="移除">移除</a>
@@ -60,7 +68,11 @@
   <?php endforeach ?>
       </table>
 
+<<<<<<< HEAD
   <!-- <table cellpadding="4" cellspacing="0">
+=======
+  <table cellpadding="4" cellspacing="0">
+>>>>>>> 48b94c85455ad47fb089bd7e615b932c05b51dce
     <tr>
       <td>
       <div>
@@ -71,7 +83,11 @@
       </select>
       <input type="hidden" name="act" value="batch" />
       <input type="submit" name="drop" id="btnSubmit" value=" 确定 " class="button" disabled="true" /></div></td>
+<<<<<<< HEAD
       <td align="right">
+=======
+      <td align="right"><!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+>>>>>>> 48b94c85455ad47fb089bd7e615b932c05b51dce
 <div id="turn-page">
   <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
   页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
@@ -88,7 +104,11 @@
 </div>
 </td>
     </tr>
+<<<<<<< HEAD
   </table> -->
+=======
+  </table>
+>>>>>>> 48b94c85455ad47fb089bd7e615b932c05b51dce
 
 </div>
 <!-- end comment list -->

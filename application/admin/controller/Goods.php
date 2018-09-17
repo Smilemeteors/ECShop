@@ -13,9 +13,6 @@ class Goods extends Controller
         $this->goods = model('Goods');
     }
     //商品添加
-
-
-
     //
     //
     public function goods_add()
@@ -42,7 +39,6 @@ class Goods extends Controller
     //
     //
     //商品添加
-
 
     //商品列表
     public function goods_list()
@@ -234,8 +230,6 @@ class Goods extends Controller
         }
         echo json_encode($arr);
     }
-
-
     //
     //
     //
@@ -244,8 +238,6 @@ class Goods extends Controller
     // 
     // 
     // 
-
-    
     //品牌部分
     public function brand_list(){
         $pages = 5;
@@ -438,14 +430,7 @@ class Goods extends Controller
         return view('goods_trash',['arr'=>$arr]);
     }
 
-
-
     //分类
-
-
-
-
-
     //分类添加
     //
 //    public function category_add()
@@ -462,12 +447,9 @@ class Goods extends Controller
             $this->error('添加失败', 'goods/cat_add');
         }
     }
-
     //
     //分类添加
     //
-
-
     //添加商品分类
     public function category_add(){
             if(request()->isPost()){
@@ -509,7 +491,6 @@ class Goods extends Controller
                 ];
             }
             echo json_encode($arr);
-
         }
     //分类展示
     public function category_list(){

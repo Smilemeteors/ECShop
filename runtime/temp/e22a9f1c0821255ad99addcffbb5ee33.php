@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\index\index_top.html";i:1537101809;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\index\index_top.html";i:1537148154;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -20,7 +20,7 @@
    </p>
    </marquee> 
   <div id="submenu-div">
-<!--     <ul>
+    <ul>
       <li><a href="index.php?act=about_us" target="main-frame">关于 ECSHOP</a></li>
       <li><a href="javascript:web_address();">帮助</a></li>
       <li><a href="../" target="_blank">查看网店</a></li>
@@ -28,7 +28,8 @@
       <li><a href="index.php">刷新</a></li>
       <li><a href="#" onclick="ShowToDoList()">记事本</a></li>
       <li style="border-left:none;"><a href="index.php?act=first" target="main-frame">开店向导</a></li>
-    </ul> -->
+    </ul>
+   
   </div>
 </div>
 <div id="menu-div">
@@ -49,19 +50,4 @@
   <br class="clear" />
 </div>
 </body>
-<script>
-var speed=40 //调整滚动速度
-m0.innerHTML=mtext.innerHTML
-function Marquee(){
-if(m0.offsetTop-maq.scrollTop<=0)
-maq.scrollTop-=mtext.offsetHeight
-else{
-maq.scrollTop++
-}
-}
-var MyMar=setInterval(Marquee,speed)
-maq.onmouseover=function()
-maq.onmouseout=function()
-</script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 </html>

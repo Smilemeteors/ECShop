@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_type_manage.html";i:1536972365;}*/ ?>
+=======
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_type_manage.html";i:1536889320;}*/ ?>
+>>>>>>> 48b94c85455ad47fb089bd7e615b932c05b51dce
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head><base href="/" />
 <title>ECSHOP 管理中心 - 商品类型 </title>
@@ -90,7 +94,11 @@
     success:function(res){
       if (status==0) {
       var input = $("<span class='type_name'>"+type_name+"</span>");
+<<<<<<< HEAD
       obj.html(input);
+=======
+      obj.html(input);    
+>>>>>>> 48b94c85455ad47fb089bd7e615b932c05b51dce
     }}
   })
 })
