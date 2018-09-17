@@ -17,8 +17,6 @@ class Index extends Controller
         $cate_list=$category->createTreeBySon($category_data);
         // var_dump($cate_list);die;
         
-
-
         $goods_data=Db::name('goods g')
                     ->join('category c','g.cat_id=c.cat_id')
                     ->select();
@@ -27,7 +25,7 @@ class Index extends Controller
 
     	return $this->fetch();
     }
-     public function Categorylist()
+     public function Category()
     {
         $cat_id=input('get.cat_id');
 
@@ -91,6 +89,18 @@ class Index extends Controller
 
     public function fenlei()
     {
+        return $this->fetch();
+    }
+    public function flow()
+    {
     	return $this->fetch();
+    }
+    public function user()
+    {
+        return $this->fetch();
+    }
+    public function register()
+    {
+        return $this->fetch();
     }
 }
