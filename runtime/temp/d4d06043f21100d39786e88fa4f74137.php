@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\logo\position.html";i:1536972606;}*/ ?>
 ﻿<!-- $Id: ad_position_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -120,7 +121,7 @@ var empty_position_style = "广告位的模版不能为空!";
       <option value='1'>1</option>    
     </select>
   </span> -->
-  {$re->render()}
+  <?php echo $re->render(); ?>
 </div>
 </td></tr>
 </table>
@@ -166,7 +167,7 @@ var empty_position_style = "广告位的模版不能为空!";
     var id = $(this).parent('td').attr('id');
     var obj = $(this);
     $.ajax({
-      url:"{:url('logo/change_name')}",
+      url:"<?php echo url('logo/change_name'); ?>",
       type:'GET',
       data:{position_name:position_name,id:id},
       dataType:"json",
@@ -195,7 +196,7 @@ var empty_position_style = "广告位的模版不能为空!";
     var id = $(this).parent('td').attr('id');
     var obj = $(this);
     $.ajax({
-      url:"{:url('logo/change_width')}",
+      url:"<?php echo url('logo/change_width'); ?>",
       type:'GET',
       data:{position_width:position_width,id:id},
       dataType:"json",
@@ -224,7 +225,7 @@ var empty_position_style = "广告位的模版不能为空!";
     var id = $(this).parent('td').attr('id');
     var obj = $(this);
     $.ajax({
-      url:"{:url('logo/change_height')}",
+      url:"<?php echo url('logo/change_height'); ?>",
       type:'GET',
       data:{position_height:position_height,id:id},
       dataType:"json",

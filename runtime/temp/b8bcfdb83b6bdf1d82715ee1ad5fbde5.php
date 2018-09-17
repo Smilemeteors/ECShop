@@ -1,7 +1,8 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:82:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\system\accuse_details.html";i:1536917085;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0078)http://127.0.0.1/ECShop1/source/ecshop/admin/comment_manage.php?act=reply&id=6 -->
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>ECSHOP 管理中心 - 评论详情 </title>
+<title>ECSHOP 管理中心 - 投诉详情 </title>
 <meta name="robots" content="noindex, nofollow">
   <base href="/">
 <link href="static/css/general.css" rel="stylesheet" type="text/css" />
@@ -9,20 +10,18 @@
 </head>
 <body>
 <h1>
-      <a class="btn btn-right" href="http://127.0.0.1/ECShop1/source/ecshop/admin/comment_manage.php?act=list">用户评论</a>
-  
-    <span class="action-span1"><a href="http://127.0.0.1/ECShop1/source/ecshop/admin/index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;&gt;&nbsp;&nbsp;评论详情 </span>
+    <span class="action-span1"><a href="http://127.0.0.1/ECShop1/source/ecshop/admin/index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;&gt;&nbsp;&nbsp;投诉详情 </span>
   <div style="clear:both"></div>
 </h1><!-- comment content list -->
-<form method="POST" action="" name="listForm" onsubmit="return confirm_bath()">
+<form method="POST" action="<?php echo url('system/accuse_details'); ?>" name="listForm" onsubmit="return confirm_bath()">
 <div class="main-div">
   <table width="100%">
     <tbody>
     <?php foreach ($arr as $key => $v): ?>
     <tr>
       <td>
-        <a href=""><?php echo $v['name']; ?></a>&nbsp;于     <?php echo $v['time']; ?> &nbsp;&nbsp;对
-        <b><?php echo $v['goods_name']; ?></b>&nbsp;&nbsp;发表评论
+        <a href=""><?php echo $v['user_name']; ?></a>&nbsp;于     <?php echo $v['accuse_time']; ?> &nbsp;&nbsp;对
+        <b><?php echo $v['goods_name']; ?></b>&nbsp;&nbsp;进行投诉
       </td>
     </tr>
     <?php endforeach ?>
@@ -34,60 +33,50 @@
         <div style="overflow:hidden; word-break:break-all;">
           <table width="100%">
             <tr>
-              <td><textarea name="reply_content" cols="190" rows="4" wrap="VIRTUAL"><?php echo $v['reply_content']; ?></textarea></td>
+              <td><textarea name="reply_content" cols="190" rows="4" wrap="VIRTUAL"><?php echo $v['accuse_content']; ?></textarea></td>
             </tr>
           </table>
         </div>
-        <div align="right"><b>评论等级:</b><?php echo $v['review_rating']; ?>&nbsp;&nbsp;<b>IP地址:</b><?php echo $v['ip_addressing']; ?></div>
       </td>
     </tr>
-    <tr>
-      <td align="center">
-                <input type="button" id='is_show' value="禁止显示" class="button">
-            </td>
-             <!-- onclick="location.href=&#39;comment_manage.php?act=check&amp;check=forbid&amp;id=6&#39;"  -->
-    </tr>
+    <!--<tr>-->
+      <!--<td align="center">-->
+                <!--<input type="button" onclick="location.href=&#39;comment_manage.php?act=check&amp;check=forbid&amp;id=6&#39;" value="禁止显示" class="button">-->
+            <!--</td>-->
+    <!--</tr>-->
   </tbody></table>
 </div>
 </form>
-<!-- reply content list -->
+
 <div class="main-div">
-  <table width="100%">
-    <?php foreach ($arr as $key => $v): ?>
-    <tbody><tr>
-      <td>
-      管理员&nbsp;<a href=""><b><?php echo $v['admin']; ?></b></a>&nbsp;于      &nbsp;<?php echo $v['time']; ?>&nbsp;回复    </td>
-    </tr>
-    <tr>
-      <td><hr color="#dadada" size="1"></td>
-    </tr>
-    <tr>
-      <td>
-        <div style="overflow:hidden; word-break:break-all;"></div>
-        <div align="right"><b>IP地址</b><?php echo $v['a_addressing']; ?></div>
-      </td>
-    </tr>
-  </tbody>
-    <?php endforeach ?>
-  </table>
-</div>
-<div class="main-div">
-<form method="post" action="{:url('goods/comment_manage_add')}" name="theForm" onsubmit="return validate()">
+<form method="post" action="<?php echo url('system/accuse_attach'); ?>" name="theForm" onsubmit="return validate()">
 <table border="0" align="center">
   <tbody><tr><th colspan="2">
-  <strong>回复评论</strong>
+  <strong>回复用户</strong>
   </th></tr>
   <tr>
     <td>用户名:</td>
-    <td><input name="user_name" type="text" value="" size="30"></td>
+    <td><input name="user_name" type="text" value="<?php echo $v['user_name']; ?>" size="30"></td>
   </tr>
   <tr>
-    <td>Email:</td>
-    <td><input name="email" type="text" value="" size="30"></td>
+    <td>商品名称:</td>
+    <td><input name="goods_name" type="text" value="<?php echo $v['goods_name']; ?>" size="30"></td>
+  </tr>
+  <tr>
+    <td>商品类型:</td>
+    <td><input name="goods_type" type="text" value="<?php echo $v['goods_type']; ?>" size="30"></td>
+  </tr>
+  <tr>
+    <td>投诉内容:</td>
+    <td><input name="accuse_content" type="text" value="<?php echo $v['accuse_content']; ?>" size="30"></td>
+  </tr>
+  <tr>
+    <td>投诉时间:</td>
+    <td><input name="accuse_time" type="text" value="<?php echo $v['accuse_time']; ?>" size="30"></td>
   </tr>
   <tr>
     <td>回复内容:</td>
-    <td><textarea name="reply_content" cols="50" rows="4" wrap="VIRTUAL"></textarea></td>
+    <td><textarea name="attach_content" cols="50" rows="4" wrap="VIRTUAL"></textarea></td>
   </tr>
     <tr>
     <td>&nbsp;</td>
@@ -127,35 +116,4 @@
   </tbody></table>
 </div>
 </body>
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-<script>
-// $(document).on('click','#is_show',function(){
-//     var status = $(this).attr('value');
-//     var brand_id = $(this).attr('id');
-//     var obj = $(this);
-//     $.ajax({
-//       url:"{:url('goods/comment_change_status')}",
-//       data:{status:status,brand_id:brand_id},
-//       dataType:"json",
-//       success:function(res){
-//         if(res.status==1){
-
-//           alert(res.msg);
-//           return false;
-//         }else{
-
-//           if(status==1){
-
-//             // obj.prop("src","static/picture/no.svg");  
-//             obj.attr("value",0)
-//           }else{
-
-//             // obj.prop("src","static/picture/yes.svg");
-//             obj.attr("value",1)
-//           }
-//         }
-//       }
-//     })
-//   })
-</script>
 </html>

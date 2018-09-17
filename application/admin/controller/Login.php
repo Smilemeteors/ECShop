@@ -5,8 +5,6 @@ use think\Controller;
 use think\Request;
 use think\view;
 use think\Session;
-
-
 class Login extends Controller{
     public function login(){
         return view('login');
@@ -22,11 +20,12 @@ class Login extends Controller{
         }else{
         $arr = Db::table('user')->where("User_name='$User_name' and User_pwd='$User_pwd'")->find();
         if ($arr){
-//            $this->success('恭喜您登录成功','admin/index/index');
+            session::set('name',$User_name);
+    //            $this->success('恭喜您登录成功','admin/index/index');
             echo "<script>alert('恭喜您登录成功');location.href='http://www.ecshop4.0.com/admin/index/index'</script>";
         }else
             echo "<script>alert('用户名密码或验证码错误');location.href='login'</script>";
-    }
+        }
     }
     public function logout(){
         session(null); // 清空当前的session

@@ -1,9 +1,10 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:79:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\system\accuse_list.html";i:1536917085;}*/ ?>
 <!-- $Id: comment_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head><base href="/" />
-<title>ECSHOP 管理中心 - 用户评论 </title>
+<title>投诉中心 </title>
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="static/css/general.css" rel="stylesheet" type="text/css" />
@@ -11,7 +12,7 @@
 </head>
 <body>
 <h1>
-    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;用户评论 </span>
+    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;投诉中心 </span>
   <div style="clear:both"></div>
 </h1><div class="form-div">
   <form action="javascript:searchComment()" name="searchForm">
@@ -20,8 +21,7 @@
   </form>
 </div>
 
-<form method="POST" action="comment_manage.php?act=batch_drop" name="listForm" onsubmit="return confirm_bath()">
-
+<form method="POST" action="<?php echo url('admin/accuse'); ?>" name="listForm" onsubmit="return confirm_bath()">
 <!-- start comment list -->
 <div class="list-div" id="listDiv">
 
@@ -31,35 +31,29 @@
       <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox">
       <a>编号</a> </th>
     <th><a>用户名</a></th>
-    <th><a>邮箱</a></th>
-    <th><a>评论内容</a></th>
-    <th><a>类型</a></th>
-    <th><a>评论对象</a></th>
-    <th><a>IP地址</a></th>
-    <th><a>评论时间</a><img src="static/picture/sort_desc.png"/></th>
-    <th>状态</th>
+    <th><a>商品名称</a></th>
+    <th><a>商品类型</a></th>
+    <th><a>投诉内容</a></th>
+    <th><a>投诉时间</a><img src="static/picture/sort_desc.png"/></th>
     <th>操作</th>
   </tr>
   <?php foreach ($arr as $key => $v): ?>
   <tr>
-    <td><input value="4" name="checkboxes[]" type="checkbox"><?php echo $v['comment_id']; ?></td>
+    <td><input value="4" name="checkboxes[]" type="checkbox"><?php echo $v['accuse_id']; ?></td>
     <td><?php echo $v['user_name']; ?></td>
-    <td><?php echo $v['email']; ?></td>
-    <td><?php echo $v['reply_content']; ?></td>
-    <td><?php echo $v['comment_type']; ?></td>
-    <td><?php echo $v['id_value']; ?></td>
-    <td></td>
-    <td><?php echo $v['add_time']; ?></td>
-    <td></td>
+    <td><?php echo $v['goods_name']; ?></td>
+    <td><?php echo $v['goods_type']; ?></td>
+    <td><?php echo $v['accuse_content']; ?></td>
+    <td><?php echo $v['accuse_time']; ?></td>
     <td align="center">
-      <a href="{:url('comment_manage_details')}">查看详情</a> |
-      <a href="{:url('comment_manage_del')}?id=<?php echo $v['comment_id']; ?>" onclick="listTable.remove(4, '您确认要删除这条记录吗?')" title="移除">移除</a>
+      <a href="<?php echo url('accuse_details'); ?>">查看详情</a> |
+      <a href="<?php echo url('accuse_del'); ?>?id=<?php echo $v['accuse_id']; ?>" onclick="listTable.remove(4, '您确认要删除这条记录吗?')" title="移除">移除</a>
     </td>
   </tr>
   <?php endforeach ?>
       </table>
 
-  <!-- <table cellpadding="4" cellspacing="0">
+  <table cellpadding="4" cellspacing="0">
     <tr>
       <td>
       <div>
@@ -70,7 +64,7 @@
       </select>
       <input type="hidden" name="act" value="batch" />
       <input type="submit" name="drop" id="btnSubmit" value=" 确定 " class="button" disabled="true" /></div></td>
-      <td align="right">
+      <td align="right"><!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <div id="turn-page">
   <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
   页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
@@ -87,7 +81,7 @@
 </div>
 </td>
     </tr>
-  </table> -->
+  </table>
 
 </div>
 <!-- end comment list -->

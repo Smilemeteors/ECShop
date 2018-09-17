@@ -10,7 +10,13 @@
 <body style="margin:-10px;">
 <div id="header-div">
    <marquee behavior="scroll" direction='right' onmouseover="this.stop();" onmouseout="this.start();">
-   <img src="https://b-ssl.duitang.com/uploads/item/201411/04/20141104203542_FKuYL.gif" style="width:70px; float:left; margin-top:0px;" alt="" /><p style="font-size:30px; margin-top:-2px;">SOSHITE!</p>
+   <img src="https://b-ssl.duitang.com/uploads/item/201411/04/20141104203542_FKuYL.gif" style="width:70px; float:left; margin-top:0px;" alt="" /><p style="font-size:30px; margin-top:0px;">
+      {in name="name" value=""}
+      非法登录
+      {else/}
+      当前登录用户【{$name}】
+      {/in}
+   </p>
    </marquee> 
   <div id="submenu-div">
 <!--     <ul>

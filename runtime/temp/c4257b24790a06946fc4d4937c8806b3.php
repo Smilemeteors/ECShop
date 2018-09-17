@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_list.html";i:1537103832;}*/ ?>
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -19,7 +20,7 @@
 </h1>
 <!-- 商品搜索 -->
 <div class="form-div">
-  <form action="{:url('goods_list')}" method="post" name="searchForm">
+  <form action="<?php echo url('goods_list'); ?>" method="post" name="searchForm">
         <!-- 分类 -->
     商品分类
     <select name="cat_id"><option value="0">所有分类</option><option value="26" >家用电器</option><option value="27" >&nbsp;&nbsp;&nbsp;&nbsp;大家电</option><option value="29" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;家用空调</option><option value="30" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;家电配件</option><option value="31" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;洗衣机</option><option value="28" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;平板电脑</option><option value="32" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;冰箱</option><option value="25" >数码时尚</option><option value="18" >智能硬件</option><option value="22" >移动电源</option><option value="16" >服装</option><option value="12" >充值卡</option><option value="1" >手机类型</option><option value="3" >&nbsp;&nbsp;&nbsp;&nbsp;小型手机</option><option value="4" >&nbsp;&nbsp;&nbsp;&nbsp;3G手机</option><option value="6" >手机</option><option value="8" >&nbsp;&nbsp;&nbsp;&nbsp;耳机</option><option value="9" >&nbsp;&nbsp;&nbsp;&nbsp;电池</option><option value="19" >配件</option><option value="24" >&nbsp;&nbsp;&nbsp;&nbsp;数码时尚</option><option value="20" >&nbsp;&nbsp;&nbsp;&nbsp;保护壳</option></select>
@@ -63,40 +64,40 @@
     <th>操作</th>
   </tr>
 
-  {volist name='res' id='v'}
+  <?php if(is_array($res) || $res instanceof \think\Collection || $res instanceof \think\Paginator): $i = 0; $__LIST__ = $res;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
     <tr>
-    <td><input type="checkbox" name="checkboxes[]" value="{$v.goods_id}"></td>
-    <td>{$v.goods_id}</td>
-    <td class="first-cell"><span>{$v.goods_name}</span></td>
-    <td><span>{$v.goods_sn}</span></td>
-    <td align="right"><span>{$v.goods_price}</span></td>
+    <td><input type="checkbox" name="checkboxes[]" value="<?php echo $v['goods_id']; ?>"></td>
+    <td><?php echo $v['goods_id']; ?></td>
+    <td class="first-cell"><span><?php echo $v['goods_name']; ?></span></td>
+    <td><span><?php echo $v['goods_sn']; ?></span></td>
+    <td align="right"><span><?php echo $v['goods_price']; ?></span></td>
      <td>
-      {in name="$v.is_put" value="1"}
-      <img src="static/picture/yes.svg" class="is_put" id="{$v.goods_id}" value='{$v.is_put}' width="20"/>
-      {else/}
-      <img src="static/picture/no.svg" class="is_put" id="{$v.goods_id}" value='{$v.is_put}' width="20"/>
-      {/in}
+      <?php if(in_array(($v['is_put']), explode(',',"1"))): ?>
+      <img src="static/picture/yes.svg" class="is_put" id="<?php echo $v['goods_id']; ?>" value='<?php echo $v['is_put']; ?>' width="20"/>
+      <?php else: ?>
+      <img src="static/picture/no.svg" class="is_put" id="<?php echo $v['goods_id']; ?>" value='<?php echo $v['is_put']; ?>' width="20"/>
+      <?php endif; ?>
     </td>
     <td>
-      {in name="$v.is_best" value="1"}
-      <img src="static/picture/yes.svg" class="is_best" id="{$v.goods_id}"  value='{$v.is_best}' width="20"/>
-      {else/}
-      <img src="static/picture/no.svg" class="is_best" id="{$v.goods_id}"  value='{$v.is_best}' width="20"/>
-      {/in}
+      <?php if(in_array(($v['is_best']), explode(',',"1"))): ?>
+      <img src="static/picture/yes.svg" class="is_best" id="<?php echo $v['goods_id']; ?>"  value='<?php echo $v['is_best']; ?>' width="20"/>
+      <?php else: ?>
+      <img src="static/picture/no.svg" class="is_best" id="<?php echo $v['goods_id']; ?>"  value='<?php echo $v['is_best']; ?>' width="20"/>
+      <?php endif; ?>
     </td>
     <td>
-      {in name="$v.is_new" value="1"}
-      <img src="static/picture/yes.svg" class="is_new" id="{$v.goods_id}"  value='{$v.is_new}' width="20" />
-      {else/}
-      <img src="static/picture/no.svg" class="is_new" id="{$v.goods_id}"  value='{$v.is_new}' width="20" />
-      {/in}
+      <?php if(in_array(($v['is_new']), explode(',',"1"))): ?>
+      <img src="static/picture/yes.svg" class="is_new" id="<?php echo $v['goods_id']; ?>"  value='<?php echo $v['is_new']; ?>' width="20" />
+      <?php else: ?>
+      <img src="static/picture/no.svg" class="is_new" id="<?php echo $v['goods_id']; ?>"  value='<?php echo $v['is_new']; ?>' width="20" />
+      <?php endif; ?>
     </td>
     <td>
-      {in name="$v.is_hot" value="1"}
-      <img src="static/picture/yes.svg" class="is_hot" id="{$v.goods_id}"  value='{$v.is_hot}' width="20"/>
-      {else/}
-      <img src="static/picture/no.svg" class="is_hot" id="{$v.goods_id}"  value='{$v.is_hot}' width="20"/>
-      {/in}
+      <?php if(in_array(($v['is_hot']), explode(',',"1"))): ?>
+      <img src="static/picture/yes.svg" class="is_hot" id="<?php echo $v['goods_id']; ?>"  value='<?php echo $v['is_hot']; ?>' width="20"/>
+      <?php else: ?>
+      <img src="static/picture/no.svg" class="is_hot" id="<?php echo $v['goods_id']; ?>"  value='<?php echo $v['is_hot']; ?>' width="20"/>
+      <?php endif; ?>
     </td>
     <td align="center"><span>100</span></td>
         <td align="right"><span>1</span></td>
@@ -105,10 +106,10 @@
       <a href="admin/error/error_1" target="_blank" title="查看">查看</a>
       <a href="admin/goods/goods_add" title="编辑">编辑</a>
       <a href="admin/goods/goods_add" title="复制">复制</a>
-      <a href="javascript:;" id='{$v.goods_id}' class="hsz" value="{$v.is_delete}" title="回收站">回收站</a>
+      <a href="javascript:;" id='<?php echo $v['goods_id']; ?>' class="hsz" value="<?php echo $v['is_delete']; ?>" title="回收站">回收站</a>
       <img src="static/picture/empty.gif" width="16" height="16" border="0">        </td>
   </tr>
-  {/volist}
+  <?php endforeach; endif; else: echo "" ;endif; ?>
   </table>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
@@ -120,7 +121,7 @@
     var goods_id = $(this).attr('id');
     var obj = $(this);
     $.ajax({
-      url:"{:url('goods/trash_do')}",
+      url:"<?php echo url('goods/trash_do'); ?>",
       data:{status:status,goods_id:goods_id},
       dataType:"json",
       success:function(res){
@@ -144,7 +145,7 @@
     var goods_id = $(this).attr('id');
     var obj = $(this);
     $.ajax({
-      url:"{:url('goods/goods_change_put')}",
+      url:"<?php echo url('goods/goods_change_put'); ?>",
       data:{status:status,goods_id:goods_id},
       dataType:"json",
       success:function(res){
@@ -174,7 +175,7 @@
     var goods_id = $(this).attr('id');
     var obj = $(this);
     $.ajax({
-      url:"{:url('goods/goods_change_best')}",
+      url:"<?php echo url('goods/goods_change_best'); ?>",
       data:{status:status,goods_id:goods_id},
       dataType:"json",
       success:function(res){
@@ -203,7 +204,7 @@
     var goods_id = $(this).attr('id');
     var obj = $(this);
     $.ajax({
-      url:"{:url('goods/goods_change_new')}",
+      url:"<?php echo url('goods/goods_change_new'); ?>",
       data:{status:status,goods_id:goods_id},
       dataType:"json",
       success:function(res){
@@ -232,7 +233,7 @@
     var goods_id = $(this).attr('id');
     var obj = $(this);
     $.ajax({
-      url:"{:url('goods/goods_change_hot')}",
+      url:"<?php echo url('goods/goods_change_hot'); ?>",
       data:{status:status,goods_id:goods_id},
       dataType:"json",
       success:function(res){
@@ -294,7 +295,7 @@
     <td align="right" nowrap="true">
     <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <div class="page" style="float:right;" >
-  {$res->render()}
+  <?php echo $res->render(); ?>
 </div>
     </td>
   </tr>

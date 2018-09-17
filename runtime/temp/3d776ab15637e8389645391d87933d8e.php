@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:86:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\comment_manage_list.html";i:1536973462;}*/ ?>
 <!-- $Id: comment_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -52,8 +53,8 @@
     <td><?php echo $v['add_time']; ?></td>
     <td></td>
     <td align="center">
-      <a href="{:url('comment_manage_details')}">查看详情</a> |
-      <a href="{:url('comment_manage_del')}?id=<?php echo $v['comment_id']; ?>" onclick="listTable.remove(4, '您确认要删除这条记录吗?')" title="移除">移除</a>
+      <a href="<?php echo url('comment_manage_details'); ?>">查看详情</a> |
+      <a href="<?php echo url('comment_manage_del'); ?>?id=<?php echo $v['comment_id']; ?>" onclick="listTable.remove(4, '您确认要删除这条记录吗?')" title="移除">移除</a>
     </td>
   </tr>
   <?php endforeach ?>
