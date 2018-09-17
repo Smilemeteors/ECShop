@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\index\index_top.html";i:1537148154;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -11,11 +12,11 @@
 <div id="header-div">
    <marquee behavior="scroll" direction='right' onmouseover="this.stop();" onmouseout="this.start();">
    <img src="https://b-ssl.duitang.com/uploads/item/201411/04/20141104203542_FKuYL.gif" style="width:70px; float:left; margin-top:0px;" alt="" /><p style="font-size:30px; margin-top:0px;">
-      {in name="name" value=""}
+      <?php if(in_array(($name), explode(',',""))): ?>
       非法登录
-      {else/}
-      当前登录用户【{$name}】
-      {/in}
+      <?php else: ?>
+      当前登录用户【<?php echo $name; ?>】
+      <?php endif; ?>
    </p>
    </marquee> 
   <div id="submenu-div">

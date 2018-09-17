@@ -1,4 +1,8 @@
+<<<<<<< HEAD:runtime/temp/938028341bfee9f4e4652d217eab32ad.php
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\index\index_menu.html";i:1536972639;}*/ ?>
+=======
 <?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"D:\phpstudy\WWW\shixun\ECShop\public/../application/admin\view\index\index_menu.html";i:1536968447;}*/ ?>
+>>>>>>> 48b94c85455ad47fb089bd7e615b932c05b51dce:runtime/temp/b4d6f6b1d0eb0ad655fcb765d14cd868.php
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -43,13 +47,11 @@
                         </ul>
           </div>
                   </li>
-                          <li key="03_promotion" class="icon-promotion" data-url="admin/Promotion
-/type" data-key="04_bonustype_list" name="menu" onclick="showsub(this)">
+                          <li key="03_promotion" class="icon-promotion" data-url="admin/bonus/bonus_list" data-key="04_bonustype_list" name="menu" onclick="showsub(this)">
           促销管理                    <div class="submenu">
             <div class="title">促销管理</div>
             <ul>
-            <li id="sub-menu-04_bonustype_list" class="menu-item" onclick="showact(this, event)"><a href="admin/Promotion
-/type" target="main-frame">红包类型</a></li>
+            <li id="sub-menu-04_bonustype_list" class="menu-item" onclick="showact(this, event)"><a href="admin/bonus/bonus_list" target="main-frame">红包类型</a></li>
             <!-- <li id="sub-menu-06_pack_list" class="menu-item" onclick="showact(this, event)"><a href="pack.php?act=list" target="main-frame">商品包装</a></li>
             <li id="sub-menu-07_card_list" class="menu-item" onclick="showact(this, event)"><a href="card.php?act=list" target="main-frame">祝福贺卡</a></li>
             <li id="sub-menu-08_group_buy" class="menu-item" onclick="showact(this, event)"><a href="group_buy.php?act=list" target="main-frame">团购活动</a></li>
@@ -71,7 +73,7 @@
             <li id="sub-menu-04_merge_order" class="menu-item" onclick="showact(this, event)"><a href="admin/order/merge_orders" target="main-frame">合并订单</a></li>
             <li id="sub-menu-05_edit_order_print" class="menu-item" onclick="showact(this, event)"><a href="admin/order/orders_printing" target="main-frame">订单打印</a></li>
             <li id="sub-menu-06_undispose_booking" class="menu-item" onclick="showact(this, event)"><a href="admin/order/shortage_registration" target="main-frame">缺货登记</a></li>
-            <li id="sub-menu-08_add_order" class="menu-item" onclick="showact(this, event)"><a href="admin/order/add_order" target="main-frame">添加订单</a></li>
+            <li id="sub-menu-08_add_order" class="menu-item" onclick="showact(this, event)"><a href="admin/order/user_order" target="main-frame">添加订单</a></li>
             <li id="sub-menu-09_delivery_order" class="menu-item" onclick="showact(this, event)"><a href="admin/order/list_invoice" target="main-frame">发货单列表</a></li>
             <li id="sub-menu-10_back_order" class="menu-item" onclick="showact(this, event)"><a href="admin/order/list_return" target="main-frame">退货单列表</a></li>
                         </ul>
@@ -119,7 +121,11 @@
               </ul>
           </div>
           </li>
+<<<<<<< HEAD:runtime/temp/938028341bfee9f4e4652d217eab32ad.php
+<!--                          <li key="11_system" class="icon-system" data-url="shop_config.php?act=list_edit" data-key="01_shop_config" name="menu" onclick="showsub(this)">
+=======
                           <li key="11_system" class="icon-system" data-url="shop_config.php?act=list_edit" data-key="01_shop_config" name="menu" onclick="showsub(this)">
+>>>>>>> 48b94c85455ad47fb089bd7e615b932c05b51dce:runtime/temp/b4d6f6b1d0eb0ad655fcb765d14cd868.php
           系统设置                    <div class="submenu">
             <div class="title">系统设置</div>
             <ul>
@@ -139,7 +145,7 @@
                         </ul>
 
           </div>
-                  </li>
+                  </li> -->
                         </ul>
           </div>
                   </li>

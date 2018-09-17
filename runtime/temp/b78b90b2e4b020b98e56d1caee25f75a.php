@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\category_list.html";i:1536912974;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\category_list.html";i:1537148073;}*/ ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <base href="/" />
@@ -37,8 +37,9 @@
     <span><b style="text-decoration:none; align:left;" href="<?php echo url('goods/goods'); ?>?id=<?php echo $v['cat_id']; ?>"><?php echo str_repeat("&nbsp;&nbsp;&nbsp;<img src='static/picture/menu_minus.gif' id='icon_0_1' width='9' height='9' border='0' style='margin-left:0em' />",substr_count($v['new'],"-")-1) ?><?php echo $v['cat_name']; ?></b>
     </span>
     </td>
-    <!-- <td></td> -->
-    <td><?php echo $v['measure_unit']; ?></td>
+    <td></td>
+
+
     <td width="10%"><?php echo $v['cat_desc']; ?></td>
     <td width="10%">
       <?php if(in_array(($v['is_nav']), explode(',',"1"))): ?>

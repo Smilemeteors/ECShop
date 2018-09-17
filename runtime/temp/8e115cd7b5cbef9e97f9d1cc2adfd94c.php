@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:89:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\comment_manage_details.html";i:1536980207;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0078)http://127.0.0.1/ECShop1/source/ecshop/admin/comment_manage.php?act=reply&id=6 -->
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -72,7 +73,7 @@
   </table>
 </div>
 <div class="main-div">
-<form method="post" action="{:url('goods/comment_manage_add')}" name="theForm" onsubmit="return validate()">
+<form method="post" action="<?php echo url('goods/comment_manage_add'); ?>" name="theForm" onsubmit="return validate()">
 <table border="0" align="center">
   <tbody><tr><th colspan="2">
   <strong>回复评论</strong>
@@ -129,33 +130,33 @@
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script>
-// $(document).on('click','#is_show',function(){
-//     var status = $(this).attr('value');
-//     var brand_id = $(this).attr('id');
-//     var obj = $(this);
-//     $.ajax({
-//       url:"{:url('goods/comment_change_status')}",
-//       data:{status:status,brand_id:brand_id},
-//       dataType:"json",
-//       success:function(res){
-//         if(res.status==1){
+$(document).on('click','#is_show',function(){
+    var status = $(this).attr('value');
+    var brand_id = $(this).attr('id');
+    var obj = $(this);
+    $.ajax({
+      url:"<?php echo url('goods/brand_change_status'); ?>",
+      data:{status:status,brand_id:brand_id},
+      dataType:"json",
+      success:function(res){
+        if(res.status==1){
 
-//           alert(res.msg);
-//           return false;
-//         }else{
+          alert(res.msg);
+          return false;
+        }else{
 
-//           if(status==1){
+          if(status==1){
 
-//             // obj.prop("src","static/picture/no.svg");  
-//             obj.attr("value",0)
-//           }else{
+            obj.prop("src","static/picture/no.svg");  
+            obj.attr("value",0)
+          }else{
 
-//             // obj.prop("src","static/picture/yes.svg");
-//             obj.attr("value",1)
-//           }
-//         }
-//       }
-//     })
-//   })
+            obj.prop("src","static/picture/yes.svg");
+            obj.attr("value",1)
+          }
+        }
+      }
+    })
+  })
 </script>
 </html>

@@ -1,19 +1,57 @@
-<<<<<<< HEAD
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\quanxi\suppliers.html";i:1536917084;}*/ ?>
-=======
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\quanxi\suppliers.html";i:1536736832;}*/ ?>
->>>>>>> 48b94c85455ad47fb089bd7e615b932c05b51dce
-﻿<!-- $Id: agency_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:87:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\member\user_account_manage.html";i:1536915157;}*/ ?>
+﻿<!-- $Id: user_account_manage.htm 14598 2008-05-21 07:41:15Z testyang $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ECSHOP 管理中心 - 供货商列表 </title>
+<title>ECSHOP 管理中心 - 资金管理 </title>
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="/static/css/general_2.css" rel="stylesheet" type="text/css" />
-<link href="/static/css/main_2.css" rel="stylesheet" type="text/css" />
+<link href="/static/css/general.css" rel="stylesheet" type="text/css" />
+<link href="/static/css/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/static/js/transport.js"></script><script type="text/javascript" src="/static/js/common.js"></script>
+<style>
+  .panel-icloud .panel-right iframe {
+    height: 300px;
+    margin-top: 15px;
+  }
+  .panel-hint{
+    top: 0%;
+  }
+</style>
 
+<script>
+<!--
+// 这里把JS用到的所有语言都赋值到这里
+var process_request = "正在处理您的请求...";
+var todolist_caption = "记事本";
+var todolist_autosave = "自动保存";
+var todolist_save = "保存";
+var todolist_clear = "清除";
+var todolist_confirm_save = "是否将更改保存到记事本？";
+var todolist_confirm_clear = "是否清空内容？";
+//-->
+/*关闭按钮*/
+  function get_certificate(){
+	  var panel = document.getElementById('panelCloud');
+	  var mask  = document.getElementById('CMask')||null;
+	  var frame = document.getElementById('CFrame');
+	  if(panel&&CMask&&frame){
+	      panel.style.display = 'block';
+	      mask.style.display = 'block';
+	      frame.src = 'https://openapi.shopex.cn/oauth/authorize?response_type=code&client_id=yogfss4l&redirect_uri=http%3A%2F%2F127.0.0.1%2Fshixun%2FEC4%2Fsource%2Fecshop%2Fadmin%2Fcertificate.php%3Fact%3Dget_certificate%26type%3Dindex&view=auth_ecshop';
+	    }
+	}
+
+	/*关闭按钮*/
+	function btnCancel(item){
+	  var par  = item.offsetParent;
+	  var mask  = document.getElementById('CMask')||null;
+	  var frame = document.getElementById('CFrame');
+	  par.style.display = 'none';
+	  if(mask){mask.style.display = 'none';}
+	  frame.src = '';
+	}
+</script>
 </head>
 <body>
 <!--云起激活系统面板-->
@@ -42,113 +80,86 @@
 <div class="mask-black" id="CMask"></div>
 <!--遮罩-->
 <h1>
-      <a class="btn btn-right" href="./suppliers_add.html">添加供货商</a>
-  
-    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;供货商列表 </span>
+    
+    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;资金管理 </span>
   <div style="clear:both"></div>
-</h1><script type="text/javascript" src="static/js/utils_2.js"></script><script type="text/javascript" src="static/js/listtable_2.js"></script>
-<form method="post" action="" name="listForm" onsubmit="return confirm(batch_drop_confirm);">
-<div class="list-div" id="listDiv">
+</h1>
 
-  <table cellpadding="3" cellspacing="1">
-    <tr>
-      <th> <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox" />
-          <a href="javascript:listTable.sort('suppliers_id'); ">编号</a><img src="static/picture/sort_desc_1.png"> </th>
-      <th><a href="javascript:listTable.sort('suppliers_name'); ">供货商名称</a></th>
-      <th>供货商描述</th>
-      <th>状态</th>
-      <th>操作</th>
-    </tr>
-        <?php foreach ($list as $key => $v) { ?>
-          <tr>
-      <td><input type="checkbox" name="checkboxes[]" value="<?=$v['suppliers_id'];?>" />
-        <?=$v['suppliers_id'];?></td>
-      <td class="first-cell">
-        <span onclick="javascript:listTable.edit(this, 'edit_suppliers_name', <?=$v['suppliers_id'];?>)"><?=$v['suppliers_name']?>      </span></td>
-      <td><?=$v['suppliers_desc']?></td>
-      <td align="center"><img src="static/picture/yes_1.svg" width="20" onclick="listTable.toggle(this, 'is_check', <?=$v['suppliers_id'];?>)" style="cursor:pointer;"/></td>
-      <td align="center">
-        <a href="suppliers_edit.html?id=<?=$v['suppliers_id'];?>" title="编辑">编辑</a> |
-        <a href="<?php echo url('suppliers_del'); ?>?id=<?=$v['suppliers_id'];?>" onclick="listTable.remove(<?=$v['suppliers_id'];?>, '您确认要删除这条记录吗?')" title="移除">移除</a>      </td>
-    </tr>
-        <?php } ?>
-        <!-- <tr>
-      <td><input type="checkbox" name="checkboxes[]" value="2" />
-        2</td>
-      <td class="first-cell">
-        <span onclick="javascript:listTable.edit(this, 'edit_suppliers_name', 2)">上海供货商      </span></td>
-      <td>上海供货商</td>
-			<td align="center"><img src="static/picture/yes_1.svg" width="20" onclick="listTable.toggle(this, 'is_check', 2)" style="cursor:pointer;"/></td>
-      <td align="center">
-        <a href="suppliers.php?act=edit&id=2" title="编辑">编辑</a> |
-        <a href="javascript:void(0);" onclick="listTable.remove(2, '您确认要删除这条记录吗?')" title="移除">移除</a>      </td>
-    </tr> -->
-      </table>
-<table id="page-table" cellspacing="0">
+<link href="/static/css/calendar.css" rel="stylesheet" type="text/css" />
+<!-- <div class="form-div">
+  <form name="TimeInterval" action="user_account_manage.php" method="post" style="margin:0px">
+    开始日期&nbsp;
+    <input name="start_date" type="text" id="start_date" size="15" value='2018-08-28' readonly="readonly" />
+    <button name="selbtn1" type="button" id="selbtn1" onclick="return showCalendar('start_date', '%Y-%m-%d', false, false, 'selbtn1');" class="cal"><img src="/static/picture/cal.png" alt=""></button>
+    结束日期&nbsp;
+    <input name="end_date" type="text" id="end_date" size="15" value='2018-09-04' readonly="readonly" />
+    <button name="selbtn2" type="button" id="selbtn2" onclick="return showCalendar('end_date', '%Y-%m-%d', false, false, 'selbtn2');" class="cal"><img src="/static/picture/cal.png" alt=""></button>
+    <input type="submit" name="submit" value="查询" class="button" />
+  </form>
+</div> -->
+<!-- start charger  -->
+<div class="list-div">
+<table cellspacing='1' cellpadding='3'>
   <tr>
-<<<<<<< HEAD
-    <td colspan="2">
-      <!-- <input name="remove" type="submit" id="btnSubmit" value="删除" class="button" disabled="true" />
-      <input name="act" type="hidden" value="batch" /> -->
-    </td>
-    <td align="right" nowrap="true">
-    <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-<div id="turn-page" align="center">
-      
-      <?php echo $page; ?>
-    </div>
-=======
-    <td>
-      <input name="remove" type="submit" id="btnSubmit" value="删除" class="button" disabled="true" />
-      <input name="act" type="hidden" value="batch" />
-    </td>
-    <td align="right" nowrap="true">
-    <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-<div id="turn-page">
-  <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
-  页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
-  条记录，总共 <span id="totalRecords">2</span>
-  条记录
-  <span id="page-link">
-    <a href="javascript:listTable.gotoPageFirst()">第一页</a>
-    <a href="javascript:listTable.gotoPagePrev()">上一页</a>
-    <a href="javascript:listTable.gotoPageNext()">下一页</a>
-    <a href="javascript:listTable.gotoPageLast()">最末页</a>
-    <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
-      <option value='1'>1</option>    </select>
-  </span>
-</div>
->>>>>>> 48b94c85455ad47fb089bd7e615b932c05b51dce
-    </td>
+    <th colspan="4" class="group-title">会员账户信息</th>
+  </tr>
+  <tr>
+    <td width="20%"><a href="user_account.php?act=list&process_type=0&ispaid=1&start_date=2018-08-28&end_date=2018-09-04">用户充值总额</a></td>
+    <td width="30%"><strong>￥0.00元</strong></td>
+    <td width="20%"><a href="user_account.php?act=list&process_type=1&ispaid=1&start_date=2018-08-28&end_date=2018-09-04">提现金额</a></td>
+    <td width="30%"><strong>￥0.00元</strong></td>
+  </tr>
+  <tr>
+    <td><a href="users.php?act=list">用户可用资金</a></td>
+    <td><strong>￥0.00元</strong></td>
+    <td><a href="users.php?act=list">用户冻结资金</a></td>
+    <td><strong style="color: red">￥0.00元</strong></td>
   </tr>
 </table>
-
 </div>
-</form>
+<!-- end charge -->
+<br />
+<!-- start -->
+<div class="list-div">
+<table cellspacing='1' cellpadding='3'>
+  <tr>
+    <th colspan="4" class="group-title">余额使用信息</th>
+  </tr>
+  <tr>
+    <td width="20%"><a href="user_account_manage.php?act=surplus&start_date=2018-08-28&end_date=2018-09-04">交易使用余额</a></td>
+    <td width="30%"><strong>￥0.00元</strong></td>
+    <td width="20%"><a href="user_account_manage.php?act=surplus&start_date=2018-08-28&end_date=2018-09-04">积分使用余额</a></td>
+    <td width="30%"><strong >￥0.00元</strong></td>
+  </tr>
+  <tr>
+    <td><a href="goods.php?act=list&amp;intro_type=is_new"></a></td>
+    <td><strong></strong></td>
+    <td><a href="goods.php?act=list&amp;intro_type=is_best"></a></td>
+    <td><strong></strong></td>
+  </tr>
+  <tr>
+    <td><a href="goods.php?act=list&amp;intro_type=is_hot"></a></td>
+    <td><strong></strong></td>
+    <td><a href="goods.php?act=list&amp;intro_type=is_promote"></a></td>
+    <td><strong></strong></td>
+  </tr>
+</table>
+</div>
+<!-- end  -->
+<br />
 
-<script type="text/javascript" language="javascript">
-  <!--
-  listTable.recordCount = 2;
-  listTable.pageCount = 1;
-
-    listTable.filter.sort_by = 'suppliers_id';
-    listTable.filter.sort_order = 'ASC';
-    listTable.filter.page = '1';
-    listTable.filter.page_size = '2';
-    listTable.filter.record_count = '2';
-    listTable.filter.page_count = '1';
-  
-  
-  onload = function()
-  {
-      // 开始检查订单
-      startCheckOrder();
-  }
-  
-  //-->
+<script type="Text/Javascript" language="JavaScript">
+<!--
+onload = function()
+{
+  /* 检查订单 */
+  startCheckOrder();
+}
+//-->
 </script>
+
 <div id="footer">
-共执行 4 个查询，用时 0.013437 秒，Gzip 已禁用，内存占用 1.113 MB<br />
+共执行 6 个查询，用时 0.022467 秒，Gzip 已禁用，内存占用 1.384 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
 <!-- 新订单提示信息 -->
 <div id="popMsg">
@@ -170,7 +181,7 @@
 </div>
 
 <!--
-<embed src="static/flash/online_2.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
+<embed src="static/flash/online.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
 -->
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0" id="msgBeep" width="1" height="1">
   <param name="movie" value="images/online.swf">

@@ -42,7 +42,11 @@ class Goods extends Controller
 
     //商品列表
     public function goods_list()
-    {
+    {   
+        //分类
+        $arr =$this->goods->shows();
+        //属性
+        $cate=$this->goods->getPathList("cat_id");
         $pages = 5;
         $keyword = input('post.keyword');
         $res = $this->goods->goods_Show($keyword,$pages);
@@ -575,6 +579,27 @@ class Goods extends Controller
 
 
     //评论部分
+    // public function comment_change_status()
+    // {
+    //     $brand_id = input('get.brand_id');
+    //     $status = input('get.status');
+    //     if($status==1){
+    //         $res = Db("brand")->where("brand_id",$brand_id)->update(["is_show"=>'0']);
+    //     }else{
+    //         $res = Db("brand")->where("brand_id",$brand_id)->update(["is_show"=>'1']);
+    //     }
+        
+    //     if($res){
+    //         $arr['status'] = 0;
+    //         $arr['data'] = '';
+    //         $arr['msg'] = '成功';
+    //     }else{
+    //         $arr['status'] = 1;
+    //         $arr['data'] = '';
+    //         $arr['msg'] = '失败';
+    //     }
+    //     echo json_encode($arr);
+    // }
     //评论详情
     public function comment_manage_details()
     {

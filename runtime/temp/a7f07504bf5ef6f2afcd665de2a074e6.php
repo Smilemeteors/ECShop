@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\quanxi\agency.html";i:1536917084;}*/ ?>
+=======
 <?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\quanxi\agency.html";i:1536736832;}*/ ?>
+>>>>>>> 48b94c85455ad47fb089bd7e615b932c05b51dce
 ﻿<!-- $Id: agency_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -49,7 +53,11 @@
   <table cellpadding="3" cellspacing="1">
     <tr>
       <th> <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox" />
+<<<<<<< HEAD
+          <a href="javascript:listTable.sort('agency_id'); ">编号</a><img src="/static/images/sort_desc.png"/> </th>
+=======
           <a href="javascript:listTable.sort('agency_id'); ">编号</a><img src="images/sort_desc.png"/> </th>
+>>>>>>> 48b94c85455ad47fb089bd7e615b932c05b51dce
       <th><a href="javascript:listTable.sort('agency_name'); ">办事处名称</a></th>
       <th>办事处描述</th>
       <th>操作</th>
@@ -66,16 +74,28 @@
           <a href="<?php echo url('agency_del'); ?>?id=<?=$v['agency_id']?>" title="移除">移除</a>      </td>
       </tr>
     <?php } ?>
+<<<<<<< HEAD
+
+  <tr>
+  <td colspan="2"></td>
+=======
         
       </table>
 <table id="page-table" cellspacing="0">
   <tr>
+>>>>>>> 48b94c85455ad47fb089bd7e615b932c05b51dce
     <!-- <td>
       <input name="remove" type="submit" id="btnSubmit" value="删除" class="button" disabled="true" />
       <input name="act" type="hidden" value="batch" />
     </td> -->
     <td align="right" nowrap="true">
     <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<<<<<<< HEAD
+    <div id="turn-page" align="center">
+      
+      <?php echo $page; ?>
+    </div> 
+=======
 <div id="turn-page">
   <span id="pageCurrent">1</span> / <span id="totalPages">1</span>
   页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)">
@@ -90,6 +110,7 @@
       <option value='1'>1</option>    </select>
   </span>
 </div>
+>>>>>>> 48b94c85455ad47fb089bd7e615b932c05b51dce
     </td>
   </tr>
 </table>

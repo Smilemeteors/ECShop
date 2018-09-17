@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\brand_list.html";i:1536980097;}*/ ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <base href="/" />
@@ -18,7 +19,7 @@ th{text-align:center;}
   <div style="clear:both"></div>
 </h1>
 <div class="form-div">
-  <form action="{:url('goods/brand_list')}" method="post" name="searchForm">
+  <form action="<?php echo url('goods/brand_list'); ?>" method="post" name="searchForm">
     <img src="static/images/icon_search.svg" width="26" height="22" border="0" alt="SEARCH" />
      <input type="text" name="find" />
     <input type="submit" value=" 搜索" />
@@ -35,32 +36,32 @@ th{text-align:center;}
       <th>是否显示</th>
       <th>操作</th>
     </tr>
-    {volist name='res' id='v'}
+    <?php if(is_array($res) || $res instanceof \think\Collection || $res instanceof \think\Paginator): $i = 0; $__LIST__ = $res;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
     <tr>
-      <td id="{$v.brand_id}" class="first-cell">
-        <span style="float:right"><a href="uploads/{$v.brand_logo}" target="_brank"><img src="static/images/image.svg" width="16" height="16" border="0" alt=品牌LOGO /></a></span>
-        <span class="change_name">{$v.brand_name}</span>
+      <td id="<?php echo $v['brand_id']; ?>" class="first-cell">
+        <span style="float:right"><a href="uploads/<?php echo $v['brand_logo']; ?>" target="_brank"><img src="static/images/image.svg" width="16" height="16" border="0" alt=品牌LOGO /></a></span>
+        <span class="change_name"><?php echo $v['brand_name']; ?></span>
       </td>
-      <td><a href="{$v.site_url}" target="_brank">{$v.site_url}</a></td>
-      <td align="left">{$v.brand_describe}</td>
-      <td id="{$v.brand_id}" align="right"><span class="sort_order">{$v.sort_order}</span></td>
+      <td><a href="<?php echo $v['site_url']; ?>" target="_brank"><?php echo $v['site_url']; ?></a></td>
+      <td align="left"><?php echo $v['brand_describe']; ?></td>
+      <td id="<?php echo $v['brand_id']; ?>" align="right"><span class="sort_order"><?php echo $v['sort_order']; ?></span></td>
       <td align="center">
-        {in name="$v.is_show" value="1"}
-        <img src="static/picture/yes.svg" class="is_show" id="{$v.brand_id}" value='{$v.is_show}' width="20"/>
-        {else/}
-        <img src="static/picture/no.svg" class="is_show" id="{$v.brand_id}" value='{$v.is_show}' width="20"/>
-        {/in}
+        <?php if(in_array(($v['is_show']), explode(',',"1"))): ?>
+        <img src="static/picture/yes.svg" class="is_show" id="<?php echo $v['brand_id']; ?>" value='<?php echo $v['is_show']; ?>' width="20"/>
+        <?php else: ?>
+        <img src="static/picture/no.svg" class="is_show" id="<?php echo $v['brand_id']; ?>" value='<?php echo $v['is_show']; ?>' width="20"/>
+        <?php endif; ?>
       </td>
       <td align="center">
-        <a href="{:url('brand_upd')}?id=<?php echo $v['brand_id']; ?>" title="编辑">编辑</a> |
-        <a href="{:url('brand_del')}?id=<?php echo $v['brand_id']; ?>" title="移除">移除</a>
+        <a href="<?php echo url('brand_upd'); ?>?id=<?php echo $v['brand_id']; ?>" title="编辑">编辑</a> |
+        <a href="<?php echo url('brand_del'); ?>?id=<?php echo $v['brand_id']; ?>" title="移除">移除</a>
       </td>
     </tr>
-    {/volist}
+    <?php endforeach; endif; else: echo "" ;endif; ?>
     <tr>
       <td align="right" nowrap="true" colspan="6">
       <div class="page" style="float:right; margin-bottom:10px;" >
-        {$res->render()}
+        <?php echo $res->render(); ?>
       </div>
       </td>
     </tr>
@@ -96,7 +97,7 @@ $(document).on('click','.is_show',function(){
     var brand_id = $(this).attr('id');
     var obj = $(this);
     $.ajax({
-      url:"{:url('goods/brand_change_status')}",
+      url:"<?php echo url('goods/brand_change_status'); ?>",
       data:{status:status,brand_id:brand_id},
       dataType:"json",
       success:function(res){
@@ -133,7 +134,7 @@ $(document).on('blur','.changes_name',function(){
   var id = $(this).parents('td').attr('id');
   var obj = $(this);
   $.ajax({
-    url:"{:url('goods/brand_change_name')}",
+    url:"<?php echo url('goods/brand_change_name'); ?>",
     data:{brand_name:brand_name,id:id},
     dataType:"json",
     success:function(res){
@@ -157,7 +158,7 @@ $(document).on('blur','.sort_order',function(){
   var id = $(this).parents('td').attr('id');
   var obj = $(this);
   $.ajax({
-    url:"{:url('goods/brand_sort_order')}",
+    url:"<?php echo url('goods/brand_sort_order'); ?>",
     data:{sort_order:sort_order,id:id},
     dataType:"json",
     success:function(res){
