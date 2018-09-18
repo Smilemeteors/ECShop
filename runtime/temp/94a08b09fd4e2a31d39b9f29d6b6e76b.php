@@ -1,18 +1,17 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:79:"D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\user\dingdan.html";i:1537253061;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!-- saved from url=(0068)http://www.ecshop4.0.com/home/index/user.html?act=track_packages -->
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta name="Generator" content="ECSHOP v4.0.0">
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="Keywords" content="">
 <meta name="Description" content="">
-
 <title>用户中心_ECSHOP演示站 - Powered by ECShop</title>
 
 <link rel="shortcut icon" href="http://www.ecshop4.0.com/home/index/favicon.ico">
 <link rel="icon" href="http://www.ecshop4.0.com/home/index/animated_favicon.gif" type="image/gif">
 <link href="/static1/css/style.css" rel="stylesheet" type="text/css">
 
-<script type="text/javascript" src="./用户中心_ECSHOP演示站 - Powered by ECShop_files/common.js.下载"></script><script type="text/javascript" src="./用户中心_ECSHOP演示站 - Powered by ECShop_files/user.js.下载"></script></head>
+<script type="text/javascript" src="/static1/images/common.js"></script><script type="text/javascript" src="/static1/images/user.js"></script></head>
 <body>
 
 <script type="text/javascript">
@@ -21,20 +20,20 @@ var process_request = "正在处理您的请求...";
 <div class="top-bar">
   <div class="fd_top fd_top1">
     <div class="bar-left">
-          <div class="top_menu1"> <script type="text/javascript" src="/static1/js/transport.js"></script><script type="text/javascript" src="/static1/js/utils.js"></script> <font id="ECS_MEMBERZONE"><div id="append_parent"></div>
- 欢迎光临本店<a href="{:url('Login/login')}">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="{:url('Login/reg')}">免费注册</a>  </font> </div>
+          <div class="top_menu1"> <script type="text/javascript" src="js/transport.js"></script><script type="text/javascript" src="js/utils.js"></script> <font id="ECS_MEMBERZONE"><div id="append_parent"></div>
+ 欢迎光临本店<a href="<?php echo url('Login/login'); ?>">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="<?php echo url('Login/reg'); ?>">免费注册</a>  </font> </div>
     </div>
     <div class="bar-cart">
       <div class="fl cart-yh">
-        <a href="{:url('user/welcome')}" class="">用户中心</a>
+        <a href="<?php echo url('user/welcome'); ?>" class="">用户中心</a>
       </div>
-             <div class="cart" id="ECS_CARTINFO"> <a href="{:url('shopcar/car')}" title="查看购物车">购物车(0)</a> </div>
+             <div class="cart" id="ECS_CARTINFO"> <a href="<?php echo url('shopcar/car'); ?>" title="查看购物车">购物车(0)</a> </div>
     </div>
   </div>
 </div>
 <div class="nav-menu">
   <div class="wrap">
-    <div class="logo"><a href="http://www.ecshop4.0.com/home/index/index.html" name="top"><img src="./用户中心_ECSHOP演示站 - Powered by ECShop_files/logo.gif"></a></div>
+    <div class="logo"><a href="http://www.ecshop4.0.com/home/index/index.html" name="top"><img src="/static1/images/logo.gif"></a></div>
     <div id="mainNav" class="clearfix maxmenu">
       <div class="m_left">
       <ul>
@@ -49,11 +48,11 @@ var process_request = "正在处理您的请求...";
       </div>
     </div>
     <div class="serach-box">
-      <form id="searchForm" name="searchForm" method="get" action="http://www.ecshop4.0.com/home/index/search.html" onsubmit="return checkSearchForm()" class="f_r">
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <form id="searchForm" name="searchForm" method="get" action="search.html" onsubmit="return checkSearchForm()" class="f_r">
+        <table width="100%" cellspacing="0" cellpadding="0" border="0">
           <tbody><tr>
-            <td width="135"><input name="keywords" type="text" id="keyword" value="" class="B_input"></td>
-            <td><input name="imageField" type="submit" value="搜索" class="go" style="cursor:pointer;"></td>
+            <td width="135"><input name="keywords" id="keyword" class="B_input" type="text"></td>
+            <td><input name="imageField" value="搜索" class="go" style="cursor:pointer;" type="submit"></td>
           </tr>
         </tbody></table>
       </form>
@@ -75,21 +74,21 @@ var process_request = "正在处理您的请求...";
      <div class="box_1">
       <div class="userCenterBox">
         <div class="userMenu">
-<a href="{:url('user/welcome')}"><img src="images/u1.gif"> 欢迎页</a>
-<a href="{:url('user/userinfo')}"><img src="images/u2.gif"> 用户信息</a>
-<a href="{:url('user/dingdan')}"><img src="images/u3.gif"> 我的订单</a>
-<a href="{:url('user/shouhuo')}"><img src="images/u4.gif"> 收货地址</a>
-<a href="{:url('user/shoucang')}"><img src="images/u5.gif"> 我的收藏</a>
-<a href="{:url('user/liuyan')}"><img src="images/u6.gif"> 我的留言</a>
-<a href="{:url('user/biaoqian')}" ><img src="images/u7.gif"> 我的标签</a>
-<a href="{:url('usertwo/quehuo')}"><img src="images/u8.gif"> 缺货登记</a>
-<a href="{:url('usertwo/hongbao')}"><img src="images/u9.gif"> 我的红包</a>
-<a href="{:url('usertwo/tuijian')}"><img src="images/u10.gif"> 我的推荐</a>
-<a href="{:url('usertwo/pinglun')}"><img src="images/u11.gif"> 我的评论</a>
+<a href="<?php echo url('user/welcome'); ?>"><img src="/static1/images/u1.gif"> 欢迎页</a>
+<a href="<?php echo url('user/userinfo'); ?>"><img src="/static1/images/u2.gif"> 用户信息</a>
+<a href="<?php echo url('user/dingdan'); ?>" class="curs"><img src="/static1/images/u3.gif"> 我的订单</a>
+<a href="<?php echo url('user/shouhuo'); ?>"><img src="/static1/images/u4.gif"> 收货地址</a>
+<a href="<?php echo url('user/shoucang'); ?>"><img src="/static1/images/u5.gif"> 我的收藏</a>
+<a href="<?php echo url('user/liuyan'); ?>"><img src="/static1/images/u6.gif"> 我的留言</a>
+<a href="<?php echo url('user/biaoqian'); ?>"><img src="/static1/images/u7.gif"> 我的标签</a>
+<a href="<?php echo url('usertwo/quehuo'); ?>"><img src="/static1/images/u8.gif"> 缺货登记</a>
+<a href="<?php echo url('usertwo/hongbao'); ?>"><img src="/static1/images/u9.gif"> 我的红包</a>
+<a href="<?php echo url('usertwo/tuijian'); ?>"><img src="/static1/images/u10.gif"> 我的推荐</a>
+<a href="<?php echo url('usertwo/pinglun'); ?>"><img src="/static1/images/u11.gif"> 我的评论</a>
 <!--<a href="usertwo.html?act=group_buy">我的团购</a>-->
-<a href="{:url('usertwo/genzong')}"><img src="images/u12.gif"> 跟踪包裹</a>
-<a href="{:url('usertwo/money')}"><img src="images/u13.gif"> 资金管理</a>
-<a href="{:url('login/back')}" style="background:none; text-align:right; margin-right:10px;"><img src="images/bnt_sign.gif"></a>
+<a href="<?php echo url('usertwo/genzong'); ?>"><img src="/static1/images/u12.gif"> 跟踪包裹</a>
+<a href="<?php echo url('usertwo/money'); ?>"><img src="/static1/images/u13.gif"> 资金管理</a>
+<a href="<?php echo url('login/back'); ?>" style="background:none; text-align:right; margin-right:10px;"><img src="/static1/images/bnt_sign.gif"></a>
 </div>      </div>
      </div>
     </div>
@@ -104,34 +103,53 @@ var process_request = "正在处理您的请求...";
               
         
       
-             
-       
-              <h5><span>跟踪包裹</span></h5>
-        <div class="blank"></div>
-        <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd" id="order_table">
-        <tbody><tr align="center">
-          <td bgcolor="#ffffff">订单号</td>
-          <td bgcolor="#ffffff">操作</td>
-        </tr>
-                <tr>
-          <td align="center" bgcolor="#ffffff"><a href="http://www.ecshop4.0.com/home/index/user.html?act=order_detail&amp;order_id=7">2016051183359</a></td>
-          <td align="center" bgcolor="#ffffff"><a href="http://www.ecshop4.0.com/home/index/user.html?act=delivery_info&amp;order_sn=2016051183359">查询状态</a></td>
-        </tr>
-              </tbody></table>
-      <script>
-      var query_status = '查询状态';
-      var ot = document.getElementById('order_table');
-      for (var i = 1; i < ot.rows.length; i++)
-      {
-        var row = ot.rows[i];
-        var cel = row.cells[1];
-        cel.getElementsByTagName('a').item(0).innerHTML = query_status;
-      }
-      </script>
-      <div class="blank5"></div>
-       <div class="page-form clearfix">
+              <h5><span>我的订单</span></h5>
+       <div class="blank"></div>
+       <table width="100%" cellspacing="1" cellpadding="5" border="0">
+          <thead style="color:#fff" bgcolor="#757575">
+            <tr align="center">
+              <td>订单号</td>
+              <td>下单时间</td>
+              <td>订单总金额</td>
+              <td>订单状态</td>
+              <td>操作</td>
+            </tr>
+          </thead>
+          <tbody>
+                        <tr align="center">
+              <td><a href="http://www.ecshop4.0.com/home/index/user.html?act=order_detail&amp;order_id=7" class="f6">2016051183359</a></td>
+              <td>2016-05-11 16:11:09</td>
+              <td>￥61.55元</td>
+              <td style="position:relative">已确认,已付款,已发货                            </td>
+              <td><font class="f6"><a href="http://www.ecshop4.0.com/home/index/user.html?act=affirm_received&amp;order_id=7" onclick="if (!confirm('你确认已经收到货物了吗？')) return false;">确认收货</a></font><br><a href="javascript:;" onclick="repurchase(7)">再次购买</a></td>
+            </tr>
+                        <tr align="center">
+              <td><a href="http://www.ecshop4.0.com/home/index/user.html?act=order_detail&amp;order_id=6" class="f6">2016051124036</a></td>
+              <td>2016-05-11 14:36:10</td>
+              <td>￥137.55元</td>
+              <td style="position:relative">未确认,未付款,未发货                            </td>
+              <td><font class="f6"><a href="http://www.ecshop4.0.com/home/index/user.html?act=cancel_order&amp;order_id=6" onclick="if (!confirm('您确认要取消该订单吗？取消后此订单将视为无效订单')) return false;">取消订单</a></font><br><a href="javascript:;" onclick="repurchase(6)">再次购买</a></td>
+            </tr>
+                        <tr align="center">
+              <td><a href="http://www.ecshop4.0.com/home/index/user.html?act=order_detail&amp;order_id=5" class="f6">2016051166250</a></td>
+              <td>2016-05-11 14:35:50</td>
+              <td>￥33.05元</td>
+              <td style="position:relative">已确认,已付款,未发货                            </td>
+              <td><font class="f6"><span style="color:#565656">已确认</span></font><br><a href="javascript:;" onclick="repurchase(5)">再次购买</a></td>
+            </tr>
+                        <tr align="center">
+              <td><a href="http://www.ecshop4.0.com/home/index/user.html?act=order_detail&amp;order_id=4" class="f6">2016051107173</a></td>
+              <td>2016-05-11 14:35:28</td>
+              <td>￥26.88元</td>
+              <td style="position:relative">已确认,已付款,配货中                            </td>
+              <td><font class="f6"><a href="http://www.ecshop4.0.com/home/index/user.html?act=order_detail&amp;order_id=4">查看订单</a></font><br><a href="javascript:;" onclick="repurchase(4)">再次购买</a></td>
+            </tr>
+                      </tbody>
+          </table>
+        <div class="blank5"></div>
+        <div class="page-form clearfix">
 
-<form name="selectPageForm" action="http://www.ecshop4.0.com/home/index/user.html" method="get">
+<form name="selectPageForm" action="/dayi/ecshopceshi/ecshop/user.html" method="get">
     
   <div id="pager" class="pagebar">
                           </div>
@@ -147,7 +165,42 @@ function selectPage(sel)
 
 //-->
 </script>
-</div>          
+</div>              <div class="blank5"></div>
+       <h5><span>合并订单</span></h5>
+       <div class="blank"></div>
+        <script type="text/javascript">
+                  var from_order_empty = "请选择要合并的从订单";
+                  var to_order_empty = "请选择要合并的主订单";
+                  var order_same = "主订单和从订单相同，请重新选择";
+                  var confirm_merge = "您确实要合并这两个订单吗？";
+                </script>
+        <form action="user.html" method="post" name="formOrder" onsubmit="return mergeOrder()">
+          <table width="100%" cellspacing="1" cellpadding="5" border="0" bgcolor="#dddddd">
+            <tbody><tr>
+              <td width="22%" bgcolor="#ffffff" align="right">主订单:</td>
+              <td width="12%" bgcolor="#ffffff" align="left"><select name="to_order">
+              <option value="0" selected="selected">请选择...</option>
+
+                  <option value="2016051124036">2016051124036</option>
+                </select></td>
+              <td width="19%" bgcolor="#ffffff" align="right">从订单:</td>
+              <td width="11%" bgcolor="#ffffff" align="left"><select name="from_order">
+              <option value="0" selected="selected">请选择...</option>
+
+                  <option value="2016051124036">2016051124036</option>
+                </select></td>
+              <td width="36%" bgcolor="#ffffff">&nbsp;<input name="act" value="merge_order" type="hidden">
+              <input name="Submit" class="bnt_blue_1" style="border:none;" value="合并订单" type="submit"></td>
+            </tr>
+            <tr>
+              <td bgcolor="#ffffff">&nbsp;</td>
+              <td colspan="4" bgcolor="#ffffff" align="left">订单合并是在发货前将相同状态的订单合并成一新的订单。<br>收货地址，送货方式等以主定单为准。</td>
+            </tr>
+          </tbody></table>
+        </form>
+                     
+       
+          
      
           
     
@@ -168,7 +221,7 @@ function selectPage(sel)
 </div>
 <div class="blank"></div>
 <div class="foot-body">
-  <div class="bads"><img src="./用户中心_ECSHOP演示站 - Powered by ECShop_files/bottom.jpg"></div>
+  <div class="bads"><img src="/static1/images/bottom.jpg"></div>
   <div class="clear10"></div>
   
      <div class="foot-help">
@@ -210,7 +263,7 @@ function selectPage(sel)
         <div class="foot-weixin">
           <div class="weixin-txt">关注demo微信</div>
           <div class="weixin-pic">
-            <img src="./用户中心_ECSHOP演示站 - Powered by ECShop_files/weixin.jpg">
+            <img src="/static1/images/weixin.jpg">
           </div>
         </div>
     </div>

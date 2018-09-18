@@ -1,21 +1,19 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\phpStudy\WWW\ECShop\public/../application/home\view\login\login.html";i:1537174225;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:79:"D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\user\welcome.html";i:1537252130;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!-- saved from url=(0049)http://www.ecshop4.0.com/home/index/user.html -->
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta name="Generator" content="ECSHOP v4.0.0">
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="Keywords" content="">
 <meta name="Description" content="">
+
 <title>用户中心_ECSHOP演示站 - Powered by ECShop</title>
 
 <link rel="shortcut icon" href="http://www.ecshop4.0.com/home/index/favicon.ico">
-<link rel="icon" href="/static1/images/animated_favicon.gif" type="/static1/images/gif">
+<link rel="icon" href="http://www.ecshop4.0.com/home/index/animated_favicon.gif" type="image/gif">
 <link href="/static1/css/style.css" rel="stylesheet" type="text/css">
 
-<script type="text/javascript" src="http://open.51094.com/user/myscript/15b9a572132a4e.html"></script>
-
-<script type="text/javascript" src="/static1/js/common.js"></script><script type="text/javascript" src="/static1/js/user.js"></script><script type="text/javascript" src="/static1/js/transport.js"></script>
-</head><body>
+<script type="text/javascript" src="/static1/images/transport.js"></script><script type="text/javascript" src="/static1/images/common.js"></script><script type="text/javascript" src="/static1/images/user.js"></script></head>
+<body>
 
 <script type="text/javascript">
 var process_request = "正在处理您的请求...";
@@ -36,7 +34,7 @@ var process_request = "正在处理您的请求...";
 </div>
 <div class="nav-menu">
   <div class="wrap">
-    <div class="logo"><a href="http://www.ecshop4.0.com/home/index/index.html" name="top"><img src="./用户中心_ECSHOP演示站 - Powered by ECShop_files/logo.gif"></a></div>
+    <div class="logo"><a href="http://www.ecshop4.0.com/home/index/index.html" name="top"><img src="/static1/images/logo.gif"></a></div>
     <div id="mainNav" class="clearfix maxmenu">
       <div class="m_left">
       <ul>
@@ -51,11 +49,11 @@ var process_request = "正在处理您的请求...";
       </div>
     </div>
     <div class="serach-box">
-      <form id="searchForm" name="searchForm" method="get" action="http://www.ecshop4.0.com/home/index/search.html" onsubmit="return checkSearchForm()" class="f_r">
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <form id="searchForm" name="searchForm" method="get" action="search.html" onsubmit="return checkSearchForm()" class="f_r">
+        <table width="100%" cellspacing="0" cellpadding="0" border="0">
           <tbody><tr>
-            <td width="135"><input name="keywords" type="text" id="keyword" value="" class="B_input"></td>
-            <td><input name="imageField" type="submit" value="搜索" class="go" style="cursor:pointer;"></td>
+            <td width="135"><input name="keywords" id="keyword" class="B_input" type="text"></td>
+            <td><input name="imageField" value="搜索" class="go" style="cursor:pointer;" type="submit"></td>
           </tr>
         </tbody></table>
       </form>
@@ -65,88 +63,87 @@ var process_request = "正在处理您的请求...";
 <div class="clear0 "></div>
 
 <div class="block box">
- <div id="ur_here">
-  <div class="path"><div>当前位置: <a href="index.html">首页</a> <code>&gt;</code> 用户中心</div></div>  </div>
+  <div id="ur_here"> <div class="path"><div>当前位置: <a href="http://www.ecshop4.0.com/home/index/index">首页</a> <code>&gt;</code> 用户中心</div></div> </div>
 </div>
 
 <div class="blank"></div>
-
-<div class="usBox clearfix">
-  <div class="usBox_1 f_l">
-   <div class="logtitle"></div>
-
-
-
-
-
-   <form  action="<?php echo url('login/login_do'); ?>" method="post" >
-        <table width="100%" border="0" align="left" cellpadding="3" cellspacing="5">
-          <tbody><tr>
-            <td width="15%" align="right">用户名</td>
-            <td width="85%"><input name="user_name" type="text" size="25" class="inputBg" placeholder="请输入用户名/手机号"></td>
-          </tr>
-          <tr>
-            <td align="right">密码</td>
-            <td>
-            <input name="user_password" type="password" size="15" class="inputBg">
-            </td>
-          </tr>
-                  <!--   <tr>
-            <td colspan="2"><input type="checkbox" value="1" name="remember" id="remember"><label for="remember">请保存我这次的登录信息。</label></td>
-          </tr> -->
-          <tr>
-            <td>&nbsp;</td>
-            <td align="left">
-           <!--  <input type="hidden" name="act" value="act_login">
-            <input type="hidden" name="back_act" value="http://www.ecshop4.0.com/home/index/"> -->
-            <input type="submit"  value="登录" class="us_Submit">
-            </td>
-          </tr>
-	<!--   <tr><td></td><td class="f3">找回密码：（<a href="http://www.ecshop4.0.com/home/index/user.html?act=qpassword_name" class="f3">密码问题</a>&nbsp;<a href="http://www.ecshop4.0.com/home/index/user.html?act=get_password" class="f3">邮件</a>&nbsp;<a href="http://www.ecshop4.0.com/home/index/user.html?act=sms_get_password" class="f3">短信验证</a>）</td></tr> -->
-      </tbody></table>
-      
-            <div>
-            <span id="hzy_fast_login"></span>
+<div class="block clearfix userpage">
+  
+  <div class="AreaL">
+    <div class="box">
+      <div class="box_1">
+        <div class="userCenterBox"> <div class="userMenu">
+<a href="<?php echo url('user/welcome'); ?>" class="curs"><img src="/static1/images/u1.gif"> 欢迎页</a>
+<a href="<?php echo url('user/userinfo'); ?>"><img src="/static1/images/u2.gif"> 用户信息</a>
+<a href="<?php echo url('user/dingdan'); ?>"><img src="/static1/images/u3.gif"> 我的订单</a>
+<a href="<?php echo url('user/shouhuo'); ?>"><img src="/static1/images/u4.gif"> 收货地址</a>
+<a href="<?php echo url('user/shoucang'); ?>"><img src="/static1/images/u5.gif"> 我的收藏</a>
+<a href="<?php echo url('user/liuyan'); ?>"><img src="/static1/images/u6.gif"> 我的留言</a>
+<a href="<?php echo url('user/biaoqian'); ?>"><img src="/static1/images/u7.gif"> 我的标签</a>
+<a href="<?php echo url('usertwo/quehuo'); ?>"><img src="/static1/images/u8.gif"> 缺货登记</a>
+<a href="<?php echo url('usertwo/hongbao'); ?>"><img src="/static1/images/u9.gif"> 我的红包</a>
+<a href="<?php echo url('usertwo/tuijian'); ?>"><img src="/static1/images/u10.gif"> 我的推荐</a>
+<a href="<?php echo url('usertwo/pinglun'); ?>"><img src="/static1/images/u11.gif"> 我的评论</a>
+<!--<a href="usertwo.html?act=group_buy">我的团购</a>-->
+<a href="<?php echo url('usertwo/genzong'); ?>"><img src="/static1/images/u12.gif"> 跟踪包裹</a>
+<a href="<?php echo url('usertwo/money'); ?>"><img src="/static1/images/u13.gif"> 资金管理</a>
+<a href="<?php echo url('login/back'); ?>" style="background:none; text-align:right; margin-right:10px;"><img src="/static1/images/bnt_sign.gif"></a>
+</div> </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="AreaR">
+    <div class="box">
+      <div class="box_1">
+        <div class="userCenterBox boxCenterList clearfix" style="_height:1%;">
+          
+                    <font class="f5"><b class="f4">ecshop</b> 欢迎您回到 ECSHOP！</font><br>
+          <div class="blank"></div>
+          您的上一次登录时间: 2016-05-11 14:56:04<br>
+          <div class="blank5"></div>
+           <br>
+          <div class="blank5"></div>
+                    您还没有通过邮件认证 <a href="javascript:sendHashMail()" style="color:#006bd0;">点此发送认证邮件</a><br>
+                    <div style="margin:5px 0; border:1px solid #a1675a;padding:10px 20px; background-color:#e8d1c9;"> <img src="/static1/images/note.gif" alt="note">&nbsp;用户中心公告！ </div>
+          <br>
+          <br>
+          <div class="f_l" style="width:350px;">
+            <h5><span>您的账户</span></h5>
+            <div class="blank"></div>
+            余额:<a href="http://www.ecshop4.0.com/home/index/user.html?act=account_log" style="color:#006bd0;">￥0.00元</a><br>
+                        红包:<a href="http://www.ecshop4.0.com/home/index/user.html?act=bonus" style="color:#006bd0;">共计 8 个,价值 ￥160.00元</a><br>
+            积分:0积分<br>
           </div>
-    </form>
-
-
-
-
-    
-
-
+          <div class="f_r" style="width:350px;">
+            <h5><span>用户提醒</span></h5>
+            <div class="blank"></div>
+                        您最近30天内提交了0个订单<br>
+                      </div>
+                    
+          
+                    
+          
+                    
+          
+                    
+          
+                    
+          
+                    <div class="blank5"></div>
+          
+                    
+                                        
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="usTxt">
-    <strong>如果您不是会员，请注册</strong>  <br>
-    <strong class="f4">友情提示：</strong><br>
-        不注册为会员也可在本店购买商品<br>
-            但注册之后您可以：<br>
-    1. 保存您的个人资料<br>
-    2. 收藏您关注的商品<br>
-    3. 享受会员积分制度<br>
-    4. 订阅本店商品信息  <br>
-    <a href="<?php echo url('login/reg'); ?>"><img src="/static1/images/bnt_ur_reg.gif"></a>
-  </div>
+  
 </div>
-
-
-
-    
-
-
-    
-
-    
-
-    
-
-
-
-
 <div class="blank"></div>
 <div class="foot-body">
-  <div class="bads"><img src="./用户中心_ECSHOP演示站 - Powered by ECShop_files/bottom.jpg"></div>
+  <div class="bads"><img src="/static1/images/bottom.jpg"></div>
   <div class="clear10"></div>
   
      <div class="foot-help">
@@ -188,13 +185,12 @@ var process_request = "正在处理您的请求...";
         <div class="foot-weixin">
           <div class="weixin-txt">关注demo微信</div>
           <div class="weixin-pic">
-            <img src="./用户中心_ECSHOP演示站 - Powered by ECShop_files/weixin.jpg">
+            <img src="/static1/images/weixin.jpg">
           </div>
         </div>
     </div>
      
     
-   
   
   <div class="blank"></div>
   
@@ -210,33 +206,9 @@ var process_request = "正在处理您的请求...";
 
 
 <script type="text/javascript">
-var process_request = "正在处理您的请求...";
-var username_empty = "- 用户名不能为空。";
-var username_shorter = "- 用户名长度不能少于 3 个字符。";
-var username_invalid = "- 用户名只能是由字母数字以及下划线组成。";
-var password_empty = "- 登录密码不能为空。";
-var password_shorter = "- 登录密码不能少于 6 个字符。";
-var confirm_password_invalid = "- 两次输入密码不一致";
-var email_empty = "- Email 为空";
-var email_invalid = "- Email 不是合法的地址";
-var agreement = "- 您没有接受协议";
-var msn_invalid = "- msn地址不是一个有效的邮件地址";
-var qq_invalid = "- QQ号码不是一个有效的号码";
-var home_phone_invalid = "- 家庭电话不是一个有效号码";
-var office_phone_invalid = "- 办公电话不是一个有效号码";
-var mobile_phone_invalid = "- 手机号码不是一个有效号码";
-var msg_un_blank = "* 用户名不能为空";
-var msg_un_length = "* 用户名最长不得超过7个汉字";
-var msg_un_format = "* 用户名含有非法字符";
-var msg_un_registered = "* 用户名已经存在,请重新输入";
-var msg_can_rg = "* 可以注册";
-var msg_email_blank = "* 邮件地址不能为空";
-var msg_email_registered = "* 邮箱已存在,请重新输入";
-var msg_email_format = "* 邮件地址不合法";
-var msg_blank = "不能为空";
-var no_select_question = "- 您没有完成密码提示问题的操作";
-var passwd_balnk = "- 密码中不能包含空格";
-var username_exist = "用户名 %s 已经存在";
+var msg_title_empty = "留言标题为空";
+var msg_content_empty = "留言内容为空";
+var msg_title_limit = "留言标题不能超过200个字";
 </script>
 
 </body></html>

@@ -1,14 +1,73 @@
-﻿<!-- $Id: agency_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\bonus\bonus_list.html";i:1537176167;}*/ ?>
+<!-- $Id: bonus_type.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ECSHOP 管理中心 - 供货商列表 </title>
+<title>ECSHOP 管理中心 - 红包类型 </title><base href="/" />
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="/static/css/general_2.css" rel="stylesheet" type="text/css" />
-<link href="/static/css/main_2.css" rel="stylesheet" type="text/css" />
+<link href="static/css/general.css" rel="stylesheet" type="text/css" />
+<link href="static/css/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="static/js/transport_2.js"></script><script type="text/javascript" src="static/js/common_2.js"></script>
+<style>
+  .panel-icloud .panel-right iframe {
+    height: 300px;
+    margin-top: 15px;
+  }
+  .panel-hint{
+    top: 0%;
+  }
+</style>
 
+<script>
+<!--
+// 这里把JS用到的所有语言都赋值到这里
+var process_request = "正在处理您的请求...";
+var todolist_caption = "记事本";
+var todolist_autosave = "自动保存";
+var todolist_save = "保存";
+var todolist_clear = "清除";
+var todolist_confirm_save = "是否将更改保存到记事本？";
+var todolist_confirm_clear = "是否清空内容？";
+var type_name_empty = "请输入红包类型名称!";
+var type_money_empty = "请输入红包类型价格!";
+var order_money_empty = "请输入订单金额!";
+var type_money_isnumber = "类型金额必须为数字格式!";
+var order_money_isnumber = "订单金额必须为数字格式!";
+var bonus_sn_empty = "请输入红包的序列号!";
+var bonus_sn_number = "红包的序列号必须是数字!";
+var bonus_sum_empty = "请输入您要发放的红包数量!";
+var bonus_sum_number = "红包的发放数量必须是一个整数!";
+var bonus_type_empty = "请选择红包的类型金额!";
+var user_rank_empty = "您没有指定会员等级!";
+var user_name_empty = "您至少需要选择一个会员!";
+var invalid_min_amount = "请输入订单下限（大于0的数字）";
+var send_start_lt_end = "红包发放开始日期不能大于结束日期";
+var use_start_lt_end = "红包使用开始日期不能大于结束日期";
+//-->
+/*关闭按钮*/
+  function get_certificate(){
+	  var panel = document.getElementById('panelCloud');
+	  var mask  = document.getElementById('CMask')||null;
+	  var frame = document.getElementById('CFrame');
+	  if(panel&&CMask&&frame){
+	      panel.style.display = 'block';
+	      mask.style.display = 'block';
+	      frame.src = 'https://openapi.shopex.cn/oauth/authorize?response_type=code&client_id=yogfss4l&redirect_uri=http%3A%2F%2F127.0.0.1%2FECShop1%2Fsource%2Fecshop%2Fadmin%2Fcertificate.php%3Fact%3Dget_certificate%26type%3Dindex&view=auth_ecshop';
+	    }
+	}
+
+	/*关闭按钮*/
+	function btnCancel(item){
+	  var par  = item.offsetParent;
+	  var mask  = document.getElementById('CMask')||null;
+	  var frame = document.getElementById('CFrame');
+	  par.style.display = 'none';
+	  if(mask){mask.style.display = 'none';}
+	  frame.src = '';
+	}
+</script>
 </head>
 <body>
 <!--云起激活系统面板-->
@@ -37,90 +96,121 @@
 <div class="mask-black" id="CMask"></div>
 <!--遮罩-->
 <h1>
-      <a class="btn btn-right" href="./suppliers_add.html">添加供货商</a>
+      <a class="btn btn-right" href="admin/Bonus/bonus_add">添加红包类型</a>
   
-    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;供货商列表 </span>
+    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;红包类型 </span>
   <div style="clear:both"></div>
-</h1>
-<form method="post" action="" name="listForm" onsubmit="return confirm(batch_drop_confirm);">
+</h1><!-- <script type="text/javascript" src="static/js/utils_2.js"></script><script type="text/javascript" src="static/js/listtable_2.js"></script> --><!-- start bonus_type list -->
+</h1><!-- start bonus_type list -->
+<form method="post" action="" name="listForm">
 <div class="list-div" id="listDiv">
 
   <table cellpadding="3" cellspacing="1">
     <tr>
-      <th> <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox" />
-          <a href="javascript:listTable.sort('suppliers_id'); ">编号</a><img src="static/picture/sort_desc_1.png"> </th>
-      <th><a href="javascript:listTable.sort('suppliers_name'); ">供货商名称</a></th>
-      <th>供货商描述</th>
-      <th>状态</th>
+      <th><a href="javascript:listTable.sort('type_name'); ">类型名称</a></th>
+      <th><a href="javascript:listTable.sort('send_type'); ">发放类型</a></th>
+      <th><a href="javascript:listTable.sort('type_money'); ">红包金额</a></th>
+      <th><a href="javascript:listTable.sort('min_amount'); ">订单下限</a></th>
+      <th>发放数量</th>
+      <th>使用数量</th>
       <th>操作</th>
     </tr>
-        <?php foreach ($list as $key => $v) { ?>
-          <tr>
-      <td><input type="checkbox" name="checkboxes[]" value="<?=$v['suppliers_id'];?>" />
-        <?=$v['suppliers_id'];?></td>
-      <td class="first-cell">
-        <span onclick="javascript:listTable.edit(this, 'edit_suppliers_name', <?=$v['suppliers_id'];?>)"><?=$v['suppliers_name']?>      </span></td>
-      <td><?=$v['suppliers_desc']?></td>
-      <td align="center"><img src="/static/picture/yes.svg" width="20" onclick="listTable.toggle(this, 'is_check', <?=$v['suppliers_id'];?>)" style="cursor:pointer;"/></td>
-      <td align="center">
-        <a href="suppliers_edit.html?id=<?=$v['suppliers_id'];?>" title="编辑">编辑</a> |
-        <a href="{:url('suppliers_del')}?id=<?=$v['suppliers_id'];?>" onclick="listTable.remove(<?=$v['suppliers_id'];?>, '您确认要删除这条记录吗?')" title="移除">移除</a>      </td>
+      <?php if(is_array($data) || $data instanceof \think\Collection || $data instanceof \think\Paginator): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$user): $mod = ($i % 2 );++$i;?>
+    <tr>
+    <td class="first-cell" id="<?php echo $user['bonus_id']; ?>">
+    <span class="bonus_name"><?php echo $user['bonus_name']; ?></span>
+    </td>
+    <td class="first-cell"><span><?php echo $user['bonus_type']; ?></span></td>
+    <td><span>¥<?php echo $user['bonus_money']; ?>元</span></td>
+    <td align="right"><span><?php echo $user['order_limit']; ?></span></td>
+    <td align="right"><span><?php echo $user['quantity']; ?></span></td>
+    <td><?php echo $user['use_num']; ?></td>
+    <td><a href="admin/Bonus/details?id=<?php echo $user['bonus_id']; ?>">查看</a><br />
+        <a href="admin/Bonus/delorder?id=<?php echo $user['bonus_id']; ?>">移除</a>
+    </td>
     </tr>
-        <?php } ?>
-        <!-- <tr>
-      <td><input type="checkbox" name="checkboxes[]" value="2" />
-        2</td>
-      <td class="first-cell">
-        <span onclick="javascript:listTable.edit(this, 'edit_suppliers_name', 2)">上海供货商      </span></td>
-      <td>上海供货商</td>
-			<td align="center"><img src="static/picture/yes_1.svg" width="20" onclick="listTable.toggle(this, 'is_check', 2)" style="cursor:pointer;"/></td>
-      <td align="center">
-        <a href="suppliers.php?act=edit&id=2" title="编辑">编辑</a> |
-        <a href="javascript:void(0);" onclick="listTable.remove(2, '您确认要删除这条记录吗?')" title="移除">移除</a>      </td>
-    </tr> -->
-      </table>
+  <?php endforeach; endif; else: echo "" ;endif; ?>
+  </table>
+
+
+<!-- 分页 -->
 <table id="page-table" cellspacing="0">
   <tr>
-    <td colspan="2">
-      <!-- <input name="remove" type="submit" id="btnSubmit" value="删除" class="button" disabled="true" />
-      <input name="act" type="hidden" value="batch" /> -->
+    <td style="text-align: left;">
+      <div>
+        
+        <input name="batch" type="hidden" value="1" />
+        <input name="order_id" type="hidden" value="" />
+      </div>
     </td>
     <td align="right" nowrap="true">
     <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
-<div id="turn-page" align="center">
-      
-      {$page}
-    </div>
+<div id="turn-page">
+    <?php echo $data->render(); ?>
+</div>
     </td>
   </tr>
 </table>
 
+
 </div>
 </form>
-
-<script type="text/javascript" language="javascript">
-  <!--
-  listTable.recordCount = 2;
+<!-- end bonus_type list -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).on('click','.bonus_name',function(){
+    var bonus_name = $(this).text();
+    var obj = $(this);
+    var input = $("<input type='text' class='newname' value='"+bonus_name+"' />");
+    obj.html(input);
+    input.click(function(){return false;});
+    input.trigger('oucs');
+  })
+  $(document).on('blur','.bonus_name',function(){
+    var bonus_name = $('.newname').val();
+    var id = $(this).parent('td').attr('id');
+    var obj = $(this);
+    $.ajax({
+      url:"<?php echo url('Bonus/bonus_change_name'); ?>",
+      type:'GET',
+      data:{bonus_name:bonus_name,id:id},
+      dataType:"json",
+      success:function(res){
+        // console.log(res);
+        if (res.status==0) {  
+          var input = $("<span class='bonus_name' >"+bonus_name+"</span>");
+          obj.html(input); 
+        } else {
+          alert(res.message);
+        }
+      }
+    })
+  })
+</script>
+<script type="text/javascript" language="JavaScript">
+<!--
+  listTable.recordCount = 0;
   listTable.pageCount = 1;
 
-    listTable.filter.sort_by = 'suppliers_id';
-    listTable.filter.sort_order = 'ASC';
+    listTable.filter.sort_by = 'type_id';
+    listTable.filter.sort_order = 'DESC';
+    listTable.filter.record_count = '0';
+    listTable.filter.page_size = '15';
     listTable.filter.page = '1';
-    listTable.filter.page_size = '2';
-    listTable.filter.record_count = '2';
     listTable.filter.page_count = '1';
+    listTable.filter.start = '0';
   
   
   onload = function()
   {
-      // 开始检查订单
-      startCheckOrder();
+     // 开始检查订单
+     startCheckOrder();
   }
   
-  //-->
+//-->
 </script>
 <div id="footer">
-共执行 4 个查询，用时 0.013437 秒，Gzip 已禁用，内存占用 1.113 MB<br />
+共执行 6 个查询，用时 0.006193 秒，Gzip 已禁用，内存占用 1.175 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
 <!-- 新订单提示信息 -->
 <div id="popMsg">
@@ -145,9 +235,9 @@
 <embed src="static/flash/online_2.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
 -->
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0" id="msgBeep" width="1" height="1">
-  <param name="movie" value="/static/images/online.swf">
+  <param name="movie" value="images/online.swf">
   <param name="quality" value="high">
-  <embed src="/static/images/online.swf" name="msgBeep" id="msgBeep" quality="high" width="0" height="0" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?p1_prod_version=shockwaveflash">
+  <embed src="images/online.swf" name="msgBeep" id="msgBeep" quality="high" width="0" height="0" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?p1_prod_version=shockwaveflash">
   </embed>
 </object>
 
@@ -181,11 +271,11 @@ function showTodoList(adminid)
     global.onload = global.onreadystatechange= function()
     {
       if(this.readyState && this.readyState=="loading")return;
-      var md5 = $import("/static/js/md5.js","js");
+      var md5 = $import("js/md5.js","js");
       md5.onload = md5.onreadystatechange= function()
       {
         if(this.readyState && this.readyState=="loading")return;
-        var todolist = $import("/static/js/todolist.js","js");
+        var todolist = $import("js/todolist.js","js");
         todolist.onload = todolist.onreadystatechange = function()
         {
           if(this.readyState && this.readyState=="loading")return;
