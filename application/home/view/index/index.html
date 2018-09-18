@@ -21,49 +21,38 @@ var process_request = "正在处理您的请求...";
   <div class="fd_top fd_top1">
     <div class="bar-left">
           <div class="top_menu1"> <script type="text/javascript" src="/static1/js/transport.js"></script><script type="text/javascript" src="/static1/js/utils.js"></script> <font id="ECS_MEMBERZONE"><div id="append_parent"></div>
- 欢迎光临本店<a href="user.html">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="register.html">免费注册</a>  </font> </div>
+ 欢迎光临本店<a href="./user.html">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="./register.html">免费注册</a>  </font> </div>
     </div>
     <div class="bar-cart">
       <div class="fl cart-yh">
-        <a href="user.html" class="">用户中心</a>
+        <a href="./user.html" class="">用户中心</a>
       </div>
-             <div class="cart" id="ECS_CARTINFO"> <a href="flow.html" title="查看购物车">购物车(0)</a> </div>
+             <div class="cart" id="ECS_CARTINFO"> <a href="./flow.html" title="查看购物车">购物车(0)</a> </div>
     </div>
   </div>
 </div>
 <div class="nav-menu">
   <div class="wrap">
-    <div class="logo"><a href="index.html" name="top"><img src="/static1/images/logo.gif" /></a></div>
+    <div class="logo"><a href="./index.html" name="top"><img src="/static1/images/logo.gif" /></a></div>
     <div id="mainNav" class="clearfix maxmenu">
       <div class="m_left">
-      <ul>
-        <li><a href="index.html" class="cur">首页</a></li>
-                        <li><a href="category.html?id=16" 
-        
-                    >服装</a></li>
-                                        <li><a href="category.html?id=22" 
-        
-                    >移动电源</a></li>
-                                        <li><a href="category.html?id=25" 
-        
-                    >数码时尚</a></li>
-                                        <li><a href="category.html?id=26" 
-        
-                    >家用电器</a></li>
-                                        <li><a href="category.html?id=25" 
-        
-                    >数码时尚</a></li>
-                              </ul>
+        <ul> 
+        <li><a href="http://www.ecshop4.0.com/home/index/index.html">首页</a></li>
+          {volist name='nav' id='v'}
+
+              <li><a href="http://www.ecshop4.0.com/home/index/fenlei?cat_id={$v.cat_id}">{$v.cat_name}</a></li>
+           {/volist} 
+        </ul>
       </div>
     </div>
     <div class="serach-box">
       <form id="searchForm" name="searchForm" method="get" action="search.html" onSubmit="return checkSearchForm()" class="f_r">
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td width="135"><input name="keywords" type="text" id="keyword" value="" class="B_input"  /></td>
-            <td><input name="imageField" type="submit" value="搜索" class="go" style="cursor:pointer;" /></td>
+       <table width="100%" cellspacing="0" cellpadding="0" border="0">
+          <tbody><tr>
+            <td width="135"><input name="keyword"  type="text"></td>
+            <td><input  value="搜索"  type="submit"></td>
           </tr>
-        </table>
+        </tbody></table>
       </form>
     </div>
   </div>
@@ -84,89 +73,34 @@ if (Object.prototype.toJSONString){
     
 <div class="category_info">
   <div id="category_tree">
+
+  <!-- 无限极分类 start-->
+  <?php foreach ($cat_data as $key => $value) { ?>
         <div class="cat-box">
-      <div class="cat1"><a href="category.html?id=26">家用电器</a></div>
-            <div class="cat2-box">
-      
-                <div class="cat2 clearfix">
-          <a class="cat2-link" href="category.html?id=27">大家电</a>
-                    <div class="cat3-block"></div>
-          <div class="cat3-box">
+          <div class="cat1">
+            <a href="http://www.ecshop4.0.com/home/index/fenlei?cat_id={$value.cat_id}">{$value.cat_name}</a>
+          </div>
+                   
+        <div class="cat2-box">
+      <?php foreach ($value['son'] as $key => $val) { ?>
+          <div class="cat2 clearfix">
+                  <a class="cat2-link" href="http://www.ecshop4.0.com/home/index/fenlei?cat_id={$val.cat_id}">{$val.cat_name}</a>
+            <div class="cat3-block">            
+            </div>
+          <div class="cat3-box">      
+          <?php foreach ($val['son'] as $key => $v) { ?>     
+                          <a href="http://www.ecshop4.0.com/home/index/fenlei?cat_id={$v.cat_id}">{$v.cat_name}</a>&nbsp;&nbsp;
+          <?php } ?>
+                      
+            </div>
             
-                          <a href="category.html?id=28">平板电脑</a>&nbsp;&nbsp;
-                          <a href="category.html?id=29">家用空调</a>&nbsp;&nbsp;
-                          <a href="category.html?id=30">家电配件</a>&nbsp;&nbsp;
-                          <a href="category.html?id=31">洗衣机</a>&nbsp;&nbsp;
-                          <a href="category.html?id=32">冰箱</a>&nbsp;&nbsp;
-                      </div>
-                  </div>
-                
+          </div>
+          <?php } ?>  
       </div>
-      
+         
     </div>
-        <div class="cat-box">
-      <div class="cat1"><a href="category.html?id=25">数码时尚</a></div>
-      
-    </div>
-        <div class="cat-box">
-      <div class="cat1"><a href="category.html?id=18">智能硬件</a></div>
-      
-    </div>
-        <div class="cat-box">
-      <div class="cat1"><a href="category.html?id=22">移动电源</a></div>
-      
-    </div>
-        <div class="cat-box">
-      <div class="cat1"><a href="category.html?id=1">手机类型</a></div>
-            <div class="cat2-box">
-      
-                <div class="cat2 clearfix">
-          <a class="cat2-link" href="category.html?id=3">小型手机</a>
-                  </div>
-                <div class="cat2 clearfix">
-          <a class="cat2-link" href="category.html?id=4">3G手机</a>
-                  </div>
-                
-      </div>
-      
-    </div>
-        <div class="cat-box">
-      <div class="cat1"><a href="category.html?id=6">手机</a></div>
-            <div class="cat2-box">
-      
-                <div class="cat2 clearfix">
-          <a class="cat2-link" href="category.html?id=8">耳机</a>
-                  </div>
-                <div class="cat2 clearfix">
-          <a class="cat2-link" href="category.html?id=9">电池</a>
-                  </div>
-                
-      </div>
-      
-    </div>
-        <div class="cat-box">
-      <div class="cat1"><a href="category.html?id=12">充值卡</a></div>
-      
-    </div>
-        <div class="cat-box">
-      <div class="cat1"><a href="category.html?id=16">服装</a></div>
-      
-    </div>
-        <div class="cat-box">
-      <div class="cat1"><a href="category.html?id=19">配件</a></div>
-            <div class="cat2-box">
-      
-                <div class="cat2 clearfix">
-          <a class="cat2-link" href="category.html?id=24">数码时尚</a>
-                  </div>
-                <div class="cat2 clearfix">
-          <a class="cat2-link" href="category.html?id=20">保护壳</a>
-                  </div>
-                
-      </div>
-      
-    </div>
-        <div class="clear0"></div>
+      <?php } ?> 
+        
   </div>
   <div class="clear0"></div>
 </div>
