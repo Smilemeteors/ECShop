@@ -6,8 +6,8 @@
 <meta name="Description" content="">
 <title>服装_ECSHOP演示站 - Powered by ECShop</title>
 <link rel="shortcut icon" href="http://www.ecshop4.0.com/home/index/favicon.ico">
-<link rel="icon" href="http://www.ecshop4.0.com/home/index/animated_favicon.gif" type="/static1/images/gif">
-<link href="/static1//css/style.css" rel="stylesheet" type="text/css">
+<link rel="icon" href="http://www.ecshop4.0.com/home/index/animated_favicon.gif" type="image/gif">
+<link href="/static1/css/style.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="/static1/js/common.js"></script><script type="text/javascript" src="/static1/js/global.js"></script><script type="text/javascript" src="/static1/js/compare.js"></script></head>
 <body>
 <script type="text/javascript">
@@ -34,48 +34,52 @@ var process_request = "正在处理您的请求...";
       <div class="m_left">
       <ul>
         <li><a href="http://www.ecshop4.0.com/home/index/index.html">首页</a></li>
-                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=16">服装</a></li>
-                                                <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=22">移动电源</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=25">数码时尚</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=26">家用电器</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=27">大家电</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=25">数码时尚</a></li>
-                              </ul>
+
+            {volist name='nav' id='v'}
+
+              <li><a href="http://www.ecshop4.0.com/home/index/fenlei?cat_id={$v.cat_id}">{$v.cat_name}</a></li>
+           {/volist} 
+                                               
+      </ul>
       </div>
     </div>
     <div class="serach-box">
-      <form id="searchForm" name="searchForm" method="get" action="http://www.ecshop4.0.com/home/index/search.html" onsubmit="return checkSearchForm()" class="f_r">
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <form method="get" action="{:url('index/fenlei')}">
+        <table width="100%" cellspacing="0" cellpadding="0" border="0">
           <tbody><tr>
-            <td width="135"><input name="keywords" type="text" id="keyword" value="" class="B_input"></td>
-            <td><input name="imageField" type="submit" value="搜索" class="go" style="cursor:pointer;"></td>
+            <td width="135"><input name="keyword"  type="text"></td>
+            <td><input  value="搜索"  type="submit"></td>
           </tr>
         </tbody></table>
       </form>
+       <span class="fl">
+            {volist name='hot_data' id='v'}
+               <a href="#">{$v.hot_name}</a>
+            {/volist}
+        </span>
     </div>
   </div>
 </div>
 <div class="clear0 "></div>
  <div class="category-body">
-  <div id="ur_here"> <div class="path"><div>当前位置: <a href="http://www.ecshop4.0.com/home/index/">首页</a> <code>&gt;</code> <a href="http://www.ecshop4.0.com/home/index/category.html?id=16">服装</a></div></div> </div>
- 
+  <div id="ur_here"> <div class="path"><div>当前位置: {volist name='cat_name' id='v'} <a href="{:url('index/fenlei')}?cat_id={$v.cat_id}">{$v.cat_name}</a>{/volist}</div></div> </div>
 <div class="block clearfix">
   
-  <div class="Area">
-    
-        
-    
+ <div class="Area">
+            
 <div class="prclist">
   <div class="displaylist">
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tbody><tr>
-        <td class="tdl"><span></span>相关商品<b>6</b>个 </td>
+        <td class="tdl"><span></span>相关商品<b>{$count}</b>个 </td>
         <td><a name="goods_list"></a></td>
         <td class="tdr"><table border="0" cellspacing="0" cellpadding="0">
             <tbody><tr>
             <td>排序：</td>
               <td><form method="GET" class="sort list-paixu" name="listform">
-                    <a href="http://www.ecshop4.0.com/home/index/category.html?category=16&amp;display=grid&amp;brand=0&amp;price_min=0&amp;price_max=0&amp;filter_attr=0&amp;page=1&amp;sort=goods_id&amp;order=ASC#goods_list"><img src="/static1/images/goods_id_DESC.gif" alt="按上架时间排序"></a> <a href="http://www.ecshop4.0.com/home/index/category.html?category=16&amp;display=grid&amp;brand=0&amp;price_min=0&amp;price_max=0&amp;filter_attr=0&amp;page=1&amp;sort=shop_price&amp;order=ASC#goods_list"><img src="./服装_ECSHOP演示站 - Powered by ECShop_files/shop_price_default.gif" alt="按价格排序"></a> <a href="http://www.ecshop4.0.com/home/index/category.html?category=16&amp;display=grid&amp;brand=0&amp;price_min=0&amp;price_max=0&amp;filter_attr=0&amp;page=1&amp;sort=last_update&amp;order=DESC#goods_list"><img src="./服装_ECSHOP演示站 - Powered by ECShop_files/last_update_default.gif" alt="按更新时间排序"></a>
+                    <!-- <a href="http://www.ecshop4.0.com/home/index/category.html?category=16&amp;display=grid&amp;brand=0&amp;price_min=0&amp;price_max=0&amp;filter_attr=0&amp;page=1&amp;sort=goods_id&amp;order=ASC#goods_list"><img src="/static1/images/goods_id_DESC.gif" alt="按上架时间排序"></a>  -->
+                    <a href="http://www.ecshop4.0.com/home/index/paixue?cat_id=14">按价格排序</a> 
+                  <!--   <a href="http://www.ecshop4.0.com/home/index/category.html?category=16&amp;display=grid&amp;brand=0&amp;price_min=0&amp;price_max=0&amp;filter_attr=0&amp;page=1&amp;sort=last_update&amp;order=DESC#goods_list"><img src="./服装_ECSHOP演示站 - Powered by ECShop_files/last_update_default.gif" alt="按更新时间排序"></a> -->
                   <input type="hidden" name="category" value="16">
                   <input type="hidden" name="display" value="grid" id="display">
                   <input type="hidden" name="brand" value="0">
@@ -95,19 +99,23 @@ var process_request = "正在处理您的请求...";
     <form name="compareForm" action="http://www.ecshop4.0.com/home/index/compare.html" method="post" onsubmit="return compareGoods(this);">
             <div class="centerPadd">
       <div class="clearfix goodsBox" style="border:none;">
-                        <div class="goodsItem"> <a href="http://www.ecshop4.0.com/home/index/goods.html?id=48" class="img-box"><img src="/static1/images/48_thumb_G_1462852915482.jpg" alt="学院风简约双肩..." class="goodsimg"></a>
+
+
+      {volist name='goods_data' id='v'}
+                        <div class="goodsItem"> <a href="{:url('index/details')}?goods_id={$v.goods_id}" class="img-box"><img src="__ROOT__/uploads/{$v.goods_img}" class="goods_img"></a>
         <div class="goods-info">
-            <div class="goods-title"><a href="http://www.ecshop4.0.com/home/index/goods.html?id=48" title="学院风简约双肩包">学院风简约双肩...</a></div>
+            <div class="goods-title"><a href="{:url('index/details')}?goods_id={$v.goods_id}" >{$v.goods_name}</a></div>
             <div class="goods-ms">
                           </div>
             <div class="clearfix price-box">
-              <div class="shop_s">￥59元</div>
-              <a class="price-btn" href="http://www.ecshop4.0.com/home/index/goods.html?id=48">立即购买</a>
+              <div class="shop_s">￥{$v.shop_price}元</div>
+              <a class="price-btn" href="{:url('index/details')}?goods_id={$v.goods_id}">立即购买</a>
             </div>
             
         </div>
         </div>
-                                <div class="goodsItem"> <a href="http://www.ecshop4.0.com/home/index/goods.html?id=47" class="img-box"><img src="/static1/images/47_thumb_G_1462852887996.jpg" alt="极简都市双肩包" class="goodsimg"></a>
+        {/volist}
+                                <!-- <div class="goodsItem"> <a href="http://www.ecshop4.0.com/home/index/goods.html?id=47" class="img-box"><img src="/static1/images/47_thumb_G_1462852887996.jpg" alt="极简都市双肩包" class="goodsimg"></a>
         <div class="goods-info">
             <div class="goods-title"><a href="http://www.ecshop4.0.com/home/index/goods.html?id=47" title="极简都市双肩包">极简都市双肩包</a></div>
             <div class="goods-ms">
@@ -166,7 +174,7 @@ var process_request = "正在处理您的请求...";
             </div>
             
         </div>
-        </div>
+        </div> -->
                       </div>
     </div>
           </form>
