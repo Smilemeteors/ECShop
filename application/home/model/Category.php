@@ -4,7 +4,7 @@ use think\Model;
 use think\Db;
 class Category extends Model
 {
-     protected $tableName = 'category';
+     protected $tableName = 'classify';
     public function createTreeBySon($data,$parent_id = 0)
     {
         $new_arr = array();
