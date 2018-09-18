@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:58:"E:\ECShop\public/../application/home\view\index\index.html";i:1537253062;}*/ ?>
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -38,20 +39,20 @@ var process_request = "正在处理您的请求...";
       <div class="m_left">
       <ul>
         <li><a href="index.html" class="cur">首页</a></li>
-        {volist name='nav' id='v'}
+        <?php if(is_array($nav) || $nav instanceof \think\Collection || $nav instanceof \think\Paginator): $i = 0; $__LIST__ = $nav;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
 
-              <li><a href="http://www.ecshop4.0.com/home/index/fenlei?cat_id={$v.cat_id}">{$v.cat_name}</a></li>
-           {/volist} 
-                         <!-- <li><a href="{:url('home/index/category')}?id=1"
+              <li><a href="http://www.ecshop4.0.com/home/index/fenlei?cat_id=<?php echo $v['cat_id']; ?>"><?php echo $v['cat_name']; ?></a></li>
+           <?php endforeach; endif; else: echo "" ;endif; ?> 
+                         <!-- <li><a href="<?php echo url('home/index/category'); ?>?id=1"
         
                     >服装</a></li>
-                                        <li><a href="{:url('home/index/category')}?id=2"
+                                        <li><a href="<?php echo url('home/index/category'); ?>?id=2"
 
                     >移动电源</a></li>
-                                        <li><a href="{:url('home/index/category')}?id=3"
+                                        <li><a href="<?php echo url('home/index/category'); ?>?id=3"
 
                     >数码时尚</a></li>
-                                        <li><a href="{:url('home/index/category')}?id=4"
+                                        <li><a href="<?php echo url('home/index/category'); ?>?id=4"
         
                     >家用电器</a></li>
                                         <li><a href="category.html?id=25" 

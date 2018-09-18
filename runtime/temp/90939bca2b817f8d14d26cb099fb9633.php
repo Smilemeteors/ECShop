@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:57:"E:\ECShop\public/../application/home\view\index\user.html";i:1537176951;}*/ ?>
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -5,19 +6,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="Keywords" content="" />
 <meta name="Description" content="" />
-<title>服装_ECSHOP演示站 - Is shop</title>
+
+<title>用户中心_ECSHOP演示站 - Is shop</title>
+
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="icon" href="/static1/images/animated_favicon.gif" type="/static1/images/gif" />
 <link href="/static1/css/style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="/static1/js/common.js"></script><script type="text/javascript" src="/static1/js/global.js"></script><script type="text/javascript" src="/static1/js/compare.js"></script></head>
+
+<script type="text/javascript" src="/static1/js/common.js"></script><script type="text/javascript" src="/static1/js/user.js"></script><script type="text/javascript" src="/static1/js/transport.js"></script>
 <body>
+
 <script type="text/javascript">
 var process_request = "正在处理您的请求...";
 </script>
 <div class="top-bar">
   <div class="fd_top fd_top1">
     <div class="bar-left">
-          <div class="top_menu1"> <script type="text/javascript" src="/static1/js/transport.js"></script><script type="text/javascript" src="/static1/js/utils.js"></script> <font id="ECS_MEMBERZONE"><div id="append_parent"></div>
+          <div class="top_menu1"> <script type="text/javascript" src="/static1/js/utils.js"></script> <font id="ECS_MEMBERZONE"><div id="append_parent"></div>
  欢迎光临本店<a href="http://www.ecshop4.0.com/home/index/user.html">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="http://www.ecshop4.0.com/home/index/register.html">免费注册</a>  </font> </div>
     </div>
     <div class="bar-cart">
@@ -34,20 +39,23 @@ var process_request = "正在处理您的请求...";
     <div id="mainNav" class="clearfix maxmenu">
       <div class="m_left">
       <ul>
-        <li><a href="http://www.ecshop4.0.com/home/index/index.html">首页</a></li>
-                        <li><a href="{:url('home/index/category')}?id=1"
+        <li><a href="http://www.ecshop4.0.com/home/index/index.html" class="cur">首页</a></li>
+                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=16" 
         
                     >服装</a></li>
-                                                <li><a href="{:url('home/index/category')}?id=2"
+                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=22" 
         
                     >移动电源</a></li>
-                                        <li><a href="{:url('home/index/category')}?id=3"
+                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=25" 
         
                     >数码时尚</a></li>
-                                        <li><a href="{:url('home/index/category')}?id=4"
+                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=26" 
         
                     >家用电器</a></li>
-
+                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=25" 
+        
+                    >数码时尚</a></li>
+                              </ul>
       </div>
     </div>
     <div class="serach-box">
@@ -63,106 +71,71 @@ var process_request = "正在处理您的请求...";
   </div>
 </div>
 <div class="clear0 "></div>
- <div class="category-body">
-  <div id="ur_here"> <div class="path"><div>当前位置: <a href=".">首页</a> <code>&gt;</code> <a href="category.html?id=16">服装</a></div></div> </div>
- 
-<div class="block clearfix">
-  
-  <div class="Area">
-    
-        
-    
-<div class="prclist">
-  <div class="displaylist">
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td class="tdl"><span></span>相关商品<b>6</b>个 </td>
-        <td><a name='goods_list'></a></td>
-        <td class="tdr"><table border="0" cellspacing="0" cellpadding="0">
-            <tr>
-            <td>排序：</td>
-              <td><form method="GET" class="sort list-paixu" name="listform">
-                    <a href="category.html?category=16&display=grid&brand=0&price_min=0&price_max=0&filter_attr=0&page=1&sort=goods_id&order=ASC#goods_list"><img src="/static1/picture/goods_id_desc.gif" alt="按上架时间排序"></a> <a href="category.html?category=16&display=grid&brand=0&price_min=0&price_max=0&filter_attr=0&page=1&sort=shop_price&order=ASC#goods_list"><img src="/static1/picture/shop_price_default.gif" alt="按价格排序"></a> <a href="category.html?category=16&display=grid&brand=0&price_min=0&price_max=0&filter_attr=0&page=1&sort=last_update&order=DESC#goods_list"><img src="/static1/picture/last_update_default.gif" alt="按更新时间排序"></a>
-                  <input type="hidden" name="category" value="16" />
-                  <input type="hidden" name="display" value="grid" id="display" />
-                  <input type="hidden" name="brand" value="0" />
-                  <input type="hidden" name="price_min" value="0" />
-                  <input type="hidden" name="price_max" value="0" />
-                  <input type="hidden" name="filter_attr" value="0" />
-                  <input type="hidden" name="page" value="1" />
-                  <input type="hidden" name="sort" value="goods_id" />
-                  <input type="hidden" name="order" value="DESC" />
-                </form></td>
-            </tr>
-          </table></td>
-      </tr>
-    </table>
-  </div>
-  <div class="blank5"></div>
-    <form name="compareForm" action="compare.html" method="post" onSubmit="return compareGoods(this);">
-            <div class="centerPadd">
-      <div class="clearfix goodsBox" style="border:none;">
-          {volist name='arr' id='v'}
-                        <div class="goodsItem"> <a href="goods.html?id=48" class="img-box">
-                            <img src="/uploads/{$v.goods_img}" alt="" class="goodsimg" /></a>
-        <div class="goods-info">
-            <div class="goods-title"><a href="" title="">{$v.goods_name}</a></div>
-            <div class="goods-ms">
-                          </div>
-            <div class="clearfix price-box">
-              <div class="shop_s">{$v.goods_price}</a></div>
-              <a class="price-btn" href="goods.html?id=48">立即购买</a>
-            </div>
-        </div>
-        </div>
-          {/volist}
-                      </div>
-    </div>
-          </form>
-  </div>
-<div class="blank5"></div>
-<script type="Text/Javascript" language="JavaScript">
-<!--
-function selectPage(sel)
-{
-  sel.form.submit();
-}
-//-->
-</script>
-<script type="text/javascript">
-window.onload = function()
-{
-  Compare.init();
-  fixpng();
-}
-var button_compare = '';
-var exist = "您已经选择了%s";
-var count_limit = "最多只能选择4个商品进行对比";
-var goods_type_different = "\"%s\"和已选择商品类型不同无法进行对比";
-var compare_no_goods = "您没有选定任何需要比较的商品或者比较的商品数少于 2 个。";
-var btn_buy = "购买";
-var is_cancel = "取消";
-var select_spe = "请选择商品属性";
-</script>
- <div class="page-form clearfix">
-<form name="selectPageForm" action="/shixun/EC4/source/ecshop/category.html" method="get">
-    
-  <div id="pager" class="pagebar">
-                          </div>
-  
-  </form>
-<script type="Text/Javascript" language="JavaScript">
-<!--
-function selectPage(sel)
-{
-  sel.form.submit();
-}
-//-->
-</script>
-</div> </div>
-  
+
+<div class="block box">
+ <div id="ur_here">
+  <div class="path"><div>当前位置: <a href=".">首页</a> <code>&gt;</code> 用户中心</div></div>  </div>
 </div>
+
+<div class="blank"></div>
+
+<div class="usBox clearfix">
+  <div class="usBox_1 f_l">
+   <div class="logtitle"></div>
+   <form name="formLogin" action="user.html" method="post" onSubmit="return userLogin()">
+        <table width="100%" border="0" align="left" cellpadding="3" cellspacing="5">
+          <tr>
+            <td width="15%" align="right">用户名</td>
+            <td width="85%"><input name="username" type="text" size="25" class="inputBg" placeholder="请输入用户名/手机号" /></td>
+          </tr>
+          <tr>
+            <td align="right">密码</td>
+            <td>
+            <input name="password" type="password" size="15"  class="inputBg"/>
+            </td>
+          </tr>
+                    <tr>
+            <td colspan="2"><input type="checkbox" value="1" name="remember" id="remember" /><label for="remember">请保存我这次的登录信息。</label></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td align="left">
+            <input type="hidden" name="act" value="act_login" />
+            <input type="hidden" name="back_act" value="user.html" />
+            <input type="submit" name="submit" value="登录" class="us_Submit" />
+            </td>
+          </tr>
+	  <tr><td></td><td class="f3">找回密码：（<a href="user.html?act=qpassword_name" class="f3">密码问题</a>&nbsp;<a href="user.html?act=get_password" class="f3">邮件</a>&nbsp;<a href="user.html?act=sms_get_password" class="f3">短信验证</a>）</td></tr>
+      </table>
+    </form>
+  </div>
+  <div class="usTxt">
+    <strong>如果您不是会员，请注册</strong>  <br />
+    <strong class="f4">友情提示：</strong><br />
+        不注册为会员也可在本店购买商品<br />
+            但注册之后您可以：<br />
+    1. 保存您的个人资料<br />
+    2. 收藏您关注的商品<br />
+    3. 享受会员积分制度<br />
+    4. 订阅本店商品信息  <br />
+    <a href="register.html"><img src="/static1/picture/bnt_ur_reg.gif" /></a>
+  </div>
 </div>
+
+
+
+    
+
+
+    
+
+    
+
+    
+
+
+
+
 <div class="blank"></div>
 <div class="foot-body">
   <div class="bads"><img src="/static1/picture/bottom.jpg"></div>
@@ -225,6 +198,37 @@ function selectPage(sel)
   <div class="clear10"></div>-->
 </div>
  
+
  
+
 </body>
+<script type="text/javascript">
+var process_request = "正在处理您的请求...";
+var username_empty = "- 用户名不能为空。";
+var username_shorter = "- 用户名长度不能少于 3 个字符。";
+var username_invalid = "- 用户名只能是由字母数字以及下划线组成。";
+var password_empty = "- 登录密码不能为空。";
+var password_shorter = "- 登录密码不能少于 6 个字符。";
+var confirm_password_invalid = "- 两次输入密码不一致";
+var email_empty = "- Email 为空";
+var email_invalid = "- Email 不是合法的地址";
+var agreement = "- 您没有接受协议";
+var msn_invalid = "- msn地址不是一个有效的邮件地址";
+var qq_invalid = "- QQ号码不是一个有效的号码";
+var home_phone_invalid = "- 家庭电话不是一个有效号码";
+var office_phone_invalid = "- 办公电话不是一个有效号码";
+var mobile_phone_invalid = "- 手机号码不是一个有效号码";
+var msg_un_blank = "* 用户名不能为空";
+var msg_un_length = "* 用户名最长不得超过7个汉字";
+var msg_un_format = "* 用户名含有非法字符";
+var msg_un_registered = "* 用户名已经存在,请重新输入";
+var msg_can_rg = "* 可以注册";
+var msg_email_blank = "* 邮件地址不能为空";
+var msg_email_registered = "* 邮箱已存在,请重新输入";
+var msg_email_format = "* 邮件地址不合法";
+var msg_blank = "不能为空";
+var no_select_question = "- 您没有完成密码提示问题的操作";
+var passwd_balnk = "- 密码中不能包含空格";
+var username_exist = "用户名 %s 已经存在";
+</script>
 </html>

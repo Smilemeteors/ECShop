@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:61:"E:\ECShop\public/../application/home\view\index\category.html";i:1537251682;}*/ ?>
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -35,16 +36,16 @@ var process_request = "正在处理您的请求...";
       <div class="m_left">
       <ul>
         <li><a href="http://www.ecshop4.0.com/home/index/index.html">首页</a></li>
-                        <li><a href="{:url('home/index/category')}?id=1"
+                        <li><a href="<?php echo url('home/index/category'); ?>?id=1"
         
                     >服装</a></li>
-                                                <li><a href="{:url('home/index/category')}?id=2"
+                                                <li><a href="<?php echo url('home/index/category'); ?>?id=2"
         
                     >移动电源</a></li>
-                                        <li><a href="{:url('home/index/category')}?id=3"
+                                        <li><a href="<?php echo url('home/index/category'); ?>?id=3"
         
                     >数码时尚</a></li>
-                                        <li><a href="{:url('home/index/category')}?id=4"
+                                        <li><a href="<?php echo url('home/index/category'); ?>?id=4"
         
                     >家用电器</a></li>
 
@@ -102,20 +103,20 @@ var process_request = "正在处理您的请求...";
     <form name="compareForm" action="compare.html" method="post" onSubmit="return compareGoods(this);">
             <div class="centerPadd">
       <div class="clearfix goodsBox" style="border:none;">
-          {volist name='arr' id='v'}
+          <?php if(is_array($arr) || $arr instanceof \think\Collection || $arr instanceof \think\Paginator): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
                         <div class="goodsItem"> <a href="goods.html?id=48" class="img-box">
-                            <img src="/uploads/{$v.goods_img}" alt="" class="goodsimg" /></a>
+                            <img src="/uploads/<?php echo $v['goods_img']; ?>" alt="" class="goodsimg" /></a>
         <div class="goods-info">
-            <div class="goods-title"><a href="" title="">{$v.goods_name}</a></div>
+            <div class="goods-title"><a href="" title=""><?php echo $v['goods_name']; ?></a></div>
             <div class="goods-ms">
                           </div>
             <div class="clearfix price-box">
-              <div class="shop_s">{$v.goods_price}</a></div>
+              <div class="shop_s"><?php echo $v['goods_price']; ?></a></div>
               <a class="price-btn" href="goods.html?id=48">立即购买</a>
             </div>
         </div>
         </div>
-          {/volist}
+          <?php endforeach; endif; else: echo "" ;endif; ?>
                       </div>
     </div>
           </form>
