@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\phpStudy\WWW\ECShop\public/../application/home\view\index\index.html";i:1537174225;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\phpStudy\WWW\ECShop\public/../application/home\view\index\index.html";i:1537239069;}*/ ?>
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -519,7 +519,7 @@ if (Object.prototype.toJSONString){
       <div class="goods-title">热门商品推荐</div>
       <div class="clearfix goods-wrap hot-goods">
             
- 
+<!-- 热门商品 -->
 <div id="show_hot_area" class="clearfix goodsBox all_mid all_ms">
      <a class="goodsItem" href="goods.html?id=70"> <div  class="img-box"><img src="/static1/picture/70_thumb_g_1462955414561.jpg" alt="炫彩翻页保护套" class="goodsimg" /></div>
   <div class="goods-brief"></div>
@@ -529,38 +529,7 @@ if (Object.prototype.toJSONString){
       </div>
    
   </a>
-   <a class="goodsItem" href="goods.html?id=68"> <div  class="img-box"><img src="/static1/picture/68_thumb_g_1462955204381.jpg" alt="透明超薄软胶保护套" class="goodsimg" /></div>
-  <div class="goods-brief"></div>
-    <div class="gos-title">透明超薄软胶保...</div> 
-  <div class="prices">
-          <font class="shop_s"><b>￥19元</b></font>
-      </div>
    
-  </a>
-   <a class="goodsItem" href="goods.html?id=69"> <div  class="img-box"><img src="/static1/picture/69_thumb_g_1462955300971.jpg" alt="平衡车" class="goodsimg" /></div>
-  <div class="goods-brief"></div>
-    <div class="gos-title">平衡车</div> 
-  <div class="prices">
-          <font class="shop_s"><b>￥1999元</b></font>
-      </div>
-   
-  </a>
-   <a class="goodsItem" href="goods.html?id=63"> <div  class="img-box"><img src="/static1/picture/63_thumb_g_1462953395609.jpg" alt="自拍杆" class="goodsimg" /></div>
-  <div class="goods-brief"></div>
-    <div class="gos-title">自拍杆</div> 
-  <div class="prices">
-          <font class="shop_s"><b>￥49元</b></font>
-      </div>
-   
-  </a>
-   <a class="goodsItem" href="goods.html?id=64"> <div  class="img-box"><img src="/static1/picture/64_thumb_g_1462952811633.jpg" alt="运动相机" class="goodsimg" /></div>
-  <div class="goods-brief"></div>
-    <div class="gos-title">运动相机</div> 
-  <div class="prices">
-          <font class="shop_s"><b>￥399元</b></font>
-      </div>
-   
-  </a>
       <div class="clear0"></div>
 </div> <div class="clear10"></div>
       </div>
