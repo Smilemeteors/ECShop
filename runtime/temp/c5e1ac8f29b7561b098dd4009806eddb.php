@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\user\userinfo.html";i:1537252974;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta name="Generator" content="ECSHOP v4.0.0">
@@ -21,13 +22,13 @@ var process_request = "正在处理您的请求...";
   <div class="fd_top fd_top1">
     <div class="bar-left">
           <div class="top_menu1"> <script type="text/javascript" src="/static1/js/transport.js"></script><script type="text/javascript" src="/static1/js/utils.js"></script> <font id="ECS_MEMBERZONE"><div id="append_parent"></div>
- 欢迎光临本店<a href="{:url('Login/login')}">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="{:url('Login/reg')}">免费注册</a>  </font> </div>
+ 欢迎光临本店<a href="<?php echo url('Login/login'); ?>">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="<?php echo url('Login/reg'); ?>">免费注册</a>  </font> </div>
     </div>
     <div class="bar-cart">
       <div class="fl cart-yh">
-        <a href="{:url('user/welcome')}" class="">用户中心</a>
+        <a href="<?php echo url('user/welcome'); ?>" class="">用户中心</a>
       </div>
-             <div class="cart" id="ECS_CARTINFO"> <a href="{:url('shopcar/car')}" title="查看购物车">购物车(0)</a> </div>
+             <div class="cart" id="ECS_CARTINFO"> <a href="<?php echo url('shopcar/car'); ?>" title="查看购物车">购物车(0)</a> </div>
     </div>
   </div>
 </div>
@@ -74,21 +75,21 @@ var process_request = "正在处理您的请求...";
      <div class="box_1">
       <div class="userCenterBox">
         <div class="userMenu">
-<a href="{:url('user/welcome')}"><img src="/static1/images/u1.gif"> 欢迎页</a>
-<a href="{:url('user/userinfo')}" class="curs"><img src="/static1/images/u2.gif"> 用户信息</a>
-<a href="{:url('user/dingdan')}"><img src="/static1/images/u3.gif"> 我的订单</a>
-<a href="{:url('user/shouhuo')}"><img src="/static1/images/u4.gif"> 收货地址</a>
-<a href="{:url('user/shoucang')}"><img src="/static1/images/u5.gif"> 我的收藏</a>
-<a href="{:url('user/liuyan')}"><img src="/static1/images/u6.gif"> 我的留言</a>
-<a href="{:url('user/biaoqian')}"><img src="/static1/images/u7.gif"> 我的标签</a>
-<a href="{:url('usertwo/quehuo')}"><img src="/static1/images/u8.gif"> 缺货登记</a>
-<a href="{:url('usertwo/hongbao')}"><img src="/static1/images/u9.gif"> 我的红包</a>
-<a href="{:url('usertwo/tuijian')}"><img src="/static1/images/u10.gif"> 我的推荐</a>
-<a href="{:url('usertwo/pinglun')}"><img src="/static1/images/u11.gif"> 我的评论</a>
+<a href="<?php echo url('user/welcome'); ?>"><img src="/static1/images/u1.gif"> 欢迎页</a>
+<a href="<?php echo url('user/userinfo'); ?>" class="curs"><img src="/static1/images/u2.gif"> 用户信息</a>
+<a href="<?php echo url('user/dingdan'); ?>"><img src="/static1/images/u3.gif"> 我的订单</a>
+<a href="<?php echo url('user/shouhuo'); ?>"><img src="/static1/images/u4.gif"> 收货地址</a>
+<a href="<?php echo url('user/shoucang'); ?>"><img src="/static1/images/u5.gif"> 我的收藏</a>
+<a href="<?php echo url('user/liuyan'); ?>"><img src="/static1/images/u6.gif"> 我的留言</a>
+<a href="<?php echo url('user/biaoqian'); ?>"><img src="/static1/images/u7.gif"> 我的标签</a>
+<a href="<?php echo url('usertwo/quehuo'); ?>"><img src="/static1/images/u8.gif"> 缺货登记</a>
+<a href="<?php echo url('usertwo/hongbao'); ?>"><img src="/static1/images/u9.gif"> 我的红包</a>
+<a href="<?php echo url('usertwo/tuijian'); ?>"><img src="/static1/images/u10.gif"> 我的推荐</a>
+<a href="<?php echo url('usertwo/pinglun'); ?>"><img src="/static1/images/u11.gif"> 我的评论</a>
 <!--<a href="usertwo.html?act=group_buy">我的团购</a>-->
-<a href="{:url('usertwo/genzong')}"><img src="/static1/images/u12.gif"> 跟踪包裹</a>
-<a href="{:url('usertwo/money')}"><img src="/static1/images/u13.gif"> 资金管理</a>
-<a href="{:url('login/back')}" style="background:none; text-align:right; margin-right:10px;"><img src="/static1/images/bnt_sign.gif"></a>
+<a href="<?php echo url('usertwo/genzong'); ?>"><img src="/static1/images/u12.gif"> 跟踪包裹</a>
+<a href="<?php echo url('usertwo/money'); ?>"><img src="/static1/images/u13.gif"> 资金管理</a>
+<a href="<?php echo url('login/back'); ?>" style="background:none; text-align:right; margin-right:10px;"><img src="/static1/images/bnt_sign.gif"></a>
 </div>      </div>
      </div>
     </div>

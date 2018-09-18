@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:58:"E:\ECShop\public/../application/home\view\index\index.html";i:1537259177;}*/ ?>
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -38,19 +39,19 @@ var process_request = "正在处理您的请求...";
       <div class="m_left">
       <ul>
         <li><a href="index.html" class="cur">首页</a></li>
-        {volist name='nav' id='v'}
-              <li><a href="http://www.ecshop4.0.com/home/index/fenlei?cat_id={$v.cat_id}">{$v.cat_name}</a></li>
-           {/volist} 
-                         <!-- <li><a href="{:url('home/index/category')}?id=1"
+        <?php if(is_array($nav) || $nav instanceof \think\Collection || $nav instanceof \think\Paginator): $i = 0; $__LIST__ = $nav;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+              <li><a href="http://www.ecshop4.0.com/home/index/fenlei?cat_id=<?php echo $v['cat_id']; ?>"><?php echo $v['cat_name']; ?></a></li>
+           <?php endforeach; endif; else: echo "" ;endif; ?> 
+                         <!-- <li><a href="<?php echo url('home/index/category'); ?>?id=1"
         
                     >服装</a></li>
-                                        <li><a href="{:url('home/index/category')}?id=2"
+                                        <li><a href="<?php echo url('home/index/category'); ?>?id=2"
 
                     >移动电源</a></li>
-                                        <li><a href="{:url('home/index/category')}?id=3"
+                                        <li><a href="<?php echo url('home/index/category'); ?>?id=3"
 
                     >数码时尚</a></li>
-                                        <li><a href="{:url('home/index/category')}?id=4"
+                                        <li><a href="<?php echo url('home/index/category'); ?>?id=4"
         
                     >家用电器</a></li>
                                         <li><a href="category.html?id=25" 
@@ -93,18 +94,18 @@ if (Object.prototype.toJSONString){
   <?php foreach ($cat_data as $key => $value) { ?>
         <div class="cat-box">
           <div class="cat1">
-            <a href="http://www.ecshop4.0.com/home/index/fenlei?cat_id={$value.cat_id}">{$value.cat_name}</a>
+            <a href="http://www.ecshop4.0.com/home/index/fenlei?cat_id=<?php echo $value['cat_id']; ?>"><?php echo $value['cat_name']; ?></a>
           </div>
                    
         <div class="cat2-box">
       <?php foreach ($value['son'] as $key => $val) { ?>
           <div class="cat2 clearfix">
-                  <a class="cat2-link" href="http://www.ecshop4.0.com/home/index/fenlei?cat_id={$val.cat_id}">{$val.cat_name}</a>
+                  <a class="cat2-link" href="http://www.ecshop4.0.com/home/index/fenlei?cat_id=<?php echo $val['cat_id']; ?>"><?php echo $val['cat_name']; ?></a>
             <div class="cat3-block">            
             </div>
           <div class="cat3-box">      
           <?php foreach ($val['son'] as $key => $v) { ?>     
-                          <a href="http://www.ecshop4.0.com/home/index/fenlei?cat_id={$v.cat_id}">{$v.cat_name}</a>&nbsp;&nbsp;
+                          <a href="http://www.ecshop4.0.com/home/index/fenlei?cat_id=<?php echo $v['cat_id']; ?>"><?php echo $v['cat_name']; ?></a>&nbsp;&nbsp;
           <?php } ?>
                       
             </div>
@@ -236,33 +237,33 @@ if (Object.prototype.toJSONString){
   <div class="indexpage">
 
     <div class="body-goods">
-{volist name='floor' id='v'}
-      <div class="goods-title"><ol style='margin-left:-10px;'><li>{$v.cat_id}F {$v.cat_name}</li></ol></div>
+<?php if(is_array($floor) || $floor instanceof \think\Collection || $floor instanceof \think\Paginator): $i = 0; $__LIST__ = $floor;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+      <div class="goods-title"><ol style='margin-left:-10px;'><li><?php echo $v['cat_id']; ?>F <?php echo $v['cat_name']; ?></li></ol></div>
       <div class="clearfix goods-wrap">
         <div class="goods-leftad">
            <div class="swiper-slide"><img src="/static1/images/1.jpg" alt="此处是广告" / width="240px" height="560px"></div>
         </div>
         <div class="goods-right">
 <div class="all_ms">
-{volist name='floor_goods' id='v'}
+<?php if(is_array($floor_goods) || $floor_goods instanceof \think\Collection || $floor_goods instanceof \think\Paginator): $i = 0; $__LIST__ = $floor_goods;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
     <a class="goodsItem" href="goods.html?id=72"> <div  class="img-box"><img src="/static1/picture/72_thumb_g_1462956048008.jpg" alt="智能相机" class="goodsimg" /></div>
   <div class="goods-brief"></div>
-    <div class="gos-title">{$v.goods_name}</div> 
+    <div class="gos-title"><?php echo $v['goods_name']; ?></div> 
   <div class="prices">
-          <font class="shop_s"><b>￥{$v.goods_price}</b></font>
+          <font class="shop_s"><b>￥<?php echo $v['goods_price']; ?></b></font>
       </div>
    
   </a>
-{/volist} 
+<?php endforeach; endif; else: echo "" ;endif; ?> 
     <div class="clear0"></div>
 </div>
         </div>
       </div>
-{/volist} 
+<?php endforeach; endif; else: echo "" ;endif; ?> 
       <div class="goods-title">热门商品推荐</div>
       <div class="clearfix goods-wrap hot-goods">
             
-<!-- 热门商品 -->
+ 
 <div id="show_hot_area" class="clearfix goodsBox all_mid all_ms">
      <a class="goodsItem" href="goods.html?id=70"> <div  class="img-box"><img src="/static1/picture/70_thumb_g_1462955414561.jpg" alt="炫彩翻页保护套" class="goodsimg" /></div>
   <div class="goods-brief"></div>
@@ -272,8 +273,6 @@ if (Object.prototype.toJSONString){
       </div>
    
   </a>
-<<<<<<< HEAD
-=======
    <a class="goodsItem" href="goods.html?id=68"> <div  class="img-box"><img src="/static1/picture/68_thumb_g_1462955204381.jpg" alt="透明超薄软胶保护套" class="goodsimg" /></div>
   <div class="goods-brief"></div>
     <div class="gos-title">透明超薄软胶保...</div> 
@@ -303,8 +302,8 @@ if (Object.prototype.toJSONString){
   <div class="prices">
           <font class="shop_s"><b>￥399元</b></font>
       </div>
->>>>>>> 7ac3068ef59f904943781dd878e80b2af4aa8f93
    
+  </a>
       <div class="clear0"></div>
 </div> <div class="clear10"></div>
       </div>

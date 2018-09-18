@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:61:"E:\ECShop\public/../application/home\view\index\register.html";i:1537176951;}*/ ?>
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -9,14 +10,14 @@
 <title>用户中心_ECSHOP演示站 - Is shop</title>
 
 <link rel="shortcut icon" href="favicon.ico" />
-<link rel="icon" href="/static1/images/animated_favicon.gif" type="/static1/images/gif" />
+<link rel="icon" href="animated_favicon.gif" type="/static1/images/gif" />
 <link href="/static1/css/style.css" rel="stylesheet" type="text/css" />
 
 <script type="text/javascript" src="/static1/js/common.js"></script><script type="text/javascript" src="/static1/js/user.js"></script><script type="text/javascript" src="/static1/js/transport.js"></script>
 <body>
 
 <script type="text/javascript">
-var process_request = "正在处理您的请求...";
+ var process_request = "正在处理您的请求...";
 </script>
 <div class="top-bar">
   <div class="fd_top fd_top1">
@@ -73,67 +74,137 @@ var process_request = "正在处理您的请求...";
 
 <div class="block box">
  <div id="ur_here">
-  <div class="path"><div>当前位置: <a href="index.html">首页</a> <code>&gt;</code> 用户中心</div></div>  </div>
+  <div class="path"><div>当前位置: <a href=".">首页</a> <code>&gt;</code> 用户中心</div></div>  </div>
 </div>
 
 <div class="blank"></div>
 
-<div class="usBox clearfix">
-  <div class="usBox_1 f_l">
-   <div class="logtitle"></div>
-   <form name="formLogin" action="user.html" method="post" onSubmit="return userLogin()">
-        <table width="100%" border="0" align="left" cellpadding="3" cellspacing="5">
-          <tr>
-            <td width="15%" align="right">用户名</td>
-            <td width="85%"><input name="username" type="text" size="25" class="inputBg" placeholder="请输入用户名/手机号" /></td>
-          </tr>
-          <tr>
-            <td align="right">密码</td>
-            <td>
-            <input name="password" type="password" size="15"  class="inputBg"/>
-            </td>
-          </tr>
-                    <tr>
-            <td colspan="2"><input type="checkbox" value="1" name="remember" id="remember" /><label for="remember">请保存我这次的登录信息。</label></td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-            <td align="left">
-            <input type="hidden" name="act" value="act_login" />
-            <input type="hidden" name="back_act" value="user.html" />
-            <input type="submit" name="submit" value="登录" class="us_Submit" />
-            </td>
-          </tr>
-	  <tr><td></td><td class="f3">找回密码：（<a href="user.html?act=qpassword_name" class="f3">密码问题</a>&nbsp;<a href="user.html?act=get_password" class="f3">邮件</a>&nbsp;<a href="user.html?act=sms_get_password" class="f3">短信验证</a>）</td></tr>
+
+
+
+            <div class="usBox">
+  <div class="usBox_2 clearfix">
+   <div class="regtitle"></div>
+    <form action="" method="post" name="formUser" onsubmit="return register();">
+      <table width="100%"  border="0" align="left" cellpadding="5" cellspacing="3">
+        <tr>
+          <td width="13%" align="right">用户名</td>
+          <td width="87%">
+          <input name="username" type="text" size="25" id="username" onblur="is_registered(this.value);" class="inputBg"/>
+            <span id="username_notice" style="color:#FF0000"> *</span>
+          </td>
+        </tr>
+        <tr>
+          <td align="right">email</td>
+          <td>
+          <input name="email" type="text" size="25" id="email" onblur="checkEmail(this.value);"  class="inputBg"/>
+            <span id="email_notice" style="color:#FF0000"> *</span>
+          </td>
+        </tr>
+        <tr>
+          <td align="right">密码</td>
+          <td>
+          <input name="password" type="password" id="password1" onblur="check_password(this.value);" onkeyup="checkIntensity(this.value)" class="inputBg" style="width:179px;" />
+            <span style="color:#FF0000" id="password_notice"> *</span>
+          </td>
+        </tr>
+        <tr>
+          <td align="right">密码强度</td>
+          <td>
+            <table width="145" border="0" cellspacing="0" cellpadding="1">
+              <tr align="center">
+                <td width="33%" id="pwd_lower">弱</td>
+                <td width="33%" id="pwd_middle">中</td>
+                <td width="33%" id="pwd_high">强</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td align="right">确认密码</td>
+          <td>
+          <input name="confirm_password" type="password" id="conform_password" onblur="check_conform_password(this.value);"  class="inputBg" style="width:179px;"/>
+            <span style="color:#FF0000" id="conform_password_notice"> *</span>
+          </td>
+        </tr>
+        	        <tr>
+          <td align="right" >QQ          <td>
+          <input name="extend_field2" type="text" size="25" class="inputBg" />          </td>
+        </tr>
+			        <tr>
+          <td align="right" >办公电话          <td>
+          <input name="extend_field3" type="text" size="25" class="inputBg" />          </td>
+        </tr>
+			        <tr>
+          <td align="right" >家庭电话          <td>
+          <input name="extend_field4" type="text" size="25" class="inputBg" />          </td>
+        </tr>
+			        <tr>
+          <td align="right" id="extend_field5i">手机          <td>
+          <input name="extend_field5" type="text" size="25" class="inputBg" /><span style="color:#FF0000"> *</span>          </td>
+        </tr>
+			        <tr>
+          <td align="right">密码提示问题</td>
+          <td>
+          <select name='sel_question'>
+	  <option value='0'>请选择密码提示问题</option>
+	  <option value="friend_birthday">我最好朋友的生日？</option><option value="old_address">我儿时居住地的地址？</option><option value="motto">我的座右铭是？</option><option value="favorite_movie">我最喜爱的电影？</option><option value="favorite_song">我最喜爱的歌曲？</option><option value="favorite_food">我最喜爱的食物？</option><option value="interest">我最大的爱好？</option><option value="favorite_novel">我最喜欢的小说？</option><option value="favorite_equipe">我最喜欢的运动队？</option>	  </select>
+          </td>
+        </tr>
+        <tr>
+          <td align="right" >密码问题答案</td>
+          <td>
+	  <input name="passwd_answer" type="text" size="25" class="inputBg" maxlengt='20'/>          </td>
+        </tr>
+		      <tr id="vcode" style="display: none">
+      <td align="right">验证码</td>
+      <td><input id="vcode_input" type="text" size="8" name="captcha" class="inputBg" onchange="validate_vcode(this.value);"/>
+      <img id="captcha" src="/static1/picture/captcha.html" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.html?'+Math.random()" />
+        <span style="color:#FF0000;display: none" id="vcode_tip"></span>
+      </td>
+      </tr>
+        <tr id="sms" style="display: none">
+          <td align="right">短信验证码</td>
+          <td>
+            <input type="text" name="sms_code" value=""size="8" class="inputBg">
+            <input id="get_sms" type="button" style="align-content: center;width:80px;height:22px;background:#d2d2d2;color:#fff;cursor:pointer" class="inputBg" onclick="send_sms()" value="获取验证码" disabled="disabled"/>
+            <span style="color:#FF0000;display: none" id="sms_tip"></span>
+          </td>
+        </tr>
+        <script type="text/javascript">
+          var captch = "";
+          if(captch == 1){
+            document.getElementById("vcode").style.display='';
+          }
+        </script>
+        <tr>
+          <td>&nbsp;</td>
+          <td><label>
+            <input name="agreement" type="checkbox" value="1" checked="checked" />
+            我已看过并接受《<a href="article.html?cat_id=-1" style="color:blue" target="_blank">用户协议</a>》</label></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td align="left">
+          <input name="act" type="hidden" value="act_register" >
+          <input type="hidden" name="back_act" value="" />
+          <input name="Submit" type="submit" value="注册" class="us_Submit_reg">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td class="actionSub">
+          <a href="user.html?act=login">我已有账号，我要登录</a><br />
+          <a href="user.html?act=get_password">您忘记密码了吗？</a>
+          </td>
+        </tr>
       </table>
     </form>
   </div>
-  <div class="usTxt">
-    <strong>如果您不是会员，请注册</strong>  <br />
-    <strong class="f4">友情提示：</strong><br />
-        不注册为会员也可在本店购买商品<br />
-            但注册之后您可以：<br />
-    1. 保存您的个人资料<br />
-    2. 收藏您关注的商品<br />
-    3. 享受会员积分制度<br />
-    4. 订阅本店商品信息  <br />
-    <a href="register.html"><img src="/static1/picture/bnt_ur_reg.gif" /></a>
-  </div>
 </div>
-
-
-
-    
-
-
-    
-
-    
-
-    
-
-
-
 
 <div class="blank"></div>
 <div class="foot-body">

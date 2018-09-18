@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:79:"D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\fenlei.html";i:1537242838;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0059)http://www.ecshop4.0.com/home/index/category.html?id=16 -->
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -17,13 +18,13 @@ var process_request = "正在处理您的请求...";
   <div class="fd_top fd_top1">
     <div class="bar-left">
           <div class="top_menu1"> <script type="text/javascript" src="/static1/js/transport.js"></script><script type="text/javascript" src="/static1/js/utils.js"></script> <font id="ECS_MEMBERZONE"><div id="append_parent"></div>
- 欢迎光临本店<a href="{:url('Login/login')}">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="{:url('Login/reg')}">免费注册</a>  </font> </div>
+ 欢迎光临本店<a href="<?php echo url('Login/login'); ?>">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="<?php echo url('Login/reg'); ?>">免费注册</a>  </font> </div>
     </div>
     <div class="bar-cart">
       <div class="fl cart-yh">
-        <a href="{:url('user/welcome')}" class="">用户中心</a>
+        <a href="<?php echo url('user/welcome'); ?>" class="">用户中心</a>
       </div>
-             <div class="cart" id="ECS_CARTINFO"> <a href="{:url('shopcar/car')}" title="查看购物车">购物车(0)</a> </div>
+             <div class="cart" id="ECS_CARTINFO"> <a href="<?php echo url('shopcar/car'); ?>" title="查看购物车">购物车(0)</a> </div>
     </div>
   </div>
 </div>
@@ -35,16 +36,16 @@ var process_request = "正在处理您的请求...";
       <ul>
         <li><a href="http://www.ecshop4.0.com/home/index/index.html">首页</a></li>
 
-            {volist name='nav' id='v'}
+            <?php if(is_array($nav) || $nav instanceof \think\Collection || $nav instanceof \think\Paginator): $i = 0; $__LIST__ = $nav;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
 
-              <li><a href="http://www.ecshop4.0.com/home/index/fenlei?cat_id={$v.cat_id}">{$v.cat_name}</a></li>
-           {/volist} 
+              <li><a href="http://www.ecshop4.0.com/home/index/fenlei?cat_id=<?php echo $v['cat_id']; ?>"><?php echo $v['cat_name']; ?></a></li>
+           <?php endforeach; endif; else: echo "" ;endif; ?> 
                                                
       </ul>
       </div>
     </div>
     <div class="serach-box">
-      <form method="get" action="{:url('index/fenlei')}">
+      <form method="get" action="<?php echo url('index/fenlei'); ?>">
         <table width="100%" cellspacing="0" cellpadding="0" border="0">
           <tbody><tr>
             <td width="135"><input name="keyword"  type="text"></td>
@@ -53,16 +54,16 @@ var process_request = "正在处理您的请求...";
         </tbody></table>
       </form>
        <span class="fl">
-            {volist name='hot_data' id='v'}
-               <a href="#">{$v.hot_name}</a>
-            {/volist}
+            <?php if(is_array($hot_data) || $hot_data instanceof \think\Collection || $hot_data instanceof \think\Paginator): $i = 0; $__LIST__ = $hot_data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+               <a href="#"><?php echo $v['hot_name']; ?></a>
+            <?php endforeach; endif; else: echo "" ;endif; ?>
         </span>
     </div>
   </div>
 </div>
 <div class="clear0 "></div>
  <div class="category-body">
-  <div id="ur_here"> <div class="path"><div>当前位置: {volist name='cat_name' id='v'} <a href="{:url('index/fenlei')}?cat_id={$v.cat_id}">{$v.cat_name}</a>{/volist}</div></div> </div>
+  <div id="ur_here"> <div class="path"><div>当前位置: <?php if(is_array($cat_name) || $cat_name instanceof \think\Collection || $cat_name instanceof \think\Paginator): $i = 0; $__LIST__ = $cat_name;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?> <a href="<?php echo url('index/fenlei'); ?>?cat_id=<?php echo $v['cat_id']; ?>"><?php echo $v['cat_name']; ?></a><?php endforeach; endif; else: echo "" ;endif; ?></div></div> </div>
 <div class="block clearfix">
   
  <div class="Area">
@@ -71,7 +72,7 @@ var process_request = "正在处理您的请求...";
   <div class="displaylist">
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tbody><tr>
-        <td class="tdl"><span></span>相关商品<b>{$count}</b>个 </td>
+        <td class="tdl"><span></span>相关商品<b><?php echo $count; ?></b>个 </td>
         <td><a name="goods_list"></a></td>
         <td class="tdr"><table border="0" cellspacing="0" cellpadding="0">
             <tbody><tr>
@@ -101,20 +102,20 @@ var process_request = "正在处理您的请求...";
       <div class="clearfix goodsBox" style="border:none;">
 
 
-      {volist name='goods_data' id='v'}
-                        <div class="goodsItem"> <a href="{:url('index/details')}?goods_id={$v.goods_id}" class="img-box"><img src="__ROOT__/uploads/{$v.goods_img}" class="goods_img"></a>
+      <?php if(is_array($goods_data) || $goods_data instanceof \think\Collection || $goods_data instanceof \think\Paginator): $i = 0; $__LIST__ = $goods_data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+                        <div class="goodsItem"> <a href="<?php echo url('index/details'); ?>?goods_id=<?php echo $v['goods_id']; ?>" class="img-box"><img src="/uploads/<?php echo $v['goods_img']; ?>" class="goods_img"></a>
         <div class="goods-info">
-            <div class="goods-title"><a href="{:url('index/details')}?goods_id={$v.goods_id}" >{$v.goods_name}</a></div>
+            <div class="goods-title"><a href="<?php echo url('index/details'); ?>?goods_id=<?php echo $v['goods_id']; ?>" ><?php echo $v['goods_name']; ?></a></div>
             <div class="goods-ms">
                           </div>
             <div class="clearfix price-box">
-              <div class="shop_s">￥{$v.shop_price}元</div>
-              <a class="price-btn" href="{:url('index/details')}?goods_id={$v.goods_id}">立即购买</a>
+              <div class="shop_s">￥<?php echo $v['shop_price']; ?>元</div>
+              <a class="price-btn" href="<?php echo url('index/details'); ?>?goods_id=<?php echo $v['goods_id']; ?>">立即购买</a>
             </div>
             
         </div>
         </div>
-        {/volist}
+        <?php endforeach; endif; else: echo "" ;endif; ?>
                                 <!-- <div class="goodsItem"> <a href="http://www.ecshop4.0.com/home/index/goods.html?id=47" class="img-box"><img src="/static1/images/47_thumb_G_1462852887996.jpg" alt="极简都市双肩包" class="goodsimg"></a>
         <div class="goods-info">
             <div class="goods-title"><a href="http://www.ecshop4.0.com/home/index/goods.html?id=47" title="极简都市双肩包">极简都市双肩包</a></div>
