@@ -1,14 +1,14 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\member\user_rank.html";i:1536226505;}*/ ?>
-﻿<!-- $Id: user_rank.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:79:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\order\merge_orders.html";i:1537168819;}*/ ?>
+﻿<!-- $Id: merge_order.htm 14216 2008-03-10 02:27:21Z testyang $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ECSHOP 管理中心 - 会员等级 </title>
+<title>ECSHOP 管理中心 - 合并订单 </title><base href="/" />
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="/static/css/general.css" rel="stylesheet" type="text/css" />
-<link href="/static/css/main.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="/static/js/transport.js"></script><script type="text/javascript" src="/static/js/common.js"></script>
+<link href="static/css/general_1.css" rel="stylesheet" type="text/css" />
+<link href="static/css/main_1.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="static/js/transport_1.js"></script><script type="text/javascript" src="static/js/common_1.js"></script>
 <style>
   .panel-icloud .panel-right iframe {
     height: 300px;
@@ -29,13 +29,24 @@ var todolist_save = "保存";
 var todolist_clear = "清除";
 var todolist_confirm_save = "是否将更改保存到记事本？";
 var todolist_confirm_clear = "是否清空内容？";
-var remove_confirm = "您确定要删除选定的会员等级吗？";
-var rank_name_empty = "您没有输入会员等级名称。";
-var integral_min_invalid = "您没有输入积分下限或者积分下限不是一个整数。";
-var integral_max_invalid = "您没有输入积分上限或者积分上限不是一个整数。";
-var discount_invalid = "您没有输入折扣率或者折扣率无效。";
-var integral_max_small = "积分上限必须大于积分下限。";
-var lang_remove = "移除";
+var remove_confirm = "删除订单将清除该订单的所有信息。您确定要这么做吗？";
+var confirm_merge = "您确实要合并这两个订单吗？";
+var input_price = "自定义价格";
+var pls_search_user = "请搜索并选择会员";
+var confirm_drop = "确认要删除该商品吗？";
+var invalid_goods_number = "商品数量不正确";
+var pls_search_goods = "请搜索并选择商品";
+var pls_select_area = "请完整选择所在地区";
+var pls_select_shipping = "请选择配送方式";
+var pls_select_payment = "请选择支付方式";
+var pls_select_pack = "请选择包装";
+var pls_select_card = "请选择贺卡";
+var pls_input_note = "请您填写备注！";
+var pls_input_cancel = "请您填写取消原因！";
+var pls_select_refund = "请选择退款方式！";
+var pls_select_agency = "请选择办事处！";
+var pls_select_other_agency = "该订单现在就属于这个办事处，请选择其他办事处！";
+var loading = "加载中...";
 //-->
 /*关闭按钮*/
   function get_certificate(){
@@ -45,7 +56,7 @@ var lang_remove = "移除";
 	  if(panel&&CMask&&frame){
 	      panel.style.display = 'block';
 	      mask.style.display = 'block';
-	      frame.src = 'https://openapi.shopex.cn/oauth/authorize?response_type=code&client_id=yogfss4l&redirect_uri=http%3A%2F%2F127.0.0.1%2Fshixun%2FEC4%2Fsource%2Fecshop%2Fadmin%2Fcertificate.php%3Fact%3Dget_certificate%26type%3Dindex&view=auth_ecshop';
+	      frame.src = 'https://openapi.shopex.cn/oauth/authorize?response_type=code&client_id=yogfss4l&redirect_uri=http%3A%2F%2F127.0.0.1%2FECShop1%2Fsource%2Fecshop%2Fadmin%2Fcertificate.php%3Fact%3Dget_certificate%26type%3Dindex&view=auth_ecshop';
 	    }
 	}
 
@@ -87,75 +98,73 @@ var lang_remove = "移除";
 <div class="mask-black" id="CMask"></div>
 <!--遮罩-->
 <h1>
-      <a class="btn btn-right" href="user_rank_add.html">添加会员等级</a>
+      <a class="btn btn-right" href="order.php?act=list">订单列表</a>
   
-    <span class="action-span1"><a href="admin/Index/index_main.html">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;会员等级 </span>
+    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;合并订单 </span>
   <div style="clear:both"></div>
-</h1><script type="text/javascript" src="static/js/utils.js"></script><script type="text/javascript" src="static/js/listtable.js"></script>
-<form method="post" action="" name="listForm">
-<!-- start ads list -->
-<div class="list-div" id="listDiv">
+</h1><script type="text/javascript" src="static/js/validator.js"></script><div class="main-div">
+<table cellspacing="1" cellpadding="3" width="100%">
+    <tr>
+    <td class="label"><a href="javascript:showNotice('noticeOrderSn');" title="点击此处查看提示信息"><img src="static/picture/notice.svg" width="16" height="16" border="0" alt="点击此处查看提示信息"></a>主订单：</td>
 
-<table cellspacing='1' id="list-table">
+    <td><input name="to_order_sn" type="text" id="to_order_sn" >
+      <select name="to_list" id="to_list" onchange="if (this.value != '') document.getElementById('to_order_sn').value = this.value;" >
+      <option value="">请选择...</option>
+                        </select>
+      <span class="notice-span" style="display:block"  id="noticeOrderSn">当两个订单不一致时，合并后的订单信息（如：支付方式、配送方式、包装、贺卡、红包等）以主订单为准。</span></td>
+  </tr>
   <tr>
-    <th>会员等级名称</th>
-    <th>积分下限</th>
-    <th>积分上限</th>
-    <th>初始折扣率(%)</th>
-    <th>特殊会员组</th>
-    <th>显示价格</th>
-    <th>操作</th>
+    <td class="label">从订单：</td>
+    <td><input name="from_order_sn" type="text" id="from_order_sn" >
+      <select name="from_list" onchange="if (this.value != '') document.getElementById('from_order_sn').value = this.value;">
+      <option value="">请选择...</option>
+                        </select></td>
   </tr>
-    <tr>
-    <td class="first-cell" ><span onclick="listTable.edit(this,'edit_name', 1)">注册用户</span></td>
-    <td align="right"><span  onclick="listTable.edit(this, 'edit_min_points', 1)"  >0</span></td>
-    <td align="right"><span  onclick="listTable.edit(this, 'edit_max_points', 1)"  >10000</span></td>
-    <td align="right"><span onclick="listTable.edit(this, 'edit_discount', 1)">100</span></td>
-    <td align="center"><img src="static/picture/no.svg" width="20" onclick="listTable.toggle(this, 'toggle_special', 1)" /></td>
-    <td align="center"><img src="static/picture/yes.svg" width="20" onclick="listTable.toggle(this, 'toggle_showprice', 1)" /></td>
-    <td align="center">
-    <a href="javascript:;" onclick="listTable.remove(1, '您确认要删除这条记录吗?')" title="移除"><img src="static/picture/icon_drop.svg" border="0" height="16" width="16"></a></td>
-  </tr>
-    <tr>
-    <td class="first-cell" ><span onclick="listTable.edit(this,'edit_name', 2)">vip</span></td>
-    <td align="right"><span  onclick="listTable.edit(this, 'edit_min_points', 2)"  >10000</span></td>
-    <td align="right"><span  onclick="listTable.edit(this, 'edit_max_points', 2)"  >10000000</span></td>
-    <td align="right"><span onclick="listTable.edit(this, 'edit_discount', 2)">95</span></td>
-    <td align="center"><img src="static/picture/no.svg" width="20" onclick="listTable.toggle(this, 'toggle_special', 2)" /></td>
-    <td align="center"><img src="static/picture/yes.svg" width="20" onclick="listTable.toggle(this, 'toggle_showprice', 2)" /></td>
-    <td align="center">
-    <a href="javascript:;" onclick="listTable.remove(2, '您确认要删除这条记录吗?')" title="移除"><img src="static/picture/icon_drop.svg" border="0" height="16" width="16"></a></td>
-  </tr>
-    <tr>
-    <td class="first-cell" ><span onclick="listTable.edit(this,'edit_name', 3)">代销用户</span></td>
-    <td align="right"><span  >0</span></td>
-    <td align="right"><span  >0</span></td>
-    <td align="right"><span onclick="listTable.edit(this, 'edit_discount', 3)">90</span></td>
-    <td align="center"><img src="static/picture/yes.svg" width="20" onclick="listTable.toggle(this, 'toggle_special', 3)" /></td>
-    <td align="center"><img src="static/picture/no.svg" width="20" onclick="listTable.toggle(this, 'toggle_showprice', 3)" /></td>
-    <td align="center">
-    <a href="javascript:;" onclick="listTable.remove(3, '您确认要删除这条记录吗?')" title="移除"><img src="static/picture/icon_drop.svg" border="0" height="16" width="16"></a></td>
-  </tr>
+  <tr>
+    <td colspan="2"><div align="center">
+      <input name="merge" type="button" id="merge" value="合并" class="button" onclick="if (confirm(confirm_merge)) merge()"  />
+    </div></td>
+    </tr>
     </table>
-
 </div>
-<!-- end user ranks list -->
-</form>
-<script type="Text/Javascript" language="JavaScript">
-<!--
 
-onload = function()
-{
-    // 开始检查订单
-    startCheckOrder();
-}
+<script language="JavaScript">
+    /**
+     * 合并
+     */
+    function merge()
+    {
+        var fromOrderSn = document.getElementById('from_order_sn').value;
+        var toOrderSn = document.getElementById('to_order_sn').value;
+        Ajax.call('order.php?is_ajax=1&act=ajax_merge_order','from_order_sn=o' + fromOrderSn + '&to_order_sn=o' + toOrderSn, mergeResponse, 'POST', 'JSON');
+    }
 
-//-->
+    function mergeResponse(result)
+    {
+      if (result.message.length > 0)
+      {
+        alert(result.message);
+      }
+      if (result.error == 0)
+      {
+        //成功则清除用户填写信息
+        document.getElementById('from_order_sn').value = '';
+        document.getElementById('to_order_sn').value = '';
+        location.reload();
+      }
+    }
+
+    onload = function()
+    {
+        // 开始检查订单
+        startCheckOrder();
+    }
 </script>
+
 <div id="footer">
-共执行 3 个查询，用时 0.018365 秒，Gzip 已禁用，内存占用 1.083 MB<br />
+共执行 4 个查询，用时 0.014921 秒，Gzip 已禁用，内存占用 2.601 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
-<!-- 新订单提示信息 -->
+<script type="text/javascript" src="static/js/utils_1.js"></script><!-- 新订单提示信息 -->
 <div id="popMsg">
   <table cellspacing="0" cellpadding="0" width="100%" bgcolor="#cfdef4" border="0">
   <tr>
@@ -175,7 +184,7 @@ onload = function()
 </div>
 
 <!--
-<embed src="static/flash/online.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
+<embed src="static/flash/online_1.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
 -->
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0" id="msgBeep" width="1" height="1">
   <param name="movie" value="images/online.swf">

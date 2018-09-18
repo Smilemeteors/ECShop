@@ -1,20 +1,32 @@
+<<<<<<< HEAD:runtime/temp/eba3b088c2dbe26ea872a0de17807b8e.php
 <?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\usertwo\money.html";i:1537097737;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0065)http://localhost/dayi/ecshopceshi/ecshop/user.php?act=account_log -->
+=======
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\phpStudy\WWW\ECShop\public/../application/home\view\login\login.html";i:1537174225;}*/ ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0049)http://www.ecshop4.0.com/home/index/user.html -->
+>>>>>>> 329ea4abc88e94ba5c27aa8045d474bb16fbea7e:runtime/temp/4382a93dbbe3459ce45949886f3f6871.php
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="Generator" content="ECSHOP v4.0.0">
 
 <meta name="Keywords" content="">
 <meta name="Description" content="">
-<base href="/home/" />
 <title>用户中心_ECSHOP演示站 - Powered by ECShop</title>
 
-<link rel="shortcut icon" href="http://localhost/dayi/ecshopceshi/ecshop/favicon.ico">
-<link rel="icon" href="http://localhost/dayi/ecshopceshi/ecshop/animated_favicon.gif" type="image/gif">
-<link href="css/style.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="http://www.ecshop4.0.com/home/index/favicon.ico">
+<link rel="icon" href="/static1/images/animated_favicon.gif" type="/static1/images/gif">
+<link href="/static1/css/style.css" rel="stylesheet" type="text/css">
 
+<<<<<<< HEAD:runtime/temp/eba3b088c2dbe26ea872a0de17807b8e.php
 <script type="text/javascript" src="./用户中心_ECSHOP演示站 - Powered by ECShop_files/common.js.下载"></script><script type="text/javascript" src="./用户中心_ECSHOP演示站 - Powered by ECShop_files/user.js.下载"></script></head>
 <body>
+=======
+<script type="text/javascript" src="http://open.51094.com/user/myscript/15b9a572132a4e.html"></script>
+
+<script type="text/javascript" src="/static1/js/common.js"></script><script type="text/javascript" src="/static1/js/user.js"></script><script type="text/javascript" src="/static1/js/transport.js"></script>
+</head><body>
+>>>>>>> 329ea4abc88e94ba5c27aa8045d474bb16fbea7e:runtime/temp/4382a93dbbe3459ce45949886f3f6871.php
 
 <script type="text/javascript">
 var process_request = "正在处理您的请求...";
@@ -22,7 +34,7 @@ var process_request = "正在处理您的请求...";
 <div class="top-bar">
   <div class="fd_top fd_top1">
     <div class="bar-left">
-          <div class="top_menu1"> <script type="text/javascript" src="js/transport.js"></script><script type="text/javascript" src="js/utils.js"></script> <font id="ECS_MEMBERZONE"><div id="append_parent"></div>
+          <div class="top_menu1"> <script type="text/javascript" src="/static1/js/transport.js"></script><script type="text/javascript" src="/static1/js/utils.js"></script> <font id="ECS_MEMBERZONE"><div id="append_parent"></div>
  欢迎光临本店<a href="<?php echo url('Login/login'); ?>">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="<?php echo url('Login/reg'); ?>">免费注册</a>  </font> </div>
     </div>
     <div class="bar-cart">
@@ -35,22 +47,22 @@ var process_request = "正在处理您的请求...";
 </div>
 <div class="nav-menu">
   <div class="wrap">
-    <div class="logo"><a href="http://localhost/dayi/ecshopceshi/ecshop/index.php" name="top"><img src="./用户中心_ECSHOP演示站 - Powered by ECShop_files/logo.gif"></a></div>
+    <div class="logo"><a href="http://www.ecshop4.0.com/home/index/index.html" name="top"><img src="./用户中心_ECSHOP演示站 - Powered by ECShop_files/logo.gif"></a></div>
     <div id="mainNav" class="clearfix maxmenu">
       <div class="m_left">
       <ul>
-        <li><a href="http://localhost/dayi/ecshopceshi/ecshop/index.php" class="cur">首页</a></li>
-                        <li><a href="http://localhost/dayi/ecshopceshi/ecshop/category.php?id=16">服装</a></li>
-                                        <li><a href="http://localhost/dayi/ecshopceshi/ecshop/category.php?id=22">移动电源</a></li>
-                                        <li><a href="http://localhost/dayi/ecshopceshi/ecshop/category.php?id=25">数码时尚</a></li>
-                                        <li><a href="http://localhost/dayi/ecshopceshi/ecshop/category.php?id=26">家用电器</a></li>
-                                        <li><a href="http://localhost/dayi/ecshopceshi/ecshop/category.php?id=27">大家电</a></li>
-                                        <li><a href="http://localhost/dayi/ecshopceshi/ecshop/category.php?id=25">数码时尚</a></li>
+        <li><a href="http://www.ecshop4.0.com/home/index/index.html" class="cur">首页</a></li>
+                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=16">服装</a></li>
+                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=22">移动电源</a></li>
+                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=25">数码时尚</a></li>
+                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=26">家用电器</a></li>
+                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=27">大家电</a></li>
+                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=25">数码时尚</a></li>
                               </ul>
       </div>
     </div>
     <div class="serach-box">
-      <form id="searchForm" name="searchForm" method="get" action="http://localhost/dayi/ecshopceshi/ecshop/search.php" onsubmit="return checkSearchForm()" class="f_r">
+      <form id="searchForm" name="searchForm" method="get" action="http://www.ecshop4.0.com/home/index/search.html" onsubmit="return checkSearchForm()" class="f_r">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tbody><tr>
             <td width="135"><input name="keywords" type="text" id="keyword" value="" class="B_input"></td>
@@ -65,7 +77,11 @@ var process_request = "正在处理您的请求...";
 
 <div class="block box">
  <div id="ur_here">
+<<<<<<< HEAD:runtime/temp/eba3b088c2dbe26ea872a0de17807b8e.php
   <div class="path"><div>当前位置: <a href="http://localhost/dayi/ecshopceshi/ecshop/">首页</a> <code>&gt;</code> 用户中心</div></div> </div>
+=======
+  <div class="path"><div>当前位置: <a href="index.html">首页</a> <code>&gt;</code> 用户中心</div></div>  </div>
+>>>>>>> 329ea4abc88e94ba5c27aa8045d474bb16fbea7e:runtime/temp/4382a93dbbe3459ce45949886f3f6871.php
 </div>
 
 <div class="blank"></div>
@@ -134,11 +150,57 @@ var process_request = "正在处理您的请求...";
             <td bgcolor="#ffffff">状态</td>
             <td bgcolor="#ffffff">操作</td>
           </tr>
+<<<<<<< HEAD:runtime/temp/eba3b088c2dbe26ea872a0de17807b8e.php
                     <tr>
             <td colspan="7" align="right" bgcolor="#ffffff">您当前的可用资金为：￥433542.10元</td>
           </tr>
         </tbody></table>
          <div class="page-form clearfix">
+=======
+                  <!--   <tr>
+            <td colspan="2"><input type="checkbox" value="1" name="remember" id="remember"><label for="remember">请保存我这次的登录信息。</label></td>
+          </tr> -->
+          <tr>
+            <td>&nbsp;</td>
+            <td align="left">
+           <!--  <input type="hidden" name="act" value="act_login">
+            <input type="hidden" name="back_act" value="http://www.ecshop4.0.com/home/index/"> -->
+            <input type="submit"  value="登录" class="us_Submit">
+            </td>
+          </tr>
+	<!--   <tr><td></td><td class="f3">找回密码：（<a href="http://www.ecshop4.0.com/home/index/user.html?act=qpassword_name" class="f3">密码问题</a>&nbsp;<a href="http://www.ecshop4.0.com/home/index/user.html?act=get_password" class="f3">邮件</a>&nbsp;<a href="http://www.ecshop4.0.com/home/index/user.html?act=sms_get_password" class="f3">短信验证</a>）</td></tr> -->
+      </tbody></table>
+      
+            <div>
+            <span id="hzy_fast_login"></span>
+          </div>
+    </form>
+
+
+
+
+    
+
+
+  </div>
+  <div class="usTxt">
+    <strong>如果您不是会员，请注册</strong>  <br>
+    <strong class="f4">友情提示：</strong><br>
+        不注册为会员也可在本店购买商品<br>
+            但注册之后您可以：<br>
+    1. 保存您的个人资料<br>
+    2. 收藏您关注的商品<br>
+    3. 享受会员积分制度<br>
+    4. 订阅本店商品信息  <br>
+    <a href="<?php echo url('login/reg'); ?>"><img src="/static1/images/bnt_ur_reg.gif"></a>
+  </div>
+</div>
+
+
+
+    
+
+>>>>>>> 329ea4abc88e94ba5c27aa8045d474bb16fbea7e:runtime/temp/4382a93dbbe3459ce45949886f3f6871.php
 
 <form name="selectPageForm" action="http://localhost/dayi/ecshopceshi/ecshop/user.php" method="get">
     
@@ -179,33 +241,33 @@ function selectPage(sel)
      <div class="foot-help">
                       <dl>
           <dt class="xs-1">新手上路 </dt>
-                      <dd><a href="http://localhost/dayi/ecshopceshi/ecshop/article.php?id=9" target="_blank" title="售后流程">售后流程</a></dd>
-                    <dd><a href="http://localhost/dayi/ecshopceshi/ecshop/article.php?id=10" target="_blank" title="购物流程">购物流程</a></dd>
-                    <dd><a href="http://localhost/dayi/ecshopceshi/ecshop/article.php?id=11" target="_blank" title="订购方式">订购方式</a></dd>
+                      <dd><a href="http://www.ecshop4.0.com/home/index/article.html?id=9" target="_blank" title="售后流程">售后流程</a></dd>
+                    <dd><a href="http://www.ecshop4.0.com/home/index/article.html?id=10" target="_blank" title="购物流程">购物流程</a></dd>
+                    <dd><a href="http://www.ecshop4.0.com/home/index/article.html?id=11" target="_blank" title="订购方式">订购方式</a></dd>
            
         </dl>
          
                         <dl>
           <dt class="xs-2">手机常识 </dt>
-                      <dd><a href="http://localhost/dayi/ecshopceshi/ecshop/article.php?id=12" target="_blank" title="如何分辨原装电池">如何分辨原装电池</a></dd>
-                    <dd><a href="http://localhost/dayi/ecshopceshi/ecshop/article.php?id=13" target="_blank" title="如何分辨水货手机 ">如何分辨水货手机</a></dd>
-                    <dd><a href="http://localhost/dayi/ecshopceshi/ecshop/article.php?id=14" target="_blank" title="如何享受全国联保">如何享受全国联保</a></dd>
+                      <dd><a href="http://www.ecshop4.0.com/home/index/article.html?id=12" target="_blank" title="如何分辨原装电池">如何分辨原装电池</a></dd>
+                    <dd><a href="http://www.ecshop4.0.com/home/index/article.html?id=13" target="_blank" title="如何分辨水货手机 ">如何分辨水货手机</a></dd>
+                    <dd><a href="http://www.ecshop4.0.com/home/index/article.html?id=14" target="_blank" title="如何享受全国联保">如何享受全国联保</a></dd>
            
         </dl>
          
                         <dl>
           <dt class="xs-3">配送与支付 </dt>
-                      <dd><a href="http://localhost/dayi/ecshopceshi/ecshop/article.php?id=15" target="_blank" title="货到付款区域">货到付款区域</a></dd>
-                    <dd><a href="http://localhost/dayi/ecshopceshi/ecshop/article.php?id=16" target="_blank" title="配送支付智能查询 ">配送支付智能查询</a></dd>
-                    <dd><a href="http://localhost/dayi/ecshopceshi/ecshop/article.php?id=17" target="_blank" title="支付方式说明">支付方式说明</a></dd>
+                      <dd><a href="http://www.ecshop4.0.com/home/index/article.html?id=15" target="_blank" title="货到付款区域">货到付款区域</a></dd>
+                    <dd><a href="http://www.ecshop4.0.com/home/index/article.html?id=16" target="_blank" title="配送支付智能查询 ">配送支付智能查询</a></dd>
+                    <dd><a href="http://www.ecshop4.0.com/home/index/article.html?id=17" target="_blank" title="支付方式说明">支付方式说明</a></dd>
            
         </dl>
          
                         <dl>
           <dt class="xs-4">会员中心</dt>
-                      <dd><a href="http://localhost/dayi/ecshopceshi/ecshop/article.php?id=18" target="_blank" title="资金管理">资金管理</a></dd>
-                    <dd><a href="http://localhost/dayi/ecshopceshi/ecshop/article.php?id=19" target="_blank" title="我的收藏">我的收藏</a></dd>
-                    <dd><a href="http://localhost/dayi/ecshopceshi/ecshop/article.php?id=20" target="_blank" title="我的订单">我的订单</a></dd>
+                      <dd><a href="http://www.ecshop4.0.com/home/index/article.html?id=18" target="_blank" title="资金管理">资金管理</a></dd>
+                    <dd><a href="http://www.ecshop4.0.com/home/index/article.html?id=19" target="_blank" title="我的收藏">我的收藏</a></dd>
+                    <dd><a href="http://www.ecshop4.0.com/home/index/article.html?id=20" target="_blank" title="我的订单">我的订单</a></dd>
            
         </dl>
          
@@ -226,7 +288,7 @@ function selectPage(sel)
   <div class="blank"></div>
   
 <div class="footer_info"> © 2005-2018 ECSHOP 版权所有，并保留所有权利。       <br>
-      <a href="http://xyunqi.com/products/ecshop?from=nav" target="_blank" style=" font-family:Verdana; font-size:11px;">Powered&nbsp;by&nbsp;<strong><span style="color: #3366FF">ECShop</span>&nbsp;<span style="color: #FF9966">v4.0.0</span></strong></a>&nbsp;<a href="http://www.ecshop.com/license.php?product=ecshop_b2c&amp;url=http%3A%2F%2Flocalhost%2Fdayi%2Fecshopceshi%2Fecshop%2F" target="_blank">&nbsp;&nbsp;Licensed</a><br>
+      <a href="http://xyunqi.com/products/ecshop?from=nav" target="_blank" style=" font-family:Verdana; font-size:11px;">Powered&nbsp;by&nbsp;<strong><span style="color: #3366FF">ECShop</span>&nbsp;<span style="color: #FF9966">v4.0.0</span></strong></a>&nbsp;<a href="http://www.ecshop.com/license.html?product=ecshop_b2c&amp;url=http%3A%2F%2Flocalhost%2Fdayi%2Fecshopceshi%2Fecshop%2F" target="_blank">&nbsp;&nbsp;Licensed</a><br>
             <div>ICP备案证书号:<a href="http://www.miibeian.gov.cn/" target="_blank"></a></div>
     </div>
   <div class="clear10"></div>

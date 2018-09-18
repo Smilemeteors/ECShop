@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\index\index_menu.html";i:1537176167;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -148,7 +149,7 @@
           <!--<a href="index.php?act=clear_cache" target="main-frame" class="fix-submenu">清除缓存</a>-->
         <!--</li>-->
         <li class="btn-exit">
-          <a href="{:url('login/logout')}" target="_top" class="fix-submenu">退出</a>
+          <a href="<?php echo url('login/logout'); ?>" target="_top" class="fix-submenu">退出</a>
         </li>
       </ul>
     </div>
