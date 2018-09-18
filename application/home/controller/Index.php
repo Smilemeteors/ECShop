@@ -3,6 +3,7 @@ namespace app\home\controller;
 use think\Controller;
 use think\Db;
 use think\Model;
+use think\Request;
 use app\home\model\Category;
 header("content-type:text/html;charset=utf-8");
 class Index extends Controller
@@ -22,7 +23,7 @@ class Index extends Controller
                     ->select();
         $this->assign('goods_data',$goods_data);
         $this->assign('cat_data',$cate_list);
-
+       
     	return $this->fetch();
     }
      public function Category()
@@ -97,7 +98,7 @@ class Index extends Controller
     }
     public function user()
     {
-        return $this->fetch();
+        return $this->fetch();        
     }
     public function register()
     {

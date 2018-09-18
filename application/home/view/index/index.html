@@ -21,13 +21,18 @@ var process_request = "正在处理您的请求...";
   <div class="fd_top fd_top1">
     <div class="bar-left">
           <div class="top_menu1"> <script type="text/javascript" src="/static1/js/transport.js"></script><script type="text/javascript" src="/static1/js/utils.js"></script> <font id="ECS_MEMBERZONE"><div id="append_parent"></div>
- 欢迎光临本店<a href="user.html">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="register.html">免费注册</a>  </font> </div>
+  <?php if (isset($_SESSION)) {?>
+      您好,&nbsp;&nbsp;<strong><font color="#AE0000"><?php echo $_SESSION['username']; ?></font></strong>, 欢迎您回来！ <a href="{:url('user/welcome')}">用户中心</a>| <a href="{:url('login/login')}">退出</a>
+  <?php } else { ?>  
+      欢迎光临本店<a href="{:url('login/login')}">请登录</a><strong></strong>&nbsp;|&nbsp;&nbsp;<a href="{:url('login/register')}">免费注册</a>    
+  <?php } ?> 
+  </font> </div>
     </div>
     <div class="bar-cart">
       <div class="fl cart-yh">
-        <a href="user.html" class="">用户中心</a>
+        <a href="{:url('user/welcome')}" class="">用户中心</a>
       </div>
-             <div class="cart" id="ECS_CARTINFO"> <a href="flow.html" title="查看购物车">购物车(0)</a> </div>
+        <div class="cart" id="ECS_CARTINFO"> <a href="{:url('shopcar/car')}" title="查看购物车">购物车(0)</a> </div>
     </div>
   </div>
 </div>
@@ -38,26 +43,16 @@ var process_request = "正在处理您的请求...";
       <div class="m_left">
       <ul>
         <li><a href="index.html" class="cur">首页</a></li>
-                        <li><a href="category.html?id=16" 
-        
-                    >服装</a></li>
-                                        <li><a href="category.html?id=22" 
-        
-                    >移动电源</a></li>
-                                        <li><a href="category.html?id=25" 
-        
-                    >数码时尚</a></li>
-                                        <li><a href="category.html?id=26" 
-        
-                    >家用电器</a></li>
-                                        <li><a href="category.html?id=25" 
-        
-                    >数码时尚</a></li>
-                              </ul>
+        <li><a href="category.html?id=16" >服装</a></li>
+        <li><a href="category.html?id=22" >移动电源</a></li>
+        <li><a href="category.html?id=25" >数码时尚</a></li>
+        <li><a href="category.html?id=26" >家用电器</a></li>
+        <li><a href="category.html?id=25" >数码时尚</a></li>
+      </ul>
       </div>
     </div>
     <div class="serach-box">
-      <form id="searchForm" name="searchForm" method="get" action="search.html" onSubmit="return checkSearchForm()" class="f_r">
+      <form id="searchForm" name="searchForm" method="get" action="http://localhost/dayi/ecshopceshi/ecshop/search.php" onsubmit="return checkSearchForm()" class="f_r">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
             <td width="135"><input name="keywords" type="text" id="keyword" value="" class="B_input"  /></td>
