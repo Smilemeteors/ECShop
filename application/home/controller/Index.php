@@ -230,7 +230,7 @@ class Index extends Controller
     }
     public function user()
     {
-        return $this->fetch();
+        return $this->fetch();        
     }
     public function register()
     {
