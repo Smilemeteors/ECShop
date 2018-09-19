@@ -61,7 +61,7 @@ var process_request = "正在处理您的请求...";
 </div>
 <div class="clear0 "></div>
  <div class="category-body">
-  <div id="ur_here"> <div class="path"><div>当前位置: {volist name='cat_name' id='v'} <a href="{:url('index/fenlei')}?cat_id={$v.cat_id}">{$v.cat_name}</a>{/volist}</div></div> </div>
+  <div id="ur_here"> <div class="path"><div>当前位置: <a href="http://www.ecshop4.0.com/home/index/index.html">首页</a>>{volist name='cat_name' id='v'} <a href="{:url('index/fenlei')}?cat_id={$v.cat_id}">{$v.cat_name}</a>{/volist}</div></div> </div>
 <div class="block clearfix">
   
  <div class="Area">
@@ -101,7 +101,7 @@ var process_request = "正在处理您的请求...";
 
 
       {volist name='goods_data' id='v'}
-                        <div class="goodsItem"> <a href="{:url('index/details')}?goods_id={$v.goods_id}" class="img-box"><img src="__ROOT__/uploads/{$v.goods_img}" class="goods_img"></a>
+                        <div class="goodsItem"> <a href="{:url('index/details')}?goods_id={$v.goods_id}" class="img-box"><img src="/uploads/{$v.goods_img}" class="goods_img"></a>
         <div class="goods-info">
             <div class="goods-title"><a href="{:url('index/details')}?goods_id={$v.goods_id}" >{$v.goods_name}</a></div>
             <div class="goods-ms">

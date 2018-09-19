@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\login\login.html";i:1537355450;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -23,18 +24,18 @@ var process_request = "正在处理您的请求...";
     <div class="bar-left">
       <div class="top_menu1"> <script type="text/javascript" src="/static1/js/utils.js"></script> <font id="ECS_MEMBERZONE"><div id="append_parent"></div>
   <?php if (empty($_SESSION)) {?>
-      欢迎光临本店<a href="{:url('login/login')}">请登录</a><strong></strong>&nbsp;|&nbsp;&nbsp;<a href="{:url('login/register')}">免费注册</a>
+      欢迎光临本店<a href="<?php echo url('login/login'); ?>">请登录</a><strong></strong>&nbsp;|&nbsp;&nbsp;<a href="<?php echo url('login/register'); ?>">免费注册</a>
   <?php } else { ?>  
-          您好,&nbsp;&nbsp;<strong><font color="#AE0000"><?php echo $_SESSION['username']; ?></font></strong>, 欢迎您回来！ <a href="{:url('user/welcome')}">用户中心</a>| <a href="{:url('Login/back')}">退出</a>
+          您好,&nbsp;&nbsp;<strong><font color="#AE0000"><?php echo $_SESSION['username']; ?></font></strong>, 欢迎您回来！ <a href="<?php echo url('user/welcome'); ?>">用户中心</a>| <a href="<?php echo url('Login/back'); ?>">退出</a>
   <?php } ?>   </font> 
       </div>
     </div>
     <div class="bar-cart">
       <div class="fl cart-yh">
         <?php if(empty($_SESSION)){ ?>
-           <a href="{:url('Login/login')}" class="">用户中心</a>
+           <a href="<?php echo url('Login/login'); ?>" class="">用户中心</a>
           <?php }else{?>
-         <a href="{:url('user/welcome')}" class="">用户中心</a>
+         <a href="<?php echo url('user/welcome'); ?>" class="">用户中心</a>
           <?php }?>
       </div>
       <div class="cart" id="ECS_CARTINFO"> <a href="http://www.ecshop4.0.com/home/index/flow.html" title="查看购物车">购物车(0)</a> </div>
@@ -44,11 +45,11 @@ var process_request = "正在处理您的请求...";
 <div class="nav-menu">
   <div class="wrap">
 <<<<<<< HEAD
-    <div class="logo"><a href="{:url('index/index')}" name="top"><img src="/static1/images/logo.gif"></a></div>
+    <div class="logo"><a href="<?php echo url('index/index'); ?>" name="top"><img src="/static1/images/logo.gif"></a></div>
     <div id="mainNav" class="clearfix maxmenu">
       <div class="m_left">
       <ul>
-        <li><a href="{:url('index/index')}" class="cur">首页</a></li>
+        <li><a href="<?php echo url('index/index'); ?>" class="cur">首页</a></li>
                         <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=16">服装</a></li>
                                         <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=22">移动电源</a></li>
                                         <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=25">数码时尚</a></li>
@@ -72,7 +73,7 @@ var process_request = "正在处理您的请求...";
       </div>
     </div>
     <div class="serach-box">
-      <form method="get" action="{:url('index/fenlei')}">
+      <form method="get" action="<?php echo url('index/fenlei'); ?>">
         <table width="100%" cellspacing="0" cellpadding="0" border="0">
           <tbody>
             <tr>
@@ -98,7 +99,7 @@ var process_request = "正在处理您的请求...";
   <div class="usBox_1 f_l">
   <div class="logtitle"></div>
   <image src="/static1/images/ur_log.gif" />
-  <form name="formLogin" action="{:url('login/login')}" method="post" onSubmit="return userLogin()">
+  <form name="formLogin" action="<?php echo url('login/login'); ?>" method="post" onSubmit="return userLogin()">
     <table width="100%" border="0" align="left" cellpadding="3" cellspacing="5">
       <tr>
         <td width="15%" align="right">用户名</td>
