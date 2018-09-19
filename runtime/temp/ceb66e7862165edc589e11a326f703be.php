@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"E:\phpStudy\WWW\ECShop\public/../application/home\view\index\category.html";i:1537330385;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"E:\phpStudy\WWW\ECShop\public/../application/home\view\index\category.html";i:1537337764;}*/ ?>
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -36,10 +36,10 @@ var process_request = "正在处理您的请求...";
       <div class="m_left">
       <ul>
         <li><a href="http://www.ecshop4.0.com/home/index/index.html">首页</a></li>
-                        <li><a href="<?php echo url('home/index/category'); ?>?id=1"
+                                        <li><a href="<?php echo url('home/index/category'); ?>?id=1"
         
                     >服装</a></li>
-                          <li><a href="<?php echo url('home/index/category'); ?>?id=2"
+                                        <li><a href="<?php echo url('home/index/category'); ?>?id=2"
         
                     >移动电源</a></li>
                                         <li><a href="<?php echo url('home/index/category'); ?>?id=3"

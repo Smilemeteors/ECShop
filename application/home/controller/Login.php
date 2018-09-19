@@ -59,6 +59,7 @@ class Login extends Controller
                     session_start();
                     $_SESSION['name']="$username";
                     $res = Db('reg')->insert($data);
+                    print_r($res);die;
                     if($res){
                          return view("Index/index");
                     }
