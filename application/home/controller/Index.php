@@ -4,7 +4,6 @@ use think\Controller;
 use think\Request;
 use think\Db;
 use think\Model;
-use think\Request;
 use app\home\model\Category;
 header("content-type:text/html;charset=utf-8");
 class Index extends Controller
@@ -34,15 +33,10 @@ class Index extends Controller
         $this->assign('nav',$nav);
         $this->assign('goods_data',$goods_data);
         $this->assign('cat_data',$cate_list);
-<<<<<<< HEAD
-       
-    	return $this->fetch();
-=======
         $this->assign('floor_goods',$floor_goods);
         $this->assign('floor',$floor);
 
         return $this->fetch();
->>>>>>> 7ac3068ef59f904943781dd878e80b2af4aa8f93
     }
 
      public function Category()

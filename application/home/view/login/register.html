@@ -56,12 +56,14 @@
       </div>
     </div>
     <div class="serach-box">
-      <form id="searchForm" name="searchForm" method="get" action="search.html" onSubmit="return checkSearchForm()" class="f_r">
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td width="135"><input name="keywords" type="text" id="keyword" value="" class="B_input"  /></td>
-            <td><input name="imageField" type="submit" value="搜索" class="go" style="cursor:pointer;" /></td>
-          </tr>
+      <form method="get" action="{:url('index/fenlei')}">
+        <table width="100%" cellspacing="0" cellpadding="0" border="0">
+          <tbody>
+            <tr>
+              <td width="135"><input name="keyword"  type="text"></td>
+              <td><input  value="搜索"  type="submit"></td>
+            </tr>
+          </tbody>
         </table>
       </form>
     </div>
@@ -82,6 +84,7 @@
             <div class="usBox">
   <div class="usBox_2 clearfix">
    <div class="regtitle"></div>
+    <image src="/static1/images/ur_reg.gif" />
     <form action="{:url('login/register')}" method="post" name="formUser" onsubmit="return register();">
       <table width="100%"  border="0" align="left" cellpadding="5" cellspacing="3">
         <tr>
@@ -89,24 +92,24 @@
           <td width="87%">
           <input name="username" type="text" size="25" id="username" onblur="ck_name()" class="inputBg"/>
           <!-- onblur="ck_name()" -->
-            <span id="usernames"></span>
+            <span id="usernames"></span></span><font color="red">*</font>
           </td>
         </tr>
         <tr>
           <td align="right">email</td>
           <td>
           <input name="email" type="text" size="25" id="email" onblur="ck_email()"  class="inputBg"/>
-            <span id="emails"></span>
+            <span id="emails"></span></span><font color="red">*</font> 
           </td>
         </tr>
         <tr>
           <td align="right">密码</td>
           <td>
           <input name="password1" type="password" id="password1" onblur="ck_pwd1()" class="inputBg" style="width:179px;" />
-            <span id="password1s"></span>
+            <span id="password1s"></span></span><font color="red">*</font> 
           </td>
         </tr>
-        <!-- <tr>
+        <tr>
           <td align="right">密码强度</td>
           <td>
             <table width="145" border="0" cellspacing="0" cellpadding="1">
@@ -117,12 +120,12 @@
               </tr>
             </table>
           </td>
-        </tr> -->
+        </tr>
         <tr>
           <td align="right">确认密码</td>
           <td>
           <input name="password2" type="password" id="password2" onblur="ck_pwd2()"  class="inputBg" style="width:179px;"/>
-            <span id="password2s"></span>
+            <span id="password2s"></span><font color="red">*</font> 
           </td>
         </tr>
                   <tr>
@@ -139,7 +142,7 @@
         </tr>
               <tr>
           <td align="right" id="extend_field5i">手机          <td>
-          <input name="tel" type="text" size="25" class="inputBg" id='tel' onblur="ck_tel()" /><span id="tels"> </span>          </td>
+          <input name="tel" type="text" size="25" class="inputBg" id='tel' onblur="ck_tel()" /><span id="tels"> </span></span><font color="red">*</font> </td>
         </tr>
               <tr>
           <td align="right">密码提示问题</td>
@@ -163,7 +166,7 @@
         <tr>
           <td>&nbsp;</td>
           <td align="left">
-          <input name="Submit" type="submit" value="注册" class="us_Submit_reg">
+          <input type="image" value="注册" class="us_Submit_reg" src="/static1/images/bnt_ur_reg.gif" >
           </td>
         </tr>
         <tr>
@@ -172,8 +175,8 @@
         <tr>
           <td>&nbsp;</td>
           <td class="actionSub">
-          <a href="Home/Login/user">我已有账号，我要登录</a><br />
-          <a href="user.html?act=get_password">您忘记密码了吗？</a>
+         <image src="/static1/images/fart.gif" /> <a href="Home/Login/user"> 我已有账号，我要登录</a><br />
+          <image src="/static1/images/fart.gif" /> <a href="user.html?act=get_password">您忘记密码了吗？</a>
           </td>
         </tr>
       </table>

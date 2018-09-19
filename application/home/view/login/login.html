@@ -22,17 +22,12 @@ var process_request = "正在处理您的请求...";
   <div class="fd_top fd_top1">
     <div class="bar-left">
       <div class="top_menu1"> <script type="text/javascript" src="/static1/js/utils.js"></script> <font id="ECS_MEMBERZONE"><div id="append_parent"></div>
- <?php if (isset($_SESSION)) {?>
-      您好,&nbsp;&nbsp;<strong><font color="#AE0000"><?php echo $_SESSION['name']; ?></font></strong>, 欢迎您回来！ <a href="{:url('user/welcome')}">用户中心</a>| <a href="{:url('login/login')}">退出</a>
-  <?php } else { ?>  
-      欢迎光临本店<a href="{:url('login/login')}">请登录</a><strong></strong>&nbsp;|&nbsp;&nbsp;<a href="{:url('login/register')}">免费注册</a>    
-  <?php } ?> 
-  </font> 
+ 欢迎光临本店<a href="http://www.ecshop4.0.com/home/login/login.html">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="http://www.ecshop4.0.com/home/login/register.html">免费注册</a>  </font> 
       </div>
     </div>
     <div class="bar-cart">
       <div class="fl cart-yh">
-        <a href="{:url('User/welcome')}" class="">用户中心</a>
+        <a href="http://www.ecshop4.0.com/home/user/welcome.html" class="">用户中心</a>
       </div>
       <div class="cart" id="ECS_CARTINFO"> <a href="http://www.ecshop4.0.com/home/index/flow.html" title="查看购物车">购物车(0)</a> </div>
     </div>
@@ -54,12 +49,14 @@ var process_request = "正在处理您的请求...";
       </div>
     </div>
     <div class="serach-box">
-      <form id="searchForm" name="searchForm" method="get" action="search.html" onSubmit="return checkSearchForm()" class="f_r">
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td width="135"><input name="keywords" type="text" id="keyword" value="" class="B_input"  /></td>
-            <td><input name="imageField" type="submit" value="搜索" class="go" style="cursor:pointer;" /></td>
-          </tr>
+      <form method="get" action="{:url('index/fenlei')}">
+        <table width="100%" cellspacing="0" cellpadding="0" border="0">
+          <tbody>
+            <tr>
+              <td width="135"><input name="keyword"  type="text"></td>
+              <td><input  value="搜索"  type="submit"></td>
+            </tr>
+          </tbody>
         </table>
       </form>
     </div>
@@ -77,6 +74,7 @@ var process_request = "正在处理您的请求...";
 <div class="usBox clearfix">
   <div class="usBox_1 f_l">
   <div class="logtitle"></div>
+  <image src="/static1/images/ur_log.gif" />
   <form name="formLogin" action="{:url('login/login')}" method="post" onSubmit="return userLogin()">
     <table width="100%" border="0" align="left" cellpadding="3" cellspacing="5">
       <tr>
@@ -89,15 +87,16 @@ var process_request = "正在处理您的请求...";
         <input name="password1" type="password" size="15"  class="inputBg" id="password" onblur="ck_pwd()" /><span id="info_pwd"></span>
         </td>
       </tr>
-      <!-- <tr>
+      <tr>
         <td colspan="2"><input type="checkbox" value="1" name="remember" id="remember" /><label for="remember">请保存我这次的登录信息。</label></td>
-      </tr> -->
+      </tr>
       <tr>
         <td>&nbsp;</td>
         <td align="left">
         <!-- <input type="hidden" name="act" value="act_login" />
         <input type="hidden" name="back_act" value="user.html" /> -->
-        <input type="submit" value="登录" class="us_Submit" />
+        <input type="image" value="登录" class="us_Submit" src="/static1/images/bnt_ur_log.gif" />
+        
         </td>
       </tr>
       <tr>
@@ -116,7 +115,7 @@ var process_request = "正在处理您的请求...";
     2. 收藏您关注的商品<br />
     3. 享受会员积分制度<br />
     4. 订阅本店商品信息  <br />
-    <a href="{:url('login/register')}"><img src="/static1/images/bnt_ur_reg.gif" /></a>
+    <a href="register.html"><img src="/static1/images/bnt_ur_reg.gif" /></a>
   </div>
 </div>
 
