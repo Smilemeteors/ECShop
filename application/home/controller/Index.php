@@ -1,6 +1,7 @@
 <?php
 namespace app\home\controller;
 use think\Controller;
+use think\Request;
 use think\Db;
 use think\Model;
 use app\home\model\Category;
@@ -13,8 +14,12 @@ class Index extends Controller
         $category=new Category();
         // var_dump($category);die;
         $category_data=Db::name('classify')->select();
-        // $xhan=Db::name('classify')->where('parent_id=0')->select();
-        // $xhan1=$category->createTreeBySon($xhan);
+        // $xhan=Db::name('category')->where('parent_id=0')->select();
+        $floor=Db::name('classify')->where('parent_id=0')->select();
+        $floor_goods=Db::name('goods')->where('goods.cat_id=cat_id')->limit(8)->select();
+        // echo "<pre/>";
+        // print_r($floor_goods);die;
+        // $floor1=$category->createTreeBySon($floor);
         // var_dump($category_data);die;
         $cate_list=$category->createTreeBySon($category_data);
         // var_dump($cate_list);die;
@@ -28,14 +33,19 @@ class Index extends Controller
         $this->assign('nav',$nav);
         $this->assign('goods_data',$goods_data);
         $this->assign('cat_data',$cate_list);
-        // $this->assign('xhan',$xhan1);
-
-    	return $this->fetch();
+        $this->assign('floor_goods',$floor_goods);
+        $this->assign('floor',$floor);
+        session_start();
+        $this->assign('$_SESSION',$_SESSION);
+        return $this->fetch();
     }
+
      public function Category()
     {
+         $id = Request::instance()->get('id');
+         $arr = Db::table('goods')->where('goods_type',$id)->select();
+         return $this->fetch('category',['arr'=>$arr]);
         $cat_id=input('get.cat_id');
-
         $condtion='';
         //判断cat_id是否为空，如果不为空if判断
         if(!empty($cat_id))
@@ -65,6 +75,21 @@ class Index extends Controller
         $this->assign('goods_data',$goods_data);
        return $this->fetch();
     }
+////    移动电源的方法
+//    public function Category2()
+//    {
+//        return $this->fetch();
+//    }
+////    数码时尚 的方法
+//    public function Category3()
+//    {
+//        return $this->fetch();
+//    }
+////    家用电器的方法
+//    public function Category4()
+//    {
+//        return $this->fetch();
+//    }
 
     public function fenlei()
     {
@@ -79,7 +104,7 @@ class Index extends Controller
             $cat_data=Db::name('classify')->select();
             //在查到的分类下在进行递归查询
             $chile_data=$category->createTreeBySon($cat_data,$cat_id);
-           // var_dump($chile_data);die;
+           // var_dump($chile_data);die;  
             //定义一个空数组，将查询到的所有分类cat_id遍历，放到空数组内
             $tmp=array();
             $tmp[]=$cat_id;
@@ -161,26 +186,30 @@ class Index extends Controller
     public function details()
     {   
         $goods_id=input('get.goods_id');
+        // print_r($goods_id);die;
         if(empty($goods_id))
         {
             die('访问错误');
         }
-
+//商品信息
         $goods_data=Db::name('goods g')
                    ->join('brand b','g.brand_id=b.brand_id')
                    ->where(['goods_id'=>$goods_id])
                    ->select();
             // var_dump($goods_data);die;
-       
+//分类信息
         $cat_name=Db::name('goods g')
                   ->join('classify c','g.cat_id=c.cat_id')
                   ->where(['goods_id'=>$goods_id])
                   ->select();
         // var_dump($cat_name);die;
         // $cat_id=input('get.cat_id');
-        $nav=Db::name('classify')
+//头部导航
+         $nav=Db::name('classify')
                 ->where('show_in_nav','=',1)
                 ->select();
+        $this->assign('nav',$nav);
+        // print_r($nav);die;
         //商品属性
         // $attr=Db::name('goods g')
         //     ->join('goods_attr ga','g.goods_id=ga.goods_id')
@@ -188,14 +217,12 @@ class Index extends Controller
         //     ->where('g.goods_id','=',$goods_id) 
         //     ->select();
         $attr=Db::query("SELECT * FROM `goods_attr` INNER JOIN goods ON goods_attr.goods_id=goods.goods_id INNER JOIN attribute ON goods_attr.attr_id=attribute.attr_id INNER JOIN goods_type ON attribute.cat_id=goods_type.cat_id where goods.goods_id='$goods_id'");
-            // var_dump($attr);die;
         $comment=Db::query("SELECT * from goods_attr inner join goods on goods_attr.goods_id=goods.goods_id where goods.goods_id='$goods_id'");
         // var_dump($comment);die;
         $this->assign('comment',$comment);
         $this->assign('attr',$attr);
         $this->assign('cat_name',$cat_name);
         $this->assign('goods_data',$goods_data);
-        $this->assign('nav',$nav);
         return $this->fetch();
     }
     public function flow()
@@ -204,7 +231,34 @@ class Index extends Controller
     }
     public function user()
     {
-        return $this->fetch();
+         // 如果post接收数据登录，如果get返回登录页面
+        if (request()->isPost()) {
+            //获取需要入库的数据
+            $data = Request::instance()->post();
+            // print_r($data);die;
+            $username = $data['username'];
+            $password = $data['password1'];
+            //添加信息
+            $res = Db('reg')->where('username',"$username")->find();
+            // print_r($res);die;
+            //判断
+            if ($res) {
+                if($password==$res['password1']){
+                    session_start();
+                    $_SESSION['username']="$username";
+                    // echo "<script>alert('恭喜您登录成功');location.href='http://www.ecshop4.0.com/home/index/index'</script>";
+                    return view("Index/index");
+                    // ,['username'=>$res['username']]
+                    // $this->success('登录成功','index/index');
+                }else{
+                    $this->error('密码不正确','login/login');
+                }               
+            } else {
+                $this->error('用户名不正确','login/login');
+            }   
+        } else {
+            return view('login/login');
+        }           
     }
     public function register()
     {

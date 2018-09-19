@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"E:\phpStudy\WWW\ECShop\public/../application/home\view\login\reg.html";i:1537314115;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0062)http://127.0.0.1/shixun/ECShop/user.html?act=register -->
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -32,13 +33,13 @@ var process_request = "正在处理您的请求...";
           <div class="top_menu1"> 
         
           <font id="ECS_MEMBERZONE"><div id="append_parent"></div>
- 欢迎光临本店<a href="{:url('Login/login')}">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="{:url('Login/reg')}">免费注册</a>  </font> </div>
+ 欢迎光临本店<a href="<?php echo url('Login/login'); ?>">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="<?php echo url('Login/reg'); ?>">免费注册</a>  </font> </div>
     </div>
     <div class="bar-cart">
       <div class="fl cart-yh">
-        <a href="{:url('user/welcome')}" class="">用户中心</a>
+        <a href="<?php echo url('user/welcome'); ?>" class="">用户中心</a>
       </div>
-             <div class="cart" id="ECS_CARTINFO"> <a href="{:url('shopcar/car')}" title="查看购物车">购物车(0)</a> </div>
+             <div class="cart" id="ECS_CARTINFO"> <a href="<?php echo url('shopcar/car'); ?>" title="查看购物车">购物车(0)</a> </div>
     </div>
   </div>
 </div>
@@ -87,7 +88,7 @@ var process_request = "正在处理您的请求...";
    <div class="regtitle"></div>
 
 
-    <form action="{:url('Login/register')}" method="post" name="formUser">
+    <form action="<?php echo url('Login/register'); ?>" method="post" name="formUser">
       <table width="100%" border="0" align="left" cellpadding="5" cellspacing="3">
         <tbody><tr>
           <td width="13%" align="right">用户名</td>
@@ -198,7 +199,7 @@ var process_request = "正在处理您的请求...";
         <tr>
           <td>&nbsp;</td>
           <td class="actionSub">
-          <a href="{:url('login/login')}">我已有账号，我要登录</a><br>
+          <a href="<?php echo url('login/login'); ?>">我已有账号，我要登录</a><br>
           <a href="http://127.0.0.1/shixun/ECShop/user.html?act=get_password">您忘记密码了吗？</a>
           </td>
         </tr>

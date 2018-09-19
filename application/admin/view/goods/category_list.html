@@ -43,10 +43,10 @@
 
     <td width="10%">{$v.cat_desc}</td>
     <td width="10%">
-      {in name="$v.is_nav" value="1"}
-      <img src="static/picture/yes.svg"  class="is_nav" id="{$v.cat_id}" value="{$v.is_nav}" width="20"/>
+      {in name="$v.show_in_nav" value="1"}
+      <img src="static/picture/yes.svg"  class="show_in_nav" id="{$v.cat_id}" value="{$v.show_in_nav}" width="20"/>
       {else/}
-      <img src="static/picture/no.svg"  class="is_nav" id="{$v.cat_id}" value="{$v.is_nav}"  width="20"/>
+      <img src="static/picture/no.svg"  class="show_in_nav" id="{$v.cat_id}" value="{$v.show_in_nav}"  width="20"/>
       {/in}</td>
     <td width="10%">
       {in name="$v.is_show" value="1"}
@@ -118,7 +118,7 @@
             }
         })
     });
-    $(document).on('click','.is_nav',function(){
+    $(document).on('click','.show_in_nav',function(){
         var status = $(this).attr('value');
         var cat_id = $(this).attr('id');
         var obj = $(this);

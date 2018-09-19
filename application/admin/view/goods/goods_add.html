@@ -73,7 +73,7 @@ var cancel_color = "无样式";
 <h1>
       <a class="btn btn-right" href="{:url('goods/good_list')}">商品列表</a>
   
-    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;添加新商品 </span>
+    <span class="action-span1"><a href="{:url('index/index')}">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;添加新商品 </span>
   <div style="clear:both"></div>
 </h1><script type="text/javascript" src="static/js/utils.js"></script><script type="text/javascript" src="static/js/selectzone.js"></script><script type="text/javascript" src="static/js/colorselector.js"></script><script type="text/javascript" src="static/js/calendar.js"></script>
 <link href="static/css/calendar.css" rel="stylesheet" type="text/css" />
@@ -97,7 +97,7 @@ var cancel_color = "无样式";
 
     <!-- tab body -->
     <div id="tabbody-div">
-      <form action="{:url('goods_add_do')}" method="post" name="theForm" >
+      <form action="{:url('goods_add_do')}" method="post" name="theForm" enctype="multipart/form-data">
         <!-- 鏈€澶ф枃浠堕檺鍒 -->
         <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
         <!-- 閫氱敤淇℃伅 -->
@@ -201,15 +201,24 @@ var cancel_color = "无样式";
               <input name="promote_start_date" type="text" id="promote_start_date" size="12" value='2018-09-08' readonly="readonly"><button type="button" class="cal" name="selbtn1" id="selbtn1" onclick="return showCalendar('promote_start_date', '%Y-%m-%d', false, false, 'selbtn1');"><img src="static/picture/cal.png" alt=""></button> - <input name="promote_end_date" type="text" id="promote_end_date" size="12" value='2018-10-08' readonly="readonly" /><button type="button" class="cal" name="selbtn2" id="selbtn2" onclick="return showCalendar('promote_end_date', '%Y-%m-%d', false, false, 'selbtn2');"><img src="static/picture/cal.png" alt=""></button>
             </td>
           </tr>
-          <tr>
+         <tr>
             <td class="label">上传商品图片：</td>
             <td>
-              <input type="file" name="goods_img" size="35" />
-                              <img src="static/picture/no.svg" width="16">
-                            <br /><input type="text" size="40" value="商品图片外部URL" style="color:#aaa;" onfocus="if (this.value == '商品图片外部URL'){this.value='http://';this.style.color='#000';}" name="goods_img_url"/>
+              <input type="file" name="goods_img" size="35">
+                              <!-- <img src="images/no.svg" width="16"> -->
+                            <br><input type="text" size="40" value="商品图片外部URL" style="color:#aaa;" onfocus="if (this.value == &#39;商品图片外部URL&#39;){this.value=&#39;http://&#39;;this.style.color=&#39;#000&#39;;}" name="goods_img_url">
             </td>
           </tr>
         </table>
+  
+        <table width="90%" id="detail-table" style="display:none">
+          <tbody><tr>
+            <td>
+            <input type="hidden" id="goods_desc" name="goods_desc" value="" style="display:none"><input type="hidden" id="goods_desc___Config" value="" style="display:none">
+            <textarea id="goods_desc___Frame" name="goods_desc___Frame" id="" cols="170" rows="10"></textarea>
+            </td>
+          </tr>
+        </tbody></table>
 
         <!-- 鍏朵粬淇℃伅 -->
         <table width="90%" id="mix-table" style="display:none" align="center">
@@ -260,18 +269,22 @@ var cancel_color = "无样式";
 
         <!-- 商品属性 -->
                 <table width="90%" id="properties-table" style="display:none" align="center">
-          <tr>
-              <td class="label"><a href="javascript:showNotice('noticeGoodsType');" title="点击此处查看提示信息"><img src="static/picture/notice.svg" width="16" height="16" border="0" alt="点击此处查看提示信息"></a>商品类型：</td>
+          <tbody><tr>
+              <td class="label"><a href="javascript:showNotice(&#39;noticeGoodsType&#39;);" title="点击此处查看提示信息"></a>商品类型：</td>
               <td>
-                <select name="goods_type">
+                <select name="">
                   <option value="0">请选择商品类型</option>
-                  <option value='1'>书</option><option value='2'>音乐</option><option value='3'>电影</option><option value='5'>笔记本电脑</option><option value='6'>数码相机</option><option value='7'>数码摄像机</option><option value='8'>化妆品</option><option value='9'>精品手机</option>                </select><br />
-              <span class="notice-span" style="display:block"  id="noticeGoodsType">请选择商品的所属类型，进而完善此商品的属性</span></td>
+                  {volist name='goods_type' id='v'}
+                  <option value="{$v.type_id}">{$v.type_name}</option>
+                  {/volist}
+               </select><br>
+              <span class="notice-span" style="display:block" id="noticeGoodsType">请选择商品的所属类型，进而完善此商品的属性</span></td>
           </tr>
+
           <tr>
             <td id="tbody-goodsAttr" colspan="2" style="padding:0"><table width="100%" id="attrTable"></table></td>
           </tr>
-        </table>
+        </tbody></table>
         <!-- 閰嶄欢 -->
         <table width="90%" id="groupgoods-table" style="display:none" align="center">
           <!-- 鍟嗗搧鎼滅储 -->
