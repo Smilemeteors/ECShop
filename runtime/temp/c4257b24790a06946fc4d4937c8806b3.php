@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_list.html";i:1537168819;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_list.html";i:1537326077;}*/ ?>
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -12,10 +12,12 @@
 <body>
 <div>
 <h1>
-    <a href="admin/goods/goods_add" class="btn btn-right btn-add-goods">添加新商品</a>
+  <a href="admin/goods/goods_add" class="btn btn-right btn-add-goods">添加新商品</a>
   <a class="btn btn-right" href="http://yunqi.shopex.cn/products/huodiantong" target="_blank">快速录入商品</a>
-  
-    <span class="action-span1"><a href="/admin"><b>ECSHOP 管理中心</b></a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;商品列表 </span>
+    <span class="action-span1">
+    <a href="/admin"><b>ECSHOP 管理中心</b></a>
+    </span>
+    <span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;商品列表 </span>
   <div style="clear:both"></div>
 </h1>
 <!-- 商品搜索 -->
@@ -23,7 +25,25 @@
   <form action="<?php echo url('goods_list'); ?>" method="post" name="searchForm">
         <!-- 分类 -->
     商品分类
-    <select name="cat_id"><option value="0">所有分类</option><option value="26" >家用电器</option><option value="27" >&nbsp;&nbsp;&nbsp;&nbsp;大家电</option><option value="29" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;家用空调</option><option value="30" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;家电配件</option><option value="31" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;洗衣机</option><option value="28" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;平板电脑</option><option value="32" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;冰箱</option><option value="25" >数码时尚</option><option value="18" >智能硬件</option><option value="22" >移动电源</option><option value="16" >服装</option><option value="12" >充值卡</option><option value="1" >手机类型</option><option value="3" >&nbsp;&nbsp;&nbsp;&nbsp;小型手机</option><option value="4" >&nbsp;&nbsp;&nbsp;&nbsp;3G手机</option><option value="6" >手机</option><option value="8" >&nbsp;&nbsp;&nbsp;&nbsp;耳机</option><option value="9" >&nbsp;&nbsp;&nbsp;&nbsp;电池</option><option value="19" >配件</option><option value="24" >&nbsp;&nbsp;&nbsp;&nbsp;数码时尚</option><option value="20" >&nbsp;&nbsp;&nbsp;&nbsp;保护壳</option></select>
+    <select name="cat_id">
+    <option value="0">所有分类</option>
+    <option value="26" >家用电器</option>
+    <option value="27" >&nbsp;&nbsp;&nbsp;&nbsp;大家电</option>
+    <option value="29" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;家用空调</option>
+    <option value="30" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;家电配件</option>
+    <option value="31" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;洗衣机</option>
+    <option value="28" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;平板电脑</option>
+    <option value="32" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;冰箱</option>
+    <option value="25" >数码时尚</option><option value="18" >智能硬件</option>
+    <option value="22" >移动电源</option><option value="16" >服装</option>
+    <option value="12" >充值卡</option><option value="1" >手机类型</option>
+    <option value="3" >&nbsp;&nbsp;&nbsp;&nbsp;小型手机</option>
+    <option value="4" >&nbsp;&nbsp;&nbsp;&nbsp;3G手机</option>
+    <option value="6" >手机</option><option value="8" >&nbsp;&nbsp;&nbsp;&nbsp;耳机</option>
+    <option value="9" >&nbsp;&nbsp;&nbsp;&nbsp;电池</option>
+    <option value="19" >配件</option><option value="24" >&nbsp;&nbsp;&nbsp;&nbsp;数码时尚</option>
+    <option value="20" >&nbsp;&nbsp;&nbsp;&nbsp;保护壳</option>
+    </select>
     <!-- 品牌 -->
     品牌
     <select name="brand_id">
@@ -39,7 +59,7 @@
     <!-- 上架 -->
     上架状态
     <input type="radio" name="is_on_sale" id="" value="1"> 上架    <input type="radio" name="is_on_sale" id="" value="0"> 下架       <!-- 关键字 -->
-    &nbsp;&nbsp; 关键字 <input type="text" name="keyword" size="25" />
+    &nbsp;&nbsp; 关键字 <input type="text" name="keyword" size="25" value="<?=$key?>" />
     <button type="submit" class="btn"> 搜索 </button>
   </form>
 </div>
@@ -49,7 +69,7 @@
 <div class="list-div">
 <table cellpadding="3" cellspacing="1">
   <tr>
-    <th class="checks"><input type="checkbox"></th>
+    <th class="checks"><input  class="ace" type="checkbox"></th>
     <th><a href="javascript:;">编号</a><img src="static/picture/sort_desc.png"/></th>
     <th><a href="javascript:;">商品名称</a></th>
     <th><a href="javascript:;">货号</a></th>
@@ -63,14 +83,13 @@
         <th><a href="javascript:; ">虚拟销量</a></th>
     <th>操作</th>
   </tr>
-
   <?php if(is_array($res) || $res instanceof \think\Collection || $res instanceof \think\Paginator): $i = 0; $__LIST__ = $res;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
     <tr>
-    <td><input type="checkbox" name="checkboxes[]" value="<?php echo $v['goods_id']; ?>"></td>
+    <td><input type="checkbox" class ='box' name="box" alt="<?php echo $v['goods_id']; ?>" /></td>
     <td><?php echo $v['goods_id']; ?></td>
-    <td class="first-cell"><span><?php echo $v['goods_name']; ?></span></td>
-    <td><span><?php echo $v['goods_sn']; ?></span></td>
-    <td align="right"><span><?php echo $v['goods_price']; ?></span></td>
+    <td class="first-cell" value="<?php echo $v['goods_id']; ?>"><span><?php echo $v['goods_name']; ?></span></td>
+    <td value="<?php echo $v['goods_id']; ?>"><span class="name"><?php echo $v['goods_sn']; ?></span></td>
+    <td value="<?php echo $v['goods_id']; ?>"><span class="name1"><?php echo $v['goods_price']; ?></span></td>
      <td>
       <?php if(in_array(($v['is_put']), explode(',',"1"))): ?>
       <img src="static/picture/yes.svg" class="is_put" id="<?php echo $v['goods_id']; ?>" value='<?php echo $v['is_put']; ?>' width="20"/>
@@ -99,20 +118,106 @@
       <img src="static/picture/no.svg" class="is_hot" id="<?php echo $v['goods_id']; ?>"  value='<?php echo $v['is_hot']; ?>' width="20"/>
       <?php endif; ?>
     </td>
-    <td align="center"><span>100</span></td>
-        <td align="right"><span>1</span></td>
-        <td align="center"><span>0</span></td>
+    <td value="<?php echo $v['goods_id']; ?>"><span class="name2"><?php echo $v['sort_order']; ?></span></td>
+    <td value="<?php echo $v['goods_id']; ?>"><span class="name3"><?php echo $v['goods_number']; ?></span></td>
+    <td value="<?php echo $v['goods_id']; ?>"><span>0</span></td>
     <td align="center">
       <a href="admin/error/error_1" target="_blank" title="查看">查看</a>
       <a href="admin/goods/goods_add" title="编辑">编辑</a>
       <a href="admin/goods/goods_add" title="复制">复制</a>
       <a href="javascript:;" id='<?php echo $v['goods_id']; ?>' class="hsz" value="<?php echo $v['is_delete']; ?>" title="回收站">回收站</a>
-      <img src="static/picture/empty.gif" width="16" height="16" border="0">        </td>
+      <img src="static/picture/empty.gif" width="16" height="16" border="0">      
+        </td>
   </tr>
   <?php endforeach; endif; else: echo "" ;endif; ?>
   </table>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
+   //货号修该
+        $(document).on('click','.name',function(){    
+        var old_val=$(this).html();    
+        $(this).parent().html("<input type=\'text\' value="+old_val+">");    
+        $(document).on('blur','input',function(){    
+        var obj=$(this);    
+        var id=$(this).parent().attr('value'); //获取要修改内容的id    
+        var val=$(this).val(); //获取修改后的值  
+          $.ajax({    
+            type:'post',    
+            url:"<?php echo url('goods_sn_upd'); ?>",    
+            data:{id:id,val:val},
+            success:function(msg){  
+                if(msg == 1){    
+                    obj.parent().html("<span class='name'>"+val+"</span>")    
+                }else{    
+                    obj.parent().html("<span class='name'>"+old_val+"</span>")    
+                } 
+            }    
+        })})})
+
+    //价格修改
+        $(document).on('click','.name1',function(){    
+        var old_val=$(this).html();    
+        $(this).parent().html("<input type=\'text\' value="+old_val+">");    
+        $(document).on('blur','input',function(){    
+        var obj=$(this);    
+        var id=$(this).parent().attr('value'); //获取要修改内容的id    
+        var val=$(this).val(); //获取修改后的值  
+          $.ajax({    
+            type:'post',    
+            url:"<?php echo url('goods_price_upd'); ?>",    
+            data:{id:id,val:val},
+            success:function(msg){  
+                if(msg == 1){    
+                    obj.parent().html("<span class='name'>"+val+"</span>")    
+                }else{    
+                    obj.parent().html("<span class='name'>"+old_val+"</span>")    
+                }    
+            }    
+        })})}) 
+
+        //排序修改
+        // $(document).on('click','.name2',function(){    
+        // var old_val=$(this).html();    
+        // $(this).parent().html("<input type=\'text\' value="+old_val+">");    
+        // $(document).on('blur','input',function(){    
+        // var obj=$(this);    
+        // var id=$(this).parent().attr('value'); //获取要修改内容的id    
+        // var val=$(this).val(); //获取修改后的值  
+        //   $.ajax({    
+        //     type:'post',    
+        //     url:"<?php echo url('sort_order_upd'); ?>",    
+        //     data:{id:id,val:val},
+        //     success:function(msg){  
+        //         if(msg == 1){    
+        //             obj.parent().html("<span class='name'>"+val+"</span>")    
+        //         }else{    
+        //             obj.parent().html("<span class='name'>"+old_val+"</span>")    
+        //         }    
+        //     }    
+        // })})})
+
+        //库存修改
+        $(document).on('click','.name3',function(){    
+        var old_val=$(this).html();    
+        $(this).parent().html("<input type=\'text\' value="+old_val+">");    
+        $(document).on('blur','input',function(){    
+        var obj=$(this);    
+        var id=$(this).parent().attr('value'); //获取要修改内容的id    
+        var val=$(this).val(); //获取修改后的值  
+          $.ajax({    
+            type:'post',    
+            url:"<?php echo url('goods_number_upd'); ?>",    
+            data:{id:id,val:val},
+            success:function(msg){  
+                if(msg == 1){    
+                    obj.parent().html("<span class='name'>"+val+"</span>")    
+                }else{    
+                    obj.parent().html("<span class='name'>"+old_val+"</span>")    
+                }
+            }    
+        })})})  
+
+ //数据删除
   $(document).on('click','.hsz',function()
   {
     var r=confirm("你确定要放入回收站吗？");
@@ -150,17 +255,13 @@
       dataType:"json",
       success:function(res){
         if(res.status==1){
-
           alert(res.msg);
           return false;
         }else{
-
           if(status==1){
-
             obj.prop("src","static/picture/no.svg");
             obj.attr("value",0)
           }else{
-
             obj.prop("src","static/picture/yes.svg");
             obj.attr("value",1)
           }
@@ -180,17 +281,13 @@
       dataType:"json",
       success:function(res){
         if(res.status==1){
-
           alert(res.msg);
           return false;
         }else{
-
           if(status==1){
-
             obj.prop("src","static/picture/no.svg");
             obj.attr("value",0)
           }else{
-
             obj.prop("src","static/picture/yes.svg");
             obj.attr("value",1)
           }
@@ -209,17 +306,13 @@
       dataType:"json",
       success:function(res){
         if(res.status==1){
-
           alert(res.msg);
           return false;
         }else{
-
           if(status==1){
-
             obj.prop("src","static/picture/no.svg");
             obj.attr("value",0)
           }else{
-
             obj.prop("src","static/picture/yes.svg");
             obj.attr("value",1)
           }
@@ -238,17 +331,13 @@
       dataType:"json",
       success:function(res){
         if(res.status==1){
-
           alert(res.msg);
           return false;
         }else{
-
           if(status==1){
-
             obj.prop("src","static/picture/no.svg");
             obj.attr("value",0)
           }else{
-
             obj.prop("src","static/picture/yes.svg");
             obj.attr("value",1)
           }
@@ -263,34 +352,9 @@
 <table id="page-table" cellspacing="0" >
   <tr>
     <td style="text-align: left">
-<!--       <input type="hidden" name="act" value="batch"/>
-      <select name="type" id="selAction">
-        <option value="">请选择...</option>
-        <option value="trash">回收站</option>
-        <option value="on_sale">上架</option>
-        <option value="not_on_sale">下架</option>
-        <option value="best">精品</option>
-        <option value="not_best">取消精品</option>
-        <option value="new">新品</option>
-        <option value="not_new">取消新品</option>
-        <option value="hot">热销</option>
-        <option value="not_hot">取消热销</option>
-        <option value="move_to">转移到分类</option>
-        <option value="suppliers_move_to">转移到供货商</option>
-      </select>
-      <select name="target_cat" style="display:none">
-        <option value="0">请选择...</option><option value="26" >家用电器</option><option value="27" >&nbsp;&nbsp;&nbsp;&nbsp;大家电</option><option value="29" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;家用空调</option><option value="30" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;家电配件</option><option value="31" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;洗衣机</option><option value="28" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;平板电脑</option><option value="32" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;冰箱</option><option value="25" >数码时尚</option><option value="18" >智能硬件</option><option value="22" >移动电源</option><option value="16" >服装</option><option value="12" >充值卡</option><option value="1" >手机类型</option><option value="3" >&nbsp;&nbsp;&nbsp;&nbsp;小型手机</option><option value="4" >&nbsp;&nbsp;&nbsp;&nbsp;3G手机</option><option value="6" >手机</option><option value="8" >&nbsp;&nbsp;&nbsp;&nbsp;耳机</option><option value="9" >&nbsp;&nbsp;&nbsp;&nbsp;电池</option><option value="19" >配件</option><option value="24" >&nbsp;&nbsp;&nbsp;&nbsp;数码时尚</option><option value="20" >&nbsp;&nbsp;&nbsp;&nbsp;保护壳</option>      </select>
-            <!二级主菜单：转移供货商-->
-      <!-- <select name="suppliers_id" style="display:none">
-        <option value="-1">请选择...</option>
-        <option value="0">转移到网店</option>
-                  <option value="1">北京供货商</option>
-                  <option value="2">上海供货商</option>
-              </select> -->
-      <!--end!-->
-        
-            <input type="hidden" name="extension_code" value="" /> 
-            <!-- <button class="btn" type="submit" id="btnSubmit" disabled="true"> 确定 </button> -->
+            <input type="button" class="quan" value="全选">
+             <input type="button" class="quanbu" value="全不选">
+                <input type="button" class="pishan" value="批删">
     </td>
     <td align="right" nowrap="true">
     <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
@@ -300,9 +364,7 @@
     </td>
   </tr>
 </table>
-
 </div>
-
 </form>
 <div id="footer" style="margin:0px 0px;">
 共执行 8 个查询，用时 0.014465 秒，Gzip 已禁用，内存占用 2.002 MB<br />
@@ -328,3 +390,61 @@
 </body>
 </div>
 </html>
+<script type="text/javascript">
+  //批量删除
+        $(document).on('click','.pishan',function(){
+            var r=confirm("你确定要放入回收站吗？");
+            if(!r){return};
+            var box=document.getElementsByName('box');
+            var str='';
+            var _this=$(this);
+            $('.box').each(function(){
+                if(this.checked==true){
+                    str +=','+$(this).attr('alt');
+                }
+            })
+            var goods_id=str.substr(1);
+            // alert(goods_id)
+            $.ajax({
+              url:"<?php echo url('goods_pishan'); ?>",
+              data:{goods_id:goods_id},
+              dataType:"json",
+              success:function(res){
+                if(res.msg==1){
+                  window.location.href='<?php echo url("goods_list"); ?>';
+                }else{
+                   alert('放入回收站失败');
+                }
+              }
+            })
+        });
+
+  //全选
+        $('.ace').click(function(){
+            var box=document.getElementsByName('box');
+              for(var i=0;i<=box.length;i++){
+                 if( box[i].checked==true){
+                    box[i].checked=false;
+                }else{
+                    box[i].checked=true;
+                }
+              }
+        });
+
+  //全不选
+        $('.quanbu').click(function(){
+            var box=document.getElementsByName('box');
+              for(var i=0;i<=box.length;i++){
+                  box[i].checked=false;
+            }
+        });
+
+  //全选123
+        $('.quan').click(function(){
+            var box=document.getElementsByName('box');
+            for(var i=0;i<=box.length;i++){
+                box[i].checked=true;
+            }
+        });
+
+</script>

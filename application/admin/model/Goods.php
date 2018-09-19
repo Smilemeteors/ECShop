@@ -71,6 +71,12 @@ class Goods extends Model
     public function inserts($request){
         return Db::table('brand')->insert($request);
     }
+    public function goods_inserts($request){
+        return Db::table('goods')->insert($request);
+    }
+    public function goods_type(){
+        return Db::table('goods_type')->select();
+    }
 
 
 	// public function login(){

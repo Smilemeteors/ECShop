@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\category_list.html";i:1537176298;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\category_list.html";i:1537316786;}*/ ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <base href="/" />
@@ -44,10 +44,10 @@
 
     <td width="10%"><?php echo $v['cat_desc']; ?></td>
     <td width="10%">
-      <?php if(in_array(($v['is_nav']), explode(',',"1"))): ?>
-      <img src="static/picture/yes.svg"  class="is_nav" id="<?php echo $v['cat_id']; ?>" value="<?php echo $v['is_nav']; ?>" width="20"/>
+      <?php if(in_array(($v['show_in_nav']), explode(',',"1"))): ?>
+      <img src="static/picture/yes.svg"  class="show_in_nav" id="<?php echo $v['cat_id']; ?>" value="<?php echo $v['show_in_nav']; ?>" width="20"/>
       <?php else: ?>
-      <img src="static/picture/no.svg"  class="is_nav" id="<?php echo $v['cat_id']; ?>" value="<?php echo $v['is_nav']; ?>"  width="20"/>
+      <img src="static/picture/no.svg"  class="show_in_nav" id="<?php echo $v['cat_id']; ?>" value="<?php echo $v['show_in_nav']; ?>"  width="20"/>
       <?php endif; ?></td>
     <td width="10%">
       <?php if(in_array(($v['is_show']), explode(',',"1"))): ?>
@@ -119,7 +119,7 @@
             }
         })
     });
-    $(document).on('click','.is_nav',function(){
+    $(document).on('click','.show_in_nav',function(){
         var status = $(this).attr('value');
         var cat_id = $(this).attr('id');
         var obj = $(this);

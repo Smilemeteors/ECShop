@@ -163,7 +163,7 @@ class Page extends Paginator
      */
     protected function getActivePageWrapper($text)
     {
-        return '<a href="" class="cur">' . $text . '</a>';
+        return '<a href="javascript:;" class="cur">' . $text . '</a>';
     }
 
     /**
