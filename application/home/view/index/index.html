@@ -21,16 +21,21 @@ var process_request = "正在处理您的请求...";
   <div class="fd_top fd_top1">
     <div class="bar-left">
           <div class="top_menu1"> <script type="text/javascript" src="/static1/js/transport.js"></script><script type="text/javascript" src="/static1/js/utils.js"></script> <font id="ECS_MEMBERZONE"><div id="append_parent"></div>
-  <?php if (isset($_SESSION)) {?>
-      您好,&nbsp;&nbsp;<strong><font color="#AE0000"><?php echo $_SESSION['username']; ?></font></strong>, 欢迎您回来！ <a href="{:url('user/welcome')}">用户中心</a>| <a href="{:url('login/login')}">退出</a>
+ <?php if (empty($_SESSION)) {?>
+       欢迎光临本店<a href="{:url('login/login')}">请登录</a><strong></strong>&nbsp;|&nbsp;&nbsp;<a href="{:url('login/register')}">免费注册</a>
   <?php } else { ?>  
-      欢迎光临本店<a href="{:url('login/login')}">请登录</a><strong></strong>&nbsp;|&nbsp;&nbsp;<a href="{:url('login/register')}">免费注册</a>    
-  <?php } ?> 
+         您好,&nbsp;&nbsp;<strong><font color="#AE0000"><?php echo $_SESSION['username']; ?></font></strong>, 欢迎您回来！ <a href="{:url('user/welcome')}">用户中心</a>| <a href="{:url('Login/back')}">退出</a>
+  <?php } ?>    
+
   </font> </div>
     </div>
     <div class="bar-cart">
       <div class="fl cart-yh">
-        <a href="{:url('user/welcome')}" class="">用户中心</a>
+        <?php if(empty($_SESSION)){ ?>
+           <a href="{:url('Login/login')}" class="">用户中心</a>
+          <?php }else{?>
+         <a href="{:url('user/welcome')}" class="">用户中心</a>
+          <?php }?>
       </div>
         <div class="cart" id="ECS_CARTINFO"> <a href="{:url('shopcar/car')}" title="查看购物车">购物车(0)</a> </div>
     </div>
@@ -42,7 +47,7 @@ var process_request = "正在处理您的请求...";
     <div id="mainNav" class="clearfix maxmenu">
       <div class="m_left">
       <ul>
-        <li><a href="index.html" class="cur">首页</a></li>
+        <li><a href="{:url('Index/index')}" class="cur">首页</a></li>
         <li><a href="category.html?id=16" >服装</a></li>
         <li><a href="category.html?id=22" >移动电源</a></li>
         <li><a href="category.html?id=25" >数码时尚</a></li>
