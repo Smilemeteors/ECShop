@@ -1,0 +1,3871 @@
+---------------------------------------------------------------
+[ 2018-09-19T17:40:33+08:00 ] 127.0.0.1 GET /home/shopcar/car
+[ info ] www.ecshop4.0.com/home/shopcar/car [运行时间：0.158039s][吞吐率：6.33req/s] [内存消耗：2,276.75kb] [文件加载：52]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'shopcar',
+    2 => 'car',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Shopcar->car[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Shopcar.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\shopcar\car.html [ array (
+  0 => 'data',
+  1 => 'nav',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003763s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `brand` [ RunTime:0.027176s ]
+[ sql ] [ SQL ] SELECT * FROM brand b INNER JOIN `goods` `g` ON `b`.`brand_id`=`g`.`brand_id` [ RunTime:0.002405s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `classify` [ RunTime:0.018874s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` WHERE  `show_in_nav` = 1 [ RunTime:0.000789s ]
+[ error ] [4]语法错误: unexpected '}', expecting ',' or ';'[D:\phpstudy\WWW\shixun\ECShop\runtime\temp\28a940ee5a6f1fcab7c6f7f09aa59b29.php:121]
+---------------------------------------------------------------
+[ 2018-09-19T17:40:34+08:00 ] 127.0.0.1 GET /home/shopcar/car
+[ info ] www.ecshop4.0.com/home/shopcar/car [运行时间：0.140338s][吞吐率：7.13req/s] [内存消耗：2,137.97kb] [文件加载：50]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'shopcar',
+    2 => 'car',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Shopcar->car[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Shopcar.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\shopcar\car.html [ array (
+  0 => 'data',
+  1 => 'nav',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002833s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `brand` [ RunTime:0.025504s ]
+[ sql ] [ SQL ] SELECT * FROM brand b INNER JOIN `goods` `g` ON `b`.`brand_id`=`g`.`brand_id` [ RunTime:0.001966s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `classify` [ RunTime:0.019298s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` WHERE  `show_in_nav` = 1 [ RunTime:0.000914s ]
+[ error ] [4]语法错误: unexpected '}', expecting ',' or ';'[D:\phpstudy\WWW\shixun\ECShop\runtime\temp\28a940ee5a6f1fcab7c6f7f09aa59b29.php:121]
+---------------------------------------------------------------
+[ 2018-09-19T17:40:35+08:00 ] 127.0.0.1 GET /home/shopcar/car
+[ info ] www.ecshop4.0.com/home/shopcar/car [运行时间：0.143448s][吞吐率：6.97req/s] [内存消耗：2,137.97kb] [文件加载：50]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'shopcar',
+    2 => 'car',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Shopcar->car[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Shopcar.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\shopcar\car.html [ array (
+  0 => 'data',
+  1 => 'nav',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003494s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `brand` [ RunTime:0.025078s ]
+[ sql ] [ SQL ] SELECT * FROM brand b INNER JOIN `goods` `g` ON `b`.`brand_id`=`g`.`brand_id` [ RunTime:0.001590s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `classify` [ RunTime:0.017957s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` WHERE  `show_in_nav` = 1 [ RunTime:0.001480s ]
+[ error ] [4]语法错误: unexpected '}', expecting ',' or ';'[D:\phpstudy\WWW\shixun\ECShop\runtime\temp\28a940ee5a6f1fcab7c6f7f09aa59b29.php:121]
+---------------------------------------------------------------
+[ 2018-09-19T17:40:35+08:00 ] 127.0.0.1 GET /home/shopcar/car
+[ info ] www.ecshop4.0.com/home/shopcar/car [运行时间：0.141922s][吞吐率：7.05req/s] [内存消耗：2,137.97kb] [文件加载：50]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'shopcar',
+    2 => 'car',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Shopcar->car[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Shopcar.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\shopcar\car.html [ array (
+  0 => 'data',
+  1 => 'nav',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002285s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `brand` [ RunTime:0.038273s ]
+[ sql ] [ SQL ] SELECT * FROM brand b INNER JOIN `goods` `g` ON `b`.`brand_id`=`g`.`brand_id` [ RunTime:0.001637s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `classify` [ RunTime:0.018854s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` WHERE  `show_in_nav` = 1 [ RunTime:0.000641s ]
+[ error ] [4]语法错误: unexpected '}', expecting ',' or ';'[D:\phpstudy\WWW\shixun\ECShop\runtime\temp\28a940ee5a6f1fcab7c6f7f09aa59b29.php:121]
+---------------------------------------------------------------
+[ 2018-09-19T17:40:35+08:00 ] 127.0.0.1 GET /home/shopcar/car
+[ info ] www.ecshop4.0.com/home/shopcar/car [运行时间：0.159847s][吞吐率：6.26req/s] [内存消耗：2,137.97kb] [文件加载：50]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'shopcar',
+    2 => 'car',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Shopcar->car[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Shopcar.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\shopcar\car.html [ array (
+  0 => 'data',
+  1 => 'nav',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002579s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `brand` [ RunTime:0.027003s ]
+[ sql ] [ SQL ] SELECT * FROM brand b INNER JOIN `goods` `g` ON `b`.`brand_id`=`g`.`brand_id` [ RunTime:0.002380s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `classify` [ RunTime:0.030326s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` WHERE  `show_in_nav` = 1 [ RunTime:0.000729s ]
+[ error ] [4]语法错误: unexpected '}', expecting ',' or ';'[D:\phpstudy\WWW\shixun\ECShop\runtime\temp\28a940ee5a6f1fcab7c6f7f09aa59b29.php:121]
+---------------------------------------------------------------
+[ 2018-09-19T17:40:36+08:00 ] 127.0.0.1 GET /home/shopcar/car
+[ info ] www.ecshop4.0.com/home/shopcar/car [运行时间：0.143950s][吞吐率：6.95req/s] [内存消耗：2,137.97kb] [文件加载：50]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'shopcar',
+    2 => 'car',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Shopcar->car[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Shopcar.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\shopcar\car.html [ array (
+  0 => 'data',
+  1 => 'nav',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003417s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `brand` [ RunTime:0.028327s ]
+[ sql ] [ SQL ] SELECT * FROM brand b INNER JOIN `goods` `g` ON `b`.`brand_id`=`g`.`brand_id` [ RunTime:0.004371s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `classify` [ RunTime:0.021597s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` WHERE  `show_in_nav` = 1 [ RunTime:0.001269s ]
+[ error ] [4]语法错误: unexpected '}', expecting ',' or ';'[D:\phpstudy\WWW\shixun\ECShop\runtime\temp\28a940ee5a6f1fcab7c6f7f09aa59b29.php:121]
+---------------------------------------------------------------
+[ 2018-09-19T17:40:36+08:00 ] 127.0.0.1 GET /home/shopcar/car
+[ info ] www.ecshop4.0.com/home/shopcar/car [运行时间：0.123710s][吞吐率：8.08req/s] [内存消耗：2,137.97kb] [文件加载：50]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'shopcar',
+    2 => 'car',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Shopcar->car[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Shopcar.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\shopcar\car.html [ array (
+  0 => 'data',
+  1 => 'nav',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002890s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `brand` [ RunTime:0.024820s ]
+[ sql ] [ SQL ] SELECT * FROM brand b INNER JOIN `goods` `g` ON `b`.`brand_id`=`g`.`brand_id` [ RunTime:0.001831s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `classify` [ RunTime:0.018713s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` WHERE  `show_in_nav` = 1 [ RunTime:0.000873s ]
+[ error ] [4]语法错误: unexpected '}', expecting ',' or ';'[D:\phpstudy\WWW\shixun\ECShop\runtime\temp\28a940ee5a6f1fcab7c6f7f09aa59b29.php:121]
+---------------------------------------------------------------
+[ 2018-09-19T17:40:58+08:00 ] 127.0.0.1 GET /home/shopcar/car
+[ info ] www.ecshop4.0.com/home/shopcar/car [运行时间：0.190387s][吞吐率：5.25req/s] [内存消耗：2,330.77kb] [文件加载：50]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'shopcar',
+    2 => 'car',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Shopcar->car[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Shopcar.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\shopcar\car.html [ array (
+  0 => 'data',
+  1 => 'nav',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003768s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `brand` [ RunTime:0.033896s ]
+[ sql ] [ SQL ] SELECT * FROM brand b INNER JOIN `goods` `g` ON `b`.`brand_id`=`g`.`brand_id` [ RunTime:0.002786s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `classify` [ RunTime:0.024627s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` WHERE  `show_in_nav` = 1 [ RunTime:0.000973s ]
+---------------------------------------------------------------
+[ 2018-09-19T17:40:58+08:00 ] 127.0.0.1 GET /static1/images/showdiv.js.%E4%B8%8B%E8%BD%BD
+[ info ] www.ecshop4.0.com/static1/images/showdiv.js.%E4%B8%8B%E8%BD%BD [运行时间：0.090152s][吞吐率：11.09req/s] [内存消耗：1,076.23kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'images',
+    2 => 'showdiv.js.下载',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/shopcar/car',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:40:59+08:00 ] 127.0.0.1 GET /static1/css/images/inputbg.gif
+[ info ] www.ecshop4.0.com/static1/css/images/inputbg.gif [运行时间：0.087777s][吞吐率：11.39req/s] [内存消耗：1,076.30kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:40:59+08:00 ] 127.0.0.1 GET /uploads/20180919/1489b5eab3d6be04414e0b98432c8519.png
+[ info ] www.ecshop4.0.com/uploads/20180919/1489b5eab3d6be04414e0b98432c8519.png [运行时间：0.046298s][吞吐率：21.60req/s] [内存消耗：1,076.55kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180919',
+    2 => '1489b5eab3d6be04414e0b98432c8519.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/shopcar/car',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:41:00+08:00 ] 127.0.0.1 GET /static1/css/images/cart.png
+[ info ] www.ecshop4.0.com/static1/css/images/cart.png [运行时间：0.078278s][吞吐率：12.77req/s] [内存消耗：1,076.29kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:41:00+08:00 ] 127.0.0.1 GET /static1/css/images/search.jpg
+[ info ] www.ecshop4.0.com/static1/css/images/search.jpg [运行时间：0.049295s][吞吐率：20.29req/s] [内存消耗：1,076.35kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:41:19+08:00 ] 127.0.0.1 GET /home/shopcar/checkout.html
+[ info ] www.ecshop4.0.com/home/shopcar/checkout.html [运行时间：0.071963s][吞吐率：13.90req/s] [内存消耗：1,507.63kb] [文件加载：43]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'shopcar',
+    2 => 'checkout',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/shopcar/car',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Shopcar->checkout[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Shopcar.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\shopcar\checkout.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:41:19+08:00 ] 127.0.0.1 GET /home/shopcar/%E8%B4%AD%E7%89%A9%E6%B5%81%E7%A8%8B_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/utils.js
+[ info ] www.ecshop4.0.com/home/shopcar/%E8%B4%AD%E7%89%A9%E6%B5%81%E7%A8%8B_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/utils.js [运行时间：0.097355s][吞吐率：10.27req/s] [内存消耗：1,300.40kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'shopcar',
+    2 => '购物流程_ECSHOP演示站 - Powered by ECShop_files',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/shopcar/checkout.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:41:19+08:00 ] 127.0.0.1 GET /home/shopcar/%E8%B4%AD%E7%89%A9%E6%B5%81%E7%A8%8B_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/transport.js
+[ info ] www.ecshop4.0.com/home/shopcar/%E8%B4%AD%E7%89%A9%E6%B5%81%E7%A8%8B_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/transport.js [运行时间：0.107073s][吞吐率：9.34req/s] [内存消耗：1,300.48kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'shopcar',
+    2 => '购物流程_ECSHOP演示站 - Powered by ECShop_files',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/shopcar/checkout.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:41:19+08:00 ] 127.0.0.1 GET /home/shopcar/%E8%B4%AD%E7%89%A9%E6%B5%81%E7%A8%8B_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/utils.js
+[ info ] www.ecshop4.0.com/home/shopcar/%E8%B4%AD%E7%89%A9%E6%B5%81%E7%A8%8B_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/utils.js [运行时间：0.059849s][吞吐率：16.71req/s] [内存消耗：1,300.40kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'shopcar',
+    2 => '购物流程_ECSHOP演示站 - Powered by ECShop_files',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/shopcar/checkout.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:41:19+08:00 ] 127.0.0.1 GET /static1/css/images/search.jpg
+[ info ] www.ecshop4.0.com/static1/css/images/search.jpg [运行时间：0.080842s][吞吐率：12.37req/s] [内存消耗：1,076.30kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:41:19+08:00 ] 127.0.0.1 GET /static1/css/images/inputbg.gif
+[ info ] www.ecshop4.0.com/static1/css/images/inputbg.gif [运行时间：0.073713s][吞吐率：13.57req/s] [内存消耗：1,076.30kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:41:20+08:00 ] 127.0.0.1 GET /home/shopcar/%E8%B4%AD%E7%89%A9%E6%B5%81%E7%A8%8B_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/logo.gif
+[ info ] www.ecshop4.0.com/home/shopcar/%E8%B4%AD%E7%89%A9%E6%B5%81%E7%A8%8B_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/logo.gif [运行时间：0.061797s][吞吐率：16.18req/s] [内存消耗：1,300.68kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'shopcar',
+    2 => '购物流程_ECSHOP演示站 - Powered by ECShop_files',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/shopcar/checkout.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:41:20+08:00 ] 127.0.0.1 GET /home/shopcar/%E8%B4%AD%E7%89%A9%E6%B5%81%E7%A8%8B_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/bnt_subOrder.gif
+[ info ] www.ecshop4.0.com/home/shopcar/%E8%B4%AD%E7%89%A9%E6%B5%81%E7%A8%8B_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/bnt_subOrder.gif [运行时间：0.078625s][吞吐率：12.72req/s] [内存消耗：1,300.57kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'shopcar',
+    2 => '购物流程_ECSHOP演示站 - Powered by ECShop_files',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/shopcar/checkout.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:41:20+08:00 ] 127.0.0.1 GET /home/shopcar/%E8%B4%AD%E7%89%A9%E6%B5%81%E7%A8%8B_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/bnt_subOrder.gif
+[ info ] www.ecshop4.0.com/home/shopcar/%E8%B4%AD%E7%89%A9%E6%B5%81%E7%A8%8B_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/bnt_subOrder.gif [运行时间：0.137576s][吞吐率：7.27req/s] [内存消耗：1,300.57kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'shopcar',
+    2 => '购物流程_ECSHOP演示站 - Powered by ECShop_files',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/shopcar/checkout.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:41:20+08:00 ] 127.0.0.1 GET /home/shopcar/%E8%B4%AD%E7%89%A9%E6%B5%81%E7%A8%8B_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/bottom.jpg
+[ info ] www.ecshop4.0.com/home/shopcar/%E8%B4%AD%E7%89%A9%E6%B5%81%E7%A8%8B_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/bottom.jpg [运行时间：0.091100s][吞吐率：10.98req/s] [内存消耗：1,300.55kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'shopcar',
+    2 => '购物流程_ECSHOP演示站 - Powered by ECShop_files',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/shopcar/checkout.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:41:20+08:00 ] 127.0.0.1 GET /home/shopcar/%E8%B4%AD%E7%89%A9%E6%B5%81%E7%A8%8B_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/weixin.jpg
+[ info ] www.ecshop4.0.com/home/shopcar/%E8%B4%AD%E7%89%A9%E6%B5%81%E7%A8%8B_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/weixin.jpg [运行时间：0.085106s][吞吐率：11.75req/s] [内存消耗：1,300.55kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'shopcar',
+    2 => '购物流程_ECSHOP演示站 - Powered by ECShop_files',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/shopcar/checkout.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:41:26+08:00 ] 127.0.0.1 GET /uploads/20180919/1489b5eab3d6be04414e0b98432c8519.png
+[ info ] www.ecshop4.0.com/uploads/20180919/1489b5eab3d6be04414e0b98432c8519.png [运行时间：0.079242s][吞吐率：12.62req/s] [内存消耗：1,076.55kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180919',
+    2 => '1489b5eab3d6be04414e0b98432c8519.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/shopcar/car',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:41:26+08:00 ] 127.0.0.1 GET /static1/images/showdiv.js.%E4%B8%8B%E8%BD%BD
+[ info ] www.ecshop4.0.com/static1/images/showdiv.js.%E4%B8%8B%E8%BD%BD [运行时间：0.109436s][吞吐率：9.14req/s] [内存消耗：1,076.23kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'images',
+    2 => 'showdiv.js.下载',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/shopcar/car',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:41:26+08:00 ] 127.0.0.1 GET /uploads/20180919/1489b5eab3d6be04414e0b98432c8519.png
+[ info ] www.ecshop4.0.com/uploads/20180919/1489b5eab3d6be04414e0b98432c8519.png [运行时间：0.074912s][吞吐率：13.35req/s] [内存消耗：1,076.55kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180919',
+    2 => '1489b5eab3d6be04414e0b98432c8519.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/shopcar/car',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:41:28+08:00 ] 127.0.0.1 GET /home/index/index.html
+[ info ] www.ecshop4.0.com/home/index/index.html [运行时间：0.191179s][吞吐率：5.23req/s] [内存消耗：2,566.27kb] [文件加载：52]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/shopcar/car',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\index.html [ array (
+  0 => 'nav',
+  1 => 'goods_data',
+  2 => 'cat_data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007242s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `classify` [ RunTime:0.028830s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` [ RunTime:0.001219s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.028074s ]
+[ sql ] [ SQL ] SELECT * FROM goods g INNER JOIN `classify` `c` ON `g`.`cat_id`=`c`.`cat_id` [ RunTime:0.002996s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` WHERE  `show_in_nav` = 1 [ RunTime:0.001193s ]
+---------------------------------------------------------------
+[ 2018-09-19T17:41:28+08:00 ] 127.0.0.1 GET /static1/css/images/icon1.png
+[ info ] www.ecshop4.0.com/static1/css/images/icon1.png [运行时间：0.126206s][吞吐率：7.92req/s] [内存消耗：1,076.30kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:41:28+08:00 ] 127.0.0.1 GET /static1/css/images/next.jpg
+[ info ] www.ecshop4.0.com/static1/css/images/next.jpg [运行时间：0.076895s][吞吐率：13.00req/s] [内存消耗：1,076.29kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:41:28+08:00 ] 127.0.0.1 GET /static1/css/images/pre.jpg
+[ info ] www.ecshop4.0.com/static1/css/images/pre.jpg [运行时间：0.258798s][吞吐率：3.86req/s] [内存消耗：1,076.29kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:41:31+08:00 ] 127.0.0.1 GET /home/index/fenlri.html?cat_id=1
+[ info ] www.ecshop4.0.com/home/index/fenlri.html?cat_id=1 [运行时间：0.084076s][吞吐率：11.89req/s] [内存消耗：1,321.77kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'fenlri',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'cat_id' => '1',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:41:39+08:00 ] 127.0.0.1 GET /home/index/fenlri.html?cat_id=1
+[ info ] www.ecshop4.0.com/home/index/fenlri.html?cat_id=1 [运行时间：0.076247s][吞吐率：13.12req/s] [内存消耗：1,321.77kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'fenlri',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'cat_id' => '1',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:42:19+08:00 ] 127.0.0.1 GET /home/index/fenlri.html?cat_id=1
+[ info ] www.ecshop4.0.com/home/index/fenlri.html?cat_id=1 [运行时间：0.067449s][吞吐率：14.83req/s] [内存消耗：1,322.06kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'fenlri',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'cat_id' => '1',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:42:19+08:00 ] 127.0.0.1 GET /home/index/fenlri.html?cat_id=1
+[ info ] www.ecshop4.0.com/home/index/fenlri.html?cat_id=1 [运行时间：0.059316s][吞吐率：16.86req/s] [内存消耗：1,322.06kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'fenlri',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'cat_id' => '1',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:42:20+08:00 ] 127.0.0.1 GET /home/index/fenlri.html?cat_id=1
+[ info ] www.ecshop4.0.com/home/index/fenlri.html?cat_id=1 [运行时间：0.063940s][吞吐率：15.64req/s] [内存消耗：1,322.06kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'fenlri',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'cat_id' => '1',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:42:22+08:00 ] 127.0.0.1 GET /home/index/index.html
+[ info ] www.ecshop4.0.com/home/index/index.html [运行时间：0.150587s][吞吐率：6.64req/s] [内存消耗：2,404.25kb] [文件加载：50]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/shopcar/car',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\index.html [ array (
+  0 => 'nav',
+  1 => 'goods_data',
+  2 => 'cat_data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007176s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `classify` [ RunTime:0.021791s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` [ RunTime:0.001307s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.019718s ]
+[ sql ] [ SQL ] SELECT * FROM goods g INNER JOIN `classify` `c` ON `g`.`cat_id`=`c`.`cat_id` [ RunTime:0.002116s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` WHERE  `show_in_nav` = 1 [ RunTime:0.000978s ]
+---------------------------------------------------------------
+[ 2018-09-19T17:42:22+08:00 ] 127.0.0.1 GET /static1/css/images/cart.png
+[ info ] www.ecshop4.0.com/static1/css/images/cart.png [运行时间：0.122361s][吞吐率：8.17req/s] [内存消耗：1,076.29kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:42:22+08:00 ] 127.0.0.1 GET /static1/css/images/icon1.png
+[ info ] www.ecshop4.0.com/static1/css/images/icon1.png [运行时间：0.142034s][吞吐率：7.04req/s] [内存消耗：1,076.30kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:42:22+08:00 ] 127.0.0.1 GET /static1/css/images/search.jpg
+[ info ] www.ecshop4.0.com/static1/css/images/search.jpg [运行时间：0.223465s][吞吐率：4.47req/s] [内存消耗：1,076.30kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:42:22+08:00 ] 127.0.0.1 GET /static1/css/images/next.jpg
+[ info ] www.ecshop4.0.com/static1/css/images/next.jpg [运行时间：0.248277s][吞吐率：4.03req/s] [内存消耗：1,076.29kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:42:22+08:00 ] 127.0.0.1 GET /home/index/fenlri.html?cat_id=1
+[ info ] www.ecshop4.0.com/home/index/fenlri.html?cat_id=1 [运行时间：0.062437s][吞吐率：16.02req/s] [内存消耗：1,321.77kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'fenlri',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'cat_id' => '1',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:42:23+08:00 ] 127.0.0.1 GET /static1/css/images/pre.jpg
+[ info ] www.ecshop4.0.com/static1/css/images/pre.jpg [运行时间：0.043069s][吞吐率：23.22req/s] [内存消耗：1,076.29kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:42:44+08:00 ] 127.0.0.1 GET /home/index/fenlri.html?cat_id=1
+[ info ] www.ecshop4.0.com/home/index/fenlri.html?cat_id=1 [运行时间：0.067475s][吞吐率：14.82req/s] [内存消耗：1,322.06kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'fenlri',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'cat_id' => '1',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:42:45+08:00 ] 127.0.0.1 GET /home/index/fenlri.html?cat_id=1
+[ info ] www.ecshop4.0.com/home/index/fenlri.html?cat_id=1 [运行时间：0.077949s][吞吐率：12.83req/s] [内存消耗：1,322.06kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'fenlri',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'cat_id' => '1',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:42:45+08:00 ] 127.0.0.1 GET /home/index/fenlri.html?cat_id=1
+[ info ] www.ecshop4.0.com/home/index/fenlri.html?cat_id=1 [运行时间：0.055815s][吞吐率：17.92req/s] [内存消耗：1,322.06kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'fenlri',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'cat_id' => '1',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:42:46+08:00 ] 127.0.0.1 GET /static1/css/images/cart.png
+[ info ] www.ecshop4.0.com/static1/css/images/cart.png [运行时间：0.099166s][吞吐率：10.08req/s] [内存消耗：1,076.29kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:42:46+08:00 ] 127.0.0.1 GET /static1/css/images/search.jpg
+[ info ] www.ecshop4.0.com/static1/css/images/search.jpg [运行时间：0.138898s][吞吐率：7.20req/s] [内存消耗：1,076.30kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:42:46+08:00 ] 127.0.0.1 GET /static1/css/images/pre.jpg
+[ info ] www.ecshop4.0.com/static1/css/images/pre.jpg [运行时间：0.089339s][吞吐率：11.19req/s] [内存消耗：1,076.29kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:42:46+08:00 ] 127.0.0.1 GET /static1/css/images/next.jpg
+[ info ] www.ecshop4.0.com/static1/css/images/next.jpg [运行时间：0.091222s][吞吐率：10.96req/s] [内存消耗：1,076.29kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:42:47+08:00 ] 127.0.0.1 GET /home/index/index.html
+[ info ] www.ecshop4.0.com/home/index/index.html [运行时间：0.232920s][吞吐率：4.29req/s] [内存消耗：2,566.50kb] [文件加载：52]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/shopcar/car',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\index.html [ array (
+  0 => 'nav',
+  1 => 'goods_data',
+  2 => 'cat_data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002500s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `classify` [ RunTime:0.025786s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` [ RunTime:0.000813s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.018671s ]
+[ sql ] [ SQL ] SELECT * FROM goods g INNER JOIN `classify` `c` ON `g`.`cat_id`=`c`.`cat_id` [ RunTime:0.001737s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` WHERE  `show_in_nav` = 1 [ RunTime:0.000737s ]
+---------------------------------------------------------------
+[ 2018-09-19T17:42:47+08:00 ] 127.0.0.1 GET /static1/css/images/icon1.png
+[ info ] www.ecshop4.0.com/static1/css/images/icon1.png [运行时间：0.067812s][吞吐率：14.75req/s] [内存消耗：1,076.30kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:42:47+08:00 ] 127.0.0.1 GET /static1/css/images/cart.png
+[ info ] www.ecshop4.0.com/static1/css/images/cart.png [运行时间：0.091551s][吞吐率：10.92req/s] [内存消耗：1,076.29kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:42:47+08:00 ] 127.0.0.1 GET /static1/css/images/next.jpg
+[ info ] www.ecshop4.0.com/static1/css/images/next.jpg [运行时间：0.073841s][吞吐率：13.54req/s] [内存消耗：1,076.29kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:42:47+08:00 ] 127.0.0.1 GET /static1/css/images/pre.jpg
+[ info ] www.ecshop4.0.com/static1/css/images/pre.jpg [运行时间：0.125607s][吞吐率：7.96req/s] [内存消耗：1,076.29kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:42:47+08:00 ] 127.0.0.1 GET /static1/css/images/search.jpg
+[ info ] www.ecshop4.0.com/static1/css/images/search.jpg [运行时间：0.195980s][吞吐率：5.10req/s] [内存消耗：1,076.30kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:42:47+08:00 ] 127.0.0.1 GET /home/index/index.html
+[ info ] www.ecshop4.0.com/home/index/index.html [运行时间：0.206793s][吞吐率：4.84req/s] [内存消耗：2,404.25kb] [文件加载：50]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/shopcar/car',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\index.html [ array (
+  0 => 'nav',
+  1 => 'goods_data',
+  2 => 'cat_data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003322s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `classify` [ RunTime:0.025154s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` [ RunTime:0.001093s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.019391s ]
+[ sql ] [ SQL ] SELECT * FROM goods g INNER JOIN `classify` `c` ON `g`.`cat_id`=`c`.`cat_id` [ RunTime:0.001776s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` WHERE  `show_in_nav` = 1 [ RunTime:0.000746s ]
+---------------------------------------------------------------
+[ 2018-09-19T17:42:48+08:00 ] 127.0.0.1 GET /home/index/fenlei.html?cat_id=1
+[ info ] www.ecshop4.0.com/home/index/fenlei.html?cat_id=1 [运行时间：0.176094s][吞吐率：5.68req/s] [内存消耗：2,557.41kb] [文件加载：53]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'fenlei',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'cat_id' => '1',
+)
+[ info ] [ RUN ] app\home\controller\Index->fenlei[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\fenlei.html [ array (
+  0 => 'hot_data',
+  1 => 'cat_name',
+  2 => 'nav',
+  3 => 'count',
+  4 => 'goods_data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002606s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `classify` [ RunTime:0.029876s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` [ RunTime:0.000985s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hot` [ RunTime:0.020641s ]
+[ sql ] [ SQL ] SELECT * FROM `hot` ORDER BY `hot_num` DESC [ RunTime:0.001022s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` WHERE  `show_in_nav` = 1 [ RunTime:0.000909s ]
+[ sql ] [ SQL ] select * from classify where cat_id='1' [ RunTime:0.001156s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.019537s ]
+[ sql ] [ SQL ] SELECT * FROM `goods` WHERE  (  cat_id in (1,3,4) ) [ RunTime:0.001685s ]
+---------------------------------------------------------------
+[ 2018-09-19T17:42:48+08:00 ] 127.0.0.1 GET /uploads/20180919/1489b5eab3d6be04414e0b98432c8519.png
+[ info ] www.ecshop4.0.com/uploads/20180919/1489b5eab3d6be04414e0b98432c8519.png [运行时间：0.105751s][吞吐率：9.46req/s] [内存消耗：1,076.59kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180919',
+    2 => '1489b5eab3d6be04414e0b98432c8519.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/fenlei.html?cat_id=1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:42:48+08:00 ] 127.0.0.1 GET /static1/css/images/compareBg.gif
+[ info ] www.ecshop4.0.com/static1/css/images/compareBg.gif [运行时间：0.086457s][吞吐率：11.57req/s] [内存消耗：1,076.36kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:42:49+08:00 ] 127.0.0.1 GET /home/index/details.html?goods_id=3
+[ info ] www.ecshop4.0.com/home/index/details.html?goods_id=3 [运行时间：0.154322s][吞吐率：6.48req/s] [内存消耗：1,973.52kb] [文件加载：51]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'details',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/fenlei.html?cat_id=1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'goods_id' => '3',
+)
+[ info ] [ RUN ] app\home\controller\Index->details[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003378s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.029829s ]
+[ sql ] [ SQL ] SELECT * FROM goods g INNER JOIN `brand` `b` ON `g`.`brand_id`=`b`.`brand_id` WHERE  `goods_id` = 3 [ RunTime:0.001414s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'goods_id' in where clause is ambiguous[D:\phpstudy\WWW\shixun\ECShop\thinkphp\library\think\db\Connection.php:390]
+---------------------------------------------------------------
+[ 2018-09-19T17:43:56+08:00 ] 127.0.0.1 GET /uploads/20180919/1489b5eab3d6be04414e0b98432c8519.png
+[ info ] www.ecshop4.0.com/uploads/20180919/1489b5eab3d6be04414e0b98432c8519.png [运行时间：0.109338s][吞吐率：9.15req/s] [内存消耗：1,076.59kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180919',
+    2 => '1489b5eab3d6be04414e0b98432c8519.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/fenlei.html?cat_id=1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:43:56+08:00 ] 127.0.0.1 GET /static1/css/images/compareBg.gif
+[ info ] www.ecshop4.0.com/static1/css/images/compareBg.gif [运行时间：0.081944s][吞吐率：12.20req/s] [内存消耗：1,076.36kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:43:56+08:00 ] 127.0.0.1 GET /home/index/fenlei.html?cat_id=1
+[ info ] www.ecshop4.0.com/home/index/fenlei.html?cat_id=1 [运行时间：0.166648s][吞吐率：6.00req/s] [内存消耗：2,408.05kb] [文件加载：51]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'fenlei',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'cat_id' => '1',
+)
+[ info ] [ RUN ] app\home\controller\Index->fenlei[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\fenlei.html [ array (
+  0 => 'hot_data',
+  1 => 'cat_name',
+  2 => 'nav',
+  3 => 'count',
+  4 => 'goods_data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003215s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `classify` [ RunTime:0.025471s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` [ RunTime:0.001143s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hot` [ RunTime:0.018501s ]
+[ sql ] [ SQL ] SELECT * FROM `hot` ORDER BY `hot_num` DESC [ RunTime:0.000747s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` WHERE  `show_in_nav` = 1 [ RunTime:0.000841s ]
+[ sql ] [ SQL ] select * from classify where cat_id='1' [ RunTime:0.000769s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.019637s ]
+[ sql ] [ SQL ] SELECT * FROM `goods` WHERE  (  cat_id in (1,3,4) ) [ RunTime:0.001676s ]
+---------------------------------------------------------------
+[ 2018-09-19T17:43:56+08:00 ] 127.0.0.1 GET /uploads/20180919/1489b5eab3d6be04414e0b98432c8519.png
+[ info ] www.ecshop4.0.com/uploads/20180919/1489b5eab3d6be04414e0b98432c8519.png [运行时间：0.078556s][吞吐率：12.73req/s] [内存消耗：1,076.59kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180919',
+    2 => '1489b5eab3d6be04414e0b98432c8519.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/fenlei.html?cat_id=1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:43:58+08:00 ] 127.0.0.1 GET /home/index/details.html?goods_id=3
+[ info ] www.ecshop4.0.com/home/index/details.html?goods_id=3 [运行时间：0.146457s][吞吐率：6.83req/s] [内存消耗：1,973.55kb] [文件加载：51]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'details',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/fenlei.html?cat_id=1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'goods_id' => '3',
+)
+[ info ] [ RUN ] app\home\controller\Index->details[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002918s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.030256s ]
+[ sql ] [ SQL ] SELECT * FROM goods g INNER JOIN `brand` `b` ON `g`.`brand_id`=`b`.`brand_id` WHERE  `goods_id` = 3 [ RunTime:0.001706s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'goods_id' in where clause is ambiguous[D:\phpstudy\WWW\shixun\ECShop\thinkphp\library\think\db\Connection.php:390]
+---------------------------------------------------------------
+[ 2018-09-19T17:44:08+08:00 ] 127.0.0.1 GET /uploads/20180919/1489b5eab3d6be04414e0b98432c8519.png
+[ info ] www.ecshop4.0.com/uploads/20180919/1489b5eab3d6be04414e0b98432c8519.png [运行时间：0.098512s][吞吐率：10.15req/s] [内存消耗：1,076.59kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180919',
+    2 => '1489b5eab3d6be04414e0b98432c8519.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/fenlei.html?cat_id=1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:44:08+08:00 ] 127.0.0.1 GET /static1/css/images/compareBg.gif
+[ info ] www.ecshop4.0.com/static1/css/images/compareBg.gif [运行时间：0.100645s][吞吐率：9.94req/s] [内存消耗：1,076.36kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:44:09+08:00 ] 127.0.0.1 GET /home/index/details.html?goods_id=4
+[ info ] www.ecshop4.0.com/home/index/details.html?goods_id=4 [运行时间：0.117267s][吞吐率：8.53req/s] [内存消耗：1,973.55kb] [文件加载：51]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'details',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/fenlei.html?cat_id=1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'goods_id' => '4',
+)
+[ info ] [ RUN ] app\home\controller\Index->details[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002506s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.024505s ]
+[ sql ] [ SQL ] SELECT * FROM goods g INNER JOIN `brand` `b` ON `g`.`brand_id`=`b`.`brand_id` WHERE  `goods_id` = 4 [ RunTime:0.002542s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'goods_id' in where clause is ambiguous[D:\phpstudy\WWW\shixun\ECShop\thinkphp\library\think\db\Connection.php:390]
+---------------------------------------------------------------
+[ 2018-09-19T17:44:10+08:00 ] 127.0.0.1 GET /uploads/20180919/1489b5eab3d6be04414e0b98432c8519.png
+[ info ] www.ecshop4.0.com/uploads/20180919/1489b5eab3d6be04414e0b98432c8519.png [运行时间：0.099582s][吞吐率：10.04req/s] [内存消耗：1,076.59kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180919',
+    2 => '1489b5eab3d6be04414e0b98432c8519.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/fenlei.html?cat_id=1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:44:10+08:00 ] 127.0.0.1 GET /static1/css/images/compareBg.gif
+[ info ] www.ecshop4.0.com/static1/css/images/compareBg.gif [运行时间：0.077418s][吞吐率：12.92req/s] [内存消耗：1,076.36kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:44:14+08:00 ] 127.0.0.1 GET /home/index/details.html?goods_id=3
+[ info ] www.ecshop4.0.com/home/index/details.html?goods_id=3 [运行时间：0.115041s][吞吐率：8.69req/s] [内存消耗：1,973.55kb] [文件加载：51]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'details',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/fenlei.html?cat_id=1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'goods_id' => '3',
+)
+[ info ] [ RUN ] app\home\controller\Index->details[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002968s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.022077s ]
+[ sql ] [ SQL ] SELECT * FROM goods g INNER JOIN `brand` `b` ON `g`.`brand_id`=`b`.`brand_id` WHERE  `goods_id` = 3 [ RunTime:0.001829s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'goods_id' in where clause is ambiguous[D:\phpstudy\WWW\shixun\ECShop\thinkphp\library\think\db\Connection.php:390]
+---------------------------------------------------------------
+[ 2018-09-19T17:44:15+08:00 ] 127.0.0.1 GET /uploads/20180919/1489b5eab3d6be04414e0b98432c8519.png
+[ info ] www.ecshop4.0.com/uploads/20180919/1489b5eab3d6be04414e0b98432c8519.png [运行时间：0.105710s][吞吐率：9.46req/s] [内存消耗：1,076.59kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180919',
+    2 => '1489b5eab3d6be04414e0b98432c8519.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/fenlei.html?cat_id=1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:44:15+08:00 ] 127.0.0.1 GET /static1/css/images/compareBg.gif
+[ info ] www.ecshop4.0.com/static1/css/images/compareBg.gif [运行时间：0.083242s][吞吐率：12.01req/s] [内存消耗：1,076.36kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:44:17+08:00 ] 127.0.0.1 GET /home/index/fenlei?cat_id=26
+[ info ] www.ecshop4.0.com/home/index/fenlei?cat_id=26 [运行时间：0.169448s][吞吐率：5.90req/s] [内存消耗：2,297.60kb] [文件加载：51]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'fenlei',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/fenlei.html?cat_id=1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'cat_id' => '26',
+)
+[ info ] [ RUN ] app\home\controller\Index->fenlei[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\fenlei.html [ array (
+  0 => 'hot_data',
+  1 => 'cat_name',
+  2 => 'nav',
+  3 => 'count',
+  4 => 'goods_data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002759s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `classify` [ RunTime:0.025542s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` [ RunTime:0.001105s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hot` [ RunTime:0.019241s ]
+[ sql ] [ SQL ] SELECT * FROM `hot` ORDER BY `hot_num` DESC [ RunTime:0.000917s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` WHERE  `show_in_nav` = 1 [ RunTime:0.001044s ]
+[ sql ] [ SQL ] select * from classify where cat_id='26' [ RunTime:0.000915s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.020796s ]
+[ sql ] [ SQL ] SELECT * FROM `goods` WHERE  (  cat_id in (26,27) ) [ RunTime:0.001519s ]
+---------------------------------------------------------------
+[ 2018-09-19T17:44:17+08:00 ] 127.0.0.1 GET /static1/css/images/cart.png
+[ info ] www.ecshop4.0.com/static1/css/images/cart.png [运行时间：0.074215s][吞吐率：13.47req/s] [内存消耗：1,076.29kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:44:17+08:00 ] 127.0.0.1 GET /static1/css/images/compareBg.gif
+[ info ] www.ecshop4.0.com/static1/css/images/compareBg.gif [运行时间：0.078398s][吞吐率：12.76req/s] [内存消耗：1,076.36kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:44:18+08:00 ] 127.0.0.1 GET /home/index/index.html
+[ info ] www.ecshop4.0.com/home/index/index.html [运行时间：0.171710s][吞吐率：5.82req/s] [内存消耗：2,403.98kb] [文件加载：50]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/fenlei?cat_id=26',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\index.html [ array (
+  0 => 'nav',
+  1 => 'goods_data',
+  2 => 'cat_data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002458s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `classify` [ RunTime:0.034931s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` [ RunTime:0.001323s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.018873s ]
+[ sql ] [ SQL ] SELECT * FROM goods g INNER JOIN `classify` `c` ON `g`.`cat_id`=`c`.`cat_id` [ RunTime:0.002462s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` WHERE  `show_in_nav` = 1 [ RunTime:0.000793s ]
+---------------------------------------------------------------
+[ 2018-09-19T17:44:18+08:00 ] 127.0.0.1 GET /static1/css/images/cart.png
+[ info ] www.ecshop4.0.com/static1/css/images/cart.png [运行时间：0.187082s][吞吐率：5.35req/s] [内存消耗：1,076.29kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:44:18+08:00 ] 127.0.0.1 GET /static1/css/images/icon1.png
+[ info ] www.ecshop4.0.com/static1/css/images/icon1.png [运行时间：0.154487s][吞吐率：6.47req/s] [内存消耗：1,076.30kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:44:18+08:00 ] 127.0.0.1 GET /static1/css/images/search.jpg
+[ info ] www.ecshop4.0.com/static1/css/images/search.jpg [运行时间：0.271857s][吞吐率：3.68req/s] [内存消耗：1,076.30kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:44:18+08:00 ] 127.0.0.1 GET /static1/css/images/pre.jpg
+[ info ] www.ecshop4.0.com/static1/css/images/pre.jpg [运行时间：0.098241s][吞吐率：10.18req/s] [内存消耗：1,076.29kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:44:18+08:00 ] 127.0.0.1 GET /static1/css/images/next.jpg
+[ info ] www.ecshop4.0.com/static1/css/images/next.jpg [运行时间：0.137080s][吞吐率：7.30req/s] [内存消耗：1,076.29kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:44:20+08:00 ] 127.0.0.1 GET /home/index/fenlei.html?cat_id=6
+[ info ] www.ecshop4.0.com/home/index/fenlei.html?cat_id=6 [运行时间：0.196062s][吞吐率：5.10req/s] [内存消耗：2,297.55kb] [文件加载：51]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'fenlei',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'cat_id' => '6',
+)
+[ info ] [ RUN ] app\home\controller\Index->fenlei[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\fenlei.html [ array (
+  0 => 'hot_data',
+  1 => 'cat_name',
+  2 => 'nav',
+  3 => 'count',
+  4 => 'goods_data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004128s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `classify` [ RunTime:0.025511s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` [ RunTime:0.001131s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hot` [ RunTime:0.033525s ]
+[ sql ] [ SQL ] SELECT * FROM `hot` ORDER BY `hot_num` DESC [ RunTime:0.001013s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` WHERE  `show_in_nav` = 1 [ RunTime:0.002551s ]
+[ sql ] [ SQL ] select * from classify where cat_id='6' [ RunTime:0.000956s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.022764s ]
+[ sql ] [ SQL ] SELECT * FROM `goods` WHERE  (  cat_id in (6,8,9) ) [ RunTime:0.001995s ]
+---------------------------------------------------------------
+[ 2018-09-19T17:44:20+08:00 ] 127.0.0.1 GET /static1/css/images/cart.png
+[ info ] www.ecshop4.0.com/static1/css/images/cart.png [运行时间：0.090003s][吞吐率：11.11req/s] [内存消耗：1,076.29kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:44:20+08:00 ] 127.0.0.1 GET /static1/css/images/compareBg.gif
+[ info ] www.ecshop4.0.com/static1/css/images/compareBg.gif [运行时间：0.103271s][吞吐率：9.68req/s] [内存消耗：1,076.36kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T17:44:22+08:00 ] 127.0.0.1 GET /home/index/fenlei.html?cat_id=26
+[ info ] www.ecshop4.0.com/home/index/fenlei.html?cat_id=26 [运行时间：0.147273s][吞吐率：6.79req/s] [内存消耗：2,297.55kb] [文件加载：51]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'fenlei',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'cat_id' => '26',
+)
+[ info ] [ RUN ] app\home\controller\Index->fenlei[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\fenlei.html [ array (
+  0 => 'hot_data',
+  1 => 'cat_name',
+  2 => 'nav',
+  3 => 'count',
+  4 => 'goods_data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002652s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `classify` [ RunTime:0.018424s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` [ RunTime:0.001048s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hot` [ RunTime:0.018480s ]
+[ sql ] [ SQL ] SELECT * FROM `hot` ORDER BY `hot_num` DESC [ RunTime:0.000792s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` WHERE  `show_in_nav` = 1 [ RunTime:0.000996s ]
+[ sql ] [ SQL ] select * from classify where cat_id='26' [ RunTime:0.001033s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.019795s ]
+[ sql ] [ SQL ] SELECT * FROM `goods` WHERE  (  cat_id in (26,27) ) [ RunTime:0.001605s ]
+---------------------------------------------------------------
+[ 2018-09-19T17:44:25+08:00 ] 127.0.0.1 GET /home/index/fenlri.html?cat_id=3
+[ info ] www.ecshop4.0.com/home/index/fenlri.html?cat_id=3 [运行时间：0.078740s][吞吐率：12.70req/s] [内存消耗：1,321.73kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'fenlri',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'cat_id' => '3',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:02:25+08:00 ] 127.0.0.1 GET /static1/css/images/cart.png
+[ info ] www.ecshop4.0.com/static1/css/images/cart.png [运行时间：0.083887s][吞吐率：11.92req/s] [内存消耗：1,076.35kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:02:26+08:00 ] 127.0.0.1 GET /home/login/login.html
+[ info ] www.ecshop4.0.com/home/login/login.html [运行时间：0.111443s][吞吐率：8.97req/s] [内存消耗：1,458.71kb] [文件加载：43]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->login[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Login.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\login\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:02:27+08:00 ] 127.0.0.1 GET /home/login/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/bottom.jpg
+[ info ] www.ecshop4.0.com/home/login/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/bottom.jpg [运行时间：0.243154s][吞吐率：4.11req/s] [内存消耗：1,299.44kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => '用户中心_ECSHOP演示站 - Powered by ECShop_files',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/login/login.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:02:27+08:00 ] 127.0.0.1 GET /home/login/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/weixin.jpg
+[ info ] www.ecshop4.0.com/home/login/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/weixin.jpg [运行时间：0.058721s][吞吐率：17.03req/s] [内存消耗：1,299.44kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => '用户中心_ECSHOP演示站 - Powered by ECShop_files',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/login/login.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:02:28+08:00 ] 127.0.0.1 GET /static1/css/images/ur_bg.gif
+[ info ] www.ecshop4.0.com/static1/css/images/ur_bg.gif [运行时间：0.085044s][吞吐率：11.76req/s] [内存消耗：1,076.30kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:02:28+08:00 ] 127.0.0.1 GET /static1/css/images/search.jpg
+[ info ] www.ecshop4.0.com/static1/css/images/search.jpg [运行时间：0.063336s][吞吐率：15.79req/s] [内存消耗：1,076.30kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:02:28+08:00 ] 127.0.0.1 GET /static1/css/images/cart.png
+[ info ] www.ecshop4.0.com/static1/css/images/cart.png [运行时间：0.067596s][吞吐率：14.79req/s] [内存消耗：1,076.29kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:02:28+08:00 ] 127.0.0.1 GET /static1/css/images/inputbg.gif
+[ info ] www.ecshop4.0.com/static1/css/images/inputbg.gif [运行时间：0.095752s][吞吐率：10.44req/s] [内存消耗：1,076.36kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:02:28+08:00 ] 127.0.0.1 GET /static1/css/images/ur_bg1.gif
+[ info ] www.ecshop4.0.com/static1/css/images/ur_bg1.gif [运行时间：0.101424s][吞吐率：9.86req/s] [内存消耗：1,076.35kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:02:28+08:00 ] 127.0.0.1 GET /static1/css/images/bnt_ur_log.gif
+[ info ] www.ecshop4.0.com/static1/css/images/bnt_ur_log.gif [运行时间：0.111247s][吞吐率：8.99req/s] [内存消耗：1,076.38kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:02:29+08:00 ] 127.0.0.1 GET /home/index/index.html
+[ info ] www.ecshop4.0.com/home/index/index.html [运行时间：0.161163s][吞吐率：6.20req/s] [内存消耗：2,404.11kb] [文件加载：50]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/login/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\index.html [ array (
+  0 => 'nav',
+  1 => 'goods_data',
+  2 => 'cat_data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005934s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `classify` [ RunTime:0.025075s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` [ RunTime:0.000921s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.020842s ]
+[ sql ] [ SQL ] SELECT * FROM goods g INNER JOIN `classify` `c` ON `g`.`cat_id`=`c`.`cat_id` [ RunTime:0.002131s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` WHERE  `show_in_nav` = 1 [ RunTime:0.000751s ]
+---------------------------------------------------------------
+[ 2018-09-19T19:02:29+08:00 ] 127.0.0.1 GET /static1/css/images/icon1.png
+[ info ] www.ecshop4.0.com/static1/css/images/icon1.png [运行时间：0.133721s][吞吐率：7.48req/s] [内存消耗：1,076.30kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:02:29+08:00 ] 127.0.0.1 GET /static1/css/images/pre.jpg
+[ info ] www.ecshop4.0.com/static1/css/images/pre.jpg [运行时间：0.131166s][吞吐率：7.62req/s] [内存消耗：1,076.29kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:02:29+08:00 ] 127.0.0.1 GET /static1/css/images/next.jpg
+[ info ] www.ecshop4.0.com/static1/css/images/next.jpg [运行时间：0.111219s][吞吐率：8.99req/s] [内存消耗：1,076.29kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:02:30+08:00 ] 127.0.0.1 GET /home/index/fenlei.html?cat_id=26
+[ info ] www.ecshop4.0.com/home/index/fenlei.html?cat_id=26 [运行时间：0.185463s][吞吐率：5.39req/s] [内存消耗：2,297.57kb] [文件加载：51]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'fenlei',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'cat_id' => '26',
+)
+[ info ] [ RUN ] app\home\controller\Index->fenlei[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\fenlei.html [ array (
+  0 => 'hot_data',
+  1 => 'cat_name',
+  2 => 'nav',
+  3 => 'count',
+  4 => 'goods_data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004056s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `classify` [ RunTime:0.027028s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` [ RunTime:0.001438s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hot` [ RunTime:0.021664s ]
+[ sql ] [ SQL ] SELECT * FROM `hot` ORDER BY `hot_num` DESC [ RunTime:0.001023s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` WHERE  `show_in_nav` = 1 [ RunTime:0.000859s ]
+[ sql ] [ SQL ] select * from classify where cat_id='26' [ RunTime:0.000815s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.020400s ]
+[ sql ] [ SQL ] SELECT * FROM `goods` WHERE  (  cat_id in (26,27) ) [ RunTime:0.001645s ]
+---------------------------------------------------------------
+[ 2018-09-19T19:02:31+08:00 ] 127.0.0.1 GET /static1/css/images/compareBg.gif
+[ info ] www.ecshop4.0.com/static1/css/images/compareBg.gif [运行时间：0.103136s][吞吐率：9.70req/s] [内存消耗：1,076.36kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:02:31+08:00 ] 127.0.0.1 GET /home/index/fenlei?cat_id=16
+[ info ] www.ecshop4.0.com/home/index/fenlei?cat_id=16 [运行时间：0.163472s][吞吐率：6.12req/s] [内存消耗：2,297.60kb] [文件加载：51]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'fenlei',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/fenlei.html?cat_id=26',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'cat_id' => '16',
+)
+[ info ] [ RUN ] app\home\controller\Index->fenlei[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\fenlei.html [ array (
+  0 => 'hot_data',
+  1 => 'cat_name',
+  2 => 'nav',
+  3 => 'count',
+  4 => 'goods_data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003216s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `classify` [ RunTime:0.024174s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` [ RunTime:0.001053s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hot` [ RunTime:0.017442s ]
+[ sql ] [ SQL ] SELECT * FROM `hot` ORDER BY `hot_num` DESC [ RunTime:0.000712s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` WHERE  `show_in_nav` = 1 [ RunTime:0.000891s ]
+[ sql ] [ SQL ] select * from classify where cat_id='16' [ RunTime:0.000797s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.020031s ]
+[ sql ] [ SQL ] SELECT * FROM `goods` WHERE  (  cat_id in (16) ) [ RunTime:0.001324s ]
+---------------------------------------------------------------
+[ 2018-09-19T19:02:32+08:00 ] 127.0.0.1 GET /home/index/fenlei?cat_id=25
+[ info ] www.ecshop4.0.com/home/index/fenlei?cat_id=25 [运行时间：0.169116s][吞吐率：5.91req/s] [内存消耗：2,297.51kb] [文件加载：51]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'fenlei',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/fenlei?cat_id=16',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'cat_id' => '25',
+)
+[ info ] [ RUN ] app\home\controller\Index->fenlei[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\fenlei.html [ array (
+  0 => 'hot_data',
+  1 => 'cat_name',
+  2 => 'nav',
+  3 => 'count',
+  4 => 'goods_data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002700s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `classify` [ RunTime:0.027314s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` [ RunTime:0.001033s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hot` [ RunTime:0.018171s ]
+[ sql ] [ SQL ] SELECT * FROM `hot` ORDER BY `hot_num` DESC [ RunTime:0.000880s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` WHERE  `show_in_nav` = 1 [ RunTime:0.001021s ]
+[ sql ] [ SQL ] select * from classify where cat_id='25' [ RunTime:0.001523s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.027140s ]
+[ sql ] [ SQL ] SELECT * FROM `goods` WHERE  (  cat_id in (25) ) [ RunTime:0.001729s ]
+---------------------------------------------------------------
+[ 2018-09-19T19:02:33+08:00 ] 127.0.0.1 GET /home/index/fenlei?cat_id=22
+[ info ] www.ecshop4.0.com/home/index/fenlei?cat_id=22 [运行时间：0.149820s][吞吐率：6.67req/s] [内存消耗：2,297.51kb] [文件加载：51]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'fenlei',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/fenlei?cat_id=25',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'cat_id' => '22',
+)
+[ info ] [ RUN ] app\home\controller\Index->fenlei[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\fenlei.html [ array (
+  0 => 'hot_data',
+  1 => 'cat_name',
+  2 => 'nav',
+  3 => 'count',
+  4 => 'goods_data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003004s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `classify` [ RunTime:0.021005s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` [ RunTime:0.000948s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hot` [ RunTime:0.017972s ]
+[ sql ] [ SQL ] SELECT * FROM `hot` ORDER BY `hot_num` DESC [ RunTime:0.000721s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` WHERE  `show_in_nav` = 1 [ RunTime:0.001022s ]
+[ sql ] [ SQL ] select * from classify where cat_id='22' [ RunTime:0.000882s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.018320s ]
+[ sql ] [ SQL ] SELECT * FROM `goods` WHERE  (  cat_id in (22) ) [ RunTime:0.001801s ]
+---------------------------------------------------------------
+[ 2018-09-19T19:02:34+08:00 ] 127.0.0.1 GET /home/index/fenlei?cat_id=16
+[ info ] www.ecshop4.0.com/home/index/fenlei?cat_id=16 [运行时间：0.166430s][吞吐率：6.01req/s] [内存消耗：2,297.51kb] [文件加载：51]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'fenlei',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/fenlei?cat_id=22',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'cat_id' => '16',
+)
+[ info ] [ RUN ] app\home\controller\Index->fenlei[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\fenlei.html [ array (
+  0 => 'hot_data',
+  1 => 'cat_name',
+  2 => 'nav',
+  3 => 'count',
+  4 => 'goods_data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002499s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `classify` [ RunTime:0.028102s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` [ RunTime:0.000891s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hot` [ RunTime:0.020860s ]
+[ sql ] [ SQL ] SELECT * FROM `hot` ORDER BY `hot_num` DESC [ RunTime:0.000675s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` WHERE  `show_in_nav` = 1 [ RunTime:0.000826s ]
+[ sql ] [ SQL ] select * from classify where cat_id='16' [ RunTime:0.000983s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.022581s ]
+[ sql ] [ SQL ] SELECT * FROM `goods` WHERE  (  cat_id in (16) ) [ RunTime:0.001564s ]
+---------------------------------------------------------------
+[ 2018-09-19T19:02:36+08:00 ] 127.0.0.1 GET /home/index/fenlei?cat_id=25
+[ info ] www.ecshop4.0.com/home/index/fenlei?cat_id=25 [运行时间：0.179927s][吞吐率：5.56req/s] [内存消耗：2,297.51kb] [文件加载：51]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'fenlei',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/fenlei?cat_id=16',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'cat_id' => '25',
+)
+[ info ] [ RUN ] app\home\controller\Index->fenlei[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\fenlei.html [ array (
+  0 => 'hot_data',
+  1 => 'cat_name',
+  2 => 'nav',
+  3 => 'count',
+  4 => 'goods_data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002378s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `classify` [ RunTime:0.018831s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` [ RunTime:0.001254s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hot` [ RunTime:0.019722s ]
+[ sql ] [ SQL ] SELECT * FROM `hot` ORDER BY `hot_num` DESC [ RunTime:0.000605s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` WHERE  `show_in_nav` = 1 [ RunTime:0.000813s ]
+[ sql ] [ SQL ] select * from classify where cat_id='25' [ RunTime:0.000658s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.018101s ]
+[ sql ] [ SQL ] SELECT * FROM `goods` WHERE  (  cat_id in (25) ) [ RunTime:0.001364s ]
+---------------------------------------------------------------
+[ 2018-09-19T19:02:37+08:00 ] 127.0.0.1 GET /home/index/index.html
+[ info ] www.ecshop4.0.com/home/index/index.html [运行时间：0.131669s][吞吐率：7.59req/s] [内存消耗：2,403.98kb] [文件加载：50]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/fenlei?cat_id=25',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\index.html [ array (
+  0 => 'nav',
+  1 => 'goods_data',
+  2 => 'cat_data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002711s ] mysql:host=127.0.0.1;port=3306;dbname=ecshop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `classify` [ RunTime:0.023826s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` [ RunTime:0.001466s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.019186s ]
+[ sql ] [ SQL ] SELECT * FROM goods g INNER JOIN `classify` `c` ON `g`.`cat_id`=`c`.`cat_id` [ RunTime:0.002007s ]
+[ sql ] [ SQL ] SELECT * FROM `classify` WHERE  `show_in_nav` = 1 [ RunTime:0.000964s ]
+---------------------------------------------------------------
+[ 2018-09-19T19:06:21+08:00 ] 127.0.0.1 GET /home/login/reg.html
+[ info ] www.ecshop4.0.com/home/login/reg.html [运行时间：0.088978s][吞吐率：11.24req/s] [内存消耗：1,466.09kb] [文件加载：43]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'reg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->reg[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Login.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\login\reg.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:06:21+08:00 ] 127.0.0.1 GET /home/login/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/bottom.jpg
+[ info ] www.ecshop4.0.com/home/login/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/bottom.jpg [运行时间：0.112561s][吞吐率：8.88req/s] [内存消耗：1,299.42kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => '用户中心_ECSHOP演示站 - Powered by ECShop_files',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/login/reg.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:06:21+08:00 ] 127.0.0.1 GET /home/login/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/logo.gif
+[ info ] www.ecshop4.0.com/home/login/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/logo.gif [运行时间：0.138700s][吞吐率：7.21req/s] [内存消耗：1,299.37kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => '用户中心_ECSHOP演示站 - Powered by ECShop_files',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/login/reg.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:06:21+08:00 ] 127.0.0.1 GET /home/login/js/jquery-3.2.1.js
+[ info ] www.ecshop4.0.com/home/login/js/jquery-3.2.1.js [运行时间：0.144836s][吞吐率：6.90req/s] [内存消耗：1,298.76kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/login/reg.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:06:21+08:00 ] 127.0.0.1 GET /static1/css/images/ur_bg.gif
+[ info ] www.ecshop4.0.com/static1/css/images/ur_bg.gif [运行时间：0.101874s][吞吐率：9.82req/s] [内存消耗：1,076.30kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:06:21+08:00 ] 127.0.0.1 GET /static1/css/images/bnt_ur_reg.gif
+[ info ] www.ecshop4.0.com/static1/css/images/bnt_ur_reg.gif [运行时间：0.107186s][吞吐率：9.33req/s] [内存消耗：1,076.36kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static1',
+    1 => 'css',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/static1/css/style.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:06:21+08:00 ] 127.0.0.1 GET /home/login/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/weixin.jpg
+[ info ] www.ecshop4.0.com/home/login/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/weixin.jpg [运行时间：0.174789s][吞吐率：5.72req/s] [内存消耗：1,299.42kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => '用户中心_ECSHOP演示站 - Powered by ECShop_files',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/login/reg.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:06:24+08:00 ] 127.0.0.1 GET /home/login/login.html
+[ info ] www.ecshop4.0.com/home/login/login.html [运行时间：0.069738s][吞吐率：14.34req/s] [内存消耗：1,324.33kb] [文件加载：41]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/login/reg.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->login[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Login.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\login\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:06:24+08:00 ] 127.0.0.1 GET /home/login/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/weixin.jpg
+[ info ] www.ecshop4.0.com/home/login/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/weixin.jpg [运行时间：0.102139s][吞吐率：9.79req/s] [内存消耗：1,299.44kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => '用户中心_ECSHOP演示站 - Powered by ECShop_files',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/login/login.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:06:24+08:00 ] 127.0.0.1 GET /home/login/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/bottom.jpg
+[ info ] www.ecshop4.0.com/home/login/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/bottom.jpg [运行时间：0.133246s][吞吐率：7.50req/s] [内存消耗：1,299.44kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => '用户中心_ECSHOP演示站 - Powered by ECShop_files',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/login/login.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:06:26+08:00 ] 127.0.0.1 GET /home/login/reg.html
+[ info ] www.ecshop4.0.com/home/login/reg.html [运行时间：0.066061s][吞吐率：15.14req/s] [内存消耗：1,324.30kb] [文件加载：41]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'reg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/login/reg.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/login/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->reg[ D:\phpstudy\WWW\shixun\ECShop\application\home\controller\Login.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\login\reg.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:06:26+08:00 ] 127.0.0.1 GET /home/login/js/jquery-3.2.1.js
+[ info ] www.ecshop4.0.com/home/login/js/jquery-3.2.1.js [运行时间：0.079192s][吞吐率：12.63req/s] [内存消耗：1,298.76kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/login/reg.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/login/reg.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:06:26+08:00 ] 127.0.0.1 GET /home/login/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/logo.gif
+[ info ] www.ecshop4.0.com/home/login/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/logo.gif [运行时间：0.106466s][吞吐率：9.39req/s] [内存消耗：1,299.39kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => '用户中心_ECSHOP演示站 - Powered by ECShop_files',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/login/reg.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/login/reg.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:06:26+08:00 ] 127.0.0.1 GET /home/login/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/bottom.jpg
+[ info ] www.ecshop4.0.com/home/login/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/bottom.jpg [运行时间：0.141913s][吞吐率：7.05req/s] [内存消耗：1,299.41kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => '用户中心_ECSHOP演示站 - Powered by ECShop_files',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/login/reg.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/login/reg.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:06:26+08:00 ] 127.0.0.1 GET /home/login/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/weixin.jpg
+[ info ] www.ecshop4.0.com/home/login/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/weixin.jpg [运行时间：0.101697s][吞吐率：9.83req/s] [内存消耗：1,299.41kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => '用户中心_ECSHOP演示站 - Powered by ECShop_files',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/login/reg.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/login/reg.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:06:54+08:00 ] 127.0.0.1 POST /home/login/register.html
+[ info ] www.ecshop4.0.com/home/login/register.html [运行时间：0.065284s][吞吐率：15.32req/s] [内存消耗：1,302.08kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'register',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/login/reg.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/login/reg.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'upgrade-insecure-requests' => '1',
+  'origin' => 'http://www.ecshop4.0.com',
+  'cache-control' => 'max-age=0',
+  'content-length' => '166',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+  'user_name' => 'admin',
+  'user_email' => '123456@qq.com',
+  'user_password' => '123456',
+  'confirm_password' => '123456',
+  'qq' => '123456',
+  'office_phone' => '',
+  'home_phone' => '0516-89426546',
+  'phone' => '18410340000',
+  'agreement' => '1',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:07:02+08:00 ] 127.0.0.1 GET /home/login/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/weixin.jpg
+[ info ] www.ecshop4.0.com/home/login/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/weixin.jpg [运行时间：0.093334s][吞吐率：10.71req/s] [内存消耗：1,299.41kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => '用户中心_ECSHOP演示站 - Powered by ECShop_files',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/login/reg.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/login/reg.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:07:02+08:00 ] 127.0.0.1 GET /home/login/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/bottom.jpg
+[ info ] www.ecshop4.0.com/home/login/%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83_ECSHOP%E6%BC%94%E7%A4%BA%E7%AB%99%20-%20Powered%20by%20ECShop_files/bottom.jpg [运行时间：0.118577s][吞吐率：8.43req/s] [内存消耗：1,299.41kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => '用户中心_ECSHOP演示站 - Powered by ECShop_files',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/login/reg.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/login/reg.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-19T19:07:02+08:00 ] 127.0.0.1 GET /home/login/js/jquery-3.2.1.js
+[ info ] www.ecshop4.0.com/home/login/js/jquery-3.2.1.js [运行时间：0.131878s][吞吐率：7.58req/s] [内存消耗：1,298.76kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpstudy\WWW\shixun\ECShop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'hzy_login_back=http://www.ecshop4.0.com/home/login/reg.html',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ecshop4.0.com/home/login/reg.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ecshop4.0.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\index.html";i:1537242423;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\index.html";i:1537350164;}*/ ?>
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -8,7 +8,7 @@
 <meta name="Description" content="ECSHOP演示站" />
 <title>ECSHOP演示站 - Is shop</title>
 <link rel="shortcut icon" href="favicon.ico" />
-<link rel="icon" href="/static1/images/animated_favicon.gif" type="image/gif" />
+<link rel="icon" href="/static1/images/animated_favicon.gif" type="/static1/images/gif" />
 <link href="/static1/css/style.css" rel="stylesheet" type="text/css" />
 <link rel="alternate" type="application/rss+xml" title="RSS|ECSHOP演示站 - Is shop" href="feed.html" />
 <link rel="stylesheet" type="text/css" href="/static1/css/swiper.min.css">
@@ -22,13 +22,13 @@ var process_request = "正在处理您的请求...";
   <div class="fd_top fd_top1">
     <div class="bar-left">
           <div class="top_menu1"> <script type="text/javascript" src="/static1/js/transport.js"></script><script type="text/javascript" src="/static1/js/utils.js"></script> <font id="ECS_MEMBERZONE"><div id="append_parent"></div>
- 欢迎光临本店<a href="./user.html">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="./register.html">免费注册</a>  </font> </div>
+ 欢迎光临本店<a href="<?php echo url('login/login'); ?>">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="<?php echo url('login/reg'); ?>">免费注册</a>  </font> </div>
     </div>
     <div class="bar-cart">
       <div class="fl cart-yh">
-        <a href="./user.html" class="">用户中心</a>
+        <a href="<?php echo url('login/login'); ?>" class="">用户中心</a>
       </div>
-             <div class="cart" id="ECS_CARTINFO"> <a href="./flow.html" title="查看购物车">购物车(0)</a> </div>
+             <div class="cart" id="ECS_CARTINFO"> <a href="<?php echo url('shopcar/car'); ?>" title="查看购物车">购物车(0)</a> </div>
     </div>
   </div>
 </div>
@@ -38,10 +38,10 @@ var process_request = "正在处理您的请求...";
     <div id="mainNav" class="clearfix maxmenu">
       <div class="m_left">
         <ul> 
-        <li><a href="http://www.ecshop4.0.com/home/index/index.html">首页</a></li>
+        <li><a href="<?php echo url('index/index'); ?>">首页</a></li>
           <?php if(is_array($nav) || $nav instanceof \think\Collection || $nav instanceof \think\Paginator): $i = 0; $__LIST__ = $nav;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
 
-              <li><a href="http://www.ecshop4.0.com/home/index/fenlei?cat_id=<?php echo $v['cat_id']; ?>"><?php echo $v['cat_name']; ?></a></li>
+              <li><a href="<?php echo url('index/fenlei'); ?>?cat_id=<?php echo $v['cat_id']; ?>"><?php echo $v['cat_name']; ?></a></li>
            <?php endforeach; endif; else: echo "" ;endif; ?> 
         </ul>
       </div>
@@ -79,18 +79,18 @@ if (Object.prototype.toJSONString){
   <?php foreach ($cat_data as $key => $value) { ?>
         <div class="cat-box">
           <div class="cat1">
-            <a href="http://www.ecshop4.0.com/home/index/fenlei?cat_id=<?php echo $value['cat_id']; ?>"><?php echo $value['cat_name']; ?></a>
+            <a href="<?php echo url('index/fenlei'); ?>?cat_id=<?php echo $value['cat_id']; ?>"><?php echo $value['cat_name']; ?></a>
           </div>
                    
         <div class="cat2-box">
       <?php foreach ($value['son'] as $key => $val) { ?>
           <div class="cat2 clearfix">
-                  <a class="cat2-link" href="http://www.ecshop4.0.com/home/index/fenlei?cat_id=<?php echo $val['cat_id']; ?>"><?php echo $val['cat_name']; ?></a>
+                  <a class="cat2-link" href="<?php echo url('index/fenlri'); ?>?cat_id=<?php echo $val['cat_id']; ?>"><?php echo $val['cat_name']; ?></a>
             <div class="cat3-block">            
             </div>
           <div class="cat3-box">      
           <?php foreach ($val['son'] as $key => $v) { ?>     
-                          <a href="http://www.ecshop4.0.com/home/index/fenlei?cat_id=<?php echo $v['cat_id']; ?>"><?php echo $v['cat_name']; ?></a>&nbsp;&nbsp;
+                          <a href="<?php echo url('index/fenlri'); ?>?cat_id=<?php echo $v['cat_id']; ?>"><?php echo $v['cat_name']; ?></a>&nbsp;&nbsp;
           <?php } ?>
                       
             </div>
@@ -138,6 +138,8 @@ if (Object.prototype.toJSONString){
             <div class="swiper-slide"><img src="/static1/images/1.jpg" alt="" / width="100%" height="100%"></div>
             <div class="swiper-slide"><img src="/static1/images/2.jpg" alt="" / width="100%" height="100%"></div>
             <div class="swiper-slide"><img src="/static1/images/3.jpg" alt="" / width="100%" height="100%"></div>
+            <div class="swiper-slide"><img src="/static1/images/4.jpg" alt="" / width="100%" height="100%"></div>
+            <div class="swiper-slide"><img src="/static1/images/5.jpg" alt="" / width="100%" height="100%"></div>
         </div>
         
         <div class="swiper-pagination"></div>

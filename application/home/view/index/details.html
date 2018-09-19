@@ -6,9 +6,8 @@
 <meta name="Keywords" content="">
 <meta name="Description" content="">
 <title>智能相机_数码时尚_配件_ECSHOP演示站 - Powered by ECShop</title>
-
 <link rel="shortcut icon" href="http://www.ecshop4.0.com/home/index/favicon.ico">
-<link rel="icon" href="http://www.ecshop4.0.com/home/index/animated_favicon.gif" type="/static1/images/gif">
+<link rel="icon" href="http://www.ecshop4.0.com/home/index/animated_favicon.gif" type="image/gif">
 <link href="/static1/css/style.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="/static1/js/common.js"></script><script type="text/javascript">
 function $id(element) {
@@ -55,29 +54,31 @@ var process_request = "正在处理您的请求...";
 </div>
 <div class="nav-menu">
   <div class="wrap">
-    <div class="logo"><a href="http://www.ecshop4.0.com/home/index/index.html" name="top"><img src="./智能相机_数码时尚_配件_ECSHOP演示站 - Powered by ECShop_files/logo.gif"></a></div>
+    <div class="logo"><a href="http://www.ecshop4.0.com/home/index/index.html" name="top"><img src="/static1/images/logo.gif"></a></div>
     <div id="mainNav" class="clearfix maxmenu">
       <div class="m_left">
       <ul>
-        <li><a href="http://www.ecshop4.0.com/home/index/index.html" class="cur">首页</a></li>
-                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=16">服装</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=22">移动电源</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=25">数码时尚</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=26">家用电器</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=27">大家电</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=25">数码时尚</a></li>
-                              </ul>
+        <li><a href="http://www.ecshop4.0.com/home/index/index" class="cur">首页</a></li>
+          {volist name='nav' id='v'}
+              <li><a href="http://www.ecshop4.0.com/home/index/fenlei?cat_id={$v.cat_id}">{$v.cat_name}</a></li>
+           {/volist} 
+      </ul>
       </div>
     </div>
     <div class="serach-box">
-      <form id="searchForm" name="searchForm" method="get" action="http://www.ecshop4.0.com/home/index/search.html" onsubmit="return checkSearchForm()" class="f_r">
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+       <form method="get" action="{:url('index/fenlei')}">
+        <table width="100%" cellspacing="0" cellpadding="0" border="0">
           <tbody><tr>
-            <td width="135"><input name="keywords" type="text" id="keyword" value="" class="B_input"></td>
-            <td><input name="imageField" type="submit" value="搜索" class="go" style="cursor:pointer;"></td>
+            <td width="135"><input name="keyword"  type="text"></td>
+            <td><input  value="搜索"  type="submit"></td>
           </tr>
         </tbody></table>
       </form>
+       <span class="fl">
+            <foreach name="hot_data" item="v">
+               <a href="#"></a>
+            </foreach>
+        </span>
     </div>
   </div>
 </div>
@@ -85,7 +86,15 @@ var process_request = "正在处理您的请求...";
 <div class="goods-home">
   
 <div class="block box">
-  <div id="ur_here"> <div class="path"><div>当前位置: <a href="http://www.ecshop4.0.com/home/index/index.html">首页</a> <code>&gt;</code> <a href="http://www.ecshop4.0.com/home/index/category.html?id=19">配件</a> <code>&gt;</code> <a href="http://www.ecshop4.0.com/home/index/category.html?id=24">数码时尚</a> <code>&gt;</code> 智能相机</div></div> </div>
+  <div id="ur_here"> <div class="path"><div>当前位置: <a href="{:url('index/index')}">首页</a> <code>&gt;</code>
+  {volist name='cat_name' id='v'}
+   <a href="{:url('index/fenlei')}?cat_id={$v.cat_id}">{$v.cat_name}</a>
+   {/volist}
+  <code>&gt;</code>
+  {volist name='goods_data' id='v'}
+   <a href="{:url('index/details')}?goods_id={$v.goods_id}">{$v.goods_name}</a>
+   {/volist}
+   </div></div> </div>
 </div>
 <div class="blank"></div>
 <div class="block clearfix">
@@ -93,9 +102,9 @@ var process_request = "正在处理您的请求...";
   <div class="AreaR">
     
     <div id="goodsInfo" class="clearfix">
-      
+        {volist name='goods_data' id='v'}
       <div class="imgInfo">
-                <img src="images/72_G_1462956048145.jpg" alt="智能相机">
+                <img src="/static1/images/{$v.goods_img}" width="500px" height="800px;">
                 <div class="blank5"></div>
         
                 
@@ -104,38 +113,39 @@ var process_request = "正在处理您的请求...";
       
       <div class="textInfo">
         <form action="javascript:addToCart(72)" method="post" name="ECS_FORMBUY" id="ECS_FORMBUY">
-          <div class="goods_style_name"> 智能相机 </div>
+      
+          <div class="goods_style_name">{$v.goods_name}</div>
           <ul>
                         <li class="clearfix">
               <dd>
-                                <strong>商品货号：</strong>ECS000072                              </dd>
+                                <strong>商品货号：</strong>{$v.goods_sn}                              </dd>
               <dd class="ddR">
-                                                <strong>商品库存：</strong> 20                                               </dd>
+                                                <strong>商品库存：</strong> {$v.goods_number}                                               </dd>
             </li>
             <li class="clearfix">
               <dd>
-                                <strong>商品品牌：</strong><a href="http://www.ecshop4.0.com/home/index/brand.html?id=15">仓品</a>
+                                <strong>商品品牌：</strong><a href="http://www.ecshop4.0.com/home/index/brand.html?id=15">{$v.brand_name}</a>
                               </dd>
               <dd class="ddR">
-                                <strong>商品重量：</strong>0克                              </dd>
+                                <strong>商品重量：</strong>{$v.goods_weight}克                              </dd>
             </li>
             <li class="clearfix">
               <dd>
-                                <strong>上架时间：</strong>2016-05-11                              </dd>
+                                <strong>上架时间：</strong>{$v.add_time}                              </dd>
               <dd class="ddR">
                 
-                <strong>商品点击数：</strong>5 </dd>
+                <strong>商品点击数：</strong>{$v.click_count} </dd>
                 <dd class="ddR">
        
-       <strong>累计销量：</strong>0       </dd>
+       <strong>累计销量：</strong>{$v.virtual_sales}      </dd>
             </li>
             <li class="clearfix">
               <dd>
-                                <strong>市场价格：</strong><font class="market">￥179元</font> </dd>
+                                <strong>市场价格：</strong><font class="market">￥{$v.market_price}元</font> </dd>
                             
-              <dd><strong>本店售价：</strong><font class="shop" id="ECS_SHOPPRICE">￥149元</font> </dd>
-                            <dd><strong>注册用户：</strong><font class="shop" id="ECS_RANKPRICE_1">￥149元</font> </dd>
-                            <dd><strong>vip：</strong><font class="shop" id="ECS_RANKPRICE_2">￥142元</font> </dd>
+              <dd><strong>本店售价：</strong><font class="shop" id="ECS_SHOPPRICE">￥{$v.shop_price}元</font> </dd>
+                            <!-- <dd><strong>注册用户：</strong><font class="shop" id="ECS_RANKPRICE_1">￥149元</font> </dd>
+                            <dd><strong>vip：</strong><font class="shop" id="ECS_RANKPRICE_2">￥142元</font> </dd> -->
                           </li>
                                     <li class="clearfix">
               <dd> <strong>商品总价：</strong><font id="ECS_GOODS_AMOUNT" class="shop">￥149元</font> </dd>
@@ -147,7 +157,7 @@ var process_request = "正在处理您的请求...";
                 <input name="number" type="text" id="number" value="1" size="4" onblur="changePrice()" style="border:1px solid #ccc; ">
               </dd>
               <dd class="ddR">
-                                <strong>购买此商品可使用：</strong><font class="f4">100 积分</font>
+                                <strong>购买此商品可使用：</strong><font class="f4">{$v.integral} 积分</font>
                               </dd>
             </li>
                         
@@ -155,16 +165,18 @@ var process_request = "正在处理您的请求...";
             <li class="padd">
               <table border="0" cellspacing="0" cellpadding="0">
                 <tbody><tr>
-                  <td class="td1"><a href="javascript:addToCart(72)"><img src="images/buybtn1.png"></a></td>
-                  <td class="td2"><a href="javascript:collect(72)"><img src="images/bnt_colles.gif"></a></td>
-                                    <td class="td3"><a href="http://www.ecshop4.0.com/home/index/user.html?act=affiliate&amp;goodsid=72"><img src="./智能相机_数码时尚_配件_ECSHOP演示站 - Powered by ECShop_files/bnt_recommend.gif"></a> </td>
+                  <td class="td1"><a href="javascript:addToCart(72)"><img src="/static1/images/buybtn1.png"></a></td>
+                  <td class="td2"><a href="javascript:collect(72)"><img src="/static1/images/bnt_colles.gif"></a></td>
+                                    <td class="td3"><a href="http://www.ecshop4.0.com/home/index/user.html?act=affiliate&amp;goodsid=72"><img src="/static1/images/bnt_recommend.gif"></a> </td>
                                   </tr>
               </tbody></table>
             </li>
             
           </ul>
+        
         </form>
       </div>
+        {/volist}
     </div>
     <div class="blank"></div>
     
@@ -177,16 +189,37 @@ var process_request = "正在处理您的请求...";
             <h2 class="h2bg" style="cursor: pointer;">商品属性</h2>
                       </div>
         </div>
-        <div id="com_v" class="boxCenterList RelaArticle"> <p>&nbsp;<img src="./智能相机_数码时尚_配件_ECSHOP演示站 - Powered by ECShop_files/5984c3f800d7ef3c.jpg" alt=""></p> </div>
+        <div id="com_v" class="boxCenterList RelaArticle"> 
+        <p>&nbsp;<img src="/static1/images/5984c3f800d7ef3c.jpg" alt=""></p>
+         </div>
         <div id="com_h" class="none">
-          <blockquote> <p>&nbsp;<img src="./智能相机_数码时尚_配件_ECSHOP演示站 - Powered by ECShop_files/5984c3f800d7ef3c.jpg" alt=""></p> </blockquote>
           <blockquote>
-            <table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#dddddd">
-                          </table>
+          <!-- 商品描述 -->
+            {volist name='goods_data' id='v'}{$v.goods_desc}{/volist}
+
+          </blockquote>
+          <blockquote>
+          <!-- 商品属性 -->
+          <table border="1">
+            <tr>
+              <!-- <td>商品类型</td> -->
+              <td>属性名称</td>   
+              <td>属性规格</td>           
+            </tr>
+            {volist name='attr' id='v'}
+            <tr>
+              <!-- <td>{$v.cat_name}</td> -->
+
+              <td>{$v.attr_name}</td>
+              <td>{$v.attr_values}</td>
+            </tr>
+            {/volist}
+          </table>
           </blockquote>
                   </div>
       </div>
     </div>
+
     <script type="text/javascript">
     <!--
     reg("com");
@@ -288,7 +321,10 @@ var process_request = "正在处理您的请求...";
       <h3><span class="text">用户评论</span>(共<font class="f1">0</font>条评论)</h3>
       <div class="boxCenterList clearfix" style="height:1%;">
        <ul class="comments">
-               <li>暂时还没有任何用户评论</li>
+               {volist name='comment' id='v'}
+               <li>用户:&nbsp;&nbsp;{$v.goods_name} &nbsp;&nbsp;{$v.add_time}&nbsp;&nbsp;{$v.goods_name}</li>
+               
+               {/volist}
                </ul>
        
        <div id="pagebar" class="f_r">
@@ -348,7 +384,7 @@ var process_request = "正在处理您的请求...";
           验证码：<input type="text" name="captcha" class="inputBorder" style="width:50px; margin-left:5px;">
           <img src="./智能相机_数码时尚_配件_ECSHOP演示站 - Powered by ECShop_files/captcha.html" alt="captcha" onclick="this.src=&#39;captcha.html?&#39;+Math.random()" class="captcha">
           </div>
-                    <input name="" type="submit" value="" class="f_r" style="border:none; background:url(themes/default/images/commentsBnt.gif); width:75px; height:21px; margin-right:8px;">
+                    <input name="" type="submit" value="" class="f_r" style="border:none; background:url(themes/static1/images/commentsBnt.gif); width:75px; height:21px; margin-right:8px;">
           </td>
         </tr>
       </tbody></table>
@@ -521,47 +557,47 @@ function submitComment(frm)
  
 
 <script type="text/javascript">
-var goods_id = 72;
-var goodsattr_style = 1;
-var gmt_end_time = 0;
-var day = "天";
-var hour = "小时";
-var minute = "分钟";
-var second = "秒";
-var end = "结束";
-var goodsId = 72;
-var now_time = 1536757673;
-onload = function(){
-  changePrice();
-  fixpng();
-  try {onload_leftTime();}
-  catch (e) {}
-}
-/**
- * 点选可选属性或改变数量时修改商品价格的函数
- */
-function changePrice()
-{
-  var attr = getSelectedAttributes(document.forms['ECS_FORMBUY']);
-  var qty = document.forms['ECS_FORMBUY'].elements['number'].value;
-  Ajax.call('goods.html', 'act=price&id=' + goodsId + '&attr=' + attr + '&number=' + qty, changePriceResponse, 'GET', 'JSON');
-}
-/**
- * 接收返回的信息
- */
-function changePriceResponse(res)
-{
-  if (res.err_msg.length > 0)
-  {
-    alert(res.err_msg);
-  }
-  else
-  {
-    document.forms['ECS_FORMBUY'].elements['number'].value = res.qty;
-    if (document.getElementById('ECS_GOODS_AMOUNT'))
-      document.getElementById('ECS_GOODS_AMOUNT').innerHTML = res.result;
-  }
-}
+// var goods_id = 72;
+// var goodsattr_style = 1;
+// var gmt_end_time = 0;
+// var day = "天";
+// var hour = "小时";
+// var minute = "分钟";
+// var second = "秒";
+// var end = "结束";
+// var goodsId = 72;
+// var now_time = 1536757673;
+// onload = function(){
+//   changePrice();
+//   fixpng();
+//   try {onload_leftTime();}
+//   catch (e) {}
+// }
+// /**
+//  * 点选可选属性或改变数量时修改商品价格的函数
+//  */
+// function changePrice()
+// {
+//   var attr = getSelectedAttributes(document.forms['ECS_FORMBUY']);
+//   var qty = document.forms['ECS_FORMBUY'].elements['number'].value;
+//   Ajax.call('goods.html', 'act=price&id=' + goodsId + '&attr=' + attr + '&number=' + qty, changePriceResponse, 'GET', 'JSON');
+// }
+// /**
+//  * 接收返回的信息
+//  */
+// function changePriceResponse(res)
+// {
+//   if (res.err_msg.length > 0)
+//   {
+//     alert(res.err_msg);
+//   }
+//   else
+//   {
+//     document.forms['ECS_FORMBUY'].elements['number'].value = res.qty;
+//     if (document.getElementById('ECS_GOODS_AMOUNT'))
+//       document.getElementById('ECS_GOODS_AMOUNT').innerHTML = res.result;
+//   }
+// }
 </script>
 
 </body></html>
