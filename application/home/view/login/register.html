@@ -20,11 +20,16 @@
     <div class="bar-left">
           <div class="top_menu1">
            <font id="ECS_MEMBERZONE"><div id="append_parent"></div>
- 欢迎光临本店<a href="http://www.ecshop4.0.com/home/login/login.html">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="{:url('login/register')}">免费注册</a>  </font> </div>
+ 欢迎光临本店<a href="{:url('login/login')}">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="{:url('login/register')}">免费注册</a>  </font> </div>
     </div>
     <div class="bar-cart">
       <div class="fl cart-yh">
-        <a href="http://www.ecshop4.0.com/home/index/welcome.html" class="">用户中心</a>
+        <?php if(empty($_SESSION)){ ?>
+           <a href="{:url('Login/login')}" class="">用户中心</a>
+          <?php }else{?>
+         <a href="{:url('user/welcome')}" class="">用户中心</a>
+          <?php }?>
+
       </div>
              <div class="cart" id="ECS_CARTINFO"> <a href="http://www.ecshop4.0.com/home/index/flow.html" title="查看购物车">购物车(0)</a> </div>
     </div>

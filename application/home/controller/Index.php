@@ -35,7 +35,8 @@ class Index extends Controller
         $this->assign('cat_data',$cate_list);
         $this->assign('floor_goods',$floor_goods);
         $this->assign('floor',$floor);
-
+        session_start();
+        $this->assign('$_SESSION',$_SESSION);
         return $this->fetch();
     }
 
@@ -103,7 +104,7 @@ class Index extends Controller
             $cat_data=Db::name('classify')->select();
             //在查到的分类下在进行递归查询
             $chile_data=$category->createTreeBySon($cat_data,$cat_id);
-           // var_dump($chile_data);die;
+           // var_dump($chile_data);die;  
             //定义一个空数组，将查询到的所有分类cat_id遍历，放到空数组内
             $tmp=array();
             $tmp[]=$cat_id;
@@ -233,7 +234,34 @@ class Index extends Controller
     }
     public function user()
     {
-        return $this->fetch();        
+         // 如果post接收数据登录，如果get返回登录页面
+        if (request()->isPost()) {
+            //获取需要入库的数据
+            $data = Request::instance()->post();
+            // print_r($data);die;
+            $username = $data['username'];
+            $password = $data['password1'];
+            //添加信息
+            $res = Db('reg')->where('username',"$username")->find();
+            // print_r($res);die;
+            //判断
+            if ($res) {
+                if($password==$res['password1']){
+                    session_start();
+                    $_SESSION['username']="$username";
+                    // echo "<script>alert('恭喜您登录成功');location.href='http://www.ecshop4.0.com/home/index/index'</script>";
+                    return view("Index/index");
+                    // ,['username'=>$res['username']]
+                    // $this->success('登录成功','index/index');
+                }else{
+                    $this->error('密码不正确','login/login');
+                }               
+            } else {
+                $this->error('用户名不正确','login/login');
+            }   
+        } else {
+            return view('login/login');
+        }           
     }
     public function register()
     {
