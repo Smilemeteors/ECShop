@@ -811,5 +811,33 @@ class Goods extends Controller
         }
         return $this->fetch('goods_trash');
     }
+     //回收站返回展示
+    public function goods_trash_del(){
+            $goods_id = input('get.goods_id');
+            $status   = input('get.status');
+            if($status==0){
+                $res = Db::table('goods')->where("goods_id", $goods_id)->update(["is_delete" => '1']);
+            }else{
+                $res = 1;
+            }
+           if($res){
+                 $arr['status'] = 0;
+            }else{
+                 $arr['status'] = 1;
+            }
+             echo json_encode($arr);
+    }
+    //回收站真实删除数据
+    public function goods_trash_del_do(){
+        $goods_id = input('get.goods_id');
+        $res = Db::table('goods')->where('goods_id',$goods_id)->delete();
+        if($res){
+                 $arr['status'] = 0;
+            }else{
+                 $arr['status'] = 1;
+            }
+             echo json_encode($arr);
+    }
+
 
 }
