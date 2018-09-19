@@ -218,6 +218,8 @@ class Index extends Controller
         //     ->select();
         $attr=Db::query("SELECT * FROM `goods_attr` INNER JOIN goods ON goods_attr.goods_id=goods.goods_id INNER JOIN attribute ON goods_attr.attr_id=attribute.attr_id INNER JOIN goods_type ON attribute.cat_id=goods_type.cat_id where goods.goods_id='$goods_id'");
         $comment=Db::query("SELECT * from goods_attr inner join goods on goods_attr.goods_id=goods.goods_id where goods.goods_id='$goods_id'");
+            // var_dump($attr);die;
+        $comment=Db::query("select * from comment inner join goods on comment.goods_id=goods.goods_id where goods.goods_id='$goods_id'");
         // var_dump($comment);die;
         $this->assign('comment',$comment);
         $this->assign('attr',$attr);
