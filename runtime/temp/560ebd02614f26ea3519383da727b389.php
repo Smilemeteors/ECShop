@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"E:\phpStudy\WWW\ECShop\public/../application/home\view\index\details.html";i:1537314115;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"E:\phpStudy\WWW\ECShop\public/../application/home\view\index\details.html";i:1537345766;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0056)http://www.ecshop4.0.com/home/index/goods.html?id=72 -->
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -158,8 +158,8 @@ var process_request = "正在处理您的请求...";
                 <tbody><tr>
                   <td class="td1"><a href="javascript:addToCart(72)"><img src="images/buybtn1.png"></a></td>
                   <td class="td2"><a href="javascript:collect(72)"><img src="images/bnt_colles.gif"></a></td>
-                                    <td class="td3"><a href="http://www.ecshop4.0.com/home/index/user.html?act=affiliate&amp;goodsid=72"><img src="./智能相机_数码时尚_配件_ECSHOP演示站 - Powered by ECShop_files/bnt_recommend.gif"></a> </td>
-                                  </tr>
+<!--                                     <td class="td3"><a href="http://www.ecshop4.0.com/home/index/user.html?act=affiliate&amp;goodsid=72"><img src="./智能相机_数码时尚_配件_ECSHOP演示站 - Powered by ECShop_files/bnt_recommend.gif"></a> </td>
+ -->                                  </tr>
               </tbody></table>
             </li>
             

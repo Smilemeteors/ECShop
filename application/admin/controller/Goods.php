@@ -488,13 +488,7 @@ class Goods extends Controller
             $this->error('删除失败','goods/goods_type_manage');
         }
     }
-    //商品的回收站
-    public function goods_trash()
-    {
-        $arr = Db::table('goods')->where('is_delete',0)->select();
-        return view('goods_trash',['arr'=>$arr]);
-    }
-
+    
     //分类
     //分类添加
     //
@@ -796,6 +790,26 @@ class Goods extends Controller
          if($arr){  
                echo 1;  
          }  
+    }
+
+      //商品的回收站
+    public function goods_trash()
+    {   
+        $keyword = input('get.keyword');
+        if(!empty($keyword)){
+            $data = Db::name('goods')->where('is_delete=0')->where("goods_name like '%{$keyword}%'")->paginate(10,false,['query' => request()->param()]);
+            $key = [];
+            $key['keyword'] = $keyword;
+            $this->assign('key',$key);
+            $this->assign('arr',$data);
+        }else{
+        $data = Db::name('goods')->where('is_delete=0')->paginate(10);
+        $key = [];
+        $key['keyword'] = $keyword;
+        $this->assign('key',$key);
+        $this->assign('arr',$data);
+        }
+        return $this->fetch('goods_trash');
     }
 
 }
