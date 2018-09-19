@@ -1,6 +1,6 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\phpStudy\WWW\ECShop\public/../application/home\view\shopcar\car.html";i:1537314115;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\phpStudy\WWW\ECShop\public/../application/home\view\shopcar\car.html";i:1537358546;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!-- saved from url=(0059)http://www.ecshop4.0.com/home/index/flow.html?step=cart -->
+<!-- saved from url=(0059)http://www.ecshop4.0.com/home/index/<?php echo url('shopcar/car'); ?>?step=cart -->
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="Generator" content="ECSHOP v4.0.0">
 
@@ -34,18 +34,16 @@ var process_request = "正在处理您的请求...";
 </div>
 <div class="nav-menu">
   <div class="wrap">
-    <div class="logo"><a href="http://www.ecshop4.0.com/home/index/index.html" name="top"><img src="./购物流程_ECSHOP演示站 - Powered by ECShop_files/logo.gif"></a></div>
+    <div class="logo"><a href="<?php echo url('index/index'); ?>" name="top"><img src="/static1/images/logo.gif"></a></div>
     <div id="mainNav" class="clearfix maxmenu">
       <div class="m_left">
-      <ul>
-        <li><a href="http://www.ecshop4.0.com/home/index/index.html" class="cur">首页</a></li>
-                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=16">服装</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=22">移动电源</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=25">数码时尚</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=26">家用电器</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=27">大家电</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=25">数码时尚</a></li>
-                              </ul>
+      <ul> 
+        <li><a href="<?php echo url('index/index'); ?>">首页</a></li>
+          <?php if(is_array($nav) || $nav instanceof \think\Collection || $nav instanceof \think\Paginator): $i = 0; $__LIST__ = $nav;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+
+              <li><a href="<?php echo url('index/fenlei'); ?>?cat_id=<?php echo $v['cat_id']; ?>"><?php echo $v['cat_name']; ?></a></li>
+           <?php endforeach; endif; else: echo "" ;endif; ?> 
+        </ul>
       </div>
     </div>
     <div class="serach-box">
@@ -64,14 +62,14 @@ var process_request = "正在处理您的请求...";
 
 <div class="block box">
  <div id="ur_here">
-  <div class="path"><div>当前位置: <a href="http://www.ecshop4.0.com/home/index/index.html">首页</a> <code>&gt;</code> 购物流程</div></div> </div>
+  <div class="path"><div>当前位置: <a href="<?php echo url('index/index'); ?>">首页</a> <code>&gt;</code> 购物流程</div></div> </div>
 </div>
 
 <div class="blank"></div>
 <div class="block">
     
   
-  <script type="text/javascript" src="./购物流程_ECSHOP演示站 - Powered by ECShop_files/showdiv.js.下载"></script>  <script type="text/javascript">
+  <script type="text/javascript" src="/static1/images/showdiv.js.下载"></script>  <script type="text/javascript">
       var user_name_empty = "请输入您的用户名！";
       var email_address_empty = "请输入您的电子邮件地址！";
       var email_address_error = "您输入的电子邮件地址格式不正确！";
@@ -83,9 +81,10 @@ var process_request = "正在处理您的请求...";
     </script>
   <div class="flowBox">
     <h6><span>商品列表</span></h6>
-        <form id="formCart" name="formCart" method="post" action="http://www.ecshop4.0.com/home/index/flow.html">
+        <form id="formCart" name="formCart" method="post" action="<?php echo url('shopcar/car'); ?>">
            <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
-            <tbody><tr>
+            <tbody>
+            <tr>
               <th bgcolor="#ffffff">商品名称</th>
                     <th bgcolor="#ffffff">属性</th>
                                           <th bgcolor="#ffffff">市场价</th>
@@ -94,29 +93,34 @@ var process_request = "正在处理您的请求...";
               <th bgcolor="#ffffff">小计</th>
               <th bgcolor="#ffffff">操作</th>
             </tr>
-                        <tr>
-              <td bgcolor="#ffffff" align="center">
-                                                      <a href="http://www.ecshop4.0.com/home/index/goods.html?id=72" target="_blank"><img src="images/72_thumb_G_1462956048008.jpg" border="0" title="智能相机"></a><br>
-                    <a href="http://www.ecshop4.0.com/home/index/goods.html?id=72" target="_blank" class="f6">智能相机</a>
-                                                                                    </td>
-                            <td bgcolor="#ffffff"></td>
-                                          <td align="right" bgcolor="#ffffff">￥178.79元</td>
-                            <td align="right" bgcolor="#ffffff">￥149.00元</td>
-              <td align="right" bgcolor="#ffffff">
-                                <input type="text" name="goods_number[44]" id="goods_number_44" value="1" size="4" class="inputBg" style="text-align:center " onkeydown="showdiv(this)">
-                              </td>
-              <td align="right" bgcolor="#ffffff">￥149.00元</td>
-              <td align="center" bgcolor="#ffffff">
-                <a href="javascript:if (confirm(&#39;您确实要把该商品移出购物车吗？&#39;)) location.href=&#39;flow.html?step=drop_goods&amp;id=44&#39;; " class="f6">删除</a>
-                            </td>
-            </tr>
+            <?php foreach ($data as $key => $v) { ?>
+                 <tr>
+                    <td bgcolor="#ffffff" align="center">
+                        <a href="<?php echo url('index/details'); ?>?id=72" target="_blank"><img style="width:30px;" src="/uploads/<?php echo $v['goods_img']; ?>" border="0" title="<?php echo $v['goods_name']; ?>"></a><br>
+                        <a href="<?php echo url('index/details'); ?>?id=72" target="_blank" class="f6"><?=$v['goods_name']?></a>
+                    </td>
+                    <td bgcolor="#ffffff"></td>
+                    <td align="right" bgcolor="#ffffff">￥<?=$v['market_price']?>元</td>
+                    <td align="right" bgcolor="#ffffff">￥<?=$v['goods_price']?>元</td>
+                    <td align="right" bgcolor="#ffffff">
+                        <input type="text" name="goods_number[44]" id="goods_number_44" value="1" size="4" class="inputBg" style="text-align:center " onkeydown="showdiv(this)">
+                    </td>
+                    <td align="right" bgcolor="#ffffff">￥<?=$v['goods_price']?>元</td>
+                    <td align="center" bgcolor="#ffffff">
+                      <a href="javascript:if (confirm(&#39;您确实要把该商品移出购物车吗？&#39;)) location.href=&#39;<?php echo url('shopcar/car'); ?>?step=drop_goods&amp;id=44&#39;; " class="f6">删除</a>
+                    </td>
+              </tr>
+            <?php } ?>
+                       
                       </tbody></table>
+
           <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
             <tbody><tr>
               <td bgcolor="#ffffff">
-                            购物金额小计 ￥149.00元，比市场价 ￥178.79元 节省了 ￥29.79元 (17%)              </td>
+
+                            购物金额小计 ￥元，比市场价 ￥178.79元 节省了 ￥29.79元 (17%)              </td>
               <td align="right" bgcolor="#ffffff">
-                <input type="button" value="清空购物车" class="bnt_blue_1" onclick="location.href=&#39;flow.html?step=clear&#39;">
+                <input type="button" value="清空购物车" class="bnt_blue_1" onclick="location.href=&#39;<?php echo url('shopcar/car'); ?>?step=clear&#39;">
                 <input name="submit" type="submit" class="bnt_blue_1" value="更新购物车">
               </td>
             </tr>
@@ -125,30 +129,32 @@ var process_request = "正在处理您的请求...";
         </form>
         <table width="99%" align="center" border="0" cellpadding="5" cellspacing="0" bgcolor="#dddddd">
           <tbody><tr>
-            <td bgcolor="#ffffff"><a href="http://www.ecshop4.0.com/home/index/"><img src="./购物流程_ECSHOP演示站 - Powered by ECShop_files/continue.gif" alt="continue"></a></td>
-            <td bgcolor="#ffffff" align="right"><a href="<?php echo url('shopcar/checkout'); ?>"><img src="images/checkout.gif" alt="checkout"></a></td>
+            <td bgcolor="#ffffff"><a href="http://www.ecshop4.0.com/home/index/"><img src="/static1/images/continue.gif" alt="continue"></a></td>
+            <td bgcolor="#ffffff" align="right"><a href="<?php echo url('shopcar/checkout'); ?>"><img src="/static1/picture/checkout.gif" alt="checkout"></a></td>
           </tr>
         </tbody></table>
        
     </div>
     <div class="blank5"></div>
-  
-  
-  
-
-        
-        
-                
-
-
 
 </div>
 <div class="blank5"></div>
-
+<p>$rows = $GLOBALS['db']->getRow("select goods_brief,shop_price,goods_name,goods_thumb from ".$GLOBALS['ecs']->table('goods')." where goods_id=".$goods->goods_id);</p>
+<p>$result['shop_price'] = price_format($rows['shop_price']);</p>
+<p>$result['goods_name'] = $rows['goods_name'];</p>
+<p>$result['goods_thumb'] = $rows['goods_thumb'];</p>
+<p>$result['goods_brief'] = $rows['goods_brief'];</p>
+<p>$result['goods_id'] = $goods->goods_id;</p>
+<p>$sql = 'SELECT SUM(goods_number) AS number, SUM(goods_price * goods_number) AS amount' .</p>
+<p>' FROM ' . $GLOBALS['ecs']->table('cart') .</p>
+<p>" WHERE session_id = '" . SESS_ID . "' AND rec_type = '" . CART_GENERAL_GOODS . "'";</p>
+<p>$rowss = $GLOBALS['db']->GetRow($sql);</p>
+<p>$result['goods_price'] = price_format($rowss['amount']);</p>
+<p>$result['goods_number'] = $rowss['number'];</p>
 
 <div class="blank"></div>
 <div class="foot-body">
-  <div class="bads"><img src="./购物流程_ECSHOP演示站 - Powered by ECShop_files/bottom.jpg"></div>
+  <div class="bads"><img src="/static1/images/bottom.jpg"></div>
   <div class="clear10"></div>
   
      <div class="foot-help">
@@ -190,7 +196,7 @@ var process_request = "正在处理您的请求...";
         <div class="foot-weixin">
           <div class="weixin-txt">关注demo微信</div>
           <div class="weixin-pic">
-            <img src="./购物流程_ECSHOP演示站 - Powered by ECShop_files/weixin.jpg">
+            <img src="/static1/images/weixin.jpg">
           </div>
         </div>
     </div>

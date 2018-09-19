@@ -37,7 +37,7 @@ var process_request = "正在处理您的请求...";
          <a href="{:url('user/welcome')}" class="">用户中心</a>
           <?php }?>
       </div>
-             <div class="cart" id="ECS_CARTINFO"> <a href="{:url('shopcar/car')}" title="查看购物车">购物车(0)</a> </div>
+             <div class="cart" id="ECS_CARTINFO"> <a href="./flow.html" title="查看购物车">购物车(0)</a> </div>
     </div>
   </div>
 </div>
@@ -46,13 +46,26 @@ var process_request = "正在处理您的请求...";
     <div class="logo"><a href="./index.html" name="top"><img src="/static1/images/logo.gif" /></a></div>
     <div id="mainNav" class="clearfix maxmenu">
       <div class="m_left">
-        <ul> 
-        <li><a href="{:url('index/index')}">首页</a></li>
-          {volist name='nav' id='v'}
+      <ul>
+        <li><a href="index.html" class="cur">首页</a></li>
+        {volist name='nav' id='v'}
+              <li><a href="http://www.ecshop4.0.com/home/index/fenlei?cat_id={$v.cat_id}">{$v.cat_name}</a></li>
+           {/volist} 
+                         <!-- <li><a href="{:url('home/index/category')}?id=1"
+        
+                    >服装</a></li>
+                                        <li><a href="{:url('home/index/category')}?id=2"
 
-              <li><a href="{:url('index/fenlei')}?cat_id={$v.cat_id}">{$v.cat_name}</a></li>
-     
-          {/volist}
+                    >移动电源</a></li>
+                                        <li><a href="{:url('home/index/category')}?id=3"
+
+                    >数码时尚</a></li>
+                                        <li><a href="{:url('home/index/category')}?id=4"
+        
+                    >家用电器</a></li>
+                                        <li><a href="category.html?id=25" 
+        
+                    >数码时尚</a></li> -->
         <ul> 
       </div>
     </div>
@@ -89,18 +102,18 @@ if (Object.prototype.toJSONString){
   <?php foreach ($cat_data as $key => $value) { ?>
         <div class="cat-box">
           <div class="cat1">
-            <a href="{:url('index/fenlei')}?cat_id={$value.cat_id}">{$value.cat_name}</a>
+            <a href="http://www.ecshop4.0.com/home/index/fenlei?cat_id={$value.cat_id}">{$value.cat_name}</a>
           </div>
                    
         <div class="cat2-box">
       <?php foreach ($value['son'] as $key => $val) { ?>
           <div class="cat2 clearfix">
-                  <a class="cat2-link" href="{:url('index/fenlri')}?cat_id={$val.cat_id}">{$val.cat_name}</a>
+                  <a class="cat2-link" href="http://www.ecshop4.0.com/home/index/fenlei?cat_id={$val.cat_id}">{$val.cat_name}</a>
             <div class="cat3-block">            
             </div>
           <div class="cat3-box">      
           <?php foreach ($val['son'] as $key => $v) { ?>     
-                          <a href="{:url('index/fenlri')}?cat_id={$v.cat_id}">{$v.cat_name}</a>&nbsp;&nbsp;
+                          <a href="http://www.ecshop4.0.com/home/index/fenlei?cat_id={$v.cat_id}">{$v.cat_name}</a>&nbsp;&nbsp;
           <?php } ?>
                       
             </div>
@@ -148,8 +161,6 @@ if (Object.prototype.toJSONString){
             <div class="swiper-slide"><img src="/static1/images/1.jpg" alt="" / width="100%" height="100%"></div>
             <div class="swiper-slide"><img src="/static1/images/2.jpg" alt="" / width="100%" height="100%"></div>
             <div class="swiper-slide"><img src="/static1/images/3.jpg" alt="" / width="100%" height="100%"></div>
-            <div class="swiper-slide"><img src="/static1/images/4.jpg" alt="" / width="100%" height="100%"></div>
-            <div class="swiper-slide"><img src="/static1/images/5.jpg" alt="" / width="100%" height="100%"></div>
         </div>
         
         <div class="swiper-pagination"></div>
