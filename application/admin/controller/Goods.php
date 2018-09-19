@@ -5,6 +5,7 @@ use think\Db;
 use think\Model;
 use think\Paginator;
 use think\Request;
+use think\File;
 class Goods extends Controller
 {
     //model调用
@@ -17,28 +18,92 @@ class Goods extends Controller
     //
     public function goods_add()
     {
+        $goods_type=$this->goods->goods_type();
         $brand = $this->goods->getBrandList();
         $cate = $this->goods->getPathList("cat_id");
-        return view('goods_add',['cate'=>$cate,'brand'=>$brand]);
+        return view('goods_add',['cate'=>$cate,'brand'=>$brand,'goods_type'=>$goods_type]);
     }
+
+    // public function goods_add_do(){
+    //     $request = Request::instance()->post();
+    //     $goods_img = $request['goods_img'];
+    //     $goods_img=$this->goods_upload();
+    //     $res=$this->goods->goods_inserts($request);
+    //     if($res){
+    //         $this->success('添加成功','goods/goods_list');
+    //     }else{
+    //         $this->error('添加失败','goods/goods_add');
+    //     }
+    // }
+    // public function goods_upload(){
+    //    // 获取表单上传文件 例如上传了001.jpg
+    //    $file = request()->file('goods_img');
+    //    // 移动到框架应用根目录/public/uploads/ 目录下
+    //    $info = $file->move(ROOT_PATH . 'public' . DS . 'uploads');
+    //    if($info){
+    //     // 成功上传后 获取上传信息
+    //     // 输出 jpg
+    //     // 输出 20160820/42a79759f284b767dfcb2a0197904287.jpg
+    //      return $info->getSaveName();
+    //     // 输出 42a79759f284b767dfcb2a0197904287.jpg
+    //     }else{
+    //     // 上传失败获取错误信息
+    //        return $file->getError();
+    //     }
+    // }
+    
+    
     public function goods_add_do()
     {
-        $parent_id = input('get.parent_id');
-        $cat_name = input('get.cat_name');
-        $brand_name = input('get.brand_name');
-        $data = Request::instance()->post();
-        // print_r($data);die;
-        $arr = Db::name('goods')->insert($data);
-        if($arr){
-            $this->success('添加成功','goods/goods_list');
-        }else{
-            $this->error('添加失败','goods/goods_add');
+        $data=input('post.');
+        // echo "<pre/>";
+        // var_dump($data);die;
+        if(empty($data['goods_sn']))
+        {
+            $data['goods_sn']=$this->createSn();
+        }
+        if(empty($data['cat_id']))
+        {
+             // $this->success('商品分类必须填写');die;
+             $this->error('商品分类必须填写','goods/goods_add');
+        }
+        if(empty($data['brand_id']))
+        {
+            // $this->success('商品品牌必须填写');die;
+             $this->error('商品品牌必须填写','goods/goods_add');
+        }
+        if(empty($data['suppliers_id']))
+        {
+             $this->error('供货商必须填写','goods/goods_add');
+        }
+        $file=request()->file('goods_img');
+        // print_r($file);die;
+        if(empty($file))
+        {
+             $this->error('图片必须选择','goods/goods_add');
         }
 
+        $info=$file->move(ROOT_PATH.'public'.DS.'uploads');
+     
+        $filename=$info->getSaveName();
+        $data['goods_img']=$filename;
+        $result=Db('goods')->insert($data);
+        if($result)
+        {
+            $this->success('添加商品成功','goods/goods_list');
+        }
+        else
+        {
+            $this->error('添加商品失败','goods/goods_add');
+        }
+      
     }
-    //
-    //
-    //商品添加
+
+    //随机生成货号
+     public function createSn()
+    {
+        return 'oneNB'.time().rand(1000,9999);
+    }
 
     //商品列表
     public function goods_list()
@@ -47,12 +112,11 @@ class Goods extends Controller
         $arr =$this->goods->shows();
         //属性
         $cate=$this->goods->getPathList("cat_id");
+        //类型
         $pages = 5;
         $keyword = input('post.keyword');
         $res = $this->goods->goods_Show($keyword,$pages);
-        return view('goods_list',['res'=>$res]);
-        // $res = $this->goods->goods_Show();
-        // return view('goods_list',['res'=>$res]);
+        return view('goods_list',['res'=>$res,'key'=>$keyword]);
     }
     //商品列表的回收站
     public function trash_do()
@@ -281,7 +345,7 @@ class Goods extends Controller
         $request = Request::instance()->post();
         $request['brand_logo']=$this->brand_upload();
         $res=$this->goods->inserts($request);
-        if($arr){
+        if($res){
             $this->success('上传成功','goods/brand_list');
         }else{
             $this->error('上传失败','goods/brand_add');
@@ -304,6 +368,7 @@ class Goods extends Controller
            return $file->getError();
         }
     }
+
 
          //类型
          //类型名称的及点击该
@@ -680,4 +745,57 @@ class Goods extends Controller
             $this->error('删除失败','goods/attribute_list');
         }
     }
+    //批删
+    public function goods_pishan(){
+        $goods_id = input('get.goods_id');
+        $res = Db::table('goods')->where("goods_id in($goods_id)")->update(["is_delete" => '0']);
+       if($res){
+            $arr['msg'] = 1;
+            $arr['data'] = "$goods_id";
+        }else{
+            $arr['msg'] = 0;
+            $arr['data'] = "$goods_id";
+        }
+            echo json_encode($arr);
+    }
+    
+    //货号修该
+    public function goods_sn_upd(){
+        $id=$_POST['id'];  
+        $val=$_POST['val'];        
+        $arr=DB::table('goods')->where('goods_id',$id)->update(['goods_sn' => $val]);  
+         if($arr){  
+               echo 1;  
+         }  
+    }
+
+    //价格修改
+    public function goods_price_upd(){
+        $id=$_POST['id'];  
+        $val=$_POST['val'];        
+        $arr=DB::table('goods')->where('goods_id',$id)->update(['goods_price' => $val]);  
+         if($arr){  
+               echo 1;  
+         }  
+    }
+    //排序修改
+    // public function sort_order_upd(){
+    //     $id=$_POST['id'];  
+    //     $val=$_POST['val'];        
+    //     $arr=DB::table('goods')->where('goods_id',$id)->update(['sort_order' => $val]);  
+    //      if($arr){  
+    //            echo 1;  
+    //      }  
+    // }
+
+    //库存修改
+    public function goods_number_upd(){
+        $id=$_POST['id'];  
+        $val=$_POST['val'];        
+        $arr=DB::table('goods')->where('goods_id',$id)->update(['goods_number' => $val]);  
+         if($arr){  
+               echo 1;  
+         }  
+    }
+
 }

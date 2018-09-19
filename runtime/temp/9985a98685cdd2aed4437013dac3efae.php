@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\brand_list.html";i:1537168819;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\brand_list.html";i:1537321897;}*/ ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <base href="/" />
@@ -14,7 +14,7 @@ th{text-align:center;}
 </style>
 <body>
 <h1>
-<a class="btn btn-right" href="brand.php?act=add">添加品牌</a>
+<a class="btn btn-right" href="<?php echo url('brand_add'); ?>">添加品牌</a>
 <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;商品品牌 </span>
   <div style="clear:both"></div>
 </h1>

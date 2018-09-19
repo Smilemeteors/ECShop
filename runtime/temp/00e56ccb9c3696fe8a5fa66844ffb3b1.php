@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_type_manage.html";i:1537168819;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_type_manage.html";i:1537314115;}*/ ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head><base href="/" />
 <title>ECSHOP 管理中心 - 商品类型 </title>
