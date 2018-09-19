@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\index.html";i:1537355742;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\index.html";i:1537358046;}*/ ?>
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -8,7 +8,7 @@
 <meta name="Description" content="ECSHOP演示站" />
 <title>ECSHOP演示站 - Is shop</title>
 <link rel="shortcut icon" href="favicon.ico" />
-<link rel="icon" href="/static1/images/animated_favicon.gif" type="/static1/images/gif" />
+<link rel="icon" href="/static1/images/animated_favicon.gif" type="image/gif" />
 <link href="/static1/css/style.css" rel="stylesheet" type="text/css" />
 <link rel="alternate" type="application/rss+xml" title="RSS|ECSHOP演示站 - Is shop" href="feed.html" />
 <link rel="stylesheet" type="text/css" href="/static1/css/swiper.min.css">
@@ -22,11 +22,6 @@ var process_request = "正在处理您的请求...";
   <div class="fd_top fd_top1">
     <div class="bar-left">
           <div class="top_menu1"> <script type="text/javascript" src="/static1/js/transport.js"></script><script type="text/javascript" src="/static1/js/utils.js"></script> <font id="ECS_MEMBERZONE"><div id="append_parent"></div>
- 欢迎光临本店<a href="<?php echo url('login/login'); ?>">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="<?php echo url('login/reg'); ?>">免费注册</a>  </font> </div>
-    </div>
-    <div class="bar-cart">
-      <div class="fl cart-yh">
-        <a href="<?php echo url('login/login'); ?>" class="">用户中心</a>
  <?php if (empty($_SESSION)) {?>
        欢迎光临本店<a href="<?php echo url('login/login'); ?>">请登录</a><strong></strong>&nbsp;|&nbsp;&nbsp;<a href="<?php echo url('login/register'); ?>">免费注册</a>
   <?php } else { ?>  

@@ -95,7 +95,7 @@ var process_request = "正在处理您的请求...";
             <?php foreach ($data as $key => $v) { ?>
                  <tr>
                     <td bgcolor="#ffffff" align="center">
-                        <a href="{:url('index/details')}?id=72" target="_blank"><img src="/uploads/{$v['goods_img']}" border="0" title="{$v['goods_name']}"></a><br>
+                        <a href="{:url('index/details')}?id=72" target="_blank"><img style="width:30px;" src="/uploads/{$v['goods_img']}" border="0" title="{$v['goods_name']}"></a><br>
                         <a href="{:url('index/details')}?id=72" target="_blank" class="f6"><?=$v['goods_name']?></a>
                     </td>
                     <td bgcolor="#ffffff"></td>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\shopcar\car.html";i:1537350057;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\shopcar\car.html";i:1537358181;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0059)http://www.ecshop4.0.com/home/index/<?php echo url('shopcar/car'); ?>?step=cart -->
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -96,7 +96,7 @@ var process_request = "正在处理您的请求...";
             <?php foreach ($data as $key => $v) { ?>
                  <tr>
                     <td bgcolor="#ffffff" align="center">
-                        <a href="<?php echo url('index/details'); ?>?id=72" target="_blank"><img src="/uploads/<?php echo $v['goods_img']; ?>" border="0" title="<?php echo $v['goods_name']; ?>"></a><br>
+                        <a href="<?php echo url('index/details'); ?>?id=72" target="_blank"><img style="width:30px;" src="/uploads/<?php echo $v['goods_img']; ?>" border="0" title="<?php echo $v['goods_name']; ?>"></a><br>
                         <a href="<?php echo url('index/details'); ?>?id=72" target="_blank" class="f6"><?=$v['goods_name']?></a>
                     </td>
                     <td bgcolor="#ffffff"></td>
