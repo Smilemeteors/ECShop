@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\phpStudy\WWW\ECShop\public/../application/home\view\shopcar\car.html";i:1537358546;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\phpStudy\WWW\ECShop\public/../application/home\view\shopcar\car.html";i:1537361680;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0059)http://www.ecshop4.0.com/home/index/<?php echo url('shopcar/car'); ?>?step=cart -->
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -22,7 +22,7 @@ var process_request = "正在处理您的请求...";
   <div class="fd_top fd_top1">
     <div class="bar-left">
           <div class="top_menu1"> <script type="text/javascript" src="/static1/js/transport.js"></script><script type="text/javascript" src="/static1/js/utils.js"></script> <font id="ECS_MEMBERZONE"><div id="append_parent"></div>
- 欢迎光临本店<a href="<?php echo url('Login/login'); ?>">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="<?php echo url('Login/reg'); ?>">免费注册</a>  </font> </div>
+ 欢迎光临本店<a href="<?php echo url('Login/login'); ?>">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="<?php echo url('Login/register'); ?>">免费注册</a>  </font> </div>
     </div>
     <div class="bar-cart">
       <div class="fl cart-yh">
@@ -139,19 +139,6 @@ var process_request = "正在处理您的请求...";
 
 </div>
 <div class="blank5"></div>
-<p>$rows = $GLOBALS['db']->getRow("select goods_brief,shop_price,goods_name,goods_thumb from ".$GLOBALS['ecs']->table('goods')." where goods_id=".$goods->goods_id);</p>
-<p>$result['shop_price'] = price_format($rows['shop_price']);</p>
-<p>$result['goods_name'] = $rows['goods_name'];</p>
-<p>$result['goods_thumb'] = $rows['goods_thumb'];</p>
-<p>$result['goods_brief'] = $rows['goods_brief'];</p>
-<p>$result['goods_id'] = $goods->goods_id;</p>
-<p>$sql = 'SELECT SUM(goods_number) AS number, SUM(goods_price * goods_number) AS amount' .</p>
-<p>' FROM ' . $GLOBALS['ecs']->table('cart') .</p>
-<p>" WHERE session_id = '" . SESS_ID . "' AND rec_type = '" . CART_GENERAL_GOODS . "'";</p>
-<p>$rowss = $GLOBALS['db']->GetRow($sql);</p>
-<p>$result['goods_price'] = price_format($rowss['amount']);</p>
-<p>$result['goods_number'] = $rowss['number'];</p>
-
 <div class="blank"></div>
 <div class="foot-body">
   <div class="bads"><img src="/static1/images/bottom.jpg"></div>
