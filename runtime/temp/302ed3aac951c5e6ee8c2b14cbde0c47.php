@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_add.html";i:1537328669;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_add.html";i:1537412272;}*/ ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <base href="/" />
@@ -74,7 +74,7 @@ var cancel_color = "无样式";
 <h1>
       <a class="btn btn-right" href="<?php echo url('goods/good_list'); ?>">商品列表</a>
   
-    <span class="action-span1"><a href="<?php echo url('index/index'); ?>">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;添加新商品 </span>
+    <span class="action-span1"><a href="javascript:;">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;添加新商品 </span>
   <div style="clear:both"></div>
 </h1><script type="text/javascript" src="static/js/utils.js"></script><script type="text/javascript" src="static/js/selectzone.js"></script><script type="text/javascript" src="static/js/colorselector.js"></script><script type="text/javascript" src="static/js/calendar.js"></script>
 <link href="static/css/calendar.css" rel="stylesheet" type="text/css" />
@@ -215,8 +215,7 @@ var cancel_color = "无样式";
         <table width="90%" id="detail-table" style="display:none">
           <tbody><tr>
             <td>
-            <input type="hidden" id="goods_desc" name="goods_desc" value="" style="display:none"><input type="hidden" id="goods_desc___Config" value="" style="display:none">
-            <textarea id="goods_desc___Frame" name="goods_desc___Frame" id="" cols="170" rows="10"></textarea>
+            <textarea name="goods_desc" id="" cols="170" rows="10"></textarea>
             </td>
           </tr>
         </tbody></table>
@@ -271,15 +270,17 @@ var cancel_color = "无样式";
         <!-- 商品属性 -->
                 <table width="90%" id="properties-table" style="display:none" align="center">
           <tbody><tr>
-              <td class="label"><a href="javascript:showNotice(&#39;noticeGoodsType&#39;);" title="点击此处查看提示信息"></a>商品类型：</td>
+              <td class="label"><a href="javascript:showNotice(&#39;noticeGoodsType&#39;);" title="点击此处查看提示信息"><img src="images/notice.svg" width="16" height="16" border="0" alt="点击此处查看提示信息"></a>商品类型：</td>
               <td>
-                <select name="">
+                <select name="" onchange="getAttrList(0)">
                   <option value="0">请选择商品类型</option>
                   <?php if(is_array($goods_type) || $goods_type instanceof \think\Collection || $goods_type instanceof \think\Paginator): $i = 0; $__LIST__ = $goods_type;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
                   <option value="<?php echo $v['type_id']; ?>"><?php echo $v['type_name']; ?></option>
                   <?php endforeach; endif; else: echo "" ;endif; ?>
                </select><br>
               <span class="notice-span" style="display:block" id="noticeGoodsType">请选择商品的所属类型，进而完善此商品的属性</span></td>
+          </tr>
+
           </tr>
 
           <tr>
