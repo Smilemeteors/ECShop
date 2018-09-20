@@ -25,9 +25,9 @@ class Login extends Controller
                     session_start();
                     $_SESSION['username']="$username";
                     // echo "<script>alert('恭喜您登录成功');location.href='http://www.ecshop4.0.com/home/index/index'</script>";
-                    return view("User/welcome");
+                    // return view("User/welcome");
                     // ,['username'=>$res['username']]
-                    // $this->success('登录成功','index/index');
+                    $this->success('登录成功','User/welcome');
                 }else{
                     $this->error('密码不正确','login/login');
                 }               
@@ -58,7 +58,8 @@ class Login extends Controller
                     $res = Db('reg')->insert($data);
                     // print_r($res);die;
                     if($res){
-                         return view("User/welcome");
+                         // return view("User/welcome");
+                         $this->success("注册成功","User/welcome");
                     }
                  }else{ 
                     $this->error("用户已存在","register");

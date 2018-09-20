@@ -21,38 +21,12 @@ class Goods extends Controller
         $goods_type=$this->goods->goods_type();
         $brand = $this->goods->getBrandList();
         $cate = $this->goods->getPathList("cat_id");
+        $goods_type=Db::name('goods_type')->select();
+        // print_r($goods_type);die;
+        $this->assign('goods_type',$goods_type);  
         return view('goods_add',['cate'=>$cate,'brand'=>$brand,'goods_type'=>$goods_type]);
     }
 
-    // public function goods_add_do(){
-    //     $request = Request::instance()->post();
-    //     $goods_img = $request['goods_img'];
-    //     $goods_img=$this->goods_upload();
-    //     $res=$this->goods->goods_inserts($request);
-    //     if($res){
-    //         $this->success('添加成功','goods/goods_list');
-    //     }else{
-    //         $this->error('添加失败','goods/goods_add');
-    //     }
-    // }
-    // public function goods_upload(){
-    //    // 获取表单上传文件 例如上传了001.jpg
-    //    $file = request()->file('goods_img');
-    //    // 移动到框架应用根目录/public/uploads/ 目录下
-    //    $info = $file->move(ROOT_PATH . 'public' . DS . 'uploads');
-    //    if($info){
-    //     // 成功上传后 获取上传信息
-    //     // 输出 jpg
-    //     // 输出 20160820/42a79759f284b767dfcb2a0197904287.jpg
-    //      return $info->getSaveName();
-    //     // 输出 42a79759f284b767dfcb2a0197904287.jpg
-    //     }else{
-    //     // 上传失败获取错误信息
-    //        return $file->getError();
-    //     }
-    // }
-    
-    
     public function goods_add_do()
     {
         $data=input('post.');
@@ -102,21 +76,103 @@ class Goods extends Controller
     //随机生成货号
      public function createSn()
     {
-        return 'oneNB'.time().rand(1000,9999);
+        return 'Art.No'.time().rand(1000,9999);
     }
 
     //商品列表
+    // public function goods_list()
+    // {   
+    //     //分类
+    //     $arr =$this->goods->shows();
+    //     //属性
+    //     $cate=$this->goods->getPathList("cat_id");
+    //     //类型
+    //     $pages = 5;
+    //     $keyword = input('post.keyword');
+    //     $res = $this->goods->goods_Show($keyword,$pages);
+    //     return view('goods_list',['res'=>$res,'key'=>$keyword]);
+    // }
+        // 商品列表页面
     public function goods_list()
-    {   
-        //分类
-        $arr =$this->goods->shows();
-        //属性
-        $cate=$this->goods->getPathList("cat_id");
-        //类型
-        $pages = 5;
-        $keyword = input('post.keyword');
-        $res = $this->goods->goods_Show($keyword,$pages);
-        return view('goods_list',['res'=>$res,'key'=>$keyword]);
+    {
+
+        $where=[];
+       
+         $cat_id=input('get.classify');
+        if(!empty($cat_id))
+                
+        {
+            $where['g.cat_id']=$cat_id;
+        }
+
+        $brand_id=input('get.brand');
+        if(!empty($brand_id))
+        {
+            $where['g.brand_id']=$brand_id;
+        }
+
+        $provider_id=input('get.provider');
+        if(!empty($provider_id))
+        {
+            $where['g.provider_id']=$provider_id;
+        }
+
+        $con=input('get.con');
+        if(!empty($con))
+        {
+            $where['g.goods_name']=array('like',"%$con%");
+        }
+//        var_dump($keyword);
+        $page=input('get.page',1);
+//        var_dump($page);
+        $limit=5;
+        $off=($page-1)*$limit;
+
+        $top=$page-1<1?1:$page-1;
+
+        $list=Db::name('goods')->select();
+        $num=count($list);
+        $last=ceil($num/$limit);
+        $down=$page+1>$last?$last:$page+1;
+
+        $arr=[ 'top'=>$top, 'down'=>$down, 'page'=>$page,'last'=>$last ,'num'=>$num,'limit'=>$limit];
+        // 查询商品表
+        $list = Db::name('goods')->where($where)
+         ->alias('g')
+         // ->join('category c','g.cat_id = c.cat_id')
+         ->join('brand b','g.brand_id = b.brand_id')
+         // ->join('provider p','g.provider_id=p.provider_id')
+         ->limit($off,$limit)->select();
+
+       //  查询品牌
+        $brand_list=Db::name('brand')->select();
+        // 查询商品类型
+        $category_data=Db::name('category')->select();
+        $cate_list=$this->goods->createTree($category_data);
+        // 查询供货商的信息
+         $provider =Db::table('provider')
+            ->alias('g')
+            ->join('provider p','g.provider_id = p.provider_id','LEFT')
+            ->select(); 
+        
+        $arr=['arr'=>$arr,'list'=>$list];
+       // var_dump($arr);die;
+        $this->assign('count',count($list));
+        if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest')
+        {
+            echo json_encode($arr);
+        }else{
+
+            $this->assign('provider',$provider);
+            $this->assign('cate_list',$cate_list);
+            $this->assign('brand_list',$brand_list);
+            $this->assign('arr',$arr);
+            $pages = 5;
+            $keyword = input('post.keyword');
+            $res = $this->goods->goods_Show($keyword,$pages);
+            return view('goods_list',['res'=>$res,'key'=>$keyword]);
+        }
+
     }
     //商品列表的回收站
     public function trash_do()

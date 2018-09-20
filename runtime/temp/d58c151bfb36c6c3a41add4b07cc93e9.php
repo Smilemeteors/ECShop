@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_trash.html";i:1537346616;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_trash.html";i:1537347922;}*/ ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head><base href="/" />
 <title>ECSHOP 管理中心 - 商品回收站 </title>

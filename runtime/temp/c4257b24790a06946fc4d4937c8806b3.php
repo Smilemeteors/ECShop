@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_list.html";i:1537326077;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_list.html";i:1537411194;}*/ ?>
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -45,18 +45,30 @@
     <option value="20" >&nbsp;&nbsp;&nbsp;&nbsp;保护壳</option>
     </select>
     <!-- 品牌 -->
+    <!-- 品牌 -->
     品牌
-    <select name="brand_id">
-    <option value="0">所有品牌</option>
-    <option value="0">所有品牌</option>
+    <select name="brand_id" id='brand'>
+    <option value="0" selected="selected">所有品牌</option>
+    <?php if(is_array($brand_list) || $brand_list instanceof \think\Collection || $brand_list instanceof \think\Paginator): $i = 0; $__LIST__ = $brand_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+    <option value="<?php echo $v['brand_id']; ?>"><?php echo $v['brand_name']; ?></option>
+    <?php endforeach; endif; else: echo "" ;endif; ?>
     </select>
+
     <!-- 推荐 -->
-    推荐类别
-    <select name="intro_type"><option value="0">全部</option><option value="is_best">精品</option><option value="is_new">新品</option><option value="is_hot">热销</option><option value="is_promote">特价</option><option value="all_type">全部推荐</option></select>
+   <!--  推荐类别
+    <select name="intro_type">
+    <option value="0" selected="selected">全部</option>
+    <option value="is_best">精品</option>
+    <option value="is_new">新品</option><option value="is_hot">热销</option><option value="is_promote">特价</option><option value="all_type">全部推荐</option>
+    </select> -->
     <!-- 供货商 -->
     供货商
-    <select name="suppliers_id"><option value="0">全部</option><option value="1">北京供货商</option><option value="2">上海供货商</option></select>
-    <!-- 上架 -->
+    <select name="provider_id" id='provider'><option value="0" selected="selected">全部</option>
+    <?php if(is_array($provider) || $provider instanceof \think\Collection || $provider instanceof \think\Paginator): $i = 0; $__LIST__ = $provider;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+    <option value="<?php echo $v['provider_id']; ?>"><?php echo $v['provider_name']; ?></option>
+    <?php endforeach; endif; else: echo "" ;endif; ?>
+    </select>
+
     上架状态
     <input type="radio" name="is_on_sale" id="" value="1"> 上架    <input type="radio" name="is_on_sale" id="" value="0"> 下架       <!-- 关键字 -->
     &nbsp;&nbsp; 关键字 <input type="text" name="keyword" size="25" value="<?=$key?>" />
