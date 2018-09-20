@@ -56,9 +56,9 @@ class Login extends Controller
                     session_start();
                     $_SESSION['username']="$username";
                     $res = Db('reg')->insert($data);
-                    print_r($res);die;
+                    // print_r($res);die;
                     if($res){
-                         return view("Index/index");
+                         return view("User/welcome");
                     }
                  }else{ 
                     $this->error("用户已存在","register");

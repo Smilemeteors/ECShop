@@ -31,7 +31,13 @@
           <?php }?>
 
       </div>
-             <div class="cart" id="ECS_CARTINFO"> <a href="http://www.ecshop4.0.com/home/index/flow.html" title="查看购物车">购物车(0)</a> </div>
+             <div class="cart" id="ECS_CARTINFO"> 
+             <?php if(empty($_SESSION)){ ?>
+            <a href="{:url('Login/login')}" title="查看购物车"><img src="/static1/images/cart.png" />&nbsp;购物车(0)</a>
+          <?php }else{?>
+         <a href="{:url('shopcar/car')}" title="查看购物车"><img src="/static1/images/cart.png" />&nbsp;购物车(0)</a>
+          <?php }?> 
+             </div>
     </div>
   </div>
 </div>
@@ -180,7 +186,7 @@
         <tr>
           <td>&nbsp;</td>
           <td class="actionSub">
-         <image src="/static1/images/fart.gif" /> <a href="Home/Login/user"> 我已有账号，我要登录</a><br />
+         <image src="/static1/images/fart.gif" /> <a href="{:url('Login/login')}"> 我已有账号，我要登录</a><br />
           <image src="/static1/images/fart.gif" /> <a href="user.html?act=get_password">您忘记密码了吗？</a>
           </td>
         </tr>

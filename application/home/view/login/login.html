@@ -37,7 +37,12 @@ var process_request = "正在处理您的请求...";
          <a href="{:url('user/welcome')}" class="">用户中心</a>
           <?php }?>
       </div>
-      <div class="cart" id="ECS_CARTINFO"> <a href="http://www.ecshop4.0.com/home/index/flow.html" title="查看购物车">购物车(0)</a> </div>
+      <div class="cart" id="ECS_CARTINFO"> 
+      <?php if(empty($_SESSION)){ ?>
+            <a href="{:url('Login/login')}" title="查看购物车"><img src="/static1/images/cart.png" />&nbsp;购物车(0)</a>
+          <?php }else{?>
+         <a href="{:url('shopcar/car')}" title="查看购物车"><img src="/static1/images/cart.png" />&nbsp;购物车(0)</a>
+          <?php }?> </div>
     </div>
   </div>
 </div>

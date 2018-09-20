@@ -73,6 +73,8 @@ class Index extends Controller
         $goods_data=Db::name('goods')->where($condtion)->select();
         //展示列表
         $this->assign('goods_data',$goods_data);
+        session_start();
+        $this->assign('$_SESSION',$_SESSION);
        return $this->fetch();
     }
 ////    移动电源的方法
@@ -164,6 +166,8 @@ class Index extends Controller
         $this->assign('nav',$nav);
         $this->assign('count',$count);
         $this->assign('goods_data',$goods_data);
+        session_start();
+        $this->assign('$_SESSION',$_SESSION);
         return $this->fetch();
     }
     public function paixue()
@@ -226,6 +230,8 @@ class Index extends Controller
         $this->assign('cat_name',$cat_name);
         $this->assign('goods_data',$goods_data);
         $this->assign('nav',$nav);
+        session_start();
+        $this->assign('$_SESSION',$_SESSION);
         return $this->fetch();
     }
     public function flow()
@@ -234,34 +240,7 @@ class Index extends Controller
     }
     public function user()
     {
-         // 如果post接收数据登录，如果get返回登录页面
-        if (request()->isPost()) {
-            //获取需要入库的数据
-            $data = Request::instance()->post();
-            // print_r($data);die;
-            $username = $data['username'];
-            $password = $data['password1'];
-            //添加信息
-            $res = Db('reg')->where('username',"$username")->find();
-            // print_r($res);die;
-            //判断
-            if ($res) {
-                if($password==$res['password1']){
-                    session_start();
-                    $_SESSION['username']="$username";
-                    // echo "<script>alert('恭喜您登录成功');location.href='http://www.ecshop4.0.com/home/index/index'</script>";
-                    return view("Index/index");
-                    // ,['username'=>$res['username']]
-                    // $this->success('登录成功','index/index');
-                }else{
-                    $this->error('密码不正确','login/login');
-                }               
-            } else {
-                $this->error('用户名不正确','login/login');
-            }   
-        } else {
-            return view('login/login');
-        }           
+        return $this->fetch();       
     }
     public function register()
     {
