@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\phpStudy\WWW\ECShop\public/../application/home\view\Index\index.html";i:1537330249;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\phpStudy\WWW\ECShop\public/../application/home\view\Index\index.html";i:1537347013;}*/ ?>
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -22,11 +22,21 @@ var process_request = "正在处理您的请求...";
   <div class="fd_top fd_top1">
     <div class="bar-left">
           <div class="top_menu1"> <script type="text/javascript" src="/static1/js/transport.js"></script><script type="text/javascript" src="/static1/js/utils.js"></script> <font id="ECS_MEMBERZONE"><div id="append_parent"></div>
- 欢迎光临本店<a href="./user.html">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="./register.html">免费注册</a>  </font> </div>
+ <?php if (empty($_SESSION)) {?>
+       欢迎光临本店<a href="<?php echo url('login/login'); ?>">请登录</a><strong></strong>&nbsp;|&nbsp;&nbsp;<a href="<?php echo url('login/register'); ?>">免费注册</a>
+  <?php } else { ?>  
+         您好,&nbsp;&nbsp;<strong><font color="#AE0000"><?php echo $_SESSION['username']; ?></font></strong>, 欢迎您回来！ <a href="<?php echo url('user/welcome'); ?>">用户中心</a>| <a href="<?php echo url('Login/back'); ?>">退出</a>
+  <?php } ?>    
+
+  </font> </div>
     </div>
     <div class="bar-cart">
       <div class="fl cart-yh">
-        <a href="./user.html" class="">用户中心</a>
+        <?php if(empty($_SESSION)){ ?>
+           <a href="<?php echo url('Login/login'); ?>" class="">用户中心</a>
+          <?php }else{?>
+         <a href="<?php echo url('user/welcome'); ?>" class="">用户中心</a>
+          <?php }?>
       </div>
              <div class="cart" id="ECS_CARTINFO"> <a href="./flow.html" title="查看购物车">购物车(0)</a> </div>
     </div>
@@ -57,7 +67,6 @@ var process_request = "正在处理您的请求...";
                                         <li><a href="category.html?id=25" 
         
                     >数码时尚</a></li> -->
-                              </ul>
         <ul> 
       </div>
     </div>

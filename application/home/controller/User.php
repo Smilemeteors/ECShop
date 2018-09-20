@@ -2,15 +2,14 @@
 namespace app\home\controller;
 use think\Controller;
 use think\Db;
-
 class User extends Controller
 {
     public function welcome()
     {
-    	// $nav=Db::name('classify')
-     //            ->where('show_in_nav','=',1)
-     //            ->select();
-     //    $this->assign('nav',$nav);
+    	$nav=Db::name('classify')
+                ->where('show_in_nav','=',1)
+                ->select();
+        $this->assign('nav',$nav);
         session_start();
         $this->assign('$_SESSION',$_SESSION);
         return $this->fetch();
@@ -20,7 +19,31 @@ class User extends Controller
     }
     public function dingdan()
     {
+        session_start();
+        
+        $username = $_SESSION['username'];
+        $data = Db('order')->where('username',"$username")->select();
+        $nav=Db::name('classify')
+                ->where('show_in_nav','=',1)
+                ->select();
+        $this->assign('nav',$nav);
+        $this->assign('data',$data);
+        $this->assign('$_SESSION',$_SESSION);
     	return $this->fetch();
+    }
+    public function details()
+    {
+        $order_id = $_GET['order_id'];
+        $data = DB('order')->where('order_id',"$order_id")->find();
+        $nav=Db::name('classify')
+            ->where('show_in_nav','=',1)
+            ->select();
+        $this->assign('nav',$nav);
+        $this->assign('data',$data);
+
+        session_start();
+        $this->assign('$_SESSION',$_SESSION);
+        return $this->fetch();
     }
     public function shouhuo()
     {

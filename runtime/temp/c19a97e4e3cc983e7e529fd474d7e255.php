@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:72:"E:\phpStudy\WWW\ECShop\public/../application/home\view\User\welcome.html";i:1537347013;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta name="Generator" content="ECSHOP v4.0.0">
@@ -24,27 +25,20 @@ var process_request = "正在处理您的请求...";
 
           <div class="top_menu1"> <script type="text/javascript" src="js/transport.js"></script><script type="text/javascript" src="js/utils.js"></script> <font id="ECS_MEMBERZONE"><div id="append_parent"></div>
    <?php if (empty($_SESSION)) {?>
-      欢迎光临本店<a href="{:url('login/login')}">请登录</a><strong></strong>&nbsp;|&nbsp;&nbsp;<a href="{:url('login/register')}">免费注册</a> 
+      欢迎光临本店<a href="<?php echo url('login/login'); ?>">请登录</a><strong></strong>&nbsp;|&nbsp;&nbsp;<a href="<?php echo url('login/register'); ?>">免费注册</a> 
   <?php } else { ?>  
-         您好,&nbsp;&nbsp;<strong><font color="#AE0000"><?php echo $_SESSION['username']; ?></font></strong>, 欢迎您回来！ <a href="{:url('user/welcome')}">用户中心</a>| <a href="{:url('login/back')}">退出</a>
+         您好,&nbsp;&nbsp;<strong><font color="#AE0000"><?php echo $_SESSION['username']; ?></font></strong>, 欢迎您回来！ <a href="<?php echo url('user/welcome'); ?>">用户中心</a>| <a href="<?php echo url('login/back'); ?>">退出</a>
   <?php } ?>  </font> </div>
     </div>
     <div class="bar-cart">
       <div class="fl cart-yh">
         <?php if(empty($_SESSION)){ ?>
-           <a href="{:url('Login/login')}" class="">用户中心</a>
+           <a href="<?php echo url('Login/login'); ?>" class="">用户中心</a>
           <?php }else{?>
-         <a href="{:url('user/welcome')}" class="">用户中心</a>
+         <a href="<?php echo url('user/welcome'); ?>" class="">用户中心</a>
           <?php }?>
       </div>
-             <div class="cart" id="ECS_CARTINFO"> 
-             <?php if(empty($_SESSION)){ ?>
-            <a href="{:url('Login/login')}" title="查看购物车"><img src="/static1/images/cart.png" />&nbsp;购物车(0)</a>
-          <?php }else{?>
-         <a href="{:url('shopcar/car')}" title="查看购物车"><img src="/static1/images/cart.png" />&nbsp;购物车(0)</a>
-          <?php }?>
-              
-             </div>
+             <div class="cart" id="ECS_CARTINFO"> <a href="<?php echo url('shopcar/car'); ?>" title="查看购物车">购物车(0)</a> </div>
     </div>
   </div>
 </div>
@@ -55,10 +49,13 @@ var process_request = "正在处理您的请求...";
     <div id="mainNav" class="clearfix maxmenu">
       <div class="m_left">
       <ul>
-        <li><a href="{:url('index/index')}" class="cur">首页</a></li>
-        {volist name='nav' id='v'}
-              <li><a href="{:url('index/fenlei')}?cat_id={$v.cat_id}">{$v.cat_name}</a></li>
-           {/volist} 
+        <li><a href="<?php echo url('index/index'); ?>" class="cur">首页</a></li>
+        <li><a href="http://localhost/dayi/ecshopceshi/ecshop/category.php?id=16">服装</a></li>
+        <li><a href="http://localhost/dayi/ecshopceshi/ecshop/category.php?id=22">移动电源</a></li>
+        <li><a href="http://localhost/dayi/ecshopceshi/ecshop/category.php?id=25">数码时尚</a></li>
+        <li><a href="http://localhost/dayi/ecshopceshi/ecshop/category.php?id=26">家用电器</a></li>
+        <li><a href="http://localhost/dayi/ecshopceshi/ecshop/category.php?id=27">大家电</a></li>
+        <li><a href="http://localhost/dayi/ecshopceshi/ecshop/category.php?id=25">数码时尚</a></li>
       </ul>
       </div>
     </div>
@@ -78,7 +75,7 @@ var process_request = "正在处理您的请求...";
 
 <div class="block box">
 
-  <div id="ur_here"> <div class="path"><div>当前位置: <a href="{:url('index/index')}">首页</a> <code>&gt;</code> 用户中心</div></div> </div>
+  <div id="ur_here"> <div class="path"><div>当前位置: <a href="<?php echo url('index/index'); ?>">首页</a> <code>&gt;</code> 用户中心</div></div> </div>
 </div>
 
 <div class="blank"></div>
@@ -88,22 +85,22 @@ var process_request = "正在处理您的请求...";
     <div class="box">
       <div class="box_1">
         <div class="userCenterBox"> <div class="userMenu">
-<a href="{:url('user/welcome')}" class="curs"><img src="/static1/images/u1.gif"> 欢迎页</a>
-<a href="{:url('user/userinfo')}"><img src="/static1/images/u2.gif"> 用户信息</a>
-<a href="{:url('user/dingdan')}"><img src="/static1/images/u3.gif"> 我的订单</a>
-<a href="{:url('user/shouhuo')}"><img src="/static1/images/u4.gif"> 收货地址</a>
-<a href="{:url('user/shoucang')}"><img src="/static1/images/u5.gif"> 我的收藏</a>
-<a href="{:url('user/liuyan')}"><img src="/static1/images/u6.gif"> 我的留言</a>
-<a href="{:url('user/biaoqian')}"><img src="/static1/images/u7.gif"> 我的标签</a>
-<a href="{:url('usertwo/quehuo')}"><img src="/static1/images/u8.gif"> 缺货登记</a>
-<a href="{:url('usertwo/hongbao')}"><img src="/static1/images/u9.gif"> 我的红包</a>
-<a href="{:url('usertwo/tuijian')}"><img src="/static1/images/u10.gif"> 我的推荐</a>
-<a href="{:url('usertwo/pinglun')}"><img src="/static1/images/u11.gif"> 我的评论</a>
+<a href="<?php echo url('user/welcome'); ?>" class="curs"><img src="/static1/images/u1.gif"> 欢迎页</a>
+<a href="<?php echo url('user/userinfo'); ?>"><img src="/static1/images/u2.gif"> 用户信息</a>
+<a href="<?php echo url('user/dingdan'); ?>"><img src="/static1/images/u3.gif"> 我的订单</a>
+<a href="<?php echo url('user/shouhuo'); ?>"><img src="/static1/images/u4.gif"> 收货地址</a>
+<a href="<?php echo url('user/shoucang'); ?>"><img src="/static1/images/u5.gif"> 我的收藏</a>
+<a href="<?php echo url('user/liuyan'); ?>"><img src="/static1/images/u6.gif"> 我的留言</a>
+<a href="<?php echo url('user/biaoqian'); ?>"><img src="/static1/images/u7.gif"> 我的标签</a>
+<a href="<?php echo url('usertwo/quehuo'); ?>"><img src="/static1/images/u8.gif"> 缺货登记</a>
+<a href="<?php echo url('usertwo/hongbao'); ?>"><img src="/static1/images/u9.gif"> 我的红包</a>
+<a href="<?php echo url('usertwo/tuijian'); ?>"><img src="/static1/images/u10.gif"> 我的推荐</a>
+<a href="<?php echo url('usertwo/pinglun'); ?>"><img src="/static1/images/u11.gif"> 我的评论</a>
 
 <!--<a href="usertwo.php?act=group_buy">我的团购</a>-->
-<a href="{:url('usertwo/genzong')}"><img src="/static1/images/u12.gif"> 跟踪包裹</a>
-<a href="{:url('usertwo/money')}"><img src="/static1/images/u13.gif"> 资金管理</a>
-<a href="{:url('login/back')}" style="background:none; text-align:right; margin-right:10px;"><img src="/static1/images/bnt_sign.gif"></a>
+<a href="<?php echo url('usertwo/genzong'); ?>"><img src="/static1/images/u12.gif"> 跟踪包裹</a>
+<a href="<?php echo url('usertwo/money'); ?>"><img src="/static1/images/u13.gif"> 资金管理</a>
+<a href="<?php echo url('login/back'); ?>" style="background:none; text-align:right; margin-right:10px;"><img src="/static1/images/bnt_sign.gif"></a>
 </div> </div>
       </div>
     </div>

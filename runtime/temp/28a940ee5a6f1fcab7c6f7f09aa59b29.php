@@ -1,5 +1,6 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\shopcar\car.html";i:1537358181;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!-- saved from url=(0059)http://www.ecshop4.0.com/home/index/{:url('shopcar/car')}?step=cart -->
+<!-- saved from url=(0059)http://www.ecshop4.0.com/home/index/<?php echo url('shopcar/car'); ?>?step=cart -->
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="Generator" content="ECSHOP v4.0.0">
 
@@ -21,40 +22,27 @@ var process_request = "正在处理您的请求...";
   <div class="fd_top fd_top1">
     <div class="bar-left">
           <div class="top_menu1"> <script type="text/javascript" src="/static1/js/transport.js"></script><script type="text/javascript" src="/static1/js/utils.js"></script> <font id="ECS_MEMBERZONE"><div id="append_parent"></div>
-  <?php if (empty($_SESSION)) {?>
-       欢迎光临本店<a href="{:url('login/login')}">请登录</a><strong></strong>&nbsp;|&nbsp;&nbsp;<a href="{:url('login/register')}">免费注册</a>
-  <?php } else { ?>  
-         您好,&nbsp;&nbsp;<strong><font color="#AE0000"><?php echo $_SESSION['username']; ?></font></strong>, 欢迎您回来！ <a href="{:url('user/welcome')}">用户中心</a>| <a href="{:url('Login/back')}">退出</a>
-  <?php } ?>  
-    </font> </div>
+ 欢迎光临本店<a href="<?php echo url('Login/login'); ?>">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="<?php echo url('Login/reg'); ?>">免费注册</a>  </font> </div>
     </div>
     <div class="bar-cart">
       <div class="fl cart-yh">
-       <?php if(empty($_SESSION)){ ?>
-           <a href="{:url('Login/login')}" class="">用户中心</a>
-          <?php }else{?>
-         <a href="{:url('user/welcome')}" class="">用户中心</a>
-          <?php }?>
+        <a href="<?php echo url('user/welcome'); ?>" class="">用户中心</a>
       </div>
-             <div class="cart" id="ECS_CARTINFO"> <?php if(empty($_SESSION)){ ?>
-            <a href="{:url('Login/login')}" title="查看购物车"><img src="/static1/images/cart.png" />&nbsp;购物车(0)</a>
-          <?php }else{?>
-         <a href="{:url('shopcar/car')}" title="查看购物车"><img src="/static1/images/cart.png" />&nbsp;购物车(0)</a>
-          <?php }?>  </div>
+             <div class="cart" id="ECS_CARTINFO"> <a href="<?php echo url('shopcar/car'); ?>" title="查看购物车">购物车(0)</a> </div>
     </div>
   </div>
 </div>
 <div class="nav-menu">
   <div class="wrap">
-    <div class="logo"><a href="{:url('index/index')}" name="top"><img src="/static1/images/logo.gif"></a></div>
+    <div class="logo"><a href="<?php echo url('index/index'); ?>" name="top"><img src="/static1/images/logo.gif"></a></div>
     <div id="mainNav" class="clearfix maxmenu">
       <div class="m_left">
       <ul> 
-        <li><a href="{:url('index/index')}">首页</a></li>
-          {volist name='nav' id='v'}
+        <li><a href="<?php echo url('index/index'); ?>">首页</a></li>
+          <?php if(is_array($nav) || $nav instanceof \think\Collection || $nav instanceof \think\Paginator): $i = 0; $__LIST__ = $nav;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
 
-              <li><a href="{:url('index/fenlei')}?cat_id={$v.cat_id}">{$v.cat_name}</a></li>
-           {/volist} 
+              <li><a href="<?php echo url('index/fenlei'); ?>?cat_id=<?php echo $v['cat_id']; ?>"><?php echo $v['cat_name']; ?></a></li>
+           <?php endforeach; endif; else: echo "" ;endif; ?> 
         </ul>
       </div>
     </div>
@@ -74,7 +62,7 @@ var process_request = "正在处理您的请求...";
 
 <div class="block box">
  <div id="ur_here">
-  <div class="path"><div>当前位置: <a href="{:url('index/index')}">首页</a> <code>&gt;</code> 购物流程</div></div> </div>
+  <div class="path"><div>当前位置: <a href="<?php echo url('index/index'); ?>">首页</a> <code>&gt;</code> 购物流程</div></div> </div>
 </div>
 
 <div class="blank"></div>
@@ -93,7 +81,7 @@ var process_request = "正在处理您的请求...";
     </script>
   <div class="flowBox">
     <h6><span>商品列表</span></h6>
-        <form id="formCart" name="formCart" method="post" action="{:url('shopcar/car')}">
+        <form id="formCart" name="formCart" method="post" action="<?php echo url('shopcar/car'); ?>">
            <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
             <tbody>
             <tr>
@@ -108,8 +96,8 @@ var process_request = "正在处理您的请求...";
             <?php foreach ($data as $key => $v) { ?>
                  <tr>
                     <td bgcolor="#ffffff" align="center">
-                        <a href="{:url('index/details')}?id=72" target="_blank"><img style="width:30px;" src="/uploads/{$v['goods_img']}" border="0" title="{$v['goods_name']}"></a><br>
-                        <a href="{:url('index/details')}?id=72" target="_blank" class="f6"><?=$v['goods_name']?></a>
+                        <a href="<?php echo url('index/details'); ?>?id=72" target="_blank"><img style="width:30px;" src="/uploads/<?php echo $v['goods_img']; ?>" border="0" title="<?php echo $v['goods_name']; ?>"></a><br>
+                        <a href="<?php echo url('index/details'); ?>?id=72" target="_blank" class="f6"><?=$v['goods_name']?></a>
                     </td>
                     <td bgcolor="#ffffff"></td>
                     <td align="right" bgcolor="#ffffff">￥<?=$v['market_price']?>元</td>
@@ -119,7 +107,7 @@ var process_request = "正在处理您的请求...";
                     </td>
                     <td align="right" bgcolor="#ffffff">￥<?=$v['goods_price']?>元</td>
                     <td align="center" bgcolor="#ffffff">
-                      <a href="javascript:if (confirm(&#39;您确实要把该商品移出购物车吗？&#39;)) location.href=&#39;{:url('shopcar/car')}?step=drop_goods&amp;id=44&#39;; " class="f6">删除</a>
+                      <a href="javascript:if (confirm(&#39;您确实要把该商品移出购物车吗？&#39;)) location.href=&#39;<?php echo url('shopcar/car'); ?>?step=drop_goods&amp;id=44&#39;; " class="f6">删除</a>
                     </td>
               </tr>
             <?php } ?>
@@ -132,7 +120,7 @@ var process_request = "正在处理您的请求...";
 
                             购物金额小计 ￥元，比市场价 ￥178.79元 节省了 ￥29.79元 (17%)              </td>
               <td align="right" bgcolor="#ffffff">
-                <input type="button" value="清空购物车" class="bnt_blue_1" onclick="location.href=&#39;{:url('shopcar/car')}?step=clear&#39;">
+                <input type="button" value="清空购物车" class="bnt_blue_1" onclick="location.href=&#39;<?php echo url('shopcar/car'); ?>?step=clear&#39;">
                 <input name="submit" type="submit" class="bnt_blue_1" value="更新购物车">
               </td>
             </tr>
@@ -142,7 +130,7 @@ var process_request = "正在处理您的请求...";
         <table width="99%" align="center" border="0" cellpadding="5" cellspacing="0" bgcolor="#dddddd">
           <tbody><tr>
             <td bgcolor="#ffffff"><a href="http://www.ecshop4.0.com/home/index/"><img src="/static1/images/continue.gif" alt="continue"></a></td>
-            <td bgcolor="#ffffff" align="right"><a href="{:url('shopcar/checkout')}"><img src="/static1/picture/checkout.gif" alt="checkout"></a></td>
+            <td bgcolor="#ffffff" align="right"><a href="<?php echo url('shopcar/checkout'); ?>"><img src="/static1/picture/checkout.gif" alt="checkout"></a></td>
           </tr>
         </tbody></table>
        
@@ -151,6 +139,19 @@ var process_request = "正在处理您的请求...";
 
 </div>
 <div class="blank5"></div>
+<p>$rows = $GLOBALS['db']->getRow("select goods_brief,shop_price,goods_name,goods_thumb from ".$GLOBALS['ecs']->table('goods')." where goods_id=".$goods->goods_id);</p>
+<p>$result['shop_price'] = price_format($rows['shop_price']);</p>
+<p>$result['goods_name'] = $rows['goods_name'];</p>
+<p>$result['goods_thumb'] = $rows['goods_thumb'];</p>
+<p>$result['goods_brief'] = $rows['goods_brief'];</p>
+<p>$result['goods_id'] = $goods->goods_id;</p>
+<p>$sql = 'SELECT SUM(goods_number) AS number, SUM(goods_price * goods_number) AS amount' .</p>
+<p>' FROM ' . $GLOBALS['ecs']->table('cart') .</p>
+<p>" WHERE session_id = '" . SESS_ID . "' AND rec_type = '" . CART_GENERAL_GOODS . "'";</p>
+<p>$rowss = $GLOBALS['db']->GetRow($sql);</p>
+<p>$result['goods_price'] = price_format($rowss['amount']);</p>
+<p>$result['goods_number'] = $rowss['number'];</p>
+
 <div class="blank"></div>
 <div class="foot-body">
   <div class="bads"><img src="/static1/images/bottom.jpg"></div>

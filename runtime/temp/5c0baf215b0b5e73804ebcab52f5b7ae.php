@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:72:"E:\phpStudy\WWW\ECShop\public/../application/home\view\user\welcome.html";i:1537329295;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:72:"E:\phpStudy\WWW\ECShop\public/../application/home\view\user\welcome.html";i:1537347013;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta name="Generator" content="ECSHOP v4.0.0">
@@ -24,15 +24,19 @@ var process_request = "正在处理您的请求...";
     <div class="bar-left">
 
           <div class="top_menu1"> <script type="text/javascript" src="js/transport.js"></script><script type="text/javascript" src="js/utils.js"></script> <font id="ECS_MEMBERZONE"><div id="append_parent"></div>
-   <?php if (isset($_SESSION)) {?>
-      您好,&nbsp;&nbsp;<strong><font color="#AE0000"><?php echo $_SESSION['name']; ?></font></strong>, 欢迎您回来！ <a href="<?php echo url('user/welcome'); ?>">用户中心</a>| <a href="<?php echo url('index/index'); ?>">退出</a>
+   <?php if (empty($_SESSION)) {?>
+      欢迎光临本店<a href="<?php echo url('login/login'); ?>">请登录</a><strong></strong>&nbsp;|&nbsp;&nbsp;<a href="<?php echo url('login/register'); ?>">免费注册</a> 
   <?php } else { ?>  
-      欢迎光临本店<a href="<?php echo url('login/login'); ?>">请登录</a><strong></strong>&nbsp;|&nbsp;&nbsp;<a href="<?php echo url('login/register'); ?>">免费注册</a>    
+         您好,&nbsp;&nbsp;<strong><font color="#AE0000"><?php echo $_SESSION['username']; ?></font></strong>, 欢迎您回来！ <a href="<?php echo url('user/welcome'); ?>">用户中心</a>| <a href="<?php echo url('login/back'); ?>">退出</a>
   <?php } ?>  </font> </div>
     </div>
     <div class="bar-cart">
       <div class="fl cart-yh">
-        <a href="<?php echo url('user/welcome'); ?>" class="">用户中心</a>
+        <?php if(empty($_SESSION)){ ?>
+           <a href="<?php echo url('Login/login'); ?>" class="">用户中心</a>
+          <?php }else{?>
+         <a href="<?php echo url('user/welcome'); ?>" class="">用户中心</a>
+          <?php }?>
       </div>
              <div class="cart" id="ECS_CARTINFO"> <a href="<?php echo url('shopcar/car'); ?>" title="查看购物车">购物车(0)</a> </div>
     </div>
@@ -107,10 +111,11 @@ var process_request = "正在处理您的请求...";
     <div class="box">
       <div class="box_1">
         <div class="userCenterBox boxCenterList clearfix" style="_height:1%;">       
-        <?php if(isset($_SESSION)){?>   
-          <font class="f5"><b class="f4"><?php echo $_SESSION['name'];?></b>欢迎您回到 ECSHOP！</font><br>
-          <?php }else{?>
+        <?php if(empty($_SESSION)){?>   
           <font class="f5"><b class="f4"></b>欢迎您回到 ECSHOP！</font><br>
+          <?php }else{?>
+          <font class="f5"><b class="f4"><?php echo $_SESSION['username'];?></b>欢迎您回到 ECSHOP！</font><br>
+          
           <?php }?>
           <div class="blank"></div>
           您的上一次登录时间: 2016-05-11 14:56:04<br>

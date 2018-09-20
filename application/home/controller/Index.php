@@ -30,7 +30,10 @@ class Index extends Controller
         $nav=Db::name('classify')
                 ->where('show_in_nav','=',1)
                 ->select();
+        $hot_data=Db('hot')->order('hot_num desc')->select();
+        $this->assign('hot_data',$hot_data);
         $this->assign('nav',$nav);
+
         $this->assign('goods_data',$goods_data);
         $this->assign('cat_data',$cate_list);
         $this->assign('floor_goods',$floor_goods);
@@ -118,9 +121,7 @@ class Index extends Controller
 //            var_dump($tmp);die;
             $condtion="cat_id in ($tmp)";
 
-        }
-
-                 
+        }        
         // 接受搜索的词
         $keyword=input('get.keyword');
         // var_dump($keyword);die;
@@ -211,9 +212,10 @@ class Index extends Controller
         // var_dump($cat_name);die;
         // $cat_id=input('get.cat_id');
 //头部导航
-        $nav=Db::name('classify')
+         $nav=Db::name('classify')
                 ->where('show_in_nav','=',1)
                 ->select();
+        $this->assign('nav',$nav);
         // print_r($nav);die;
         //商品属性
         // $attr=Db::name('goods g')
@@ -221,12 +223,13 @@ class Index extends Controller
         //     ->join('attribute a','ga.attr_id=a.attr_id')
         //     ->where('g.goods_id','=',$goods_id) 
         //     ->select();
-        // $attr=Db::query("SELECT * FROM `goods_attr` INNER JOIN goods ON goods_attr.goods_id=goods.goods_id INNER JOIN attribute ON goods_attr.attr_id=attribute.attr_id INNER JOIN goods_type ON attribute.cat_id=goods_type.cat_id where goods.goods_id='$goods_id'");
+        $attr=Db::query("SELECT * FROM `goods_attr` INNER JOIN goods ON goods_attr.goods_id=goods.goods_id INNER JOIN attribute ON goods_attr.attr_id=attribute.attr_id INNER JOIN goods_type ON attribute.cat_id=goods_type.cat_id where goods.goods_id='$goods_id'");
+        $comment=Db::query("SELECT * from goods_attr inner join goods on goods_attr.goods_id=goods.goods_id where goods.goods_id='$goods_id'");
             // var_dump($attr);die;
         $comment=Db::query("select * from comment inner join goods on comment.goods_id=goods.goods_id where goods.goods_id='$goods_id'");
         // var_dump($comment);die;
         $this->assign('comment',$comment);
-        // $this->assign('attr',$attr);
+        $this->assign('attr',$attr);
         $this->assign('cat_name',$cat_name);
         $this->assign('goods_data',$goods_data);
         $this->assign('nav',$nav);
