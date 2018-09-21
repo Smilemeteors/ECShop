@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\phpStudy\WWW\ECShop\public/../application/home\view\shopcar\car.html";i:1537361680;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\phpStudy\WWW\ECShop\public/../application/home\view\shopcar\car.html";i:1537518893;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0059)http://www.ecshop4.0.com/home/index/<?php echo url('shopcar/car'); ?>?step=cart -->
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -22,13 +22,26 @@ var process_request = "正在处理您的请求...";
   <div class="fd_top fd_top1">
     <div class="bar-left">
           <div class="top_menu1"> <script type="text/javascript" src="/static1/js/transport.js"></script><script type="text/javascript" src="/static1/js/utils.js"></script> <font id="ECS_MEMBERZONE"><div id="append_parent"></div>
- 欢迎光临本店<a href="<?php echo url('Login/login'); ?>">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="<?php echo url('Login/register'); ?>">免费注册</a>  </font> </div>
+  <?php if (empty($_SESSION)) {?>
+       欢迎光临本店<a href="<?php echo url('login/login'); ?>">请登录</a><strong></strong>&nbsp;|&nbsp;&nbsp;<a href="<?php echo url('login/register'); ?>">免费注册</a>
+  <?php } else { ?>  
+         您好,&nbsp;&nbsp;<strong><font color="#AE0000"><?php echo $_SESSION['username']; ?></font></strong>, 欢迎您回来！ <a href="<?php echo url('user/welcome'); ?>">用户中心</a>| <a href="<?php echo url('Login/back'); ?>">退出</a>
+  <?php } ?>  
+    </font> </div>
     </div>
     <div class="bar-cart">
       <div class="fl cart-yh">
-        <a href="<?php echo url('user/welcome'); ?>" class="">用户中心</a>
+       <?php if(empty($_SESSION)){ ?>
+           <a href="<?php echo url('Login/login'); ?>" class="">用户中心</a>
+          <?php }else{?>
+         <a href="<?php echo url('user/welcome'); ?>" class="">用户中心</a>
+          <?php }?>
       </div>
-             <div class="cart" id="ECS_CARTINFO"> <a href="<?php echo url('shopcar/car'); ?>" title="查看购物车">购物车(0)</a> </div>
+             <div class="cart" id="ECS_CARTINFO"> <?php if(empty($_SESSION)){ ?>
+            <a href="<?php echo url('Login/login'); ?>" title="查看购物车"><img src="/static1/images/cart.png" />&nbsp;购物车(0)</a>
+          <?php }else{?>
+         <a href="<?php echo url('shopcar/car'); ?>" title="查看购物车"><img src="/static1/images/cart.png" />&nbsp;购物车(0)</a>
+          <?php }?>  </div>
     </div>
   </div>
 </div>
@@ -100,14 +113,14 @@ var process_request = "正在处理您的请求...";
                         <a href="<?php echo url('index/details'); ?>?id=72" target="_blank" class="f6"><?=$v['goods_name']?></a>
                     </td>
                     <td bgcolor="#ffffff"></td>
+                    <td align="right" bgcolor="#ffffff">￥<?=$v['goods_price']?>元</td>
                     <td align="right" bgcolor="#ffffff">￥<?=$v['market_price']?>元</td>
-                    <td align="right" bgcolor="#ffffff">￥<?=$v['goods_price']?>元</td>
                     <td align="right" bgcolor="#ffffff">
-                        <input type="text" name="goods_number[44]" id="goods_number_44" value="1" size="4" class="inputBg" style="text-align:center " onkeydown="showdiv(this)">
+                        <input type="text" name="goods_number[44]" id="goods_number_44" value="<?=$v['goods_number']?>" size="4" class="inputBg" style="text-align:center " >
                     </td>
-                    <td align="right" bgcolor="#ffffff">￥<?=$v['goods_price']?>元</td>
+                    <td align="right" bgcolor="#ffffff" class="num_con">￥<?php echo $v['market_price']*$v['goods_number']; ?>元</td>
                     <td align="center" bgcolor="#ffffff">
-                      <a href="javascript:if (confirm(&#39;您确实要把该商品移出购物车吗？&#39;)) location.href=&#39;<?php echo url('shopcar/car'); ?>?step=drop_goods&amp;id=44&#39;; " class="f6">删除</a>
+                      <a href="<?php echo url('shopcar/del'); ?>?id=<?=$v['rec_id']?>" class="f6">删除</a>
                     </td>
               </tr>
             <?php } ?>
@@ -116,12 +129,13 @@ var process_request = "正在处理您的请求...";
 
           <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
             <tbody><tr>
-              <td bgcolor="#ffffff">
-
-                            购物金额小计 ￥元，比市场价 ￥178.79元 节省了 ￥29.79元 (17%)              </td>
+             <td bgcolor="#ffffff" class="num_count">
+                            购物金额小计 ￥<span id="count"><?php echo $count; ?></span>元，比市场价 ￥<span id="t"><?php echo $goods_count; ?></span>元 节省了 ￥<span id="save_price"><?php echo $save_price; ?></span>元</td>
               <td align="right" bgcolor="#ffffff">
-                <input type="button" value="清空购物车" class="bnt_blue_1" onclick="location.href=&#39;<?php echo url('shopcar/car'); ?>?step=clear&#39;">
-                <input name="submit" type="submit" class="bnt_blue_1" value="更新购物车">
+                <!-- <input type="button" value="清空购物车" class="bnt_blue_1" id="clear" > -->
+                <button class="bnt_blue_1"><a href="<?php echo url('shopcar/delAll'); ?>">清空</a></button>
+                <!-- <a href="javascript:;" onclick="clearCart()" id="clear" class="bnt_blue_1">清空购物车</a> -->
+
               </td>
             </tr>
           </tbody></table>
@@ -129,7 +143,7 @@ var process_request = "正在处理您的请求...";
         </form>
         <table width="99%" align="center" border="0" cellpadding="5" cellspacing="0" bgcolor="#dddddd">
           <tbody><tr>
-            <td bgcolor="#ffffff"><a href="http://www.ecshop4.0.com/home/index/"><img src="/static1/images/continue.gif" alt="continue"></a></td>
+            <td bgcolor="#ffffff"><a href="<?php echo url('index/index'); ?>"><img src="/static1/images/continue.gif" alt="continue"></a></td>
             <td bgcolor="#ffffff" align="right"><a href="<?php echo url('shopcar/checkout'); ?>"><img src="/static1/picture/checkout.gif" alt="checkout"></a></td>
           </tr>
         </tbody></table>
@@ -248,5 +262,49 @@ function checkIpt(item){
   document.getElementById('yunqi_payment').click();
 }
 </script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
 
+$(document).on('click','#clear',function(){
+  var id=$('.f6').val();
+  alert(1);
+})
+
+$(document).on('blur','.inputBg',function(){
+  _this=$(this);
+   goods_number_44=$(this).val();
+  var market_price=$(this).parent().prev().children('span').html();
+   smallplan_price=goods_number_44*market_price;
+  _this.parent().next().children('span').html(smallplan_price);
+  var num=0;
+  var goods_count=0;
+      $(".smallplan_price").each(function(){
+           num += parseInt($(this).text());    
+      });
+      $(".goods_price_class").each(function(){
+        goods_count+=parseInt($(this).text())*($(this).parent().next().next().children().val());
+       
+      })
+      $(".goods_sum_con").each(function(){
+        sum_con=+=parseInt($(this).text())*($(this);
+      })
+      $('#count').html(num);
+      var difference=goods_count-num;
+      $('.num_count').html('购物金额小计 ￥<span id="count">'+num+'</span>元,比市场价 ￥<span id="goods_count">'+goods_count+'</span>元 节省了 ￥<span id="save_price">'+difference+'</span>元');
+      $('#sum_con').html('￥<span id="sum_con">'+sum_con+'</span>元');
+      // $.ajax({
+      //   url:"<?php echo url('Shopcar/car'); ?>",
+      //   data:{goods_number_44:goods_number_44},
+      //   type:'get',
+      //   dataType:"json",
+      //   success:function(wawa){
+      //     // console.log(wawa)
+      //     _this.parent().next().children('span').html(wawa);
+
+      //   }
+      // })
+})
+</script>
 </body></html>
+
+

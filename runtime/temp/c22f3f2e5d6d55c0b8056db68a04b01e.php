@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\phpStudy\WWW\ECShop\public/../application/home\view\index\index.html";i:1537361564;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\phpStudy\WWW\ECShop\public/../application/home\view\index\index.html";i:1537522001;}*/ ?>
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -52,21 +52,6 @@ var process_request = "正在处理您的请求...";
         <?php if(is_array($nav) || $nav instanceof \think\Collection || $nav instanceof \think\Paginator): $i = 0; $__LIST__ = $nav;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
               <li><a href="http://www.ecshop4.0.com/home/index/fenlei?cat_id=<?php echo $v['cat_id']; ?>"><?php echo $v['cat_name']; ?></a></li>
            <?php endforeach; endif; else: echo "" ;endif; ?> 
-                         <!-- <li><a href="<?php echo url('home/index/category'); ?>?id=1"
-        
-                    >服装</a></li>
-                                        <li><a href="<?php echo url('home/index/category'); ?>?id=2"
-
-                    >移动电源</a></li>
-                                        <li><a href="<?php echo url('home/index/category'); ?>?id=3"
-
-                    >数码时尚</a></li>
-                                        <li><a href="<?php echo url('home/index/category'); ?>?id=4"
-        
-                    >家用电器</a></li>
-                                        <li><a href="category.html?id=25" 
-        
-                    >数码时尚</a></li> -->
         <ul> 
       </div>
     </div>
@@ -92,7 +77,8 @@ if (Object.prototype.toJSONString){
         }else{
           return oldToJSONString.apply(this, arguments);
         }
-}}</script>
+}}
+</script>
 <div class="indexpage clearfix">
   <div class="index-cat">
     
@@ -246,8 +232,7 @@ if (Object.prototype.toJSONString){
   <div class="indexpage">
 
     <div class="body-goods">
-<?php if(is_array($floor) || $floor instanceof \think\Collection || $floor instanceof \think\Paginator): $i = 0; $__LIST__ = $floor;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
-      <div class="goods-title"><ol style='margin-left:-10px;'><li><?php echo $v['cat_id']; ?>F <?php echo $v['cat_name']; ?></li></ol></div>
+      <div class="goods-title"><ol style='margin-left:-10px;'><li>1F 烟锁重楼</li></ol></div>
       <div class="clearfix goods-wrap">
         <div class="goods-leftad">
            <div class="swiper-slide"><img src="/static1/images/1.jpg" alt="此处是广告" / width="240px" height="560px"></div>
@@ -255,7 +240,7 @@ if (Object.prototype.toJSONString){
         <div class="goods-right">
 <div class="all_ms">
 <?php if(is_array($floor_goods) || $floor_goods instanceof \think\Collection || $floor_goods instanceof \think\Paginator): $i = 0; $__LIST__ = $floor_goods;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
-    <a class="goodsItem" href="goods.html?id=72"> <div  class="img-box"><img src="/static1/picture/72_thumb_g_1462956048008.jpg" alt="智能相机" class="goodsimg" /></div>
+    <a class="goodsItem" href="<?php echo url('index/details'); ?>?goods_id=<?php echo $v['goods_id']; ?>"> <div  class="img-box"><img src="/uploads/<?php echo $v['goods_img']; ?>" alt="<?php echo $v['goods_img']; ?>" class="goodsimg" /></div>
   <div class="goods-brief"></div>
     <div class="gos-title"><?php echo $v['goods_name']; ?></div> 
   <div class="prices">
@@ -268,51 +253,87 @@ if (Object.prototype.toJSONString){
 </div>
         </div>
       </div>
+      <div class="body-goods">
+      <div class="goods-title"><ol style='margin-left:-10px;'><li>2F 夜阑听雪</li></ol></div>
+      <div class="clearfix goods-wrap">
+        <div class="goods-leftad">
+           <div class="swiper-slide"><img src="/static1/images/1.jpg" alt="此处是广告" / width="240px" height="560px"></div>
+        </div>
+        <div class="goods-right">
+<div class="all_ms">
+<?php if(is_array($floor_goods) || $floor_goods instanceof \think\Collection || $floor_goods instanceof \think\Paginator): $i = 0; $__LIST__ = $floor_goods;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+    <a class="goodsItem"  href="<?php echo url('index/details'); ?>?goods_id=<?php echo $v['goods_id']; ?>"> <div  class="img-box"><img src="/uploads/<?php echo $v['goods_img']; ?>" alt="<?php echo $v['goods_img']; ?>" class="goodsimg" /></div>
+  <div class="goods-brief"></div>
+    <div class="gos-title"><?php echo $v['goods_name']; ?></div> 
+  <div class="prices">
+          <font class="shop_s"><b>￥<?php echo $v['goods_price']; ?></b></font>
+      </div>
+   
+  </a>
 <?php endforeach; endif; else: echo "" ;endif; ?> 
+    <div class="clear0"></div>
+</div>
+        </div>
+      </div>
+            <div class="body-goods">
+      <div class="goods-title"><ol style='margin-left:-10px;'><li>3F 沧海易蒙</li></ol></div>
+      <div class="clearfix goods-wrap">
+        <div class="goods-leftad">
+           <div class="swiper-slide"><img src="/static1/images/1.jpg" alt="此处是广告" / width="240px" height="560px"></div>
+        </div>
+        <div class="goods-right">
+<div class="all_ms">
+<?php if(is_array($floor_goods2) || $floor_goods2 instanceof \think\Collection || $floor_goods2 instanceof \think\Paginator): $i = 0; $__LIST__ = $floor_goods2;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+    <a class="goodsItem"  href="<?php echo url('index/details'); ?>?goods_id=<?php echo $v['goods_id']; ?>"> <div  class="img-box"><img src="/uploads/<?php echo $v['goods_img']; ?>" alt="<?php echo $v['goods_img']; ?>" class="goodsimg" /></div>
+  <div class="goods-brief"></div>
+    <div class="gos-title"><?php echo $v['goods_name']; ?></div> 
+  <div class="prices">
+          <font class="shop_s"><b>￥<?php echo $v['goods_price']; ?></b></font>
+      </div>
+   
+  </a>
+<?php endforeach; endif; else: echo "" ;endif; ?> 
+    <div class="clear0"></div>
+</div>
+        </div>
+      </div>
+            <div class="body-goods">
+      <div class="goods-title"><ol style='margin-left:-10px;'><li>4F 醉枫染墨</li></ol></div>
+      <div class="clearfix goods-wrap">
+        <div class="goods-leftad">
+           <div class="swiper-slide"><img src="/static1/images/1.jpg" alt="此处是广告" / width="240px" height="560px"></div>
+        </div>
+        <div class="goods-right">
+<div class="all_ms">
+<?php if(is_array($floor_goods3) || $floor_goods3 instanceof \think\Collection || $floor_goods3 instanceof \think\Paginator): $i = 0; $__LIST__ = $floor_goods3;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+    <a class="goodsItem"  href="<?php echo url('index/details'); ?>?goods_id=<?php echo $v['goods_id']; ?>"> <div  class="img-box"><img src="/uploads/<?php echo $v['goods_img']; ?>" alt="<?php echo $v['goods_img']; ?>" class="goodsimg" /></div>
+  <div class="goods-brief"></div>
+    <div class="gos-title"><?php echo $v['goods_name']; ?></div> 
+  <div class="prices">
+          <font class="shop_s"><b>￥<?php echo $v['goods_price']; ?></b></font>
+      </div>
+   
+  </a>
+<?php endforeach; endif; else: echo "" ;endif; ?> 
+    <div class="clear0"></div>
+</div>
+        </div>
+      </div>
       <div class="goods-title">热门商品推荐</div>
       <div class="clearfix goods-wrap hot-goods">
             
- 
 <div id="show_hot_area" class="clearfix goodsBox all_mid all_ms">
-     <a class="goodsItem" href="goods.html?id=70"> <div  class="img-box"><img src="/static1/picture/70_thumb_g_1462955414561.jpg" alt="炫彩翻页保护套" class="goodsimg" /></div>
+<?php if(is_array($is_hot_shop) || $is_hot_shop instanceof \think\Collection || $is_hot_shop instanceof \think\Paginator): $i = 0; $__LIST__ = $is_hot_shop;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+     <a class="goodsItem" href="goods.html?id=70"> <div  class="img-box"><img src="/uploads/<?php echo $v['goods_img']; ?>" alt="<?php echo $v['goods_name']; ?>" class="goodsimg" /></div>
   <div class="goods-brief"></div>
-    <div class="gos-title">炫彩翻页保护套</div> 
+    <div class="gos-title"><?php echo $v['goods_name']; ?></div> 
   <div class="prices">
-          <font class="shop_s"><b>￥39元</b></font>
+          <font class="shop_s"><b>￥<?php echo $v['goods_price']; ?>元</b></font>
       </div>
    
   </a>
-   <a class="goodsItem" href="goods.html?id=68"> <div  class="img-box"><img src="/static1/picture/68_thumb_g_1462955204381.jpg" alt="透明超薄软胶保护套" class="goodsimg" /></div>
-  <div class="goods-brief"></div>
-    <div class="gos-title">透明超薄软胶保...</div> 
-  <div class="prices">
-          <font class="shop_s"><b>￥19元</b></font>
-      </div>
-   
-  </a>
-   <a class="goodsItem" href="goods.html?id=69"> <div  class="img-box"><img src="/static1/picture/69_thumb_g_1462955300971.jpg" alt="平衡车" class="goodsimg" /></div>
-  <div class="goods-brief"></div>
-    <div class="gos-title">平衡车</div> 
-  <div class="prices">
-          <font class="shop_s"><b>￥1999元</b></font>
-      </div>
-  </a>
-   <a class="goodsItem" href="goods.html?id=63"> <div  class="img-box"><img src="/static1/picture/63_thumb_g_1462953395609.jpg" alt="自拍杆" class="goodsimg" /></div>
-  <div class="goods-brief"></div>
-    <div class="gos-title">自拍杆</div> 
-  <div class="prices">
-          <font class="shop_s"><b>￥49元</b></font>
-      </div>
-   
-  </a>
-   <a class="goodsItem" href="goods.html?id=64"> <div  class="img-box"><img src="/static1/picture/64_thumb_g_1462952811633.jpg" alt="运动相机" class="goodsimg" /></div>
-  <div class="goods-brief"></div>
-    <div class="gos-title">运动相机</div> 
-  <div class="prices">
-          <font class="shop_s"><b>￥399元</b></font>
-      </div>
-   
-  </a>
+<?php endforeach; endif; else: echo "" ;endif; ?> 
+
       <div class="clear0"></div>
 </div> <div class="clear10"></div>
       </div>

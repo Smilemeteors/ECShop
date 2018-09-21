@@ -120,7 +120,9 @@ class Shopcar extends Controller
             $goods_count+=$value['goods_price']*$value['goods_number'];
         }
         $save_price=$count-$goods_count;
-        $data=Db('order')->select();
+        $data=Db('order')->alias('o') 
+        ->join('address a','o.address_id=a.address_id')
+        ->select();
         $this->assign('data',$data);
         $this->assign('save_price',$save_price);
         $this->assign('goods_count',$goods_count);

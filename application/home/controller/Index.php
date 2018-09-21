@@ -10,33 +10,29 @@ class Index extends Controller
 {
     public function index()
     {
-          // 查询商品类型
+        $is_hot_shop = Db::name('goods')->where('is_hot=1')->limit(5)->select();
         $category=new Category();
-        // var_dump($category);die;
         $category_data=Db::name('classify')->select();
-        // $xhan=Db::name('category')->where('parent_id=0')->select();
         $floor=Db::name('classify')->where('parent_id=0')->select();
-        $floor_goods=Db::name('goods')->where('goods.cat_id=cat_id')->limit(8)->select();
-        // echo "<pre/>";
-        // print_r($floor_goods);die;
-        // $floor1=$category->createTreeBySon($floor);
-        // var_dump($category_data);die;
+        $floor_goods=Db::name('goods')->where('goods.cat_id=1')->limit(8)->select();
+        $floor_goods2=Db::name('goods')->where('goods.cat_id=2')->limit(8)->select();
+        $floor_goods3=Db::name('goods')->where('goods.cat_id=3')->limit(8)->select();
+        $floor_goods4=Db::name('goods')->where('goods.cat_id=4')->limit(8)->select();
         $cate_list=$category->createTreeBySon($category_data);
-        // var_dump($cate_list);die;
-        
         $goods_data=Db::name('goods g')
                     ->join('classify c','g.cat_id=c.cat_id')
                     ->select();
         $nav=Db::name('classify')
                 ->where('show_in_nav','=',1)
                 ->select();
-        $hot_data=Db('hot')->order('hot_num desc')->select();
-        $this->assign('hot_data',$hot_data);
         $this->assign('nav',$nav);
-
         $this->assign('goods_data',$goods_data);
         $this->assign('cat_data',$cate_list);
         $this->assign('floor_goods',$floor_goods);
+        $this->assign('floor_goods2',$floor_goods2);
+        $this->assign('floor_goods3',$floor_goods3);
+        $this->assign('floor_goods4',$floor_goods4);
+        $this->assign('is_hot_shop',$is_hot_shop);
         $this->assign('floor',$floor);
         session_start();
         $this->assign('$_SESSION',$_SESSION);

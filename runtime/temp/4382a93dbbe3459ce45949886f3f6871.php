@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\phpStudy\WWW\ECShop\public/../application/home\view\login\login.html";i:1537361942;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\phpStudy\WWW\ECShop\public/../application/home\view\login\login.html";i:1537518893;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -38,35 +38,31 @@ var process_request = "正在处理您的请求...";
          <a href="<?php echo url('user/welcome'); ?>" class="">用户中心</a>
           <?php }?>
       </div>
-      <div class="cart" id="ECS_CARTINFO"> <a href="http://www.ecshop4.0.com/home/index/flow.html" title="查看购物车">购物车(0)</a> </div>
+
+      <div class="cart" id="ECS_CARTINFO"> 
+      <?php if(empty($_SESSION)){ ?>
+            <a href="<?php echo url('Login/login'); ?>" title="查看购物车"><img src="/static1/images/cart.png" />&nbsp;购物车(0)</a>
+          <?php }else{?>
+         <a href="<?php echo url('shopcar/car'); ?>" title="查看购物车"><img src="/static1/images/cart.png" />&nbsp;购物车(0)</a>
+          <?php }?> </div>
+
     </div>
   </div>
 </div>
 <div class="nav-menu">
   <div class="wrap">
+
     <div class="logo"><a href="<?php echo url('index/index'); ?>" name="top"><img src="/static1/images/logo.gif"></a></div>
     <div id="mainNav" class="clearfix maxmenu">
       <div class="m_left">
-      <ul>
-        <li><a href="<?php echo url('index/index'); ?>" class="cur">首页</a></li>
-                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=16">服装</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=22">移动电源</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=25">数码时尚</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=26">家用电器</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=27">大家电</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=25">数码时尚</a></li>
-                              </ul>
-    <div class="logo"><a href="http://www.ecshop4.0.com/home/index/index.html" name="top"><img src="/static1/images/logo.gif" /></a></div>
-    <div id="mainNav" class="clearfix maxmenu">
-      <div class="m_left">
-      <ul>
-        <li><a href="http://www.ecshop4.0.com/home/index/index.html" class="cur">首页</a></li>
-        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=16" >服装</a></li>
-        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=22" >移动电源</a></li>
-        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=25" >数码时尚</a></li>
-        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=26" >家用电器</a></li>
-        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=25" >数码时尚</a></li>
-      </ul>
+      <ul> 
+        <li><a href="<?php echo url('index/index'); ?>">首页</a></li>
+          <?php if(is_array($nav) || $nav instanceof \think\Collection || $nav instanceof \think\Paginator): $i = 0; $__LIST__ = $nav;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+
+              <li><a href="<?php echo url('index/fenlei'); ?>?cat_id=<?php echo $v['cat_id']; ?>"><?php echo $v['cat_name']; ?></a></li>
+     
+          <?php endforeach; endif; else: echo "" ;endif; ?>
+        <ul> 
       </div>
     </div>
     <div class="serach-box">
@@ -87,7 +83,7 @@ var process_request = "正在处理您的请求...";
 
 <div class="block box">
  <div id="ur_here">
-  <div class="path"><div>当前位置: <a href=".">首页</a> <code>&gt;</code> 用户中心</div></div>  </div>
+  <div class="path"><div>当前位置: <a href="<?php echo url('index/index'); ?>">首页</a> <code>&gt;</code> 用户中心</div></div>  </div>
 </div>
 
 <div class="blank"></div>
