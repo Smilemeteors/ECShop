@@ -20,13 +20,26 @@ var process_request = "正在处理您的请求...";
   <div class="fd_top fd_top1">
     <div class="bar-left">
           <div class="top_menu1"> <script type="text/javascript" src="js/transport.js"></script><script type="text/javascript" src="js/utils.js"></script> <font id="ECS_MEMBERZONE"><div id="append_parent"></div>
- 欢迎光临本店<a href="{:url('Login/login')}">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="{:url('Login/reg')}">免费注册</a>  </font> </div>
+ <?php if (empty($_SESSION)) {?>
+       欢迎光临本店<a href="{:url('login/login')}">请登录</a><strong></strong>&nbsp;|&nbsp;&nbsp;<a href="{:url('login/register')}">免费注册</a>
+  <?php } else { ?>  
+         您好,&nbsp;&nbsp;<strong><font color="#AE0000"><?php echo $_SESSION['username']; ?></font></strong>, 欢迎您回来！ <a href="{:url('user/welcome')}">用户中心</a>| <a href="{:url('Login/back')}">退出</a>
+  <?php } ?>   </font> </div>
     </div>
     <div class="bar-cart">
       <div class="fl cart-yh">
-        <a href="{:url('user/welcome')}" class="">用户中心</a>
+         <?php if(empty($_SESSION)){ ?>
+           <a href="{:url('Login/login')}" class="">用户中心</a>
+          <?php }else{?>
+         <a href="{:url('user/welcome')}" class="">用户中心</a>
+          <?php }?>
       </div>
-             <div class="cart" id="ECS_CARTINFO"> <a href="{:url('shopcar/car')}" title="查看购物车">购物车(0)</a> </div>
+             <div class="cart" id="ECS_CARTINFO"> <?php if(empty($_SESSION)){ ?>
+            <a href="{:url('Login/login')}" title="查看购物车"><img src="/static1/images/cart.png" />&nbsp;购物车(0)</a>
+          <?php }else{?>
+         <a href="{:url('shopcar/car')}" title="查看购物车"><img src="/static1/images/cart.png" />&nbsp;购物车(0)</a>
+          <?php }?> 
+           </div>
     </div>
   </div>
 </div>
@@ -36,14 +49,11 @@ var process_request = "正在处理您的请求...";
     <div id="mainNav" class="clearfix maxmenu">
       <div class="m_left">
       <ul>
-        <li><a href="http://www.ecshop4.0.com/home/index/index.html" class="cur">首页</a></li>
-                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=16">服装</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=22">移动电源</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=25">数码时尚</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=26">家用电器</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=27">大家电</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=25">数码时尚</a></li>
-                              </ul>
+        <li><a href="{:url('index/index')}" class="cur">首页</a></li>
+           {volist name='nav' id='v'}
+              <li><a href="{:url('index/fenlei')}?cat_id={$v.cat_id}">{$v.cat_name}</a></li>
+           {/volist}          
+        </ul>
       </div>
     </div>
     <div class="serach-box">
@@ -115,35 +125,16 @@ var process_request = "正在处理您的请求...";
             </tr>
           </thead>
           <tbody>
-                        <tr align="center">
-              <td><a href="http://www.ecshop4.0.com/home/index/user.html?act=order_detail&amp;order_id=7" class="f6">2016051183359</a></td>
-              <td>2016-05-11 16:11:09</td>
-              <td>￥61.55元</td>
-              <td style="position:relative">已确认,已付款,已发货                            </td>
-              <td><font class="f6"><a href="http://www.ecshop4.0.com/home/index/user.html?act=affirm_received&amp;order_id=7" onclick="if (!confirm('你确认已经收到货物了吗？')) return false;">确认收货</a></font><br><a href="javascript:;" onclick="repurchase(7)">再次购买</a></td>
+          {volist name='data' id='v'}
+            <tr align="center">
+              <td><a href="{:url('User/details')}?order_id={$v.order_id}" class="f6">{$v.order_number}</a></td>
+              <td>{$v.order_data}</td>
+              <td>{$v.total_money}</td>
+              <td style="position:relative">{$v.order_stats}</td>
+              <td><font class="f6"><a href="http://www.ecshop4.0.com/home/index/user.html?act=affirm_received&amp;order_id={$v.order_id}" onclick="if (!confirm('你确认已经收到货物了吗？')) return false;">确认收货</a></font><br><a href="{:url('Index/index')}" onclick="repurchase(7)">再次购买</a></td>
             </tr>
-                        <tr align="center">
-              <td><a href="http://www.ecshop4.0.com/home/index/user.html?act=order_detail&amp;order_id=6" class="f6">2016051124036</a></td>
-              <td>2016-05-11 14:36:10</td>
-              <td>￥137.55元</td>
-              <td style="position:relative">未确认,未付款,未发货                            </td>
-              <td><font class="f6"><a href="http://www.ecshop4.0.com/home/index/user.html?act=cancel_order&amp;order_id=6" onclick="if (!confirm('您确认要取消该订单吗？取消后此订单将视为无效订单')) return false;">取消订单</a></font><br><a href="javascript:;" onclick="repurchase(6)">再次购买</a></td>
-            </tr>
-                        <tr align="center">
-              <td><a href="http://www.ecshop4.0.com/home/index/user.html?act=order_detail&amp;order_id=5" class="f6">2016051166250</a></td>
-              <td>2016-05-11 14:35:50</td>
-              <td>￥33.05元</td>
-              <td style="position:relative">已确认,已付款,未发货                            </td>
-              <td><font class="f6"><span style="color:#565656">已确认</span></font><br><a href="javascript:;" onclick="repurchase(5)">再次购买</a></td>
-            </tr>
-                        <tr align="center">
-              <td><a href="http://www.ecshop4.0.com/home/index/user.html?act=order_detail&amp;order_id=4" class="f6">2016051107173</a></td>
-              <td>2016-05-11 14:35:28</td>
-              <td>￥26.88元</td>
-              <td style="position:relative">已确认,已付款,配货中                            </td>
-              <td><font class="f6"><a href="http://www.ecshop4.0.com/home/index/user.html?act=order_detail&amp;order_id=4">查看订单</a></font><br><a href="javascript:;" onclick="repurchase(4)">再次购买</a></td>
-            </tr>
-                      </tbody>
+          {/volist}
+          </tbody>
           </table>
         <div class="blank5"></div>
         <div class="page-form clearfix">

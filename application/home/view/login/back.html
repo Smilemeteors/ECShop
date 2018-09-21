@@ -41,26 +41,31 @@ var process_request = "正在处理您的请求...";
     <div class="logo"><a href="http://www.ecshop4.0.com/home/index/index.html" name="top"><img src="/static1/js/logo.gif"></a></div>
     <div id="mainNav" class="clearfix maxmenu">
       <div class="m_left">
-      <ul>
-        <li><a href="http://www.ecshop4.0.com/home/index/index.html" class="cur">首页</a></li>
-                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=16">服装</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=22">移动电源</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=25">数码时尚</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=26">家用电器</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=27">大家电</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=25">数码时尚</a></li>
-                              </ul>
+       <ul>
+        <li><a href="{:url('Index/index')}" class="cur">首页</a></li>
+        {volist name='nav' id='v'}
+              <li><a href="{:url('index/fenlei')}?cat_id={$v.cat_id}">{$v.cat_name}</a></li>
+           {/volist} 
+                         
+        <ul> 
       </div>
     </div>
     <div class="serach-box">
-      <form id="searchForm" name="searchForm" method="get" action="http://www.ecshop4.0.com/home/index/index.html" onsubmit="return checkSearchForm()" class="f_r">
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <form method="get" action="{:url('index/fenlei')}">
+        <table width="100%" cellspacing="0" cellpadding="0" border="0">
           <tbody><tr>
-            <td width="135"><input name="keywords" type="text" id="keyword" value="" class="B_input"></td>
-            <td><input name="imageField" type="submit" value="搜索" class="go" style="cursor:pointer;"></td>
+            <td width="135"><input name="keyword"  type="text"></td>
+            <td><input  value="搜索"  type="submit"></td>
           </tr>
         </tbody></table>
       </form>
+
+       <span class="fl">
+
+            {volist name='hot_data' id='v'}
+               <a href="#">{$v.hot_name}</a>
+            {/volist}
+        </span>
     </div>
   </div>
 </div>

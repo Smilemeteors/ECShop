@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\login\login.html";i:1537358906;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\login\login.html";i:1537515945;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -38,7 +38,14 @@ var process_request = "正在处理您的请求...";
          <a href="<?php echo url('user/welcome'); ?>" class="">用户中心</a>
           <?php }?>
       </div>
-      <div class="cart" id="ECS_CARTINFO"> <a href="<?php echo url('shopcar/car'); ?>" title="查看购物车">购物车(0)</a> </div>
+
+      <div class="cart" id="ECS_CARTINFO"> 
+      <?php if(empty($_SESSION)){ ?>
+            <a href="<?php echo url('Login/login'); ?>" title="查看购物车"><img src="/static1/images/cart.png" />&nbsp;购物车(0)</a>
+          <?php }else{?>
+         <a href="<?php echo url('shopcar/car'); ?>" title="查看购物车"><img src="/static1/images/cart.png" />&nbsp;购物车(0)</a>
+          <?php }?> </div>
+
     </div>
   </div>
 </div>
@@ -56,7 +63,6 @@ var process_request = "正在处理您的请求...";
      
           <?php endforeach; endif; else: echo "" ;endif; ?>
         <ul> 
-
       </div>
     </div>
     <div class="serach-box">

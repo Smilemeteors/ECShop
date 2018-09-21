@@ -31,7 +31,15 @@
           <?php }?>
 
       </div>
-             <div class="cart" id="ECS_CARTINFO"> <a href="{:url('shopcar/car')}" title="查看购物车">购物车(0)</a> </div>
+
+             <div class="cart" id="ECS_CARTINFO"> 
+             <?php if(empty($_SESSION)){ ?>
+            <a href="{:url('Login/login')}" title="查看购物车"><img src="/static1/images/cart.png" />&nbsp;购物车(0)</a>
+          <?php }else{?>
+         <a href="{:url('shopcar/car')}" title="查看购物车"><img src="/static1/images/cart.png" />&nbsp;购物车(0)</a>
+          <?php }?> 
+             </div>
+
     </div>
   </div>
 </div>
@@ -40,24 +48,14 @@
     <div class="logo"><a href="{:url('index/index')}" name="top"><img src="/static1/images/logo.gif" /></a></div>
     <div id="mainNav" class="clearfix maxmenu">
       <div class="m_left">
-      <ul>
-        <li><a href="{:url('index/index')}" class="cur">首页</a></li>
-                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=16" 
-        
-                    >服装</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=22" 
-        
-                    >移动电源</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=25" 
-        
-                    >数码时尚</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=26" 
-        
-                    >家用电器</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=25" 
-        
-                    >数码时尚</a></li>
-                              </ul>
+      <ul> 
+        <li><a href="{:url('index/index')}">首页</a></li>
+          {volist name='nav' id='v'}
+
+              <li><a href="{:url('index/fenlei')}?cat_id={$v.cat_id}">{$v.cat_name}</a></li>
+     
+          {/volist}
+        <ul> 
       </div>
     </div>
     <div class="serach-box">
@@ -180,7 +178,7 @@
         <tr>
           <td>&nbsp;</td>
           <td class="actionSub">
-         <image src="/static1/images/fart.gif" /> <a href="Home/Login/user"> 我已有账号，我要登录</a><br />
+         <image src="/static1/images/fart.gif" /> <a href="{:url('Login/login')}"> 我已有账号，我要登录</a><br />
           <image src="/static1/images/fart.gif" /> <a href="user.html?act=get_password">您忘记密码了吗？</a>
           </td>
         </tr>

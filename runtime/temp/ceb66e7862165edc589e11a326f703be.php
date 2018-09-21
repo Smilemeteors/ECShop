@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"E:\phpStudy\WWW\ECShop\public/../application/home\view\index\category.html";i:1537174225;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"E:\phpStudy\WWW\ECShop\public/../application/home\view\index\category.html";i:1537362220;}*/ ?>
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -19,7 +19,7 @@ var process_request = "正在处理您的请求...";
   <div class="fd_top fd_top1">
     <div class="bar-left">
           <div class="top_menu1"> <script type="text/javascript" src="/static1/js/transport.js"></script><script type="text/javascript" src="/static1/js/utils.js"></script> <font id="ECS_MEMBERZONE"><div id="append_parent"></div>
- 欢迎光临本店<a href="http://www.ecshop4.0.com/home/index/user.html">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="http://www.ecshop4.0.com/home/index/register.html">免费注册</a>  </font> </div>
+ 欢迎光临本店<a href="<?php echo url('login/login'); ?>">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="<?php echo url('login/register'); ?>">免费注册</a>  </font> </div>
     </div>
     <div class="bar-cart">
       <div class="fl cart-yh">
@@ -36,22 +36,19 @@ var process_request = "正在处理您的请求...";
       <div class="m_left">
       <ul>
         <li><a href="http://www.ecshop4.0.com/home/index/index.html">首页</a></li>
-                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=16" 
+                                        <li><a href="<?php echo url('home/index/category'); ?>?id=1"
         
                     >服装</a></li>
-                                                <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=22" 
+                                        <li><a href="<?php echo url('home/index/category'); ?>?id=2"
         
                     >移动电源</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=25" 
+                                        <li><a href="<?php echo url('home/index/category'); ?>?id=3"
         
                     >数码时尚</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=26" 
+                                        <li><a href="<?php echo url('home/index/category'); ?>?id=4"
         
                     >家用电器</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=25" 
-        
-                    >数码时尚</a></li>
-                              </ul>
+
       </div>
     </div>
     <div class="serach-box">
@@ -68,7 +65,7 @@ var process_request = "正在处理您的请求...";
 </div>
 <div class="clear0 "></div>
  <div class="category-body">
-  <div id="ur_here"> <div class="path"><div>当前位置: <a href=".">首页</a> <code>&gt;</code> <a href="category.html?id=16">服装</a></div></div> </div>
+  <div id="ur_here"> <div class="path"><div>当前位置: <a href="index.html">首页</a> <code>&gt;</code> <a href="category.html?id=16">服装</a></div></div> </div>
  
 <div class="block clearfix">
   
@@ -106,78 +103,20 @@ var process_request = "正在处理您的请求...";
     <form name="compareForm" action="compare.html" method="post" onSubmit="return compareGoods(this);">
             <div class="centerPadd">
       <div class="clearfix goodsBox" style="border:none;">
-                        <div class="goodsItem"> <a href="goods.html?id=48" class="img-box"><img src="/static1/picture/48_thumb_g_1462852915482.jpg" alt="学院风简约双肩..." class="goodsimg" /></a>
+          <?php if(is_array($arr) || $arr instanceof \think\Collection || $arr instanceof \think\Paginator): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+                        <div class="goodsItem"> <a href="goods.html?id=48" class="img-box">
+                            <img src="/uploads/<?php echo $v['goods_img']; ?>" alt="" class="goodsimg" /></a>
         <div class="goods-info">
-            <div class="goods-title"><a href="goods.html?id=48" title="学院风简约双肩包">学院风简约双肩...</a></div>
+            <div class="goods-title"><a href="" title=""><?php echo $v['goods_name']; ?></a></div>
             <div class="goods-ms">
                           </div>
             <div class="clearfix price-box">
-              <div class="shop_s">￥59元</div>
+              <div class="shop_s"><?php echo $v['goods_price']; ?></a></div>
               <a class="price-btn" href="goods.html?id=48">立即购买</a>
             </div>
-            
         </div>
         </div>
-                                <div class="goodsItem"> <a href="goods.html?id=47" class="img-box"><img src="/static1/picture/47_thumb_g_1462852887996.jpg" alt="极简都市双肩包" class="goodsimg" /></a>
-        <div class="goods-info">
-            <div class="goods-title"><a href="goods.html?id=47" title="极简都市双肩包">极简都市双肩包</a></div>
-            <div class="goods-ms">
-                          </div>
-            <div class="clearfix price-box">
-              <div class="shop_s">￥149元</div>
-              <a class="price-btn" href="goods.html?id=47">立即购买</a>
-            </div>
-            
-        </div>
-        </div>
-                                <div class="goodsItem"> <a href="goods.html?id=46" class="img-box"><img src="/static1/picture/46_thumb_g_1462852854005.jpg" alt="V领短袖T恤 ..." class="goodsimg" /></a>
-        <div class="goods-info">
-            <div class="goods-title"><a href="goods.html?id=46" title="V领短袖T恤 女款">V领短袖T恤 ...</a></div>
-            <div class="goods-ms">
-                          </div>
-            <div class="clearfix price-box">
-              <div class="shop_s">￥39元</div>
-              <a class="price-btn" href="goods.html?id=46">立即购买</a>
-            </div>
-            
-        </div>
-        </div>
-                                <div class="goodsItem"> <a href="goods.html?id=44" class="img-box"><img src="/static1/picture/44_thumb_g_1462854145205.jpg" alt="短袖POLO衫..." class="goodsimg" /></a>
-        <div class="goods-info">
-            <div class="goods-title"><a href="goods.html?id=44" title="短袖POLO衫 女款">短袖POLO衫...</a></div>
-            <div class="goods-ms">
-                          </div>
-            <div class="clearfix price-box">
-              <div class="shop_s">￥59元</div>
-              <a class="price-btn" href="goods.html?id=44">立即购买</a>
-            </div>
-            
-        </div>
-        </div>
-                                <div class="goodsItem"> <a href="goods.html?id=43" class="img-box"><img src="/static1/picture/43_thumb_g_1462852740405.jpg" alt="短袖T恤 摇滚..." class="goodsimg" /></a>
-        <div class="goods-info">
-            <div class="goods-title"><a href="goods.html?id=43" title="短袖T恤 摇滚星球">短袖T恤 摇滚...</a></div>
-            <div class="goods-ms">
-                          </div>
-            <div class="clearfix price-box">
-              <div class="shop_s">￥39元</div>
-              <a class="price-btn" href="goods.html?id=43">立即购买</a>
-            </div>
-            
-        </div>
-        </div>
-                                <div class="goodsItem"> <a href="goods.html?id=42" class="img-box"><img src="/static1/picture/42_thumb_g_1462852622356.jpg" alt="短袖T恤 米兔..." class="goodsimg" /></a>
-        <div class="goods-info">
-            <div class="goods-title"><a href="goods.html?id=42" title="短袖T恤 米兔大游行">短袖T恤 米兔...</a></div>
-            <div class="goods-ms">
-                          </div>
-            <div class="clearfix price-box">
-              <div class="shop_s">￥39元</div>
-              <a class="price-btn" href="goods.html?id=42">立即购买</a>
-            </div>
-            
-        </div>
-        </div>
+          <?php endforeach; endif; else: echo "" ;endif; ?>
                       </div>
     </div>
           </form>

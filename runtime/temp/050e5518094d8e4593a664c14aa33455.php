@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\index.html";i:1537500938;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\index.html";i:1537515139;}*/ ?>
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -38,7 +38,13 @@ var process_request = "正在处理您的请求...";
          <a href="<?php echo url('user/welcome'); ?>" class="">用户中心</a>
           <?php }?>
       </div>
-             <div class="cart" id="ECS_CARTINFO"> <a href="<?php echo url('shopcar/car'); ?>" title="查看购物车">购物车(0)</a> </div>
+             <div class="cart" id="ECS_CARTINFO"> 
+            <?php if(empty($_SESSION)){ ?>
+            <a href="<?php echo url('Login/login'); ?>" title="查看购物车"><img src="/static1/images/cart.png" />&nbsp;购物车(0)</a>
+          <?php }else{?>
+         <a href="<?php echo url('shopcar/car'); ?>" title="查看购物车"><img src="/static1/images/cart.png" />&nbsp;购物车(0)</a>
+          <?php }?> 
+             </div>
     </div>
   </div>
 </div>
@@ -47,13 +53,12 @@ var process_request = "正在处理您的请求...";
     <div class="logo"><a href="./index.html" name="top"><img src="/static1/images/logo.gif" /></a></div>
     <div id="mainNav" class="clearfix maxmenu">
       <div class="m_left">
-        <ul> 
-        <li><a href="<?php echo url('index/index'); ?>">首页</a></li>
-          <?php if(is_array($nav) || $nav instanceof \think\Collection || $nav instanceof \think\Paginator): $i = 0; $__LIST__ = $nav;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
-
+      <ul>
+        <li><a href="<?php echo url('Index/index'); ?>" class="cur">首页</a></li>
+        <?php if(is_array($nav) || $nav instanceof \think\Collection || $nav instanceof \think\Paginator): $i = 0; $__LIST__ = $nav;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
               <li><a href="<?php echo url('index/fenlei'); ?>?cat_id=<?php echo $v['cat_id']; ?>"><?php echo $v['cat_name']; ?></a></li>
-     
-          <?php endforeach; endif; else: echo "" ;endif; ?>
+           <?php endforeach; endif; else: echo "" ;endif; ?> 
+                         
         <ul> 
       </div>
     </div>
@@ -66,7 +71,9 @@ var process_request = "正在处理您的请求...";
           </tr>
         </tbody></table>
       </form>
+
        <span class="fl">
+
             <?php if(is_array($hot_data) || $hot_data instanceof \think\Collection || $hot_data instanceof \think\Paginator): $i = 0; $__LIST__ = $hot_data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
                <a href="#"><?php echo $v['hot_name']; ?></a>
             <?php endforeach; endif; else: echo "" ;endif; ?>
@@ -101,12 +108,16 @@ if (Object.prototype.toJSONString){
         <div class="cat2-box">
       <?php foreach ($value['son'] as $key => $val) { ?>
           <div class="cat2 clearfix">
+
                   <a class="cat2-link" href="<?php echo url('index/fenlei'); ?>?cat_id=<?php echo $val['cat_id']; ?>"><?php echo $val['cat_name']; ?></a>
+
             <div class="cat3-block">            
             </div>
           <div class="cat3-box">      
           <?php foreach ($val['son'] as $key => $v) { ?>     
+
                           <a href="<?php echo url('index/fenlei'); ?>?cat_id=<?php echo $v['cat_id']; ?>"><?php echo $v['cat_name']; ?></a>&nbsp;&nbsp;
+
           <?php } ?>
                       
             </div>
@@ -154,8 +165,6 @@ if (Object.prototype.toJSONString){
             <div class="swiper-slide"><img src="/static1/images/1.jpg" alt="" / width="100%" height="100%"></div>
             <div class="swiper-slide"><img src="/static1/images/2.jpg" alt="" / width="100%" height="100%"></div>
             <div class="swiper-slide"><img src="/static1/images/3.jpg" alt="" / width="100%" height="100%"></div>
-            <div class="swiper-slide"><img src="/static1/images/4.jpg" alt="" / width="100%" height="100%"></div>
-            <div class="swiper-slide"><img src="/static1/images/5.jpg" alt="" / width="100%" height="100%"></div>
         </div>
         
         <div class="swiper-pagination"></div>

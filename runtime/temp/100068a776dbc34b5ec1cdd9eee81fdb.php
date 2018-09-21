@@ -1,11 +1,16 @@
+<<<<<<< HEAD:runtime/temp/100068a776dbc34b5ec1cdd9eee81fdb.php
 <?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:87:"D:\phpstudy\WWW\shixun\ECShop\public/../application/admin\view\member\user_account.html";i:1536897684;}*/ ?>
 ﻿<!-- $Id: user_account_list.htm 17030 2010-02-08 09:39:33Z sxc_shop $ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+=======
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\bonus\bonus_list.html";i:1537412822;}*/ ?>
+>>>>>>> 66a1c652c5fc66ff32dd50e970c4a579057b3c81:runtime/temp/ed78b6bbc8604ba6f7231da71a97476e.php
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>ECSHOP 管理中心 - 充值和提现申请 </title>
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<<<<<<< HEAD:runtime/temp/100068a776dbc34b5ec1cdd9eee81fdb.php
 <link href="/static/css/general.css" rel="stylesheet" type="text/css" />
 <link href="/static/css/main.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/static/js/transport.js"></script><script type="text/javascript" src="/static/js/common.js"></script>
@@ -59,6 +64,10 @@ var deposit_desc_empty = "请填写会员描述！";
 	  frame.src = '';
 	}
 </script>
+=======
+<link href="static/css/general.css" rel="stylesheet" type="text/css" />
+<link href="static/css/main.css" rel="stylesheet" type="text/css" />
+>>>>>>> 66a1c652c5fc66ff32dd50e970c4a579057b3c81:runtime/temp/ed78b6bbc8604ba6f7231da71a97476e.php
 </head>
 <body>
 <!--云起激活系统面板-->
@@ -158,6 +167,7 @@ var deposit_desc_empty = "请填写会员描述！";
 </div>
 <!-- end user_deposit list -->
 </form>
+<<<<<<< HEAD:runtime/temp/100068a776dbc34b5ec1cdd9eee81fdb.php
 
 <script type="text/javascript" language="JavaScript">
 listTable.recordCount = 0;
@@ -199,6 +209,40 @@ function searchUser()
 //-->
 </script>
 
+=======
+<!-- end bonus_type list -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).on('click','.bonus_name',function(){
+    var bonus_name = $(this).text();
+    var obj = $(this);
+    var input = $("<input type='text' class='newname' value='"+bonus_name+"' />");
+    obj.html(input);
+    input.click(function(){return false;});
+    input.trigger('oucs');
+  })
+  $(document).on('blur','.bonus_name',function(){
+    var bonus_name = $('.newname').val();
+    var id = $(this).parent('td').attr('id');
+    var obj = $(this);
+    $.ajax({
+      url:"<?php echo url('Bonus/bonus_change_name'); ?>",
+      type:'GET',
+      data:{bonus_name:bonus_name,id:id},
+      dataType:"json",
+      success:function(res){
+        // console.log(res);
+        if (res.status==0) {  
+          var input = $("<span class='bonus_name' >"+bonus_name+"</span>");
+          obj.html(input); 
+        } else {
+          alert(res.message);
+        }
+      }
+    })
+  })
+</script>
+>>>>>>> 66a1c652c5fc66ff32dd50e970c4a579057b3c81:runtime/temp/ed78b6bbc8604ba6f7231da71a97476e.php
 <div id="footer">
 共执行 5 个查询，用时 0.016352 秒，Gzip 已禁用，内存占用 1.133 MB<br />
 版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
@@ -220,6 +264,7 @@ function searchUser()
   </tr>
   </table>
 </div>
+<<<<<<< HEAD:runtime/temp/100068a776dbc34b5ec1cdd9eee81fdb.php
 
 <!--
 <embed src="static/flash/online.wav" width="0" height="0" autostart="false" name="msgBeep" id="msgBeep" enablejavascript="true"/>
@@ -374,5 +419,7 @@ if (document.getElementById("listDiv"))
 
 //-->
 </script>
+=======
+>>>>>>> 66a1c652c5fc66ff32dd50e970c4a579057b3c81:runtime/temp/ed78b6bbc8604ba6f7231da71a97476e.php
 </body>
 </html>

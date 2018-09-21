@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:83:"D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\shopcar\checkout.html";i:1537447168;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:83:"D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\shopcar\checkout.html";i:1537517624;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta name="Generator" content="ECSHOP v4.0.0">
@@ -102,7 +102,7 @@ var process_request = "正在处理您的请求...";
             <?php endforeach; endif; else: echo "" ;endif; ?>
                                     <tr>
               <td colspan="7" bgcolor="#ffffff">
-                            购物金额小计 ￥<?php echo $count; ?>元，比市场价 ￥<?php echo $goods_count; ?>元 节省了 ￥<?php echo $save_price; ?>元             </td>
+                            购物金额小计 ￥<?php echo $count; ?>元，比市场价 ￥<?php echo $goods_count; ?>元 节省了 ￥-<?php echo $save_price; ?>元             </td>
             </tr>
                       </tbody></table>
       </div>

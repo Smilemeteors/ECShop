@@ -7,6 +7,19 @@ use think\Paginator;
 
 class Goods extends Model
 {
+	public function createTree($data,$parent_id = 0, $level = 1)
+    {
+	  static $new_arr = array();
+	    foreach ($data as $key => $value) {
+	        if ($value['parent_id'] == $parent_id) {
+	         $value['level'] = $level;
+	            $new_arr[] = $value;
+
+	            $this->createTree($data, $value['cat_id'], $level + 1);
+	        }
+	    }
+	    return $new_arr;
+	 }
 	//分类
 	public function addData($data){
         return Db::table('classify')->insert($data);

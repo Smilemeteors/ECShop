@@ -1,0 +1,106 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\bonus\bonus_add.html";i:1537412812;}*/ ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>ECSHOP 管理中心 - 添加红包类型 </title><base href="/" />
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="static/css/general.css" rel="stylesheet" type="text/css" />
+<link href="static/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<!--云起激活系统面板-->
+<div class="panel-hint panel-icloud" id="panelCloud">
+  <div class="panel-cross"><span onclick="btnCancel(this)">Ｘ</span></div>
+  <div class="panel-title">
+    <span class="tit">您需要激活系统</span>
+    <p>用云起账号激活您的系统，享受物流查询，天工收银，手机短信等更多应用和服务</p>
+  </div>
+  <div class="panel-left">
+    <span>没有云起账号吗？</span>
+    <p>点击下列按钮一步完成注册激活！</p>
+    <a href="https://account.shopex.cn/reg?refer=yunqi_ecshop" target="_blank" class="btn btn-yellow">免费注册云起账号</a>
+  </div>
+  <div class="panel-right">
+    <h5 class="logo">云起</h5>
+    <p>正在激活中</p>
+    <iframe src="" frameborder="0" id="CFrame"></iframe>
+    <div class="cloud-passw">
+      <a target="_blank" href="https://account.shopex.cn/forget?">忘记密码？</a>
+    </div>
+  </div>
+</div>
+<!--云起激活系统面板-->
+<!--遮罩-->
+<div class="mask-black" id="CMask"></div>
+<!--遮罩-->
+<h1>
+      <a class="btn btn-right" href="admin/Bonus/bonus_list">红包类型</a>
+  
+    <span class="action-span1"><a href="index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1">&nbsp;&nbsp;>&nbsp;&nbsp;添加红包类型 </span>
+  <div style="clear:both"></div>
+</h1><div class="main-div">
+<form action="admin/Bonus/bonus_add" method="post" name="theForm" enctype="multipart/form-data" onsubmit="return validate()">
+<table width="100%">
+  <tr>
+    <td class="label">类型名称</td>
+    <td>
+      <input type='text' name='bonus_name' maxlength="30" value="" size='20' />    </td>
+  </tr>
+  <tr>
+    <td class="label">发放类型</td>
+    <td>
+      <input type='text' name='bonus_type' maxlength="30" value="" size='20' />    </td>
+  </tr>
+  <tr>
+    <td class="label">红包金额</td>
+    <td>
+      ¥<input type='text' name='bonus_money' maxlength="30" value="" size='20' />元  </td>
+  </tr>
+  <tr>
+    <td class="label">订单下限</td>
+    <td>
+      <input type='text' name='order_limit' maxlength="30" value="" size='20' />    </td>
+  </tr>
+  <tr>
+    <td class="label">发放数量</td>
+    <td>
+      <input type='text' name='quantity' maxlength="30" value="" size='20' />    </td>
+  </tr>
+  <tr>
+    <td class="label">使用数量</td>
+    <td>
+      <input type='text' name='use_num' maxlength="30" value="" size='20' />    </td>
+  </tr>
+  <tr>
+    <td class="label">&nbsp;</td> 
+    <td>
+      <input type="submit" value=" 确定 " class="button" />
+      <input type="reset" value=" 重置 " class="button" />
+  </tr>
+</table>
+</form>
+</div>
+
+<div id="footer">
+共执行 2 个查询，用时 0.007629 秒，Gzip 已禁用，内存占用 1.178 MB<br />
+版权所有 &copy; 2005-2018 上海商派软件有限公司，并保留所有权利。</div>
+<!-- 新订单提示信息 -->
+<div id="popMsg">
+  <table cellspacing="0" cellpadding="0" width="100%" bgcolor="#cfdef4" border="0">
+  <tr>
+    <td style="color: #0f2c8c" width="30" height="24"></td>
+    <td style="font-weight: normal; color: #1f336b; padding-top: 4px;padding-left: 4px" valign="center" width="100%"> 新订单通知</td>
+    <td style="padding-top: 2px;padding-right:2px" valign="center" align="right" width="19"><span title="关闭" style="cursor: hand;cursor:pointer;color:red;font-size:12px;font-weight:bold;margin-right:4px;" onclick="Message.close()" >×</span><!-- <img title=关闭 style="cursor: hand" onclick=closediv() hspace=3 src="static/picture/msgclose.jpg"> --></td>
+  </tr>
+  <tr>
+    <td style="padding-right: 1px; padding-bottom: 1px" colspan="3" height="70">
+    <div id="popMsgContent">
+      <p>您有 <strong style="color:#ff0000" id="spanNewOrder">1</strong> 个新订单以及       <strong style="color:#ff0000" id="spanNewPaid">0</strong> 个新付款的订单</p>
+      <p align="center" style="word-break:break-all"><a href="order.php?act=list"><span style="color:#ff0000">点击查看新订单</span></a></p>
+    </div>
+    </td>
+  </tr>
+  </table>
+</div>
+</body>
+</html>

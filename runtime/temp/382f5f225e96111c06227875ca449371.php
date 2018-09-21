@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:79:"D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\fenlei.html";i:1537411877;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:79:"D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\fenlei.html";i:1537515254;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0059)http://www.ecshop4.0.com/home/index/category.html?id=16 -->
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -18,13 +18,25 @@ var process_request = "正在处理您的请求...";
   <div class="fd_top fd_top1">
     <div class="bar-left">
           <div class="top_menu1"> <script type="text/javascript" src="/static1/js/transport.js"></script><script type="text/javascript" src="/static1/js/utils.js"></script> <font id="ECS_MEMBERZONE"><div id="append_parent"></div>
- 欢迎光临本店<a href="<?php echo url('Login/login'); ?>">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="<?php echo url('Login/reg'); ?>">免费注册</a>  </font> </div>
+ <?php if (empty($_SESSION)) {?>
+       欢迎光临本店<a href="<?php echo url('login/login'); ?>">请登录</a><strong></strong>&nbsp;|&nbsp;&nbsp;<a href="<?php echo url('login/register'); ?>">免费注册</a>
+  <?php } else { ?>  
+         您好,&nbsp;&nbsp;<strong><font color="#AE0000"><?php echo $_SESSION['username']; ?></font></strong>, 欢迎您回来！ <a href="<?php echo url('user/welcome'); ?>">用户中心</a>| <a href="<?php echo url('Login/back'); ?>">退出</a>
+  <?php } ?> </font> </div>
     </div>
     <div class="bar-cart">
       <div class="fl cart-yh">
-        <a href="<?php echo url('user/welcome'); ?>" class="">用户中心</a>
+        <?php if(empty($_SESSION)){ ?>
+           <a href="<?php echo url('Login/login'); ?>" class="">用户中心</a>
+          <?php }else{?>
+         <a href="<?php echo url('user/welcome'); ?>" class="">用户中心</a>
+          <?php }?>
       </div>
-             <div class="cart" id="ECS_CARTINFO"> <a href="<?php echo url('shopcar/car'); ?>" title="查看购物车">购物车(0)</a> </div>
+             <div class="cart" id="ECS_CARTINFO"> <?php if(empty($_SESSION)){ ?>
+            <a href="<?php echo url('Login/login'); ?>" title="查看购物车"><img src="/static1/images/cart.png" />&nbsp;购物车(0)</a>
+          <?php }else{?>
+         <a href="<?php echo url('shopcar/car'); ?>" title="查看购物车"><img src="/static1/images/cart.png" />&nbsp;购物车(0)</a>
+          <?php }?> </div>
     </div>
   </div>
 </div>
@@ -37,7 +49,7 @@ var process_request = "正在处理您的请求...";
         <li><a href="<?php echo url('index/index'); ?>">首页</a></li>
 
            <?php if(is_array($nav) || $nav instanceof \think\Collection || $nav instanceof \think\Paginator): $i = 0; $__LIST__ = $nav;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
-              <li><a href="http://www.ecshop4.0.com/home/index/fenlei?cat_id=<?php echo $v['cat_id']; ?>"><?php echo $v['cat_name']; ?></a></li>
+              <li><a href="<?php echo url('index/fenlei'); ?>?cat_id=<?php echo $v['cat_id']; ?>"><?php echo $v['cat_name']; ?></a></li>
            <?php endforeach; endif; else: echo "" ;endif; ?> 
                                                
       </ul>

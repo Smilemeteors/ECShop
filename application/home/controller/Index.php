@@ -33,6 +33,7 @@ class Index extends Controller
         $hot_data=Db('hot')->order('hot_num desc')->select();
         $this->assign('hot_data',$hot_data);
         $this->assign('nav',$nav);
+
         $this->assign('goods_data',$goods_data);
         $this->assign('cat_data',$cate_list);
         $this->assign('floor_goods',$floor_goods);
@@ -75,23 +76,10 @@ class Index extends Controller
         $goods_data=Db::name('goods')->where($condtion)->select();
         //展示列表
         $this->assign('goods_data',$goods_data);
+        session_start();
+        $this->assign('$_SESSION',$_SESSION);
        return $this->fetch();
     }
-////    移动电源的方法
-//    public function Category2()
-//    {
-//        return $this->fetch();
-//    }
-////    数码时尚 的方法
-//    public function Category3()
-//    {
-//        return $this->fetch();
-//    }
-////    家用电器的方法
-//    public function Category4()
-//    {
-//        return $this->fetch();
-//    }
 
     public function fenlei()
     {
@@ -164,6 +152,8 @@ class Index extends Controller
         $this->assign('nav',$nav);
         $this->assign('count',$count);
         $this->assign('goods_data',$goods_data);
+        session_start();
+        $this->assign('$_SESSION',$_SESSION);
         return $this->fetch();
     }
     public function paixue()
@@ -229,18 +219,20 @@ class Index extends Controller
         $this->assign('attr',$attr);
         $this->assign('cat_name',$cat_name);
         $this->assign('goods_data',$goods_data);
+        $this->assign('nav',$nav);
+        session_start();
+        $this->assign('$_SESSION',$_SESSION);
         return $this->fetch();
     }
-    public function flow()
-    {
-    	return $this->fetch();
-    }
+
     public function user()
     {
+        $hot_data=Db('hot')->order('hot_num desc')->select();
+        $this->assign('hot_data',$hot_data);
         $nav=Db::name('classify')
                 ->where('show_in_nav','=',1)
                 ->select();
-$this->assign('nav',$nav);
+        $this->assign('nav',$nav);
          // 如果post接收数据登录，如果get返回登录页面
         if (request()->isPost()) {
             //获取需要入库的数据
@@ -269,6 +261,9 @@ $this->assign('nav',$nav);
         } else {
             return view('login/login');
         }           
+
+        // return $this->fetch();       
+
     }
     public function register()
     {

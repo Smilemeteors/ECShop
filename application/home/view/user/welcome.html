@@ -37,7 +37,14 @@ var process_request = "正在处理您的请求...";
          <a href="{:url('user/welcome')}" class="">用户中心</a>
           <?php }?>
       </div>
-             <div class="cart" id="ECS_CARTINFO"> <a href="{:url('shopcar/car')}" title="查看购物车">购物车(0)</a> </div>
+             <div class="cart" id="ECS_CARTINFO"> 
+             <?php if(empty($_SESSION)){ ?>
+            <a href="{:url('Login/login')}" title="查看购物车"><img src="/static1/images/cart.png" />&nbsp;购物车(0)</a>
+          <?php }else{?>
+         <a href="{:url('shopcar/car')}" title="查看购物车"><img src="/static1/images/cart.png" />&nbsp;购物车(0)</a>
+          <?php }?>
+              
+             </div>
     </div>
   </div>
 </div>
@@ -49,12 +56,9 @@ var process_request = "正在处理您的请求...";
       <div class="m_left">
       <ul>
         <li><a href="{:url('index/index')}" class="cur">首页</a></li>
-        <li><a href="http://localhost/dayi/ecshopceshi/ecshop/category.php?id=16">服装</a></li>
-        <li><a href="http://localhost/dayi/ecshopceshi/ecshop/category.php?id=22">移动电源</a></li>
-        <li><a href="http://localhost/dayi/ecshopceshi/ecshop/category.php?id=25">数码时尚</a></li>
-        <li><a href="http://localhost/dayi/ecshopceshi/ecshop/category.php?id=26">家用电器</a></li>
-        <li><a href="http://localhost/dayi/ecshopceshi/ecshop/category.php?id=27">大家电</a></li>
-        <li><a href="http://localhost/dayi/ecshopceshi/ecshop/category.php?id=25">数码时尚</a></li>
+        {volist name='nav' id='v'}
+              <li><a href="{:url('index/fenlei')}?cat_id={$v.cat_id}">{$v.cat_name}</a></li>
+           {/volist} 
       </ul>
       </div>
     </div>

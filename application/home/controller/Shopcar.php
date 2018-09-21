@@ -43,6 +43,8 @@ class Shopcar extends Controller
                 ->where('show_in_nav','=',1)
                 ->select();
         $this->assign('nav',$nav);
+        session_start();
+        $this->assign('$_SESSION',$_SESSION);
     	return $this->fetch();
     }
     public function car_add()

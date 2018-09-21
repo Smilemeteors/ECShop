@@ -1,4 +1,8 @@
+<<<<<<< HEAD:runtime/temp/c9dbda3b53eabd813ea4b34f47bdc125.php
 <?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:85:"D:\phpstudy\WWW\shixun\ECShop\public/../application/admin\view\goods\goods_trash.html";i:1537355450;}*/ ?>
+=======
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_trash.html";i:1537347922;}*/ ?>
+>>>>>>> 66a1c652c5fc66ff32dd50e970c4a579057b3c81:runtime/temp/d58c151bfb36c6c3a41add4b07cc93e9.php
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head><base href="/" />
 <title>ECSHOP 管理中心 - 商品回收站 </title>

@@ -37,7 +37,13 @@ var process_request = "正在处理您的请求...";
          <a href="{:url('user/welcome')}" class="">用户中心</a>
           <?php }?>
       </div>
-             <div class="cart" id="ECS_CARTINFO"> <a href="{:url('shopcar/car')}" title="查看购物车">购物车(0)</a> </div>
+             <div class="cart" id="ECS_CARTINFO"> 
+            <?php if(empty($_SESSION)){ ?>
+            <a href="{:url('Login/login')}" title="查看购物车"><img src="/static1/images/cart.png" />&nbsp;购物车(0)</a>
+          <?php }else{?>
+         <a href="{:url('shopcar/car')}" title="查看购物车"><img src="/static1/images/cart.png" />&nbsp;购物车(0)</a>
+          <?php }?> 
+             </div>
     </div>
   </div>
 </div>
@@ -46,13 +52,12 @@ var process_request = "正在处理您的请求...";
     <div class="logo"><a href="./index.html" name="top"><img src="/static1/images/logo.gif" /></a></div>
     <div id="mainNav" class="clearfix maxmenu">
       <div class="m_left">
-        <ul> 
-        <li><a href="{:url('index/index')}">首页</a></li>
-          {volist name='nav' id='v'}
-
+      <ul>
+        <li><a href="{:url('Index/index')}" class="cur">首页</a></li>
+        {volist name='nav' id='v'}
               <li><a href="{:url('index/fenlei')}?cat_id={$v.cat_id}">{$v.cat_name}</a></li>
-     
-          {/volist}
+           {/volist} 
+                         
         <ul> 
       </div>
     </div>
@@ -65,7 +70,9 @@ var process_request = "正在处理您的请求...";
           </tr>
         </tbody></table>
       </form>
+
        <span class="fl">
+
             {volist name='hot_data' id='v'}
                <a href="#">{$v.hot_name}</a>
             {/volist}
@@ -100,12 +107,16 @@ if (Object.prototype.toJSONString){
         <div class="cat2-box">
       <?php foreach ($value['son'] as $key => $val) { ?>
           <div class="cat2 clearfix">
+
                   <a class="cat2-link" href="{:url('index/fenlei')}?cat_id={$val.cat_id}">{$val.cat_name}</a>
+
             <div class="cat3-block">            
             </div>
           <div class="cat3-box">      
           <?php foreach ($val['son'] as $key => $v) { ?>     
+
                           <a href="{:url('index/fenlei')}?cat_id={$v.cat_id}">{$v.cat_name}</a>&nbsp;&nbsp;
+
           <?php } ?>
                       
             </div>
@@ -153,8 +164,6 @@ if (Object.prototype.toJSONString){
             <div class="swiper-slide"><img src="/static1/images/1.jpg" alt="" / width="100%" height="100%"></div>
             <div class="swiper-slide"><img src="/static1/images/2.jpg" alt="" / width="100%" height="100%"></div>
             <div class="swiper-slide"><img src="/static1/images/3.jpg" alt="" / width="100%" height="100%"></div>
-            <div class="swiper-slide"><img src="/static1/images/4.jpg" alt="" / width="100%" height="100%"></div>
-            <div class="swiper-slide"><img src="/static1/images/5.jpg" alt="" / width="100%" height="100%"></div>
         </div>
         
         <div class="swiper-pagination"></div>
