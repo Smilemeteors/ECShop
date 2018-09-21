@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\index.html";i:1537358046;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\index.html";i:1537500938;}*/ ?>
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -58,14 +58,19 @@ var process_request = "正在处理您的请求...";
       </div>
     </div>
     <div class="serach-box">
-      <form id="searchForm" name="searchForm" method="get" action="search.html" onSubmit="return checkSearchForm()" class="f_r">
-       <table width="100%" cellspacing="0" cellpadding="0" border="0">
+      <form method="get" action="<?php echo url('index/fenlei'); ?>">
+        <table width="100%" cellspacing="0" cellpadding="0" border="0">
           <tbody><tr>
             <td width="135"><input name="keyword"  type="text"></td>
             <td><input  value="搜索"  type="submit"></td>
           </tr>
         </tbody></table>
       </form>
+       <span class="fl">
+            <?php if(is_array($hot_data) || $hot_data instanceof \think\Collection || $hot_data instanceof \think\Paginator): $i = 0; $__LIST__ = $hot_data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+               <a href="#"><?php echo $v['hot_name']; ?></a>
+            <?php endforeach; endif; else: echo "" ;endif; ?>
+        </span>
     </div>
   </div>
 </div>
@@ -96,12 +101,12 @@ if (Object.prototype.toJSONString){
         <div class="cat2-box">
       <?php foreach ($value['son'] as $key => $val) { ?>
           <div class="cat2 clearfix">
-                  <a class="cat2-link" href="<?php echo url('index/fenlri'); ?>?cat_id=<?php echo $val['cat_id']; ?>"><?php echo $val['cat_name']; ?></a>
+                  <a class="cat2-link" href="<?php echo url('index/fenlei'); ?>?cat_id=<?php echo $val['cat_id']; ?>"><?php echo $val['cat_name']; ?></a>
             <div class="cat3-block">            
             </div>
           <div class="cat3-box">      
           <?php foreach ($val['son'] as $key => $v) { ?>     
-                          <a href="<?php echo url('index/fenlri'); ?>?cat_id=<?php echo $v['cat_id']; ?>"><?php echo $v['cat_name']; ?></a>&nbsp;&nbsp;
+                          <a href="<?php echo url('index/fenlei'); ?>?cat_id=<?php echo $v['cat_id']; ?>"><?php echo $v['cat_name']; ?></a>&nbsp;&nbsp;
           <?php } ?>
                       
             </div>

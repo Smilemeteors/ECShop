@@ -9,6 +9,11 @@ class Login extends Controller
 {
     public function login()
     {
+        $nav=Db::name('classify')
+                ->where('show_in_nav','=',1)
+                ->select();
+        $this->assign('nav',$nav);
+        
         // 如果post接收数据登录，如果get返回登录页面
         if (request()->isPost()) {
             //获取需要入库的数据
@@ -19,6 +24,7 @@ class Login extends Controller
             //添加信息
             $res = Db('reg')->where('username',"$username")->find();
             // print_r($res);die;
+
             //判断
             if ($res) {
                 if($password==$res['password1']){
@@ -43,6 +49,10 @@ class Login extends Controller
 
     public function register()
     {
+         $nav=Db::name('classify')
+                ->where('show_in_nav','=',1)
+                ->select();
+        $this->assign('nav',$nav);
         if(request()->isPost()){
             $data = Request::instance()->post();
             

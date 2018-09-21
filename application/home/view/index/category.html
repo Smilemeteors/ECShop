@@ -51,14 +51,19 @@ var process_request = "正在处理您的请求...";
       </div>
     </div>
     <div class="serach-box">
-      <form id="searchForm" name="searchForm" method="get" action="search.html" onSubmit="return checkSearchForm()" class="f_r">
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td width="135"><input name="keywords" type="text" id="keyword" value="" class="B_input"  /></td>
-            <td><input name="imageField" type="submit" value="搜索" class="go" style="cursor:pointer;" /></td>
+      <form method="get" action="{:url('index/fenlei')}">
+        <table width="100%" cellspacing="0" cellpadding="0" border="0">
+          <tbody><tr>
+            <td width="135"><input name="keyword"  type="text"></td>
+            <td><input  value="搜索"  type="submit"></td>
           </tr>
-        </table>
+        </tbody></table>
       </form>
+       <span class="fl">
+            {volist name='hot_data' id='v'}
+               <a href="#">{$v.hot_name}</a>
+            {/volist}
+        </span>
     </div>
   </div>
 </div>

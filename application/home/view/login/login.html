@@ -37,38 +37,25 @@ var process_request = "正在处理您的请求...";
          <a href="{:url('user/welcome')}" class="">用户中心</a>
           <?php }?>
       </div>
-      <div class="cart" id="ECS_CARTINFO"> <a href="http://www.ecshop4.0.com/home/index/flow.html" title="查看购物车">购物车(0)</a> </div>
+      <div class="cart" id="ECS_CARTINFO"> <a href="{:url('shopcar/car')}" title="查看购物车">购物车(0)</a> </div>
     </div>
   </div>
 </div>
 <div class="nav-menu">
   <div class="wrap">
-<<<<<<< HEAD
+
     <div class="logo"><a href="{:url('index/index')}" name="top"><img src="/static1/images/logo.gif"></a></div>
     <div id="mainNav" class="clearfix maxmenu">
       <div class="m_left">
-      <ul>
-        <li><a href="{:url('index/index')}" class="cur">首页</a></li>
-                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=16">服装</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=22">移动电源</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=25">数码时尚</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=26">家用电器</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=27">大家电</a></li>
-                                        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=25">数码时尚</a></li>
-                              </ul>
-=======
-    <div class="logo"><a href="http://www.ecshop4.0.com/home/index/index.html" name="top"><img src="/static1/images/logo.gif" /></a></div>
-    <div id="mainNav" class="clearfix maxmenu">
-      <div class="m_left">
-      <ul>
-        <li><a href="http://www.ecshop4.0.com/home/index/index.html" class="cur">首页</a></li>
-        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=16" >服装</a></li>
-        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=22" >移动电源</a></li>
-        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=25" >数码时尚</a></li>
-        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=26" >家用电器</a></li>
-        <li><a href="http://www.ecshop4.0.com/home/index/category.html?id=25" >数码时尚</a></li>
-      </ul>
->>>>>>> 2c29c32aad8489461178161290e5a3f5597cd374
+      <ul> 
+        <li><a href="{:url('index/index')}">首页</a></li>
+          {volist name='nav' id='v'}
+
+              <li><a href="{:url('index/fenlei')}?cat_id={$v.cat_id}">{$v.cat_name}</a></li>
+     
+          {/volist}
+        <ul> 
+
       </div>
     </div>
     <div class="serach-box">
@@ -89,7 +76,7 @@ var process_request = "正在处理您的请求...";
 
 <div class="block box">
  <div id="ur_here">
-  <div class="path"><div>当前位置: <a href=".">首页</a> <code>&gt;</code> 用户中心</div></div>  </div>
+  <div class="path"><div>当前位置: <a href="{:url('index/index')}">首页</a> <code>&gt;</code> 用户中心</div></div>  </div>
 </div>
 
 <div class="blank"></div>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\details.html";i:1537357405;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\details.html";i:1537425309;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0056)http://localhost/dayi/ecshopceshi/ecshop/goods.php?id=72 -->
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -77,9 +77,9 @@ var process_request = "正在处理您的请求...";
         </tbody></table>
       </form>
        <span class="fl">
-            <foreach name="hot_data" item="v">
-               <a href="#"></a>
-            </foreach>
+            <?php if(is_array($hot_data) || $hot_data instanceof \think\Collection || $hot_data instanceof \think\Paginator): $i = 0; $__LIST__ = $hot_data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+               <a href="#"><?php echo $v['hot_name']; ?></a>
+            <?php endforeach; endif; else: echo "" ;endif; ?>
         </span>
     </div>
   </div>
@@ -88,7 +88,7 @@ var process_request = "正在处理您的请求...";
 <div class="goods-home">
   
 <div class="block box">
-  <div id="ur_here"> <div class="path"><div>当前位置: <a href="<?php echo url('index/index'); ?>">首页</a> <code>&gt;</code>
+  <div id="ur_here"> <div class="path"><div>当前位置: <a href="<?php echo url('index/index'); ?>">首页</a><code>&gt;</code>
   <?php if(is_array($cat_name) || $cat_name instanceof \think\Collection || $cat_name instanceof \think\Paginator): $i = 0; $__LIST__ = $cat_name;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
    <a href="<?php echo url('index/fenlei'); ?>?cat_id=<?php echo $v['cat_id']; ?>"><?php echo $v['cat_name']; ?></a>
    <?php endforeach; endif; else: echo "" ;endif; ?>
@@ -167,8 +167,8 @@ var process_request = "正在处理您的请求...";
             <li class="padd">
               <table border="0" cellspacing="0" cellpadding="0">
                 <tbody><tr>
-                  <td class="td1"><a href="<?php echo url('shopcar/car_add'); ?>"><img src="/static1/images/buybtn1.png"></a></td>
-                  <!-- <td class="td1"><input type="submit" value="立即购买" /></td> -->
+                  <!-- <td class="td1"><a href="<?php echo url('shopcar/car_add'); ?>"><img src="/static1/images/buybtn1.png"></a></td> -->
+                  <td class="td1"><input type="submit" value="立即购买" /></td>
                   <td class="td2"><a href="javascript:collect(72)"><img src="/static1/images/bnt_colles.gif"></a></td>
                                     <td class="td3"><a href="http://localhost/dayi/ecshopceshi/ecshop/user.php?act=affiliate&amp;goodsid=72"><img src="/static1/images/bnt_recommend.gif"></a> </td>
                                   </tr>
@@ -193,7 +193,7 @@ var process_request = "正在处理您的请求...";
                       </div>
         </div>
         <div id="com_v" class="boxCenterList RelaArticle"> 
-        <p>&nbsp;<img src="./智能相机_数码时尚_配件_ECSHOP演示站 - Powered by ECShop_files/5984c3f800d7ef3c.jpg" alt=""></p>
+        <p>&nbsp;<img src="/static1/images/5984c3f800d7ef3c.jpg" alt=""></p>
          </div>
         <div id="com_h" class="none">
           <blockquote>
@@ -387,7 +387,7 @@ var process_request = "正在处理您的请求...";
           验证码：<input type="text" name="captcha" class="inputBorder" style="width:50px; margin-left:5px;">
           <img src="captcha.php" alt="captcha" onclick="this.src=&#39;captcha.php?&#39;+Math.random()" class="captcha">
           </div>
-                    <input name="" type="submit" value="" class="f_r" style="border:none; background:url(themes/default/images/commentsBnt.gif); width:75px; height:21px; margin-right:8px;">
+                    <input name="" type="submit" value="" class="f_r" style="border:none; background:url(themes/default/static1/images/commentsBnt.gif); width:75px; height:21px; margin-right:8px;">
           </td>
         </tr>
       </tbody></table>
@@ -406,7 +406,7 @@ var process_request = "正在处理您的请求...";
 <div class="blank"></div>
 </div>
 <div class="foot-body">
-  <div class="bads"><img src="./智能相机_数码时尚_配件_ECSHOP演示站 - Powered by ECShop_files/bottom.jpg"></div>
+  <div class="bads"><img src="/static1/images/bottom.jpg"></div>
   <div class="clear10"></div>
   
      <div class="foot-help">
@@ -448,7 +448,7 @@ var process_request = "正在处理您的请求...";
         <div class="foot-weixin">
           <div class="weixin-txt">关注demo微信</div>
           <div class="weixin-pic">
-            <img src="./智能相机_数码时尚_配件_ECSHOP演示站 - Powered by ECShop_files/weixin.jpg">
+            <img src="/static1/images/weixin.jpg">
           </div>
         </div>
     </div>

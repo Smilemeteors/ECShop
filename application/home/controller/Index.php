@@ -30,6 +30,8 @@ class Index extends Controller
         $nav=Db::name('classify')
                 ->where('show_in_nav','=',1)
                 ->select();
+        $hot_data=Db('hot')->order('hot_num desc')->select();
+        $this->assign('hot_data',$hot_data);
         $this->assign('nav',$nav);
         $this->assign('goods_data',$goods_data);
         $this->assign('cat_data',$cate_list);
@@ -185,6 +187,8 @@ class Index extends Controller
 
     public function details()
     {   
+        $hot_data=Db('hot')->order('hot_num desc')->select();
+        $this->assign('hot_data',$hot_data);
         $goods_id=input('get.goods_id');
         // print_r($goods_id);die;
         if(empty($goods_id))
@@ -233,6 +237,10 @@ class Index extends Controller
     }
     public function user()
     {
+        $nav=Db::name('classify')
+                ->where('show_in_nav','=',1)
+                ->select();
+$this->assign('nav',$nav);
          // 如果post接收数据登录，如果get返回登录页面
         if (request()->isPost()) {
             //获取需要入库的数据

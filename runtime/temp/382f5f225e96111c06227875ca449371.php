@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:79:"D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\fenlei.html";i:1537356006;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:79:"D:\phpstudy\WWW\shixun\ECShop\public/../application/home\view\index\fenlei.html";i:1537411877;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0059)http://www.ecshop4.0.com/home/index/category.html?id=16 -->
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -30,11 +30,11 @@ var process_request = "正在处理您的请求...";
 </div>
 <div class="nav-menu">
   <div class="wrap">
-    <div class="logo"><a href="http://www.ecshop4.0.com/home/index/index.html" name="top"><img src="/static1/images/logo.gif"></a></div>
+    <div class="logo"><a href="<?php echo url('index/index'); ?>" name="top"><img src="/static1/images/logo.gif"></a></div>
     <div id="mainNav" class="clearfix maxmenu">
       <div class="m_left">
       <ul>
-        <li><a href="http://www.ecshop4.0.com/home/index/index.html">首页</a></li>
+        <li><a href="<?php echo url('index/index'); ?>">首页</a></li>
 
            <?php if(is_array($nav) || $nav instanceof \think\Collection || $nav instanceof \think\Paginator): $i = 0; $__LIST__ = $nav;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
               <li><a href="http://www.ecshop4.0.com/home/index/fenlei?cat_id=<?php echo $v['cat_id']; ?>"><?php echo $v['cat_name']; ?></a></li>
@@ -44,7 +44,7 @@ var process_request = "正在处理您的请求...";
       </div>
     </div>
     <div class="serach-box">
-      <form method="get" action="<?php echo url('index/fenlei'); ?>">
+     <form method="get" action="<?php echo url('index/fenlei'); ?>">
         <table width="100%" cellspacing="0" cellpadding="0" border="0">
           <tbody><tr>
             <td width="135"><input name="keyword"  type="text"></td>
@@ -62,7 +62,7 @@ var process_request = "正在处理您的请求...";
 </div>
 <div class="clear0 "></div>
  <div class="category-body">
-  <div id="ur_here"> <div class="path"><div>当前位置: <a href="http://www.ecshop4.0.com/home/index/index.html">首页</a>><?php if(is_array($cat_name) || $cat_name instanceof \think\Collection || $cat_name instanceof \think\Paginator): $i = 0; $__LIST__ = $cat_name;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?> <a href="<?php echo url('index/fenlei'); ?>?cat_id=<?php echo $v['cat_id']; ?>"><?php echo $v['cat_name']; ?></a><?php endforeach; endif; else: echo "" ;endif; ?></div></div> </div>
+  <div id="ur_here"> <div class="path"><div>当前位置: <a href="<?php echo url('index/index'); ?>">首页</a>><?php if(is_array($cat_name) || $cat_name instanceof \think\Collection || $cat_name instanceof \think\Paginator): $i = 0; $__LIST__ = $cat_name;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?> <a href="<?php echo url('index/fenlei'); ?>?cat_id=<?php echo $v['cat_id']; ?>"><?php echo $v['cat_name']; ?></a><?php endforeach; endif; else: echo "" ;endif; ?></div></div> </div>
 <div class="block clearfix">
   
  <div class="Area">
@@ -78,7 +78,7 @@ var process_request = "正在处理您的请求...";
             <td>排序：</td>
               <td><form method="GET" class="sort list-paixu" name="listform">
                     <!-- <a href="http://www.ecshop4.0.com/home/index/category.html?category=16&amp;display=grid&amp;brand=0&amp;price_min=0&amp;price_max=0&amp;filter_attr=0&amp;page=1&amp;sort=goods_id&amp;order=ASC#goods_list"><img src="/static1/images/goods_id_DESC.gif" alt="按上架时间排序"></a>  -->
-                    <a href="http://www.ecshop4.0.com/home/index/paixue?cat_id=14">按价格排序</a> 
+                    <a href="<?php echo url('index/paiixue'); ?>?cat_id=14">按价格排序</a> 
                   <!--   <a href="http://www.ecshop4.0.com/home/index/category.html?category=16&amp;display=grid&amp;brand=0&amp;price_min=0&amp;price_max=0&amp;filter_attr=0&amp;page=1&amp;sort=last_update&amp;order=DESC#goods_list"><img src="./服装_ECSHOP演示站 - Powered by ECShop_files/last_update_default.gif" alt="按更新时间排序"></a> -->
                   <input type="hidden" name="category" value="16">
                   <input type="hidden" name="display" value="grid" id="display">

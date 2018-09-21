@@ -57,14 +57,19 @@ var process_request = "正在处理您的请求...";
       </div>
     </div>
     <div class="serach-box">
-      <form id="searchForm" name="searchForm" method="get" action="search.html" onSubmit="return checkSearchForm()" class="f_r">
-       <table width="100%" cellspacing="0" cellpadding="0" border="0">
+      <form method="get" action="{:url('index/fenlei')}">
+        <table width="100%" cellspacing="0" cellpadding="0" border="0">
           <tbody><tr>
             <td width="135"><input name="keyword"  type="text"></td>
             <td><input  value="搜索"  type="submit"></td>
           </tr>
         </tbody></table>
       </form>
+       <span class="fl">
+            {volist name='hot_data' id='v'}
+               <a href="#">{$v.hot_name}</a>
+            {/volist}
+        </span>
     </div>
   </div>
 </div>
@@ -95,12 +100,12 @@ if (Object.prototype.toJSONString){
         <div class="cat2-box">
       <?php foreach ($value['son'] as $key => $val) { ?>
           <div class="cat2 clearfix">
-                  <a class="cat2-link" href="{:url('index/fenlri')}?cat_id={$val.cat_id}">{$val.cat_name}</a>
+                  <a class="cat2-link" href="{:url('index/fenlei')}?cat_id={$val.cat_id}">{$val.cat_name}</a>
             <div class="cat3-block">            
             </div>
           <div class="cat3-box">      
           <?php foreach ($val['son'] as $key => $v) { ?>     
-                          <a href="{:url('index/fenlri')}?cat_id={$v.cat_id}">{$v.cat_name}</a>&nbsp;&nbsp;
+                          <a href="{:url('index/fenlei')}?cat_id={$v.cat_id}">{$v.cat_name}</a>&nbsp;&nbsp;
           <?php } ?>
                       
             </div>
