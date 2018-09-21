@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\phpStudy\WWW\ECShop\public/../application/home\view\index\index.html";i:1537522001;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\phpStudy\WWW\ECShop\public/../application/home\view\index\index.html";i:1537530411;}*/ ?>
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -240,13 +240,12 @@ if (Object.prototype.toJSONString){
         <div class="goods-right">
 <div class="all_ms">
 <?php if(is_array($floor_goods) || $floor_goods instanceof \think\Collection || $floor_goods instanceof \think\Paginator): $i = 0; $__LIST__ = $floor_goods;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
-    <a class="goodsItem" href="<?php echo url('index/details'); ?>?goods_id=<?php echo $v['goods_id']; ?>"> <div  class="img-box"><img src="/uploads/<?php echo $v['goods_img']; ?>" alt="<?php echo $v['goods_img']; ?>" class="goodsimg" /></div>
+    <a class="goodsItem" href="<?php echo url('index/details'); ?>?goods_id=<?php echo $v['goods_id']; ?>"> <div  style="padding-top:20px;" class="img-box"><img src="/uploads/<?php echo $v['goods_img']; ?>" alt="<?php echo $v['goods_img']; ?>" class="goodsimg" /></div>
   <div class="goods-brief"></div>
     <div class="gos-title"><?php echo $v['goods_name']; ?></div> 
   <div class="prices">
           <font class="shop_s"><b>￥<?php echo $v['goods_price']; ?></b></font>
       </div>
-   
   </a>
 <?php endforeach; endif; else: echo "" ;endif; ?> 
     <div class="clear0"></div>
@@ -262,7 +261,7 @@ if (Object.prototype.toJSONString){
         <div class="goods-right">
 <div class="all_ms">
 <?php if(is_array($floor_goods) || $floor_goods instanceof \think\Collection || $floor_goods instanceof \think\Paginator): $i = 0; $__LIST__ = $floor_goods;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
-    <a class="goodsItem"  href="<?php echo url('index/details'); ?>?goods_id=<?php echo $v['goods_id']; ?>"> <div  class="img-box"><img src="/uploads/<?php echo $v['goods_img']; ?>" alt="<?php echo $v['goods_img']; ?>" class="goodsimg" /></div>
+    <a class="goodsItem"  href="<?php echo url('index/details'); ?>?goods_id=<?php echo $v['goods_id']; ?>"> <div  style="padding-top:20px;" class="img-box"><img src="/uploads/<?php echo $v['goods_img']; ?>" alt="<?php echo $v['goods_img']; ?>" class="goodsimg" /></div>
   <div class="goods-brief"></div>
     <div class="gos-title"><?php echo $v['goods_name']; ?></div> 
   <div class="prices">
@@ -284,7 +283,7 @@ if (Object.prototype.toJSONString){
         <div class="goods-right">
 <div class="all_ms">
 <?php if(is_array($floor_goods2) || $floor_goods2 instanceof \think\Collection || $floor_goods2 instanceof \think\Paginator): $i = 0; $__LIST__ = $floor_goods2;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
-    <a class="goodsItem"  href="<?php echo url('index/details'); ?>?goods_id=<?php echo $v['goods_id']; ?>"> <div  class="img-box"><img src="/uploads/<?php echo $v['goods_img']; ?>" alt="<?php echo $v['goods_img']; ?>" class="goodsimg" /></div>
+    <a class="goodsItem"  href="<?php echo url('index/details'); ?>?goods_id=<?php echo $v['goods_id']; ?>"> <div  style="padding-top:20px;" class="img-box"><img src="/uploads/<?php echo $v['goods_img']; ?>" alt="<?php echo $v['goods_img']; ?>" class="goodsimg" /></div>
   <div class="goods-brief"></div>
     <div class="gos-title"><?php echo $v['goods_name']; ?></div> 
   <div class="prices">
@@ -306,7 +305,7 @@ if (Object.prototype.toJSONString){
         <div class="goods-right">
 <div class="all_ms">
 <?php if(is_array($floor_goods3) || $floor_goods3 instanceof \think\Collection || $floor_goods3 instanceof \think\Paginator): $i = 0; $__LIST__ = $floor_goods3;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
-    <a class="goodsItem"  href="<?php echo url('index/details'); ?>?goods_id=<?php echo $v['goods_id']; ?>"> <div  class="img-box"><img src="/uploads/<?php echo $v['goods_img']; ?>" alt="<?php echo $v['goods_img']; ?>" class="goodsimg" /></div>
+    <a class="goodsItem"  href="<?php echo url('index/details'); ?>?goods_id=<?php echo $v['goods_id']; ?>"> <div  style="padding-top:20px;" class="img-box"><img src="/uploads/<?php echo $v['goods_img']; ?>" alt="<?php echo $v['goods_img']; ?>" class="goodsimg" /></div>
   <div class="goods-brief"></div>
     <div class="gos-title"><?php echo $v['goods_name']; ?></div> 
   <div class="prices">
@@ -324,7 +323,7 @@ if (Object.prototype.toJSONString){
             
 <div id="show_hot_area" class="clearfix goodsBox all_mid all_ms">
 <?php if(is_array($is_hot_shop) || $is_hot_shop instanceof \think\Collection || $is_hot_shop instanceof \think\Paginator): $i = 0; $__LIST__ = $is_hot_shop;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
-     <a class="goodsItem" href="goods.html?id=70"> <div  class="img-box"><img src="/uploads/<?php echo $v['goods_img']; ?>" alt="<?php echo $v['goods_name']; ?>" class="goodsimg" /></div>
+     <a class="goodsItem" href="goods.html?id=70"> <div  style="padding-top:20px;" class="img-box"><img src="/uploads/<?php echo $v['goods_img']; ?>" alt="<?php echo $v['goods_name']; ?>" class="goodsimg" /></div>
   <div class="goods-brief"></div>
     <div class="gos-title"><?php echo $v['goods_name']; ?></div> 
   <div class="prices">

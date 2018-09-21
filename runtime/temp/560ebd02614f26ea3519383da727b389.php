@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"E:\phpStudy\WWW\ECShop\public/../application/home\view\index\details.html";i:1537518893;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"E:\phpStudy\WWW\ECShop\public/../application/home\view\index\details.html";i:1537529992;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0056)http://localhost/dayi/ecshopceshi/ecshop/goods.php?id=72 -->
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -337,8 +337,8 @@ var process_request = "正在处理您的请求...";
       <div class="boxCenterList clearfix" style="height:1%;">
        <ul class="comments">
                <?php if(is_array($comment) || $comment instanceof \think\Collection || $comment instanceof \think\Paginator): $i = 0; $__LIST__ = $comment;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
-               <li>用户:&nbsp;&nbsp;<?php echo $v['user_name']; ?> &nbsp;&nbsp;<?php echo $v['add_date']; ?>&nbsp;&nbsp;<?php echo $v['goods_name']; ?></li>
-               <li>内容:&nbsp;&nbsp;<?php echo $v['content']; ?>  </li>
+               <li>用户:&nbsp;&nbsp;<?php echo $v['user_name']; ?> &nbsp;&nbsp;<?php echo $v['add_time']; ?>&nbsp;&nbsp;<?php echo $v['goods_name']; ?></li>
+               <li>内容:&nbsp;&nbsp;<?php echo $v['reply_content']; ?>  </li>
                <?php endforeach; endif; else: echo "" ;endif; ?>
                </ul>
        
