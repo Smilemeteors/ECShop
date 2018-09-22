@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_list.html";i:1537411194;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\goods_list.html";i:1537449777;}*/ ?>
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>

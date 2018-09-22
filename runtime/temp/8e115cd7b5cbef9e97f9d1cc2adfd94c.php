@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:89:"E:\phpStudy\WWW\ECShop\public/../application/admin\view\goods\comment_manage_details.html";i:1537533161;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0078)http://127.0.0.1/ECShop1/source/ecshop/admin/comment_manage.php?act=reply&id=6 -->
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -72,7 +73,7 @@
   </table>
 </div>
 <div class="main-div">
-<form method="post" action="{:url('goods/comment_manage_add')}" name="theForm" onsubmit="return validate()">
+<form method="post" action="<?php echo url('goods/comment_manage_add'); ?>" name="theForm" onsubmit="return validate()">
 <table border="0" align="center">
   <tbody><tr><th colspan="2">
   <strong>回复评论</strong>
@@ -134,7 +135,7 @@
 //     var brand_id = $(this).attr('id');
 //     var obj = $(this);
 //     $.ajax({
-//       url:"{:url('goods/comment_change_status')}",
+//       url:"<?php echo url('goods/comment_change_status'); ?>",
 //       data:{status:status,brand_id:brand_id},
 //       dataType:"json",
 //       success:function(res){

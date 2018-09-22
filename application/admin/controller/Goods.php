@@ -8,6 +8,11 @@ use think\Request;
 use think\File;
 class Goods extends Controller
 {
+    public function user()
+    {
+        $res2=Db::name('user')->select();
+        return view('comment_mange_details',['res2'=>$res2]);
+    }
     //model调用
     public $goods;
     public function _initialize(){
@@ -693,33 +698,34 @@ class Goods extends Controller
     }
 
 
-    //评论部分
-    // public function comment_change_status()
-    // {
-    //     $brand_id = input('get.brand_id');
-    //     $status = input('get.status');
-    //     if($status==1){
-    //         $res = Db("brand")->where("brand_id",$brand_id)->update(["is_show"=>'0']);
-    //     }else{
-    //         $res = Db("brand")->where("brand_id",$brand_id)->update(["is_show"=>'1']);
-    //     }
+    // 评论部分
+    public function comment_change_status()
+    {
+        $brand_id = input('get.brand_id');
+        $status = input('get.status');
+        if($status==1){
+            $res = Db("brand")->where("brand_id",$brand_id)->update(["is_show"=>'0']);
+        }else{
+            $res = Db("brand")->where("brand_id",$brand_id)->update(["is_show"=>'1']);
+        }
         
-    //     if($res){
-    //         $arr['status'] = 0;
-    //         $arr['data'] = '';
-    //         $arr['msg'] = '成功';
-    //     }else{
-    //         $arr['status'] = 1;
-    //         $arr['data'] = '';
-    //         $arr['msg'] = '失败';
-    //     }
-    //     echo json_encode($arr);
-    // }
+        if($res){
+            $arr['status'] = 0;
+            $arr['data'] = '';
+            $arr['msg'] = '成功';
+        }else{
+            $arr['status'] = 1;
+            $arr['data'] = '';
+            $arr['msg'] = '失败';
+        }
+        echo json_encode($arr);
+    }
     //评论详情
     public function comment_manage_details()
     {
-        $arr = Db::table('comment')->select();
-        return view('comment_manage_details',['arr'=>$arr]);
+        $res2=Db::name('user')->select();
+        $arr = Db::table('comment_manage')->select();
+        return view('comment_manage_details',['arr'=>$arr,'arr2'=>$res2]);
     }
     //评论回复
     public function comment_manage_add(){
